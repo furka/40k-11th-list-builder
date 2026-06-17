@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Warhammer 40K 10th Edition army list builder hosted at https://furka.github.io/40k-10th-list-builder/. It's a Vue 3 application built with Vite that helps users build and manage army lists based on the official Munitorum Field Manual (MFM) points values.
+This is a Warhammer 40K 11th Edition army list builder hosted at https://furka.github.io/40k-11th-list-builder/. It's a Vue 3 application built with Vite that helps users build and manage army lists based on the official Munitorum Field Manual (MFM) points values.
 
 ## Development Commands
 
@@ -188,7 +188,7 @@ This metadata is merged into datasheets during parsing.
 - **Deep Freeze**: MFM data is frozen after parsing to prevent accidental mutations
 - **UUID**: Each unit instance gets a unique ID for drag-and-drop tracking
 - **Visual Scaling**: ArmyList component dynamically scales unit display based on points/max points ratio
-- **Vite Config**: Base path set to `/40k-10th-list-builder/` for GitHub Pages deployment
+- **Vite Config**: Base path set to `/40k-11th-list-builder/` for GitHub Pages deployment
 
 ## Code Style Guidelines
 

@@ -99,8 +99,8 @@ jobs:
       - name: Get latest MFM version
         id: mfm-version
         run: |
-          LATEST_MFM=$(ls src/data/munitorum-field-manual/MFM*.txt | sort -V | tail -1)
-          MFM_VERSION=$(sed -n '3p' "$LATEST_MFM" | tr -d '\r' | sed 's/^VERSION //')
+          LATEST_MANIFEST=$(ls -d src/data/munitorum-field-manual-11th/v*/ | sort -V | tail -1)_manifest.json
+          MFM_VERSION=$(node -p "require('./$LATEST_MANIFEST').siteVersion")
           echo "version=$MFM_VERSION" >> $GITHUB_OUTPUT
       - name: Get commits since last release
         id: commits
