@@ -1,0 +1,857 @@
+{
+  "faction": "WORLD EATERS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "BERZERKER WARBAND",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Battle-lust",
+          "points": 20
+        },
+        {
+          "name": "Berzerker Glaive",
+          "points": 35
+        },
+        {
+          "name": "Favoured of Khorne",
+          "points": 20
+        },
+        {
+          "name": "Helm of Brazen Ire",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "name": "BRAZEN ENGINES",
+      "dp": 1,
+      "tags": [
+        "UNIQUE: ONSLAUGHT"
+      ],
+      "enhancements": [
+        {
+          "name": "Murder-forged Entity (Upgrade)",
+          "points": 15
+        },
+        {
+          "name": "Talons of Butchery (Upgrade)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "BUTCHERS OF KHORNE",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Gore-stained Veterans (Upgrade)",
+          "points": 25
+        },
+        {
+          "name": "Sanctified in Slaughter (Upgrade)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "CULT OF BLOOD",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Brazen Form",
+          "points": 25
+        },
+        {
+          "name": "Butcher Lord",
+          "points": 10
+        },
+        {
+          "name": "Chosen of the Blood God",
+          "points": 15
+        },
+        {
+          "name": "Strategic Slaughter",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "GORETRACK ONSLAUGHT",
+      "dp": 2,
+      "tags": [
+        "UNIQUE: ONSLAUGHT"
+      ],
+      "enhancements": [
+        {
+          "name": "Aggressive Deployment",
+          "points": 20
+        },
+        {
+          "name": "Infernal Infusion",
+          "points": 25
+        },
+        {
+          "name": "Murderous Onslaught",
+          "points": 5
+        },
+        {
+          "name": "Unleash Hell",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "KHORNE DAEMONKIN",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Blade of Endless Bloodshed",
+          "points": 30
+        },
+        {
+          "name": "Blood-Forged Armour",
+          "points": 20
+        },
+        {
+          "name": "Disciple of Khorne",
+          "points": 15
+        },
+        {
+          "name": "Icon of War",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "POSSESSED SLAUGHTERBAND",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Frenzied Focus",
+          "points": 20
+        },
+        {
+          "name": "Killing Clarity",
+          "points": 15
+        },
+        {
+          "name": "Malicious Vigour",
+          "points": 30
+        },
+        {
+          "name": "Violent Demise",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "VESSELS OF WRATH",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Archslaughterer",
+          "points": 40
+        },
+        {
+          "name": "Gateways to Glory",
+          "points": 10
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "ANGRON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 350
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS LAND RAIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS PREDATOR ANNIHILATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS PREDATOR DESTRUCTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS SPAWN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS TERMINATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 185
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 350,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 360
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DAEMON PRINCE OF KHORNE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DAEMON PRINCE OF KHORNE WITH WINGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEFILER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 270,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 300
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EIGHTBOUND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 270,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EXALTED EIGHTBOUND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FORGEFIEND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GOREMONGERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "8 models",
+          "models": 8,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELBRUTE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELDRAKE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JAKHALS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KHÂRN THE BETRAYER",
+      "leader": {
+        "attachesTo": [
+          "KHORNE BERZERKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KHORNE BERZERKERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 345
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KHORNE LORD OF SKULLS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 505,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 535
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD INVOCATUS",
+      "leader": {
+        "attachesTo": [
+          "EIGHTBOUND",
+          "EXALTED EIGHTBOUND",
+          "KHORNE BERZERKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD ON JUGGERNAUT",
+      "leader": {
+        "attachesTo": [
+          "EIGHTBOUND",
+          "EXALTED EIGHTBOUND",
+          "KHORNE BERZERKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MASTER OF EXECUTIONS",
+      "leader": {
+        "attachesTo": [
+          "KHORNE BERZERKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MAULERFIEND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 155
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SLAUGHTERBOUND",
+      "leader": {
+        "attachesTo": [
+          "EIGHTBOUND",
+          "EXALTED EIGHTBOUND"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLOODCRUSHERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLOODLETTERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLOODTHIRSTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 335
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FLESH HOUNDS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKARBRAND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 315
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

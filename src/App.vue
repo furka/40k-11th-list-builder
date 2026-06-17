@@ -1,6 +1,5 @@
 <script setup>
-import { reactive, onMounted, onUnmounted, watch, ref, computed } from "vue";
-import { v4 as uuidv4 } from "uuid";
+import { onMounted, onUnmounted, watch } from "vue";
 import { useArmyListStore } from "./stores/armyList";
 import { useCollectionStore } from "./stores/collection";
 import { useMfmStore } from "./stores/mfm";
@@ -9,7 +8,7 @@ import { useAppStore } from "./stores/app";
 import ArmyList from "./components/ArmyList.vue";
 import ArmyCodex from "./components/ArmyCodex.vue";
 import PrintableArmyList from "./components/PrintableArmyList.vue";
-import { GROUP_NONE, SORT_MANUAL } from "./data/constants";
+import { SORT_MANUAL } from "./data/constants";
 import {
   sortDataSheetAlphabetical,
   sortListPoints,
@@ -19,10 +18,6 @@ import AppToolBar from "./components/AppToolBar.vue";
 import CodexToolBar from "./components/CodexToolBar.vue";
 import VersionBar from "./components/VersionBar.vue";
 import { deserializeList } from "./utils/serialize-list";
-import PACKAGE from "../package.json";
-import { BOARDING_ACTIONS, CONFIGS } from "./data/configs";
-import { runAllMigrations } from "./utils/legacy-migrations";
-import { save } from "./utils/localStorage";
 
 const armyListStore = useArmyListStore();
 const collectionStore = useCollectionStore();
@@ -30,102 +25,18 @@ const mfmStore = useMfmStore();
 const codexStore = useCodexStore();
 const appStore = useAppStore();
 
-const appData = reactive({
-  boardingActions: BOARDING_ACTIONS,
-});
-
-
-const factions = computed(() => {
-  const baseFactions = (armyListStore.currentMFM || mfmStore.MFM.CURRENT).FACTIONS;
-
-  return baseFactions.map((faction) => {
-    let detachments = [...faction.detachments];
-
-    // Add boarding actions detachments
-    const baConfig = appData.boardingActions[faction.name];
-    if (baConfig) {
-      const baDetachments = Object.keys(baConfig).map((detachmentName) => ({
-        name: detachmentName,
-        boardingActions: true,
-      }));
-      detachments = [...detachments, ...baDetachments];
-    }
-
-    // Add subFaction detachments if this is the current faction and a subFaction is selected
-    if (
-      faction.name === armyListStore.faction &&
-      armyListStore.subFaction
-    ) {
-      const subFaction = baseFactions.find(
-        (f) => f.name === armyListStore.subFaction
-      );
-      if (subFaction) {
-        detachments = [...detachments, ...subFaction.detachments];
-      }
-    }
-
-    return {
-      ...faction,
-      detachments,
-    };
-  });
-});
-
-const boardingActionsConfig = computed(() => {
-  if (!armyListStore.isBoardingActions) {
-    return null;
-  }
-  return appData.boardingActions[armyListStore.faction]?.[
-    armyListStore.detachment
-  ];
-});
-
-const detachmentDisplayName = computed(() => {
-  const detachment = armyListStore.detachment;
-  if (!detachment) return "";
-  const config =
-    appData.boardingActions[armyListStore.faction]?.[detachment];
-  return config?.displayName || detachment;
-});
-
-const availableSubFactions = computed(() => {
-  const currentFaction = armyListStore.faction;
-  if (!currentFaction) return [];
-
-  return Object.keys(CONFIGS["sub-factions"]).filter((factionName) => {
-    return CONFIGS["sub-factions"][factionName] === currentFaction;
-  });
-});
-
-console.log(appData);
-
 function initializeApp() {
   const defaultList = appStore.createNewList();
   armyListStore.loadFromStorage(defaultList);
   collectionStore.loadFromStorage();
 
-  const currentList = armyListStore.toObject();
-  const migrationsAppData = {
-    ...appData,
-    currentList,
-    lists: appStore.lists,
-    collection: collectionStore.collection
-  };
-
-  runAllMigrations(migrationsAppData, (key, val = migrationsAppData[key]) => {
-    if (key === 'collection') {
-      collectionStore.setCollection(val);
-    } else {
-      save(key, val);
-    }
+  // Auto-upgrade the current list and each saved list to the latest MFM
+  // version when their points are unchanged.
+  [armyListStore.toObject(), ...appStore.lists].forEach((list) => {
+    mfmStore.autoUpgradeMFMVersion(list);
   });
 
-  armyListStore.setList(migrationsAppData.currentList);
-
-  // Initialize codex store with current values
   codexStore.setFaction(armyListStore.faction);
-  codexStore.setSubFaction(armyListStore.subFaction);
-  codexStore.setDetachment(armyListStore.detachment);
   codexStore.setCurrentMFM(armyListStore.currentMFM);
 
   const searchParams = new URLSearchParams(window.location.search);
@@ -156,13 +67,9 @@ const handleResize = () => {
 
 function applySortToList() {
   const sortOrder = armyListStore.sortOrder || SORT_MANUAL;
-
-  if (sortOrder === SORT_MANUAL) {
-    return;
-  }
+  if (sortOrder === SORT_MANUAL) return;
 
   const units = [...armyListStore.units];
-
   if (sortOrder === "A-Z") {
     units.sort(sortDataSheetAlphabetical);
   } else if (sortOrder === "Expensive first") {
@@ -172,12 +79,7 @@ function applySortToList() {
   } else if (sortOrder === "By Role") {
     units.sort(sortListByRole(codexStore.getDataSheet));
   }
-
   armyListStore.setUnits(units);
-}
-
-function setSortOrder(sortOrder) {
-  armyListStore.sortOrder = sortOrder;
 }
 
 watch(
@@ -190,42 +92,7 @@ watch(
   (newFaction) => {
     appStore.codexFilter = "";
     appStore.editCollection = false;
-    armyListStore.subFaction = null;
-    armyListStore.detachment = mfmStore.MFM.CURRENT.FACTIONS.find(
-      (f) =>
-        f.name?.toLowerCase() === newFaction?.toLowerCase()
-    )?.detachments[0]?.name;
     codexStore.setFaction(newFaction);
-  }
-);
-
-watch(
-  () => armyListStore.subFaction,
-  (newSubFaction) => {
-    const faction = factions.value.find(
-      (f) =>
-        f.name?.toLowerCase() === armyListStore.faction?.toLowerCase()
-    );
-
-    if (!faction?.detachments) return;
-
-    const currentDetachment = armyListStore.detachment;
-    const isDetachmentAvailable = faction.detachments.some(
-      (d) => d.name === currentDetachment
-    );
-
-    if (!isDetachmentAvailable) {
-      armyListStore.detachment = faction.detachments[0]?.name;
-    }
-
-    codexStore.setSubFaction(newSubFaction);
-  }
-);
-
-watch(
-  () => armyListStore.detachment,
-  (newDetachment) => {
-    codexStore.setDetachment(newDetachment);
   }
 );
 

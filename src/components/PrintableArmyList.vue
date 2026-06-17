@@ -1,35 +1,28 @@
 <script setup>
 import { computed } from "vue";
 import { useArmyListStore } from "../stores/armyList";
-import { useMfmStore } from "../stores/mfm";
-import { BOARDING_ACTIONS } from "../data/configs";
 
 const armyListStore = useArmyListStore();
-const mfmStore = useMfmStore();
-
-const detachmentDisplayName = computed(() => {
-  const detachment = armyListStore.detachment;
-  if (!detachment) return "";
-  const config = BOARDING_ACTIONS[armyListStore.faction]?.[detachment];
-  return config?.displayName || detachment;
-});
 
 const PADSIZE = 10;
 
 function getUnitPoints(unit) {
-  const unitPoints = mfmStore.getPoints(unit, armyListStore.currentMFM);
-  return unitPoints > 0 ? unitPoints : 0;
+  const entry = armyListStore.pointsBreakdown.perUnit[unit.id];
+  const p = entry?.points ?? 0;
+  return p > 0 ? p : 0;
 }
 
-const validUnits = computed(() => {
-  return armyListStore.units.filter(
-    (unit) => getUnitPoints(unit) > 0
-  );
-});
+const validUnits = computed(() =>
+  armyListStore.units.filter((unit) => getUnitPoints(unit) > 0)
+);
 
-const points = computed(() => {
-  return validUnits.value.reduce((acc, curr) => acc + getUnitPoints(curr), 0);
-});
+const points = computed(() => armyListStore.pointsBreakdown.total);
+const dp = computed(() => armyListStore.pointsBreakdown.dp);
+const detachmentSummary = computed(() =>
+  (dp.value?.byDetachment ?? [])
+    .map((d) => `${d.name} (${d.dp}DP)`)
+    .join(", ")
+);
 
 const maxUnitNameLength = computed(() => {
   const length = validUnits.value.reduce(
@@ -69,12 +62,14 @@ function unitLine(unit) {
       {{ armyListStore.name }}
     </h1>
     <h2>
-      <span class="army-list__name">
-        {{ armyListStore.faction }} —
-        {{ detachmentDisplayName }}
-      </span>
+      <span class="army-list__name">{{ armyListStore.faction }}</span>
+      — {{ armyListStore.mfm_version }}
       — {{ points }} pts
+      <span v-if="dp">— {{ dp.used }}/{{ dp.max }} DP</span>
     </h2>
+    <p v-if="detachmentSummary" class="army-list__detachments">
+      Detachments: {{ detachmentSummary }}
+    </p>
 
     <ul>
       <li v-for="(unit, index) in validUnits">
@@ -92,6 +87,11 @@ function unitLine(unit) {
 
   &__name {
     text-transform: capitalize;
+  }
+
+  &__detachments {
+    font-style: italic;
+    margin: 0 0 8px;
   }
 
   ul {

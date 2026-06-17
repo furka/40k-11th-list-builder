@@ -8,6 +8,7 @@ import { computed } from "vue";
 import { useArmyListStore } from "../stores/armyList";
 import { useMfmStore } from "../stores/mfm";
 import { useAppStore } from "../stores/app";
+import { computeListPoints } from "../utils/list-points";
 
 const armyListStore = useArmyListStore();
 const mfmStore = useMfmStore();
@@ -15,14 +16,13 @@ const appStore = useAppStore();
 
 function points(units, list) {
   const mfm = mfmStore.getVersion(list.mfm_version) || mfmStore.MFM.CURRENT;
-  return units.reduce((acc, curr) => {
-    const unitPoints = mfmStore.getPoints(curr, mfm);
-    return acc + (unitPoints > 0 ? unitPoints : 0);
-  }, 0);
+  return computeListPoints(list, mfm, list.faction).total;
 }
 
 function mfmVersion(list) {
-  return list.mfm_version?.replace("VERSION ", "") ?? "???";
+  if (!list.mfm_version) return "???";
+  // "V1.0 (2026-06-17)" → "1.0 (2026-06-17)"
+  return list.mfm_version.replace(/^V/, "");
 }
 
 const lists = computed(() => {
@@ -64,12 +64,6 @@ function deleteList(list) {
               <span class="open-modal__list-details">
                 <template v-if="list.name">—</template>
                 {{ list.faction }} —
-                <template v-if="list.subFaction">
-                  {{ list.subFaction }} —
-                </template>
-                <template v-if="list.detachment">
-                  {{ list.detachment }} —
-                </template>
                 {{ points(list.units, list) }} pts
                 <b v-if="index === 0"> (current)</b>
               </span>
@@ -153,6 +147,26 @@ function deleteList(list) {
   &__mfm-label {
     font-size: 12px;
     font-weight: bold;
+  }
+
+  &__edition {
+    background-color: #888;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 8px;
+    padding: 2px 6px;
+    white-space: nowrap;
+
+    &--11th {
+      background-color: #2c7;
+    }
+  }
+
+  &__edition-label {
+    font-size: 10px;
+    margin-right: 2px;
+    opacity: 0.75;
   }
 
   &__delete,

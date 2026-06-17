@@ -6,42 +6,24 @@ import NewIcon from "../assets/file-line-icon.svg";
 import ToolBar from "./ToolBar.vue";
 import ShareListModal from "./ShareListModal.vue";
 import { useArmyListStore } from "../stores/armyList";
-import { useMfmStore } from "../stores/mfm";
 import { useAppStore } from "../stores/app";
-import { BOARDING_ACTIONS } from "../data/configs";
 
 const armyListStore = useArmyListStore();
-const mfmStore = useMfmStore();
 const appStore = useAppStore();
 
-const points = computed(() => {
-  return armyListStore.units.reduce((acc, curr) => {
-    const unitPoints = mfmStore.getPoints(curr, armyListStore.currentMFM, armyListStore.faction);
-    return acc + (unitPoints > 0 ? unitPoints : 0);
-  }, 0);
-});
-
-const detachmentDisplayName = computed(() => {
-  const detachment = armyListStore.detachment;
-  if (!detachment) return "";
-  const config = BOARDING_ACTIONS[armyListStore.faction]?.[detachment];
-  return config?.displayName || detachment;
-});
+const points = computed(() => armyListStore.pointsBreakdown.total);
+const dp = computed(() => armyListStore.pointsBreakdown.dp);
 </script>
 
 <template>
   <ToolBar class="app-toolbar">
     <div class="toolbar__group toolbar__group--points">
-      <label :class="{ 'label--static': armyListStore.isBoardingActions }">
+      <label>
         <span :class="{ over: points > armyListStore.effectiveMaxPoints }">
           {{ points }}
         </span>
         /
-        <span v-if="armyListStore.isBoardingActions">{{
-          armyListStore.effectiveMaxPoints
-        }}</span>
         <input
-          v-else
           type="number"
           min="500"
           step="500"
@@ -56,6 +38,10 @@ const detachmentDisplayName = computed(() => {
               ) + 'ch',
           }"
         />
+      </label>
+      <label v-if="dp" class="toolbar__dp" title="Detachment Points">
+        <span :class="{ over: dp.used > dp.max }">{{ dp.used }}</span>
+        / {{ dp.max }} DP
       </label>
     </div>
 
@@ -102,6 +88,7 @@ const detachmentDisplayName = computed(() => {
 
       &--points {
         display: flex;
+        gap: 12px;
         justify-content: space-between;
         min-width: 250px;
 
@@ -110,14 +97,15 @@ const detachmentDisplayName = computed(() => {
           cursor: pointer;
         }
 
-        .label--static {
-          cursor: default;
-        }
-
         .over {
           color: #ff0000;
         }
       }
+    }
+
+    &__dp {
+      font-size: 0.9em;
+      white-space: nowrap;
     }
   }
 }

@@ -5,7 +5,7 @@ import svgLoader from "vite-svg-loader";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), svgLoader()],
-  base: "/40k-10th-list-builder/",
+  base: "/40k-11th-list-builder/",
   define: {
     __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: JSON.stringify(false),
     __VUE_OPTIONS_API__: JSON.stringify(true),

@@ -19,16 +19,20 @@ export const sortDataSheetPtsAscending = function (a, b) {
 };
 
 function getMostExpensiveOption(sizes) {
-  return Math.max(...sizes.filter((s) => !s.bonus).map((s) => s.points));
+  return Math.max(
+    ...sizes.filter((s) => !s.bonus).map((s) => s.basePoints ?? s.points)
+  );
 }
 
 function getCheapestOption(sizes) {
-  return Math.min(...sizes.filter((s) => !s.bonus).map((s) => s.points));
+  return Math.min(
+    ...sizes.filter((s) => !s.bonus).map((s) => s.basePoints ?? s.points)
+  );
 }
 
 export const sortOptionsPtsDescending = function (a, b) {
-  a = a.bonus ? 0 : a.points;
-  b = b.bonus ? 0 : b.points;
+  a = a.bonus ? 0 : a.basePoints ?? a.points;
+  b = b.bonus ? 0 : b.basePoints ?? b.points;
   return a < b ? 1 : a > b ? -1 : 0;
 };
 
@@ -58,13 +62,13 @@ export const sortListByRole = function (getDataSheet) {
       if (!dataSheet && !isEnhancement) return 5;
 
       if (dataSheet?.character || dataSheet?.epicHero) return 1;
+      if (dataSheet?.leader) return 1;
       if (isEnhancement) return 2;
-      if (dataSheet?.battleLine) return 3;
-      if (dataSheet?.dedicatedTransport) return 4;
-      if (dataSheet?.allies) return 6;
-      if (dataSheet?.forgeWorld) return 7;
+      if (dataSheet?.support) return 3;
+      if (dataSheet?.battleLine) return 4;
+      if (dataSheet?.dedicatedTransport) return 5;
       if (dataSheet?.fortification) return 8;
-      return 5;
+      return 6;
     };
 
     const priorityA = getRolePriority(a);

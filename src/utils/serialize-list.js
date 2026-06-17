@@ -1,12 +1,10 @@
-import { v4 as uuidv4 } from "uuid";
-
 const MAP = {
   name: "n",
   faction: "f",
   maxPoints: "m",
   version: "v",
   mfm_version: "mfm",
-  detachment: "d",
+  detachments: "ds",
 };
 
 const UNIT_MAP = {
@@ -20,23 +18,25 @@ const PARSERS = {
   maxPoints: Number,
   models: Number,
   points: Number,
+  detachments: (v) => (v ? v.split(",") : []),
+};
+
+const SERIALIZERS = {
+  detachments: (v) => (Array.isArray(v) ? v.join(",") : ""),
 };
 
 export const serializeList = function (data) {
   const search = new URLSearchParams();
 
-  Object.entries(data).forEach((pair) => {
-    const key = pair[0];
-    const val = pair[1];
+  Object.entries(data).forEach(([key, val]) => {
     if (key in MAP) {
-      search.set(MAP[key], encodeURIComponent(val));
+      const out = SERIALIZERS[key] ? SERIALIZERS[key](val) : val;
+      search.set(MAP[key], encodeURIComponent(out));
     }
   });
 
   data.units.forEach((u) => {
-    Object.entries(UNIT_MAP).forEach((pair) => {
-      const key = pair[0];
-      const sKey = pair[1];
+    Object.entries(UNIT_MAP).forEach(([key, sKey]) => {
       const val = u[key];
       search.append(sKey, encodeURIComponent(val || ""));
     });
@@ -46,36 +46,19 @@ export const serializeList = function (data) {
 };
 
 export const deserializeList = function (search) {
-  const data = {
-    units: [],
-  };
+  const data = { units: [] };
 
-  Object.entries(UNIT_MAP).forEach((pair) => {
-    const key = pair[0];
-    const sKey = pair[1];
-
+  Object.entries(UNIT_MAP).forEach(([key, sKey]) => {
     const res = search.getAll(sKey);
-
     for (let i = 0; i < res.length; i++) {
-      if (!data.units[i]) {
-        data.units[i] = {};
-      }
-
-      if (res[i]) {
-        data.units[i][key] = parse(key, res[i]);
-      }
+      if (!data.units[i]) data.units[i] = {};
+      if (res[i]) data.units[i][key] = parse(key, res[i]);
     }
   });
 
-  Object.entries(MAP).forEach((pair) => {
-    const key = pair[0];
-    const sKey = pair[1];
-
+  Object.entries(MAP).forEach(([key, sKey]) => {
     const res = search.get(sKey);
-
-    if (res) {
-      data[key] = parse(key, res);
-    }
+    if (res) data[key] = parse(key, res);
   });
 
   return data;
@@ -83,8 +66,6 @@ export const deserializeList = function (search) {
 
 function parse(key, val) {
   val = decodeURIComponent(val);
-  if (PARSERS[key]) {
-    return PARSERS[key](val);
-  }
+  if (PARSERS[key]) return PARSERS[key](val);
   return val;
 }

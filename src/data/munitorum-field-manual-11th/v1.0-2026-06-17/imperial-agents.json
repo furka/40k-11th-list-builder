@@ -1,0 +1,1317 @@
+{
+  "faction": "IMPERIAL AGENTS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "IMPERIALIS FLEET",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Clandestine Operation",
+          "points": 15
+        },
+        {
+          "name": "Combat Landers",
+          "points": 10
+        },
+        {
+          "name": "Digital Weapons",
+          "points": 10
+        },
+        {
+          "name": "Fleetmaster",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "ORDO HERETICUS, PURGATION FORCE",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Ignis Judicium",
+          "points": 10
+        },
+        {
+          "name": "Liber Heresius",
+          "points": 10
+        },
+        {
+          "name": "No Escape",
+          "points": 25
+        },
+        {
+          "name": "Witch Hunter",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "ORDO MALLEUS, DAEMON HUNTERS",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Daemon Slayer",
+          "points": 10
+        },
+        {
+          "name": "Formidable Resolve",
+          "points": 5
+        },
+        {
+          "name": "Gift of the Prescient",
+          "points": 20
+        },
+        {
+          "name": "Grimoire of True Names",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "ORDO XENOS, ALIEN HUNTERS",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Amulet of Auto-chastisement",
+          "points": 25
+        },
+        {
+          "name": "Beacon Angelis",
+          "points": 30
+        },
+        {
+          "name": "Blackweave Shroud",
+          "points": 15
+        },
+        {
+          "name": "Universal Anathema",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "VEILED BLADE ELIMINATION FORCE",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Decoy Targets",
+          "points": 40
+        },
+        {
+          "name": "Esoteric Explosives",
+          "points": 40
+        },
+        {
+          "name": "Introneural Biotech",
+          "points": 35
+        },
+        {
+          "name": "Micromelta Rounds",
+          "points": 45
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "AQUILA KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CALLIDUS ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CORVUS BLACKSTAR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CULEXUS ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHWATCH KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EVERSOR ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EXACTION SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREY KNIGHTS TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMPERIAL NAVY BREACHERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMPERIAL RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "GREY KNIGHTS TERMINATOR SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SANCTIFIERS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR COTEAZ",
+      "leader": {
+        "attachesTo": [
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "GREY KNIGHTS TERMINATOR SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR DRAXUS",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR GREYFAX",
+      "leader": {
+        "attachesTo": [
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SANCTIFIERS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITORIAL AGENTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "12 models",
+          "models": 12,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITORIAL CHIMERA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR KROYLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MINISTORUM PRIEST",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SANCTIFIERS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NAVIGATOR",
+      "leader": {
+        "attachesTo": [
+          "IMPERIAL NAVY BREACHERS",
+          "VOIDSMEN-AT-ARMS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROGUE TRADER ENTOURAGE",
+      "leader": {
+        "attachesTo": [
+          "IMPERIAL NAVY BREACHERS",
+          "VOIDSMEN-AT-ARMS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SANCTIFIERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "9 models",
+          "models": 9,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SISTERS OF BATTLE IMMOLATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SISTERS OF BATTLE SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SUBDUCTOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VIGILANT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VINDICARE ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VOIDSMEN-AT-ARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WATCH CAPTAIN ARTEMIS",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "DEATHWATCH KILL TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WATCH MASTER",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "DEATHWATCH KILL TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AQUILA KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CALLIDUS ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CORVUS BLACKSTAR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CULEXUS ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHWATCH KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EVERSOR ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EXACTION SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREY KNIGHTS TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMPERIAL NAVY BREACHERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMPERIAL RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "GREY KNIGHTS TERMINATOR SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SANCTIFIERS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR COTEAZ",
+      "leader": {
+        "attachesTo": [
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "GREY KNIGHTS TERMINATOR SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR DRAXUS",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR GREYFAX",
+      "leader": {
+        "attachesTo": [
+          "BATTLELINE IMPERIUM INFANTRY",
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SANCTIFIERS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITORIAL AGENTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "12 models",
+          "models": 12,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITORIAL CHIMERA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INQUISITOR KROYLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MINISTORUM PRIEST",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SANCTIFIERS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NAVIGATOR",
+      "leader": {
+        "attachesTo": [
+          "IMPERIAL NAVY BREACHERS",
+          "VOIDSMEN-AT-ARMS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROGUE TRADER ENTOURAGE",
+      "leader": {
+        "attachesTo": [
+          "IMPERIAL NAVY BREACHERS",
+          "VOIDSMEN-AT-ARMS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SANCTIFIERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "9 models",
+          "models": 9,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SISTERS OF BATTLE IMMOLATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SISTERS OF BATTLE SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SUBDUCTOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VIGILANT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VINDICARE ASSASSIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VOIDSMEN-AT-ARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WATCH CAPTAIN ARTEMIS",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "DEATHWATCH KILL TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WATCH MASTER",
+      "leader": {
+        "attachesTo": [
+          "AQUILA KILL TEAM",
+          "DEATHWATCH KILL TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

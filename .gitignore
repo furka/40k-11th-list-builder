@@ -25,3 +25,6 @@ dist-ssr
 
 # Temporary files
 tmp/
+
+# Scraper HTML cache (regenerated on each run)
+scripts/scrape-mfm-11th/.cache/

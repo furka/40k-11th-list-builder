@@ -1,0 +1,888 @@
+{
+  "faction": "GREY KNIGHTS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "ARGENT ASSAULT",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Psychic Celerity",
+          "points": 15
+        },
+        {
+          "name": "Vigilance of Titan",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "AUGURIUM TASK FORCE",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Doomseer’s Amulet",
+          "points": 25
+        },
+        {
+          "name": "Grimoire of Conjunctions",
+          "points": 10
+        },
+        {
+          "name": "One Foot in the Future",
+          "points": 15
+        },
+        {
+          "name": "Shield of Prophecy",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "BANISHERS",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Ephemeral Tome",
+          "points": 15
+        },
+        {
+          "name": "Pyresoul",
+          "points": 20
+        },
+        {
+          "name": "Sigil of the Hunt",
+          "points": 10
+        },
+        {
+          "name": "Sixty-sixth Seal",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "BROTHERHOOD STRIKE",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Banishing Wave",
+          "points": 20
+        },
+        {
+          "name": "Blinding Aura",
+          "points": 10
+        },
+        {
+          "name": "Purity of Purpose",
+          "points": 15
+        },
+        {
+          "name": "Tome of Forbidden Ways",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "FIRES OF PURGATION",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Boons of Deimos (Upgrade)",
+          "points": 20
+        },
+        {
+          "name": "Precognicient Volleys (Upgrade)",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "HALLOWED CONCLAVE",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Eye of the Augurium",
+          "points": 25
+        },
+        {
+          "name": "Inescapable Judgement",
+          "points": 20
+        },
+        {
+          "name": "Nemesis Rounds",
+          "points": 10
+        },
+        {
+          "name": "Sanctic Reaper",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "IMMATERIAL INTERDICTION",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Astral Overlap (Upgrade)",
+          "points": 10
+        },
+        {
+          "name": "Predestined Coordinates (Upgrade)",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "SANCTIC SPEARHEAD",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Driven by Duty",
+          "points": 10
+        },
+        {
+          "name": "Quickening Foci",
+          "points": 15
+        },
+        {
+          "name": "Sigil of Exigence",
+          "points": 30
+        },
+        {
+          "name": "Spiritus Machina",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "WARPBANE TASK FORCE",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Mandulian Reliquary",
+          "points": 20
+        },
+        {
+          "name": "Paragon of Sanctity",
+          "points": 10
+        },
+        {
+          "name": "Phial of the Abyss",
+          "points": 15
+        },
+        {
+          "name": "Radiant Champion",
+          "points": 15
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "BROTHER-CAPTAIN",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BROTHERHOOD CHAMPION",
+      "leader": {
+        "attachesTo": [
+          "PURGATION SQUAD",
+          "STRIKE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BROTHERHOOD CHAPLAIN",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BROTHERHOOD LIBRARIAN",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BROTHERHOOD TECHMARINE",
+      "leader": {
+        "attachesTo": [
+          "PURGATION SQUAD",
+          "PURIFIER SQUAD",
+          "STRIKE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BROTHERHOOD TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 185
+            }
+          ]
+        },
+        {
+          "name": "8 models",
+          "models": 8,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 300,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 310
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 375,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 385
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CASTELLAN CROWE",
+      "leader": {
+        "attachesTo": [
+          "PURIFIER SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GRAND MASTER",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GRAND MASTER IN NEMESIS DREADKNIGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 215
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GRAND MASTER VOLDUS",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREY KNIGHTS THUNDERHAWK GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 805,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 855
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INTERCEPTOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 260
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND RAIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND RAIDER CRUSADER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND RAIDER REDEEMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEMESIS DREADKNIGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 195,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PALADIN SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 185
+            }
+          ]
+        },
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 215,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 230
+            }
+          ]
+        },
+        {
+          "name": "8 models",
+          "models": 8,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 360,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 375
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 450,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 465
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PURGATION SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 230
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PURIFIER SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 140
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 260,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAZORBACK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORMHAWK INTERCEPTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORMRAVEN GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 300
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORMTALON GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STRIKE SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VENERABLE DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

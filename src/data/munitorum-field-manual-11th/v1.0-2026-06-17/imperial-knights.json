@@ -1,0 +1,641 @@
+{
+  "faction": "IMPERIAL KNIGHTS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "DOMINUS FOEBREAKERS",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Archeotech Autoloaders",
+          "points": 25
+        },
+        {
+          "name": "Blessed Plate",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "name": "FREEBLADE COMPANY",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Bringer of Justice",
+          "points": 30
+        },
+        {
+          "name": "Hunter’s Eye",
+          "points": 25
+        },
+        {
+          "name": "Mysterious Guardian",
+          "points": 35
+        },
+        {
+          "name": "Sanctuary",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "GATE WARDEN LANCE",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Acquisitor-at-Arms",
+          "points": 15
+        },
+        {
+          "name": "Augury Halo",
+          "points": 20
+        },
+        {
+          "name": "Purgation’s Hand",
+          "points": 20
+        },
+        {
+          "name": "Vengeful Tread",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "QUESTOR FORGEPACT",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Knight of the Opus Machina (Aura)",
+          "points": 15
+        },
+        {
+          "name": "Magos Questoris",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "QUESTORIS COMPANIONS",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Crushing Condemnation",
+          "points": 10
+        },
+        {
+          "name": "Herald of Triumph",
+          "points": 15
+        },
+        {
+          "name": "Pennant of Silvered Fury",
+          "points": 15
+        },
+        {
+          "name": "Wyrmslayer Divination",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "SPEARHEAD-AT-ARMS",
+      "dp": 2,
+      "tags": [
+        "UNIQUE: ARMIGERS"
+      ],
+      "enhancements": [
+        {
+          "name": "Fables of Nightmare",
+          "points": 10
+        },
+        {
+          "name": "Martial Tuition",
+          "points": 15
+        },
+        {
+          "name": "Mentor’s Pride",
+          "points": 20
+        },
+        {
+          "name": "Tales of Heroism",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "THRONE-BONDED OUTRIDERS",
+      "dp": 1,
+      "tags": [
+        "UNIQUE: ARMIGERS"
+      ],
+      "enhancements": [
+        {
+          "name": "Ancestral Overbleed (Upgrade)",
+          "points": 10
+        },
+        {
+          "name": "Gyro-optimised Actuators (Upgrade)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "VALOURSTRIKE LANCE",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Bearer of the Evanescent Ion",
+          "points": 15
+        },
+        {
+          "name": "Bearer of the Iron Chalice",
+          "points": 20
+        },
+        {
+          "name": "Bearer of the Judicant’s Helm",
+          "points": 25
+        },
+        {
+          "name": "Bearer of the Lancer’s Sigil",
+          "points": 25
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "ACASTUS KNIGHT ASTERIUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 785,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 860
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ACASTUS KNIGHT PORPHYRION",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 725,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARMIGER HELVERIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARMIGER MOIRAX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARMIGER WARGLAIVE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANIS REX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 415
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CERASTUS KNIGHT ACHERON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 380,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 395
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CERASTUS KNIGHT ATRAPOS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 405,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 425
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CERASTUS KNIGHT CASTIGATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 380,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 395
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CERASTUS KNIGHT LANCER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 415,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 435
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT CASTELLAN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 420
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT CRUSADER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 395,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 415
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT DEFENDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 420
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT DESTRIER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 265,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT ERRANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 355,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 370
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT GALLANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 355,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 370
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT PALADIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 375,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 390
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT PRECEPTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 365,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 380
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT VALIANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 415
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT WARDEN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 375,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 390
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "QUESTORIS KNIGHT MAGAERA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 385,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "QUESTORIS KNIGHT STYRIX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 375,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 390
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

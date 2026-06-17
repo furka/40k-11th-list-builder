@@ -6,22 +6,10 @@ import { sortOptionsPtsDescending } from "../utils/sort-functions";
 import { isBattleLine } from "../utils/is-battleline";
 import { isDedicatedTransport } from "../utils/is-dedicated-transport";
 import { unitMax } from "../utils/unit-max";
-import {
-  isBoardingActionsSlotFull,
-  getBoardingActionsMax,
-  getBoardingActionsErrorMessage,
-} from "../utils/boarding-actions";
 import { useArmyListStore } from "../stores/armyList";
-import { useCollectionStore } from "../stores/collection";
-import { useMfmStore } from "../stores/mfm";
-import { useCodexStore } from "../stores/codex";
 import { useAppStore } from "../stores/app";
-import { isEndlessEnhancement } from "../utils/endless-enhancement";
 
 const armyListStore = useArmyListStore();
-const collectionStore = useCollectionStore();
-const mfmStore = useMfmStore();
-const codexStore = useCodexStore();
 const appStore = useAppStore();
 
 const props = defineProps({
@@ -41,274 +29,178 @@ function addUnit(option) {
   armyListStore.addUnit(newUnit);
 }
 
-const owned = computed(() => {
-  if (props.dataSheet.enhancements) {
-    return 999;
-  }
-
-  return collectionStore.getUnitCount(props.dataSheet.name);
-});
-
-function onCollectionBlur(event) {
-  const value = Math.min(999, Math.max(0, Number(event.target.value)));
-  collectionStore.setUnitCount(props.dataSheet.name, value);
-}
-
 const options = computed(() => {
-  const currentMFM = armyListStore.currentMFM;
-  const previousMFM = mfmStore.getPreviousMFM(currentMFM);
-
-  const sizes = [...props.dataSheet.sizes].map((size) => {
-    const unit = {
-      name: props.dataSheet.name,
-      optionName: size.name,
-      models: size.models,
-      points: size.points,
-    };
-
-    const pointsDiff = previousMFM
-      ? mfmStore.getUnitPointsDifference(unit, currentMFM, previousMFM)
-      : 0;
-
-    return {
-      ...size,
-      pointsChange:
-        pointsDiff !== 0
-          ? pointsDiff > 0
-            ? `+${pointsDiff}`
-            : `${pointsDiff}`
-          : null,
-    };
-  });
-
+  const sizes = [...props.dataSheet.sizes];
   if (appStore.sortOrder === SORT_EXPENSIVE_FIRST) {
     sizes.sort(sortOptionsPtsDescending);
   }
-
   return sizes;
 });
 
-const count = computed(() => {
-  // For boarding actions enhancements, count all enhancements, not just this category
-  if (props.dataSheet.enhancements && armyListStore.isBoardingActions) {
-    return armyListStore.totalEnhancementsCount;
-  }
-  return armyListStore.unitCounts[props.dataSheet.name] || 0;
-});
+// Pivot per-size tiers into per-tier groups so the codex can show every
+// price point upfront (e.g. "YOUR 1ST TO 2ND UNITS COST" / "YOUR 3RD + UNIT
+// COSTS") instead of squashing them onto one line. Tier groups that wouldn't
+// apply to the next copy the user adds are flagged disabled — the running
+// count picks the actual tier at engine time, so the codex's job is purely
+// to make it impossible to misclick.
+const tierGroups = computed(() => {
+  const sizes = options.value;
+  if (!sizes.length) return [];
 
-const maxed = computed(() => {
-  const max = unitMax(props.dataSheet, armyListStore.isBoardingActions);
+  const tierKey = (t) => `${t.minCount}::${t.maxCount ?? "*"}`;
+  const tierMap = new Map();
 
-  if (armyListStore.isBoardingActions) {
-    // For enhancements in boarding actions, limit is based on non-epic characters
-    if (props.dataSheet.enhancements) {
-      return (
-        armyListStore.totalEnhancementsCount >=
-        armyListStore.nonEpicCharacterCount
-      );
+  for (const size of sizes) {
+    const tiers = size.tiers ?? [
+      { minCount: 1, points: size.basePoints ?? size.points },
+    ];
+    for (const tier of tiers) {
+      const k = tierKey(tier);
+      if (!tierMap.has(k)) {
+        tierMap.set(k, {
+          minCount: tier.minCount,
+          maxCount: tier.maxCount,
+          rows: [],
+        });
+      }
+      tierMap.get(k).rows.push({ size, points: tier.points });
     }
-
-    const slotFull = isBoardingActionsSlotFull(props.dataSheet.name);
-
-    return count.value >= max || slotFull;
   }
 
-  return count.value >= max;
+  const groups = [...tierMap.values()].sort(
+    (a, b) => a.minCount - b.minCount
+  );
+  const nextCount = (count.value || 0) + 1;
+
+  return groups.map((g) => ({
+    ...g,
+    heading: tierHeadingFor(g),
+    tierEnabled:
+      nextCount >= g.minCount &&
+      (g.maxCount === undefined || nextCount <= g.maxCount),
+  }));
 });
 
-const max = computed(() => {
-  // For boarding actions enhancements, max is number of non-epic characters
-  if (props.dataSheet.enhancements && armyListStore.isBoardingActions) {
-    return armyListStore.nonEpicCharacterCount;
-  }
-
-  if (
-    props.dataSheet.enhancements &&
-    props.dataSheet.sizes.map((o) => isEndlessEnhancement(o)).some((i) => i)
-  ) {
-    return Infinity;
-  }
-
-  return unitMax(props.dataSheet, armyListStore.isBoardingActions);
-});
-
-const hasOwned = computed(() => {
-  if (props.dataSheet.enhancements) {
-    return true;
-  }
-
-  if (appStore.editCollection) {
-    return true;
-  }
-
-  return owned.value > 0;
-});
-
-const modelsTaken = computed(() => {
-  return armyListStore.modelsTaken[props.dataSheet.name] || 0;
-});
-
-const color = computed(() => {
-  let up = false;
-  let down = false;
-
-  options.value.forEach((o) => {
-    if (!o.pointsChange) {
-      return;
-    }
-    if (o.pointsChange.startsWith("+")) {
-      up = true;
-    }
-    if (o.pointsChange.startsWith("-")) {
-      down = true;
-    }
-  });
-
-  if (up && down) {
-    return "rgba(111, 97, 0, 0.85)";
-  } else if (up) {
-    return "rgba(150, 0, 0, 0.85)";
-  } else if (down) {
-    return "rgba(0, 145, 77, 0.85)";
-  } else {
-    return "rgba(0, 0, 0, 0.65)";
-  }
-});
-
-function enoughInCollection(option) {
-  if (!option.models) {
-    return true;
-  }
-
-  return option.models + modelsTaken.value <= owned.value;
+function tierHeadingFor(g) {
+  const min = g.minCount;
+  const max = g.maxCount;
+  if (min === 1 && max === undefined) return "YOUR UNIT COSTS";
+  if (max === undefined) return `YOUR ${ord(min).toUpperCase()} + UNIT COSTS`;
+  if (max === min) return `YOUR ${ord(min).toUpperCase()} UNIT COSTS`;
+  return `YOUR ${ord(min).toUpperCase()} TO ${ord(max).toUpperCase()} UNITS COST`;
 }
 
+function ord(n) {
+  const lastTwo = n % 100;
+  if (lastTwo >= 11 && lastTwo <= 13) return `${n}th`;
+  const last = n % 10;
+  if (last === 1) return `${n}st`;
+  if (last === 2) return `${n}nd`;
+  if (last === 3) return `${n}rd`;
+  return `${n}th`;
+}
+
+function rowAvailable(row, tierGroup) {
+  return tierGroup.tierEnabled && optionAvailable(row.size);
+}
+
+const count = computed(
+  () => armyListStore.unitCounts[props.dataSheet.name] || 0
+);
+
+const max = computed(() =>
+  unitMax(props.dataSheet, armyListStore.toObject())
+);
+
+const maxed = computed(() => count.value >= max.value);
+
 function enhancementTaken(enhancement) {
-  if (isEndlessEnhancement(enhancement)) {
-    return false;
-  }
   return armyListStore.enhancementsTaken.has(enhancement.name);
 }
 
-function upOrDown(change) {
-  if (change.startsWith("+")) {
-    return "data-sheet__points--up";
-  }
-  return "data-sheet__points--down";
-}
-
 function optionAvailable(option) {
-  if (option.bonus) {
-    return true;
-  }
-
-  if (maxed.value) {
-    return false;
-  }
-
-  if (props.dataSheet.enhancements) {
-    return !enhancementTaken(option);
-  }
-
-  if (armyListStore.isBoardingActions) {
-    const boardingActionsMax = getBoardingActionsMax(props.dataSheet);
-
-    if (boardingActionsMax === 0) {
-      return false;
-    }
-  }
-
-  return enoughInCollection(option);
+  if (option.bonus) return true;
+  if (maxed.value) return false;
+  if (props.dataSheet.enhancements) return !enhancementTaken(option);
+  return true;
 }
-
-const disabledReason = computed(() => {
-  if (armyListStore.isBoardingActions && max.value === 0) {
-    return getBoardingActionsErrorMessage(props.dataSheet.name);
-  }
-  return null;
-});
 </script>
 
 <template>
-  <div
-    class="data-sheet"
-    v-if="hasOwned && options.length"
-    :title="disabledReason"
-  >
-    <div
-      class="data-sheet__title"
-      :class="{ maxed: maxed }"
-      :style="appStore.showPointsChanges ? `background-color: ${color};` : ''"
-    >
+  <div class="data-sheet" v-if="options.length">
+    <div class="data-sheet__title" :class="{ maxed: maxed }">
       <span class="data-sheet__name">
-        <template v-if="max === Infinity"></template>
-        <template v-else-if="count > -1"> {{ count }}/{{ max }}</template>
+        <template v-if="max > -1"> {{ count }}/{{ max }}</template>
         {{ props.dataSheet.displayName || props.dataSheet.name }}
         <template v-if="appStore.group === GROUP_NONE">
-          <span v-if="isBattleLine(props.dataSheet)" title="Battleline"
-            >[B]</span
-          >
+          <span v-if="isBattleLine(props.dataSheet)" title="Battleline">[B]</span>
           <span v-if="props.dataSheet.character" title="Character">[C]</span>
           <span
             v-if="isDedicatedTransport(props.dataSheet)"
             title="Dedicated Transport"
             >[T]</span
           >
-          <span v-if="props.dataSheet.forgeWorld" title="Forgeworld">[F]</span>
         </template>
         <span v-if="props.dataSheet.epicHero" title="Epic Hero">[E]</span>
-        <span v-if="props.dataSheet.legends" title="Legends">[L]</span>
+        <span v-if="props.dataSheet.legends" title="Legends">[Lg]</span>
+        <span
+          v-if="props.dataSheet.leader"
+          class="data-sheet__role-leader"
+          title="Leader"
+          >[Leader]</span
+        >
+        <span
+          v-if="props.dataSheet.support"
+          class="data-sheet__role-support"
+          title="Support"
+          >[Sup]</span
+        >
       </span>
-
-      <label v-if="!props.dataSheet.enhancements && appStore.editCollection">
-        Models owned:
-        <input
-          class="data-sheet__owned"
-          type="number"
-          min="0"
-          max="999"
-          title="How many of these do you own?"
-          :value="owned"
-          @focus="$event.target.select()"
-          @blur="onCollectionBlur"
-        />
-      </label>
-
-      <div
-        v-if="!props.dataSheet.enhancements && !appStore.editCollection"
-        class="data-sheet__count"
-      >
-        <template v-if="owned < 999">
-          {{ modelsTaken }} / {{ owned }}
-        </template>
-      </div>
     </div>
-    <ul>
-      <li
-        v-for="(option, index) in options"
-        @click="addUnit(option)"
-        :class="{ maxed: !optionAvailable(option) }"
+    <div
+      v-if="props.dataSheet.leader?.attachesTo?.length"
+      class="data-sheet__attaches-to"
+      title="Leader can attach to"
+    >
+      Leader: {{ props.dataSheet.leader.attachesTo.join(", ") }}
+    </div>
+    <div
+      v-if="props.dataSheet.support?.attachesTo?.length"
+      class="data-sheet__attaches-to"
+      title="Support can attach to"
+    >
+      Support: {{ props.dataSheet.support.attachesTo.join(", ") }}
+    </div>
+    <template v-for="(group, gi) in tierGroups" :key="gi">
+      <div
+        v-if="tierGroups.length > 1"
+        class="data-sheet__tier-label"
+        :class="{ maxed: !group.tierEnabled }"
       >
-        <span v-if="option.models">
-          {{ option.models }}
-          {{ option.models === 1 ? "model" : "models" }}
-        </span>
-        <span v-if="option.name" class="data-sheet__option-name">
-          {{ option.name }}
-        </span>
-        <span class="data-sheet__option-spacer"></span>
-        <span class="data-sheet__points">
-          <span
-            v-if="option.pointsChange && appStore.showPointsChanges"
-            :class="upOrDown(option.pointsChange)"
-          >
-            ({{ option.pointsChange }})
+        {{ group.heading }}
+      </div>
+      <ul>
+        <li
+          v-for="(row, ri) in group.rows"
+          :key="ri"
+          @click="rowAvailable(row, group) && addUnit(row.size)"
+          :class="{ maxed: !rowAvailable(row, group) }"
+        >
+          <span v-if="row.size.models">
+            {{ row.size.models }}
+            {{ row.size.models === 1 ? "model" : "models" }}
           </span>
-          <template v-if="option.bonus">+</template>
-          {{ option.points }} pts
-        </span>
-      </li>
-    </ul>
+          <span v-if="row.size.name" class="data-sheet__option-name">
+            {{ row.size.name }}
+          </span>
+          <span class="data-sheet__option-spacer"></span>
+          <span class="data-sheet__points">
+            <template v-if="row.size.bonus">+</template>
+            {{ row.points }} pts
+          </span>
+        </li>
+      </ul>
+    </template>
   </div>
 </template>
 
@@ -337,6 +229,32 @@ const disabledReason = computed(() => {
     > span {
       cursor: help;
     }
+  }
+
+  &__role-leader,
+  &__role-support {
+    font-size: 0.8em;
+    margin-left: 2px;
+    opacity: 0.85;
+  }
+
+  &__attaches-to {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #ddd;
+    font-size: 11px;
+    font-style: italic;
+    padding: 2px 6px;
+  }
+
+  &__tier-label {
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+    padding: 2px 6px;
+    text-transform: uppercase;
   }
 
   label {

@@ -1,0 +1,1011 @@
+{
+  "faction": "DEATH GUARD",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "CHAMPIONS OF CONTAGION",
+      "dp": 2,
+      "tags": [
+        "UNIQUE: FLYBLOWN"
+      ],
+      "enhancements": [
+        {
+          "name": "Cornucophagus",
+          "points": 35
+        },
+        {
+          "name": "Final Ingredient",
+          "points": 20
+        },
+        {
+          "name": "Needle of Nurgle",
+          "points": 25
+        },
+        {
+          "name": "Visions of Virulence",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "CONTAGION ENGINES",
+      "dp": 1,
+      "tags": [
+        "UNIQUE: ENGINES"
+      ],
+      "enhancements": [
+        {
+          "name": "Lancet of the Worldsore (Upgrade)",
+          "points": 15
+        },
+        {
+          "name": "Parasitic Woe‑reaper (Upgrade)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "DEATH LORD’S CHOSEN",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Face of Death",
+          "points": 10
+        },
+        {
+          "name": "Helm of The Fly King",
+          "points": 20
+        },
+        {
+          "name": "Vile Vigour",
+          "points": 15
+        },
+        {
+          "name": "Warprot Talisman",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "name": "FLYBLOWN HOST",
+      "dp": 1,
+      "tags": [
+        "UNIQUE: FLYBLOWN"
+      ],
+      "enhancements": [
+        {
+          "name": "Insectile Murmuration (Upgrade)",
+          "points": 15
+        },
+        {
+          "name": "Plagueveil (Upgrade)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "MORTARION’S HAMMER",
+      "dp": 2,
+      "tags": [
+        "UNIQUE: ENGINES"
+      ],
+      "enhancements": [
+        {
+          "name": "Bilemaw Blight",
+          "points": 10
+        },
+        {
+          "name": "Eye of Affliction",
+          "points": 20
+        },
+        {
+          "name": "Shriekworm Familiar",
+          "points": 15
+        },
+        {
+          "name": "Tendrilous Emissions",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "name": "PARAGONS OF PUTRESCENCE",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Host of the Hybridised Pox",
+          "points": 40
+        },
+        {
+          "name": "Rejuvenating Swarm",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "SHAMBLEROT VECTORIUM",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Lord of the Walking Pox",
+          "points": 15
+        },
+        {
+          "name": "Sorrowsyphon",
+          "points": 10
+        },
+        {
+          "name": "Talisman of Burgeoning",
+          "points": 25
+        },
+        {
+          "name": "Witherbone Pipes",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "TALLYBAND SUMMONERS",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Beckoning Blight",
+          "points": 20
+        },
+        {
+          "name": "Entropic Knell",
+          "points": 15
+        },
+        {
+          "name": "Fell Harvester",
+          "points": 10
+        },
+        {
+          "name": "Tome of Bounteous Blessings",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "VIRULENT VECTORIUM",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Arch Contaminator",
+          "points": 25
+        },
+        {
+          "name": "Daemon Weapon of Nurgle",
+          "points": 10
+        },
+        {
+          "name": "Furnace of Plagues",
+          "points": 25
+        },
+        {
+          "name": "Revolting Regeneration",
+          "points": 30
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "BIOLOGUS PUTRIFIER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLIGHTLORD TERMINATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        },
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 370
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS LAND RAIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS PREDATOR ANNIHILATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS PREDATOR DESTRUCTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 155
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAOS SPAWN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DAEMON PRINCE OF NURGLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 195
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DAEMON PRINCE OF NURGLE WITH WINGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHSHROUD TERMINATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 330
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEFILER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 290,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 320
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FOETID BLOAT-DRONE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FOETID BLOAT-DRONE WITH HEAVY BLIGHT LAUNCHER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FOUL BLIGHTSPAWN",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELBRUTE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ICON BEARER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD OF CONTAGION",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD OF POXES",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD OF VIRULENCE",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MALIGNANT PLAGUECASTER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES",
+          "POXWALKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MIASMIC MALIGNIFIER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MORTARION",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MYPHITIC BLIGHT-HAULERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NOXIOUS BLIGHTBRINGER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES",
+          "POXWALKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUEBURST CRAWLER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUE MARINES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "7 models",
+          "models": 7,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUE SURGEON",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "POXWALKERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TALLYMAN",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYPHUS",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS",
+          "POXWALKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BEASTS OF NURGLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREAT UNCLEAN ONE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 265,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NURGLINGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUEBEARERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUE DRONES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROTIGUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

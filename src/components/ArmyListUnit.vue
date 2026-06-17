@@ -3,20 +3,24 @@ import { computed } from "vue";
 import RiskIcon from "../assets/risk-icon.svg";
 import { nameEquals } from "../utils/name-match";
 import { useArmyListStore } from "../stores/armyList";
-import { useMfmStore } from "../stores/mfm";
 
 const armyListStore = useArmyListStore();
-const mfmStore = useMfmStore();
 
 const props = defineProps({
   unit: Object,
   scale: Number,
 });
 
+const breakdown = computed(
+  () => armyListStore.pointsBreakdown.perUnit[props.unit.id] ?? null
+);
+
 const unitPoints = computed(() => {
-  const points = mfmStore.getPoints(props.unit, armyListStore.currentMFM, armyListStore.faction);
-  return points > 0 ? points : 0;
+  const p = breakdown.value?.points ?? 0;
+  return p > 0 ? p : 0;
 });
+
+const tierLabel = computed(() => breakdown.value?.tierLabel ?? null);
 
 const height = computed(() => {
   return `${Math.floor(unitPoints.value * props.scale)}px`;
@@ -63,7 +67,8 @@ const inValid = computed(() => {
       {{ name }}
     </span>
     <span class="army-list-unit__points" v-if="unitPoints > 0">
-      {{ unitPoints }} pts
+      {{ unitPoints }} pts<span v-if="tierLabel" class="army-list-unit__tier">
+        ({{ tierLabel }})</span>
     </span>
   </div>
 </template>
@@ -111,6 +116,12 @@ const inValid = computed(() => {
     padding: 0 4px;
     text-align: center;
     white-space: nowrap;
+  }
+
+  &__tier {
+    opacity: 0.7;
+    font-size: 10px;
+    margin-inline-start: 2px;
   }
 
   &__warning {

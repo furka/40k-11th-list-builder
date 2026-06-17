@@ -1,0 +1,1097 @@
+{
+  "faction": "ADEPTUS MECHANICUS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "COHORT ACQUISITUS",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Explorator Dispensation",
+          "points": 20
+        },
+        {
+          "name": "Stealth-screened Cybercanids (Upgrade)",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "COHORT CYBERNETICA",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Arch-negator",
+          "points": 5
+        },
+        {
+          "name": "Emotionless Clarity",
+          "points": 10
+        },
+        {
+          "name": "Lord of Machines",
+          "points": 15
+        },
+        {
+          "name": "Necromechanic",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "DATA-PSALM CONCLAVE",
+      "dp": 2,
+      "tags": [
+        "UNIQUE: DATA-PSALM"
+      ],
+      "enhancements": [
+        {
+          "name": "Data-blessed Autosermon",
+          "points": 15
+        },
+        {
+          "name": "Mantle of the Gnosticarch",
+          "points": 10
+        },
+        {
+          "name": "Mechanicus Locum",
+          "points": 5
+        },
+        {
+          "name": "Temporcopia",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "ERADICATION COHORT",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Belicosa-class Capacitor Vanes",
+          "points": 25
+        },
+        {
+          "name": "Martial Signatum Amplificator",
+          "points": 15
+        },
+        {
+          "name": "Omnicogitator",
+          "points": 25
+        },
+        {
+          "name": "Omnissiah’s Fury",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "EXPLORATOR MANIPLE",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Artisan",
+          "points": 10
+        },
+        {
+          "name": "Genetor",
+          "points": 20
+        },
+        {
+          "name": "Logis",
+          "points": 15
+        },
+        {
+          "name": "Magos",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "HALOSCREED BATTLE CLADE",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Cognitive Reinforcement",
+          "points": 30
+        },
+        {
+          "name": "Inloaded Lethality",
+          "points": 15
+        },
+        {
+          "name": "Sanctified Ordnance",
+          "points": 10
+        },
+        {
+          "name": "Transoracular Dyad Wafers",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "LORDS OF THE FORGE",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "TL-4ø9",
+          "points": 30
+        },
+        {
+          "name": "Vingh’s Wafers of Dynamism",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "LUMINEN AUTO-CHOIR",
+      "dp": 1,
+      "tags": [
+        "UNIQUE: DATA-PSALM"
+      ],
+      "enhancements": [
+        {
+          "name": "Electromiasmic Brazier",
+          "points": 10
+        },
+        {
+          "name": "Voltagheist Reliquary",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "RAD-ZONE CORPS",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Autoclavic Denunciation",
+          "points": 15
+        },
+        {
+          "name": "Malphonic Susurrus",
+          "points": 20
+        },
+        {
+          "name": "Peerless Eradicator",
+          "points": 20
+        },
+        {
+          "name": "Radial Suffusion",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "SKITARII HUNTER COHORT",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Battle-sphere Uplink",
+          "points": 25
+        },
+        {
+          "name": "Cantic Thrallnet",
+          "points": 25
+        },
+        {
+          "name": "Clandestine Infiltrator",
+          "points": 15
+        },
+        {
+          "name": "Veiled Hunter",
+          "points": 10
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "ARCHAEOPTER FUSILAVE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARCHAEOPTER STRATORAPTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARCHAEOPTER TRANSVECTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BELISARIUS CAWL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CORPUSCARII ELECTRO-PRIESTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CYBERNETICA DATASMITH",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "KASTELAN ROBOTS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FULGURITE ELECTRO-PRIESTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HASTARII EXTERMINATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HASTARII FUSILIERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IRONSTRIDER BALLISTARII",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 175
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 255
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KASTELAN ROBOTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 180
+            }
+          ]
+        },
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 340
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KATAPHRON BREACHERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KATAPHRON DESTROYERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ONAGER DUNECRAWLER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PTERAXII SKYSTALKERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PTERAXII STERYLIZORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SERBERYS RAIDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SERBERYS SULPHURHOUNDS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SERVITOR BATTLECLADE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "9 models",
+          "models": 9,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SICARIAN INFILTRATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 165
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SICARIAN RUSTSTALKERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKITARII MARSHAL",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "HASTARII EXTERMINATORS",
+          "HASTARII FUSILIERS",
+          "SKITARII RANGERS",
+          "SKITARII VANGUARD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKITARII RANGERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKITARII VANGUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKORPIUS DISINTEGRATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKORPIUS DUNERIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SYDONIAN DRAGOONS WITH RADIUM JEZZAILS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SYDONIAN DRAGOONS WITH TASER LANCES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SYDONIAN SKATROS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECHNOARCHEOLOGIST",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "CORPUSCARII ELECTRO-PRIESTS",
+          "FULGURITE ELECTRO-PRIESTS",
+          "HASTARII EXTERMINATORS",
+          "HASTARII FUSILIERS",
+          "KATAPHRON BREACHERS",
+          "KATAPHRON DESTROYERS",
+          "SERVITOR BATTLECLADE",
+          "SKITARII RANGERS",
+          "SKITARII VANGUARD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECH-PRIEST DOMINUS",
+      "leader": {
+        "attachesTo": [
+          "CORPUSCARII ELECTRO-PRIESTS",
+          "FULGURITE ELECTRO-PRIESTS",
+          "HASTARII EXTERMINATORS",
+          "HASTARII FUSILIERS",
+          "KATAPHRON BREACHERS",
+          "KATAPHRON DESTROYERS",
+          "SERVITOR BATTLECLADE",
+          "SKITARII RANGERS",
+          "SKITARII VANGUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECH-PRIEST ENGINSEER",
+      "leader": {
+        "attachesTo": [
+          "CORPUSCARII ELECTRO-PRIESTS",
+          "FULGURITE ELECTRO-PRIESTS",
+          "KATAPHRON BREACHERS",
+          "KATAPHRON DESTROYERS",
+          "SKITARII RANGERS",
+          "SKITARII VANGUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECH-PRIEST MANIPULUS",
+      "leader": {
+        "attachesTo": [
+          "CORPUSCARII ELECTRO-PRIESTS",
+          "FULGURITE ELECTRO-PRIESTS",
+          "HASTARII EXTERMINATORS",
+          "HASTARII FUSILIERS",
+          "KATAPHRON BREACHERS",
+          "KATAPHRON DESTROYERS",
+          "SERVITOR BATTLECLADE",
+          "SKITARII RANGERS",
+          "SKITARII VANGUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THULIA GHULD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

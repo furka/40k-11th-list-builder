@@ -1,0 +1,951 @@
+{
+  "faction": "ADEPTA SORORITAS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "ARMY OF FAITH",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Blade of Saint Ellynor",
+          "points": 15
+        },
+        {
+          "name": "Divine Aspect",
+          "points": 5
+        },
+        {
+          "name": "Litanies of Faith",
+          "points": 10
+        },
+        {
+          "name": "Triptych of the Macharian Crusade",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "BRINGERS OF FLAME",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Fire and Fury",
+          "points": 30
+        },
+        {
+          "name": "Iron Surplice of Saint Istalela",
+          "points": 10
+        },
+        {
+          "name": "Manual of Saint Griselda",
+          "points": 20
+        },
+        {
+          "name": "Righteous Rage",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "CHAMPIONS OF FAITH",
+      "dp": 2,
+      "tags": [
+        "UNIQUE: REVEREND"
+      ],
+      "enhancements": [
+        {
+          "name": "Eyes of the Oracle",
+          "points": 10
+        },
+        {
+          "name": "Mark of Devotion",
+          "points": 30
+        },
+        {
+          "name": "Sanctified Amulet",
+          "points": 25
+        },
+        {
+          "name": "Triptych of Judgement",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "CHORUS OF CONDEMNATION",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Clarion of Urgency",
+          "points": 15
+        },
+        {
+          "name": "Symphonic Payload (Upgrade)",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "HALLOWED MARTYRS",
+      "dp": 3,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Chaplet of Sacrifice",
+          "points": 25
+        },
+        {
+          "name": "Mantle of Ophelia",
+          "points": 20
+        },
+        {
+          "name": "Saintly Example",
+          "points": 10
+        },
+        {
+          "name": "Through Suffering, Strength",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "PENITENT HOST",
+      "dp": 2,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Catechism of Divine Penitence",
+          "points": 20
+        },
+        {
+          "name": "Psalm of Righteous Judgement",
+          "points": 30
+        },
+        {
+          "name": "Refrain of Enduring Faith",
+          "points": 25
+        },
+        {
+          "name": "Verse of Holy Piety",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "SACRED CHAMPIONS",
+      "dp": 1,
+      "tags": [
+        "UNIQUE: REVEREND"
+      ],
+      "enhancements": [
+        {
+          "name": "Perfervid Haste",
+          "points": 10
+        },
+        {
+          "name": "Writ of Compunction (Upgrade)",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "SANCTIFIED ORATORS",
+      "dp": 1,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Hagiomnifex (Upgrade)",
+          "points": 25
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "AESTRED THURGA AND AGATHAE DOLAN",
+      "leader": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARCO-FLAGELLANTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BATTLE SISTERS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANONESS",
+      "leader": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANONESS WITH JUMP PACK",
+      "leader": {
+        "attachesTo": [
+          "SERAPHIM SQUAD",
+          "ZEPHYRIM SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CASTIGATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CELESTIAN INSIDIANTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CELESTIAN SACRESANTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 165
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DAEMONIFUGE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DIALOGUS",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOGMATA",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOMINION SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EXORCIST",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 220
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HOSPITALLER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMAGIFIER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMMOLATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INTRANZIA FRAYE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JUNITH ERUITA",
+      "leader": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MINISTORUM PRIEST",
+      "leader": {
+        "attachesTo": [
+          "ARCO-FLAGELLANTS",
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "DOMINION SQUAD",
+          "SANCTIFIERS",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MORTIFIERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MORVENN VAHL",
+      "leader": {
+        "attachesTo": [
+          "PARAGON WARSUITS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PALATINE",
+      "leader": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD",
+          "CELESTIAN INSIDIANTS",
+          "CELESTIAN SACRESANTS",
+          "DOMINION SQUAD",
+          "RETRIBUTOR SQUAD",
+          "SISTERS NOVITIATE SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PARAGON WARSUITS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PENITENT ENGINES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REPENTIA SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RETRIBUTOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SAINT CELESTINE",
+      "leader": {
+        "attachesTo": [
+          "SERAPHIM SQUAD",
+          "ZEPHYRIM SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SANCTIFIERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "9 models",
+          "models": 9,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SERAPHIM SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SISTERS NOVITIATE SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SORORITAS RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRIUMPH OF SAINT KATHERINE",
+      "leader": {
+        "attachesTo": [
+          "BATTLE SISTERS SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 245
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZEPHYRIM SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

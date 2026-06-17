@@ -2,18 +2,16 @@
 import DataSheet from "./DataSheet.vue";
 import draggable from "vuedraggable";
 import ArmyListUnit from "./ArmyListUnit.vue";
+import CodexDetachmentCard from "./CodexDetachmentCard.vue";
 import { computed, ref } from "vue";
 import { useArmyListStore } from "../stores/armyList";
-import { useCollectionStore } from "../stores/collection";
 import { useCodexStore } from "../stores/codex";
 import { useAppStore } from "../stores/app";
 import { GROUP_NONE } from "../data/constants";
 import { isBattleLine } from "../utils/is-battleline";
 import { isDedicatedTransport } from "../utils/is-dedicated-transport";
-import { getBoardingActionsDisplayName } from "../utils/boarding-actions";
 
 const armyListStore = useArmyListStore();
-const collectionStore = useCollectionStore();
 const codexStore = useCodexStore();
 const appStore = useAppStore();
 
@@ -26,32 +24,17 @@ const groupedUnits = computed(() => {
     const battleLine = { title: "Battle Line", units: [] };
     const transports = { title: "Dedicated Transport", units: [] };
     const other = { title: "Other", units: [] };
-    const allies = { title: "Allies", units: [] };
-    const forgeWorld = { title: "Forge World", units: [] };
     const fortifications = { title: "Fortifications", units: [] };
 
-    data.push(
-      characters,
-      battleLine,
-      transports,
-      other,
-      allies,
-      forgeWorld,
-      fortifications
-    );
+    data.push(characters, battleLine, transports, other, fortifications);
 
     codexStore.filteredCompendium.forEach((sheet) => {
-      if (sheet.allies) {
-        allies.title = sheet.allies;
-        allies.units.push(sheet);
-      } else if (sheet.character) {
+      if (sheet.character) {
         characters.units.push(sheet);
       } else if (isBattleLine(sheet)) {
         battleLine.units.push(sheet);
       } else if (isDedicatedTransport(sheet)) {
         transports.units.push(sheet);
-      } else if (sheet.forgeWorld) {
-        forgeWorld.units.push(sheet);
       } else if (sheet.fortification) {
         fortifications.units.push(sheet);
       } else {
@@ -60,38 +43,14 @@ const groupedUnits = computed(() => {
     });
   }
 
-  if (codexStore.enhancements.sizes.length) {
-    const detachmentDisplayName = getBoardingActionsDisplayName(
-      armyListStore.detachment
-    ).toLowerCase();
-    const groupedEnhancements = {};
-
-    codexStore.enhancements.sizes.forEach((enhancement) => {
-      const category = enhancement.enhancementCategory || detachmentDisplayName;
-      if (!groupedEnhancements[category]) {
-        groupedEnhancements[category] = [];
-      }
-      groupedEnhancements[category].push(enhancement);
-    });
-
-    const enhancementUnits = Object.entries(groupedEnhancements).map(
-      ([category, sizes]) => ({
-        name: category,
-        displayName: category,
-        sizes,
-        enhancements: true,
-      })
-    );
-
-    if (enhancementUnits.length) {
-      data.push({
-        title: "Enhancements",
-        units: enhancementUnits,
-      });
-    }
-  }
-
   return data.filter((group) => group.units.length > 0);
+});
+
+const detachmentList = computed(() => {
+  const factionEntry = armyListStore.currentMFM?.FACTIONS?.find(
+    (f) => f.name === armyListStore.faction
+  );
+  return factionEntry?.detachments ?? [];
 });
 
 function removeUnit(value) {
@@ -108,11 +67,16 @@ function onScrollWheel(e) {
 
 <template>
   <div class="codex">
-    <!-- Draggable area for deleting units from army list -->
+    <!--
+      Draggable bin: dragging a unit or a detachment from the army list onto
+      the codex area drops it here, which removes it from the army list (the
+      source draggable's update:model-value fires with the smaller array, and
+      setDetachments cascades any enhancement removals).
+    -->
     <draggable
       :model-value="appStore.bin"
       @update:model-value="removeUnit"
-      group="units"
+      :group="{ name: 'bin', put: ['units', 'detachments'] }"
       animation="150"
       item-key="id"
       class="codex__bin"
@@ -141,6 +105,22 @@ function onScrollWheel(e) {
           Some units are hidden, enable them in the options
         </div>
       </template>
+      <div v-if="detachmentList.length > 0" class="codex__group">
+        <h2 class="codex__group-title">Detachments</h2>
+        <draggable
+          :model-value="detachmentList"
+          :group="{ name: 'detachments', pull: 'clone', put: false }"
+          :sort="false"
+          item-key="name"
+          animation="150"
+          class="codex__group-units"
+          @update:model-value="() => {}"
+        >
+          <template #item="{ element }">
+            <CodexDetachmentCard :detachment="element" />
+          </template>
+        </draggable>
+      </div>
     </div>
   </div>
 </template>
