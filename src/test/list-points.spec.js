@@ -68,6 +68,17 @@ const MFM = {
         },
       ],
     },
+    {
+      name: "FIELD ORDNANCE BATTERY",
+      faction: FACTION,
+      edition: "11th",
+      sizes: [
+        { name: "2 models", models: 2, basePoints: 90, tiers: [{ minCount: 1, points: 90 }] },
+      ],
+      wargearOptions: [
+        { name: "Bombast field gun", points: 10 },
+      ],
+    },
   ],
 };
 
@@ -218,6 +229,110 @@ describe("computeListPoints — enhancements and bonus options", () => {
   });
 });
 
+describe("computeListPoints — wargear", () => {
+  const host = (id) =>
+    unit({
+      id,
+      name: "FIELD ORDNANCE BATTERY",
+      optionName: "2 models",
+      models: 2,
+    });
+  const wgr = (id, attachedTo, optionName = "Bombast field gun") => ({
+    id,
+    name: "Wargear",
+    parentDataSheet: "FIELD ORDNANCE BATTERY",
+    optionName,
+    attachedTo,
+  });
+
+  it("looks up wargear points from the host's datasheet wargearOptions", () => {
+    const list = {
+      edition: "11th",
+      faction: FACTION,
+      units: [host("h"), wgr("w", "h")],
+      detachments: [],
+      maxDP: 3,
+    };
+    const out = computeListPoints(list, MFM, FACTION);
+    expect(out.total).toBe(100); // 90 (host) + 10 (wargear)
+    expect(out.perUnit.w.points).toBe(10);
+  });
+
+  it("sums multiple wargear rows on the same host", () => {
+    const list = {
+      edition: "11th",
+      faction: FACTION,
+      units: [host("h"), wgr("w1", "h"), wgr("w2", "h"), wgr("w3", "h")],
+      detachments: [],
+      maxDP: 3,
+    };
+    const out = computeListPoints(list, MFM, FACTION);
+    expect(out.total).toBe(120); // 90 + 3*10
+  });
+
+  it("does NOT increment the per-datasheet tier counter", () => {
+    // Three DOOMSDAY ARKs should still slip into tier-2 at the 3rd copy,
+    // even when wargear sits between them in the array.
+    const dda = (id) =>
+      unit({ id, name: "DOOMSDAY ARK", optionName: "1 model", models: 1 });
+    const wgr_dda = (id, attachedTo) => ({
+      id,
+      name: "Wargear",
+      parentDataSheet: "DOOMSDAY ARK",
+      optionName: "fake gun",
+      attachedTo,
+    });
+    const list = {
+      edition: "11th",
+      faction: FACTION,
+      units: [
+        dda("a"),
+        wgr_dda("wa", "a"),
+        dda("b"),
+        wgr_dda("wb", "b"),
+        dda("c"),
+      ],
+      detachments: [],
+      maxDP: 3,
+    };
+    const out = computeListPoints(list, MFM, FACTION);
+    expect(out.perUnit.a.points).toBe(200);
+    expect(out.perUnit.b.points).toBe(200);
+    expect(out.perUnit.c.points).toBe(220);
+    // The "fake gun" option doesn't exist on DOOMSDAY ARK in the synthetic
+    // MFM, so wargear rows price -1 (excluded from total).
+    expect(out.perUnit.wa.points).toBe(-1);
+    expect(out.perUnit.wb.points).toBe(-1);
+    expect(out.total).toBe(620);
+  });
+
+  it("returns -1 (and excludes from total) when the host is missing", () => {
+    const list = {
+      edition: "11th",
+      faction: FACTION,
+      units: [wgr("orphan", "ghost-host")],
+      detachments: [],
+      maxDP: 3,
+    };
+    const out = computeListPoints(list, MFM, FACTION);
+    expect(out.perUnit.orphan.points).toBe(-1);
+    expect(out.total).toBe(0);
+  });
+
+  it("returns -1 when the host's datasheet no longer carries that wargear option", () => {
+    const list = {
+      edition: "11th",
+      faction: FACTION,
+      units: [host("h"), wgr("w", "h", "Retired Gun")],
+      detachments: [],
+      maxDP: 3,
+    };
+    const out = computeListPoints(list, MFM, FACTION);
+    expect(out.perUnit.w.points).toBe(-1);
+    expect(out.total).toBe(90);
+  });
+});
+
 describe("computeListPoints — DP", () => {
   it("sums DP across selected 11th-edition detachments", () => {
     const list = {
@@ -232,10 +347,38 @@ describe("computeListPoints — DP", () => {
       used: 2,
       max: 3,
       byDetachment: [
-        { name: "HAND OF THE DYNASTY", dp: 1 },
-        { name: "SKYSHROUD SPEARHEAD", dp: 1 },
+        { name: "HAND OF THE DYNASTY", dp: 1, role: null, leader: null },
+        { name: "SKYSHROUD SPEARHEAD", dp: 1, role: null, leader: null },
       ],
     });
   });
 
+  it("threads role + leader from the MFM lookup into byDetachment", () => {
+    const ROLE = { name: "TAKE AND HOLD", color: "#2E6B3E" };
+    const LEADER = { attachesTo: ["LOKHUST DESTROYERS"] };
+    const mfmWithExtras = {
+      ...MFM,
+      FACTIONS: [
+        {
+          name: FACTION,
+          detachments: [
+            { name: "AWAKENED DYNASTY", dp: 3, role: ROLE, leader: null },
+            { name: "CURSED LEGION", dp: 2, role: null, leader: LEADER },
+          ],
+        },
+      ],
+    };
+    const list = {
+      edition: "11th",
+      faction: FACTION,
+      units: [],
+      detachments: ["AWAKENED DYNASTY", "CURSED LEGION"],
+      maxDP: 5,
+    };
+    const { dp } = computeListPoints(list, mfmWithExtras, FACTION);
+    expect(dp.byDetachment).toEqual([
+      { name: "AWAKENED DYNASTY", dp: 3, role: ROLE, leader: null },
+      { name: "CURSED LEGION", dp: 2, role: null, leader: LEADER },
+    ]);
+  });
 });

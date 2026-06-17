@@ -24,9 +24,17 @@ async function ensureCacheDir() {
   }
 }
 
-export async function fetchFactionHtml(slug, { refresh = false } = {}) {
+// `legends: true` adds the `isLegendsDisplayed=true` cookie, which the MFM
+// server reads to include Legends datasheets in its render. Without the
+// cookie those units are omitted entirely. Cached separately as
+// `<slug>.legends.html` so both variants persist for offline diffing.
+export async function fetchFactionHtml(
+  slug,
+  { refresh = false, legends = false } = {}
+) {
   await ensureCacheDir();
-  const cachePath = resolve(CACHE_DIR, `${slug}.html`);
+  const cacheName = legends ? `${slug}.legends.html` : `${slug}.html`;
+  const cachePath = resolve(CACHE_DIR, cacheName);
 
   if (!refresh && existsSync(cachePath)) {
     return readFile(cachePath, "utf8");
@@ -34,12 +42,12 @@ export async function fetchFactionHtml(slug, { refresh = false } = {}) {
 
   await politeDelay();
   const url = `${BASE_URL}/${slug}`;
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent":
-        "40k-list-builder-scraper/1.0 (https://github.com/furka/40k-10th-list-builder)",
-    },
-  });
+  const headers = {
+    "User-Agent":
+      "40k-list-builder-scraper/1.0 (https://github.com/furka/40k-11th-list-builder)",
+  };
+  if (legends) headers.Cookie = "isLegendsDisplayed=true";
+  const res = await fetch(url, { headers });
   if (!res.ok) {
     throw new Error(`HTTP ${res.status} for ${url}`);
   }
@@ -48,6 +56,6 @@ export async function fetchFactionHtml(slug, { refresh = false } = {}) {
   return html;
 }
 
-export function cachePathFor(slug) {
-  return resolve(CACHE_DIR, `${slug}.html`);
+export function cachePathFor(slug, { legends = false } = {}) {
+  return resolve(CACHE_DIR, legends ? `${slug}.legends.html` : `${slug}.html`);
 }

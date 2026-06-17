@@ -6,6 +6,7 @@ const armyListStore = useArmyListStore();
 const props = defineProps({
   name: String,
   dp: Number,
+  role: { type: Object, default: null },
 });
 
 function remove() {
@@ -14,7 +15,12 @@ function remove() {
 </script>
 
 <template>
-  <div class="army-list-detachment" :title="props.name">
+  <div
+    class="army-list-detachment"
+    :title="props.role ? `${props.name} — ${props.role.name}` : props.name"
+    :style="props.role ? { backgroundColor: props.role.color, borderColor: 'transparent' } : null"
+    :class="{ 'army-list-detachment--has-role': !!props.role }"
+  >
     <span class="army-list-detachment__name">{{ props.name }}</span>
     <span class="army-list-detachment__badge">{{ props.dp }}DP</span>
     <button
@@ -31,18 +37,21 @@ function remove() {
 <style scoped lang="scss">
 .army-list-detachment {
   align-items: center;
-  background-color: rgb(40 60 90);
-  border: 1px solid #000;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: 2px;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--color-text);
   cursor: move;
   display: flex;
-  font-family: sans-serif;
+  font-family: var(--font-display);
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   gap: 6px;
-  height: 22px;
+  height: 24px;
+  letter-spacing: 0.5px;
   padding: 0 6px;
+  text-transform: uppercase;
 
   &__name {
     flex-grow: 1;
@@ -52,23 +61,41 @@ function remove() {
   }
 
   &__badge {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--color-accent-dim);
     border-radius: 2px;
-    font-size: 10px;
-    padding: 1px 4px;
+    color: #0f1923;
+    font-size: 11px;
+    padding: 1px 5px;
   }
 
   &__remove {
     background: none;
     border: none;
-    color: #fff;
+    color: var(--color-text-muted);
     cursor: pointer;
     font-size: 16px;
     line-height: 1;
     padding: 0 4px;
 
     &:hover {
-      color: #f88;
+      color: var(--color-negative);
+    }
+  }
+
+  &--has-role {
+    color: #fff;
+
+    .army-list-detachment__badge {
+      background-color: rgba(0, 0, 0, 0.35);
+      color: #fff;
+    }
+
+    .army-list-detachment__remove {
+      color: rgba(255, 255, 255, 0.65);
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }

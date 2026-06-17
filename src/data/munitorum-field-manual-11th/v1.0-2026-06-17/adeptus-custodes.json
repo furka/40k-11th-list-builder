@@ -5,6 +5,11 @@
     {
       "name": "AURIC CHAMPIONS",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "LIONS OF THE EMPEROR",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: LIONS"
       ],
@@ -53,23 +63,35 @@
     {
       "name": "MIGHT OF THE MORITOI",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ARMOURY"
       ],
       "enhancements": [
         {
-          "name": "Auramite Sarcophagus (Upgrade)",
-          "points": 15
+          "name": "Auramite Sarcophagus",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Interred Expertise (Upgrade)",
-          "points": 25
+          "name": "Interred Expertise",
+          "points": 25,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "NULL MAIDEN VIGIL",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -93,6 +115,11 @@
     {
       "name": "SHIELD HOST",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -116,6 +143,11 @@
     {
       "name": "SILENT HUNTERS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -123,14 +155,20 @@
           "points": 15
         },
         {
-          "name": "Psyk-out Grenades (Upgrade)",
-          "points": 10
+          "name": "Psyk-out Grenades",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "SOLAR SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ARMOURY"
       ],
@@ -156,6 +194,11 @@
     {
       "name": "TALONS OF THE EMPEROR",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -179,6 +222,11 @@
     {
       "name": "THARANATOI HAMMERBLOW",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: LIONS"
       ],
@@ -406,6 +454,12 @@
               "points": 225
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Twin arachnus heavy blaze cannon",
+          "points": 15
         }
       ]
     },

@@ -5,6 +5,11 @@
     {
       "name": "CABAL OF CHAOS",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -20,6 +25,11 @@
     {
       "name": "CHAOS CULT",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +53,11 @@
     {
       "name": "CREATIONS OF BILE",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,6 +81,11 @@
     {
       "name": "CULT OF THE ARKIFANE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -89,6 +109,11 @@
     {
       "name": "DECEPTORS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -112,6 +137,11 @@
     {
       "name": "DEVOTEES OF DESTRUCTION",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -127,6 +157,11 @@
     {
       "name": "DREAD TALONS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -150,6 +185,11 @@
     {
       "name": "FELLHAMMER SIEGE-HOST",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -173,6 +213,11 @@
     {
       "name": "HURON’S MARAUDERS",
       "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -196,6 +241,15 @@
     {
       "name": "MURDERTALON RAIDERS",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": {
+        "attachesTo": [
+          "WARP TALONS"
+        ]
+      },
       "tags": [
         "UNIQUE: NIGHTMARE"
       ],
@@ -213,6 +267,15 @@
     {
       "name": "NIGHTMARE HUNT",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": {
+        "attachesTo": [
+          "WARP TALONS"
+        ]
+      },
       "tags": [
         "UNIQUE: NIGHTMARE"
       ],
@@ -238,6 +301,11 @@
     {
       "name": "PACTBOUND ZEALOTS",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -261,6 +329,11 @@
     {
       "name": "RENEGADE RAIDERS",
       "dp": 3,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -284,6 +357,11 @@
     {
       "name": "RENEGADE WARBAND",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -307,6 +385,11 @@
     {
       "name": "SOULFORGED WARPACK",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -330,6 +413,11 @@
     {
       "name": "VETERANS OF THE LONG WAR",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -353,6 +441,11 @@
     {
       "name": "WARPSTRIKE CHAMPIONS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -718,7 +811,9 @@
       "leader": {
         "attachesTo": [
           "ACCURSED CULTISTS",
-          "CULTIST MOB"
+          "CULTIST MOB",
+          "CULTIST MOB WITH FIREARMS",
+          "NEGAVOLT CULTISTS"
         ]
       },
       "support": null,
@@ -791,7 +886,9 @@
           "ACCURSED CULTISTS",
           "CHOSEN",
           "CULTIST MOB",
+          "CULTIST MOB WITH FIREARMS",
           "LEGIONARIES",
+          "NEGAVOLT CULTISTS",
           "NEMESIS CLAW",
           "RED CORSAIRS RAIDERS"
         ]
@@ -815,7 +912,9 @@
       "leader": {
         "attachesTo": [
           "ACCURSED CULTISTS",
-          "CULTIST MOB"
+          "CULTIST MOB",
+          "CULTIST MOB WITH FIREARMS",
+          "NEGAVOLT CULTISTS"
         ]
       },
       "support": null,
@@ -857,6 +956,16 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy reaper autocannon",
+          "points": 10
+        },
+        {
+          "name": "Hades lascannon",
+          "points": 10
+        }
       ]
     },
     {
@@ -866,7 +975,9 @@
           "ACCURSED CULTISTS",
           "CHOSEN",
           "CULTIST MOB",
+          "CULTIST MOB WITH FIREARMS",
           "LEGIONARIES",
+          "NEGAVOLT CULTISTS",
           "RED CORSAIRS RAIDERS"
         ]
       },
@@ -920,6 +1031,12 @@
               "points": 170
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Ectoplasma cannon",
+          "points": 5
         }
       ]
     },
@@ -1643,6 +1760,641 @@
           ]
         }
       ]
+    },
+    {
+      "name": "BLOOD SLAUGHTERER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS DEIMOS PREDATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS LORD ON BIKE",
+      "leader": {
+        "attachesTo": [
+          "CHAOS BIKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS LORD ON DISC OF TZEENTCH",
+      "leader": {
+        "attachesTo": [
+          "CHOSEN",
+          "LEGIONARIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS LORD ON JUGGERNAUT",
+      "leader": {
+        "attachesTo": [
+          "CHAOS BIKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS LORD ON PALANQUIN OF NURGLE",
+      "leader": {
+        "attachesTo": [
+          "CHOSEN",
+          "LEGIONARIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS LORD ON STEED OF SLAANESH",
+      "leader": {
+        "attachesTo": [
+          "CHAOS BIKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHAOS THUNDERHAWK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 840
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CULTIST MOB WITH FIREARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DECIMATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DREADCLAW DROP POD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "EXALTED CHAMPION",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "CHOSEN",
+          "LEGIONARIES"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GELLERPOX INFECTED",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "7 models",
+          "models": 7,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GREATER BLIGHT DRONE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GREATER BRASS SCORPION",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 500
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HELL BLADE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HELL TALON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KHARYBDIS ASSAULT CLAW",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 300
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KYTAN RAVAGER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MUTOID VERMIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "16 models",
+          "models": 16,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NEGAVOLT CULTISTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RENEGADE ENFORCER",
+      "leader": {
+        "attachesTo": [
+          "RENEGADE HEAVY WEAPONS SQUAD",
+          "TRAITOR GUARDSMEN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RENEGADE HEAVY WEAPONS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RENEGADE OGRYN BEAST HANDLER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "7 models",
+          "models": 7,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RENEGADE OGRYN BRUTES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RENEGADE PLAGUE OGRYNS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ROGUE PSYKER",
+      "leader": {
+        "attachesTo": [
+          "ACCURSED CULTISTS",
+          "CULTIST MOB",
+          "CULTIST MOB WITH FIREARMS",
+          "NEGAVOLT CULTISTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SORCERER ON BIKE",
+      "leader": {
+        "attachesTo": [
+          "CHAOS BIKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SORCERER ON DISC OF TZEENTCH",
+      "leader": {
+        "attachesTo": [
+          "CHOSEN",
+          "LEGIONARIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SORCERER ON PALANQUIN OF NURGLE",
+      "leader": {
+        "attachesTo": [
+          "CHOSEN",
+          "LEGIONARIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SORCERER ON STEED OF SLAANESH",
+      "leader": {
+        "attachesTo": [
+          "CHAOS BIKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

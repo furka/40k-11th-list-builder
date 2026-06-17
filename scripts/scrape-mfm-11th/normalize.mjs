@@ -20,10 +20,15 @@
  *             models: 10,
  *             tiers: [{ minCount, maxCount?, points }]
  *           }
- *         ]
+ *         ],
+ *         wargearOptions?: [{ name: "per Bombast field gun", points: 10 }]
  *       }
  *     ]
  *   }
+ *
+ * `wargearOptions` is optional and absent for datasheets without a WARGEAR
+ * OPTIONS section in the MFM. When present, each entry is a free-form
+ * upgrade row (no models / tiers — flat per-occurrence cost).
  *
  * The role booleans (battleLine, character, epicHero, dedicatedTransport,
  * fortification) are not produced here — they are layered on by the runtime
@@ -36,15 +41,21 @@ export function normalizeFactionData(factionSlug, factionName, raw) {
     detachments: raw.detachments.map((d) => ({
       name: d.name,
       dp: d.dp,
+      role: d.role ?? null,
+      leader: d.leader ?? null,
       tags: d.tags ?? [],
       enhancements: d.enhancements,
     })),
-    datasheets: raw.datasheets.map((d) => ({
-      name: d.name,
-      leader: d.leader,
-      support: d.support,
-      sizes: normalizeSizes(d.tiers),
-    })),
+    datasheets: raw.datasheets.map((d) => {
+      const sheet = {
+        name: d.name,
+        leader: d.leader,
+        support: d.support,
+        sizes: normalizeSizes(d.tiers),
+      };
+      if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
+      return sheet;
+    }),
   };
 }
 

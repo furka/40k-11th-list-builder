@@ -5,6 +5,11 @@
     {
       "name": "BASTIONS OF TYRANNY",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -20,6 +25,11 @@
     {
       "name": "HELHUNT LANCE",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +53,11 @@
     {
       "name": "HOUNDPACK LANCE",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: WAR DOGS"
       ],
@@ -68,23 +83,35 @@
     {
       "name": "HUNTING WARPACK",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: WAR DOGS"
       ],
       "enhancements": [
         {
-          "name": "Snarling Rivalry (Upgrade)",
-          "points": 10
+          "name": "Snarling Rivalry",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Soul-spoor Auspicator (Upgrade)",
-          "points": 15
+          "name": "Soul-spoor Auspicator",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "ICONOCLAST FIEFDOM",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -100,6 +127,11 @@
     {
       "name": "INFERNAL LANCE",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -123,6 +155,11 @@
     {
       "name": "LORDS OF DREAD",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -154,6 +191,11 @@
     {
       "name": "TRAITORIS LANCE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -415,6 +457,16 @@
               "points": 400
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Despoiler gatling cannon",
+          "points": 25
+        },
+        {
+          "name": "Despoiler battle cannon",
+          "points": 15
         }
       ]
     },

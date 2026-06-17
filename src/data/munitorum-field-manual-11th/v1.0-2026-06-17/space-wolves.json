@@ -5,6 +5,11 @@
     {
       "name": "1ST COMPANY TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "ANVIL SIEGE FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -51,6 +61,11 @@
     {
       "name": "ARMOURED SPEARTIP",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -74,6 +89,11 @@
     {
       "name": "BASTION TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -97,6 +117,11 @@
     {
       "name": "CERAMITE SENTINELS",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -120,6 +145,11 @@
     {
       "name": "CHAMPIONS OF FENRIS",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -135,6 +165,11 @@
     {
       "name": "FIRESTORM ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -158,21 +193,33 @@
     {
       "name": "FULGURIS TASK FORCE",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Bellicose Weapon Spirits (Upgrade)",
-          "points": 15
+          "name": "Bellicose Weapon Spirits",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Raptorial Cogitator Core (Upgrade)",
-          "points": 15
+          "name": "Raptorial Cogitator Core",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "GLADIUS TASK FORCE",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -196,6 +243,11 @@
     {
       "name": "HEADHUNTER TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -219,6 +271,11 @@
     {
       "name": "IRONSTORM SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -242,21 +299,33 @@
     {
       "name": "LEGENDS OF SAGA AND SONG",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Fierce Example (Upgrade)",
-          "points": 25
+          "name": "Fierce Example",
+          "points": 25,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Thirst for Glory (Upgrade)",
-          "points": 15
+          "name": "Thirst for Glory",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "LIBRARIUS CONCLAVE",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -284,6 +353,11 @@
     {
       "name": "ORBITAL ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -307,6 +381,11 @@
     {
       "name": "SAGA OF THE BEASTSLAYER",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -330,6 +409,11 @@
     {
       "name": "SAGA OF THE BOLD",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -353,6 +437,15 @@
     {
       "name": "SAGA OF THE GREAT WOLF",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": {
+        "attachesTo": [
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
       "tags": [],
       "enhancements": [
         {
@@ -376,6 +469,11 @@
     {
       "name": "SAGA OF THE HUNTER",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -399,6 +497,11 @@
     {
       "name": "STORMLANCE TASK FORCE",
       "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -422,11 +525,17 @@
     {
       "name": "SUBVERSION ASSETS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Death in the Dark (Upgrade)",
-          "points": 15
+          "name": "Death in the Dark",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
           "name": "Shroud Field",
@@ -437,6 +546,11 @@
     {
       "name": "VANGUARD SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -460,6 +574,11 @@
     {
       "name": "VETERANS OF THE FANG",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -734,6 +853,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Storm Shield",
+          "points": 5
+        }
       ]
     },
     {
@@ -905,6 +1030,12 @@
               "points": 310
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Storm Shield",
+          "points": 5
         }
       ]
     },
@@ -1117,9 +1248,11 @@
           "INFERNUS SQUAD",
           "INNER CIRCLE COMPANIONS",
           "INTERCESSOR SQUAD",
+          "LONG FANGS",
           "STERNGUARD VETERAN SQUAD",
           "SWORD BRETHREN SQUAD",
-          "TACTICAL SQUAD"
+          "TACTICAL SQUAD",
+          "WOLF GUARD"
         ]
       },
       "sizes": [
@@ -1367,7 +1500,8 @@
           "STERNGUARD VETERAN SQUAD",
           "SWORD BRETHREN SQUAD",
           "TACTICAL SQUAD",
-          "VICTRIX HONOUR GUARD"
+          "VICTRIX HONOUR GUARD",
+          "WOLF GUARD"
         ]
       },
       "support": null,
@@ -1413,6 +1547,7 @@
       "leader": {
         "attachesTo": [
           "ELIMINATOR SQUAD",
+          "HOUNDS OF MORKAI",
           "INCURSOR SQUAD",
           "INFILTRATOR SQUAD",
           "REIVER SQUAD",
@@ -1465,6 +1600,7 @@
         "attachesTo": [
           "ASSAULT INTERCESSORS WITH JUMP PACKS",
           "SANGUINARY GUARD",
+          "SKYCLAWS",
           "TALONSTRIKE KILL TEAM",
           "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
         ]
@@ -1555,7 +1691,8 @@
           "INTERCESSOR SQUAD",
           "STERNGUARD VETERAN SQUAD",
           "SWORD BRETHREN SQUAD",
-          "TACTICAL SQUAD"
+          "TACTICAL SQUAD",
+          "WOLF GUARD"
         ]
       },
       "support": null,
@@ -1625,6 +1762,7 @@
         "attachesTo": [
           "ASSAULT INTERCESSORS WITH JUMP PACKS",
           "DEATH COMPANY MARINES WITH JUMP PACKS",
+          "SKYCLAWS",
           "TALONSTRIKE KILL TEAM",
           "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
         ]
@@ -2187,18 +2325,11 @@
           "INTERCESSOR SQUAD",
           "STERNGUARD VETERAN SQUAD",
           "SWORD BRETHREN SQUAD",
-          "TACTICAL SQUAD"
+          "TACTICAL SQUAD",
+          "WOLF GUARD"
         ]
       },
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",
@@ -2314,8 +2445,10 @@
           "INFERNUS SQUAD",
           "INNER CIRCLE COMPANIONS",
           "INTERCESSOR SQUAD",
+          "LONG FANGS",
           "STERNGUARD VETERAN SQUAD",
-          "TACTICAL SQUAD"
+          "TACTICAL SQUAD",
+          "WOLF GUARD"
         ]
       },
       "support": null,
@@ -2337,6 +2470,7 @@
       "leader": {
         "attachesTo": [
           "ELIMINATOR SQUAD",
+          "HOUNDS OF MORKAI",
           "INCURSOR SQUAD",
           "INFILTRATOR SQUAD",
           "REIVER SQUAD",
@@ -2385,18 +2519,7 @@
     },
     {
       "name": "LIEUTENANT",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "COMPANY HEROES",
-          "DESOLATION SQUAD",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "leader": null,
       "support": {
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
@@ -2412,7 +2535,8 @@
           "INTERCESSOR SQUAD",
           "STERNGUARD VETERAN SQUAD",
           "SWORD BRETHREN SQUAD",
-          "TACTICAL SQUAD"
+          "TACTICAL SQUAD",
+          "WOLF GUARD"
         ]
       },
       "sizes": [
@@ -2430,15 +2554,10 @@
     },
     {
       "name": "LIEUTENANT IN PHOBOS ARMOUR",
-      "leader": {
-        "attachesTo": [
-          "INCURSOR SQUAD",
-          "INFILTRATOR SQUAD",
-          "REIVER SQUAD"
-        ]
-      },
+      "leader": null,
       "support": {
         "attachesTo": [
+          "HOUNDS OF MORKAI",
           "INCURSOR SQUAD",
           "INFILTRATOR SQUAD",
           "REIVER SQUAD",
@@ -2463,6 +2582,7 @@
       "leader": null,
       "support": {
         "attachesTo": [
+          "HOUNDS OF MORKAI",
           "REIVER SQUAD"
         ]
       },
@@ -2613,6 +2733,12 @@
               "points": 210
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Macro plasma incinerator",
+          "points": 10
         }
       ]
     },
@@ -2918,8 +3044,10 @@
           "DEVASTATOR SQUAD",
           "FORTIS KILL TEAM",
           "INTERCESSOR SQUAD",
+          "LONG FANGS",
           "SWORD BRETHREN SQUAD",
-          "TACTICAL SQUAD"
+          "TACTICAL SQUAD",
+          "WOLF GUARD"
         ]
       },
       "support": null,
@@ -2960,6 +3088,12 @@
               "points": 310
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Thunder Hammer",
+          "points": 5
         }
       ]
     },
@@ -3087,6 +3221,437 @@
           ]
         }
       ]
+    },
+    {
+      "name": "CANIS WOLFBORN",
+      "leader": {
+        "attachesTo": [
+          "FENRISIAN WOLVES",
+          "THUNDERWOLF CAVALRY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CYBERWOLF",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "FENRISIAN WOLVES"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 20
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HARALD DEATHWOLF",
+      "leader": {
+        "attachesTo": [
+          "THUNDERWOLF CAVALRY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HOUNDS OF MORKAI",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KROM DRAGONGAZE",
+      "leader": {
+        "attachesTo": [
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "WOLF GUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LOGAN GRIMNAR ON STORMRIDER",
+      "leader": {
+        "attachesTo": [
+          "THUNDERWOLF CAVALRY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LONG FANGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LUKAS THE TRICKSTER",
+      "leader": {
+        "attachesTo": [
+          "BLOOD CLAWS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SKYCLAWS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
+            }
+          ]
+        },
+        {
+          "name": "15 models",
+          "models": 15,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMFANG GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 300
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMWOLF",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD BATTLE LEADER ON THUNDERWOLF",
+      "leader": {
+        "attachesTo": [
+          "THUNDERWOLF CAVALRY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD PACK LEADER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "LONG FANGS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD PACK LEADER IN TERMINATOR ARMOUR",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "LONG FANGS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD PACK LEADER WITH JUMP PACK",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "SKYCLAWS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF LORD ON THUNDERWOLF",
+      "leader": {
+        "attachesTo": [
+          "THUNDERWOLF CAVALRY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

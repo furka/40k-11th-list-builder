@@ -5,14 +5,17 @@ import { useCollectionStore } from "./stores/collection";
 import { useMfmStore } from "./stores/mfm";
 import { useCodexStore } from "./stores/codex";
 import { useAppStore } from "./stores/app";
+import { useDragStore } from "./stores/drag";
 import ArmyList from "./components/ArmyList.vue";
 import ArmyCodex from "./components/ArmyCodex.vue";
+import DragGhost from "./components/DragGhost.vue";
 import PrintableArmyList from "./components/PrintableArmyList.vue";
 import { SORT_MANUAL } from "./data/constants";
 import {
   sortDataSheetAlphabetical,
   sortListPoints,
   sortListByRole,
+  sortTree,
 } from "./utils/sort-functions";
 import AppToolBar from "./components/AppToolBar.vue";
 import CodexToolBar from "./components/CodexToolBar.vue";
@@ -24,10 +27,10 @@ const collectionStore = useCollectionStore();
 const mfmStore = useMfmStore();
 const codexStore = useCodexStore();
 const appStore = useAppStore();
+const dragStore = useDragStore();
 
 function initializeApp() {
-  const defaultList = appStore.createNewList();
-  armyListStore.loadFromStorage(defaultList);
+  armyListStore.loadFromStorage();
   collectionStore.loadFromStorage();
 
   // Auto-upgrade the current list and each saved list to the latest MFM
@@ -69,22 +72,82 @@ function applySortToList() {
   const sortOrder = armyListStore.sortOrder || SORT_MANUAL;
   if (sortOrder === SORT_MANUAL) return;
 
-  const units = [...armyListStore.units];
+  const all = armyListStore.units;
+  let cmp;
   if (sortOrder === "A-Z") {
-    units.sort(sortDataSheetAlphabetical);
+    cmp = sortDataSheetAlphabetical;
   } else if (sortOrder === "Expensive first") {
-    units.sort(sortListPoints(mfmStore, armyListStore.currentMFM, false));
+    cmp = sortListPoints(mfmStore, armyListStore.currentMFM, all, false);
   } else if (sortOrder === "Cheap first") {
-    units.sort(sortListPoints(mfmStore, armyListStore.currentMFM, true));
+    cmp = sortListPoints(mfmStore, armyListStore.currentMFM, all, true);
   } else if (sortOrder === "By Role") {
-    units.sort(sortListByRole(codexStore.getDataSheet));
+    cmp = sortListByRole(codexStore.getDataSheet);
+  } else {
+    return;
   }
-  armyListStore.setUnits(units);
+  armyListStore.setUnits(sortTree(all, cmp));
+}
+
+// Wire the drag store to the army list store and to window-level pointer /
+// keyboard events while a drag is in flight. The drag store owns hit-test +
+// active-slot resolution; this watcher only handles "OS-level" inputs and
+// the commit dispatch — no DnD logic of its own.
+let pointerMoveHandler = null;
+let pointerUpHandler = null;
+let pointerCancelHandler = null;
+let keyDownHandler = null;
+
+function detachDragListeners() {
+  if (pointerMoveHandler) {
+    window.removeEventListener("pointermove", pointerMoveHandler);
+    window.removeEventListener("pointerup", pointerUpHandler);
+    window.removeEventListener("pointercancel", pointerCancelHandler);
+    window.removeEventListener("keydown", keyDownHandler);
+    pointerMoveHandler = null;
+    pointerUpHandler = null;
+    pointerCancelHandler = null;
+    keyDownHandler = null;
+  }
 }
 
 watch(
-  () => appStore.bin,
-  () => appStore.bin.splice(0)
+  () => dragStore.draggedId,
+  (id) => {
+    if (id && !pointerMoveHandler) {
+      pointerMoveHandler = (e) =>
+        dragStore.updatePointer(e.clientX, e.clientY);
+      pointerUpHandler = () => {
+        const result = dragStore.commit();
+        if (!result) return;
+        if (result.type === "reorder") {
+          armyListStore.sortOrder = SORT_MANUAL;
+          armyListStore.moveUnit(
+            result.draggedId,
+            result.parentId,
+            result.index
+          );
+        } else if (result.type === "attach") {
+          armyListStore.sortOrder = SORT_MANUAL;
+          armyListStore.moveUnit(result.draggedId, result.hostId);
+        } else if (result.type === "bin") {
+          // Dragging-to-trash means "delete the whole thing" — take the
+          // dragged unit plus any attached subtree with it. removeUnit's
+          // orphan-children behavior stays for non-drag delete paths.
+          armyListStore.removeUnitSubtree(result.draggedId);
+        }
+      };
+      pointerCancelHandler = () => dragStore.cancel();
+      keyDownHandler = (e) => {
+        if (e.key === "Escape") dragStore.cancel();
+      };
+      window.addEventListener("pointermove", pointerMoveHandler);
+      window.addEventListener("pointerup", pointerUpHandler);
+      window.addEventListener("pointercancel", pointerCancelHandler);
+      window.addEventListener("keydown", keyDownHandler);
+    } else if (!id) {
+      detachDragListeners();
+    }
+  }
 );
 
 watch(
@@ -119,28 +182,49 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", handleResize);
+  detachDragListeners();
 });
 </script>
 
 <template>
   <div class="app">
     <AppToolBar class="app__toolbar" />
-    <CodexToolBar class="app__codex-toolbar" />
-    <div class="app__body">
-      <ArmyList />
+    <CodexToolBar v-if="armyListStore.faction" class="app__codex-toolbar" />
+    <div class="app__body" :class="{ 'app__body--blank': !armyListStore.faction }">
+      <ArmyList v-if="armyListStore.faction" />
       <ArmyCodex />
     </div>
     <VersionBar />
+    <!--
+      Mounted inside .app so the ghost can resolve the CSS variables
+      (--color-header, --color-accent, etc.) defined on the .app scope.
+      Position: fixed escapes .app's overflow: hidden anyway.
+    -->
+    <DragGhost />
   </div>
   <PrintableArmyList class="print" />
 </template>
 
 <style scoped lang="scss">
 .app {
-  --font-family: Calibri, sans-serif;
+  --color-bg: #0f1923;
+  --color-surface: #1a2332;
+  --color-header: #243447;
+  --color-divider: #2e3e54;
+  --color-text: #e6ecf2;
+  --color-text-muted: #8a9bb0;
+  --color-accent: #e8a23a;
+  --color-accent-dim: #b07a26;
+  --color-positive: #5fbf7a;
+  --color-negative: #d05757;
+  --font-display: "Oswald", "Impact", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, "Segoe UI", sans-serif;
+  --font-family: var(--font-body);
   --toolbar-height: 44px;
-  background-color: #111;
-  font-family: var(--font-family);
+  --codex-toolbar-height: 64px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
   position: relative;
   overflow: hidden;
 
@@ -149,15 +233,19 @@ onUnmounted(() => {
   }
 
   &__codex-toolbar {
-    height: var(--toolbar-height);
+    height: var(--codex-toolbar-height);
   }
 
   &__body {
     display: flex;
-    height: calc(100svh - (var(--toolbar-height) * 2) - 20px);
+    height: calc(100svh - var(--toolbar-height) - var(--codex-toolbar-height) - 20px);
     justify-content: center;
     position: relative;
     z-index: 1;
+
+    &--blank {
+      height: calc(100svh - var(--toolbar-height) - 20px);
+    }
   }
 }
 

@@ -11,18 +11,22 @@ export const useAppStore = defineStore("app", () => {
   const appWidth = ref(window.innerWidth);
 
   const codexFilter = ref("");
-  const editCollection = ref(false);
+  const editCollection = ref(restore("editCollection") ?? false);
   const group = ref(restore("group") ?? GROUP_ROLE);
   const sortOrder = ref(restore("sortOrder") ?? "A-Z");
 
   const showLegends = ref(restore("showLegends") ?? false);
+  const showAvailableOnly = ref(restore("showAvailableOnly") ?? false);
+  const showPointsChanges = ref(restore("showPointsChanges") ?? false);
 
   const lists = ref(restore("lists") ?? []);
-  const bin = ref([]);
 
+  watch(editCollection, (newValue) => save("editCollection", newValue));
   watch(group, (newGroup) => save("group", newGroup));
   watch(sortOrder, (newSortOrder) => save("sortOrder", newSortOrder));
   watch(showLegends, (newValue) => save("showLegends", newValue));
+  watch(showAvailableOnly, (newValue) => save("showAvailableOnly", newValue));
+  watch(showPointsChanges, (newValue) => save("showPointsChanges", newValue));
   watch(lists, (newLists) => save("lists", newLists), { deep: true });
 
   function setAppDimensions(height, width) {
@@ -46,10 +50,11 @@ export const useAppStore = defineStore("app", () => {
     };
   }
 
-  function newList() {
+  function newList(faction) {
     const armyListStore = useArmyListStore();
-    const faction = armyListStore.faction;
-    lists.value.unshift(armyListStore.toObject());
+    if (armyListStore.faction) {
+      lists.value.unshift(armyListStore.toObject());
+    }
     armyListStore.setList(createNewList(faction));
   }
 
@@ -57,7 +62,9 @@ export const useAppStore = defineStore("app", () => {
     const armyListStore = useArmyListStore();
     const i = lists.value.indexOf(list);
     lists.value.splice(i, 1);
-    lists.value.unshift(armyListStore.toObject());
+    if (armyListStore.faction) {
+      lists.value.unshift(armyListStore.toObject());
+    }
     armyListStore.setList(list);
   }
 
@@ -85,8 +92,9 @@ export const useAppStore = defineStore("app", () => {
     group,
     sortOrder,
     showLegends,
+    showAvailableOnly,
+    showPointsChanges,
     lists,
-    bin,
     setAppDimensions,
     createNewList,
     newList,

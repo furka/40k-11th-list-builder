@@ -149,11 +149,13 @@ function extractDetachments(doc) {
       for (const li of enhUl.querySelectorAll("li")) {
         const spans = li.querySelectorAll("span");
         if (spans.length >= 2) {
-          const enhName = spans[0].textContent.trim();
+          const rawName = spans[0].textContent.trim();
           const ptsMatch = spans[1].textContent.trim().match(/(\d+) pts/);
+          const { name: cleanName, isUnitUpgrade } = parseEnhancementName(rawName);
           enhancements.push({
-            name: enhName,
+            name: cleanName,
             points: ptsMatch ? Number(ptsMatch[1]) : 0,
+            ...(isUnitUpgrade ? { isUnitUpgrade: true } : {}),
           });
         }
       }
@@ -166,10 +168,62 @@ function extractDetachments(doc) {
       if (t.startsWith("UNIQUE:")) tags.push(t);
     }
 
-    out.push({ name, dp, enhancements, tags });
+    // Battlefield role bar: a div with an inline background-color holding the
+    // role name (PURGE THE FOE / TAKE AND HOLD / etc.). The site colors are
+    // intrinsic to the role, but we capture the rendered color too so future
+    // UI changes on the official site flow through without a code change.
+    let role = null;
+    for (const div of card.querySelectorAll(":scope > div[style*='background-color']")) {
+      const text = div.textContent.trim();
+      const styleMatch = div.getAttribute("style").match(/background-color:\s*(#[0-9A-Fa-f]+)/);
+      if (!text || !styleMatch) continue;
+      role = { name: text, color: styleMatch[1] };
+      break;
+    }
+
+    // Detachment-level LEADER row: e.g. CURSED LEGION shows
+    //   "LEADER: LOKHUST DESTROYERS, SKORPEKH DESTROYERS, …"
+    // tucked inside the enhancements <ul class="leaders"> after the last <li>.
+    // It tells the player which units can absorb the detachment-rule leader
+    // effect, distinct from the unit-level leader fields on datasheets.
+    let leader = null;
+    const leaderDiv = card.querySelector("ul.leaders div.mx-3.font-bold");
+    if (leaderDiv) {
+      const spans = leaderDiv.querySelectorAll("span");
+      const labelText = spans[0]?.textContent.trim() ?? "";
+      if (labelText.startsWith("LEADER:") && spans[1]) {
+        const attachesTo = spans[1].textContent
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean);
+        if (attachesTo.length) leader = { attachesTo };
+      }
+    }
+
+    out.push({ name, dp, role, leader, enhancements, tags });
   }
 
   return out;
+}
+
+/**
+ * Detachment enhancements may carry a trailing "(Upgrade)" marker in the
+ * source HTML (e.g. "Enlivened Sentinels (Upgrade)") signalling that the
+ * enhancement attaches to a regular squad rather than to a character. The
+ * scraper is the ONLY layer that does the string match — downstream code
+ * reads the `isUnitUpgrade` boolean on the normalised enhancement.
+ *
+ * The regex is anchored at end-of-string and case-insensitive: matches the
+ * literal trailing "(Upgrade)" suffix in any casing, and won't strip the
+ * substring if it happens to appear mid-name.
+ */
+export function parseEnhancementName(rawName) {
+  const name = String(rawName ?? "");
+  const stripped = name.replace(/\s*\(upgrade\)\s*$/i, "");
+  return {
+    name: stripped,
+    isUnitUpgrade: stripped !== name,
+  };
 }
 
 function extractDatasheets(doc) {
@@ -198,11 +252,12 @@ function extractDatasheets(doc) {
     if (!name) continue;
 
     const tiers = [];
+    const wargearOptions = [];
     let leader = null;
     let support = null;
     let epicHero = false;
 
-    // Iterate the cost / leader / support / epic-hero sections.
+    // Iterate the cost / leader / support / wargear / epic-hero sections.
     for (const section of card.querySelectorAll(":scope > div.space-y-1")) {
       const headingDiv = section.querySelector(":scope > div:first-child");
       const headingText = headingDiv?.textContent.trim() ?? "";
@@ -227,7 +282,7 @@ function extractDatasheets(doc) {
         continue;
       }
 
-      // Leader/Support marker block:
+      // Leader/Support/Wargear marker block:
       //   <div class="space-y-1">
       //     <div class="flex flex-row justify-between ..."><span>LEADER</span><img src="/leader.svg"/></div>
       //     <span class="font-bold">UNIT A, UNIT B</span>
@@ -245,6 +300,29 @@ function extractDatasheets(doc) {
         continue;
       }
 
+      if (/^WARGEAR\s+OPTIONS?$/i.test(markerText)) {
+        // Wargear block has the same <li><span>label</span><span>X pts</span></li>
+        // shape as a cost tier. The MFM consistently writes labels as "per X"
+        // (it reads naturally as "per Bombast field gun: 10 pts" in the
+        // manual's typesetting). Strip the leading "per " here — the codex
+        // card re-prepends it for display — so the wargear's identity is the
+        // bare item name. That keeps the army list / print output clean
+        // ("[Wgr] Bombast field gun" rather than "[Wgr] PER BOMBAST FIELD GUN").
+        const lis = section.querySelectorAll("li");
+        for (const li of lis) {
+          const spans = li.querySelectorAll("span");
+          if (spans.length < 2) continue;
+          const rawName = spans[0].textContent.trim();
+          const optName = rawName.replace(/^per\s+/i, "");
+          const ptsMatch = spans[1].textContent.trim().match(/([\d,]+)\s*pts/);
+          const points = ptsMatch ? Number(ptsMatch[1].replace(/,/g, "")) : null;
+          if (optName && points != null) {
+            wargearOptions.push({ name: optName, points });
+          }
+        }
+        continue;
+      }
+
       if (/EPIC HERO/i.test(headingText)) {
         epicHero = true;
       }
@@ -252,13 +330,15 @@ function extractDatasheets(doc) {
 
     if (tiers.length === 0) continue; // not actually a datasheet card
 
-    out.push({
+    const record = {
       name,
       tiers,
       leader,
       support,
       epicHero,
-    });
+    };
+    if (wargearOptions.length) record.wargearOptions = wargearOptions;
+    out.push(record);
   }
 
   return out;

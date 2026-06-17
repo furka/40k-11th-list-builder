@@ -3,6 +3,14 @@ import { load11thMFM } from "../data/munitorum-field-manual-11th";
 import { resolveTier } from "../utils/list-points";
 import deepFreeze from "deep-freeze";
 
+// Legacy MFM versions used to embed the scrape date — "V1.0 (2026-06-17)".
+// Strip that suffix so old saved lists and bookmarked share URLs still resolve
+// against the new date-less dictionary keys.
+function normalizeMfmVersion(v) {
+  if (!v) return v;
+  return v.replace(/\s*\(\d{4}-\d{2}-\d{2}\)\s*$/, "");
+}
+
 export const useMfmStore = defineStore("mfm", () => {
   const MFM = load11thMFM();
   deepFreeze(MFM);
@@ -13,7 +21,8 @@ export const useMfmStore = defineStore("mfm", () => {
 
   function getVersion(versionKey) {
     if (!versionKey) return null;
-    return (isVersionKey(versionKey) && MFM[versionKey]) || null;
+    const normalized = normalizeMfmVersion(versionKey);
+    return (isVersionKey(normalized) && MFM[normalized]) || null;
   }
 
   function getPreviousMFM(currentMFM) {
@@ -27,7 +36,29 @@ export const useMfmStore = defineStore("mfm", () => {
     if (!mfm) mfm = MFM.CURRENT;
     if (!mfm || !mfm.DATA_SHEETS) return -1;
 
-    const isEnhancement = !unit.models && unit.optionName;
+    // Wargear: the price lives on the host datasheet's wargearOptions array.
+    // We look it up via `parentDataSheet` rather than walking the unit graph,
+    // because `getPoints` is also called from `changes()` with no list ctx.
+    if (unit.name === "Wargear") {
+      if (!unit.parentDataSheet || !unit.optionName) return -1;
+      let host_sheet = null;
+      if (faction) {
+        host_sheet = mfm.DATA_SHEETS.find(
+          (d) => d.name === unit.parentDataSheet && d.faction === faction
+        );
+      }
+      if (!host_sheet) {
+        host_sheet = mfm.DATA_SHEETS.find(
+          (d) => d.name === unit.parentDataSheet
+        );
+      }
+      const opt = host_sheet?.wargearOptions?.find(
+        (w) => w.name === unit.optionName
+      );
+      return opt ? opt.points : -1;
+    }
+
+    const isEnhancement = unit.name === "Enhancements";
     let data_sheet;
 
     if (isEnhancement) {
@@ -113,5 +144,6 @@ export const useMfmStore = defineStore("mfm", () => {
     autoUpgradeMFMVersion,
     changes,
     isListOutdated,
+    normalizeMfmVersion,
   };
 });

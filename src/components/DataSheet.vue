@@ -8,9 +8,17 @@ import { isDedicatedTransport } from "../utils/is-dedicated-transport";
 import { unitMax } from "../utils/unit-max";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
+import { useCollectionStore } from "../stores/collection";
+import {
+  findAvailableWargearHost,
+  wargearMaxPerUnit,
+} from "../utils/wargear-limits";
+import LeaderIcon from "../assets/leader-skull-icon.svg";
+import SupportIcon from "../assets/support-icon.svg";
 
 const armyListStore = useArmyListStore();
 const appStore = useAppStore();
+const collectionStore = useCollectionStore();
 
 const props = defineProps({
   dataSheet: Object,
@@ -27,6 +35,48 @@ function addUnit(option) {
     optionName: option.name,
   };
   armyListStore.addUnit(newUnit);
+}
+
+// Wargear is auto-attached to the first matching host (in army-list order)
+// whose count of THIS option is below its per-host cap. The cap defaults to
+// WARGEAR_DEFAULT_MAX_PER_UNIT (20) but is overridable per-option once we
+// can source real numbers. When every matching host is saturated, the click
+// is a no-op (the row is also visually disabled via `wargearAvailable`).
+function addWargear(option) {
+  const host = findAvailableWargearHost(
+    armyListStore.units,
+    props.dataSheet.name,
+    option.name,
+    wargearMaxPerUnit(option)
+  );
+  if (!host) return;
+  armyListStore.addUnit({
+    id: uuidv4(),
+    name: "Wargear",
+    parentDataSheet: props.dataSheet.name,
+    optionName: option.name,
+    attachedTo: host.id,
+  });
+}
+
+function wargearAvailable(option) {
+  return Boolean(
+    findAvailableWargearHost(
+      armyListStore.units,
+      props.dataSheet.name,
+      option.name,
+      wargearMaxPerUnit(option)
+    )
+  );
+}
+
+function wargearTooltip(option) {
+  if (wargearAvailable(option)) return `Add to your ${props.dataSheet.name}`;
+  const hasAny = armyListStore.units.some(
+    (u) => u.name === props.dataSheet.name
+  );
+  if (!hasAny) return `Add a ${props.dataSheet.name} first`;
+  return `All your ${props.dataSheet.name}s are at the max for this option`;
 }
 
 const options = computed(() => {
@@ -114,6 +164,34 @@ const max = computed(() =>
 
 const maxed = computed(() => count.value >= max.value);
 
+// Collection-driven ownership. `getUnitCount` returns 999 (uncapped) when the
+// user hasn't set a value for this datasheet, so by default nothing gets
+// gated — the cap only kicks in once they've actively edited their collection.
+const owned = computed(() => {
+  if (props.dataSheet.enhancements) return 999;
+  return collectionStore.getUnitCount(props.dataSheet.name);
+});
+
+const modelsTaken = computed(
+  () => armyListStore.modelsTaken[props.dataSheet.name] || 0
+);
+
+function onCollectionBlur(event) {
+  const value = Math.min(999, Math.max(0, Number(event.target.value) || 0));
+  collectionStore.setUnitCount(props.dataSheet.name, value);
+}
+
+function enoughInCollection(option) {
+  if (!option.models) return true;
+  return option.models + modelsTaken.value <= owned.value;
+}
+
+const hasOwned = computed(() => {
+  if (props.dataSheet.enhancements) return true;
+  if (appStore.editCollection) return true;
+  return owned.value > 0;
+});
+
 function enhancementTaken(enhancement) {
   return armyListStore.enhancementsTaken.has(enhancement.name);
 }
@@ -122,58 +200,81 @@ function optionAvailable(option) {
   if (option.bonus) return true;
   if (maxed.value) return false;
   if (props.dataSheet.enhancements) return !enhancementTaken(option);
-  return true;
+  return enoughInCollection(option);
 }
+
+const showInlineRoles = computed(() => appStore.group === GROUP_NONE);
 </script>
 
 <template>
-  <div class="data-sheet" v-if="options.length">
+  <div
+    class="data-sheet"
+    v-if="options.length && hasOwned && (!appStore.showAvailableOnly || !maxed)"
+  >
     <div class="data-sheet__title" :class="{ maxed: maxed }">
       <span class="data-sheet__name">
-        <template v-if="max > -1"> {{ count }}/{{ max }}</template>
+        <template v-if="max > -1">{{ count }}/{{ max }} </template>
         {{ props.dataSheet.displayName || props.dataSheet.name }}
-        <template v-if="appStore.group === GROUP_NONE">
-          <span v-if="isBattleLine(props.dataSheet)" title="Battleline">[B]</span>
-          <span v-if="props.dataSheet.character" title="Character">[C]</span>
-          <span
-            v-if="isDedicatedTransport(props.dataSheet)"
-            title="Dedicated Transport"
-            >[T]</span
-          >
-        </template>
-        <span v-if="props.dataSheet.epicHero" title="Epic Hero">[E]</span>
-        <span v-if="props.dataSheet.legends" title="Legends">[Lg]</span>
+      </span>
+      <label
+        v-if="!props.dataSheet.enhancements && appStore.editCollection"
+        class="data-sheet__owned-label"
+        title="How many of these do you own?"
+        @click.stop
+      >
+        Owned:
+        <input
+          class="data-sheet__owned"
+          type="number"
+          min="0"
+          max="999"
+          :value="owned"
+          @focus="$event.target.select()"
+          @blur="onCollectionBlur"
+        />
+      </label>
+      <div
+        v-else-if="!props.dataSheet.enhancements && owned < 999"
+        class="data-sheet__count"
+        title="Models in this list / models you own"
+      >
+        {{ modelsTaken }} / {{ owned }}
+      </div>
+      <span class="data-sheet__pills">
         <span
-          v-if="props.dataSheet.leader"
-          class="data-sheet__role-leader"
-          title="Leader"
-          >[Leader]</span
+          v-if="showInlineRoles && isBattleLine(props.dataSheet)"
+          class="data-sheet__pill"
+          title="Battleline"
+          >B</span
         >
         <span
-          v-if="props.dataSheet.support"
-          class="data-sheet__role-support"
-          title="Support"
-          >[Sup]</span
+          v-if="showInlineRoles && props.dataSheet.character"
+          class="data-sheet__pill"
+          title="Character"
+          >C</span
+        >
+        <span
+          v-if="showInlineRoles && isDedicatedTransport(props.dataSheet)"
+          class="data-sheet__pill"
+          title="Dedicated Transport"
+          >T</span
+        >
+        <span
+          v-if="props.dataSheet.epicHero"
+          class="data-sheet__pill data-sheet__pill--accent"
+          title="Epic Hero"
+          >E</span
+        >
+        <span
+          v-if="props.dataSheet.legends"
+          class="data-sheet__pill"
+          title="Legends"
+          >Lg</span
         >
       </span>
     </div>
-    <div
-      v-if="props.dataSheet.leader?.attachesTo?.length"
-      class="data-sheet__attaches-to"
-      title="Leader can attach to"
-    >
-      Leader: {{ props.dataSheet.leader.attachesTo.join(", ") }}
-    </div>
-    <div
-      v-if="props.dataSheet.support?.attachesTo?.length"
-      class="data-sheet__attaches-to"
-      title="Support can attach to"
-    >
-      Support: {{ props.dataSheet.support.attachesTo.join(", ") }}
-    </div>
     <template v-for="(group, gi) in tierGroups" :key="gi">
       <div
-        v-if="tierGroups.length > 1"
         class="data-sheet__tier-label"
         :class="{ maxed: !group.tierEnabled }"
       >
@@ -183,15 +284,18 @@ function optionAvailable(option) {
         <li
           v-for="(row, ri) in group.rows"
           :key="ri"
+          v-show="!appStore.showAvailableOnly || rowAvailable(row, group)"
           @click="rowAvailable(row, group) && addUnit(row.size)"
           :class="{ maxed: !rowAvailable(row, group) }"
         >
-          <span v-if="row.size.models">
-            {{ row.size.models }}
-            {{ row.size.models === 1 ? "model" : "models" }}
-          </span>
-          <span v-if="row.size.name" class="data-sheet__option-name">
-            {{ row.size.name }}
+          <span class="data-sheet__option-label">
+            <span v-if="row.size.models">
+              {{ row.size.models }}
+              {{ row.size.models === 1 ? "model" : "models" }}
+            </span>
+            <span v-if="row.size.name" class="data-sheet__option-name">
+              {{ row.size.name }}
+            </span>
           </span>
           <span class="data-sheet__option-spacer"></span>
           <span class="data-sheet__points">
@@ -201,89 +305,168 @@ function optionAvailable(option) {
         </li>
       </ul>
     </template>
+    <template v-if="props.dataSheet.wargearOptions?.length">
+      <div class="data-sheet__tier-label">WARGEAR OPTIONS</div>
+      <ul>
+        <li
+          v-for="(wo, wi) in props.dataSheet.wargearOptions"
+          :key="`wgr-${wi}`"
+          :class="{ maxed: !wargearAvailable(wo) }"
+          :title="wargearTooltip(wo)"
+          @click="wargearAvailable(wo) && addWargear(wo)"
+        >
+          <span class="data-sheet__option-label">
+            <span class="data-sheet__option-name">per {{ wo.name }}</span>
+          </span>
+          <span class="data-sheet__option-spacer"></span>
+          <span class="data-sheet__points">{{ wo.points }} pts</span>
+        </li>
+      </ul>
+    </template>
+    <div
+      v-if="props.dataSheet.leader?.attachesTo?.length"
+      class="data-sheet__role-row"
+      :class="{ maxed: maxed }"
+    >
+      <div class="data-sheet__role-header">
+        <span class="data-sheet__role-label">Leader</span>
+        <LeaderIcon class="data-sheet__role-icon" />
+      </div>
+      <div class="data-sheet__role-attaches">
+        {{ props.dataSheet.leader.attachesTo.join(", ") }}
+      </div>
+    </div>
+    <div
+      v-if="props.dataSheet.support?.attachesTo?.length"
+      class="data-sheet__role-row"
+      :class="{ maxed: maxed }"
+    >
+      <div class="data-sheet__role-header">
+        <span class="data-sheet__role-label">Support</span>
+        <SupportIcon class="data-sheet__role-icon" />
+      </div>
+      <div class="data-sheet__role-attaches">
+        {{ props.dataSheet.support.attachesTo.join(", ") }}
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .data-sheet {
+  background-color: var(--color-surface);
   margin-bottom: 1px;
   width: 300px;
   writing-mode: horizontal-tb;
 
   &__title {
     align-items: center;
-    align-items: flex-end;
-    background-color: rgba(0, 0, 0, 0.65);
-    color: #fff;
+    background-color: var(--color-header);
+    color: var(--color-text);
     display: flex;
-    font-weight: bold;
+    font-family: var(--font-display);
+    font-weight: 600;
+    gap: 6px;
     justify-content: space-between;
-    padding: 2px 4px;
+    letter-spacing: 0.3px;
+    padding: 6px 10px;
     position: relative;
-  }
-
-  &__name {
-    line-height: 20px;
-    text-transform: capitalize;
-
-    > span {
-      cursor: help;
-    }
-  }
-
-  &__role-leader,
-  &__role-support {
-    font-size: 0.8em;
-    margin-left: 2px;
-    opacity: 0.85;
-  }
-
-  &__attaches-to {
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #ddd;
-    font-size: 11px;
-    font-style: italic;
-    padding: 2px 6px;
-  }
-
-  &__tier-label {
-    background-color: rgba(0, 0, 0, 0.45);
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    margin-top: 1px;
-    padding: 2px 6px;
     text-transform: uppercase;
   }
 
-  label {
+  &__name {
+    flex-grow: 1;
+    font-size: 16px;
+    line-height: 20px;
+    min-width: 0;
+  }
+
+  &__pills {
     align-items: center;
-    background-color: #000;
-    border-bottom: 2px dashed currentColor;
-    bottom: 0;
     display: flex;
-    font-size: 12px;
-    padding: 4px;
-    position: absolute;
-    right: 0;
-    top: 0;
+    flex-shrink: 0;
+    gap: 3px;
+  }
+
+  &__owned-label {
+    align-items: center;
+    color: var(--color-text-muted);
+    cursor: text;
+    display: flex;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 500;
+    gap: 4px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
   }
 
   &__owned {
-    background-color: transparent;
-    border: none;
-    color: currentcolor;
-    font-family: var(--font-family);
-    font-size: 12px;
-    font-weight: bold;
-    padding: 2px;
-    text-align: left;
-    width: 3em;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-divider);
+    border-radius: 2px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 2px 4px;
+    text-align: right;
+    width: 46px;
+
+    &:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
   }
 
   &__count {
+    color: var(--color-text-muted);
     flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+
+  &__pill {
+    background-color: var(--color-divider);
+    border-radius: 2px;
+    color: var(--color-text);
+    cursor: help;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    padding: 3px 6px;
+    text-transform: uppercase;
+
+    &--accent {
+      background-color: var(--color-accent-dim);
+      color: #0f1923;
+    }
+  }
+
+  &__tier-label {
+    border-bottom: 1px solid var(--color-divider);
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    margin: 10px 10px 0;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  &__option-label {
+    align-items: baseline;
+    color: var(--color-text);
+    display: flex;
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: 13px;
+    gap: 6px;
   }
 
   &__option-name {
@@ -291,51 +474,94 @@ function optionAvailable(option) {
   }
 
   &__option-spacer {
-    border-bottom: 2px dotted black;
+    border-bottom: 1px dotted var(--color-text-muted);
     flex-grow: 1;
-    margin: 4px 2px;
+    margin: 0 4px 4px;
+    min-width: 12px;
   }
 
   &__points {
+    color: var(--color-accent);
     flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
 
     &--up {
-      color: rgb(150, 0, 0);
+      color: var(--color-negative);
     }
     &--down {
-      color: rgb(0, 145, 77);
+      color: var(--color-positive);
     }
+  }
+
+  &__role-row {
+    border-top: 1px solid var(--color-divider);
+    margin-top: 8px;
+    padding: 6px 10px 8px;
+  }
+
+  &__role-header {
+    align-items: center;
+    color: var(--color-text-muted);
+    display: flex;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
+    justify-content: space-between;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  &__role-icon {
+    color: var(--color-text-muted);
+    fill: currentColor;
+    flex-shrink: 0;
+    height: 16px;
+    width: 16px;
+  }
+
+  &__role-attaches {
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin-top: 4px;
+    text-transform: uppercase;
   }
 
   ul {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 4px 10px;
   }
 
   li {
-    border-radius: 3px;
-    border: 2px solid transparent;
+    align-items: baseline;
+    border-radius: 2px;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2px;
+    padding: 3px 4px;
 
     &:hover {
-      border-color: black;
+      background-color: rgba(255, 255, 255, 0.04);
     }
   }
 
   .maxed {
     cursor: not-allowed;
-    opacity: 0.25;
+    opacity: 0.3;
 
     li {
       cursor: not-allowed;
 
       &:hover {
-        border-color: transparent;
+        background-color: transparent;
       }
     }
   }

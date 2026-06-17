@@ -9,7 +9,7 @@ import { battleSizeRules } from "./battle-size";
  *   {
  *     total: number,
  *     perUnit: { [unit.id]: { points, tierIndex, tierLabel } },
- *     dp: { used, max, byDetachment: [{ name, dp }] }
+ *     dp: { used, max, byDetachment: [{ name, dp, role }] }
  *   }
  *
  * - Enhancements and `bonus: true` options are flat-priced and don't bump the
@@ -25,15 +25,18 @@ export function computeListPoints(list, mfm, faction) {
 
   const counters = {};
   const datasheetCache = {};
+  const unitsById = new Map((list.units ?? []).map((u) => [u.id, u]));
 
   const getDatasheet = (unit) => {
     const cacheKey = `${unit.name}::${faction ?? ""}`;
     if (cacheKey in datasheetCache) return datasheetCache[cacheKey];
 
     let sheet = null;
-    const isEnhancement = !unit.models && unit.optionName;
-    if (isEnhancement) {
+    if (unit.name === "Enhancements") {
       sheet = mfm.DATA_SHEETS.find((d) => d.name === "Enhancements") ?? null;
+    } else if (unit.name === "Wargear") {
+      // Wargear has no datasheet of its own — pricing walks to the host.
+      sheet = null;
     } else {
       if (faction) {
         sheet =
@@ -50,11 +53,24 @@ export function computeListPoints(list, mfm, faction) {
   };
 
   for (const unit of list.units ?? []) {
+    const isWargear = unit.name === "Wargear";
+    const isEnhancement = unit.name === "Enhancements";
+    const isBonus = !!unit.bonus;
+
+    if (isWargear) {
+      const host = unit.attachedTo ? unitsById.get(unit.attachedTo) : null;
+      const hostSheet = host ? getDatasheet(host) : null;
+      const option = hostSheet?.wargearOptions?.find(
+        (w) => w.name === unit.optionName
+      );
+      const points = option ? option.points : -1;
+      perUnit[unit.id] = { points, tierIndex: 0, tierLabel: null };
+      if (points > 0) total += points;
+      continue;
+    }
+
     const sheet = getDatasheet(unit);
     const size = findSize(sheet, unit);
-
-    const isEnhancement = !unit.models && unit.optionName;
-    const isBonus = !!unit.bonus;
 
     if (isEnhancement || isBonus) {
       const points = size?.basePoints ?? size?.points ?? -1;
@@ -147,7 +163,12 @@ function computeDP(list, mfm, faction) {
   const factionEntry = mfm.FACTIONS?.find((f) => f.name === faction);
   const byDetachment = (list.detachments ?? []).map((name) => {
     const meta = factionEntry?.detachments.find((d) => d.name === name);
-    return { name, dp: meta?.dp ?? 0 };
+    return {
+      name,
+      dp: meta?.dp ?? 0,
+      role: meta?.role ?? null,
+      leader: meta?.leader ?? null,
+    };
   });
 
   const used = byDetachment.reduce((sum, d) => sum + d.dp, 0);

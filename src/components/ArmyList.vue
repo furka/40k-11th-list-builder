@@ -1,24 +1,41 @@
 <script setup>
 import { computed, onBeforeUnmount, ref, watch } from "vue";
 import draggable from "vuedraggable";
-import ArmyListUnit from "./ArmyListUnit.vue";
+import ArmyListUnitNode from "./ArmyListUnitNode.vue";
 import ArmyListDetachment from "./ArmyListDetachment.vue";
-import { SORT_MANUAL } from "../data/constants";
+import DropOverlay from "./DropOverlay.vue";
+import RiskIcon from "../assets/risk-icon.svg";
 import { useArmyListStore } from "../stores/armyList";
+import { useDragStore } from "../stores/drag";
+import { computeScale, emptyHeightPx } from "../utils/unit-sizing";
 
 const armyListStore = useArmyListStore();
+const dragStore = useDragStore();
+
+const rootUnits = computed(() =>
+  armyListStore.units.filter((u) => !u.attachedTo)
+);
+
+// Per-row indexInParent in dragged-excluded space (see useRowEl). The dragged
+// row gets the index its position WOULD have without it; the drag store
+// filters it out anyway.
+const rootIndices = computed(() => {
+  const out = [];
+  let nonDraggedIdx = 0;
+  for (const u of rootUnits.value) {
+    out.push(nonDraggedIdx);
+    if (u.id !== dragStore.draggedId) nonDraggedIdx++;
+  }
+  return out;
+});
 
 const dp = computed(() => armyListStore.pointsBreakdown.dp);
+const dpOver = computed(() => !!dp.value && dp.value.used > dp.value.max);
 const detachmentList = computed(() => dp.value?.byDetachment ?? []);
 
-// Measure the army-list element's rendered height directly. Computing it
-// from `appHeight − toolbars − versionBar − detachments-section-height`
-// works in theory but is fragile: a sub-pixel difference between
-// `window.innerHeight` and `100svh`, or any padding/border we forget to
-// account for, leaks through to a few pixels of overflow. Reading the
-// actual border-box pixels the layout allocates removes the whole chain of
-// guesses. The element's height comes from `flex-grow: 1` in its parent so
-// it doesn't depend on its own content — no feedback loop.
+// See the original comment in this file: measuring the rendered border-box
+// height directly is more reliable than computing it from the surrounding
+// chrome.
 const armyListEl = ref(null);
 const armyListHeight = ref(0);
 let resizeObserver = null;
@@ -57,30 +74,32 @@ onBeforeUnmount(() => {
   }
 });
 
-const scale = computed(() => {
-  if (!armyListHeight.value) return 0;
-  return armyListHeight.value / armyListStore.effectiveMaxPoints;
-});
+// 1px gap between top-level army-list-unit-nodes — visually interrupts the
+// orange grouping stripe so adjacent grouped blobs read as separate units.
+// Each gap eats 1px of panel height, so subtract their total before scaling
+// rows; otherwise the rows + gaps + empty-space band would overflow.
+const ROOT_GAP_PX = 1;
+const rootGapTotal = computed(() =>
+  Math.max(0, rootUnits.value.length - 1) * ROOT_GAP_PX
+);
 
 const points = computed(() => armyListStore.pointsBreakdown.total);
 
-const emptySpace = computed(() => {
-  return (
-    Math.max(0, armyListStore.effectiveMaxPoints - points.value) *
-      scale.value +
-    "px"
-  );
-});
+const scale = computed(() =>
+  computeScale(
+    Math.max(0, armyListHeight.value - rootGapTotal.value),
+    armyListStore.effectiveMaxPoints,
+    points.value
+  )
+);
 
-function handleDragChange(event) {
-  if (event.moved) {
-    armyListStore.sortOrder = SORT_MANUAL;
-  }
-}
-
-function updateUnits(units) {
-  armyListStore.setUnits(units);
-}
+const emptySpace = computed(() =>
+  emptyHeightPx(
+    armyListStore.effectiveMaxPoints,
+    points.value,
+    scale.value
+  )
+);
 </script>
 
 <template>
@@ -88,8 +107,25 @@ function updateUnits(units) {
     <div class="army-list-detachments">
       <div class="army-list-detachments__header">
         <span>Detachments</span>
-        <span v-if="dp">{{ dp.used }} / {{ dp.max }} DP</span>
+        <span
+          v-if="dp"
+          class="army-list-detachments__dp"
+          :class="{ 'army-list-detachments__dp--over': dpOver }"
+        >
+          <RiskIcon
+            v-if="dpOver"
+            class="army-list-detachments__warning-icon"
+            title="Your detachments exceed the DP budget for this battle size. Remove a detachment or raise your max points."
+          />
+          {{ dp.used }} / {{ dp.max }} DP
+        </span>
       </div>
+      <!--
+        Detachments still ride on vuedraggable for now — Phase 3 of the DnD
+        refactor migrates them to the same drag store. Until then, unit drags
+        (pointer-event based) and detachment drags (vuedraggable) live side
+        by side without interfering since they're on disjoint elements.
+      -->
       <draggable
         :model-value="detachmentList"
         @update:model-value="
@@ -109,25 +145,28 @@ function updateUnits(units) {
         "
       >
         <template #item="{ element }">
-          <ArmyListDetachment :name="element.name" :dp="element.dp" />
+          <ArmyListDetachment
+            :name="element.name"
+            :dp="element.dp"
+            :role="element.role"
+          />
         </template>
       </draggable>
     </div>
     <div class="army-list" ref="armyListEl">
-      <draggable
-        :model-value="armyListStore.units"
-        @update:model-value="updateUnits"
-        group="units"
-        animation="150"
-        item-key="id"
-        class="army-list__draggable"
-        @change="handleDragChange"
-      >
-        <template #item="{ element, index }">
-          <ArmyListUnit :unit="element" :scale="scale" />
-        </template>
-      </draggable>
+      <div class="army-list__list">
+        <ArmyListUnitNode
+          v-for="(unit, i) in rootUnits"
+          :key="unit.id"
+          :unit="unit"
+          :scale="scale"
+          :depth="0"
+          parent-key="root"
+          :index-in-parent="rootIndices[i]"
+        />
+      </div>
     </div>
+    <DropOverlay />
   </div>
 </template>
 
@@ -140,20 +179,23 @@ function updateUnits(units) {
 }
 
 .army-list-detachments {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  background-color: var(--color-header);
+  color: var(--color-text);
   flex-shrink: 0;
-  font-family: sans-serif;
-  padding: 4px;
+  font-family: var(--font-body);
+  padding: 6px 8px;
 
   &__header {
     align-items: center;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid var(--color-divider);
+    color: var(--color-text-muted);
     display: flex;
-    font-size: 11px;
-    font-weight: bold;
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
     justify-content: space-between;
-    padding: 2px 4px 4px;
+    letter-spacing: 1.2px;
+    padding: 2px 2px 6px;
     text-transform: uppercase;
   }
 
@@ -161,25 +203,38 @@ function updateUnits(units) {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin-top: 4px;
+    margin-top: 6px;
     min-height: 24px;
+  }
+
+  &__dp {
+    align-items: center;
+    display: inline-flex;
+    gap: 4px;
+
+    &--over {
+      color: var(--color-negative);
+    }
+  }
+
+  &__warning-icon {
+    cursor: help;
+    height: 14px;
+    width: 14px;
   }
 }
 
 .army-list {
-  background-image: url(../assets/bg-dark.png);
-  background-size: 100% 100%;
+  background-color: var(--color-bg);
   flex-grow: 1;
-  // Allow the wrapper to shrink inside its flex parent so its measured
-  // border-box height is always exactly what the layout allocates, never
-  // bloated by content overflow.
   min-height: 0;
   overflow: hidden;
   position: relative;
 
-  &__draggable {
+  &__list {
     display: flex;
     flex-direction: column;
+    gap: 1px;
     height: 100%;
     justify-content: flex-end;
     padding-top: v-bind("emptySpace");

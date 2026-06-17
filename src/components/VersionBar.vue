@@ -57,16 +57,17 @@ const availableMFMVersions = computed(() => {
 
 <style scoped lang="scss">
 .version-bar {
-  height: 20px;
-  background-color: #222;
-  color: #999;
-  font-size: 11px;
+  height: 22px;
+  background-color: var(--color-header);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 0 8px;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--color-divider);
   box-sizing: border-box;
 
   &__mfm {
@@ -87,16 +88,22 @@ const availableMFMVersions = computed(() => {
   }
 
   select {
-    background-color: #333;
-    border: 1px solid #555;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-divider);
     border-radius: 2px;
-    color: #999;
-    font-size: 11px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 12px;
     padding: 0 4px;
     cursor: pointer;
 
+    option {
+      background-color: var(--color-surface);
+      color: var(--color-text);
+    }
+
     &:hover {
-      background-color: #444;
+      border-color: var(--color-accent);
     }
   }
 
@@ -104,7 +111,7 @@ const availableMFMVersions = computed(() => {
     display: flex;
     align-items: center;
     gap: 4px;
-    color: #f59e0b;
+    color: var(--color-accent);
     font-weight: 600;
     cursor: help;
 

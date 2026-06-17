@@ -5,6 +5,11 @@
     {
       "name": "ARMY OF FAITH",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "BRINGERS OF FLAME",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -51,6 +61,11 @@
     {
       "name": "CHAMPIONS OF FAITH",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: REVEREND"
       ],
@@ -76,6 +91,11 @@
     {
       "name": "CHORUS OF CONDEMNATION",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -83,14 +103,20 @@
           "points": 15
         },
         {
-          "name": "Symphonic Payload (Upgrade)",
-          "points": 10
+          "name": "Symphonic Payload",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "HALLOWED MARTYRS",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -114,6 +140,15 @@
     {
       "name": "PENITENT HOST",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": {
+        "attachesTo": [
+          "REPENTIA SQUAD"
+        ]
+      },
       "tags": [],
       "enhancements": [
         {
@@ -137,6 +172,11 @@
     {
       "name": "SACRED CHAMPIONS",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: REVEREND"
       ],
@@ -146,19 +186,26 @@
           "points": 10
         },
         {
-          "name": "Writ of Compunction (Upgrade)",
-          "points": 20
+          "name": "Writ of Compunction",
+          "points": 20,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "SANCTIFIED ORATORS",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Hagiomnifex (Upgrade)",
-          "points": 25
+          "name": "Hagiomnifex",
+          "points": 25,
+          "isUnitUpgrade": true
         }
       ]
     }
@@ -171,6 +218,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD",
           "SISTERS NOVITIATE SQUAD"
@@ -241,6 +289,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD",
           "SISTERS NOVITIATE SQUAD"
@@ -383,6 +432,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD",
           "SISTERS NOVITIATE SQUAD"
@@ -409,6 +459,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD"
         ]
@@ -446,6 +497,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Meltagun",
+          "points": 5
+        }
       ]
     },
     {
@@ -478,6 +535,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD",
           "SISTERS NOVITIATE SQUAD"
@@ -509,6 +567,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD"
         ]
@@ -546,6 +605,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Twin multi-melta",
+          "points": 15
+        }
       ]
     },
     {
@@ -572,6 +637,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD",
           "SISTERS NOVITIATE SQUAD"
@@ -598,6 +664,7 @@
           "ARCO-FLAGELLANTS",
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "SANCTIFIERS",
           "SISTERS NOVITIATE SQUAD"
@@ -672,6 +739,7 @@
           "BATTLE SISTERS SQUAD",
           "CELESTIAN INSIDIANTS",
           "CELESTIAN SACRESANTS",
+          "CRUSADERS",
           "DOMINION SQUAD",
           "RETRIBUTOR SQUAD",
           "SISTERS NOVITIATE SQUAD"
@@ -710,6 +778,12 @@
               "points": 190
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Multi-melta",
+          "points": 10
         }
       ]
     },
@@ -786,6 +860,12 @@
               "points": 115
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Multi-melta",
+          "points": 5
         }
       ]
     },
@@ -903,7 +983,8 @@
       "name": "TRIUMPH OF SAINT KATHERINE",
       "leader": {
         "attachesTo": [
-          "BATTLE SISTERS SQUAD"
+          "BATTLE SISTERS SQUAD",
+          "CRUSADERS"
         ]
       },
       "support": null,
@@ -946,6 +1027,116 @@
           ]
         }
       ]
+    },
+    {
+      "name": "BATTLE SANCTUM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CELESTIAN SACRESANT AVELINE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CRUSADERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH CULT ASSASSINS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "REPRESSOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

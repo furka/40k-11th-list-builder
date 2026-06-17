@@ -1,23 +1,12 @@
 <script setup>
-import { computed } from "vue";
 import CodexOptions from "./CodexOptions.vue";
 import SortArmyButton from "./SortArmyButton.vue";
 import ToolBar from "./ToolBar.vue";
 import { useArmyListStore } from "../stores/armyList";
-import { useMfmStore } from "../stores/mfm";
 import { useAppStore } from "../stores/app";
 
 const armyListStore = useArmyListStore();
-const mfmStore = useMfmStore();
 const appStore = useAppStore();
-
-const factionsFiltered = computed(() => {
-  const baseFactions = (armyListStore.currentMFM || mfmStore.MFM.CURRENT)
-    .FACTIONS;
-  const factionNames = baseFactions.map((f) => f.name);
-  factionNames.sort();
-  return factionNames;
-});
 </script>
 
 <template>
@@ -27,15 +16,9 @@ const factionsFiltered = computed(() => {
     </div>
 
     <div class="toolbar__group toolbar__group--faction">
-      <select
-        :value="armyListStore.faction"
-        @change="armyListStore.faction = $event.target.value"
-        class="toolbar__faction-select"
-      >
-        <option v-for="faction in factionsFiltered" :value="faction">
-          {{ faction.toLowerCase() }}
-        </option>
-      </select>
+      <span class="toolbar__faction-label">
+        {{ armyListStore.faction }}
+      </span>
     </div>
 
     <div class="toolbar__group toolbar__group--filter">
@@ -61,13 +44,16 @@ const factionsFiltered = computed(() => {
       width: 7em;
     }
 
-    &__faction-select {
-      text-transform: capitalize;
-      max-width: calc(50vw - 300px);
-
-      @media (max-width: 1160px) {
-        max-width: calc(50vw - 185px);
-      }
+    &__faction-label {
+      text-transform: uppercase;
+      font-family: var(--font-display);
+      font-size: clamp(18px, 4.5vw, 50px);
+      line-height: 1;
+      letter-spacing: 0.5px;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &__group {
@@ -75,6 +61,10 @@ const factionsFiltered = computed(() => {
         display: flex;
         justify-content: flex-end;
         min-width: 250px;
+
+        @media (max-width: 768px) {
+          min-width: 0;
+        }
       }
 
       &--filter {

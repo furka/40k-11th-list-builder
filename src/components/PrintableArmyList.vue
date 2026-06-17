@@ -1,10 +1,18 @@
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useArmyListStore } from "../stores/armyList";
+import { buildTree } from "../utils/attachment-tree";
+import { useMonospaceColumns } from "../composables/useMonospaceColumns";
 
 const armyListStore = useArmyListStore();
 
 const PADSIZE = 10;
+const MAX_LINE_WIDTH = 100;
+const INDENT = "   ";
+const BRANCH = "└─ ";
+
+const ulEl = ref(null);
+const availableCols = useMonospaceColumns(ulEl);
 
 function getUnitPoints(unit) {
   const entry = armyListStore.pointsBreakdown.perUnit[unit.id];
@@ -16,23 +24,38 @@ const validUnits = computed(() =>
   armyListStore.units.filter((unit) => getUnitPoints(unit) > 0)
 );
 
+// Tree built from valid units only — attached units whose host is
+// price-zero (filtered out above) orphan up to the root level so they don't
+// disappear from the print view alongside their host.
+const tree = computed(() => buildTree(validUnits.value));
+
+// Flatten tree to depth-annotated rows for rendering.
+function flattenTree(nodes, depth = 0, acc = []) {
+  for (const node of nodes) {
+    acc.push({ unit: node.unit, depth });
+    if (node.children.length) flattenTree(node.children, depth + 1, acc);
+  }
+  return acc;
+}
+
+const rows = computed(() => flattenTree(tree.value));
+
 const points = computed(() => armyListStore.pointsBreakdown.total);
 const dp = computed(() => armyListStore.pointsBreakdown.dp);
-const detachmentSummary = computed(() =>
-  (dp.value?.byDetachment ?? [])
-    .map((d) => `${d.name} (${d.dp}DP)`)
-    .join(", ")
-);
+const detachmentRows = computed(() => dp.value?.byDetachment ?? []);
 
-const maxUnitNameLength = computed(() => {
-  const length = validUnits.value.reduce(
-    (acc, curr) => Math.max(acc, formatUnit(curr).length),
-    0
-  );
-  return length + PADSIZE + 3;
-});
+const titleLeft = computed(() => armyListStore.faction ?? "");
+const titleRight = computed(() => `${points.value} pts`);
+const titleLine = computed(() => dotLine(titleLeft.value, titleRight.value));
 
 function formatUnit(unit) {
+  if (unit.name === "Enhancements") {
+    return `[Enh] ${unit.optionName}`;
+  }
+  if (unit.name === "Wargear") {
+    return `[Wgr] ${unit.optionName}`;
+  }
+
   let name = unit.name;
   if (unit.optionName) {
     name += ` — ${unit.optionName}`;
@@ -45,35 +68,75 @@ function formatUnit(unit) {
   return name;
 }
 
-function unitLine(unit) {
-  const unitPoints = getUnitPoints(unit);
-  return (
-    formatUnit(unit).padEnd(
-      maxUnitNameLength.value - String(unitPoints).length,
-      "."
-    ) + `${unitPoints} pts`
-  );
+function rowPrefix(depth) {
+  return depth > 0 ? INDENT.repeat(depth - 1) + BRANCH : "";
+}
+
+function unitLeft(row) {
+  return rowPrefix(row.depth) + formatUnit(row.unit);
+}
+function unitRight(row) {
+  return `${getUnitPoints(row.unit)} pts`;
+}
+function detachmentLeft(d) {
+  return d.role?.name ? `${d.name} (${d.role.name})` : d.name;
+}
+function detachmentRight(d) {
+  return `${d.dp}DP`;
+}
+
+// Width that all dotted lines (title, detachments, units) share so right
+// edges stay aligned across the whole printable block. Grows to fill the
+// rendered <ul> width up to MAX_LINE_WIDTH; falls back to content + PADSIZE
+// before the ResizeObserver has measured (e.g. first frame before open).
+const lineWidth = computed(() => {
+  let minContent = titleLeft.value.length + titleRight.value.length;
+  for (const row of rows.value) {
+    minContent = Math.max(
+      minContent,
+      unitLeft(row).length + unitRight(row).length
+    );
+  }
+  for (const d of detachmentRows.value) {
+    minContent = Math.max(
+      minContent,
+      detachmentLeft(d).length + detachmentRight(d).length
+    );
+  }
+  const target =
+    availableCols.value > 0
+      ? Math.min(availableCols.value, MAX_LINE_WIDTH)
+      : minContent + PADSIZE;
+  return Math.max(minContent + 1, target);
+});
+
+function dotLine(left, right) {
+  return left.padEnd(lineWidth.value - right.length, ".") + right;
+}
+
+function unitLine(row) {
+  return dotLine(unitLeft(row), unitRight(row));
+}
+
+function detachmentLine(d) {
+  return dotLine(detachmentLeft(d), detachmentRight(d));
 }
 </script>
 
 <template>
   <article class="army-list">
-    <h1 v-if="armyListStore.name">
-      {{ armyListStore.name }}
-    </h1>
-    <h2>
-      <span class="army-list__name">{{ armyListStore.faction }}</span>
-      — {{ armyListStore.mfm_version }}
-      — {{ points }} pts
-      <span v-if="dp">— {{ dp.used }}/{{ dp.max }} DP</span>
-    </h2>
-    <p v-if="detachmentSummary" class="army-list__detachments">
-      Detachments: {{ detachmentSummary }}
-    </p>
-
-    <ul>
-      <li v-for="(unit, index) in validUnits">
-        {{ unitLine(unit) }}
+    <ul ref="ulEl">
+      <li v-if="armyListStore.name">{{ armyListStore.name }}</li>
+      <li>{{ titleLine }}</li>
+      <li>&nbsp;</li>
+      <template v-if="detachmentRows.length">
+        <li v-for="(d, i) in detachmentRows" :key="`d-${i}`">
+          {{ detachmentLine(d) }}
+        </li>
+        <li>&nbsp;</li>
+      </template>
+      <li v-for="(row, index) in rows" :key="row.unit.id ?? index">
+        {{ unitLine(row) }}
       </li>
     </ul>
   </article>
@@ -81,22 +144,13 @@ function unitLine(unit) {
 
 <style scoped lang="scss">
 .army-list {
-  h1 {
-    word-break: break-word;
-  }
-
-  &__name {
-    text-transform: capitalize;
-  }
-
-  &__detachments {
-    font-style: italic;
-    margin: 0 0 8px;
-  }
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   ul {
     list-style: none;
     padding: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 }
 </style>

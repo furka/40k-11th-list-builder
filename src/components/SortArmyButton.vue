@@ -75,33 +75,40 @@ function setSortMode(mode) {
   }
 
   h1 {
-    padding: 8px 16px;
-    font-family: var(--font-family);
-    font-size: 16px;
-    font-weight: normal;
-    color: #888;
+    padding: 10px 16px;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    color: var(--color-text-muted);
     margin: 0;
-    border-bottom: 1px solid #888;
+    border-bottom: 1px solid var(--color-divider);
     text-align: center;
+    text-transform: uppercase;
   }
 
   button {
     background: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     border: none;
+    color: var(--color-text);
     cursor: pointer;
-    font-family: var(--font-family);
-    font-size: var(--font-size);
-    padding: 8px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 10px 16px;
     text-align: left;
 
+    & + button {
+      border-top: 1px solid var(--color-divider);
+    }
+
     &:hover {
-      background: rgba(0, 0, 0, 0.1);
+      background: var(--color-header);
     }
 
     &.active {
-      background: rgba(0, 0, 0, 0.2);
-      font-weight: bold;
+      background: var(--color-header);
+      color: var(--color-accent);
+      font-weight: 600;
     }
   }
 }

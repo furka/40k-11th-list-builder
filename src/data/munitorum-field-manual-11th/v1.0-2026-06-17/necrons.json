@@ -5,6 +5,11 @@
     {
       "name": "ANNIHILATION LEGION",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "AWAKENED DYNASTY",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DYNASTY"
       ],
@@ -53,6 +63,11 @@
     {
       "name": "CANOPTEK COURT",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -76,6 +91,11 @@
     {
       "name": "CRYPTEK CONCLAVE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -99,6 +119,18 @@
     {
       "name": "CURSED LEGION",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": {
+        "attachesTo": [
+          "LOKHUST DESTROYERS",
+          "SKORPEKH DESTROYERS",
+          "LOKHUST HEAVY DESTROYERS",
+          "OPHYDIAN DESTROYERS"
+        ]
+      },
       "tags": [],
       "enhancements": [
         {
@@ -122,23 +154,35 @@
     {
       "name": "HAND OF THE DYNASTY",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DYNASTY"
       ],
       "enhancements": [
         {
-          "name": "Enlivened Sentinels (Upgrade)",
-          "points": 20
+          "name": "Enlivened Sentinels",
+          "points": 20,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Tools of Dominion (Upgrade)",
-          "points": 15
+          "name": "Tools of Dominion",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "HYPERCRYPT LEGION",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: HYPERCRYPT"
       ],
@@ -164,6 +208,11 @@
     {
       "name": "OBEISANCE PHALANX",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -187,6 +236,11 @@
     {
       "name": "PANTHEON OF WOE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -210,21 +264,33 @@
     {
       "name": "SKYSHROUD SPEARHEAD",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Deepening Madness (Upgrade)",
-          "points": 20
+          "name": "Deepening Madness",
+          "points": 20,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Recursive Reanimation (Upgrade)",
-          "points": 5
+          "name": "Recursive Reanimation",
+          "points": 5,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "STARSHATTER ARSENAL",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -248,13 +314,19 @@
     {
       "name": "THE PHAERON'S ARMOURY",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: HYPERCRYPT"
       ],
       "enhancements": [
         {
-          "name": "Mortality Shroud (Aura) (Upgrade)",
-          "points": 10
+          "name": "Mortality Shroud (Aura)",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
           "name": "Prelocational Optimiser",
@@ -1537,6 +1609,254 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ANRAKYR THE TRAVELLER",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CANOPTEK ACANTHRITES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CANOPTEK TOMB SENTINEL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CANOPTEK TOMB STALKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GAUSS PYLON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LORD",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NEMESOR ZAHNDREKH",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NIGHT SHROUD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SENTRY PYLONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TESSERACT ARK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TOMB CITADEL WALLS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VARGARD OBYRON",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

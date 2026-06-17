@@ -5,21 +5,33 @@
     {
       "name": "ARMOURED TRAILBLAZERS",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Optimised Attack Lines (Upgrade)",
-          "points": 15
+          "name": "Optimised Attack Lines",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Saturation Rounds (Upgrade)",
-          "points": 10
+          "name": "Saturation Rounds",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "BRANDFAST OATHBAND",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +55,11 @@
     {
       "name": "DÊLVE ASSAULT SHIFT",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,21 +83,33 @@
     {
       "name": "FARSEEKERS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Pan-spectral Lockons (Upgrade)",
-          "points": 10
+          "name": "Pan-spectral Lockons",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Shroudwërke Talismans (Upgrade)",
-          "points": 15
+          "name": "Shroudwërke Talismans",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "HEARTHBAND",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: HEARTHBAND"
       ],
@@ -106,6 +135,11 @@
     {
       "name": "HEARTHFYRE ARSENAL",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -129,6 +163,11 @@
     {
       "name": "HEARTHGUARD COVENANT",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: HEARTHBAND"
       ],
@@ -146,6 +185,11 @@
     {
       "name": "MERCENARY OATHBAND",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -169,6 +213,11 @@
     {
       "name": "NEEDGAÂRD OATHBAND",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -192,6 +241,11 @@
     {
       "name": "PERSECUTION PROSPECT",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {

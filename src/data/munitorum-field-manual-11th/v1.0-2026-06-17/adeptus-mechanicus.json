@@ -5,6 +5,11 @@
     {
       "name": "COHORT ACQUISITUS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -12,14 +17,20 @@
           "points": 20
         },
         {
-          "name": "Stealth-screened Cybercanids (Upgrade)",
-          "points": 15
+          "name": "Stealth-screened Cybercanids",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "COHORT CYBERNETICA",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +54,11 @@
     {
       "name": "DATA-PSALM CONCLAVE",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DATA-PSALM"
       ],
@@ -68,6 +84,11 @@
     {
       "name": "ERADICATION COHORT",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -91,6 +112,11 @@
     {
       "name": "EXPLORATOR MANIPLE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -114,6 +140,11 @@
     {
       "name": "HALOSCREED BATTLE CLADE",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -137,6 +168,11 @@
     {
       "name": "LORDS OF THE FORGE",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -152,6 +188,11 @@
     {
       "name": "LUMINEN AUTO-CHOIR",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DATA-PSALM"
       ],
@@ -169,6 +210,11 @@
     {
       "name": "RAD-ZONE CORPS",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -192,6 +238,11 @@
     {
       "name": "SKITARII HUNTER COHORT",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -450,6 +501,12 @@
               "points": 255
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Twin cognis lascannon",
+          "points": 10
         }
       ]
     },
@@ -787,6 +844,8 @@
         "attachesTo": [
           "HASTARII EXTERMINATORS",
           "HASTARII FUSILIERS",
+          "SECUTARII HOPLITES",
+          "SECUTARII PELTASTS",
           "SKITARII RANGERS",
           "SKITARII VANGUARD"
         ]
@@ -852,6 +911,12 @@
               "points": 160
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Ferrumite cannon",
+          "points": 10
         }
       ]
     },
@@ -974,6 +1039,8 @@
           "HASTARII FUSILIERS",
           "KATAPHRON BREACHERS",
           "KATAPHRON DESTROYERS",
+          "SECUTARII HOPLITES",
+          "SECUTARII PELTASTS",
           "SERVITOR BATTLECLADE",
           "SKITARII RANGERS",
           "SKITARII VANGUARD"
@@ -1002,6 +1069,8 @@
           "HASTARII FUSILIERS",
           "KATAPHRON BREACHERS",
           "KATAPHRON DESTROYERS",
+          "SECUTARII HOPLITES",
+          "SECUTARII PELTASTS",
           "SERVITOR BATTLECLADE",
           "SKITARII RANGERS",
           "SKITARII VANGUARD"
@@ -1029,6 +1098,8 @@
           "FULGURITE ELECTRO-PRIESTS",
           "KATAPHRON BREACHERS",
           "KATAPHRON DESTROYERS",
+          "SECUTARII HOPLITES",
+          "SECUTARII PELTASTS",
           "SKITARII RANGERS",
           "SKITARII VANGUARD"
         ]
@@ -1057,6 +1128,8 @@
           "HASTARII FUSILIERS",
           "KATAPHRON BREACHERS",
           "KATAPHRON DESTROYERS",
+          "SECUTARII HOPLITES",
+          "SECUTARII PELTASTS",
           "SERVITOR BATTLECLADE",
           "SKITARII RANGERS",
           "SKITARII VANGUARD"
@@ -1092,6 +1165,98 @@
           ]
         }
       ]
+    },
+    {
+      "name": "SECUTARII HOPLITES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SECUTARII PELTASTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TERRAX-PATTERN TERMITE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "X-101",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

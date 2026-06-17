@@ -51,9 +51,33 @@ function stableStringify(value) {
 }
 
 async function scrapeOne(slug, { refresh }) {
-  const html = await fetchFactionHtml(slug, { refresh });
-  const raw = extractFactionData(html);
-  return normalizeFactionData(slug, FACTION_NAMES[slug] ?? slug, raw);
+  // Fetch twice: the default page (Legends hidden) and the same page with
+  // `isLegendsDisplayed=true` cookie (Legends included). Diff the datasheet
+  // name sets — any sheet that only appears in the legends-on fetch is
+  // tagged `legends: true` in the output. The legends-on payload is a
+  // superset of the control, so normalising IT gives us the complete unit
+  // list; the diff just classifies them.
+  const controlHtml = await fetchFactionHtml(slug, { refresh, legends: false });
+  const legendsHtml = await fetchFactionHtml(slug, { refresh, legends: true });
+  const controlRaw = extractFactionData(controlHtml);
+  const legendsRaw = extractFactionData(legendsHtml);
+
+  const controlNames = new Set(controlRaw.datasheets.map((d) => d.name));
+  const legendsOnly = new Set(
+    legendsRaw.datasheets
+      .filter((d) => !controlNames.has(d.name))
+      .map((d) => d.name)
+  );
+
+  const normalized = normalizeFactionData(
+    slug,
+    FACTION_NAMES[slug] ?? slug,
+    legendsRaw
+  );
+  for (const sheet of normalized.datasheets) {
+    if (legendsOnly.has(sheet.name)) sheet.legends = true;
+  }
+  return normalized;
 }
 
 async function listVersionDirs() {
@@ -100,7 +124,6 @@ function payloadsEqual(latest, scraped) {
 
 async function writeVersionDir({ siteVersion, scrapedAt, scraped }) {
   const dirName = `${siteVersion.toLowerCase()}-${scrapedAt}`;
-  const MFM_VERSION = `${siteVersion.toUpperCase()} (${scrapedAt})`;
   const dirPath = join(OUT_ROOT, dirName);
   await ensureDir(dirPath);
 
@@ -112,14 +135,14 @@ async function writeVersionDir({ siteVersion, scrapedAt, scraped }) {
     );
   }
 
-  const manifest = { siteVersion, scrapedAt, MFM_VERSION };
+  const manifest = { siteVersion, scrapedAt };
   await writeFile(
     join(dirPath, "_manifest.json"),
     stableStringify(manifest),
     "utf8"
   );
 
-  return { dirName, MFM_VERSION };
+  return { dirName };
 }
 
 async function main() {
@@ -200,13 +223,13 @@ async function main() {
 
   if (writeNew) {
     const scrapedAt = new Date().toISOString().slice(0, 10);
-    const { dirName, MFM_VERSION } = await writeVersionDir({
+    const { dirName } = await writeVersionDir({
       siteVersion,
       scrapedAt,
       scraped,
     });
     console.log(`Wrote new version dir "${dirName}" (${reason}).`);
-    console.log(`MFM_VERSION = "${MFM_VERSION}".`);
+    console.log(`siteVersion = "${siteVersion.toUpperCase()}".`);
   }
 
   if (failCount > 0) process.exitCode = 1;

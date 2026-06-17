@@ -5,6 +5,11 @@
     {
       "name": "ARGENT ASSAULT",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -20,6 +25,11 @@
     {
       "name": "AUGURIUM TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +53,11 @@
     {
       "name": "BANISHERS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,6 +81,11 @@
     {
       "name": "BROTHERHOOD STRIKE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -89,21 +109,33 @@
     {
       "name": "FIRES OF PURGATION",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Boons of Deimos (Upgrade)",
-          "points": 20
+          "name": "Boons of Deimos",
+          "points": 20,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Precognicient Volleys (Upgrade)",
-          "points": 10
+          "name": "Precognicient Volleys",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "HALLOWED CONCLAVE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -127,21 +159,33 @@
     {
       "name": "IMMATERIAL INTERDICTION",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Astral Overlap (Upgrade)",
-          "points": 10
+          "name": "Astral Overlap",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Predestined Coordinates (Upgrade)",
-          "points": 10
+          "name": "Predestined Coordinates",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "SANCTIC SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -165,6 +209,11 @@
     {
       "name": "WARPBANE TASK FORCE",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -368,6 +417,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
+        }
       ]
     },
     {
@@ -432,6 +487,16 @@
               "points": 215
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Sublimator",
+          "points": 15
+        },
+        {
+          "name": "Heavy psycannon",
+          "points": 15
         }
       ]
     },
@@ -602,6 +667,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy psycannon",
+          "points": 15
+        }
       ]
     },
     {
@@ -669,6 +740,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
+        }
       ]
     },
     {
@@ -706,6 +783,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
+        }
       ]
     },
     {
@@ -742,6 +825,12 @@
               "points": 270
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
         }
       ]
     },
@@ -883,6 +972,106 @@
           ]
         }
       ]
+    },
+    {
+      "name": "BROTHER-CAPTAIN STERN",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GREY KNIGHTS DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GREY KNIGHTS RELIC RAZORBACK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KALDOR DRAIGO",
+      "leader": {
+        "attachesTo": [
+          "BROTHERHOOD TERMINATOR SQUAD",
+          "PALADIN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SERVITORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }
