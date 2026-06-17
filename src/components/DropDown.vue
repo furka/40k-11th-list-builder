@@ -72,20 +72,25 @@ useDetectOutsideClick(component, () => {
 
   &__button {
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid white;
-    border-radius: 4px;
-    color: white;
+    background: var(--color-surface);
+    border: 1px solid var(--color-divider);
+    border-radius: 2px;
+    color: var(--color-text);
     cursor: pointer;
     display: flex;
     flex-direction: row;
+    font-family: var(--font-display);
+    font-size: 16px;
     gap: 8px;
     justify-content: center;
-    padding: 6px 8px;
+    letter-spacing: 0.5px;
+    padding: 7px 12px;
     margin: 0 4px;
+    text-transform: uppercase;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.4);
+      background: var(--color-header);
+      border-color: var(--color-accent);
     }
   }
 
@@ -102,12 +107,14 @@ useDetectOutsideClick(component, () => {
   }
 
   &__container {
-    background-color: white;
-    border-radius: 16px;
-    border: none;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-surface);
+    border-radius: 2px;
+    border: 1px solid var(--color-divider);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
+    color: var(--color-text);
     flex-direction: column;
+    font-family: var(--font-body);
     padding: 0;
     width: max-content;
 

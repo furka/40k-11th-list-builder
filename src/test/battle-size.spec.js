@@ -11,7 +11,7 @@ import { isDedicatedTransport } from "../utils/is-dedicated-transport";
 import { unitMax } from "../utils/unit-max";
 
 describe("battleSizeRules", () => {
-  it("returns Incursion rules under 2000 points", () => {
+  it("returns Incursion rules at or below 1000 points", () => {
     expect(battleSizeRules({ maxPoints: 1000 })).toMatchObject({
       label: "Incursion",
       maxDP: 2,
@@ -22,7 +22,8 @@ describe("battleSizeRules", () => {
     });
   });
 
-  it("returns Strike Force rules at 2000 points", () => {
+  it("returns Strike Force rules between 1001 and 2000 points", () => {
+    expect(battleSizeRules({ maxPoints: 1500 }).label).toBe("Strike Force");
     expect(battleSizeRules({ maxPoints: 2000 })).toMatchObject({
       label: "Strike Force",
       maxDP: 3,
@@ -33,8 +34,16 @@ describe("battleSizeRules", () => {
     });
   });
 
-  it("uses Strike Force at 3000+ (Onslaught is not yet documented)", () => {
-    expect(battleSizeRules({ maxPoints: 3000 }).label).toBe("Strike Force");
+  it("returns Onslaught rules above 2000 points", () => {
+    expect(battleSizeRules({ maxPoints: 2001 }).label).toBe("Onslaught");
+    expect(battleSizeRules({ maxPoints: 3000 })).toMatchObject({
+      label: "Onslaught",
+      maxDP: 3,
+      maxEnhancements: 4,
+      unitCap: 3,
+      battlelineCap: 6,
+      allow3DpDetachment: true,
+    });
   });
 
   it("defaults to Strike Force when no maxPoints is provided", () => {

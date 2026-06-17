@@ -5,6 +5,11 @@
     {
       "name": "CARNIVAL OF EXCESS",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "COTERIE OF THE CONCEITED",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -51,6 +61,15 @@
     {
       "name": "COURT OF THE PHOENICIAN",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": {
+        "attachesTo": [
+          "FLAWLESS BLADES"
+        ]
+      },
       "tags": [],
       "enhancements": [
         {
@@ -74,6 +93,11 @@
     {
       "name": "ELEGANT BRUTES",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -81,14 +105,20 @@
           "points": 20
         },
         {
-          "name": "Frenzied Ferocity (Upgrade)",
-          "points": 15
+          "name": "Frenzied Ferocity",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "FRENZIED HOST",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -104,6 +134,11 @@
     {
       "name": "MERCURIAL HOST",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -127,6 +162,11 @@
     {
       "name": "PEERLESS BLADESMEN",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -150,6 +190,11 @@
     {
       "name": "RAPID EVISCERATION",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -173,6 +218,11 @@
     {
       "name": "SLAANESH’S CHOSEN",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -196,15 +246,22 @@
     {
       "name": "SPECTACLE OF SLAUGHTER",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Beguiling Grotesquerie (Upgrade)",
-          "points": 15
+          "name": "Beguiling Grotesquerie",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Eager Patrons (Upgrade)",
-          "points": 20
+          "name": "Eager Patrons",
+          "points": 20,
+          "isUnitUpgrade": true
         }
       ]
     }
@@ -346,6 +403,16 @@
               "points": 320
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy reaper autocannon",
+          "points": 10
+        },
+        {
+          "name": "Hades lascannon",
+          "points": 10
         }
       ]
     },

@@ -5,6 +5,11 @@
     {
       "name": "ARMOURED WARHOST",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -20,6 +25,11 @@
     {
       "name": "ASPECT HOST",
       "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +53,11 @@
     {
       "name": "CORSAIR COTERIE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,6 +81,11 @@
     {
       "name": "DEVOTED OF YNNEAD",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -89,6 +109,11 @@
     {
       "name": "ELDRITCH RAIDERS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -112,6 +137,11 @@
     {
       "name": "FATEFUL PERFORMANCE",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ACROBATIC"
       ],
@@ -129,6 +159,11 @@
     {
       "name": "GHOSTS OF THE WEBWAY",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ACROBATIC"
       ],
@@ -154,6 +189,11 @@
     {
       "name": "GUARDIAN BATTLEHOST",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -177,21 +217,33 @@
     {
       "name": "PATH OF THE OUTCAST",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Assassins' Eye (Upgrade)",
-          "points": 15
+          "name": "Assassins' Eye",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Camouflaged Snipers (Upgrade)",
-          "points": 10
+          "name": "Camouflaged Snipers",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "SEER COUNCIL",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -215,6 +267,11 @@
     {
       "name": "SERPENT’S BROOD",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ACROBATIC"
       ],
@@ -240,6 +297,11 @@
     {
       "name": "SPIRIT CONCLAVE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -263,6 +325,11 @@
     {
       "name": "TWILIGHT FLICKERS",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ACROBATIC"
       ],
@@ -272,14 +339,20 @@
           "points": 20
         },
         {
-          "name": "Shadowfall Masks (Upgrade)",
-          "points": 15
+          "name": "Shadowfall Masks",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "WARHOST",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -303,6 +376,11 @@
     {
       "name": "WINDRIDER HOST",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -863,6 +941,7 @@
       "name": "KHARSETH",
       "leader": {
         "attachesTo": [
+          "CORSAIR REAVER BAND",
           "CORSAIR VOIDREAVERS",
           "CORSAIR VOIDSCARRED"
         ]
@@ -966,6 +1045,7 @@
       "name": "PRINCE YRIEL",
       "leader": {
         "attachesTo": [
+          "CORSAIR REAVER BAND",
           "CORSAIR VOIDREAVERS",
           "CORSAIR VOIDSCARRED"
         ]
@@ -1515,6 +1595,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy wraithcannon",
+          "points": 10
+        }
       ]
     },
     {
@@ -1744,6 +1830,7 @@
       "name": "THE VISARCH",
       "leader": {
         "attachesTo": [
+          "CORSAIR REAVER BAND",
           "CORSAIR VOIDREAVERS",
           "CORSAIR VOIDSCARRED",
           "GUARDIAN DEFENDERS",
@@ -1963,6 +2050,7 @@
       "name": "YVRAINE",
       "leader": {
         "attachesTo": [
+          "CORSAIR REAVER BAND",
           "CORSAIR VOIDREAVERS",
           "CORSAIR VOIDSCARRED",
           "GUARDIAN DEFENDERS",
@@ -1985,6 +2073,523 @@
           ]
         }
       ]
+    },
+    {
+      "name": "AMALLYN SHADOWGUIDE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "AUTARCH SKYRUNNER",
+      "leader": {
+        "attachesTo": [
+          "CORSAIR CLOUD DANCER BAND",
+          "WINDRIDERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BONESINGER",
+      "leader": {
+        "attachesTo": [
+          "WRAITHBLADES",
+          "WRAITHGUARD",
+          "WRAITHLORD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "COBRA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 415
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CORSAIR CLOUD DANCER BAND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        },
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        },
+        {
+          "name": "7 models",
+          "models": 7,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 245
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CORSAIR REAVER BAND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        },
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FIRESTORM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HORNET",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ILLIC NIGHTSPEAR",
+      "leader": {
+        "attachesTo": [
+          "RANGERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "IRILLYTH",
+      "leader": {
+        "attachesTo": [
+          "SHADOW SPECTRES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KARANDRAS",
+      "leader": {
+        "attachesTo": [
+          "STRIKING SCORPIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LYNX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NIGHTWING",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PHOENIX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SCORPION",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 410
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SHADOW SPECTRES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        },
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SKATHACH WRAITHKNIGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 490
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VAMPIRE HUNTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 460
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VAMPIRE RAIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 430
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WARP HUNTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WASP ASSAULT WALKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WEBWAY GATE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WRAITHSEER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

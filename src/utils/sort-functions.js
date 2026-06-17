@@ -1,4 +1,5 @@
 import { nameEquals } from "./name-match";
+import { buildTree, descendantIds } from "./attachment-tree";
 
 export const sortDataSheetAlphabetical = function (a, b) {
   a = a.name.toLowerCase();
@@ -36,10 +37,19 @@ export const sortOptionsPtsDescending = function (a, b) {
   return a < b ? 1 : a > b ? -1 : 0;
 };
 
-export const sortListPoints = function (mfmStore, currentMFM, ascending = false) {
+export const sortListPoints = function (mfmStore, currentMFM, allUnits, ascending = false) {
+  const unitsById = new Map(allUnits.map((u) => [u.id, u]));
+  const groupPoints = (unit) => {
+    let total = mfmStore.getPoints(unit, currentMFM) ?? 0;
+    for (const id of descendantIds(unit, allUnits)) {
+      const u = unitsById.get(id);
+      if (u) total += mfmStore.getPoints(u, currentMFM) ?? 0;
+    }
+    return total;
+  };
   return function (a, b) {
-    const aPoints = mfmStore.getPoints(a, currentMFM);
-    const bPoints = mfmStore.getPoints(b, currentMFM);
+    const aPoints = groupPoints(a);
+    const bPoints = groupPoints(b);
 
     if (aPoints === bPoints) {
       return sortDataSheetAlphabetical(a, b);
@@ -51,13 +61,41 @@ export const sortListPoints = function (mfmStore, currentMFM, ascending = false)
   };
 };
 
+// Sorts the army-list tree in place: roots are ordered by the comparator,
+// each parent's children are ordered by the comparator among themselves, then
+// the tree is flattened back in pre-order. Sibling order at each level in the
+// flat array is what the render filters in ArmyList + ArmyListUnitNode pick
+// up, so flat-order pre-order = visible order.
+export function sortTree(units, comparator) {
+  const tree = buildTree(units);
+  const sortNode = (node) => {
+    node.children.sort((a, b) => comparator(a.unit, b.unit));
+    node.children.forEach(sortNode);
+  };
+  tree.sort((a, b) => comparator(a.unit, b.unit));
+  tree.forEach(sortNode);
+
+  const out = [];
+  const walk = (node) => {
+    out.push(node.unit);
+    node.children.forEach(walk);
+  };
+  tree.forEach(walk);
+  return out;
+}
+
 export const sortListByRole = function (getDataSheet) {
   return function (a, b) {
     const getRolePriority = (unit) => {
       const dataSheet = getDataSheet(unit.name);
+      const isEnhancement =
+        dataSheet?.enhancements || unit.name === "Enhancements";
+      const isWargear = unit.name === "Wargear";
 
-      // Check if it's an enhancement by checking datasheet or unit structure
-      const isEnhancement = dataSheet?.enhancements || (!dataSheet && unit.optionName && !unit.models);
+      // Wargear is always a child of its host — when this comparator runs at
+      // root level it never sees one. Within a host's children it should
+      // appear after the leader/support/enhancement attachments.
+      if (isWargear) return 7;
 
       if (!dataSheet && !isEnhancement) return 5;
 

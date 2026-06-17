@@ -5,6 +5,11 @@
     {
       "name": "IMPERIALIS FLEET",
       "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "ORDO HERETICUS, PURGATION FORCE",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -51,6 +61,11 @@
     {
       "name": "ORDO MALLEUS, DAEMON HUNTERS",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -74,6 +89,11 @@
     {
       "name": "ORDO XENOS, ALIEN HUNTERS",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -97,6 +117,11 @@
     {
       "name": "VEILED BLADE ELIMINATION FORCE",
       "dp": 3,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -272,6 +297,12 @@
               "points": 190
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
         }
       ]
     },
@@ -585,6 +616,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Twin multi-melta",
+          "points": 15
+        }
       ]
     },
     {
@@ -677,7 +714,12 @@
       "leader": {
         "attachesTo": [
           "AQUILA KILL TEAM",
-          "DEATHWATCH KILL TEAM"
+          "DEATHWATCH KILL TEAM",
+          "DEATHWATCH TERMINATOR SQUAD",
+          "FORTIS KILL TEAM",
+          "INDOMITOR KILL TEAM",
+          "PROTEUS KILL TEAM",
+          "SPECTRUS KILL TEAM"
         ]
       },
       "support": null,
@@ -699,7 +741,12 @@
       "leader": {
         "attachesTo": [
           "AQUILA KILL TEAM",
-          "DEATHWATCH KILL TEAM"
+          "DEATHWATCH KILL TEAM",
+          "DEATHWATCH TERMINATOR SQUAD",
+          "FORTIS KILL TEAM",
+          "INDOMITOR KILL TEAM",
+          "PROTEUS KILL TEAM",
+          "SPECTRUS KILL TEAM"
         ]
       },
       "support": null,
@@ -869,6 +916,12 @@
               "points": 210
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
         }
       ]
     },
@@ -1182,6 +1235,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Twin multi-melta",
+          "points": 15
+        }
       ]
     },
     {
@@ -1274,7 +1333,12 @@
       "leader": {
         "attachesTo": [
           "AQUILA KILL TEAM",
-          "DEATHWATCH KILL TEAM"
+          "DEATHWATCH KILL TEAM",
+          "DEATHWATCH TERMINATOR SQUAD",
+          "FORTIS KILL TEAM",
+          "INDOMITOR KILL TEAM",
+          "PROTEUS KILL TEAM",
+          "SPECTRUS KILL TEAM"
         ]
       },
       "support": null,
@@ -1296,7 +1360,12 @@
       "leader": {
         "attachesTo": [
           "AQUILA KILL TEAM",
-          "DEATHWATCH KILL TEAM"
+          "DEATHWATCH KILL TEAM",
+          "DEATHWATCH TERMINATOR SQUAD",
+          "FORTIS KILL TEAM",
+          "INDOMITOR KILL TEAM",
+          "PROTEUS KILL TEAM",
+          "SPECTRUS KILL TEAM"
         ]
       },
       "support": null,
@@ -1312,6 +1381,446 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DAEMONHOST",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DAMNED LEGIONNAIRES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATHWATCH TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 420
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FORTIS KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "INDOMITOR KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "INQUISITOR EISENHORN",
+      "leader": {
+        "attachesTo": [
+          "DAEMONHOST",
+          "DEATHWATCH KILL TEAM",
+          "DEATHWATCH TERMINATOR SQUAD",
+          "EXACTION SQUAD",
+          "FORTIS KILL TEAM",
+          "IMPERIAL NAVY BREACHERS",
+          "INDOMITOR KILL TEAM",
+          "INQUISITORIAL AGENTS",
+          "PROTEUS KILL TEAM",
+          "SPECTRUS KILL TEAM",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "INQUISITOR IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "DEATHWATCH KILL TEAM",
+          "DEATHWATCH TERMINATOR SQUAD",
+          "EXACTION SQUAD",
+          "FORTIS KILL TEAM",
+          "GREY KNIGHTS TERMINATOR SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INDOMITOR KILL TEAM",
+          "INQUISITORIAL AGENTS",
+          "PROTEUS KILL TEAM",
+          "SISTERS OF BATTLE SQUAD",
+          "SPECTRUS KILL TEAM",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "INQUISITOR KARAMAZOV",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "INQUISITOR OSTROMANDEUS",
+      "leader": {
+        "attachesTo": [
+          "EXACTION SQUAD",
+          "IMPERIAL NAVY BREACHERS",
+          "INQUISITORIAL AGENTS",
+          "SISTERS OF BATTLE SQUAD",
+          "SUBDUCTOR SQUAD",
+          "VIGILANT SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "JANUS DRAIK",
+      "leader": {
+        "attachesTo": [
+          "IMPERIAL NAVY BREACHERS",
+          "VOIDSMEN-AT-ARMS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "JOKAERO WEAPONSMITH",
+      "leader": {
+        "attachesTo": [
+          "INQUISITORIAL AGENTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KILL TEAM CASSIUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NEYAM SHAI MURAD",
+      "leader": {
+        "attachesTo": [
+          "IMPERIAL NAVY BREACHERS",
+          "VOIDSMEN-AT-ARMS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PROTEUS KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SPECTRUS KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "UR-025",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VETERAN BIKE SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

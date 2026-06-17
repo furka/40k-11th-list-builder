@@ -6,7 +6,8 @@ import { useCodexStore } from "./codex";
 import { unitMax } from "../utils/unit-max";
 import { computeListPoints } from "../utils/list-points";
 import { battleSizeRules } from "../utils/battle-size";
-import { maxBipartiteMatching } from "../utils/bodyguard-matching";
+import { attachedToError, isWargearUnit } from "../utils/attachment-rules";
+import { wargearMaxPerUnit } from "../utils/wargear-limits";
 
 export const useArmyListStore = defineStore("armyList", () => {
   const mfmStore = useMfmStore();
@@ -29,52 +30,15 @@ export const useArmyListStore = defineStore("armyList", () => {
     return computeListPoints(toObject(), currentMFM.value, faction.value);
   });
 
-  // Bodyguard validation: pre-compute a single bipartite matching over the
-  // whole list so every Leader / Support unit knows whether there's a
-  // bodyguard slot reserved for it. Per Core Rules 19.04 each bodyguard can
-  // host one Leader plus one Support, so the two matchings are solved
-  // independently.
-  const bodyguardMatching = computed(() => {
-    const leaderItems = [];
-    const supportItems = [];
-    const bodyguardCounts = {};
-
-    for (const unit of units.value) {
-      if (unit.bonus) continue;
-      if (unit.name === "Enhancements") continue;
-      const ds = codexStore.getDataSheet(unit.name);
-      if (!ds) continue;
-
-      if (ds.leader?.attachesTo?.length) {
-        leaderItems.push({ id: unit.id, attachesTo: ds.leader.attachesTo });
-      } else if (ds.support?.attachesTo?.length) {
-        supportItems.push({ id: unit.id, attachesTo: ds.support.attachesTo });
-      } else {
-        bodyguardCounts[unit.name] = (bodyguardCounts[unit.name] || 0) + 1;
-      }
-    }
-
-    const leaderMatched = maxBipartiteMatching(leaderItems, bodyguardCounts);
-    const supportMatched = maxBipartiteMatching(supportItems, bodyguardCounts);
-
-    const unmatchedLeaderIds = new Set();
-    for (const item of leaderItems) {
-      if (!leaderMatched.has(item.id)) unmatchedLeaderIds.add(item.id);
-    }
-    const unmatchedSupportIds = new Set();
-    for (const item of supportItems) {
-      if (!supportMatched.has(item.id)) unmatchedSupportIds.add(item.id);
-    }
-
-    return { unmatchedLeaderIds, unmatchedSupportIds };
-  });
-
   const unitCounts = computed(() => {
     const counts = {};
     units.value.forEach((unit) => {
-      if (!unit.bonus) {
-        counts[unit.name] = (counts[unit.name] || 0) + 1;
-      }
+      if (unit.bonus) return;
+      // Wargear is a per-host sub-option, not a datasheet "copy" — counting it
+      // here would falsely tick the unit-cap meter on a fictitious "Wargear"
+      // datasheet and (worse) bleed into the "X/Y available" display.
+      if (isWargearUnit(unit)) return;
+      counts[unit.name] = (counts[unit.name] || 0) + 1;
     });
     return counts;
   });
@@ -90,7 +54,12 @@ export const useArmyListStore = defineStore("armyList", () => {
   const enhancementsTaken = computed(() => {
     const taken = new Set();
     units.value.forEach((unit) => {
-      if (unit.optionName) taken.add(unit.optionName);
+      // Only real Enhancement sentinels go into the uniqueness set. The old
+      // "any optionName" predicate would silently absorb wargear option names
+      // ("per Bombast field gun"), poisoning enhancement uniqueness checks.
+      if (unit.name === "Enhancements" && unit.optionName) {
+        taken.add(unit.optionName);
+      }
     });
     return taken;
   });
@@ -98,13 +67,7 @@ export const useArmyListStore = defineStore("armyList", () => {
   const totalEnhancementsCount = computed(() => {
     let count = 0;
     units.value.forEach((unit) => {
-      const datasheet = codexStore.getDataSheet(unit.name);
-      if (
-        datasheet?.enhancements ||
-        (!datasheet && unit.optionName && !unit.models)
-      ) {
-        count++;
-      }
+      if (unit.name === "Enhancements") count++;
     });
     return count;
   });
@@ -124,20 +87,91 @@ export const useArmyListStore = defineStore("armyList", () => {
     return names;
   }
 
+  /**
+   * Resolve an Enhancement unit to the canonical metadata stored on its
+   * detachment — `{ name, points, isUnitUpgrade?, allowedHosts? }`.
+   * Prefer the unit's own `detachment` tag (set at add time); fall back to
+   * scanning all of the faction's detachments so shared lists missing that
+   * tag still resolve.
+   */
+  function getEnhancementMeta(unit) {
+    if (!unit?.optionName) return null;
+    const factionEntry = currentMFM.value?.FACTIONS?.find(
+      (f) => f.name === faction.value
+    );
+    if (!factionEntry) return null;
+    const detNames = unit.detachment
+      ? [unit.detachment]
+      : (factionEntry.detachments ?? []).map((d) => d.name);
+    for (const dName of detNames) {
+      const det = factionEntry.detachments.find((d) => d.name === dName);
+      const enh = det?.enhancements?.find((e) => e.name === unit.optionName);
+      if (enh) return enh;
+    }
+    return null;
+  }
+
   function getUnitValidationError(unit) {
     if (unit.error) return "Invalid Unit";
 
+    // Wargear pseudo-units carry their host scope on `parentDataSheet`. They
+    // must always be attached, and only to a unit of the matching datasheet,
+    // and the option name must still exist on that datasheet's wargearOptions
+    // (catches MFM upgrades that retire an option).
+    if (isWargearUnit(unit)) {
+      if (!unit.attachedTo) return "Wargear must be attached to a unit";
+      const host = units.value.find((u) => u.id === unit.attachedTo);
+      if (!host) return "Wargear's unit is missing";
+      if (host.name !== unit.parentDataSheet) {
+        return `Wargear belongs to ${unit.parentDataSheet}`;
+      }
+      const hostDs = codexStore.getDataSheet(host.name);
+      const option = hostDs?.wargearOptions?.find(
+        (w) => w.name === unit.optionName
+      );
+      if (!option) {
+        const version = currentMFM.value?.MFM_VERSION || "unknown";
+        return `Wargear option not available in MFM ${version}`;
+      }
+
+      // Per-host cap: stale shared URLs or pre-cap saved lists could carry
+      // more copies than the option allows. Mirror the enhancement-duplicate
+      // pattern — the first `max` copies pass, the rest flag.
+      const max = wargearMaxPerUnit(option);
+      const sameOption = units.value.filter(
+        (u) =>
+          u.name === "Wargear" &&
+          u.attachedTo === unit.attachedTo &&
+          u.optionName === unit.optionName
+      );
+      if (sameOption.length > max) {
+        const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
+        if (indexOfThis >= max) return `Only ${max} per unit`;
+      }
+      return false;
+    }
+
     const datasheet = codexStore.getDataSheet(unit.name);
 
-    // Enhancement: identifiable either by `datasheet.enhancements` or by
-    // having an optionName with no models and no resolvable datasheet.
-    if (
-      datasheet?.enhancements ||
-      (!datasheet && unit.optionName && !unit.models)
-    ) {
+    // Enhancement: only the canonical sentinel "Enhancements" name. The old
+    // "no datasheet + optionName + no models" fallback used to catch legacy
+    // saved lists, but it now also matches Wargear units — handled above.
+    if (datasheet?.enhancements || unit.name === "Enhancements") {
       const availableEnhancements = availableEnhancementNames();
       if (!availableEnhancements.includes(unit.optionName)) {
         return "Enhancement not available in this detachment";
+      }
+
+      // Each enhancement is unique per army. Among Enhancements units that
+      // share this optionName the first occurrence passes; later copies flag.
+      const sameOption = units.value.filter(
+        (u) => u.name === "Enhancements" && u.optionName === unit.optionName
+      );
+      if (
+        sameOption.length > 1 &&
+        sameOption.findIndex((u) => u.id === unit.id) > 0
+      ) {
+        return "Duplicate enhancement";
       }
 
       // Battle-size enhancement cap (Incursion: 2, Strike Force: 4). Flag
@@ -153,6 +187,33 @@ export const useArmyListStore = defineStore("armyList", () => {
         );
         if (indexOfThis >= rules.maxEnhancements) {
           return `Only ${rules.maxEnhancements} enhancements allowed in ${rules.label}`;
+        }
+      }
+
+      // Host-eligibility:
+      //   - `(Upgrade)` enhancements (isUnitUpgrade) attach to non-character
+      //     units only — they're squad-wide buffs.
+      //   - Plain enhancements attach to characters only.
+      //   - An optional per-enhancement `allowedHosts` whitelist (from
+      //     `configs/enhancement-restrictions.json`) further narrows it.
+      // No error if the enhancement isn't currently attached — surface that
+      // via the codex add-time gate, not here.
+      if (unit.attachedTo) {
+        const host = units.value.find((u) => u.id === unit.attachedTo);
+        if (!host) return "Attached to a missing unit";
+        const meta = getEnhancementMeta(unit);
+        const hostDs = codexStore.getDataSheet(host.name);
+        if (meta?.allowedHosts?.length && !meta.allowedHosts.includes(host.name)) {
+          return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
+        }
+        if (meta?.isUnitUpgrade) {
+          if (hostDs?.character) {
+            return "Unit upgrades can't attach to characters";
+          }
+        } else {
+          if (!hostDs?.character) {
+            return "Enhancement can only attach to a character";
+          }
         }
       }
 
@@ -175,20 +236,22 @@ export const useArmyListStore = defineStore("armyList", () => {
     const max = unitMax(datasheet, toObject());
     if (count > max) return `Only ${max} of this unit allowed`;
 
-    // Bodyguard requirement: every Leader and every Support unit must pair
-    // with a bodyguard from its attaches-to list. Solved as bipartite
-    // matching list-wide in `bodyguardMatching`; here we just look up
-    // whether this specific unit instance got a slot.
-    const { unmatchedLeaderIds, unmatchedSupportIds } = bodyguardMatching.value;
-    if (unmatchedLeaderIds.has(unit.id)) {
-      return `Leader needs a bodyguard from: ${datasheet.leader.attachesTo.join(
-        ", "
-      )}`;
+    // Support units MUST be attached to a host. Leaders may attach but
+    // aren't required to (some leaders fight alone in 11th).
+    if (datasheet.support && !unit.attachedTo) {
+      return "Support character must attach to a unit";
     }
-    if (unmatchedSupportIds.has(unit.id)) {
-      return `Support needs a bodyguard from: ${datasheet.support.attachesTo.join(
-        ", "
-      )}`;
+
+    // If the unit is attached, verify the host is a legal attachment target
+    // (host's datasheet name is in attachesTo). Pre-existing bad attachments
+    // — from before drop-time enforcement, or from a malformed shared URL —
+    // surface here as a red error so the user can drag-to-fix.
+    if (unit.attachedTo) {
+      const host = units.value.find((u) => u.id === unit.attachedTo);
+      const error = attachedToError(unit, host, (name) =>
+        codexStore.getDataSheet(name)
+      );
+      if (error) return error;
     }
 
     return false;
@@ -200,12 +263,80 @@ export const useArmyListStore = defineStore("armyList", () => {
   }
 
   function removeUnit(id) {
-    units.value = units.value.filter((u) => u.id !== id);
+    // Orphan any units that were attached to the one being removed — they
+    // float back to the root list so the user can re-attach to a different
+    // host instead of losing them.
+    units.value = units.value
+      .filter((u) => u.id !== id)
+      .map((u) => (u.attachedTo === id ? { ...u, attachedTo: undefined } : u));
+    modifiedDate.value = Date.now();
+  }
+
+  /**
+   * Remove a unit AND every unit attached to it (recursively). Used when the
+   * user drags a host to the bin — orphaning the attached children would
+   * leave them stranded at root, while dragging-to-trash intuitively means
+   * "delete the whole thing." `removeUnit` keeps the orphan behavior for
+   * call sites where the children should survive.
+   */
+  function removeUnitSubtree(id) {
+    const doomed = new Set([id]);
+    const stack = [id];
+    while (stack.length) {
+      const parentId = stack.pop();
+      for (const u of units.value) {
+        if (u.attachedTo === parentId && !doomed.has(u.id)) {
+          doomed.add(u.id);
+          stack.push(u.id);
+        }
+      }
+    }
+    units.value = units.value.filter((u) => !doomed.has(u.id));
     modifiedDate.value = Date.now();
   }
 
   function setUnits(newUnits) {
     units.value = newUnits;
+  }
+
+  /**
+   * Re-parent and/or reposition a unit within its sibling group.
+   *
+   * Driven by vuedraggable: every drop event maps to a single call here. The
+   * unit is removed from its current spot in the flat array, its `attachedTo`
+   * is set to `parentId` (or cleared when parentId is null), and it's
+   * re-inserted so it sits at position `sibIdx` among siblings sharing the
+   * same `attachedTo`.
+   *
+   * Flat-array order matters because the tier engine walks units in order
+   * and decides which copy is the 1st / 2nd / 3rd of its datasheet. Keeping
+   * sibling order on-screen aligned with flat-array order avoids a confusing
+   * gap between the visible row position and the price tier.
+   */
+  function moveUnit(id, parentId, sibIdx) {
+    const idx = units.value.findIndex((u) => u.id === id);
+    if (idx === -1) return;
+    const next = { ...units.value[idx] };
+    if (parentId) next.attachedTo = parentId;
+    else delete next.attachedTo;
+
+    const arr = [...units.value];
+    arr.splice(idx, 1);
+
+    const targetParent = parentId ?? null;
+    const siblingFlatIndices = [];
+    arr.forEach((u, i) => {
+      const p = u.attachedTo ?? null;
+      if (p === targetParent) siblingFlatIndices.push(i);
+    });
+    const insertAt =
+      typeof sibIdx === "number" && sibIdx < siblingFlatIndices.length
+        ? siblingFlatIndices[sibIdx]
+        : arr.length;
+    arr.splice(insertAt, 0, next);
+
+    units.value = arr;
+    modifiedDate.value = Date.now();
   }
 
   function addDetachment(name) {
@@ -311,7 +442,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     name.value = list.name || "";
     faction.value = list.faction || "";
     maxPoints.value = list.maxPoints || 2000;
-    mfm_version.value = list.mfm_version || "";
+    mfm_version.value = mfmStore.normalizeMfmVersion(list.mfm_version || "");
     version.value = list.version || "";
     modifiedDate.value = list.modifiedDate || Date.now();
     sortOrder.value = list.sortOrder || "";
@@ -363,9 +494,12 @@ export const useArmyListStore = defineStore("armyList", () => {
     currentMFM,
     pointsBreakdown,
     getUnitValidationError,
+    getEnhancementMeta,
     addUnit,
     removeUnit,
+    removeUnitSubtree,
     setUnits,
+    moveUnit,
     addDetachment,
     removeDetachment,
     setDetachments,

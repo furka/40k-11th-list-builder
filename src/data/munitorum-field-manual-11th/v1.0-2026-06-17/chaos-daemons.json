@@ -5,6 +5,11 @@
     {
       "name": "BLOOD LEGION",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,21 +33,33 @@
     {
       "name": "CAVALCADE OF CHAOS",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Apocalyptic Steeds (Upgrade)",
-          "points": 10
+          "name": "Apocalyptic Steeds",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Soul-shattering Charge (Upgrade)",
-          "points": 10
+          "name": "Soul-shattering Charge",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "DAEMONIC INCURSION",
       "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,6 +83,11 @@
     {
       "name": "LEGION OF EXCESS",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -89,17 +111,28 @@
     {
       "name": "LORDS OF THE WARP",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Swollen with Power (Upgrade)",
-          "points": 10
+          "name": "Swollen with Power",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "PLAGUE LEGION",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -123,6 +156,11 @@
     {
       "name": "SCINTILLATING LEGION",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -146,6 +184,11 @@
     {
       "name": "SHADOW LEGION",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -169,15 +212,22 @@
     {
       "name": "WARPTIDE",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Bane-forged Weapons (Upgrade)",
-          "points": 15
+          "name": "Bane-forged Weapons",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Soul-hungry Slaughterers (Upgrade)",
-          "points": 10
+          "name": "Soul-hungry Slaughterers",
+          "points": 10,
+          "isUnitUpgrade": true
         }
       ]
     }
@@ -688,7 +738,9 @@
       "name": "HORTICULOUS SLIMUX",
       "leader": {
         "attachesTo": [
-          "BEASTS OF NURGLE"
+          "BEASTS OF NURGLE",
+          "PLAGUE TOADS",
+          "POX RIDERS"
         ]
       },
       "support": null,
@@ -1297,6 +1349,200 @@
           ]
         }
       ]
+    },
+    {
+      "name": "AETAOS’RAU’KERES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 315
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "AN’GGRATH THE UNBOUND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 415
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FURIES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GIANT CHAOS SPAWN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HERALD OF SLAANESH ON STEED OF SLAANESH",
+      "leader": {
+        "attachesTo": [
+          "SEEKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PLAGUE TOADS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "POX RIDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SCABEIATHRAX THE BLOATED",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SPINED CHAOS BEAST",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ZARAKYNEL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

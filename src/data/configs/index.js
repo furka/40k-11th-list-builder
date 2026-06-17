@@ -1,11 +1,11 @@
 import configs from "./config.json";
+import enhancementRestrictions from "./enhancement-restrictions.json";
 import { normalizeString } from "../../utils/name-match";
 
 // Faction-keyed role classifications, flattened into normalized name arrays
-// the parser consults at load time. 11th edition treats every chapter (Blood
-// Angels, Dark Angels, etc.) as its own top-level faction, so sub-faction
-// mappings, conditional overrides, endless-enhancement lists, and boarding-
-// actions configs from the 10th-edition codebase are no longer needed.
+// the parser consults at load time. The source HTML doesn't expose these
+// per-unit, so they're curated manually. Legends classification used to live
+// here too; it's now scraped (see `scrape-mfm-11th/index.mjs`).
 export const CONFIGS = {
   "battle-line": [],
   "dedicated-transport": [],
@@ -28,4 +28,22 @@ for (const key in configs) {
       CONFIGS[role].push(...config[role].map((i) => normalizeString(i)));
     }
   }
+}
+
+/**
+ * Faction → enhancement-name → allowed host datasheet names. The source HTML
+ * doesn't carry per-enhancement target restrictions, so this is a manual
+ * curation layer applied during MFM parse (see `data-reader-11th.js`).
+ *
+ * Keys starting with "_" (e.g. "_comment") are ignored — used for inline doc
+ * notes in the JSON file.
+ */
+export const ENHANCEMENT_RESTRICTIONS = enhancementRestrictions;
+
+export function getEnhancementAllowedHosts(factionName, enhancementName) {
+  if (!factionName || !enhancementName) return null;
+  const factionEntry = ENHANCEMENT_RESTRICTIONS?.[factionName];
+  if (!factionEntry || typeof factionEntry !== "object") return null;
+  const list = factionEntry[enhancementName];
+  return Array.isArray(list) && list.length > 0 ? list : null;
 }

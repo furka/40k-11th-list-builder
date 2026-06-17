@@ -1,4 +1,4 @@
-import { CONFIGS } from "../data/configs";
+import { CONFIGS, getEnhancementAllowedHosts } from "../data/configs";
 import { normalizeString } from "./name-match";
 
 /**
@@ -23,7 +23,7 @@ export function parse11thFaction(factionJson) {
     const sheet = {
       name: d.name,
       faction: factionName,
-      legends: false,
+      ...(d.legends ? { legends: true } : {}),
       sizes: d.sizes.map((s) => {
         const size = {
           models: s.models,
@@ -43,13 +43,25 @@ export function parse11thFaction(factionJson) {
 
     if (d.leader) sheet.leader = d.leader;
     if (d.support) sheet.support = d.support;
+    if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
 
     applyConfigRoleFlags(sheet);
     return sheet;
   });
 
+  // Layer the upgrade flag (from scraper) and the optional per-enhancement
+  // host whitelist (from `configs/enhancement-restrictions.json`) onto every
+  // enhancement once, so both consumers (detachment.enhancements + the
+  // synthetic "Enhancements" datasheet sizes) see the same enriched object.
+  const enrichedDetachments = factionJson.detachments.map((d) => ({
+    ...d,
+    enhancements: d.enhancements.map((enh) =>
+      enrichEnhancement(enh, factionName)
+    ),
+  }));
+
   const enhancementOptions = [];
-  for (const det of factionJson.detachments) {
+  for (const det of enrichedDetachments) {
     for (const enh of det.enhancements) {
       enhancementOptions.push({
         name: enh.name,
@@ -58,6 +70,8 @@ export function parse11thFaction(factionJson) {
         points: enh.points,
         basePoints: enh.points,
         tiers: [{ minCount: 1, points: enh.points }],
+        ...(enh.isUnitUpgrade ? { isUnitUpgrade: true } : {}),
+        ...(enh.allowedHosts ? { allowedHosts: enh.allowedHosts } : {}),
       });
     }
   }
@@ -65,9 +79,11 @@ export function parse11thFaction(factionJson) {
   return {
     faction: {
       name: factionName,
-      detachments: factionJson.detachments.map((d) => ({
+      detachments: enrichedDetachments.map((d) => ({
         name: d.name,
         dp: d.dp,
+        role: d.role ?? null,
+        leader: d.leader ?? null,
         tags: d.tags ?? [],
         // Keep the enhancement list on the detachment record so the codex
         // card can render them inline beneath the title (a detachment "looks
@@ -78,6 +94,12 @@ export function parse11thFaction(factionJson) {
     datasheets,
     enhancementOptions,
   };
+}
+
+function enrichEnhancement(enh, factionName) {
+  const allowedHosts = getEnhancementAllowedHosts(factionName, enh.name);
+  if (!allowedHosts) return enh;
+  return { ...enh, allowedHosts };
 }
 
 function isPlainModelCountLabel(name, models) {
@@ -104,10 +126,14 @@ function applyConfigRoleFlags(sheet) {
  * manifest.
  *
  *   parse11thSnapshot({
- *     manifest: { MFM_VERSION, siteVersion, scrapedAt },
+ *     manifest: { siteVersion, scrapedAt },
  *     factions: { necrons: factionJson, "space-marines": factionJson, ... }
  *   })
- *   → { FACTIONS, DATA_SHEETS, MFM_VERSION, EDITION: "11th" }
+ *   → { FACTIONS, DATA_SHEETS, MFM_VERSION }
+ *
+ * `MFM_VERSION` is the uppercased site version only (e.g. "V1.0"). The
+ * scrape date stays on disk in `_manifest.json` for debugging but is never
+ * exposed to the runtime — it isn't a meaningful version signal to users.
  */
 export function parse11thSnapshot({ manifest, factions }) {
   const FACTIONS = [];
@@ -127,6 +153,6 @@ export function parse11thSnapshot({ manifest, factions }) {
   return {
     FACTIONS,
     DATA_SHEETS,
-    MFM_VERSION: manifest.MFM_VERSION,
+    MFM_VERSION: manifest.siteVersion.toUpperCase(),
   };
 }

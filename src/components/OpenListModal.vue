@@ -21,12 +21,14 @@ function points(units, list) {
 
 function mfmVersion(list) {
   if (!list.mfm_version) return "???";
-  // "V1.0 (2026-06-17)" → "1.0 (2026-06-17)"
-  return list.mfm_version.replace(/^V/, "");
+  return mfmStore.normalizeMfmVersion(list.mfm_version).replace(/^V/, "");
 }
 
+const hasCurrent = computed(() => !!armyListStore.faction);
+
 const lists = computed(() => {
-  return [armyListStore.toObject(), ...appStore.lists];
+  const current = armyListStore.toObject();
+  return hasCurrent.value ? [current, ...appStore.lists] : [...appStore.lists];
 });
 
 function selectList(list) {
@@ -65,7 +67,7 @@ function deleteList(list) {
                 <template v-if="list.name">—</template>
                 {{ list.faction }} —
                 {{ points(list.units, list) }} pts
-                <b v-if="index === 0"> (current)</b>
+                <b v-if="hasCurrent && index === 0"> (current)</b>
               </span>
             </button>
           </form>
@@ -94,7 +96,7 @@ function deleteList(list) {
               class="open-modal__delete"
               @click="deleteList(list)"
               title="DELETE LIST?"
-              :disabled="index === 0"
+              :disabled="hasCurrent && index === 0"
             >
               <DeleteIcon />
             </button>
@@ -116,11 +118,11 @@ function deleteList(list) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 32px;
+    height: 36px;
   }
 
   li + li {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--color-divider);
   }
 
   &__actions {
@@ -131,8 +133,9 @@ function deleteList(list) {
   }
 
   &__mfm-version {
-    color: #666;
-    font-size: 18px;
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: 17px;
     margin-right: 8px;
     word-spacing: -8px;
     white-space: nowrap;
@@ -140,26 +143,31 @@ function deleteList(list) {
     &--outdated {
       cursor: help;
       font-weight: bold;
-      color: #c66;
+      color: var(--color-negative);
     }
   }
 
   &__mfm-label {
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.8px;
   }
 
   &__edition {
-    background-color: #888;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 14px;
+    background-color: var(--color-divider);
+    border-radius: 2px;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 600;
     margin-right: 8px;
     padding: 2px 6px;
     white-space: nowrap;
+    letter-spacing: 0.5px;
 
     &--11th {
-      background-color: #2c7;
+      background-color: var(--color-accent);
+      color: #0f1923;
     }
   }
 
@@ -172,8 +180,9 @@ function deleteList(list) {
   &__delete,
   &__copy {
     background: transparent;
-    border-radius: 6px;
+    border-radius: 2px;
     border: none;
+    color: var(--color-text-muted);
     cursor: pointer;
     margin-inline-start: 16px;
     padding: 3px;
@@ -181,23 +190,31 @@ function deleteList(list) {
     svg {
       height: 24px;
       width: 24px;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: var(--color-text);
     }
 
     &[disabled] {
-      opacity: 0.5;
+      opacity: 0.4;
     }
   }
 
   &__delete:not([disabled]):hover {
-    background-color: #f00;
+    background-color: var(--color-negative);
+    color: var(--color-text);
   }
 
   &__warning {
+    color: var(--color-accent);
     margin-inline: 8px;
     cursor: help;
     svg {
       height: 24px;
       width: 24px;
+      fill: currentColor;
     }
   }
 
@@ -210,18 +227,21 @@ function deleteList(list) {
   &__button {
     background: transparent;
     border: none;
+    color: var(--color-text);
     cursor: pointer;
-    font-family: var(--font-family);
+    font-family: var(--font-body);
     font-size: 16px;
-    padding: 0;
-    height: 32px;
+    padding: 0 8px;
+    height: 36px;
     flex-grow: 1;
     text-align: start;
     display: flex;
+    align-items: center;
+    gap: 6px;
     min-width: 0;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: var(--color-header);
     }
   }
 

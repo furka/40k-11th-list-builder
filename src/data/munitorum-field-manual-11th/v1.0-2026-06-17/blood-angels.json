@@ -5,6 +5,11 @@
     {
       "name": "1ST COMPANY TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "ANGELIC INHERITORS",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: GRACE"
       ],
@@ -53,6 +63,11 @@
     {
       "name": "ANVIL SIEGE FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -76,6 +91,11 @@
     {
       "name": "ARMOURED SPEARTIP",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -99,6 +119,11 @@
     {
       "name": "BASTION TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -122,6 +147,11 @@
     {
       "name": "CERAMITE SENTINELS",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -145,6 +175,11 @@
     {
       "name": "ENCARMINE SPEARTIP",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -160,6 +195,11 @@
     {
       "name": "FIRESTORM ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -183,21 +223,33 @@
     {
       "name": "FULGURIS TASK FORCE",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Bellicose Weapon Spirits (Upgrade)",
-          "points": 15
+          "name": "Bellicose Weapon Spirits",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Raptorial Cogitator Core (Upgrade)",
-          "points": 15
+          "name": "Raptorial Cogitator Core",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "GLADIUS TASK FORCE",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -221,6 +273,11 @@
     {
       "name": "HEADHUNTER TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -244,6 +301,11 @@
     {
       "name": "IRONSTORM SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -267,6 +329,11 @@
     {
       "name": "LEGACY OF GRACE",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: GRACE"
       ],
@@ -284,6 +351,11 @@
     {
       "name": "LIBERATOR ASSAULT GROUP",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -307,6 +379,11 @@
     {
       "name": "LIBRARIUS CONCLAVE",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -334,6 +411,11 @@
     {
       "name": "ORBITAL ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -357,6 +439,11 @@
     {
       "name": "RAGE-CURSED ONSLAUGHT",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DOOMED"
       ],
@@ -382,6 +469,11 @@
     {
       "name": "STORMLANCE TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -405,11 +497,17 @@
     {
       "name": "SUBVERSION ASSETS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Death in the Dark (Upgrade)",
-          "points": 15
+          "name": "Death in the Dark",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
           "name": "Shroud Field",
@@ -420,6 +518,11 @@
     {
       "name": "THE ANGELIC HOST",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -443,6 +546,11 @@
     {
       "name": "THE LOST BRETHREN",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DOOMED"
       ],
@@ -468,6 +576,11 @@
     {
       "name": "VANGUARD SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -491,6 +604,11 @@
     {
       "name": "WRATH OF THE DOOMED",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: DOOMED"
       ],
@@ -511,6 +629,7 @@
       "name": "ASTORATH",
       "leader": {
         "attachesTo": [
+          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
           "DEATH COMPANY MARINES WITH JUMP PACKS"
         ]
       },
@@ -621,7 +740,8 @@
       "leader": {
         "attachesTo": [
           "DEATH COMPANY MARINES",
-          "DEATH COMPANY MARINES WITH BOLT RIFLES"
+          "DEATH COMPANY MARINES WITH BOLT RIFLES",
+          "DEATH COMPANY MARINES WITH BOLTGUNS"
         ]
       },
       "support": null,
@@ -642,6 +762,7 @@
       "name": "DEATH COMPANY CAPTAIN WITH JUMP PACK",
       "leader": {
         "attachesTo": [
+          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
           "DEATH COMPANY MARINES WITH JUMP PACKS"
         ]
       },
@@ -796,6 +917,7 @@
       "name": "LEMARTES",
       "leader": {
         "attachesTo": [
+          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
           "DEATH COMPANY MARINES WITH JUMP PACKS"
         ]
       },
@@ -1442,6 +1564,7 @@
           "CRUSADER SQUAD",
           "DEATH COMPANY MARINES",
           "DEATH COMPANY MARINES WITH BOLT RIFLES",
+          "DEATH COMPANY MARINES WITH BOLTGUNS",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
           "FORTIS KILL TEAM",
@@ -1520,6 +1643,7 @@
       "leader": {
         "attachesTo": [
           "ASSAULT INTERCESSORS WITH JUMP PACKS",
+          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
           "DEATH COMPANY MARINES WITH JUMP PACKS",
           "TALONSTRIKE KILL TEAM",
           "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
@@ -2113,15 +2237,7 @@
           "TACTICAL SQUAD"
         ]
       },
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",
@@ -2308,18 +2424,7 @@
     },
     {
       "name": "LIEUTENANT",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "COMPANY HEROES",
-          "DESOLATION SQUAD",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "leader": null,
       "support": {
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
@@ -2353,13 +2458,7 @@
     },
     {
       "name": "LIEUTENANT IN PHOBOS ARMOUR",
-      "leader": {
-        "attachesTo": [
-          "INCURSOR SQUAD",
-          "INFILTRATOR SQUAD",
-          "REIVER SQUAD"
-        ]
-      },
+      "leader": null,
       "support": {
         "attachesTo": [
           "INCURSOR SQUAD",
@@ -2536,6 +2635,12 @@
               "points": 210
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Macro plasma incinerator",
+          "points": 10
         }
       ]
     },
@@ -2901,6 +3006,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Thunder Hammer",
+          "points": 5
+        }
       ]
     },
     {
@@ -3027,6 +3138,250 @@
           ]
         }
       ]
+    },
+    {
+      "name": "BROTHER CORBULO",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "DESOLATION SQUAD",
+          "DEVASTATOR SQUAD",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CAPTAIN TYCHO",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "COMPANY HEROES",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH COMPANY DREADNOUGHT WITH MAGNA-GRAPPLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH COMPANY MARINES WITH BOLTGUNS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FURIOSO DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GABRIEL SETH",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "COMPANY HEROES",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LIBRARIAN DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SANGUINARY PRIEST WITH JUMP PACK",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSORS WITH JUMP PACKS",
+          "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TYCHO THE LOST",
+      "leader": {
+        "attachesTo": [
+          "DEATH COMPANY MARINES",
+          "DEATH COMPANY MARINES WITH BOLT RIFLES",
+          "DEATH COMPANY MARINES WITH BOLTGUNS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

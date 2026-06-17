@@ -5,6 +5,11 @@
     {
       "name": "CHAMPIONS OF CONTAGION",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: FLYBLOWN"
       ],
@@ -30,23 +35,35 @@
     {
       "name": "CONTAGION ENGINES",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ENGINES"
       ],
       "enhancements": [
         {
-          "name": "Lancet of the Worldsore (Upgrade)",
-          "points": 15
+          "name": "Lancet of the Worldsore",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Parasitic Woe‑reaper (Upgrade)",
-          "points": 15
+          "name": "Parasitic Woe‑reaper",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "DEATH LORD’S CHOSEN",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -70,23 +87,35 @@
     {
       "name": "FLYBLOWN HOST",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: FLYBLOWN"
       ],
       "enhancements": [
         {
-          "name": "Insectile Murmuration (Upgrade)",
-          "points": 15
+          "name": "Insectile Murmuration",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Plagueveil (Upgrade)",
-          "points": 15
+          "name": "Plagueveil",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "MORTARION’S HAMMER",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ENGINES"
       ],
@@ -112,6 +141,11 @@
     {
       "name": "PARAGONS OF PUTRESCENCE",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -127,6 +161,11 @@
     {
       "name": "SHAMBLEROT VECTORIUM",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -150,6 +189,11 @@
     {
       "name": "TALLYBAND SUMMONERS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -173,6 +217,11 @@
     {
       "name": "VIRULENT VECTORIUM",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -443,6 +492,16 @@
               "points": 320
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy reaper autocannon",
+          "points": 10
+        },
+        {
+          "name": "Hades lascannon",
+          "points": 10
         }
       ]
     },
@@ -1006,6 +1065,130 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DEATH GUARD CHAOS LORD",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD CHAOS LORD IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD CULTISTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD POSSESSED",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD SORCERER IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

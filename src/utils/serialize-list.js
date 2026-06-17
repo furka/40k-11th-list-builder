@@ -7,11 +7,21 @@ const MAP = {
   detachments: "ds",
 };
 
+import { v4 as uuidv4 } from "uuid";
+
 const UNIT_MAP = {
   models: "um",
   name: "un",
   points: "up",
   optionName: "uon",
+  // Wargear pseudo-units carry the host's datasheet name so a stale shared URL
+  // (or a future MFM upgrade) can still validate the attachment scope.
+  parentDataSheet: "upd",
+  // attachedTo is stored as the host unit's *array index* (as a string), not
+  // its UUID — UUIDs are regenerated when a shared list is deserialized into
+  // a new client, so any cross-instance reference must be position-based. The
+  // index is rehydrated to the new UUID after the units array is built.
+  attachedTo: "uat",
 };
 
 const PARSERS = {
@@ -35,9 +45,18 @@ export const serializeList = function (data) {
     }
   });
 
+  // Lookup table: unit.id → its array index. Used to encode `attachedTo` as a
+  // small integer string instead of a UUID.
+  const indexById = new Map();
+  data.units.forEach((u, i) => indexById.set(u.id, i));
+
   data.units.forEach((u) => {
     Object.entries(UNIT_MAP).forEach(([key, sKey]) => {
-      const val = u[key];
+      let val = u[key];
+      if (key === "attachedTo") {
+        const idx = val ? indexById.get(val) : undefined;
+        val = idx === undefined ? "" : String(idx);
+      }
       search.append(sKey, encodeURIComponent(val || ""));
     });
   });
@@ -60,6 +79,21 @@ export const deserializeList = function (search) {
     const res = search.get(sKey);
     if (res) data[key] = parse(key, res);
   });
+
+  // Mint fresh UUIDs for each unit (the serialised form doesn't carry them),
+  // then swap each digit-string `attachedTo` for the host unit's new UUID.
+  for (const u of data.units) {
+    if (!u.id) u.id = uuidv4();
+  }
+  for (const u of data.units) {
+    if (typeof u.attachedTo === "string" && /^\d+$/.test(u.attachedTo)) {
+      const host = data.units[Number(u.attachedTo)];
+      u.attachedTo = host?.id;
+      if (!u.attachedTo) delete u.attachedTo;
+    } else if (!u.attachedTo) {
+      delete u.attachedTo;
+    }
+  }
 
   return data;
 };

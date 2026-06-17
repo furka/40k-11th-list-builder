@@ -5,6 +5,11 @@
     {
       "name": "BLITZ BRIGADE",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: WAGONS"
       ],
@@ -30,6 +35,11 @@
     {
       "name": "BULLY BOYZ",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -53,6 +63,11 @@
     {
       "name": "DA BIG HUNT",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -76,6 +91,11 @@
     {
       "name": "DREAD MOB",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -99,6 +119,11 @@
     {
       "name": "FREEBOOTER KREW",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -122,6 +147,11 @@
     {
       "name": "GREEN TIDE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -145,6 +175,11 @@
     {
       "name": "KULT OF SPEED",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -168,6 +203,11 @@
     {
       "name": "MORE DAKKA!",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -175,31 +215,44 @@
           "points": 15
         },
         {
-          "name": "Dead Shiny Shootas (Upgrade)",
-          "points": 15
+          "name": "Dead Shiny Shootas",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "ROLLIN' DEFF",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: WAGONS"
       ],
       "enhancements": [
         {
-          "name": "Boarding Ramps (Upgrade)",
-          "points": 10
+          "name": "Boarding Ramps",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Targetin’ Gizmos (Upgrade)",
-          "points": 15
+          "name": "Targetin’ Gizmos",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "SPEEDWAAAGH!",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -223,6 +276,15 @@
     {
       "name": "TAKTIKAL BRIGADE",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": {
+        "attachesTo": [
+          "KOMMANDOS"
+        ]
+      },
       "tags": [],
       "enhancements": [
         {
@@ -238,6 +300,11 @@
     {
       "name": "WAR HORDE",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -301,6 +368,12 @@
               "points": 145
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "ard case",
+          "points": 15
         }
       ]
     },
@@ -704,7 +777,10 @@
       "name": "DEFFKILLA WARTRIKE",
       "leader": {
         "attachesTo": [
-          "WARBIKERS"
+          "NOBZ ON WARBIKES",
+          "SKORCHAS",
+          "WARBIKERS",
+          "WARBUGGIES"
         ]
       },
       "support": null,
@@ -1644,6 +1720,640 @@
           ]
         }
       ]
+    },
+    {
+      "name": "ATTACK FIGHTA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BIG GUNZ",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 20
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BIG MEK ON WARBIKE",
+      "leader": {
+        "attachesTo": [
+          "NOBZ ON WARBIKES",
+          "SKORCHAS",
+          "WARBIKERS",
+          "WARBUGGIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BIG MEK WITH KUSTOM FORCE FIELD",
+      "leader": {
+        "attachesTo": [
+          "BOYZ",
+          "BURNA BOYZ",
+          "LOOTAS",
+          "NOBZ",
+          "TANKBUSTAS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BIG TRAKK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BOSS ZAGSTRUK",
+      "leader": {
+        "attachesTo": [
+          "STORMBOYZ"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CHINORK WARKOPTA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DA RED GOBBO",
+      "leader": {
+        "attachesTo": [
+          "GRETCHIN"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEFFKOPTAS WITH BIG SHOOTAS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEFF ROLLA BATTLE FORTRESS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FIGHTA-BOMMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GROT BOMM LAUNCHA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GROT MEGA-TANK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GROT TANKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
+        },
+        {
+          "name": "8 models",
+          "models": 8,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KANNONWAGON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KAPTIN BADRUKK",
+      "leader": {
+        "attachesTo": [
+          "FLASH GITZ"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KILL KRUSHA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KILL TANK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 295
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LIFTA WAGON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MAD DOK GROTSNIK",
+      "leader": {
+        "attachesTo": [
+          "BOYZ",
+          "BURNA BOYZ",
+          "LOOTAS",
+          "NOBZ",
+          "TANKBUSTAS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MEGA DREAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 225
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MEKA-DREAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MEKBOY WORKSHOP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NOBZ ON WARBIKES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PAINBOY ON WARBIKE",
+      "leader": {
+        "attachesTo": [
+          "NOBZ ON WARBIKES",
+          "SKORCHAS",
+          "WARBIKERS",
+          "WARBUGGIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SKORCHAS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SQUIGGOTH",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "UFTHAK BLACKHAWK",
+      "leader": {
+        "attachesTo": [
+          "BOYZ",
+          "NOBZ"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WARBOSS ON WARBIKE",
+      "leader": {
+        "attachesTo": [
+          "NOBZ ON WARBIKES",
+          "SKORCHAS",
+          "WARBIKERS",
+          "WARBUGGIES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WARBUGGIES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

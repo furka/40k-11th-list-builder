@@ -1,4 +1,5 @@
 <script setup>
+import { computed } from "vue";
 import DropDown from "./DropDown.vue";
 import OptionsIcon from "../assets/setting-line-icon.svg";
 import {
@@ -9,8 +10,17 @@ import {
   GROUP_ROLE,
 } from "../data/constants";
 import { useAppStore } from "../stores/app";
+import { useMfmStore } from "../stores/mfm";
 
 const appStore = useAppStore();
+const mfmStore = useMfmStore();
+
+const hasPreviousMFM = computed(() => !!mfmStore.MFM.PREVIOUS);
+const pointsChangesTitle = computed(() =>
+  hasPreviousMFM.value
+    ? "Show points changes compared to previous MFM"
+    : "No previous MFM version to compare against yet"
+);
 </script>
 
 <template>
@@ -21,22 +31,14 @@ const appStore = useAppStore();
     </template>
     <template v-slot:content>
       <div class="codex-options__content">
-        <label title="Show points changes compared to previous MFM">
+        <label :title="pointsChangesTitle" :class="{ disabled: !hasPreviousMFM }">
           <input
             type="checkbox"
             :checked="appStore.showPointsChanges"
+            :disabled="!hasPreviousMFM"
             @change="appStore.showPointsChanges = $event.target.checked"
           />
           Points Changes
-        </label>
-
-        <label title="Show Forge World units">
-          <input
-            type="checkbox"
-            :checked="appStore.showForgeWorld"
-            @change="appStore.showForgeWorld = $event.target.checked"
-          />
-          Forge World
         </label>
 
         <label title="Show Legends units">
@@ -46,6 +48,17 @@ const appStore = useAppStore();
             @change="appStore.showLegends = $event.target.checked"
           />
           Legends
+        </label>
+
+        <label
+          title="Hide units / detachments that aren't available to add instead of dimming them"
+        >
+          <input
+            type="checkbox"
+            :checked="appStore.showAvailableOnly"
+            @change="appStore.showAvailableOnly = $event.target.checked"
+          />
+          Show available only
         </label>
 
         <label
@@ -94,44 +107,64 @@ const appStore = useAppStore();
 
   input,
   select {
-    background-color: transparent;
-    border-bottom: 2px dashed white;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    color: currentcolor;
-    font-family: var(--font-family);
-    font-size: var(--font-size);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-divider);
+    border-radius: 2px;
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 5px 8px;
 
     option {
-      color: initial;
+      background-color: var(--color-surface);
+      color: var(--color-text);
     }
 
     &::placeholder {
-      color: #aaa;
+      color: var(--color-text-muted);
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+      outline: none;
     }
   }
 
   select {
     flex-grow: 1;
+    margin-inline-start: 8px;
   }
 
   input[type="checkbox"] {
     width: 1em;
     height: 1em;
+    accent-color: var(--color-accent);
   }
 
   label {
     align-items: center;
+    color: var(--color-text);
     cursor: pointer;
     display: flex;
     flex-direction: row;
-    font-size: var(--font-size);
-    padding: 8px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    gap: 8px;
+    padding: 10px 16px;
   }
 
   label + label {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--color-divider);
+  }
+
+  label.disabled {
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+    opacity: 0.55;
+
+    input {
+      cursor: not-allowed;
+    }
   }
 }
 </style>

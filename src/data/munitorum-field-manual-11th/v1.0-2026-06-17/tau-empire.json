@@ -5,21 +5,33 @@
     {
       "name": "ADVANCED ACQUISITION CADRE",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Negation Emitters (Upgrade)",
-          "points": 15
+          "name": "Negation Emitters",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Unmasking Suite (Upgrade)",
-          "points": 15
+          "name": "Unmasking Suite",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "AUXILIARY CADRE",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: AUXILIARY"
       ],
@@ -37,6 +49,11 @@
     {
       "name": "EXPERIMENTAL PROTOTYPE CADRE",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: BATTLESUIT"
       ],
@@ -58,6 +75,11 @@
     {
       "name": "KAUYON",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -81,6 +103,11 @@
     {
       "name": "KROOT HUNTING PACK",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: AUXILIARY"
       ],
@@ -106,6 +133,11 @@
     {
       "name": "MONT’KA",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -129,6 +161,11 @@
     {
       "name": "RETALIATION CADRE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: BATTLESUIT"
       ],
@@ -242,6 +279,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "High-yield missile pods",
+          "points": 5
+        }
       ]
     },
     {
@@ -270,6 +313,7 @@
       "name": "COMMANDER FARSIGHT",
       "leader": {
         "attachesTo": [
+          "CRISIS BATTLESUITS",
           "CRISIS FIREKNIFE BATTLESUITS",
           "CRISIS STARSCYTHE BATTLESUITS",
           "CRISIS SUNFORGE BATTLESUITS"
@@ -293,6 +337,7 @@
       "name": "COMMANDER IN COLDSTAR BATTLESUIT",
       "leader": {
         "attachesTo": [
+          "CRISIS BATTLESUITS",
           "CRISIS FIREKNIFE BATTLESUITS",
           "CRISIS STARSCYTHE BATTLESUITS",
           "CRISIS SUNFORGE BATTLESUITS"
@@ -316,6 +361,7 @@
       "name": "COMMANDER IN ENFORCER BATTLESUIT",
       "leader": {
         "attachesTo": [
+          "CRISIS BATTLESUITS",
           "CRISIS FIREKNIFE BATTLESUITS",
           "CRISIS STARSCYTHE BATTLESUITS",
           "CRISIS SUNFORGE BATTLESUITS"
@@ -372,6 +418,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Missile pod",
+          "points": 5
+        }
       ]
     },
     {
@@ -393,6 +445,12 @@
               "points": 100
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "T'au flamer",
+          "points": 5
         }
       ]
     },
@@ -514,6 +572,12 @@
               "points": 160
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Cyclic Ion Raker",
+          "points": 10
         }
       ]
     },
@@ -804,6 +868,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Ion rifle",
+          "points": 5
+        }
       ]
     },
     {
@@ -894,6 +964,12 @@
               "points": 210
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Ion accelerator",
+          "points": 20
         }
       ]
     },
@@ -1140,6 +1216,396 @@
           ]
         }
       ]
+    },
+    {
+      "name": "AUN’SHI",
+      "leader": {
+        "attachesTo": [
+          "BREACHER TEAM",
+          "KROOT CARNIVORES",
+          "KROOT FARSTALKERS",
+          "STRIKE TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "AUN’VA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "BARRACUDA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "COMMANDER IN CRISIS BATTLESUIT",
+      "leader": {
+        "attachesTo": [
+          "CRISIS BATTLESUITS",
+          "CRISIS FIREKNIFE BATTLESUITS",
+          "CRISIS STARSCYTHE BATTLESUITS",
+          "CRISIS SUNFORGE BATTLESUITS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CRISIS BATTLESUITS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DRONE SENTRY TURRET",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GREAT KNARLOC",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HEAVY GUN DRONES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KNARLOC RIDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LONGSTRIKE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ORCA DROPSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "REMORA STEALTH DRONES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "REMOTE SENSOR TOWER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "R’VARNA BATTLESUIT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SHAS’O R’ALAI",
+      "leader": {
+        "attachesTo": [
+          "XV9 HAZARD BATTLESUITS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TETRAS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TX42 PIRANHA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "XV9 HAZARD BATTLESUITS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "Y’VAHRA BATTLESUIT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

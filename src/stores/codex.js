@@ -9,6 +9,7 @@ import {
   sortDataSheetPtsDescending,
 } from "../utils/sort-functions";
 import { SORT_CHEAPEST_FIRST, SORT_EXPENSIVE_FIRST } from "../data/constants";
+import { matchesDatasheet, matchesDetachment } from "../utils/codex-filter";
 
 export const useCodexStore = defineStore("codex", () => {
   const mfmStore = useMfmStore();
@@ -43,7 +44,7 @@ export const useCodexStore = defineStore("codex", () => {
 
     if (appStore.codexFilter) {
       sheets = sheets.filter((sheet) =>
-        sheet.name.toLowerCase().includes(appStore.codexFilter.toLowerCase())
+        matchesDatasheet(sheet, appStore.codexFilter)
       );
     }
 
@@ -60,6 +61,14 @@ export const useCodexStore = defineStore("codex", () => {
     }
 
     return sheets;
+  });
+
+  const filteredDetachments = computed(() => {
+    const factionEntry = (currentMFM.value || mfmStore.MFM.CURRENT)?.FACTIONS?.find(
+      (f) => f.name === faction.value
+    );
+    const all = factionEntry?.detachments ?? [];
+    return all.filter((d) => matchesDetachment(d, appStore.codexFilter));
   });
 
   // 11th edition's enhancements are nested in their parent detachment cards
@@ -102,6 +111,7 @@ export const useCodexStore = defineStore("codex", () => {
     compendium,
     compendiumByName,
     filteredCompendium,
+    filteredDetachments,
     enhancements,
     setFaction,
     setCurrentMFM,

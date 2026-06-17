@@ -1,0 +1,3 @@
+{
+  "_comment": "Per-enhancement host-datasheet whitelists, keyed by faction name. The source HTML doesn't carry this information, so it's curated manually. Empty by default. Example:  \"NECRONS\": { \"Enlivened Sentinels\": [\"NECRON WARRIORS\"] }"
+}

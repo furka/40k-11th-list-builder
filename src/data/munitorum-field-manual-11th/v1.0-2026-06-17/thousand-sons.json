@@ -5,6 +5,11 @@
     {
       "name": "CHANGEHOST OF DECEIT",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "GRAND COVEN",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -51,6 +61,11 @@
     {
       "name": "HEXWARP THRALLBAND",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -74,6 +89,11 @@
     {
       "name": "RITUAL OF REGENERATION",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -89,6 +109,11 @@
     {
       "name": "RUBRICAE PHALANX",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -112,6 +137,11 @@
     {
       "name": "SEKHETAR COHORT",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -127,13 +157,19 @@
     {
       "name": "SERVANTS OF CHANGE",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: MUTANT"
       ],
       "enhancements": [
         {
-          "name": "Thicket of Bladed Bone (Upgrade)",
-          "points": 10
+          "name": "Thicket of Bladed Bone",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
           "name": "Unravelled Fates",
@@ -144,6 +180,11 @@
     {
       "name": "WARPFORGED CABAL",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -167,6 +208,15 @@
     {
       "name": "WARPMELD PACT",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": {
+        "attachesTo": [
+          "TZAANGORS"
+        ]
+      },
       "tags": [
         "UNIQUE: MUTANT"
       ],
@@ -394,6 +444,16 @@
               "points": 320
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Hades lascannon",
+          "points": 10
+        },
+        {
+          "name": "Heavy reaper autocannon",
+          "points": 10
         }
       ]
     },

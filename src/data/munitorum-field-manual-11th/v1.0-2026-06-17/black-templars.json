@@ -5,6 +5,11 @@
     {
       "name": "ANVIL SIEGE FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -28,6 +33,11 @@
     {
       "name": "ARMOURED SPEARTIP",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -51,6 +61,11 @@
     {
       "name": "BASTION TASK FORCE",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -74,6 +89,11 @@
     {
       "name": "CERAMITE SENTINELS",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -97,6 +117,11 @@
     {
       "name": "COMPANIONS OF VEHEMENCE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -120,6 +145,11 @@
     {
       "name": "FIRESTORM ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -143,21 +173,33 @@
     {
       "name": "FULGURIS TASK FORCE",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Bellicose Weapon Spirits (Upgrade)",
-          "points": 15
+          "name": "Bellicose Weapon Spirits",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Raptorial Cogitator Core (Upgrade)",
-          "points": 15
+          "name": "Raptorial Cogitator Core",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "GLADIUS TASK FORCE",
       "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -181,6 +223,11 @@
     {
       "name": "GODHAMMER ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -204,6 +251,11 @@
     {
       "name": "HEADHUNTER TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -227,6 +279,11 @@
     {
       "name": "IRONSTORM SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -250,21 +307,33 @@
     {
       "name": "MARSHAL'S HOUSEHOLD",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Fervent Exemplars (Upgrade)",
-          "points": 10
+          "name": "Fervent Exemplars",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Inheritors of Sigismund (Upgrade)",
-          "points": 15
+          "name": "Inheritors of Sigismund",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "ORBITAL ASSAULT FORCE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -288,6 +357,11 @@
     {
       "name": "STORMLANCE TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -311,11 +385,17 @@
     {
       "name": "SUBVERSION ASSETS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Death in the Dark (Upgrade)",
-          "points": 15
+          "name": "Death in the Dark",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
           "name": "Shroud Field",
@@ -326,6 +406,11 @@
     {
       "name": "THE LIVING MIRACLE",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -337,6 +422,11 @@
     {
       "name": "VANGUARD SPEARHEAD",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -360,6 +450,11 @@
     {
       "name": "VINDICATION TASK FORCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -383,6 +478,11 @@
     {
       "name": "WRATHFUL PROCESSION",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -1998,15 +2098,7 @@
           "TACTICAL SQUAD"
         ]
       },
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",
@@ -2088,18 +2180,7 @@
     },
     {
       "name": "LIEUTENANT",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "COMPANY HEROES",
-          "DESOLATION SQUAD",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "leader": null,
       "support": {
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
@@ -2133,13 +2214,7 @@
     },
     {
       "name": "LIEUTENANT IN PHOBOS ARMOUR",
-      "leader": {
-        "attachesTo": [
-          "INCURSOR SQUAD",
-          "INFILTRATOR SQUAD",
-          "REIVER SQUAD"
-        ]
-      },
+      "leader": null,
       "support": {
         "attachesTo": [
           "INCURSOR SQUAD",
@@ -2316,6 +2391,12 @@
               "points": 210
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Macro plasma incinerator",
+          "points": 10
         }
       ]
     },
@@ -2609,6 +2690,12 @@
               "points": 310
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Thunder Hammer",
+          "points": 5
         }
       ]
     },

@@ -5,6 +5,11 @@
     {
       "name": "DOMINUS FOEBREAKERS",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -20,6 +25,11 @@
     {
       "name": "FREEBLADE COMPANY",
       "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +53,11 @@
     {
       "name": "GATE WARDEN LANCE",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,6 +81,11 @@
     {
       "name": "QUESTOR FORGEPACT",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -81,6 +101,11 @@
     {
       "name": "QUESTORIS COMPANIONS",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -104,6 +129,11 @@
     {
       "name": "SPEARHEAD-AT-ARMS",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ARMIGERS"
       ],
@@ -129,23 +159,35 @@
     {
       "name": "THRONE-BONDED OUTRIDERS",
       "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: ARMIGERS"
       ],
       "enhancements": [
         {
-          "name": "Ancestral Overbleed (Upgrade)",
-          "points": 10
+          "name": "Ancestral Overbleed",
+          "points": 10,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Gyro-optimised Actuators (Upgrade)",
-          "points": 15
+          "name": "Gyro-optimised Actuators",
+          "points": 15,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "VALOURSTRIKE LANCE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -414,6 +456,12 @@
               "points": 415
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Rapid-fire battle cannon",
+          "points": 15
         }
       ]
     },

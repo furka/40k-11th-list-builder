@@ -10,8 +10,8 @@ import { parse11thSnapshot } from "../../utils/data-reader-11th";
  *
  * Output:
  *   {
- *     "V1.0 (2026-06-17)": { FACTIONS, DATA_SHEETS, MFM_VERSION, EDITION },
- *     "V1.1 (2026-07-15)": { ... },
+ *     "V1.0": { FACTIONS, DATA_SHEETS, MFM_VERSION },
+ *     "V1.1": { ... },
  *     CURRENT: <ref to latest snapshot>,
  *     PREVIOUS: <ref to second-latest, or null>
  *   }

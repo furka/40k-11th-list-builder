@@ -5,21 +5,33 @@
     {
       "name": "AMBUSH PREDATORS",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Cryptophotaic Camouflage (Upgrade)",
-          "points": 15
+          "name": "Cryptophotaic Camouflage",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Encircling Horrors (Upgrade)",
-          "points": 20
+          "name": "Encircling Horrors",
+          "points": 20,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "ASSIMILATION SWARM",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -43,6 +55,11 @@
     {
       "name": "CRUSHER STAMPEDE",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -66,6 +83,11 @@
     {
       "name": "INVASION FLEET",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -89,6 +111,11 @@
     {
       "name": "SUBTERRANEAN ASSAULT",
       "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -112,6 +139,11 @@
     {
       "name": "SYNAPTIC NEXUS",
       "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -135,21 +167,33 @@
     {
       "name": "TALONS OF THE NORN QUEEN",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Destabilising Predation (Upgrade)",
-          "points": 20
+          "name": "Destabilising Predation",
+          "points": 20,
+          "isUnitUpgrade": true
         },
         {
-          "name": "Synaptoprescience (Upgrade)",
-          "points": 25
+          "name": "Synaptoprescience",
+          "points": 25,
+          "isUnitUpgrade": true
         }
       ]
     },
     {
       "name": "UNENDING SWARM",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -173,6 +217,11 @@
     {
       "name": "VANGUARD ONSLAUGHT",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -196,6 +245,11 @@
     {
       "name": "WARRIOR BIOFORM ONSLAUGHT",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -1298,6 +1352,16 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Acid spray",
+          "points": 10
+        },
+        {
+          "name": "Rupture cannon",
+          "points": 20
+        }
       ]
     },
     {
@@ -1447,6 +1511,100 @@
           ]
         }
       ]
+    },
+    {
+      "name": "BARBED HIERODULE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 340
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DIMACHAERON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MALANTHROPE",
+      "leader": {
+        "attachesTo": [
+          "VENOMTHROPES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SCYTHED HIERODULE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 330
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SKY-SLASHER SWARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

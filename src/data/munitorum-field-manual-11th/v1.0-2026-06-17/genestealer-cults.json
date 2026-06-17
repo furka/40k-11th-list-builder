@@ -5,6 +5,11 @@
     {
       "name": "BIOSANCTIC BROODSURGE",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: PURESTRAIN"
       ],
@@ -30,6 +35,11 @@
     {
       "name": "BROOD BROTHERS AUXILIA",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -53,6 +63,11 @@
     {
       "name": "FINAL DAY",
       "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -76,6 +91,11 @@
     {
       "name": "HEROES OF THE UPRISING",
       "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -91,6 +111,11 @@
     {
       "name": "HOST OF ASCENSION",
       "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: HOSTS"
       ],
@@ -116,6 +141,11 @@
     {
       "name": "OUTLANDER CLAW",
       "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -139,13 +169,19 @@
     {
       "name": "PURESTRAIN BROODSWARM",
       "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: PURESTRAIN"
       ],
       "enhancements": [
         {
-          "name": "Mark of the Star Children (Upgrade)",
-          "points": 30
+          "name": "Mark of the Star Children",
+          "points": 30,
+          "isUnitUpgrade": true
         },
         {
           "name": "Talons of the Sire",
@@ -156,6 +192,11 @@
     {
       "name": "XENOCREED CONGREGATION",
       "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -179,13 +220,19 @@
     {
       "name": "XENOCULT MASSES",
       "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
       "tags": [
         "UNIQUE: HOSTS"
       ],
       "enhancements": [
         {
-          "name": "Devious Disguises (Upgrade)",
-          "points": 15
+          "name": "Devious Disguises",
+          "points": 15,
+          "isUnitUpgrade": true
         },
         {
           "name": "Inspired to Greatness",
@@ -292,6 +339,12 @@
               "points": 170
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy mining laser",
+          "points": 10
         }
       ]
     },
@@ -811,6 +864,24 @@
           ]
         }
       ]
+    },
+    {
+      "name": "TECTONIC FRAGDRILL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

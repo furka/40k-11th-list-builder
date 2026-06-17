@@ -12,10 +12,21 @@ function openDialog() {
   dialog.value.showModal();
 }
 
-function onClick(event) {
-  if (event.target === dialog.value) {
+// Backdrop dismiss only fires when BOTH press and release land on the dialog
+// element itself. Without the press check, a drag-select that starts inside
+// the content and releases on the backdrop would close the modal (click
+// event bubbles to the nearest common ancestor — the dialog).
+let pressOnDialog = false;
+
+function onPointerDown(event) {
+  pressOnDialog = event.target === dialog.value;
+}
+
+function onPointerUp(event) {
+  if (pressOnDialog && event.target === dialog.value) {
     dialog.value.close();
   }
+  pressOnDialog = false;
 }
 </script>
 
@@ -29,7 +40,8 @@ function onClick(event) {
       ref="dialog"
       class="modal"
       @close="$emit('closed')"
-      @click="onClick"
+      @pointerdown="onPointerDown"
+      @pointerup="onPointerUp"
     >
       <div class="modal__content">
         <slot name="content"></slot>
@@ -47,20 +59,25 @@ function onClick(event) {
 <style lang="scss">
 .modal-button {
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
-  border-radius: 4px;
-  color: white;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: 2px;
+  color: var(--color-text);
   cursor: pointer;
   display: flex;
   flex-direction: row;
+  font-family: var(--font-display);
+  font-size: 16px;
   gap: 8px;
   justify-content: center;
-  padding: 6px 8px;
+  letter-spacing: 0.5px;
+  padding: 7px 12px;
   margin: 0 4px;
+  text-transform: uppercase;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--color-header);
+    border-color: var(--color-accent);
   }
 
   &__icon {
@@ -74,13 +91,14 @@ function onClick(event) {
   background: none;
   border: none;
   box-sizing: border-box;
-  font-family: monospace;
+  color: var(--color-text);
+  font-family: var(--font-body);
   font-size: 16px;
   max-height: 95svh;
   max-width: calc(100vw - 16px);
   min-height: 50vh;
   min-width: 50vh;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding: 0;
   cursor: pointer;
@@ -90,9 +108,11 @@ function onClick(event) {
   }
 
   &__content {
-    background: #fff;
+    background: var(--color-surface);
+    border: 1px solid var(--color-divider);
+    border-radius: 2px;
+    color: var(--color-text);
     padding: 32px;
-    border-radius: 32px;
     overflow-y: auto;
     flex-grow: 1;
     cursor: auto;
@@ -101,23 +121,29 @@ function onClick(event) {
   &__close {
     background: transparent;
     border: none;
+    color: var(--color-text-muted);
     cursor: pointer;
     display: flex;
     height: 32px;
     padding: 0;
     position: absolute;
-    right: 16px;
-    top: 16px;
+    right: 0;
+    top: -40px;
     width: 32px;
 
     svg {
       height: 100%;
       width: 100%;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: var(--color-accent);
     }
   }
 
   &::backdrop {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.55);
     backdrop-filter: blur(4px);
   }
 }
