@@ -14,35 +14,85 @@ import MFM41 from "../data/munitorum-field-manual/MFM4.1.txt?raw";
 import MFM42 from "../data/munitorum-field-manual/MFM4.2.txt?raw";
 import MFM43 from "../data/munitorum-field-manual/MFM4.3.txt?raw";
 
+const EDITIONS = ["10th", "11th"];
+
 export const useMfmStore = defineStore("mfm", () => {
-  const MFM = {};
+  const edition10 = {};
+  const edition11 = {};
 
   const imports = [MFM29, MFM32, MFM33, MFM34, MFM35, MFM37, MFM38, MFM40, MFM41, MFM42, MFM43];
 
   imports.forEach((mod) => {
     const { FACTIONS, DATA_SHEETS, MFM_VERSION } = parse(mod);
-    MFM[MFM_VERSION] = { FACTIONS, DATA_SHEETS, MFM_VERSION };
+    edition10[MFM_VERSION] = {
+      FACTIONS,
+      DATA_SHEETS,
+      MFM_VERSION,
+      EDITION: "10th",
+    };
 
-    if (!MFM.CURRENT) {
-      MFM.CURRENT = MFM[MFM_VERSION];
-    } else if (MFM_VERSION > MFM.CURRENT.MFM_VERSION) {
-      MFM.CURRENT = MFM[MFM_VERSION];
+    if (!edition10.CURRENT) {
+      edition10.CURRENT = edition10[MFM_VERSION];
+    } else if (MFM_VERSION > edition10.CURRENT.MFM_VERSION) {
+      edition10.CURRENT = edition10[MFM_VERSION];
     }
 
-    if (!MFM.PREVIOUS) {
-      MFM.PREVIOUS = MFM[MFM_VERSION];
+    if (!edition10.PREVIOUS) {
+      edition10.PREVIOUS = edition10[MFM_VERSION];
     } else if (
-      MFM_VERSION > MFM.PREVIOUS.MFM_VERSION &&
-      MFM_VERSION < MFM.CURRENT.MFM_VERSION
+      MFM_VERSION > edition10.PREVIOUS.MFM_VERSION &&
+      MFM_VERSION < edition10.CURRENT.MFM_VERSION
     ) {
-      MFM.PREVIOUS = MFM[MFM_VERSION];
+      edition10.PREVIOUS = edition10[MFM_VERSION];
     }
+  });
+
+  // 11th edition placeholder; populated in Phase B.
+  edition11.CURRENT = null;
+  edition11.PREVIOUS = null;
+
+  const CURRENT_EDITION = "10th";
+
+  const MFM = {
+    "10th": edition10,
+    "11th": edition11,
+    CURRENT_EDITION,
+  };
+
+  // Legacy aliases — resolve to the current edition's bucket. Untouched
+  // consumers see the same MFM.CURRENT / MFM.PREVIOUS they did before.
+  Object.defineProperty(MFM, "CURRENT", {
+    get() {
+      return MFM[MFM.CURRENT_EDITION]?.CURRENT ?? null;
+    },
+    enumerable: true,
+  });
+  Object.defineProperty(MFM, "PREVIOUS", {
+    get() {
+      return MFM[MFM.CURRENT_EDITION]?.PREVIOUS ?? null;
+    },
+    enumerable: true,
   });
 
   deepFreeze(MFM);
 
-  function getVersion(versionKey) {
-    return MFM[versionKey] ?? null;
+  function isVersionKey(key) {
+    return key !== "CURRENT" && key !== "PREVIOUS";
+  }
+
+  function getVersion(versionKey, edition) {
+    if (!versionKey) return null;
+    if (edition) {
+      const bucket = MFM[edition];
+      return (bucket && isVersionKey(versionKey) && bucket[versionKey]) || null;
+    }
+    for (const ed of EDITIONS) {
+      const bucket = MFM[ed];
+      if (bucket && isVersionKey(versionKey) && bucket[versionKey]) {
+        return bucket[versionKey];
+      }
+    }
+    return null;
   }
 
   function getPreviousMFM(currentMFM) {
@@ -50,14 +100,18 @@ export const useMfmStore = defineStore("mfm", () => {
       return null;
     }
 
-    const versions = Object.keys(MFM)
-      .filter((key) => key.startsWith("VERSION"))
+    const edition = currentMFM.EDITION || "10th";
+    const bucket = MFM[edition];
+    if (!bucket) return null;
+
+    const versions = Object.keys(bucket)
+      .filter(isVersionKey)
       .sort();
 
     const currentVersionKey = currentMFM.MFM_VERSION;
     const currentIndex = versions.indexOf(currentVersionKey);
 
-    return currentIndex > 0 ? MFM[versions[currentIndex - 1]] : null;
+    return currentIndex > 0 ? bucket[versions[currentIndex - 1]] : null;
   }
 
   function getPoints(unit, mfm, faction = null) {
@@ -129,7 +183,9 @@ export const useMfmStore = defineStore("mfm", () => {
 
   function hasInvalidMFM(list) {
     const version = list.mfm_version;
-    return !version || !MFM[version];
+    if (!version) return true;
+    const edition = list.edition || "10th";
+    return !getVersion(version, edition);
   }
 
   function autoUpgradeMFMVersion(list) {
@@ -137,18 +193,26 @@ export const useMfmStore = defineStore("mfm", () => {
       return;
     }
 
+    const edition = list.edition || "10th";
+    const editionCurrent = MFM[edition]?.CURRENT;
+    if (!editionCurrent) return;
+
     if (!changes(list).length) {
-      list.mfm_version = MFM.CURRENT.MFM_VERSION;
+      list.mfm_version = editionCurrent.MFM_VERSION;
     }
   }
 
   function changes(list) {
+    const edition = list.edition || "10th";
+    const editionCurrent = MFM[edition]?.CURRENT;
+    if (!editionCurrent) return [];
+
     return list.units
       .map((u) => {
-        const listMFM = MFM[list.mfm_version] || MFM.CURRENT;
+        const listMFM = getVersion(list.mfm_version, edition) || editionCurrent;
         const oldPoints = getPoints(u, listMFM);
-        const newPoints = getPoints(u, MFM.CURRENT);
-        const pointsDiff = getUnitPointsDifference(u, MFM.CURRENT, listMFM);
+        const newPoints = getPoints(u, editionCurrent);
+        const pointsDiff = getUnitPointsDifference(u, editionCurrent, listMFM);
 
         return {
           name: u.name,

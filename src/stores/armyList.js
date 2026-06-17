@@ -25,6 +25,7 @@ export const useArmyListStore = defineStore("armyList", () => {
   const modifiedDate = ref(Date.now());
   const sortOrder = ref("");
   const units = ref([]);
+  const edition = ref("10th");
 
   const isBoardingActions = computed(() => {
     return isBoardingActionsDetachment(detachment.value);
@@ -36,7 +37,7 @@ export const useArmyListStore = defineStore("armyList", () => {
 
   const currentMFM = computed(() => {
     const version = mfm_version.value;
-    return mfmStore.getVersion(version);
+    return mfmStore.getVersion(version, edition.value);
   });
 
   const unitCounts = computed(() => {
@@ -191,6 +192,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     modifiedDate.value = list.modifiedDate || Date.now();
     sortOrder.value = list.sortOrder || "";
     units.value = list.units || [];
+    edition.value = list.edition || "10th";
   }
 
   function toObject() {
@@ -205,6 +207,7 @@ export const useArmyListStore = defineStore("armyList", () => {
       modifiedDate: modifiedDate.value,
       sortOrder: sortOrder.value,
       units: units.value,
+      edition: edition.value,
     };
   }
 
@@ -236,6 +239,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     modifiedDate,
     sortOrder,
     units,
+    edition,
     unitCounts,
     modelsTaken,
     enhancementsTaken,

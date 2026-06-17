@@ -15,7 +15,9 @@ export const parse = function (MFM) {
   const lines = split[1].trim().split(/\r?\n/);
 
   const FACTIONS = [];
-  const DATA_SHEETS = [{ name: "Enhancements", enhancements: true, sizes: [] }];
+  const DATA_SHEETS = [
+    { name: "Enhancements", enhancements: true, edition: "10th", sizes: [] },
+  ];
   const MFM_VERSION = split[0].trim().split(/\r?\n/)[2];
 
   let currentDatasheet;
@@ -103,6 +105,9 @@ export const parse = function (MFM) {
             option.enhancement = true;
           }
 
+          option.basePoints = option.points;
+          option.tiers = [{ minCount: 1, points: option.points }];
+
           currentDatasheet.sizes.push(option);
         } else {
           console.log("unknown line syntax", line);
@@ -123,6 +128,7 @@ export const parse = function (MFM) {
         currentDatasheet = {
           name: line.trim(),
           faction: currentFaction,
+          edition: "10th",
           forgeWorld,
           legends,
           sizes: [],
@@ -202,6 +208,7 @@ export const parse = function (MFM) {
       "paralysing assault"
     ];
 
+    const flatTier = [{ minCount: 1, points: 0 }];
     Object.entries(BOARDING_ACTIONS).forEach(([factionName, detachments]) => {
       Object.entries(detachments).forEach(([detachmentName, config]) => {
         // Add generic enhancements
@@ -211,7 +218,9 @@ export const parse = function (MFM) {
             detachment: detachmentName,
             enhancement: true,
             enhancementCategory: "boarding actions",
-            points: 0
+            points: 0,
+            basePoints: 0,
+            tiers: flatTier,
           });
         });
 
@@ -222,7 +231,9 @@ export const parse = function (MFM) {
             detachment: detachmentName,
             enhancement: true,
             enhancementCategory: "breaching operations",
-            points: 0
+            points: 0,
+            basePoints: 0,
+            tiers: flatTier,
           });
         });
 
@@ -233,7 +244,9 @@ export const parse = function (MFM) {
               name: enhancementName,
               detachment: detachmentName,
               enhancement: true,
-              points: 0
+              points: 0,
+              basePoints: 0,
+              tiers: flatTier,
             });
           });
         }

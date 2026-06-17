@@ -56,20 +56,25 @@ export const useAppStore = defineStore('app', () => {
     appWidth.value = width;
   }
 
-  function createNewList(faction, detachment) {
+  function createNewList(faction, detachment, edition) {
     const mfmStore = useMfmStore();
+    const targetEdition = edition || mfmStore.MFM.CURRENT_EDITION || "10th";
+    const editionMFM = mfmStore.MFM[targetEdition]?.CURRENT;
 
     return {
-      detachment: detachment || mfmStore.MFM.CURRENT.FACTIONS[0].detachments[0].name,
-      faction: faction || mfmStore.MFM.CURRENT.FACTIONS[0].name,
+      detachment: detachment || editionMFM?.FACTIONS?.[0]?.detachments?.[0]?.name || "",
+      faction: faction || editionMFM?.FACTIONS?.[0]?.name || "",
       subFaction: null,
       maxPoints: 2000,
-      mfm_version: mfmStore.MFM.CURRENT.MFM_VERSION,
+      mfm_version: editionMFM?.MFM_VERSION || "",
       modifiedDate: Date.now(),
       name: "",
       sortOrder: SORT_MANUAL,
       units: [],
       version: PACKAGE.version,
+      edition: targetEdition,
+      maxDP: targetEdition === "11th" ? 3 : 0,
+      detachments: [],
     };
   }
 

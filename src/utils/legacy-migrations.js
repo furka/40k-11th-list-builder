@@ -1,6 +1,19 @@
 import { CONFIGS } from "../data/configs";
 import { useMfmStore } from "../stores/mfm";
 
+export function migrateListToEditionSystem(list) {
+  if (!list) return;
+  if (!list.edition) {
+    list.edition = "10th";
+  }
+  if (list.maxDP === undefined) {
+    list.maxDP = 0;
+  }
+  if (!Array.isArray(list.detachments)) {
+    list.detachments = [];
+  }
+}
+
 export function migrateListToSubFactionSystem(list) {
   if (!list) return;
 
@@ -54,6 +67,7 @@ export function runAllMigrations(appData, save) {
 
   // Migrate all lists (current list and saved lists)
   [appData.currentList, ...appData.lists].forEach((list) => {
+    migrateListToEditionSystem(list);
     migrateListToSubFactionSystem(list);
     mfmStore.autoUpgradeMFMVersion(list);
   });

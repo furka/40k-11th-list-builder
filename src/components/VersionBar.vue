@@ -8,9 +8,21 @@ import { useMfmStore } from "../stores/mfm";
 const armyListStore = useArmyListStore();
 const mfmStore = useMfmStore();
 
+const availableEditions = computed(() => {
+  return Object.keys(mfmStore.MFM)
+    .filter((key) => key === "10th" || key === "11th")
+    .filter((edition) => {
+      const bucket = mfmStore.MFM[edition];
+      return bucket && bucket.CURRENT;
+    });
+});
+
 const availableMFMVersions = computed(() => {
-  const versions = Object.keys(mfmStore.MFM)
-    .filter((key) => key.startsWith("VERSION"))
+  const edition = armyListStore.edition || "10th";
+  const bucket = mfmStore.MFM[edition] ?? {};
+  const versions = Object.keys(bucket)
+    .filter((key) => key !== "CURRENT" && key !== "PREVIOUS")
+    .sort()
     .reverse();
 
   const currentVersion = armyListStore.mfm_version;
@@ -28,6 +40,21 @@ const availableMFMVersions = computed(() => {
 <template>
   <div class="version-bar">
     <div class="version-bar__mfm">
+      <label v-if="availableEditions.length > 1">
+        Edition
+        <select
+          :value="armyListStore.edition"
+          @change="armyListStore.edition = $event.target.value"
+        >
+          <option
+            v-for="ed in availableEditions"
+            :key="ed"
+            :value="ed"
+          >
+            {{ ed }}
+          </option>
+        </select>
+      </label>
       <label>
         Munitorum Field Manual
         <select
