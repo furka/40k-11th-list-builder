@@ -1,6 +1,8 @@
+const PREFIX = "11th:";
+
 export function save(key, value) {
   try {
-    localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(PREFIX + key, JSON.stringify(value));
   } catch (e) {
     console.error(`Failed to save ${key} to localStorage:`, e);
   }
@@ -8,7 +10,7 @@ export function save(key, value) {
 
 export function restore(key) {
   try {
-    const item = localStorage.getItem(key);
+    const item = localStorage.getItem(PREFIX + key);
     return item ? JSON.parse(item) : null;
   } catch (e) {
     console.error(`Failed to load ${key} from localStorage:`, e);
@@ -18,7 +20,7 @@ export function restore(key) {
 
 export function remove(key) {
   try {
-    localStorage.removeItem(key);
+    localStorage.removeItem(PREFIX + key);
   } catch (e) {
     console.error(`Failed to remove ${key} from localStorage:`, e);
   }
