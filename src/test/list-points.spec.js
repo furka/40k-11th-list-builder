@@ -207,7 +207,7 @@ describe("computeListPoints — tiered units", () => {
   });
 });
 
-describe("computeListPoints — enhancements and bonus options", () => {
+describe("computeListPoints — enhancements", () => {
   it("does not count enhancements toward the per-datasheet tier counter", () => {
     const list = {
       edition: "11th",

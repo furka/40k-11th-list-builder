@@ -33,7 +33,6 @@ export const useArmyListStore = defineStore("armyList", () => {
   const unitCounts = computed(() => {
     const counts = {};
     units.value.forEach((unit) => {
-      if (unit.bonus) return;
       // Wargear is a per-host sub-option, not a datasheet "copy" — counting it
       // here would falsely tick the unit-cap meter on a fictitious "Wargear"
       // datasheet and (worse) bleed into the "X/Y available" display.

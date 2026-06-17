@@ -29,7 +29,6 @@ function addUnit(option) {
 
   const newUnit = {
     id: uuidv4(),
-    bonus: option.bonus,
     models: option.models,
     name: props.dataSheet.name,
     optionName: option.name,
@@ -197,7 +196,6 @@ function enhancementTaken(enhancement) {
 }
 
 function optionAvailable(option) {
-  if (option.bonus) return true;
   if (maxed.value) return false;
   if (props.dataSheet.enhancements) return !enhancementTaken(option);
   return enoughInCollection(option);
@@ -299,7 +297,6 @@ const showInlineRoles = computed(() => appStore.group === GROUP_NONE);
           </span>
           <span class="data-sheet__option-spacer"></span>
           <span class="data-sheet__points">
-            <template v-if="row.size.bonus">+</template>
             {{ row.points }} pts
           </span>
         </li>

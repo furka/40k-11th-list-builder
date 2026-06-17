@@ -83,10 +83,6 @@ const height = computed(() => unitHeightPx(unitPoints.value, props.scale));
 const name = computed(() => {
   let name = "";
 
-  if (props.unit.bonus) {
-    name += "+ ";
-  }
-
   if (props.unit.models) {
     name += `(${props.unit.models}) `;
   }

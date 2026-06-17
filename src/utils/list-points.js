@@ -12,8 +12,8 @@ import { battleSizeRules } from "./battle-size";
  *     dp: { used, max, byDetachment: [{ name, dp, role }] }
  *   }
  *
- * - Enhancements and `bonus: true` options are flat-priced and don't bump the
- *   per-datasheet copy counter.
+ * - Enhancements are flat-priced and don't bump the per-datasheet copy
+ *   counter.
  */
 export function computeListPoints(list, mfm, faction) {
   const perUnit = {};
@@ -55,7 +55,6 @@ export function computeListPoints(list, mfm, faction) {
   for (const unit of list.units ?? []) {
     const isWargear = unit.name === "Wargear";
     const isEnhancement = unit.name === "Enhancements";
-    const isBonus = !!unit.bonus;
 
     if (isWargear) {
       const host = unit.attachedTo ? unitsById.get(unit.attachedTo) : null;
@@ -72,7 +71,7 @@ export function computeListPoints(list, mfm, faction) {
     const sheet = getDatasheet(unit);
     const size = findSize(sheet, unit);
 
-    if (isEnhancement || isBonus) {
+    if (isEnhancement) {
       const points = size?.basePoints ?? size?.points ?? -1;
       perUnit[unit.id] = { points, tierIndex: 0, tierLabel: null };
       if (points > 0) total += points;

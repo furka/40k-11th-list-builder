@@ -75,7 +75,6 @@ export const useDragStore = defineStore("drag", () => {
       optionName: unit.optionName,
       models: unit.models,
       points: unit.points,
-      bonus: unit.bonus,
       parentDataSheet: unit.parentDataSheet,
     };
     const flat = [];

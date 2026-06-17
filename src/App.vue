@@ -20,7 +20,7 @@ import {
 import AppToolBar from "./components/AppToolBar.vue";
 import CodexToolBar from "./components/CodexToolBar.vue";
 import VersionBar from "./components/VersionBar.vue";
-import { deserializeList } from "./utils/serialize-list";
+import { deserializeList, serializeList } from "./utils/serialize-list";
 
 const armyListStore = useArmyListStore();
 const collectionStore = useCollectionStore();
@@ -50,14 +50,6 @@ function initializeApp() {
       armyListStore.setList(list);
     } catch (e) {
       console.error(e);
-    }
-    if (history.pushState) {
-      const url =
-        window.location.protocol +
-        "//" +
-        window.location.host +
-        window.location.pathname;
-      window.history.pushState({ path: url }, "", url);
     }
   }
 }
@@ -174,6 +166,20 @@ watch(
 watch(
   () => armyListStore.sortOrder,
   () => applySortToList()
+);
+
+// Mirror the current list into the address bar via replaceState so the user
+// can just copy the URL to share. Skip empty/factionless lists to avoid
+// `?n=&f=&…` on a fresh app. replaceState (not pushState) — every keystroke
+// in the list name shouldn't add a browser-history entry.
+watch(
+  () => armyListStore.toObject(),
+  (list) => {
+    if (!list.faction) return;
+    const url = window.location.pathname + serializeList(list);
+    window.history.replaceState({}, "", url);
+  },
+  { deep: true }
 );
 
 onMounted(() => {

@@ -5,6 +5,7 @@ const MAP = {
   version: "v",
   mfm_version: "mfm",
   detachments: "ds",
+  sortOrder: "so",
 };
 
 import { v4 as uuidv4 } from "uuid";
@@ -22,6 +23,11 @@ const UNIT_MAP = {
   // a new client, so any cross-instance reference must be position-based. The
   // index is rehydrated to the new UUID after the units array is built.
   attachedTo: "uat",
+  // Enhancement units carry their parent detachment so removing that
+  // detachment can cascade-remove its enhancements. Without it the cascade
+  // falls back to name-matching, which breaks when two detachments share an
+  // enhancement name.
+  detachment: "ud",
 };
 
 const PARSERS = {

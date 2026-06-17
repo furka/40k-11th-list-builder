@@ -137,7 +137,7 @@ function deleteList(list) {
     font-family: var(--font-display);
     font-size: 17px;
     margin-right: 8px;
-    word-spacing: -8px;
+    word-spacing: -4px;
     white-space: nowrap;
 
     &--outdated {
