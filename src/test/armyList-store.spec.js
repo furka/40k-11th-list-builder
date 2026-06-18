@@ -34,6 +34,17 @@ const TEST_MFM = {
             { name: "Stackable Boon", points: 10, characterOnly: true },
             { name: "Unrestricted Boon", points: 10 },
             { name: "Not For Heroes", points: 15, characterOnly: true, notOnEpicHeroes: true, limit: 1 },
+            {
+              name: "Daemon-only Upgrade",
+              points: 10,
+              requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
+            },
+            {
+              name: "Mixed Disjunction",
+              points: 10,
+              allowedHosts: ["NECRON WARRIORS"],
+              requiredKeywords: ["ADEPTUS ASTARTES TERMINATOR"],
+            },
           ],
         },
       ],
@@ -147,6 +158,68 @@ describe("armyList.moveUnit", () => {
     // Move c from index 2 to index 0
     store.moveUnit("c", null, 0);
     expect(store.units.map((u) => u.id)).toEqual(["c", "a", "b"]);
+  });
+});
+
+describe("armyList.addEnhancement", () => {
+  let store;
+  beforeEach(() => {
+    // The base freshStore() doesn't wire mfm.getVersion to our synthetic MFM,
+    // so `getEnhancementMeta` would return null and the legalDropSlots check
+    // wouldn't see characterOnly / allowedHosts restrictions. Mirror the
+    // pattern used by the "Enhancement validation" describe block (line ~405).
+    setActivePinia(createPinia());
+    const mfm = useMfmStore();
+    mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
+    mfm.getVersion = (v) => (v === TEST_MFM.MFM_VERSION ? TEST_MFM : null);
+    store = useArmyListStore();
+    store.setList({
+      faction: FACTION,
+      mfm_version: TEST_MFM.MFM_VERSION,
+      maxPoints: 2000,
+      units: [],
+      detachments: [],
+    });
+  });
+
+  it("attaches to the first valid host in flat-array order", () => {
+    store.setUnits([
+      unit({ id: "warriors-a", name: "NECRON WARRIORS", models: 10 }),
+      unit({ id: "warriors-b", name: "NECRON WARRIORS", models: 10 }),
+    ]);
+    store.addEnhancement({
+      optionName: "Enlivened Sentinels",
+      detachment: "AWAKENED DYNASTY",
+    });
+    const enh = store.units.find((u) => u.name === "Enhancements");
+    expect(enh.attachedTo).toBe("warriors-a");
+  });
+
+  it("leaves the enhancement at root when no valid host exists", () => {
+    // No hosts at all — the new enhancement should land in the list but
+    // unattached, matching the drag-to-empty-list behavior.
+    store.addEnhancement({
+      optionName: "Enlivened Sentinels",
+      detachment: "AWAKENED DYNASTY",
+    });
+    const enh = store.units.find((u) => u.name === "Enhancements");
+    expect(enh).toBeDefined();
+    expect(enh.attachedTo).toBeUndefined();
+  });
+
+  it("skips ineligible hosts to find a legal one (respects characterOnly)", () => {
+    // Warriors come first in the array but Veil of Darkness is character-only,
+    // so the store should walk past them to the character (CHRONOMANCER).
+    store.setUnits([
+      unit({ id: "warriors", name: "NECRON WARRIORS", models: 10 }),
+      unit({ id: "chrono", name: "CHRONOMANCER" }),
+    ]);
+    store.addEnhancement({
+      optionName: "Veil of Darkness",
+      detachment: "AWAKENED DYNASTY",
+    });
+    const enh = store.units.find((u) => u.name === "Enhancements");
+    expect(enh.attachedTo).toBe("chrono");
   });
 });
 
@@ -536,6 +609,26 @@ describe("armyList Enhancement validation", () => {
   it("passes an enhancement attached to a host in its allowedHosts whitelist", () => {
     const host = hostUnit("host", "NECRON WARRIORS", 10);
     const e = { ...enh("e", "Special Upgrade"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
+  it("requiredKeywords alone is dormant: passes on any host (no enforcement yet)", () => {
+    // "Daemon-only Upgrade" has only requiredKeywords — the validator
+    // captures it for the future keyword-aware path but doesn't enforce.
+    const host = hostUnit("host", "IMMORTALS", 10);
+    const e = { ...enh("e", "Daemon-only Upgrade"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
+  it("allowedHosts is suppressed when requiredKeywords is also present", () => {
+    // "Mixed Disjunction" has allowedHosts: [NECRON WARRIORS] AND
+    // requiredKeywords: [ADEPTUS ASTARTES TERMINATOR]. The captured rule
+    // was a disjunction; the validator can't fully check it, so it skips
+    // enforcement entirely (under-enforce rather than wrongly block).
+    const host = hostUnit("host", "IMMORTALS", 10);
+    const e = { ...enh("e", "Mixed Disjunction"), attachedTo: "host" };
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
   });

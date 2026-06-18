@@ -209,8 +209,14 @@ export function legalDropSlots(
         if (enhancementMeta.characterOnly && !hostDs?.character) return false;
         if (enhancementMeta.nonCharacterOnly && hostDs?.character) return false;
         if (enhancementMeta.notOnEpicHeroes && hostDs?.epicHero) return false;
+        // All-or-none enforcement: when `requiredKeywords` is present the
+        // captured rule is a disjunction we can only partially check
+        // (datasheet-match half is enforceable, keyword-match half isn't yet),
+        // so we skip the allowedHosts check rather than under-permit. See
+        // src/data/configs/index.js for the full schema and rationale.
         if (
           enhancementMeta.allowedHosts?.length &&
+          !enhancementMeta.requiredKeywords?.length &&
           !enhancementMeta.allowedHosts.includes(host.name)
         ) {
           return false;

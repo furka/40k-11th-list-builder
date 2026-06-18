@@ -13,6 +13,7 @@ import {
   attachedUnitRootId,
 } from "../utils/attachment-rules";
 import { wargearMaxPerUnit } from "../utils/wargear-limits";
+import { legalDropSlots } from "../utils/legal-drop-slots";
 
 export const useArmyListStore = defineStore("armyList", () => {
   const mfmStore = useMfmStore();
@@ -243,7 +244,15 @@ export const useArmyListStore = defineStore("armyList", () => {
       if (meta?.notOnEpicHeroes && hostDs?.epicHero) {
         return "Enhancement can't be given to Epic Heroes";
       }
-      if (meta?.allowedHosts?.length && !meta.allowedHosts.includes(host.name)) {
+      // All-or-none enforcement: when `requiredKeywords` is present the
+      // captured rule is a disjunction we can't fully check yet, so we skip
+      // the allowedHosts check rather than under-permit. See
+      // src/data/configs/index.js for the full schema and rationale.
+      if (
+        meta?.allowedHosts?.length &&
+        !meta?.requiredKeywords?.length &&
+        !meta.allowedHosts.includes(host.name)
+      ) {
         return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
       }
 
@@ -290,6 +299,35 @@ export const useArmyListStore = defineStore("armyList", () => {
   function addUnit(unit) {
     units.value = [unit, ...units.value];
     modifiedDate.value = Date.now();
+  }
+
+  /**
+   * Add an enhancement to the list and, if a valid host already exists, attach
+   * it to the first such host (in flat-array order, which is also the visual
+   * row order). Falls through to "live at root, flagged with a red error" when
+   * no legal host exists — same as drag-and-drop.
+   *
+   * Legality is delegated to legalDropSlots so the per-enhancement metadata
+   * (allowedHosts, characterOnly, requiredKeywords suppression, etc.) is
+   * respected identically to a drag.
+   */
+  function addEnhancement({ optionName, detachment }) {
+    const id =
+      typeof crypto !== "undefined" && crypto.randomUUID
+        ? crypto.randomUUID()
+        : `enh-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const unit = { id, name: "Enhancements", optionName, detachment };
+    addUnit(unit);
+
+    const meta = getEnhancementMeta(unit);
+    const slots = legalDropSlots(units.value, id, codexStore.getDataSheet, meta);
+    const attachHostIds = new Set(
+      slots.filter((s) => s.type === "attach").map((s) => s.hostId)
+    );
+    if (attachHostIds.size === 0) return; // no legal host — leave at root.
+
+    const firstHost = units.value.find((u) => attachHostIds.has(u.id));
+    if (firstHost) moveUnit(id, firstHost.id, 0);
   }
 
   function removeUnit(id) {
@@ -526,6 +564,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     getUnitValidationError,
     getEnhancementMeta,
     addUnit,
+    addEnhancement,
     removeUnit,
     removeUnitSubtree,
     setUnits,

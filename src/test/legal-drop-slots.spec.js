@@ -265,6 +265,43 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ).toEqual(["w"]);
   });
 
+  it("requiredKeywords alone is dormant: enhancement attaches to any host", () => {
+    // The validator records requiredKeywords as captured-but-not-enforced.
+    // Until datasheet keyword tracking lands, units pass through.
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("im", "IMMORTALS"),
+      enh("e", "Slaughterthirst"),
+    ];
+    const meta = {
+      name: "Slaughterthirst",
+      requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
+    };
+    expect(
+      attachIds(legalDropSlots(units, "e", getDataSheet, meta))
+    ).toEqual(["im", "w"]);
+  });
+
+  it("allowedHosts is suppressed when requiredKeywords is also present", () => {
+    // All-or-none enforcement: the captured rule was a disjunction
+    // (Captain OR Adeptus Astartes Terminator model only) and we can't check
+    // the keyword half yet, so the validator skips the datasheet half too
+    // rather than under-permitting. Any host is allowed.
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("im", "IMMORTALS"),
+      enh("e", "Mixed Restriction"),
+    ];
+    const meta = {
+      name: "Mixed Restriction",
+      allowedHosts: ["NECRON WARRIORS"],
+      requiredKeywords: ["ADEPTUS ASTARTES TERMINATOR"],
+    };
+    expect(
+      attachIds(legalDropSlots(units, "e", getDataSheet, meta))
+    ).toEqual(["im", "w"]);
+  });
+
   it("an enhancement with no restriction fields can attach to any host", () => {
     const units = [
       u("w", "NECRON WARRIORS"),

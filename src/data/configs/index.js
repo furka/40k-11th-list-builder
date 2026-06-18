@@ -1,5 +1,6 @@
 import configs from "./config.json";
-import enhancementRestrictions from "./enhancement-restrictions.json";
+import enhancementRestrictionsAuto from "./enhancement-restrictions.auto.json";
+import enhancementRestrictionsManual from "./enhancement-restrictions.json";
 import { normalizeString } from "../../utils/name-match";
 
 // Faction-keyed role classifications, flattened into normalized name arrays
@@ -31,22 +32,62 @@ for (const key in configs) {
 }
 
 /**
- * Faction → enhancement-name → per-enhancement restriction object. The source
- * HTML doesn't carry most per-enhancement restrictions, so this is a manual
- * curation layer applied during MFM parse (see `data-reader-11th.js`).
+ * Faction → enhancement-name → per-enhancement restriction object.
+ *
+ * Two layers, merged with the manual layer winning per enhancement key:
+ *   1. `enhancement-restrictions.auto.json` — written by the scrape pipeline
+ *      from the official Faction Pack PDFs (see scripts/scrape-mfm-11th).
+ *   2. `enhancement-restrictions.json` — hand-curated overrides; entries here
+ *      replace the auto layer wholesale for the named enhancement.
  *
  * Each entry may set any subset of:
  *   - characterOnly:    boolean — host must have `character: true`
  *   - nonCharacterOnly: boolean — host must NOT have `character: true`
  *   - notOnEpicHeroes:  boolean — host must NOT have `epicHero: true`
  *   - allowedHosts:     string[] — host datasheet name must be in this list
+ *   - requiredKeywords: string[] — captured from the PDF's host phrase but not
+ *                       yet enforced (datasheet keyword tracking is a future
+ *                       scope). When present, the validator suppresses the
+ *                       allowedHosts check too: the captured rule was a
+ *                       disjunction ("Captain OR Adeptus Astartes Terminator
+ *                       model only") and we'd rather under-enforce than
+ *                       wrongly block by checking only half. Will activate
+ *                       when datasheet keyword tracking is added.
  *   - limit:            number — max copies of this enhancement in the army
  *   - autoTake:         string[] — reserved; future auto-attach behavior
  *
  * Keys starting with "_" (e.g. "_comment") are ignored — used for inline doc
  * notes in the JSON file.
  */
-export const ENHANCEMENT_RESTRICTIONS = enhancementRestrictions;
+function mergeEnhancementRestrictions(auto, manual) {
+  const out = {};
+  for (const faction of new Set([
+    ...Object.keys(auto ?? {}),
+    ...Object.keys(manual ?? {}),
+  ])) {
+    if (faction.startsWith("_")) continue;
+    const a = auto?.[faction];
+    const m = manual?.[faction];
+    if (typeof a !== "object" && typeof m !== "object") continue;
+    const merged = {};
+    for (const enhName of new Set([
+      ...Object.keys(a ?? {}),
+      ...Object.keys(m ?? {}),
+    ])) {
+      if (enhName.startsWith("_")) continue;
+      // Manual overrides win wholesale (not deep-merged) — when a curator
+      // intervenes for a specific enhancement they replace the scraped record.
+      merged[enhName] = m?.[enhName] ?? a?.[enhName];
+    }
+    out[faction] = merged;
+  }
+  return out;
+}
+
+export const ENHANCEMENT_RESTRICTIONS = mergeEnhancementRestrictions(
+  enhancementRestrictionsAuto,
+  enhancementRestrictionsManual
+);
 
 export function getEnhancementRestrictions(factionName, enhancementName) {
   if (!factionName || !enhancementName) return null;

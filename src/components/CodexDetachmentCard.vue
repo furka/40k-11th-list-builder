@@ -1,6 +1,5 @@
 <script setup>
 import { computed } from "vue";
-import { v4 as uuidv4 } from "uuid";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
 
@@ -33,9 +32,10 @@ function onEnhancementClick(enh) {
     const ok = armyListStore.addDetachment(props.detachment.name);
     if (!ok) return;
   }
-  armyListStore.addUnit({
-    id: uuidv4(),
-    name: "Enhancements",
+  // The store handles UUID generation and attempts to attach to the first
+  // valid host already in the list; if none exists it leaves the enhancement
+  // at root (flagged with a red error icon), same as a drag with no target.
+  armyListStore.addEnhancement({
     optionName: enh.name,
     // Tag the parent detachment so removeDetachment can cascade-delete this
     // enhancement when the parent leaves the list (drag-to-bin etc.).

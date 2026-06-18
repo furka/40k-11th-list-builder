@@ -28,3 +28,10 @@ tmp/
 
 # Scraper HTML cache (regenerated on each run)
 scripts/scrape-mfm-11th/.cache/
+
+# Local secrets — loaded via `node --env-file-if-exists=.env`
+.env
+.env.local
+
+# Claude Code local state (session locks, scheduled tasks, etc.)
+.claude/
