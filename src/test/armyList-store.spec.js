@@ -546,6 +546,54 @@ describe("armyList Enhancement validation", () => {
     expect(store.getUnitValidationError(e)).toBe("Attached to a missing unit");
   });
 
+  // 25.04 "No unit (including attached units) can have more than one
+  // enhancement." A Leader attached to a Bodyguard squad shares one attached
+  // unit, so the second enhancement anywhere in that tree flags.
+  it("flags a second enhancement in the same attached unit (one on squad, one on attached leader)", () => {
+    const squad = { id: "w", name: "NECRON WARRIORS", models: 10 };
+    const leader = {
+      id: "imo",
+      name: "IMOTEKH THE STORMLORD",
+      models: 1,
+      attachedTo: "w",
+    };
+    const onSquad = {
+      ...enh("a", "Unrestricted Boon"),
+      attachedTo: "w",
+    };
+    const onLeader = {
+      ...enh("b", "Arisen Tyrant"),
+      attachedTo: "imo",
+    };
+    store.setUnits([squad, leader, onSquad, onLeader]);
+    expect(store.getUnitValidationError(onSquad)).toBe(false);
+    expect(store.getUnitValidationError(onLeader)).toBe(
+      "Only one enhancement per attached unit"
+    );
+  });
+
+  it("allows two enhancements when they live on DIFFERENT attached units", () => {
+    const squad1 = { id: "w1", name: "NECRON WARRIORS", models: 10 };
+    const squad2 = { id: "w2", name: "NECRON WARRIORS", models: 10 };
+    const leader1 = {
+      id: "l1",
+      name: "IMOTEKH THE STORMLORD",
+      models: 1,
+      attachedTo: "w1",
+    };
+    const leader2 = {
+      id: "l2",
+      name: "IMOTEKH THE STORMLORD",
+      models: 1,
+      attachedTo: "w2",
+    };
+    const a = { ...enh("a", "Arisen Tyrant"), attachedTo: "l1" };
+    const b = { ...enh("b", "Unrestricted Boon"), attachedTo: "l2" };
+    store.setUnits([squad1, squad2, leader1, leader2, a, b]);
+    expect(store.getUnitValidationError(a)).toBe(false);
+    expect(store.getUnitValidationError(b)).toBe(false);
+  });
+
   it("getEnhancementMeta resolves the restriction flags from the detachment", () => {
     expect(
       store.getEnhancementMeta(enh("a", "Enlivened Sentinels"))

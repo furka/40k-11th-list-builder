@@ -3,6 +3,8 @@ import {
   isEnhancementUnit,
   isWargearUnit,
   attachedToError,
+  attachedUnitRootId,
+  countEnhancementsInAttachedUnit,
 } from "../utils/attachment-rules";
 
 const SHEETS = {
@@ -110,6 +112,86 @@ describe("isWargearUnit", () => {
     expect(isWargearUnit({ name: "Enhancements" })).toBe(false);
     expect(isWargearUnit({ name: "NECRON WARRIORS" })).toBe(false);
     expect(isWargearUnit(null)).toBe(false);
+  });
+});
+
+describe("attachedUnitRootId", () => {
+  const u = (id, attachedTo) => ({ id, name: "X", attachedTo });
+
+  it("returns the unit's own id when it has no attachedTo", () => {
+    const a = u("a");
+    expect(attachedUnitRootId(a, [a])).toBe("a");
+  });
+
+  it("walks up via attachedTo to the topmost ancestor", () => {
+    const root = u("root");
+    const mid = u("mid", "root");
+    const leaf = u("leaf", "mid");
+    expect(attachedUnitRootId(leaf, [root, mid, leaf])).toBe("root");
+  });
+
+  it("treats a missing attachedTo target as the chain's end", () => {
+    const leaf = u("leaf", "ghost");
+    expect(attachedUnitRootId(leaf, [leaf])).toBe("leaf");
+  });
+
+  it("is cycle-safe", () => {
+    const a = u("a", "b");
+    const b = u("b", "a");
+    // No infinite loop; returns something (the exact endpoint is implementation
+    // detail of where the seen set short-circuits).
+    expect(["a", "b"]).toContain(attachedUnitRootId(a, [a, b]));
+  });
+});
+
+describe("countEnhancementsInAttachedUnit", () => {
+  const u = (id, attachedTo) => ({ id, name: "NECRON WARRIORS", attachedTo });
+  const e = (id, attachedTo) => ({
+    id,
+    name: "Enhancements",
+    optionName: "X",
+    attachedTo,
+  });
+
+  it("counts an enhancement directly attached to the root", () => {
+    const root = u("root");
+    const enh = e("e1", "root");
+    expect(countEnhancementsInAttachedUnit("root", [root, enh])).toBe(1);
+  });
+
+  it("counts enhancements anywhere in the attached-unit subtree", () => {
+    // root (squad) ← mid (leader) ← enhancement
+    const root = u("root");
+    const mid = u("mid", "root");
+    const enh = e("e1", "mid");
+    expect(countEnhancementsInAttachedUnit("root", [root, mid, enh])).toBe(1);
+  });
+
+  it("sums multiple enhancements across the tree", () => {
+    const root = u("root");
+    const leader = u("leader", "root");
+    const enhOnLeader = e("ea", "leader");
+    const enhOnRoot = e("eb", "root");
+    expect(
+      countEnhancementsInAttachedUnit("root", [
+        root,
+        leader,
+        enhOnLeader,
+        enhOnRoot,
+      ])
+    ).toBe(2);
+  });
+
+  it("excludes a specified id (self-exemption for drop-time legality)", () => {
+    const root = u("root");
+    const enh = e("e1", "root");
+    expect(
+      countEnhancementsInAttachedUnit("root", [root, enh], "e1")
+    ).toBe(0);
+  });
+
+  it("returns 0 when rootId is missing", () => {
+    expect(countEnhancementsInAttachedUnit(null, [])).toBe(0);
   });
 });
 

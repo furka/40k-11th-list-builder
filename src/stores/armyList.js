@@ -6,7 +6,12 @@ import { useCodexStore } from "./codex";
 import { unitMax } from "../utils/unit-max";
 import { computeListPoints } from "../utils/list-points";
 import { battleSizeRules } from "../utils/battle-size";
-import { attachedToError, isWargearUnit } from "../utils/attachment-rules";
+import {
+  attachedToError,
+  isWargearUnit,
+  isEnhancementUnit,
+  attachedUnitRootId,
+} from "../utils/attachment-rules";
 import { wargearMaxPerUnit } from "../utils/wargear-limits";
 
 export const useArmyListStore = defineStore("armyList", () => {
@@ -202,6 +207,27 @@ export const useArmyListStore = defineStore("armyList", () => {
       if (!host) return "Attached to a missing unit";
       if (host.name === "Enhancements") {
         return "Enhancement can't be attached to another enhancement";
+      }
+
+      // 25.04 "No unit (including attached units) can have more than one
+      // enhancement." Count every enhancement in the attached-unit tree
+      // (Leader + Bodyguard + sub-attachments share one root). The first
+      // enhancement in that tree passes; later copies flag. Mirrors the
+      // wargear/limit precedent so a malformed shared URL only surfaces the
+      // overflow rows, not all of them.
+      const rootId = attachedUnitRootId(host, units.value);
+      if (rootId) {
+        const enhancementsInTree = units.value.filter(
+          (u) =>
+            isEnhancementUnit(u) &&
+            attachedUnitRootId(u, units.value) === rootId
+        );
+        const indexOfThis = enhancementsInTree.findIndex(
+          (u) => u.id === unit.id
+        );
+        if (indexOfThis >= 1) {
+          return "Only one enhancement per attached unit";
+        }
       }
 
       // Optional per-enhancement restrictions. Each field is checked

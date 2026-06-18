@@ -162,6 +162,36 @@ describe("legalDropSlots — enhancement rules", () => {
     expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).not.toContain("imo");
   });
 
+  // 25.04 "No unit (including attached units) can have more than one
+  // enhancement." A Leader attached to a Bodyguard squad share one attached
+  // unit — any enhancement anywhere in that tree blocks a second.
+  it("rejects a second enhancement anywhere in the attached unit (squad+attached leader share a tree)", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH", "w"),
+      enh("e1", "Veil of Darkness", "imo"),
+      enh("e2", "Arisen Tyrant"),
+    ];
+    // e1 sits on the attached leader; e2 should not be allowed to attach to
+    // the squad itself either, since both share one attached unit.
+    const ids = attachIds(legalDropSlots(units, "e2", getDataSheet));
+    expect(ids).not.toContain("w");
+    expect(ids).not.toContain("imo");
+  });
+
+  it("still allows enhancements on a SEPARATE attached unit", () => {
+    const units = [
+      u("w1", "NECRON WARRIORS"),
+      u("w2", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH", "w1"),
+      enh("e1", "Veil of Darkness", "imo"),
+      enh("e2", "Arisen Tyrant"),
+    ];
+    // e1 is on imo (attached to w1). w2 is a different attached unit with no
+    // enhancements — e2 must still be droppable onto w2.
+    expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).toContain("w2");
+  });
+
   it("rejects enhancement-on-enhancement universally (no attach slot to an enh host)", () => {
     // Even at depth 0 — i.e. an unattached enhancement at root — another
     // enhancement should not be allowed to attach to it.

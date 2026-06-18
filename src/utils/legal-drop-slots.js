@@ -72,6 +72,44 @@ function subtreeMaxDepth(unit, byParent) {
   return max;
 }
 
+/**
+ * Walk up from `unit` to find the topmost ancestor — the root of its attached
+ * unit. Reuses the caller's prebuilt `byId` map (no allocation). Cycle-safe.
+ */
+function attachedUnitRootIdFromMap(unit, byId) {
+  if (!unit) return null;
+  let cursor = unit;
+  const seen = new Set();
+  while (cursor?.attachedTo && byId.has(cursor.attachedTo)) {
+    if (seen.has(cursor.id)) break;
+    seen.add(cursor.id);
+    cursor = byId.get(cursor.attachedTo);
+  }
+  return cursor?.id ?? null;
+}
+
+/**
+ * Count enhancement units anywhere in the subtree rooted at `rootId`, walking
+ * via `byParent` (which keys parent id → child unit records). `excludeId`
+ * skips one node (the dragged unit's self-exemption).
+ */
+function countEnhancementsInTreeFromMap(rootId, byParent, excludeId = null) {
+  if (!rootId) return 0;
+  let count = 0;
+  const stack = [rootId];
+  const seen = new Set();
+  while (stack.length) {
+    const id = stack.pop();
+    if (seen.has(id)) continue;
+    seen.add(id);
+    for (const child of byParent.get(id) ?? []) {
+      if (child.id !== excludeId && isEnhancementUnit(child)) count++;
+      stack.push(child.id);
+    }
+  }
+  return count;
+}
+
 function descendantIds(rootId, byParent) {
   const out = new Set();
   const stack = [rootId];
@@ -186,17 +224,23 @@ export function legalDropSlots(
     const siblings = byParent.get(host.id) ?? [];
     let leaderCount = 0;
     let supportCount = 0;
-    let enhancementCount = 0;
     for (const s of siblings) {
       if (s.id === dragged.id) continue;
-      if (isEnhancementUnit(s)) enhancementCount++;
+      if (isEnhancementUnit(s)) continue; // handled per attached-unit below
       else if (isWargearUnit(s)) continue; // not subject to the leader/support/enh caps
       else if (isLeader(s, getDataSheet)) leaderCount++;
       else if (isSupport(s, getDataSheet)) supportCount++;
     }
     if (draggedIsLeader && leaderCount >= 1) return false;
     if (draggedIsSupport && supportCount >= 1) return false;
-    if (draggedIsEnhancement && enhancementCount >= 1) return false;
+    // Enhancement cap is per attached unit (25.04 "including attached units"),
+    // not per host. Walk to the host's attached-unit root and count
+    // enhancements anywhere in that tree, excluding the dragged unit itself.
+    if (draggedIsEnhancement) {
+      const rootId = attachedUnitRootIdFromMap(host, byId);
+      const inTree = countEnhancementsInTreeFromMap(rootId, byParent, dragged.id);
+      if (inTree >= 1) return false;
+    }
 
     return true;
   }
