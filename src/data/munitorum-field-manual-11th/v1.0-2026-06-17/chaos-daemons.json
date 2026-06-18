@@ -43,12 +43,12 @@
         {
           "name": "Apocalyptic Steeds",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Soul-shattering Charge",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -121,7 +121,7 @@
         {
           "name": "Swollen with Power",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -222,12 +222,12 @@
         {
           "name": "Bane-forged Weapons",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Soul-hungry Slaughterers",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     }

@@ -19,7 +19,7 @@
         {
           "name": "Stealth-screened Cybercanids",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

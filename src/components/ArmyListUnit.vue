@@ -70,12 +70,11 @@ const unitPoints = computed(() => {
 const tierLabel = computed(() => breakdown.value?.tierLabel ?? null);
 
 // Show a small "Upgrade" badge on enhancement rows whose metadata flags them
-// as unit-upgrade (i.e. the source name had a trailing "(Upgrade)" suffix).
-// The flag lives on the detachment enhancement entry — look it up via the
-// store's getEnhancementMeta. Returns false for non-enhancement units.
+// as non-character-only (i.e. the source name had a trailing "(Upgrade)"
+// suffix). Returns false for non-enhancement units.
 const isUnitUpgrade = computed(() => {
   if (props.unit.name !== "Enhancements") return false;
-  return Boolean(armyListStore.getEnhancementMeta(props.unit)?.isUnitUpgrade);
+  return Boolean(armyListStore.getEnhancementMeta(props.unit)?.nonCharacterOnly);
 });
 
 const height = computed(() => unitHeightPx(unitPoints.value, props.scale));

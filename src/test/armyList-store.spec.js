@@ -22,15 +22,18 @@ const TEST_MFM = {
           leader: null,
           tags: [],
           enhancements: [
-            { name: "Veil of Darkness", points: 25 },
-            { name: "Arisen Tyrant", points: 30 },
-            { name: "Enlivened Sentinels", points: 20, isUnitUpgrade: true },
+            { name: "Veil of Darkness", points: 25, characterOnly: true, limit: 1 },
+            { name: "Arisen Tyrant", points: 30, characterOnly: true, limit: 1 },
+            { name: "Enlivened Sentinels", points: 20, nonCharacterOnly: true },
             {
               name: "Special Upgrade",
               points: 5,
-              isUnitUpgrade: true,
+              nonCharacterOnly: true,
               allowedHosts: ["NECRON WARRIORS"],
             },
+            { name: "Stackable Boon", points: 10, characterOnly: true },
+            { name: "Unrestricted Boon", points: 10 },
+            { name: "Not For Heroes", points: 15, characterOnly: true, notOnEpicHeroes: true, limit: 1 },
           ],
         },
       ],
@@ -51,6 +54,7 @@ const TEST_MFM = {
       faction: FACTION,
       edition: "11th",
       character: true,
+      epicHero: true,
       leader: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [
         { name: "1 model", models: 1, basePoints: 100, tiers: [{ minCount: 1, points: 100 }] },
@@ -358,43 +362,81 @@ describe("armyList Enhancement validation", () => {
     attachedTo,
   });
 
-  it("passes a single enhancement", () => {
-    const e = enh("e1", "Veil of Darkness");
-    store.setUnits([e]);
+  // Host stand-in for tests that need a valid attachment target. Distinct
+  // ids per host keep duplicate-limit tests from also tripping the drag-time
+  // "max 1 enh per host" rule (which the validator doesn't enforce, but the
+  // shape mirrors real-world usage).
+  const charHost = (id) => ({ id, name: "IMOTEKH THE STORMLORD", models: 1 });
+
+  it("passes a single enhancement attached to a valid host", () => {
+    const h = charHost("h");
+    const e = { ...enh("e1", "Veil of Darkness"), attachedTo: "h" };
+    store.setUnits([h, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
   });
 
   it("passes two DIFFERENT enhancements", () => {
-    const a = enh("a", "Veil of Darkness");
-    const b = enh("b", "Arisen Tyrant");
-    store.setUnits([a, b]);
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const a = { ...enh("a", "Veil of Darkness"), attachedTo: "h1" };
+    const b = { ...enh("b", "Arisen Tyrant"), attachedTo: "h2" };
+    store.setUnits([h1, h2, a, b]);
     expect(store.getUnitValidationError(a)).toBe(false);
     expect(store.getUnitValidationError(b)).toBe(false);
   });
 
-  it("flags duplicates: first wins, later copies report 'Duplicate enhancement'", () => {
-    const first = enh("a", "Veil of Darkness");
-    const dup = enh("b", "Veil of Darkness");
-    store.setUnits([first, dup]);
+  it("flags copies past `limit`: first wins, later copies report the cap", () => {
+    // "Veil of Darkness" has limit: 1 in the test MFM.
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const first = { ...enh("a", "Veil of Darkness"), attachedTo: "h1" };
+    const dup = { ...enh("b", "Veil of Darkness"), attachedTo: "h2" };
+    store.setUnits([h1, h2, first, dup]);
     expect(store.getUnitValidationError(first)).toBe(false);
-    expect(store.getUnitValidationError(dup)).toBe("Duplicate enhancement");
+    expect(store.getUnitValidationError(dup)).toBe(
+      "Only 1 of this enhancement allowed"
+    );
   });
 
-  it("with three of the same: first passes, both later copies flag", () => {
-    const a = enh("a", "Veil of Darkness");
-    const b = enh("b", "Veil of Darkness");
-    const c = enh("c", "Veil of Darkness");
-    store.setUnits([a, b, c]);
+  it("with three copies of a limit-1 enhancement, both later copies flag", () => {
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const h3 = charHost("h3");
+    const a = { ...enh("a", "Veil of Darkness"), attachedTo: "h1" };
+    const b = { ...enh("b", "Veil of Darkness"), attachedTo: "h2" };
+    const c = { ...enh("c", "Veil of Darkness"), attachedTo: "h3" };
+    store.setUnits([h1, h2, h3, a, b, c]);
     expect(store.getUnitValidationError(a)).toBe(false);
-    expect(store.getUnitValidationError(b)).toBe("Duplicate enhancement");
-    expect(store.getUnitValidationError(c)).toBe("Duplicate enhancement");
+    expect(store.getUnitValidationError(b)).toBe(
+      "Only 1 of this enhancement allowed"
+    );
+    expect(store.getUnitValidationError(c)).toBe(
+      "Only 1 of this enhancement allowed"
+    );
   });
 
-  it("'not available in this detachment' takes precedence over 'Duplicate'", () => {
+  it("permits any number of copies of an enhancement with no `limit`", () => {
+    // "Stackable Boon" has no limit field; the validator should not flag
+    // duplicates.
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const h3 = charHost("h3");
+    const a = { ...enh("a", "Stackable Boon"), attachedTo: "h1" };
+    const b = { ...enh("b", "Stackable Boon"), attachedTo: "h2" };
+    const c = { ...enh("c", "Stackable Boon"), attachedTo: "h3" };
+    store.setUnits([h1, h2, h3, a, b, c]);
+    expect(store.getUnitValidationError(a)).toBe(false);
+    expect(store.getUnitValidationError(b)).toBe(false);
+    expect(store.getUnitValidationError(c)).toBe(false);
+  });
+
+  it("'not available in this detachment' takes precedence over the limit cap", () => {
     // Even though there are two copies, neither is in the selected detachment.
-    const a = enh("a", "Phantasmal Vigour");
-    const b = enh("b", "Phantasmal Vigour");
-    store.setUnits([a, b]);
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const a = { ...enh("a", "Phantasmal Vigour"), attachedTo: "h1" };
+    const b = { ...enh("b", "Phantasmal Vigour"), attachedTo: "h2" };
+    store.setUnits([h1, h2, a, b]);
     expect(store.getUnitValidationError(a)).toBe(
       "Enhancement not available in this detachment"
     );
@@ -403,16 +445,34 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
-  // Host-eligibility (upgrade vs character). The synthetic TEST_MFM carries
-  // the upgrade flag on enhancements; the host's `character` flag is read off
-  // the host datasheet. The block's beforeEach overrides mfm.getVersion but
-  // not mfm.MFM, so codexStore.getDataSheet falls back to real game data —
-  // which means we use canonical Necron names (IMOTEKH THE STORMLORD,
-  // NECRON WARRIORS, IMMORTALS) that exist in the real codex.
+  it("flags an unattached enhancement", () => {
+    const e = enh("e", "Veil of Darkness");
+    store.setUnits([e]);
+    expect(store.getUnitValidationError(e)).toBe(
+      "Enhancement must be attached to a unit"
+    );
+  });
+
+  it("flags an enhancement attached to another enhancement", () => {
+    const host = charHost("h");
+    const parentEnh = { ...enh("p", "Veil of Darkness"), attachedTo: "h" };
+    const childEnh = { ...enh("c", "Arisen Tyrant"), attachedTo: "p" };
+    store.setUnits([host, parentEnh, childEnh]);
+    expect(store.getUnitValidationError(childEnh)).toBe(
+      "Enhancement can't be attached to another enhancement"
+    );
+  });
+
+  // Host-eligibility — each restriction field is checked independently and
+  // only when set. The synthetic TEST_MFM uses the new schema fields. The
+  // block's beforeEach overrides mfm.getVersion but not mfm.MFM, so
+  // codexStore.getDataSheet falls back to real game data — which means we
+  // use canonical Necron names (IMOTEKH THE STORMLORD, NECRON WARRIORS,
+  // IMMORTALS) that exist in the real codex.
 
   const hostUnit = (id, name, models = 1) => ({ id, name, models });
 
-  it("flags a non-upgrade enhancement attached to a non-character squad", () => {
+  it("flags a characterOnly enhancement attached to a non-character squad", () => {
     const host = hostUnit("host", "NECRON WARRIORS", 10);
     const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host" };
     store.setUnits([host, e]);
@@ -421,7 +481,7 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
-  it("flags an upgrade enhancement attached to a character", () => {
+  it("flags a nonCharacterOnly enhancement attached to a character", () => {
     const host = hostUnit("host", "IMOTEKH THE STORMLORD");
     const e = { ...enh("e", "Enlivened Sentinels"), attachedTo: "host" };
     store.setUnits([host, e]);
@@ -430,16 +490,34 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
-  it("passes a non-upgrade enhancement attached to a character", () => {
+  it("passes a characterOnly enhancement attached to a character", () => {
     const host = hostUnit("host", "IMOTEKH THE STORMLORD");
     const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host" };
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
   });
 
-  it("passes an upgrade enhancement attached to a non-character squad", () => {
+  it("passes a nonCharacterOnly enhancement attached to a non-character squad", () => {
     const host = hostUnit("host", "NECRON WARRIORS", 10);
     const e = { ...enh("e", "Enlivened Sentinels"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
+  it("flags a notOnEpicHeroes enhancement attached to an epic hero", () => {
+    const host = hostUnit("host", "IMOTEKH THE STORMLORD"); // character + epicHero
+    const e = { ...enh("e", "Not For Heroes"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(
+      "Enhancement can't be given to Epic Heroes"
+    );
+  });
+
+  it("by default (no restriction fields) an enhancement passes on any host", () => {
+    // "Unrestricted Boon" has no restriction fields. Attach it to a vehicle
+    // (no character, no epicHero) and confirm the validator stays silent.
+    const host = hostUnit("host", "DOOMSDAY ARK", 1);
+    const e = { ...enh("e", "Unrestricted Boon"), attachedTo: "host" };
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
   });
@@ -468,19 +546,16 @@ describe("armyList Enhancement validation", () => {
     expect(store.getUnitValidationError(e)).toBe("Attached to a missing unit");
   });
 
-  it("passes an unattached enhancement (no host check)", () => {
-    const e = enh("e", "Veil of Darkness");
-    store.setUnits([e]);
-    expect(store.getUnitValidationError(e)).toBe(false);
-  });
-
-  it("getEnhancementMeta resolves the upgrade flag from the detachment", () => {
+  it("getEnhancementMeta resolves the restriction flags from the detachment", () => {
     expect(
       store.getEnhancementMeta(enh("a", "Enlivened Sentinels"))
-    ).toMatchObject({ isUnitUpgrade: true });
+    ).toMatchObject({ nonCharacterOnly: true });
     expect(
-      store.getEnhancementMeta(enh("a", "Veil of Darkness"))?.isUnitUpgrade
+      store.getEnhancementMeta(enh("a", "Veil of Darkness"))?.nonCharacterOnly
     ).toBeFalsy();
+    expect(
+      store.getEnhancementMeta(enh("a", "Veil of Darkness"))
+    ).toMatchObject({ characterOnly: true, limit: 1 });
     expect(store.getEnhancementMeta(enh("a", "Nonexistent"))).toBeNull();
   });
 });

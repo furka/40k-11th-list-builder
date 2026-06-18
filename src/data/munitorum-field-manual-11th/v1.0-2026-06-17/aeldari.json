@@ -227,12 +227,12 @@
         {
           "name": "Assassins' Eye",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Camouflaged Snipers",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -341,7 +341,7 @@
         {
           "name": "Shadowfall Masks",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

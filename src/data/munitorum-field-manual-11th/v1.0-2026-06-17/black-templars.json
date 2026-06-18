@@ -183,12 +183,12 @@
         {
           "name": "Bellicose Weapon Spirits",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Raptorial Cogitator Core",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -317,12 +317,12 @@
         {
           "name": "Fervent Exemplars",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Inheritors of Sigismund",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -395,7 +395,7 @@
         {
           "name": "Death in the Dark",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Shroud Field",

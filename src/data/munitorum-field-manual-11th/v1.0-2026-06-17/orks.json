@@ -217,7 +217,7 @@
         {
           "name": "Dead Shiny Shootas",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -236,12 +236,12 @@
         {
           "name": "Boarding Ramps",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Targetin’ Gizmos",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

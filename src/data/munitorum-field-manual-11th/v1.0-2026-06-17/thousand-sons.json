@@ -169,7 +169,7 @@
         {
           "name": "Thicket of Bladed Bone",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Unravelled Fates",

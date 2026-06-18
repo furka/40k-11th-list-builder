@@ -93,7 +93,7 @@ function onEnhancementClick(enh) {
       >
         <span class="data-sheet__option-name">{{ enh.name }}</span>
         <span
-          v-if="enh.isUnitUpgrade"
+          v-if="enh.nonCharacterOnly"
           class="detachment-sheet__upgrade-badge"
           title="Unit upgrade — attaches to a non-character unit"
         >UPGRADE</span>

@@ -47,12 +47,12 @@
         {
           "name": "Lancet of the Worldsore",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Parasitic Woe‑reaper",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -99,12 +99,12 @@
         {
           "name": "Insectile Murmuration",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Plagueveil",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

@@ -171,12 +171,12 @@
         {
           "name": "Ancestral Overbleed",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Gyro-optimised Actuators",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

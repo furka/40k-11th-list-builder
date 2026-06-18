@@ -119,12 +119,12 @@
         {
           "name": "Boons of Deimos",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Precognicient Volleys",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -169,12 +169,12 @@
         {
           "name": "Astral Overlap",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Predestined Coordinates",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

@@ -166,12 +166,12 @@
         {
           "name": "Enlivened Sentinels",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Tools of Dominion",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -274,12 +274,12 @@
         {
           "name": "Deepening Madness",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Recursive Reanimation",
           "points": 5,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -326,7 +326,7 @@
         {
           "name": "Mortality Shroud (Aura)",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Prelocational Optimiser",

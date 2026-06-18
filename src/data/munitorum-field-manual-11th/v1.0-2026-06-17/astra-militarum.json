@@ -22,12 +22,12 @@
         {
           "name": "Exemplar of Duty",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Sharp Eyes",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -122,12 +122,12 @@
         {
           "name": "Long-range Scout",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Recon Star",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

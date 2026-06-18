@@ -95,12 +95,12 @@
         {
           "name": "Snarling Rivalry",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Soul-spoor Auspicator",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

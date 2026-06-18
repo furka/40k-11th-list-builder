@@ -264,71 +264,71 @@ describe("11th edition scraper — extract + normalize", () => {
       expect(det.tags).toContain("UNIQUE: HYPERCRYPT");
     });
 
-    it("(Upgrade)-suffixed enhancements get isUnitUpgrade:true and clean names", () => {
+    it("(Upgrade)-suffixed enhancements get nonCharacterOnly:true and clean names", () => {
       // The Necron fixtures include unit-upgrade enhancements. Verify the
       // scraper strips the suffix from `name` and sets the flag.
       const upgrades = [];
-      const characterOnly = [];
+      const plain = [];
       for (const det of data.detachments) {
         for (const enh of det.enhancements) {
-          if (enh.isUnitUpgrade) upgrades.push(enh);
-          else characterOnly.push(enh);
+          if (enh.nonCharacterOnly) upgrades.push(enh);
+          else plain.push(enh);
           expect(enh.name).not.toMatch(/\(upgrade\)\s*$/i);
         }
       }
       expect(upgrades.length).toBeGreaterThan(0);
-      expect(characterOnly.length).toBeGreaterThan(0);
+      expect(plain.length).toBeGreaterThan(0);
     });
   });
 });
 
 describe("parseEnhancementName", () => {
-  it("strips trailing (Upgrade) and sets isUnitUpgrade", () => {
+  it("strips trailing (Upgrade) and sets nonCharacterOnly", () => {
     expect(parseEnhancementName("Enlivened Sentinels (Upgrade)")).toEqual({
       name: "Enlivened Sentinels",
-      isUnitUpgrade: true,
+      nonCharacterOnly: true,
     });
   });
 
-  it("returns the original name with isUnitUpgrade: false when no suffix", () => {
+  it("returns the original name with nonCharacterOnly: false when no suffix", () => {
     expect(parseEnhancementName("Dimensional Overseer")).toEqual({
       name: "Dimensional Overseer",
-      isUnitUpgrade: false,
+      nonCharacterOnly: false,
     });
   });
 
   it("is case-insensitive on the suffix", () => {
-    expect(parseEnhancementName("Foo (upgrade)").isUnitUpgrade).toBe(true);
-    expect(parseEnhancementName("Foo (UPGRADE)").isUnitUpgrade).toBe(true);
-    expect(parseEnhancementName("Foo (Upgrade)").isUnitUpgrade).toBe(true);
+    expect(parseEnhancementName("Foo (upgrade)").nonCharacterOnly).toBe(true);
+    expect(parseEnhancementName("Foo (UPGRADE)").nonCharacterOnly).toBe(true);
+    expect(parseEnhancementName("Foo (Upgrade)").nonCharacterOnly).toBe(true);
   });
 
   it("does NOT strip when 'Upgrade' appears mid-name", () => {
     expect(parseEnhancementName("Upgrade of the Ancients")).toEqual({
       name: "Upgrade of the Ancients",
-      isUnitUpgrade: false,
+      nonCharacterOnly: false,
     });
     expect(parseEnhancementName("An (Upgrade) in the middle")).toEqual({
       name: "An (Upgrade) in the middle",
-      isUnitUpgrade: false,
+      nonCharacterOnly: false,
     });
   });
 
   it("tolerates extra surrounding whitespace before the suffix", () => {
     expect(parseEnhancementName("Foo   (Upgrade)  ")).toEqual({
       name: "Foo",
-      isUnitUpgrade: true,
+      nonCharacterOnly: true,
     });
   });
 
   it("defensively handles non-string input", () => {
     expect(parseEnhancementName(undefined)).toEqual({
       name: "",
-      isUnitUpgrade: false,
+      nonCharacterOnly: false,
     });
     expect(parseEnhancementName(null)).toEqual({
       name: "",
-      isUnitUpgrade: false,
+      nonCharacterOnly: false,
     });
   });
 });

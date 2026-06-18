@@ -181,7 +181,7 @@
         {
           "name": "Mark of the Star Children",
           "points": 30,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Talons of the Sire",
@@ -232,7 +232,7 @@
         {
           "name": "Devious Disguises",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Inspired to Greatness",

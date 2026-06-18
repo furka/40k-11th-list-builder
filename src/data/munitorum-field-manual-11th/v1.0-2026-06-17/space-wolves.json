@@ -203,12 +203,12 @@
         {
           "name": "Bellicose Weapon Spirits",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Raptorial Cogitator Core",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -309,12 +309,12 @@
         {
           "name": "Fierce Example",
           "points": 25,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Thirst for Glory",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -535,7 +535,7 @@
         {
           "name": "Death in the Dark",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Shroud Field",

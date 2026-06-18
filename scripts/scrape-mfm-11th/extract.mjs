@@ -151,11 +151,11 @@ function extractDetachments(doc) {
         if (spans.length >= 2) {
           const rawName = spans[0].textContent.trim();
           const ptsMatch = spans[1].textContent.trim().match(/(\d+) pts/);
-          const { name: cleanName, isUnitUpgrade } = parseEnhancementName(rawName);
+          const { name: cleanName, nonCharacterOnly } = parseEnhancementName(rawName);
           enhancements.push({
             name: cleanName,
             points: ptsMatch ? Number(ptsMatch[1]) : 0,
-            ...(isUnitUpgrade ? { isUnitUpgrade: true } : {}),
+            ...(nonCharacterOnly ? { nonCharacterOnly: true } : {}),
           });
         }
       }
@@ -211,7 +211,12 @@ function extractDetachments(doc) {
  * source HTML (e.g. "Enlivened Sentinels (Upgrade)") signalling that the
  * enhancement attaches to a regular squad rather than to a character. The
  * scraper is the ONLY layer that does the string match — downstream code
- * reads the `isUnitUpgrade` boolean on the normalised enhancement.
+ * reads the `nonCharacterOnly` boolean on the normalised enhancement.
+ *
+ * This is the one restriction the scraper can derive reliably from HTML;
+ * all other restrictions (character-only, epic-hero exclusion, per-army
+ * limit, auto-take targets, allowed-host whitelist) require manual
+ * curation via `src/data/configs/enhancement-restrictions.json`.
  *
  * The regex is anchored at end-of-string and case-insensitive: matches the
  * literal trailing "(Upgrade)" suffix in any casing, and won't strip the
@@ -222,7 +227,7 @@ export function parseEnhancementName(rawName) {
   const stripped = name.replace(/\s*\(upgrade\)\s*$/i, "");
   return {
     name: stripped,
-    isUnitUpgrade: stripped !== name,
+    nonCharacterOnly: stripped !== name,
   };
 }
 

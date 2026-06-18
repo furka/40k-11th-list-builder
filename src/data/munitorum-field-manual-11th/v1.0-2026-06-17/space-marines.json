@@ -267,12 +267,12 @@
         {
           "name": "Bellicose Weapon Spirits",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Raptorial Cogitator Core",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -573,7 +573,7 @@
         {
           "name": "Death in the Dark",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Shroud Field",

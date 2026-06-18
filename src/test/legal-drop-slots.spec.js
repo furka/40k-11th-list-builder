@@ -9,6 +9,7 @@ const SHEETS = {
   IMOTEKH: {
     name: "IMOTEKH",
     character: true,
+    epicHero: true,
     leader: { attachesTo: ["IMMORTALS", "LYCHGUARD", "NECRON WARRIORS"] },
   },
   OVERLORD: {
@@ -161,38 +162,50 @@ describe("legalDropSlots — enhancement rules", () => {
     expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).not.toContain("imo");
   });
 
-  it("rejects enhancement-on-enhancement via the depth cap", () => {
+  it("rejects enhancement-on-enhancement universally (no attach slot to an enh host)", () => {
+    // Even at depth 0 — i.e. an unattached enhancement at root — another
+    // enhancement should not be allowed to attach to it.
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
-      enh("e1", "Veil of Darkness", "imo"),
+      enh("e1", "Veil of Darkness"),
       enh("e2", "Arisen Tyrant"),
     ];
-    // e1 is at depth 2; attaching e2 to e1 would land e2 at depth 3 > MAX_DEPTH-1.
     expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).not.toContain("e1");
+  });
+
+  it("emits no root reorder slots for a dragged enhancement (must always be attached)", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH"),
+      enh("e", "Veil of Darkness"),
+    ];
+    const slots = legalDropSlots(units, "e", getDataSheet);
+    const rootReorders = byType(slots, "reorder").filter(
+      (s) => s.parentId === null
+    );
+    expect(rootReorders).toEqual([]);
   });
 });
 
 describe("legalDropSlots — enhancement host rules (with metadata)", () => {
-  // The legacy "any host" behavior survives when enhancementMeta is null
-  // (the 3-arg signature). The new rules kick in only when the caller
-  // passes the metadata — which the real app does at drag start via the
-  // armyList store's getEnhancementMeta.
+  // Enhancements default to unrestricted: every host is legal unless a
+  // restriction field on the metadata says otherwise. Each restriction
+  // field is opt-in; falsy/missing = no check.
 
-  it("upgrade enhancement (isUnitUpgrade) emits attach slots only for non-character hosts", () => {
+  it("nonCharacterOnly narrows attach slots to non-character hosts", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
       u("imo", "IMOTEKH"), // character
       enh("e", "Enlivened Sentinels"),
     ];
-    const meta = { name: "Enlivened Sentinels", isUnitUpgrade: true };
+    const meta = { name: "Enlivened Sentinels", nonCharacterOnly: true };
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
     ).toEqual(["im", "w"]);
   });
 
-  it("plain enhancement emits attach slots only for character hosts", () => {
+  it("characterOnly narrows attach slots to character hosts", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
@@ -200,13 +213,13 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
       u("chr", "CHRONOMANCER"), // character (support)
       enh("e", "Dimensional Overseer"),
     ];
-    const meta = { name: "Dimensional Overseer" };
+    const meta = { name: "Dimensional Overseer", characterOnly: true };
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
     ).toEqual(["chr", "imo"]);
   });
 
-  it("allowedHosts further narrows an upgrade enhancement to specific datasheets", () => {
+  it("allowedHosts narrows to specific datasheet names, independent of other flags", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
@@ -214,12 +227,41 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ];
     const meta = {
       name: "Enlivened Sentinels",
-      isUnitUpgrade: true,
+      nonCharacterOnly: true,
       allowedHosts: ["NECRON WARRIORS"],
     };
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
     ).toEqual(["w"]);
+  });
+
+  it("an enhancement with no restriction fields can attach to any host", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH"),
+      enh("e", "Veil of Darkness"),
+    ];
+    const meta = { name: "Veil of Darkness" };
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet, meta))).toEqual(
+      ["imo", "w"]
+    );
+  });
+
+  it("notOnEpicHeroes excludes epic heroes (but allows ordinary characters)", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH"), // character + epicHero
+      u("o", "OVERLORD"), // character, not epic
+      enh("e", "Restricted Enh"),
+    ];
+    const meta = {
+      name: "Restricted Enh",
+      characterOnly: true,
+      notOnEpicHeroes: true,
+    };
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet, meta))).toEqual([
+      "o",
+    ]);
   });
 
   it("falls back to free-form host when enhancementMeta is omitted", () => {
@@ -228,8 +270,6 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
       u("imo", "IMOTEKH"),
       enh("e", "Veil of Darkness"),
     ];
-    // No meta arg → both hosts legal (preserves the legacy behavior covered
-    // by the older suite above).
     expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toEqual(
       ["imo", "w"]
     );

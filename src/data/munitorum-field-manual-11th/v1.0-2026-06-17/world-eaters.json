@@ -45,12 +45,12 @@
         {
           "name": "Murder-forged Entity",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Talons of Butchery",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -67,12 +67,12 @@
         {
           "name": "Gore-stained Veterans",
           "points": 25,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Sanctified in Slaughter",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

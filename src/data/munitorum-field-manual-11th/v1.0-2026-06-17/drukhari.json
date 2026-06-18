@@ -235,7 +235,7 @@
         {
           "name": "Elixir of the Corpse Courts",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Gnarlskin Experimentor",

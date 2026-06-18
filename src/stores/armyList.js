@@ -88,7 +88,9 @@ export const useArmyListStore = defineStore("armyList", () => {
 
   /**
    * Resolve an Enhancement unit to the canonical metadata stored on its
-   * detachment — `{ name, points, isUnitUpgrade?, allowedHosts? }`.
+   * detachment — `{ name, points, ...restrictionFields }` where the optional
+   * restriction subset is the schema documented in
+   * `src/data/configs/enhancement-restrictions.json`.
    * Prefer the unit's own `detachment` tag (set at add time); fall back to
    * scanning all of the faction's detachments so shared lists missing that
    * tag still resolve.
@@ -161,16 +163,19 @@ export const useArmyListStore = defineStore("armyList", () => {
         return "Enhancement not available in this detachment";
       }
 
-      // Each enhancement is unique per army. Among Enhancements units that
-      // share this optionName the first occurrence passes; later copies flag.
-      const sameOption = units.value.filter(
-        (u) => u.name === "Enhancements" && u.optionName === unit.optionName
-      );
-      if (
-        sameOption.length > 1 &&
-        sameOption.findIndex((u) => u.id === unit.id) > 0
-      ) {
-        return "Duplicate enhancement";
+      const meta = getEnhancementMeta(unit);
+
+      // Per-enhancement limit: opt-in via `meta.limit`. When set, allow up to
+      // `limit` copies in the army; later copies flag. When unset, no
+      // per-enhancement cap.
+      if (typeof meta?.limit === "number") {
+        const sameOption = units.value.filter(
+          (u) => u.name === "Enhancements" && u.optionName === unit.optionName
+        );
+        const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
+        if (indexOfThis >= meta.limit) {
+          return `Only ${meta.limit} of this enhancement allowed`;
+        }
       }
 
       // Battle-size enhancement cap (Incursion: 2, Strike Force: 4). Flag
@@ -189,31 +194,31 @@ export const useArmyListStore = defineStore("armyList", () => {
         }
       }
 
-      // Host-eligibility:
-      //   - `(Upgrade)` enhancements (isUnitUpgrade) attach to non-character
-      //     units only — they're squad-wide buffs.
-      //   - Plain enhancements attach to characters only.
-      //   - An optional per-enhancement `allowedHosts` whitelist (from
-      //     `configs/enhancement-restrictions.json`) further narrows it.
-      // No error if the enhancement isn't currently attached — surface that
-      // via the codex add-time gate, not here.
-      if (unit.attachedTo) {
-        const host = units.value.find((u) => u.id === unit.attachedTo);
-        if (!host) return "Attached to a missing unit";
-        const meta = getEnhancementMeta(unit);
-        const hostDs = codexStore.getDataSheet(host.name);
-        if (meta?.allowedHosts?.length && !meta.allowedHosts.includes(host.name)) {
-          return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
-        }
-        if (meta?.isUnitUpgrade) {
-          if (hostDs?.character) {
-            return "Unit upgrades can't attach to characters";
-          }
-        } else {
-          if (!hostDs?.character) {
-            return "Enhancement can only attach to a character";
-          }
-        }
+      // Universal rules first — these apply regardless of restriction
+      // metadata. Enhancements must always sit on a host unit, and they can
+      // never stack on top of another enhancement.
+      if (!unit.attachedTo) return "Enhancement must be attached to a unit";
+      const host = units.value.find((u) => u.id === unit.attachedTo);
+      if (!host) return "Attached to a missing unit";
+      if (host.name === "Enhancements") {
+        return "Enhancement can't be attached to another enhancement";
+      }
+
+      // Optional per-enhancement restrictions. Each field is checked
+      // independently and only when explicitly set. See
+      // `src/data/configs/enhancement-restrictions.json` for the schema.
+      const hostDs = codexStore.getDataSheet(host.name);
+      if (meta?.characterOnly && !hostDs?.character) {
+        return "Enhancement can only attach to a character";
+      }
+      if (meta?.nonCharacterOnly && hostDs?.character) {
+        return "Unit upgrades can't attach to characters";
+      }
+      if (meta?.notOnEpicHeroes && hostDs?.epicHero) {
+        return "Enhancement can't be given to Epic Heroes";
+      }
+      if (meta?.allowedHosts?.length && !meta.allowedHosts.includes(host.name)) {
+        return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
       }
 
       return false;

@@ -1,5 +1,22 @@
-import { CONFIGS, getEnhancementAllowedHosts } from "../data/configs";
+import { CONFIGS, getEnhancementRestrictions } from "../data/configs";
 import { normalizeString } from "./name-match";
+
+const RESTRICTION_FIELDS = [
+  "characterOnly",
+  "nonCharacterOnly",
+  "notOnEpicHeroes",
+  "allowedHosts",
+  "limit",
+  "autoTake",
+];
+
+function pickRestrictions(source) {
+  const out = {};
+  for (const key of RESTRICTION_FIELDS) {
+    if (source?.[key] !== undefined) out[key] = source[key];
+  }
+  return out;
+}
 
 /**
  * Parse one scraped faction JSON (as produced by `scripts/scrape-mfm-11th/`)
@@ -49,10 +66,11 @@ export function parse11thFaction(factionJson) {
     return sheet;
   });
 
-  // Layer the upgrade flag (from scraper) and the optional per-enhancement
-  // host whitelist (from `configs/enhancement-restrictions.json`) onto every
-  // enhancement once, so both consumers (detachment.enhancements + the
-  // synthetic "Enhancements" datasheet sizes) see the same enriched object.
+  // Layer scraper-derived restrictions (today: nonCharacterOnly from the
+  // "(Upgrade)" suffix) and any hand-curated overrides from
+  // `configs/enhancement-restrictions.json` onto every enhancement once, so
+  // both consumers (detachment.enhancements + the synthetic "Enhancements"
+  // datasheet sizes) see the same enriched object.
   const enrichedDetachments = factionJson.detachments.map((d) => ({
     ...d,
     enhancements: d.enhancements.map((enh) =>
@@ -70,8 +88,7 @@ export function parse11thFaction(factionJson) {
         points: enh.points,
         basePoints: enh.points,
         tiers: [{ minCount: 1, points: enh.points }],
-        ...(enh.isUnitUpgrade ? { isUnitUpgrade: true } : {}),
-        ...(enh.allowedHosts ? { allowedHosts: enh.allowedHosts } : {}),
+        ...pickRestrictions(enh),
       });
     }
   }
@@ -97,9 +114,9 @@ export function parse11thFaction(factionJson) {
 }
 
 function enrichEnhancement(enh, factionName) {
-  const allowedHosts = getEnhancementAllowedHosts(factionName, enh.name);
-  if (!allowedHosts) return enh;
-  return { ...enh, allowedHosts };
+  const override = getEnhancementRestrictions(factionName, enh.name);
+  if (!override) return enh;
+  return { ...enh, ...pickRestrictions(override) };
 }
 
 function isPlainModelCountLabel(name, models) {

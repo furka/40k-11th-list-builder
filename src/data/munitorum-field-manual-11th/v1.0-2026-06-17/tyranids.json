@@ -15,12 +15,12 @@
         {
           "name": "Cryptophotaic Camouflage",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Encircling Horrors",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -177,12 +177,12 @@
         {
           "name": "Destabilising Predation",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Synaptoprescience",
           "points": 25,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

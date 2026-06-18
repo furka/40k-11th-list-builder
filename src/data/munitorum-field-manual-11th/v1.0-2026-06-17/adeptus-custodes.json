@@ -75,12 +75,12 @@
         {
           "name": "Auramite Sarcophagus",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Interred Expertise",
           "points": 25,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -157,7 +157,7 @@
         {
           "name": "Psyk-out Grenades",
           "points": 10,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },

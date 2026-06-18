@@ -183,12 +183,12 @@
         {
           "name": "Entreaty of Perpetual Ardour",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Petition of Stability",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -205,12 +205,12 @@
         {
           "name": "Nightforged Battery",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Thundercowl Turbines",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -255,12 +255,12 @@
         {
           "name": "Bellicose Weapon Spirits",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Raptorial Cogitator Core",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -525,7 +525,7 @@
         {
           "name": "Death in the Dark",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Shroud Field",

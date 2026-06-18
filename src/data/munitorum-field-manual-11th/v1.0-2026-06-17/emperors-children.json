@@ -107,7 +107,7 @@
         {
           "name": "Frenzied Ferocity",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -256,12 +256,12 @@
         {
           "name": "Beguiling Grotesquerie",
           "points": 15,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         },
         {
           "name": "Eager Patrons",
           "points": 20,
-          "isUnitUpgrade": true
+          "nonCharacterOnly": true
         }
       ]
     }

@@ -26,7 +26,10 @@
  *   - no self / no cycle
  *   - leader: host must be in dragged.datasheet.leader.attachesTo
  *   - support: host must be in dragged.datasheet.support.attachesTo
- *   - enhancement: any host (still subject to depth + per-host cap)
+ *   - enhancement: must be attached (no root slot); never on another
+ *     enhancement; per-field opt-in restrictions (characterOnly,
+ *     nonCharacterOnly, notOnEpicHeroes, allowedHosts) on the metadata
+ *     each narrow it independently
  *   - regular bodyguards/vehicles/monsters: never attach to anything
  *   - max 1 leader per host
  *   - max 1 support per host
@@ -157,23 +160,22 @@ export function legalDropSlots(
     } else if (draggedIsSupport) {
       if (!draggedDs.support.attachesTo.includes(host.name)) return false;
     } else if (draggedIsEnhancement) {
-      // (Upgrade) enhancements attach to non-character units only; plain
-      // enhancements attach to characters only. Optional per-enhancement
-      // `allowedHosts` whitelist (from configs/enhancement-restrictions.json)
-      // narrows it further. When no metadata is supplied (tests, legacy
-      // call sites), fall back to the old free-form-host behavior.
+      // Universal rule: enhancements can never attach to another enhancement,
+      // regardless of restriction metadata.
+      if (isEnhancementUnit(host)) return false;
+      // Optional per-enhancement restrictions on the metadata. Each field is
+      // checked independently and skipped when falsy. See
+      // src/data/configs/enhancement-restrictions.json for the schema.
       if (enhancementMeta) {
+        const hostDs = getDataSheet(host.name);
+        if (enhancementMeta.characterOnly && !hostDs?.character) return false;
+        if (enhancementMeta.nonCharacterOnly && hostDs?.character) return false;
+        if (enhancementMeta.notOnEpicHeroes && hostDs?.epicHero) return false;
         if (
           enhancementMeta.allowedHosts?.length &&
           !enhancementMeta.allowedHosts.includes(host.name)
         ) {
           return false;
-        }
-        const hostDs = getDataSheet(host.name);
-        if (enhancementMeta.isUnitUpgrade) {
-          if (hostDs?.character) return false;
-        } else {
-          if (!hostDs?.character) return false;
         }
       }
     } else {
@@ -221,12 +223,13 @@ export function legalDropSlots(
     });
   }
 
-  // Root reorder slots — emitted for everything EXCEPT wargear. A support
-  // character can land at root (and gets a red error telling the user to
-  // re-attach), but wargear is intrinsically a sub-option of a specific
-  // datasheet — orphaning it makes no sense. The bin slot below still
-  // gives the user a way to discard a wargear via drag.
-  if (!draggedIsWargear) {
+  // Root reorder slots — emitted for everything EXCEPT wargear and
+  // enhancements. A support character can land at root (and gets a red
+  // error telling the user to re-attach), but wargear and enhancements
+  // are intrinsically sub-options of a host unit — orphaning them makes
+  // no sense. The bin slot below still gives the user a way to discard
+  // them via drag.
+  if (!draggedIsWargear && !draggedIsEnhancement) {
     const rootSiblings = (byParent.get(null) ?? []).filter(
       (u) => u.id !== dragged.id
     );
