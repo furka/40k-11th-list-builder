@@ -301,8 +301,8 @@ export const useArmyListStore = defineStore("armyList", () => {
   /**
    * Re-parent and/or reposition a unit within its sibling group.
    *
-   * Driven by vuedraggable: every drop event maps to a single call here. The
-   * unit is removed from its current spot in the flat array, its `attachedTo`
+   * Driven by the unit drag store: every committed drop maps to a single call
+   * here. The unit is removed from its current spot in the flat array, its `attachedTo`
    * is set to `parentId` (or cleared when parentId is null), and it's
    * re-inserted so it sits at position `sibIdx` among siblings sharing the
    * same `attachedTo`.

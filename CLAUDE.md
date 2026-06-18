@@ -157,7 +157,7 @@ When adding a new MFM version, see `src/data/munitorum-field-manual/README.md` f
 ### Component Structure
 
 - **App.vue**: Root component, manages global state and localStorage persistence
-- **ArmyList.vue**: Left panel showing selected units, uses vuedraggable for reordering, visually scales based on points
+- **ArmyList.vue**: Left panel showing selected units, supports drag-to-reorder via the pointer-event drag stores, visually scales based on points
 - **ArmyCodex.vue**: Right panel showing available units filtered by faction/detachment with grouping and sorting
 - **DataSheet.vue**: Individual unit card showing available sizes/options
 - **PrintableArmyList.vue**: Print-only view (hidden on screen, shown via CSS @media print)

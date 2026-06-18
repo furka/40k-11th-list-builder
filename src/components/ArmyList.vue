@@ -1,12 +1,13 @@
 <script setup>
 import { computed, onBeforeUnmount, ref, watch } from "vue";
-import draggable from "vuedraggable";
 import ArmyListUnitNode from "./ArmyListUnitNode.vue";
 import ArmyListDetachment from "./ArmyListDetachment.vue";
 import DropOverlay from "./DropOverlay.vue";
+import DetachmentDropOverlay from "./DetachmentDropOverlay.vue";
 import RiskIcon from "../assets/risk-icon.svg";
 import { useArmyListStore } from "../stores/armyList";
 import { useDragStore } from "../stores/drag";
+import { useSlotEl } from "../composables/useSlotEl";
 import { computeScale, emptyHeightPx } from "../utils/unit-sizing";
 
 const armyListStore = useArmyListStore();
@@ -100,6 +101,14 @@ const emptySpace = computed(() =>
     scale.value
   )
 );
+
+// Register the army-list panel as a named slot so pointer positions inside
+// the panel but outside any row (the empty space above the topmost unit,
+// from the visual-scaling padding-top) still resolve to a sensible drop —
+// "insert above the topmost root row" / "insert below the bottommost". The
+// alternative would be a null active slot whenever the user hovers empty
+// space, which surprises users on lightly-populated lists.
+useSlotEl(armyListEl, () => (dragStore.draggedId ? "army-list-area" : null));
 </script>
 
 <template>
@@ -120,38 +129,17 @@ const emptySpace = computed(() =>
           {{ dp.used }} / {{ dp.max }} DP
         </span>
       </div>
-      <!--
-        Detachments still ride on vuedraggable for now — Phase 3 of the DnD
-        refactor migrates them to the same drag store. Until then, unit drags
-        (pointer-event based) and detachment drags (vuedraggable) live side
-        by side without interfering since they're on disjoint elements.
-      -->
-      <draggable
-        :model-value="detachmentList"
-        @update:model-value="
-          (newOrder) => armyListStore.setDetachments(newOrder.map((d) => d.name))
-        "
-        :group="{ name: 'detachments', pull: true, put: true }"
-        animation="150"
-        item-key="name"
-        class="army-list-detachments__list"
-        @add="
-          (event) => {
-            const moved = detachmentList[event.newIndex];
-            if (!moved) return;
-            const ok = armyListStore.addDetachment(moved.name);
-            if (!ok) armyListStore.removeDetachment(moved.name);
-          }
-        "
-      >
-        <template #item="{ element }">
-          <ArmyListDetachment
-            :name="element.name"
-            :dp="element.dp"
-            :role="element.role"
-          />
-        </template>
-      </draggable>
+      <div class="army-list-detachments__list">
+        <ArmyListDetachment
+          v-for="(element, i) in detachmentList"
+          :key="element.name"
+          :name="element.name"
+          :dp="element.dp"
+          :role="element.role"
+          :index="i"
+        />
+        <DetachmentDropOverlay />
+      </div>
     </div>
     <div class="army-list" ref="armyListEl">
       <div class="army-list__list">

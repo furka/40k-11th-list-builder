@@ -579,4 +579,106 @@ describe("pickActiveSlot — row-based hit test", () => {
       })
     ).toBeNull();
   });
+
+  describe("army-list-area fallback (empty space inside the list panel)", () => {
+    const LIST_RECT = { left: 0, right: 200, top: 0, bottom: 500 };
+    const TOP_ROW = { left: 0, right: 200, top: 400, bottom: 440 };
+    const BOTTOM_ROW = { left: 0, right: 200, top: 450, bottom: 490 };
+
+    const listSlots = [
+      { type: "reorder", parentId: null, index: 0, key: "reorder:root:0" },
+      { type: "reorder", parentId: null, index: 1, key: "reorder:root:1" },
+      { type: "reorder", parentId: null, index: 2, key: "reorder:root:2" },
+      { type: "bin", key: "bin" },
+    ];
+
+    const listRows = [
+      {
+        unitId: "top",
+        el: fakeEl(TOP_ROW),
+        parentKey: "root",
+        indexInParent: 0,
+      },
+      {
+        unitId: "bot",
+        el: fakeEl(BOTTOM_ROW),
+        parentKey: "root",
+        indexInParent: 1,
+      },
+    ];
+
+    const listGetRect = (key) => {
+      if (key === "bin") return BIN_RECT;
+      if (key === "army-list-area") return LIST_RECT;
+      return null;
+    };
+
+    it("routes empty space above the topmost row to reorder:root:0 anchored on top of the topmost row", () => {
+      const r = pickActiveSlot({
+        legalSlots: listSlots,
+        getRect: listGetRect,
+        rows: listRows,
+        pointer: { x: 50, y: 100 },
+      });
+      expect(r).toMatchObject({
+        type: "reorder",
+        parentId: null,
+        index: 0,
+        anchorEdge: "top",
+      });
+      expect(r.anchorRect.top).toBe(TOP_ROW.top);
+    });
+
+    it("routes empty space below the bottommost row to reorder:root:N anchored on its bottom", () => {
+      const r = pickActiveSlot({
+        legalSlots: listSlots,
+        getRect: listGetRect,
+        rows: listRows,
+        pointer: { x: 50, y: 495 },
+      });
+      expect(r).toMatchObject({
+        type: "reorder",
+        parentId: null,
+        index: 2,
+        anchorEdge: "bottom",
+      });
+    });
+
+    it("returns null when pointer is outside the army-list-area rect", () => {
+      // Pointer above the list area entirely.
+      expect(
+        pickActiveSlot({
+          legalSlots: listSlots,
+          getRect: listGetRect,
+          rows: listRows,
+          pointer: { x: 50, y: -50 },
+        })
+      ).toBeNull();
+    });
+
+    it("returns null when the dragged unit can't be placed at root (no reorder:root:N slot)", () => {
+      // E.g. wargear — no root reorder slots exist.
+      const noRoot = listSlots.filter((s) => !s.key.startsWith("reorder:root:"));
+      expect(
+        pickActiveSlot({
+          legalSlots: noRoot,
+          getRect: listGetRect,
+          rows: listRows,
+          pointer: { x: 50, y: 100 },
+        })
+      ).toBeNull();
+    });
+
+    it("uses sorted-by-rect-top order so the topmost ROOT row anchors the line", () => {
+      // Reverse the rows array — fallback must still pick the visually
+      // topmost row, not the first one in the array.
+      const r = pickActiveSlot({
+        legalSlots: listSlots,
+        getRect: listGetRect,
+        rows: [...listRows].reverse(),
+        pointer: { x: 50, y: 100 },
+      });
+      expect(r?.anchorRect.top).toBe(TOP_ROW.top);
+    });
+  });
 });

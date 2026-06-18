@@ -279,7 +279,10 @@ export function legalDropSlots(
  *      - bottom 25% → the "below" reorder slot for this row (if legal)
  *      Reorder slots are returned with `anchorRect` + `anchorEdge` so the
  *      drop overlay can position the insertion line on the right edge.
- *   3. null if nothing matches.
+ *   3. If pointer is inside the registered "army-list-area" slot but missed
+ *      every row, route to the topmost/bottommost root reorder slot so the
+ *      visual-scaling empty space above the unit stack stays a drop target.
+ *   4. null if nothing matches.
  *
  * `rows` is an iterable of `{ unitId, el, parentKey, indexInParent }`. The
  * dragged unit's own row is intentionally NOT registered — there's no
@@ -334,6 +337,34 @@ export function pickActiveSlot({ legalSlots, getRect, rows, pointer }) {
       return attach ?? null;
     }
     return attach ?? null;
+  }
+
+  // Fallback: pointer missed every row but is still inside the army-list
+  // panel. With visual scaling the panel is mostly empty above the unit
+  // stack; without this clause that whole region would be a dead zone.
+  const listRect = getRect ? getRect("army-list-area") : null;
+  if (listRect && pointInRect(x, y, listRect)) {
+    const rootRows = (rows ?? [])
+      .filter((r) => r?.el && r.parentKey === "root")
+      .map((r) => ({ ...r, rect: r.el.getBoundingClientRect() }))
+      .sort((a, b) => a.rect.top - b.rect.top);
+    if (rootRows.length > 0) {
+      const top = rootRows[0];
+      if (y < top.rect.top) {
+        const slot = legalByKey.get(`reorder:root:${top.indexInParent}`);
+        if (slot) return { ...slot, anchorRect: top.rect, anchorEdge: "top" };
+      }
+      const bottom = rootRows[rootRows.length - 1];
+      if (y > bottom.rect.bottom) {
+        const slot = legalByKey.get(
+          `reorder:root:${bottom.indexInParent + 1}`
+        );
+        if (slot) {
+          const subtreeRect = subtreeBottomRect(rows, bottom.unitId, bottom.rect);
+          return { ...slot, anchorRect: subtreeRect, anchorEdge: "bottom" };
+        }
+      }
+    }
   }
 
   return null;

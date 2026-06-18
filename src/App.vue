@@ -6,9 +6,11 @@ import { useMfmStore } from "./stores/mfm";
 import { useCodexStore } from "./stores/codex";
 import { useAppStore } from "./stores/app";
 import { useDragStore } from "./stores/drag";
+import { useDetachmentDragStore } from "./stores/detachmentDrag";
 import ArmyList from "./components/ArmyList.vue";
 import ArmyCodex from "./components/ArmyCodex.vue";
 import DragGhost from "./components/DragGhost.vue";
+import DetachmentDragGhost from "./components/DetachmentDragGhost.vue";
 import PrintableArmyList from "./components/PrintableArmyList.vue";
 import { SORT_MANUAL } from "./data/constants";
 import {
@@ -28,6 +30,7 @@ const mfmStore = useMfmStore();
 const codexStore = useCodexStore();
 const appStore = useAppStore();
 const dragStore = useDragStore();
+const detachmentDragStore = useDetachmentDragStore();
 
 function initializeApp() {
   armyListStore.loadFromStorage();
@@ -102,6 +105,24 @@ function detachDragListeners() {
   }
 }
 
+let detachmentPointerMoveHandler = null;
+let detachmentPointerUpHandler = null;
+let detachmentPointerCancelHandler = null;
+let detachmentKeyDownHandler = null;
+
+function detachDetachmentDragListeners() {
+  if (detachmentPointerMoveHandler) {
+    window.removeEventListener("pointermove", detachmentPointerMoveHandler);
+    window.removeEventListener("pointerup", detachmentPointerUpHandler);
+    window.removeEventListener("pointercancel", detachmentPointerCancelHandler);
+    window.removeEventListener("keydown", detachmentKeyDownHandler);
+    detachmentPointerMoveHandler = null;
+    detachmentPointerUpHandler = null;
+    detachmentPointerCancelHandler = null;
+    detachmentKeyDownHandler = null;
+  }
+}
+
 watch(
   () => dragStore.draggedId,
   (id) => {
@@ -138,6 +159,41 @@ watch(
       window.addEventListener("keydown", keyDownHandler);
     } else if (!id) {
       detachDragListeners();
+    }
+  }
+);
+
+// Parallel wiring for the detachment drag store. Separate from the unit drag
+// because their state shapes don't overlap (units have ids, attach semantics,
+// depth limits; detachments are a flat ordered list).
+watch(
+  () => detachmentDragStore.draggedName,
+  (name) => {
+    if (name && !detachmentPointerMoveHandler) {
+      detachmentPointerMoveHandler = (e) =>
+        detachmentDragStore.updatePointer(e.clientX, e.clientY);
+      detachmentPointerUpHandler = () => {
+        const result = detachmentDragStore.commit();
+        if (!result) return;
+        const arr = armyListStore.detachments.slice();
+        arr.splice(result.fromIndex, 1);
+        const adjusted =
+          result.toIndex > result.fromIndex
+            ? result.toIndex - 1
+            : result.toIndex;
+        arr.splice(adjusted, 0, result.draggedName);
+        armyListStore.setDetachments(arr);
+      };
+      detachmentPointerCancelHandler = () => detachmentDragStore.cancel();
+      detachmentKeyDownHandler = (e) => {
+        if (e.key === "Escape") detachmentDragStore.cancel();
+      };
+      window.addEventListener("pointermove", detachmentPointerMoveHandler);
+      window.addEventListener("pointerup", detachmentPointerUpHandler);
+      window.addEventListener("pointercancel", detachmentPointerCancelHandler);
+      window.addEventListener("keydown", detachmentKeyDownHandler);
+    } else if (!name) {
+      detachDetachmentDragListeners();
     }
   }
 );
@@ -189,6 +245,7 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", handleResize);
   detachDragListeners();
+  detachDetachmentDragListeners();
 });
 </script>
 
@@ -207,6 +264,7 @@ onUnmounted(() => {
       Position: fixed escapes .app's overflow: hidden anyway.
     -->
     <DragGhost />
+    <DetachmentDragGhost />
   </div>
   <PrintableArmyList class="print" />
 </template>

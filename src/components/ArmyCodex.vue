@@ -1,6 +1,5 @@
 <script setup>
 import DataSheet from "./DataSheet.vue";
-import draggable from "vuedraggable";
 import CodexDetachmentCard from "./CodexDetachmentCard.vue";
 import { computed, ref } from "vue";
 import { useArmyListStore } from "../stores/armyList";
@@ -97,19 +96,13 @@ function onScrollWheel(e) {
       </template>
       <div v-if="detachmentList.length > 0" class="codex__group">
         <h2 class="codex__group-title">Detachments</h2>
-        <draggable
-          :model-value="detachmentList"
-          :group="{ name: 'detachments', pull: 'clone', put: false }"
-          :sort="false"
-          item-key="name"
-          animation="150"
-          class="codex__group-units"
-          @update:model-value="() => {}"
-        >
-          <template #item="{ element }">
-            <CodexDetachmentCard :detachment="element" />
-          </template>
-        </draggable>
+        <div class="codex__group-units">
+          <CodexDetachmentCard
+            v-for="detachment in detachmentList"
+            :key="detachment.name"
+            :detachment="detachment"
+          />
+        </div>
       </div>
     </div>
     </template>
