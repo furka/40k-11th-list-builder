@@ -36,6 +36,11 @@ export const useDragStore = defineStore("drag", () => {
   // The army list's current scale (points → row height). Captured at drag
   // start so the ghost can render rows at the same heights as the live list.
   const scale = ref(1);
+  // Row baseline (e.g. "22px") inherited from `.army-list-pane`'s
+  // `--row-baseline`. Snapshotted at drag start and re-applied as an inline
+  // style on the off-tree DragGhost so its rows match the live list. Stored
+  // as a CSS-length string because it goes straight into a custom property.
+  const rowBaseline = ref("22px");
 
   // DOM elements are intentionally not reactive — they're identity refs whose
   // rects we re-read each pointer move.
@@ -50,6 +55,7 @@ export const useDragStore = defineStore("drag", () => {
     grabOffset,
     size,
     scale: scaleArg,
+    rowBaseline: rowBaselineArg,
     enhancementMeta = null,
   }) {
     if (!unit?.id) return;
@@ -64,6 +70,7 @@ export const useDragStore = defineStore("drag", () => {
       height: size?.height ?? 0,
     };
     scale.value = scaleArg ?? 1;
+    rowBaseline.value = rowBaselineArg || "22px";
     legalSlots.value = legalDropSlots(
       units,
       unit.id,
@@ -147,6 +154,7 @@ export const useDragStore = defineStore("drag", () => {
     ghostOffset.value = { x: 0, y: 0 };
     ghostSize.value = { width: 0, height: 0 };
     scale.value = 1;
+    rowBaseline.value = "22px";
     slotEls.clear();
     rows.clear();
   }
@@ -176,6 +184,7 @@ export const useDragStore = defineStore("drag", () => {
     ghostSubtree,
     draggedSubtreeIds,
     scale,
+    rowBaseline,
     start,
     updatePointer,
     registerSlotEl,

@@ -36,12 +36,17 @@ describe("ArmyListUnit — CSS contract", () => {
   // every unit rendering at one height.
   const src = COMPONENT("ArmyListUnit");
 
-  it("binds flex-basis to the `height` computed via v-bind in scoped style", () => {
-    expect(src).toMatch(/flex-basis:\s*v-bind\("height"\)/);
+  it("composes flex-basis as calc(var(--row-baseline...) + v-bind(scaled portion))", () => {
+    // The row baseline is inherited via the `--row-baseline` CSS variable set on
+    // `.army-list-pane` (with a snapshot reapplied on DragGhost) — see the
+    // baseline plumbing in ArmyList.vue, ArmyListUnit.vue, drag store, and
+    // DragGhost.vue. The per-row scaled portion is bound via v-bind. Without
+    // either piece the row height collapses.
+    expect(src).toMatch(/flex-basis:\s*calc\(\s*var\(\s*--row-baseline[^)]*\)\s*\+\s*v-bind\("scaledHeight"\)\s*\)/);
   });
 
-  it("computes height as `unitHeightPx(unitPoints, props.scale)`", () => {
-    expect(src).toMatch(/unitHeightPx\s*\(\s*unitPoints\.value\s*,\s*props\.scale\s*\)/);
+  it("computes the scaled portion as `scaledHeightPx(unitPoints, props.scale)`", () => {
+    expect(src).toMatch(/scaledHeightPx\s*\(\s*unitPoints\.value\s*,\s*props\.scale\s*\)/);
   });
 
   it("declares flex-shrink: 0 so child siblings can't compress the scaled height", () => {

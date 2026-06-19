@@ -8,7 +8,7 @@ import RiskIcon from "../assets/risk-icon.svg";
 import { useArmyListStore } from "../stores/armyList";
 import { useDragStore } from "../stores/drag";
 import { useSlotEl } from "../composables/useSlotEl";
-import { computeScale, emptyHeightPx } from "../utils/unit-sizing";
+import { computeLayout, emptyHeightPx } from "../utils/unit-sizing";
 
 const armyListStore = useArmyListStore();
 const dragStore = useDragStore();
@@ -86,13 +86,23 @@ const rootGapTotal = computed(() =>
 
 const points = computed(() => armyListStore.pointsBreakdown.total);
 
-const scale = computed(() =>
-  computeScale(
+const numUnits = computed(() => armyListStore.units.length);
+
+const layout = computed(() =>
+  computeLayout(
     Math.max(0, armyListHeight.value - rootGapTotal.value),
     armyListStore.effectiveMaxPoints,
-    points.value
+    points.value,
+    numUnits.value
   )
 );
+
+const scale = computed(() => layout.value.scale);
+
+// Stringified so it can drop straight into the CSS custom property on
+// `.army-list-pane`; descendant `.army-list-unit` rows compose it with their
+// own scaled portion via `calc(var(--row-baseline) + …)`.
+const rowBaselineCss = computed(() => `${layout.value.rowBaseline}px`);
 
 const emptySpace = computed(() =>
   emptyHeightPx(
@@ -112,7 +122,7 @@ useSlotEl(armyListEl, () => (dragStore.draggedId ? "army-list-area" : null));
 </script>
 
 <template>
-  <div class="army-list-pane">
+  <div class="army-list-pane" :style="{ '--row-baseline': rowBaselineCss }">
     <div class="army-list-detachments">
       <div class="army-list-detachments__header">
         <span>Detachments</span>

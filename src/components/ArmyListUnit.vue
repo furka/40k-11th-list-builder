@@ -1,11 +1,11 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch, onMounted, onBeforeUnmount } from "vue";
 import RiskIcon from "../assets/risk-icon.svg";
 import { nameEquals } from "../utils/name-match";
 import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useDragStore } from "../stores/drag";
-import { unitHeightPx } from "../utils/unit-sizing";
+import { scaledHeightPx } from "../utils/unit-sizing";
 import { useRowEl } from "../composables/useRowEl";
 
 const armyListStore = useArmyListStore();
@@ -77,7 +77,9 @@ const isUnitUpgrade = computed(() => {
   return Boolean(armyListStore.getEnhancementMeta(props.unit)?.nonCharacterOnly);
 });
 
-const height = computed(() => unitHeightPx(unitPoints.value, props.scale));
+// Just the points-proportional portion of the row; the row's `flex-basis`
+// composes this with the inherited `--row-baseline` CSS variable.
+const scaledHeight = computed(() => scaledHeightPx(unitPoints.value, props.scale));
 
 const name = computed(() => {
   let name = "";
@@ -99,6 +101,53 @@ const name = computed(() => {
   return name;
 });
 
+// Dynamic font scaling for the name span. When the full name would overflow
+// the row's available width at 14px, walk the size down 1px at a time until
+// it fits or we hit the 10px floor. Past that floor, `text-overflow: ellipsis`
+// in the scoped CSS handles the truncation cleanly. The chosen size flows out
+// via `nameFontSize` + a `v-bind` in the scoped style.
+const nameRef = ref(null);
+const nameFontSize = ref("14px");
+
+const fitName = () => {
+  const el = nameRef.value;
+  if (!el) return;
+  const MAX = 14;
+  const MIN = 10;
+  // Set fontSize imperatively during measurement so each iteration's
+  // scrollWidth read reflects that exact size. Clear it on the next frame
+  // so `v-bind("nameFontSize")` becomes the source of truth again — without
+  // the clear, later refits would be masked by the lingering inline style.
+  el.style.fontSize = `${MAX}px`;
+  let size = MAX;
+  while (el.scrollWidth > el.clientWidth && size > MIN) {
+    size -= 1;
+    el.style.fontSize = `${size}px`;
+  }
+  nameFontSize.value = `${size}px`;
+  requestAnimationFrame(() => {
+    if (el) el.style.fontSize = "";
+  });
+};
+
+let nameResizeObserver = null;
+onMounted(() => {
+  fitName();
+  // jsdom (used by the test environment) doesn't define ResizeObserver, and
+  // there's no useful resize signal there anyway — the guard keeps the unit
+  // tests rendering without polyfilling.
+  if (nameRef.value && typeof ResizeObserver !== "undefined") {
+    nameResizeObserver = new ResizeObserver(fitName);
+    nameResizeObserver.observe(nameRef.value);
+  }
+});
+onBeforeUnmount(() => {
+  nameResizeObserver?.disconnect();
+  nameResizeObserver = null;
+});
+
+watch(name, fitName, { flush: "post" });
+
 const inValid = computed(() => {
   return armyListStore.getUnitValidationError(props.unit);
 });
@@ -118,6 +167,12 @@ function onPointerDown(e) {
     props.unit.name === "Enhancements"
       ? armyListStore.getEnhancementMeta(props.unit)
       : null;
+  // Snapshot the inherited row baseline so the off-tree DragGhost renders
+  // rows at the same height as the live list (which inherits the variable
+  // from `.army-list-pane`). Falls back to MIN_ROW_PX if the var isn't set.
+  const inheritedBaseline = getComputedStyle(e.currentTarget)
+    .getPropertyValue("--row-baseline")
+    .trim();
   dragStore.start({
     unit: props.unit,
     pointer: { x: e.clientX, y: e.clientY },
@@ -129,6 +184,7 @@ function onPointerDown(e) {
     },
     size: { width: rect.width, height: rect.height },
     scale: props.scale,
+    rowBaseline: inheritedBaseline || "22px",
     enhancementMeta,
   });
 }
@@ -151,7 +207,7 @@ function onPointerDown(e) {
     <span class="army-list-unit__warning" :title="inValid" v-if="inValid">
       <RiskIcon class="army-list-unit__warning-icon" />
     </span>
-    <span class="army-list-unit__name">
+    <span ref="nameRef" class="army-list-unit__name">
       {{ name }}
     </span>
     <span
@@ -176,9 +232,18 @@ function onPointerDown(e) {
   box-sizing: border-box;
   cursor: grab;
   display: flex;
-  flex-basis: v-bind("height");
+  flex-basis: calc(var(--row-baseline, 22px) + v-bind("scaledHeight"));
   flex-shrink: 0;
   justify-content: space-between;
+  // Override the default `min-height: auto` (= min-content of the row's
+  // text) so flex-basis is authoritative. Without this, dense lists force
+  // every row up to ~22px regardless of the adaptive baseline, and the
+  // accumulated overflow gets clipped at the top of `.army-list` — making
+  // the topmost unit appear to slide under the detachments header. The
+  // companion `overflow: hidden` keeps text from bleeding into the 1px
+  // gap between rows when the baseline drops below the natural line-height.
+  min-height: 0;
+  overflow: hidden;
   position: relative;
   // touch-action: none keeps a touch-drag on this row from being interpreted
   // as page-scroll by the browser. Required for mobile DnD via Pointer Events.
@@ -223,12 +288,17 @@ function onPointerDown(e) {
   &__name {
     color: var(--color-text);
     font-family: var(--font-display);
-    font-size: 14px;
+    // `nameFontSize` is set by the per-row measurement loop — 14px when the
+    // name fits cleanly, shrinking 1px at a time down to 10px before falling
+    // back to ellipsis truncation.
+    font-size: v-bind("nameFontSize");
     font-weight: 600;
     letter-spacing: 0.3px;
     overflow: hidden;
     padding: 0 6px;
+    text-overflow: ellipsis;
     text-transform: uppercase;
+    white-space: nowrap;
 
     &:hover {
       background-color: inherit;

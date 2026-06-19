@@ -19,6 +19,11 @@ const style = computed(() => {
     width: dragStore.ghostSize.width
       ? `${dragStore.ghostSize.width}px`
       : "250px",
+    // Off-tree mount: the live list's `--row-baseline` doesn't reach here,
+    // so re-apply the snapshot taken at drag start. Ghost rows then compose
+    // their flex-basis from this baseline + their own scaled portion, matching
+    // the live source row's height.
+    "--row-baseline": dragStore.rowBaseline,
   };
 });
 </script>
