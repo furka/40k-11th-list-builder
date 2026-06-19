@@ -493,8 +493,12 @@ async function main() {
     console.log(`siteVersion = "${siteVersion.toUpperCase()}".`);
   }
 
-  console.log("\nFaction Pack PDF pass …");
-  await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
+  if (writeNew || refresh) {
+    console.log("\nFaction Pack PDF pass …");
+    await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
+  } else {
+    console.log("\nSkipping Faction Pack PDF pass (MFM unchanged). Use --refresh to force.");
+  }
 
   await flushAndReport(warnings);
 
