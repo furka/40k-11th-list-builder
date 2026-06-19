@@ -215,8 +215,9 @@ function extractDetachments(doc) {
  *
  * This is the one restriction the scraper can derive reliably from HTML;
  * all other restrictions (character-only, epic-hero exclusion, per-army
- * limit, auto-take targets, allowed-host whitelist) require manual
- * curation via `src/data/configs/enhancement-restrictions.json`.
+ * limit, auto-take targets, allowed-host whitelist) come from the PDF
+ * pass via `llm-classify.mjs`, which writes
+ * `src/data/configs/enhancement-restrictions.auto.json`.
  *
  * The regex is anchored at end-of-string and case-insensitive: matches the
  * literal trailing "(Upgrade)" suffix in any casing, and won't strip the

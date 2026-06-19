@@ -6,6 +6,7 @@ const RESTRICTION_FIELDS = [
   "nonCharacterOnly",
   "notOnEpicHeroes",
   "allowedHosts",
+  "requiredKeywords",
   "limit",
   "autoTake",
 ];
@@ -66,11 +67,11 @@ export function parse11thFaction(factionJson) {
     return sheet;
   });
 
-  // Layer scraper-derived restrictions (today: nonCharacterOnly from the
-  // "(Upgrade)" suffix) and any hand-curated overrides from
-  // `configs/enhancement-restrictions.json` onto every enhancement once, so
-  // both consumers (detachment.enhancements + the synthetic "Enhancements"
-  // datasheet sizes) see the same enriched object.
+  // Layer scraper-derived restrictions onto every enhancement once, so both
+  // consumers (detachment.enhancements + the synthetic "Enhancements"
+  // datasheet sizes) see the same enriched object. Source:
+  // `configs/enhancement-restrictions.auto.json` plus the `nonCharacterOnly`
+  // flag the scraper derives from the "(Upgrade)" suffix.
   const enrichedDetachments = factionJson.detachments.map((d) => ({
     ...d,
     enhancements: d.enhancements.map((enh) =>

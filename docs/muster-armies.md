@@ -127,12 +127,13 @@ This table maps each rule above to the module that enforces it. When a
 rule has an "unless otherwise stated" carve-out (e.g. only CHARACTER
 units, no EPIC HEROES, no duplicates), enforcement is opt-in per
 enhancement via metadata in
-[`src/data/configs/enhancement-restrictions.json`](../src/data/configs/enhancement-restrictions.json)
-plus the `nonCharacterOnly` flag the scraper derives from the
-"(Upgrade)" suffix in
-[`scripts/scrape-mfm-11th/extract.mjs`](../scripts/scrape-mfm-11th/extract.mjs).
-Curated entries override the defaults so Upgrade-tagged enhancements can
-break the default rules where the source data says they do.
+[`src/data/configs/enhancement-restrictions.auto.json`](../src/data/configs/enhancement-restrictions.auto.json) —
+LLM-scraped from the official Faction Pack PDFs by
+[`scripts/scrape-mfm-11th/`](../scripts/scrape-mfm-11th/) — plus the
+`nonCharacterOnly` flag the scraper derives from the "(Upgrade)" suffix
+in [`scripts/scrape-mfm-11th/extract.mjs`](../scripts/scrape-mfm-11th/extract.mjs).
+The scraper output is the single source of truth: fixes go in the
+scraper, not the JSON.
 
 | Rule | Enforced by |
 | --- | --- |

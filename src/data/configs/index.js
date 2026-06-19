@@ -1,6 +1,5 @@
 import configs from "./config.json";
 import enhancementRestrictionsAuto from "./enhancement-restrictions.auto.json";
-import enhancementRestrictionsManual from "./enhancement-restrictions.json";
 import { normalizeString } from "../../utils/name-match";
 
 // Faction-keyed role classifications, flattened into normalized name arrays
@@ -32,13 +31,10 @@ for (const key in configs) {
 }
 
 /**
- * Faction → enhancement-name → per-enhancement restriction object.
- *
- * Two layers, merged with the manual layer winning per enhancement key:
- *   1. `enhancement-restrictions.auto.json` — written by the scrape pipeline
- *      from the official Faction Pack PDFs (see scripts/scrape-mfm-11th).
- *   2. `enhancement-restrictions.json` — hand-curated overrides; entries here
- *      replace the auto layer wholesale for the named enhancement.
+ * Faction → enhancement-name → per-enhancement restriction object, scraped
+ * from the official Faction Pack PDFs by `scripts/scrape-mfm-11th/`. The
+ * scraper is the single source of truth — if an entry here is wrong, fix the
+ * scraper and re-run it, don't patch the JSON.
  *
  * Each entry may set any subset of:
  *   - characterOnly:    boolean — host must have `character: true`
@@ -59,34 +55,10 @@ for (const key in configs) {
  * Keys starting with "_" (e.g. "_comment") are ignored — used for inline doc
  * notes in the JSON file.
  */
-function mergeEnhancementRestrictions(auto, manual) {
-  const out = {};
-  for (const faction of new Set([
-    ...Object.keys(auto ?? {}),
-    ...Object.keys(manual ?? {}),
-  ])) {
-    if (faction.startsWith("_")) continue;
-    const a = auto?.[faction];
-    const m = manual?.[faction];
-    if (typeof a !== "object" && typeof m !== "object") continue;
-    const merged = {};
-    for (const enhName of new Set([
-      ...Object.keys(a ?? {}),
-      ...Object.keys(m ?? {}),
-    ])) {
-      if (enhName.startsWith("_")) continue;
-      // Manual overrides win wholesale (not deep-merged) — when a curator
-      // intervenes for a specific enhancement they replace the scraped record.
-      merged[enhName] = m?.[enhName] ?? a?.[enhName];
-    }
-    out[faction] = merged;
-  }
-  return out;
-}
-
-export const ENHANCEMENT_RESTRICTIONS = mergeEnhancementRestrictions(
-  enhancementRestrictionsAuto,
-  enhancementRestrictionsManual
+export const ENHANCEMENT_RESTRICTIONS = Object.fromEntries(
+  Object.entries(enhancementRestrictionsAuto).filter(
+    ([k]) => !k.startsWith("_")
+  )
 );
 
 export function getEnhancementRestrictions(factionName, enhancementName) {

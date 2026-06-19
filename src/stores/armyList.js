@@ -96,7 +96,7 @@ export const useArmyListStore = defineStore("armyList", () => {
    * Resolve an Enhancement unit to the canonical metadata stored on its
    * detachment — `{ name, points, ...restrictionFields }` where the optional
    * restriction subset is the schema documented in
-   * `src/data/configs/enhancement-restrictions.json`.
+   * `src/data/configs/enhancement-restrictions.auto.json`.
    * Prefer the unit's own `detachment` tag (set at add time); fall back to
    * scanning all of the faction's detachments so shared lists missing that
    * tag still resolve.
@@ -233,7 +233,7 @@ export const useArmyListStore = defineStore("armyList", () => {
 
       // Optional per-enhancement restrictions. Each field is checked
       // independently and only when explicitly set. See
-      // `src/data/configs/enhancement-restrictions.json` for the schema.
+      // `src/data/configs/enhancement-restrictions.auto.json` for the schema.
       const hostDs = codexStore.getDataSheet(host.name);
       if (meta?.characterOnly && !hostDs?.character) {
         return "Enhancement can only attach to a character";

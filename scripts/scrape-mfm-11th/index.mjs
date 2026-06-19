@@ -7,8 +7,8 @@ import { FACTION_SLUGS } from "./factions.mjs";
 import { fetchFactionHtml, fetchFactionPackPdf } from "./fetch.mjs";
 import { extractFactionData } from "./extract.mjs";
 import { normalizeFactionData } from "./normalize.mjs";
-import { pdfToText } from "./pdf-to-text.mjs";
-import { findEnhancementSection } from "./find-section.mjs";
+import { pdfToPages } from "./pdf-to-text.mjs";
+import { findEnhancementPages } from "./find-section.mjs";
 import { classifyWithLLM, flushLlmCache } from "./llm-classify.mjs";
 import { enhancementNameKey } from "./name-key.mjs";
 import { createWarningSink } from "./warnings.mjs";
@@ -191,9 +191,9 @@ async function scrapePdfRestrictionsForFaction(
     return null;
   }
 
-  let text;
+  let pages;
   try {
-    text = await pdfToText(pdfBuf);
+    pages = await pdfToPages(pdfBuf);
   } catch (e) {
     warnings.add("pdf-parse-failed", { slug, message: e.message });
     return null;
@@ -234,8 +234,8 @@ async function scrapePdfRestrictionsForFaction(
   };
 
   for (const enh of mfmEnhancements) {
-    const section = findEnhancementSection(text, enh.name);
-    if (!section) {
+    const matched = findEnhancementPages(pages, enh.name);
+    if (!matched) {
       warnings.add("mfm-missing-in-pdf", { slug, name: enh.name });
       counts.mfmMissed++;
       continue;
@@ -247,7 +247,7 @@ async function scrapePdfRestrictionsForFaction(
       const result = await classifyWithLLM({
         client: llmClient,
         enhancementName: enh.name,
-        sectionText: section.snippet,
+        pageTexts: matched.pages,
         datasheetNames,
       });
       restrictions = result.restrictions;
@@ -262,6 +262,12 @@ async function scrapePdfRestrictionsForFaction(
       continue;
     }
     if (cacheHit) counts.cacheHits++;
+
+    if (restrictions.notDefined) {
+      warnings.add("mfm-missing-in-pdf", { slug, name: enh.name });
+      counts.mfmMissed++;
+      continue;
+    }
 
     if (restrictions.conditional) {
       warnings.add("classifier-conditional", { slug, title: enh.name });

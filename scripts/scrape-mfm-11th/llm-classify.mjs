@@ -31,9 +31,13 @@ const CACHE_PATH = resolve(CACHE_DIR, "llm-classifications.json");
 
 const MODEL_ID = "claude-haiku-4-5-20251001";
 
-const SYSTEM_PROMPT = `You read a short Warhammer 40k enhancement rules excerpt and report the restriction in a structured form by calling the set_enhancement_restrictions tool.
+const SYSTEM_PROMPT = `You read one or more raw text pages from a Warhammer 40k Faction Pack PDF, locate the section that DEFINES a named enhancement, and report its restrictions in a structured form by calling the set_enhancement_restrictions tool.
 
-Rules for filling each field:
+The pages may contain other rules (stratagems, detachment abilities, datasheets) that happen to mention the enhancement's name in passing — body-text references like "...for perfectly adapted ambush hunters..." or stratagems that name the enhancement as a trigger. Those are NOT the definition. The definition is a dedicated section under the "ENHANCEMENTS" heading, presented as the enhancement title (usually in ALL CAPS, often suffixed " UPGRADE" or " AURA") followed by flavour text and a host/effect clause like "RANGERS/SHROUD RUNNERS unit only." or "ADEPTUS ASTARTES PSYKER model only.".
+
+If you cannot find such a definition section in the supplied pages — only stratagem references or flavour mentions — set notDefined: true and leave the other fields empty. Do not classify based on stratagem text or other rules that share the enhancement's name.
+
+Rules for filling each field when the definition IS present:
 - allowedHosts: array of UPPERCASE datasheet names from the provided list that the enhancement's host phrase names. Only include names that appear in the provided datasheet list verbatim (after uppercasing). [] if the host phrase is a keyword/role tag rather than a specific datasheet, or if there's no host restriction.
 - requiredKeywords: array of UPPERCASE keyword/role tokens from the host phrase that do NOT appear in the provided datasheet list — e.g. "GRAVIS", "HERETIC ASTARTES VEHICLE", "LEGIONES DAEMONICA KHORNE". Both fields can be populated for the same restriction when the host phrase mixes a datasheet name with a keyword.
 - characterOnly: true only if the text explicitly restricts to CHARACTER models/units.
@@ -41,6 +45,7 @@ Rules for filling each field:
 - notOnEpicHeroes: true only if the text excludes EPIC HEROES explicitly.
 - limit: 1 or 2 if the text caps copies in the army ("Only one model in your army can have this enhancement", "Up to two…"). null otherwise.
 - conditional: true if the host phrase is a trigger ("If your WARLORD has this enhancement…") rather than a constraint on who can take it.
+- notDefined: true only when the enhancement is not actually defined in the supplied pages.
 
 Do not invent restrictions the text doesn't state.`;
 
@@ -57,6 +62,7 @@ const RESTRICTION_TOOL = {
       notOnEpicHeroes: { type: "boolean" },
       limit: { type: ["integer", "null"] },
       conditional: { type: "boolean" },
+      notDefined: { type: "boolean" },
     },
     required: [
       "allowedHosts",
@@ -66,18 +72,22 @@ const RESTRICTION_TOOL = {
       "notOnEpicHeroes",
       "limit",
       "conditional",
+      "notDefined",
     ],
   },
 };
 
-function makeCacheKey({ enhancementName, sectionText, datasheetNames }) {
+function makeCacheKey({ enhancementName, pageTexts, datasheetNames }) {
   const h = createHash("sha256");
   h.update(MODEL_ID);
   h.update("\0");
   h.update(enhancementName);
   h.update("\0");
-  h.update(sectionText);
-  h.update("\0");
+  // Page order is meaningful (reflects the PDF) so don't sort here.
+  for (const p of pageTexts) {
+    h.update(p);
+    h.update("\0");
+  }
   // datasheetNames sorted for stability — order shouldn't affect the answer
   // but stable order keeps the cache key stable.
   h.update([...datasheetNames].sort().join("|"));
@@ -135,14 +145,18 @@ export async function flushLlmCache() {
 export async function classifyWithLLM({
   client,
   enhancementName,
-  sectionText,
+  pageTexts,
   datasheetNames,
 }) {
   const cache = await getCache();
-  const key = makeCacheKey({ enhancementName, sectionText, datasheetNames });
+  const key = makeCacheKey({ enhancementName, pageTexts, datasheetNames });
   if (cache[key]) {
     return { restrictions: cache[key].response, cacheHit: true };
   }
+
+  const pagesBody = pageTexts
+    .map((p, i) => `--- PAGE ${i + 1} ---\n${p}`)
+    .join("\n\n");
 
   // Anthropic SDK call. System block carries the per-faction datasheet list
   // under cache_control so subsequent calls within the faction read the
@@ -167,7 +181,9 @@ export async function classifyWithLLM({
         role: "user",
         content:
           `Enhancement: ${enhancementName}\n\n` +
-          `Rules text excerpt from the Faction Pack:\n${sectionText}`,
+          `Faction Pack PDF pages that mention this name ` +
+          `(${pageTexts.length} page${pageTexts.length === 1 ? "" : "s"}):\n\n` +
+          pagesBody,
       },
     ],
   });
@@ -179,6 +195,7 @@ export async function classifyWithLLM({
     );
   }
   const restrictions = toolBlock.input;
+  assertWellFormed(restrictions);
 
   cache[key] = {
     response: restrictions,
@@ -188,4 +205,21 @@ export async function classifyWithLLM({
   scheduleFlush(cache);
 
   return { restrictions, cacheHit: false };
+}
+
+// Sanity check the structured response before caching it. Haiku occasionally
+// emits literal tool-use XML syntax inside a string-array field — the parser
+// then splits the string character-by-character, producing arrays full of
+// single-character entries. Catch that and throw so the caller surfaces a
+// `llm-call-failed` warning and the entry isn't written to the auto.json.
+function assertWellFormed(restrictions) {
+  for (const field of ["allowedHosts", "requiredKeywords"]) {
+    const arr = restrictions?.[field];
+    if (!Array.isArray(arr)) continue;
+    if (arr.some((x) => typeof x !== "string" || x.length <= 1)) {
+      throw new Error(
+        `Corrupted ${field} (single-character entries): ${JSON.stringify(arr).slice(0, 200)}`
+      );
+    }
+  }
 }

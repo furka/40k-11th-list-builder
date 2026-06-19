@@ -203,7 +203,7 @@ export function legalDropSlots(
       if (isEnhancementUnit(host)) return false;
       // Optional per-enhancement restrictions on the metadata. Each field is
       // checked independently and skipped when falsy. See
-      // src/data/configs/enhancement-restrictions.json for the schema.
+      // src/data/configs/enhancement-restrictions.auto.json for the schema.
       if (enhancementMeta) {
         const hostDs = getDataSheet(host.name);
         if (enhancementMeta.characterOnly && !hostDs?.character) return false;
