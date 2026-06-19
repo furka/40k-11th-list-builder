@@ -1,0 +1,153 @@
+name: MFM auto-update
+
+on:
+  schedule:
+    # Daily at 13:00 UTC (= 14:00 UK during BST / 13:00 UK during GMT)
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Bypass scraper caches (re-fetch all HTML/PDFs from upstream)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: mfm-auto-update
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Restore scraper cache
+        uses: actions/cache@v4
+        with:
+          path: scripts/scrape-mfm-11th/.cache
+          key: mfm-scrape-cache-${{ hashFiles('scripts/scrape-mfm-11th/**/*.mjs', 'scripts/scrape-mfm-11th/faction-pack-urls.json') }}
+          restore-keys: |
+            mfm-scrape-cache-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ inputs.refresh }}" = "true" ]; then
+            npm run mfm:scrape:refresh
+          else
+            npm run mfm:scrape
+          fi
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain src/data/munitorum-field-manual-11th/ src/data/configs/enhancement-restrictions.auto.json)" ]; then
+            echo "No MFM data changes detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changes detected:"
+            git status --porcelain src/data/munitorum-field-manual-11th/ src/data/configs/enhancement-restrictions.auto.json
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Read new MFM version
+        if: steps.changes.outputs.changed == 'true'
+        id: mfm-version
+        run: |
+          LATEST_MANIFEST=$(ls -d src/data/munitorum-field-manual-11th/v*/ | sort -V | tail -1)_manifest.json
+          MFM_VERSION=$(node -p "require('./$LATEST_MANIFEST').siteVersion")
+          SCRAPED_AT=$(node -p "require('./$LATEST_MANIFEST').scrapedAt")
+          DIR_NAME=$(dirname "$LATEST_MANIFEST" | xargs basename)
+          echo "version=$MFM_VERSION" >> "$GITHUB_OUTPUT"
+          echo "scraped_at=$SCRAPED_AT" >> "$GITHUB_OUTPUT"
+          echo "dir_name=$DIR_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update PR
+        if: steps.changes.outputs.changed == 'true'
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: mfm-auto-update
+          base: main
+          commit-message: "chore(mfm): auto-update to ${{ steps.mfm-version.outputs.version }} (scraped ${{ steps.mfm-version.outputs.scraped_at }})"
+          title: "chore(mfm): auto-update to ${{ steps.mfm-version.outputs.version }}"
+          body: |
+            Automated MFM scrape detected a new dataset.
+
+            - **MFM site version:** `${{ steps.mfm-version.outputs.version }}`
+            - **Version directory:** `${{ steps.mfm-version.outputs.dir_name }}`
+            - **Scraped at:** `${{ steps.mfm-version.outputs.scraped_at }}`
+            - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            `enhancement-restrictions.auto.json` may have been refreshed by the Claude-powered PDF pass — review the diff before merging.
+
+            Tests run via the `pr-tests` workflow gate the merge.
+          labels: |
+            mfm
+            automated
+          delete-branch: false
+
+      - name: Discord notify (PR opened/updated)
+        if: steps.changes.outputs.changed == 'true' && steps.cpr.outputs.pull-request-number
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL not set, skipping notification."
+            exit 0
+          fi
+          OPERATION="${{ steps.cpr.outputs.pull-request-operation }}"
+          PR_URL="${{ steps.cpr.outputs.pull-request-url }}"
+          MFM_VERSION="${{ steps.mfm-version.outputs.version }}"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          if [ "$OPERATION" = "created" ]; then
+            HEADER="++NEW MUNITORUM FIELD MANUAL DETECTED++"
+          else
+            HEADER="++MUNITORUM FIELD MANUAL PR UPDATED++"
+          fi
+
+          PAYLOAD=$(jq -n \
+            --arg content "${HEADER}
+          ++VERSION: ${MFM_VERSION}++
+
+          📜 Pull Request: <${PR_URL}>
+          ⚙️ Scrape Run: <${RUN_URL}>" \
+            '{content: $content}')
+
+          curl -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
+
+      - name: Discord notify (failure)
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL not set, skipping notification."
+            exit 0
+          fi
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          PAYLOAD=$(jq -n \
+            --arg content "++HERESY DETECTED IN MFM SCRAPER++
+          ++AUTOMATED SCRAPE RUN FAILED++
+
+          🔥 Investigate: <${RUN_URL}>" \
+            '{content: $content}')
+          curl -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
