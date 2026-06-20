@@ -121,6 +121,21 @@ function unitLine(row) {
 function detachmentLine(d) {
   return dotLine(detachmentLeft(d), detachmentRight(d));
 }
+
+const plainText = computed(() => {
+  const lines = [];
+  if (armyListStore.name) lines.push(armyListStore.name);
+  lines.push(titleLine.value);
+  lines.push("");
+  if (detachmentRows.value.length) {
+    for (const d of detachmentRows.value) lines.push(detachmentLine(d));
+    lines.push("");
+  }
+  for (const row of rows.value) lines.push(unitLine(row));
+  return lines.join("\n");
+});
+
+defineExpose({ plainText });
 </script>
 
 <template>

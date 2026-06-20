@@ -4,7 +4,7 @@ import DeleteIcon from "../assets/recycle-bin-line-icon.svg";
 import CopyIcon from "../assets/text-documents-line-icon.svg";
 import RiskIcon from "../assets/risk-icon.svg";
 import ModalWithButton from "./ModalWithButton.vue";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useArmyListStore } from "../stores/armyList";
 import { useMfmStore } from "../stores/mfm";
 import { useAppStore } from "../stores/app";
@@ -13,6 +13,8 @@ import { computeListPoints } from "../utils/list-points";
 const armyListStore = useArmyListStore();
 const mfmStore = useMfmStore();
 const appStore = useAppStore();
+
+const modal = ref(null);
 
 function mfmVersion(list) {
   if (!list.mfm_version) return "???";
@@ -54,10 +56,12 @@ function onClosed() {
 
 function selectList(list) {
   const currentList = armyListStore.toObject();
-  if (list === currentList || JSON.stringify(list) === JSON.stringify(currentList)) {
-    return;
+  const isCurrent =
+    list === currentList || JSON.stringify(list) === JSON.stringify(currentList);
+  if (!isCurrent) {
+    appStore.selectList(list);
   }
-  appStore.selectList(list);
+  modal.value.close();
 }
 
 function copyList(list) {
@@ -71,6 +75,7 @@ function deleteList(list) {
 
 <template>
   <ModalWithButton
+    ref="modal"
     class="open-modal"
     title="Open saved army lists"
     @closed="onClosed"
@@ -86,19 +91,17 @@ function deleteList(list) {
           v-for="(list, index) in lists"
           :key="hasCurrent && index === 0 ? '__current__' : list"
         >
-          <form method="dialog">
-            <button @click="selectList(list)" class="open-modal__button">
-              <span v-if="list.name" class="open-modal__list-name">
-                <b>{{ list.name }}</b>
-              </span>
-              <span class="open-modal__list-details">
-                <template v-if="list.name">—</template>
-                {{ list.faction }} —
-                {{ derived.get(list).points }} pts
-                <b v-if="hasCurrent && index === 0"> (current)</b>
-              </span>
-            </button>
-          </form>
+          <button @click="selectList(list)" class="open-modal__button">
+            <span v-if="list.name" class="open-modal__list-name">
+              <b>{{ list.name }}</b>
+            </span>
+            <span class="open-modal__list-details">
+              <template v-if="list.name">—</template>
+              {{ list.faction }} —
+              {{ derived.get(list).points }} pts
+              <b v-if="hasCurrent && index === 0"> (current)</b>
+            </span>
+          </button>
           <span class="open-modal__actions">
             <span
               class="open-modal__mfm-version"
@@ -244,12 +247,6 @@ function deleteList(list) {
       width: 24px;
       fill: currentColor;
     }
-  }
-
-  form {
-    flex-grow: 1;
-    display: flex;
-    min-width: 0;
   }
 
   &__button {

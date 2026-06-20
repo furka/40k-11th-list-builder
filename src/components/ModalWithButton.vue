@@ -12,6 +12,12 @@ function openDialog() {
   dialog.value.showModal();
 }
 
+function close() {
+  dialog.value.close();
+}
+
+defineExpose({ close });
+
 // Backdrop dismiss only fires when BOTH press and release land on the dialog
 // element itself. Without the press check, a drag-select that starts inside
 // the content and releases on the backdrop would close the modal (click
