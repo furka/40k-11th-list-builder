@@ -310,6 +310,7 @@ onUnmounted(() => {
   --font-family: var(--font-body);
   --toolbar-height: 44px;
   --codex-toolbar-height: 64px;
+  --version-bar-height: 22px;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -326,13 +327,13 @@ onUnmounted(() => {
 
   &__body {
     display: flex;
-    height: calc(100svh - var(--toolbar-height) - var(--codex-toolbar-height) - 20px);
+    height: calc(100svh - var(--toolbar-height) - var(--codex-toolbar-height) - var(--version-bar-height));
     justify-content: center;
     position: relative;
     z-index: 1;
 
     &--blank {
-      height: calc(100svh - var(--toolbar-height) - 20px);
+      height: calc(100svh - var(--toolbar-height) - var(--version-bar-height));
     }
   }
 }

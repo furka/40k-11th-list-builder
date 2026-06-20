@@ -57,7 +57,7 @@ const availableMFMVersions = computed(() => {
 
 <style scoped lang="scss">
 .version-bar {
-  height: 22px;
+  height: var(--version-bar-height);
   background-color: var(--color-header);
   color: var(--color-text-muted);
   font-family: var(--font-body);
