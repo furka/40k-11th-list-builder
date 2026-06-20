@@ -14,11 +14,6 @@ const armyListStore = useArmyListStore();
 const mfmStore = useMfmStore();
 const appStore = useAppStore();
 
-function points(units, list) {
-  const mfm = mfmStore.getVersion(list.mfm_version) || mfmStore.MFM.CURRENT;
-  return computeListPoints(list, mfm, list.faction).total;
-}
-
 function mfmVersion(list) {
   if (!list.mfm_version) return "???";
   return mfmStore.normalizeMfmVersion(list.mfm_version).replace(/^V/, "");
@@ -30,6 +25,32 @@ const lists = computed(() => {
   const current = armyListStore.toObject();
   return hasCurrent.value ? [current, ...appStore.lists] : [...appStore.lists];
 });
+
+// computeListPoints and isListOutdated walk every unit and do linear DATA_SHEETS
+// scans — cache by list reference so deleting one row doesn't re-run the work
+// for every surviving row. Cleared on modal close to pick up external edits.
+let prevDerived = new Map();
+
+const derived = computed(() => {
+  const next = new Map();
+  for (const list of lists.value) {
+    let entry = prevDerived.get(list);
+    if (!entry) {
+      const mfm = mfmStore.getVersion(list.mfm_version) || mfmStore.MFM.CURRENT;
+      entry = {
+        points: computeListPoints(list, mfm, list.faction).total,
+        outdated: mfmStore.isListOutdated(list),
+      };
+    }
+    next.set(list, entry);
+  }
+  prevDerived = next;
+  return next;
+});
+
+function onClosed() {
+  prevDerived = new Map();
+}
 
 function selectList(list) {
   const currentList = armyListStore.toObject();
@@ -49,7 +70,11 @@ function deleteList(list) {
 </script>
 
 <template>
-  <ModalWithButton class="open-modal" title="Open saved army lists">
+  <ModalWithButton
+    class="open-modal"
+    title="Open saved army lists"
+    @closed="onClosed"
+  >
     <template v-slot:button>
       <OpenIcon class="modal-button__icon" />
       <span>Saved</span>
@@ -57,7 +82,10 @@ function deleteList(list) {
     <template v-slot:content>
       <h2>Saved lists</h2>
       <ul>
-        <li v-for="(list, index) in lists">
+        <li
+          v-for="(list, index) in lists"
+          :key="hasCurrent && index === 0 ? '__current__' : list"
+        >
           <form method="dialog">
             <button @click="selectList(list)" class="open-modal__button">
               <span v-if="list.name" class="open-modal__list-name">
@@ -66,7 +94,7 @@ function deleteList(list) {
               <span class="open-modal__list-details">
                 <template v-if="list.name">—</template>
                 {{ list.faction }} —
-                {{ points(list.units, list) }} pts
+                {{ derived.get(list).points }} pts
                 <b v-if="hasCurrent && index === 0"> (current)</b>
               </span>
             </button>
@@ -75,10 +103,10 @@ function deleteList(list) {
             <span
               class="open-modal__mfm-version"
               :class="
-                mfmStore.isListOutdated(list) ? 'open-modal__mfm-version--outdated' : ''
+                derived.get(list).outdated ? 'open-modal__mfm-version--outdated' : ''
               "
               :title="
-                mfmStore.isListOutdated(list) ? `List has outdated MFM version` : ''
+                derived.get(list).outdated ? `List has outdated MFM version` : ''
               "
             >
               <span class="open-modal__mfm-label">MFM</span>

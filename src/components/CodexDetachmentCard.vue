@@ -14,9 +14,10 @@ const selected = computed(() =>
   armyListStore.detachments.includes(props.detachment.name)
 );
 
-const cantAddReason = computed(() =>
-  armyListStore.whyCantAddDetachment(props.detachment.name)
-);
+const cantAddReason = computed(() => {
+  if (selected.value) return null;
+  return armyListStore.detachmentErrors.get(props.detachment.name) ?? null;
+});
 const disabled = computed(
   () => !selected.value && cantAddReason.value !== null
 );

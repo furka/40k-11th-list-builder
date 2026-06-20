@@ -239,14 +239,23 @@ watch(
 // can just copy the URL to share. Skip empty/factionless lists to avoid
 // `?n=&f=&…` on a fresh app. replaceState (not pushState) — every keystroke
 // in the list name shouldn't add a browser-history entry.
+//
+// Debounced to 300ms because the URL is only consulted when the user copies
+// it; we don't need it in sync with every keystroke / drag tick. Shallow
+// watcher: every store mutation reassigns refs, so deep traversal of the
+// units array on every mutation is wasted work.
+let urlTimeoutId = 0;
 watch(
   () => armyListStore.toObject(),
   (list) => {
     if (!list.faction) return;
-    const url = window.location.pathname + serializeList(list);
-    window.history.replaceState({}, "", url);
-  },
-  { deep: true }
+    if (urlTimeoutId) clearTimeout(urlTimeoutId);
+    urlTimeoutId = setTimeout(() => {
+      urlTimeoutId = 0;
+      const url = window.location.pathname + serializeList(list);
+      window.history.replaceState({}, "", url);
+    }, 300);
+  }
 );
 
 onMounted(() => {
@@ -257,6 +266,10 @@ onUnmounted(() => {
   window.removeEventListener("resize", handleResize);
   detachDragListeners();
   detachDetachmentDragListeners();
+  if (urlTimeoutId) {
+    clearTimeout(urlTimeoutId);
+    urlTimeoutId = 0;
+  }
 });
 </script>
 

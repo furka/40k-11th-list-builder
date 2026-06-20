@@ -18,6 +18,21 @@ export function restore(key) {
   }
 }
 
+const DEBOUNCE_MS = 200;
+const pendingTimers = new Map();
+
+export function debouncedSave(key, value) {
+  const existing = pendingTimers.get(key);
+  if (existing) clearTimeout(existing);
+  pendingTimers.set(
+    key,
+    setTimeout(() => {
+      pendingTimers.delete(key);
+      save(key, value);
+    }, DEBOUNCE_MS)
+  );
+}
+
 export function remove(key) {
   try {
     localStorage.removeItem(PREFIX + key);

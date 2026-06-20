@@ -32,10 +32,31 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
   const activeSlot = ref(null);
 
   // DOM elements are intentionally non-reactive — identity refs whose rects
-  // we re-read on each pointer move. Insertion order matches detachment list
-  // order; a JS Map preserves insertion order.
+  // we capture at drag start (and re-capture on scroll/resize/register).
+  // Caching avoids forcing a layout reflow per detachment per pointermove.
+  // Insertion order matches detachment list order; a JS Map preserves
+  // insertion order.
   const rows = new Map(); // name -> el
   const slotEls = new Map(); // key -> el
+
+  let rowRectCache = new Map(); // name -> DOMRect
+  let slotRectCache = new Map(); // key -> DOMRect
+  let rectsValid = false;
+
+  function captureRects() {
+    rowRectCache = new Map();
+    for (const [name, el] of rows) {
+      rowRectCache.set(name, el.getBoundingClientRect());
+    }
+    slotRectCache = new Map();
+    for (const [key, el] of slotEls) {
+      slotRectCache.set(key, el.getBoundingClientRect());
+    }
+    rectsValid = true;
+  }
+  function invalidateRects() {
+    rectsValid = false;
+  }
 
   function start({ name, fromIndex: idx, pointer: ptr, grabOffset, size, dp, role }) {
     if (!name) return;
@@ -45,6 +66,14 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
     ghostOffset.value = { x: grabOffset?.x ?? 0, y: grabOffset?.y ?? 0 };
     ghostSize.value = { width: size?.width ?? 0, height: size?.height ?? 0 };
     ghost.value = { name, dp: dp ?? 0, role: role ?? null };
+    rectsValid = false;
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", invalidateRects, {
+        capture: true,
+        passive: true,
+      });
+      window.addEventListener("resize", invalidateRects, { passive: true });
+    }
     recomputeInsert();
   }
 
@@ -57,22 +86,26 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
   function registerRow(name, el) {
     if (el) rows.set(name, el);
     else rows.delete(name);
+    rectsValid = false;
     if (draggedName.value) recomputeInsert();
   }
 
   function unregisterRow(name) {
     rows.delete(name);
+    rectsValid = false;
     if (draggedName.value) recomputeInsert();
   }
 
   function registerSlotEl(key, el) {
     if (el) slotEls.set(key, el);
     else slotEls.delete(key);
+    rectsValid = false;
     if (draggedName.value) recomputeInsert();
   }
 
   function unregisterSlotEl(key) {
     slotEls.delete(key);
+    rectsValid = false;
     if (draggedName.value) recomputeInsert();
   }
 
@@ -122,17 +155,30 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
     ghost.value = null;
     rows.clear();
     slotEls.clear();
+    rowRectCache.clear();
+    slotRectCache.clear();
+    rectsValid = false;
+    if (typeof window !== "undefined") {
+      window.removeEventListener("scroll", invalidateRects, { capture: true });
+      window.removeEventListener("resize", invalidateRects);
+    }
   }
 
   function recomputeInsert() {
+    if (!rectsValid) captureRects();
+
     // Bin first: when the pointer is over the codex panel, it's a delete
     // intent, not a reorder. Suppress the insertion line so we don't show
     // a misleading "move here" affordance on top of the bin tint.
-    const binEl = slotEls.get("bin");
-    if (binEl) {
-      const r = binEl.getBoundingClientRect();
+    const binRect = slotRectCache.get("bin");
+    if (binRect) {
       const { x, y } = pointer.value;
-      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
+      if (
+        x >= binRect.left &&
+        x <= binRect.right &&
+        y >= binRect.top &&
+        y <= binRect.bottom
+      ) {
         activeSlot.value = { type: "bin" };
         insertIndex.value = null;
         insertAnchorRect.value = null;
@@ -141,10 +187,12 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
     }
     activeSlot.value = null;
 
-    const entries = [...rows.entries()].map(([name, el]) => ({
-      name,
-      rect: el.getBoundingClientRect(),
-    }));
+    const entries = [...rows.keys()]
+      .map((name) => {
+        const rect = rowRectCache.get(name);
+        return rect ? { name, rect } : null;
+      })
+      .filter(Boolean);
     if (entries.length === 0) {
       insertIndex.value = null;
       insertAnchorRect.value = null;

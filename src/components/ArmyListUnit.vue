@@ -142,6 +142,18 @@ const fitName = () => {
   });
 };
 
+// Coalesce ResizeObserver + name-watch fires into one fitName per frame.
+// Without this, a panel resize fires the observer AND the watcher on every
+// row, producing 2*N synchronous measurement reflows for one logical event.
+let fitNameRafId = 0;
+const scheduleFitName = () => {
+  if (fitNameRafId) return;
+  fitNameRafId = requestAnimationFrame(() => {
+    fitNameRafId = 0;
+    fitName();
+  });
+};
+
 let nameResizeObserver = null;
 onMounted(() => {
   fitName();
@@ -149,20 +161,24 @@ onMounted(() => {
   // there's no useful resize signal there anyway — the guard keeps the unit
   // tests rendering without polyfilling.
   if (nameRef.value && typeof ResizeObserver !== "undefined") {
-    nameResizeObserver = new ResizeObserver(fitName);
+    nameResizeObserver = new ResizeObserver(scheduleFitName);
     nameResizeObserver.observe(nameRef.value);
   }
 });
 onBeforeUnmount(() => {
   nameResizeObserver?.disconnect();
   nameResizeObserver = null;
+  if (fitNameRafId) {
+    cancelAnimationFrame(fitNameRafId);
+    fitNameRafId = 0;
+  }
 });
 
-watch(name, fitName, { flush: "post" });
+watch(name, scheduleFitName, { flush: "post" });
 
-const inValid = computed(() => {
-  return armyListStore.getUnitValidationError(props.unit);
-});
+const inValid = computed(
+  () => armyListStore.validationErrors.get(props.unit.id) ?? false,
+);
 
 function onPointerDown(e) {
   if (props.readonly) return;
@@ -300,10 +316,10 @@ function onPointerDown(e) {
 
   &--dim {
     // Applied to rows that aren't valid attach targets while an attachable
-    // unit is being dragged. The eased transition lets the dim settle in
-    // gently when the drag starts rather than flashing in.
+    // unit is being dragged. No transition: on drop, N dimmed rows all
+    // animating opacity back to 1 in parallel stalls the drop feedback for
+    // ~120ms. Instantaneous dim reads as sharper interactive feedback anyway.
     opacity: 0.25;
-    transition: opacity 120ms ease-out;
   }
 
   &__name {

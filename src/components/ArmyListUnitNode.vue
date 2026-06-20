@@ -20,8 +20,8 @@ const props = defineProps({
 const armyListStore = useArmyListStore();
 const dragStore = useDragStore();
 
-const children = computed(() =>
-  armyListStore.units.filter((u) => u.attachedTo === props.unit.id)
+const children = computed(
+  () => armyListStore.unitsByParent.get(props.unit.id) ?? []
 );
 
 // True when this node's host (and therefore its whole subtree) is part of the

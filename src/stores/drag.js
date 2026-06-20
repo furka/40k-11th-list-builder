@@ -53,9 +53,30 @@ export const useDragStore = defineStore("drag", () => {
   const rowBaseline = ref("22px");
 
   // DOM elements are intentionally not reactive — they're identity refs whose
-  // rects we re-read each pointer move.
+  // rects we read at drag start (and re-capture on scroll/resize/register
+  // events). Rect caching avoids forcing N layout reflows per pointermove.
   const slotEls = new Map();
   const rows = new Map(); // unitId -> { el, parentKey, indexInParent }
+
+  let rowRectCache = new Map(); // unitId -> DOMRect
+  let slotRectCache = new Map(); // slotKey -> DOMRect
+  let rectsValid = false;
+
+  function captureRects() {
+    rowRectCache = new Map();
+    for (const [unitId, info] of rows) {
+      if (unitId === draggedId.value) continue;
+      rowRectCache.set(unitId, info.el.getBoundingClientRect());
+    }
+    slotRectCache = new Map();
+    for (const [key, el] of slotEls) {
+      slotRectCache.set(key, el.getBoundingClientRect());
+    }
+    rectsValid = true;
+  }
+  function invalidateRects() {
+    rectsValid = false;
+  }
 
   function start({
     unit,
@@ -105,6 +126,14 @@ export const useDragStore = defineStore("drag", () => {
     })(unit, 0);
     ghostSubtree.value = flat;
     draggedSubtreeIds.value = ids;
+    rectsValid = false;
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", invalidateRects, {
+        capture: true,
+        passive: true,
+      });
+      window.addEventListener("resize", invalidateRects, { passive: true });
+    }
     activeSlot.value = computeActiveSlot();
   }
 
@@ -117,11 +146,13 @@ export const useDragStore = defineStore("drag", () => {
   function registerSlotEl(key, el) {
     if (el) slotEls.set(key, el);
     else slotEls.delete(key);
+    rectsValid = false;
     if (draggedId.value) activeSlot.value = computeActiveSlot();
   }
 
   function unregisterSlotEl(key) {
     slotEls.delete(key);
+    rectsValid = false;
     if (draggedId.value) activeSlot.value = computeActiveSlot();
   }
 
@@ -135,11 +166,13 @@ export const useDragStore = defineStore("drag", () => {
     } else {
       rows.delete(unitId);
     }
+    rectsValid = false;
     if (draggedId.value) activeSlot.value = computeActiveSlot();
   }
 
   function unregisterRow(unitId) {
     rows.delete(unitId);
+    rectsValid = false;
     if (draggedId.value) activeSlot.value = computeActiveSlot();
   }
 
@@ -167,17 +200,26 @@ export const useDragStore = defineStore("drag", () => {
     rowBaseline.value = "22px";
     slotEls.clear();
     rows.clear();
+    rowRectCache.clear();
+    slotRectCache.clear();
+    rectsValid = false;
+    if (typeof window !== "undefined") {
+      window.removeEventListener("scroll", invalidateRects, { capture: true });
+      window.removeEventListener("resize", invalidateRects);
+    }
   }
 
   function computeActiveSlot() {
+    if (!rectsValid) captureRects();
     const rowsArray = [];
     for (const [unitId, info] of rows) {
       if (unitId === draggedId.value) continue;
-      rowsArray.push({ unitId, ...info });
+      const rect = rowRectCache.get(unitId);
+      rowsArray.push({ unitId, ...info, rect });
     }
     return pickActiveSlot({
       legalSlots: legalSlots.value,
-      getRect: (key) => slotEls.get(key)?.getBoundingClientRect() ?? null,
+      getRect: (key) => slotRectCache.get(key) ?? null,
       rows: rowsArray,
       pointer: pointer.value,
     });

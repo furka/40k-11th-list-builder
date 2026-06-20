@@ -357,7 +357,10 @@ export function pickActiveSlot({ legalSlots, getRect, rows, pointer }) {
 
   for (const row of rows ?? []) {
     if (!row?.el) continue;
-    const r = row.el.getBoundingClientRect();
+    // Accept a pre-captured `rect` from the drag store's snapshot to avoid
+    // forcing a layout reflow per row per pointermove. Falls back to a live
+    // read so tests (which pass synthetic els) still work.
+    const r = row.rect ?? row.el.getBoundingClientRect();
     if (!pointInRect(x, y, r)) continue;
 
     const range = r.bottom - r.top;
@@ -399,7 +402,7 @@ export function pickActiveSlot({ legalSlots, getRect, rows, pointer }) {
   if (listRect && pointInRect(x, y, listRect)) {
     const rootRows = (rows ?? [])
       .filter((r) => r?.el && r.parentKey === "root")
-      .map((r) => ({ ...r, rect: r.el.getBoundingClientRect() }))
+      .map((r) => ({ ...r, rect: r.rect ?? r.el.getBoundingClientRect() }))
       .sort((a, b) => a.rect.top - b.rect.top);
     if (rootRows.length > 0) {
       const top = rootRows[0];
@@ -441,7 +444,7 @@ function subtreeBottomRect(rows, rootUnitId, fallbackRect) {
     if (seen.has(id)) continue;
     seen.add(id);
     for (const child of childRowsByParent.get(id) ?? []) {
-      const cr = child.el.getBoundingClientRect();
+      const cr = child.rect ?? child.el.getBoundingClientRect();
       if (cr.bottom > bestRect.bottom) bestRect = cr;
       stack.push(child.unitId);
     }

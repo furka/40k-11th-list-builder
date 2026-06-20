@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ref, watch } from "vue";
-import { save, restore } from "../utils/localStorage";
+import { save, restore, debouncedSave } from "../utils/localStorage";
 import { GROUP_ROLE, SORT_MANUAL } from "../data/constants";
 import { useArmyListStore } from "./armyList";
 import { useMfmStore } from "./mfm";
@@ -27,7 +27,7 @@ export const useAppStore = defineStore("app", () => {
   watch(showLegends, (newValue) => save("showLegends", newValue));
   watch(showAvailableOnly, (newValue) => save("showAvailableOnly", newValue));
   watch(showPointsChanges, (newValue) => save("showPointsChanges", newValue));
-  watch(lists, (newLists) => save("lists", newLists), { deep: true });
+  watch(lists, (newLists) => debouncedSave("lists", newLists), { deep: true });
 
   function setAppDimensions(height, width) {
     appHeight.value = height;

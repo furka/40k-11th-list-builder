@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, ref, watch } from "vue";
-import { save, restore } from "../utils/localStorage";
+import { restore, debouncedSave } from "../utils/localStorage";
 import { useMfmStore } from "./mfm";
 import { useCodexStore } from "./codex";
 import { unitMax } from "../utils/unit-max";
@@ -10,7 +10,6 @@ import {
   attachedToError,
   isWargearUnit,
   isEnhancementUnit,
-  attachedUnitRootId,
 } from "../utils/attachment-rules";
 import { wargearMaxPerUnit } from "../utils/wargear-limits";
 import { legalDropSlots } from "../utils/legal-drop-slots";
@@ -81,20 +80,18 @@ export const useArmyListStore = defineStore("armyList", () => {
     return count;
   });
 
-  // Pool of legal enhancement names: union of every selected detachment's
-  // enhancements, looked up directly on the faction record in the current
-  // MFM data.
-  function availableEnhancementNames() {
-    const factionEntry = currentMFM.value?.FACTIONS?.find(
-      (f) => f.name === faction.value
-    );
-    const names = [];
-    for (const dName of detachments.value ?? []) {
-      const meta = factionEntry?.detachments.find((d) => d.name === dName);
-      for (const e of meta?.enhancements ?? []) names.push(e.name);
+  // Single O(n) parent→children index so ArmyListUnitNode doesn't run an
+  // O(n) filter per node per mutation. Read via `unitsByParent.get(parentId)`
+  // — root units share the `null` bucket.
+  const unitsByParent = computed(() => {
+    const map = new Map();
+    for (const u of units.value) {
+      const p = u.attachedTo ?? null;
+      if (!map.has(p)) map.set(p, []);
+      map.get(p).push(u);
     }
-    return names;
-  }
+    return map;
+  });
 
   /**
    * Resolve an Enhancement unit to the canonical metadata stored on its
@@ -122,182 +119,217 @@ export const useArmyListStore = defineStore("armyList", () => {
     return null;
   }
 
+  // Single-pass per-unit validation. Each component reads via
+  // `validationErrors.value.get(unit.id)` instead of running an O(n) check
+  // per row — collapses the previous N×O(n) cascade into one O(n) pass.
+  const validationErrors = computed(() => {
+    const errors = new Map();
+    const all = units.value;
+
+    const byId = new Map(all.map((u) => [u.id, u]));
+    const byParent = new Map();
+    for (const u of all) {
+      const p = u.attachedTo ?? null;
+      if (!byParent.has(p)) byParent.set(p, []);
+      byParent.get(p).push(u);
+    }
+
+    const wargearGroups = new Map();
+    const enhByOption = new Map();
+    const allEnhancements = [];
+    for (const u of all) {
+      if (isWargearUnit(u)) {
+        const k = `${u.attachedTo}::${u.optionName}`;
+        if (!wargearGroups.has(k)) wargearGroups.set(k, []);
+        wargearGroups.get(k).push(u);
+      } else if (u.name === "Enhancements") {
+        if (!enhByOption.has(u.optionName)) enhByOption.set(u.optionName, []);
+        enhByOption.get(u.optionName).push(u);
+        allEnhancements.push(u);
+      }
+    }
+
+    const rootIdMemo = new Map();
+    function rootIdOf(u) {
+      if (!u) return null;
+      if (rootIdMemo.has(u.id)) return rootIdMemo.get(u.id);
+      let cursor = u;
+      const seen = new Set();
+      while (cursor?.attachedTo && byId.has(cursor.attachedTo)) {
+        if (seen.has(cursor.id)) break;
+        seen.add(cursor.id);
+        cursor = byId.get(cursor.attachedTo);
+      }
+      const id = cursor?.id ?? null;
+      rootIdMemo.set(u.id, id);
+      return id;
+    }
+
+    const enhInTreeMemo = new Map();
+    function enhancementsInTree(rootId) {
+      if (!rootId) return [];
+      if (enhInTreeMemo.has(rootId)) return enhInTreeMemo.get(rootId);
+      const out = [];
+      const stack = [rootId];
+      const seen = new Set();
+      while (stack.length) {
+        const id = stack.pop();
+        if (seen.has(id)) continue;
+        seen.add(id);
+        for (const child of byParent.get(id) ?? []) {
+          if (isEnhancementUnit(child)) out.push(child);
+          stack.push(child.id);
+        }
+      }
+      enhInTreeMemo.set(rootId, out);
+      return out;
+    }
+
+    const factionEntry = currentMFM.value?.FACTIONS?.find(
+      (f) => f.name === faction.value
+    );
+    const factionDetachmentsByName = new Map();
+    for (const d of factionEntry?.detachments ?? []) {
+      factionDetachmentsByName.set(d.name, d);
+    }
+    const availableEnhSet = new Set();
+    for (const dName of detachments.value ?? []) {
+      const meta = factionDetachmentsByName.get(dName);
+      for (const e of meta?.enhancements ?? []) availableEnhSet.add(e.name);
+    }
+
+    const rules = battleSizeRules(toObject());
+    const mfmVersionLabel = currentMFM.value?.MFM_VERSION || "unknown";
+    const list = toObject();
+
+    function computeErrorFor(unit) {
+      if (unit.error) return "Invalid Unit";
+
+      if (isWargearUnit(unit)) {
+        if (!unit.attachedTo) return "Wargear must be attached to a unit";
+        const host = byId.get(unit.attachedTo);
+        if (!host) return "Wargear's unit is missing";
+        if (host.name !== unit.parentDataSheet) {
+          return `Wargear belongs to ${unit.parentDataSheet}`;
+        }
+        const hostDs = codexStore.getDataSheet(host.name);
+        const option = hostDs?.wargearOptions?.find(
+          (w) => w.name === unit.optionName
+        );
+        if (!option) {
+          return `Wargear option not available in MFM ${mfmVersionLabel}`;
+        }
+
+        const max = wargearMaxPerUnit(option);
+        const sameOption =
+          wargearGroups.get(`${unit.attachedTo}::${unit.optionName}`) ?? [];
+        if (sameOption.length > max) {
+          const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
+          if (indexOfThis >= max) return `Only ${max} per unit`;
+        }
+        return false;
+      }
+
+      const datasheet = codexStore.getDataSheet(unit.name);
+
+      if (datasheet?.enhancements || unit.name === "Enhancements") {
+        if (!availableEnhSet.has(unit.optionName)) {
+          return "Enhancement not available in this detachment";
+        }
+
+        const meta = getEnhancementMeta(unit);
+
+        if (typeof meta?.limit === "number") {
+          const sameOption = enhByOption.get(unit.optionName) ?? [];
+          const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
+          if (indexOfThis >= meta.limit) {
+            return `Only ${meta.limit} of this enhancement allowed`;
+          }
+        }
+
+        if (rules) {
+          const indexOfThis = allEnhancements.findIndex(
+            (u) => u.id === unit.id
+          );
+          if (indexOfThis >= rules.maxEnhancements) {
+            return `Only ${rules.maxEnhancements} enhancements allowed in ${rules.label}`;
+          }
+        }
+
+        if (!unit.attachedTo) return "Enhancement must be attached to a unit";
+        const host = byId.get(unit.attachedTo);
+        if (!host) return "Attached to a missing unit";
+        if (host.name === "Enhancements") {
+          return "Enhancement can't be attached to another enhancement";
+        }
+
+        const rootId = rootIdOf(host);
+        if (rootId) {
+          const inTree = enhancementsInTree(rootId);
+          const indexOfThis = inTree.findIndex((u) => u.id === unit.id);
+          if (indexOfThis >= 1) {
+            return "Only one enhancement per attached unit";
+          }
+        }
+
+        const hostDs = codexStore.getDataSheet(host.name);
+        if (meta?.characterOnly && !hostDs?.character) {
+          return "Enhancement can only attach to a character";
+        }
+        if (meta?.nonCharacterOnly && hostDs?.character) {
+          return "Unit upgrades can't attach to characters";
+        }
+        if (meta?.notOnEpicHeroes && hostDs?.epicHero) {
+          return "Enhancement can't be given to Epic Heroes";
+        }
+        if (
+          meta?.allowedHosts?.length &&
+          !meta?.requiredKeywords?.length &&
+          !meta.allowedHosts.includes(host.name)
+        ) {
+          return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
+        }
+
+        return false;
+      }
+
+      const count = unitCounts.value[unit.name] || 0;
+
+      if (!datasheet) {
+        return `Unit not available in MFM ${mfmVersionLabel}`;
+      }
+
+      const points = mfmStore.getPoints(unit, currentMFM.value, faction.value);
+      if (points === -1) {
+        return `Unit not found in MFM ${mfmVersionLabel}`;
+      }
+
+      const max = unitMax(datasheet, list);
+      if (count > max) return `Only ${max} of this unit allowed`;
+
+      if (datasheet.support && !unit.attachedTo) {
+        return "Support character must attach to a unit";
+      }
+
+      if (unit.attachedTo) {
+        const host = byId.get(unit.attachedTo);
+        const error = attachedToError(unit, host, (name) =>
+          codexStore.getDataSheet(name)
+        );
+        if (error) return error;
+      }
+
+      return false;
+    }
+
+    for (const unit of all) errors.set(unit.id, computeErrorFor(unit));
+    return errors;
+  });
+
   function getUnitValidationError(unit) {
-    if (unit.error) return "Invalid Unit";
-
-    // Wargear pseudo-units carry their host scope on `parentDataSheet`. They
-    // must always be attached, and only to a unit of the matching datasheet,
-    // and the option name must still exist on that datasheet's wargearOptions
-    // (catches MFM upgrades that retire an option).
-    if (isWargearUnit(unit)) {
-      if (!unit.attachedTo) return "Wargear must be attached to a unit";
-      const host = units.value.find((u) => u.id === unit.attachedTo);
-      if (!host) return "Wargear's unit is missing";
-      if (host.name !== unit.parentDataSheet) {
-        return `Wargear belongs to ${unit.parentDataSheet}`;
-      }
-      const hostDs = codexStore.getDataSheet(host.name);
-      const option = hostDs?.wargearOptions?.find(
-        (w) => w.name === unit.optionName
-      );
-      if (!option) {
-        const version = currentMFM.value?.MFM_VERSION || "unknown";
-        return `Wargear option not available in MFM ${version}`;
-      }
-
-      // Per-host cap: stale shared URLs or pre-cap saved lists could carry
-      // more copies than the option allows. Mirror the enhancement-duplicate
-      // pattern — the first `max` copies pass, the rest flag.
-      const max = wargearMaxPerUnit(option);
-      const sameOption = units.value.filter(
-        (u) =>
-          u.name === "Wargear" &&
-          u.attachedTo === unit.attachedTo &&
-          u.optionName === unit.optionName
-      );
-      if (sameOption.length > max) {
-        const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
-        if (indexOfThis >= max) return `Only ${max} per unit`;
-      }
-      return false;
-    }
-
-    const datasheet = codexStore.getDataSheet(unit.name);
-
-    // Enhancement: only the canonical sentinel "Enhancements" name. The old
-    // "no datasheet + optionName + no models" fallback used to catch legacy
-    // saved lists, but it now also matches Wargear units — handled above.
-    if (datasheet?.enhancements || unit.name === "Enhancements") {
-      const availableEnhancements = availableEnhancementNames();
-      if (!availableEnhancements.includes(unit.optionName)) {
-        return "Enhancement not available in this detachment";
-      }
-
-      const meta = getEnhancementMeta(unit);
-
-      // Per-enhancement limit: opt-in via `meta.limit`. When set, allow up to
-      // `limit` copies in the army; later copies flag. When unset, no
-      // per-enhancement cap.
-      if (typeof meta?.limit === "number") {
-        const sameOption = units.value.filter(
-          (u) => u.name === "Enhancements" && u.optionName === unit.optionName
-        );
-        const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
-        if (indexOfThis >= meta.limit) {
-          return `Only ${meta.limit} of this enhancement allowed`;
-        }
-      }
-
-      // Battle-size enhancement cap (Incursion: 2, Strike Force: 4). Flag
-      // whichever enhancements come after the cap is reached so the user
-      // knows which to drop.
-      const rules = battleSizeRules(toObject());
-      if (rules) {
-        const allEnhancementUnits = units.value.filter(
-          (u) => u.name === "Enhancements"
-        );
-        const indexOfThis = allEnhancementUnits.findIndex(
-          (u) => u.id === unit.id
-        );
-        if (indexOfThis >= rules.maxEnhancements) {
-          return `Only ${rules.maxEnhancements} enhancements allowed in ${rules.label}`;
-        }
-      }
-
-      // Universal rules first — these apply regardless of restriction
-      // metadata. Enhancements must always sit on a host unit, and they can
-      // never stack on top of another enhancement.
-      if (!unit.attachedTo) return "Enhancement must be attached to a unit";
-      const host = units.value.find((u) => u.id === unit.attachedTo);
-      if (!host) return "Attached to a missing unit";
-      if (host.name === "Enhancements") {
-        return "Enhancement can't be attached to another enhancement";
-      }
-
-      // 25.04 "No unit (including attached units) can have more than one
-      // enhancement." Count every enhancement in the attached-unit tree
-      // (Leader + Bodyguard + sub-attachments share one root). The first
-      // enhancement in that tree passes; later copies flag. Mirrors the
-      // wargear/limit precedent so a malformed shared URL only surfaces the
-      // overflow rows, not all of them.
-      const rootId = attachedUnitRootId(host, units.value);
-      if (rootId) {
-        const enhancementsInTree = units.value.filter(
-          (u) =>
-            isEnhancementUnit(u) &&
-            attachedUnitRootId(u, units.value) === rootId
-        );
-        const indexOfThis = enhancementsInTree.findIndex(
-          (u) => u.id === unit.id
-        );
-        if (indexOfThis >= 1) {
-          return "Only one enhancement per attached unit";
-        }
-      }
-
-      // Optional per-enhancement restrictions. Each field is checked
-      // independently and only when explicitly set. See
-      // `src/data/configs/enhancement-restrictions.auto.json` for the schema.
-      const hostDs = codexStore.getDataSheet(host.name);
-      if (meta?.characterOnly && !hostDs?.character) {
-        return "Enhancement can only attach to a character";
-      }
-      if (meta?.nonCharacterOnly && hostDs?.character) {
-        return "Unit upgrades can't attach to characters";
-      }
-      if (meta?.notOnEpicHeroes && hostDs?.epicHero) {
-        return "Enhancement can't be given to Epic Heroes";
-      }
-      // All-or-none enforcement: when `requiredKeywords` is present the
-      // captured rule is a disjunction we can't fully check yet, so we skip
-      // the allowedHosts check rather than under-permit. See
-      // src/data/configs/index.js for the full schema and rationale.
-      if (
-        meta?.allowedHosts?.length &&
-        !meta?.requiredKeywords?.length &&
-        !meta.allowedHosts.includes(host.name)
-      ) {
-        return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
-      }
-
-      return false;
-    }
-
-    const count = unitCounts.value[unit.name] || 0;
-
-    if (!datasheet) {
-      const version = currentMFM.value?.MFM_VERSION || "unknown";
-      return `Unit not available in MFM ${version}`;
-    }
-
-    const points = mfmStore.getPoints(unit, currentMFM.value, faction.value);
-    if (points === -1) {
-      const version = currentMFM.value?.MFM_VERSION || "unknown";
-      return `Unit not found in MFM ${version}`;
-    }
-
-    const max = unitMax(datasheet, toObject());
-    if (count > max) return `Only ${max} of this unit allowed`;
-
-    // Support units MUST be attached to a host. Leaders may attach but
-    // aren't required to (some leaders fight alone in 11th).
-    if (datasheet.support && !unit.attachedTo) {
-      return "Support character must attach to a unit";
-    }
-
-    // If the unit is attached, verify the host is a legal attachment target
-    // (host's datasheet name is in attachesTo). Pre-existing bad attachments
-    // — from before drop-time enforcement, or from a malformed shared URL —
-    // surface here as a red error so the user can drag-to-fix.
-    if (unit.attachedTo) {
-      const host = units.value.find((u) => u.id === unit.attachedTo);
-      const error = attachedToError(unit, host, (name) =>
-        codexStore.getDataSheet(name)
-      );
-      if (error) return error;
-    }
-
-    return false;
+    if (!unit) return false;
+    const cached = validationErrors.value.get(unit.id);
+    return cached === undefined ? false : cached;
   }
 
   function addUnit(unit) {
@@ -420,6 +452,61 @@ export const useArmyListStore = defineStore("armyList", () => {
     return false;
   }
 
+  // Single-pass per-detachment validation. Each CodexDetachmentCard reads via
+  // `detachmentErrors.value.get(name)` instead of running the full
+  // `whyCantAddDetachment` check per card. "Already added" is intentionally
+  // excluded — the wrapper below handles that branch.
+  const detachmentErrors = computed(() => {
+    const errors = new Map();
+    const factionEntry = currentMFM.value?.FACTIONS?.find(
+      (f) => f.name === faction.value
+    );
+    const allDetachments = factionEntry?.detachments ?? [];
+    const allByName = new Map(allDetachments.map((d) => [d.name, d]));
+    const selected = detachments.value ?? [];
+
+    const rules = battleSizeRules(toObject());
+    const breakdown = pointsBreakdown.value?.dp;
+
+    const existingUniqueTags = new Set();
+    let existingThreeDp = null;
+    for (const dName of selected) {
+      const meta = allByName.get(dName);
+      if (!meta) continue;
+      for (const t of uniqueTagsOf(meta)) existingUniqueTags.add(t);
+      if ((meta.dp ?? 0) >= 3 && !existingThreeDp) existingThreeDp = meta;
+    }
+
+    function reasonFor(meta) {
+      const cost = meta.dp ?? 0;
+
+      if (cost >= 3 && rules && !rules.allow3DpDetachment) {
+        return `3-DP detachments require at least 2,000 points`;
+      }
+      if (cost >= 3 && selected.length > 0) {
+        return "3-DP detachments can't be combined with other detachments";
+      }
+      if (existingThreeDp) {
+        return `Cannot add alongside a 3-DP detachment (${existingThreeDp.name})`;
+      }
+
+      const candidateTags = uniqueTagsOf(meta);
+      for (const t of candidateTags) {
+        if (existingUniqueTags.has(t)) return `Cannot share ${t} keyword`;
+      }
+
+      if (breakdown && breakdown.used + cost > breakdown.max) {
+        return "Not enough DP";
+      }
+      return null;
+    }
+
+    for (const meta of allDetachments) {
+      errors.set(meta.name, reasonFor(meta));
+    }
+    return errors;
+  });
+
   /**
    * Returns null if the detachment can be added, or a short reason string.
    * The codex card uses this both to disable the card visually and to
@@ -429,43 +516,10 @@ export const useArmyListStore = defineStore("armyList", () => {
   function whyCantAddDetachment(name) {
     if (!name) return "Invalid detachment";
     if (detachments.value.includes(name)) return "Already added";
-
     const meta = findDetachmentMeta(name);
     if (!meta) return null;
-    const cost = meta.dp ?? 0;
-
-    const rules = battleSizeRules(toObject());
-    const breakdown = pointsBreakdown.value.dp;
-
-    // 3-DP detachments own the entire army.
-    if (cost >= 3 && rules && !rules.allow3DpDetachment) {
-      return `3-DP detachments require at least 2,000 points`;
-    }
-    if (cost >= 3 && detachments.value.length > 0) {
-      return "3-DP detachments can't be combined with other detachments";
-    }
-    if (detachments.value.length > 0) {
-      const existing = detachments.value
-        .map(findDetachmentMeta)
-        .find((d) => (d?.dp ?? 0) >= 3);
-      if (existing) {
-        return `Cannot add alongside a 3-DP detachment (${existing.name})`;
-      }
-    }
-
-    const candidateTags = uniqueTagsOf(meta);
-    if (candidateTags.length) {
-      const existingTags = new Set(
-        detachments.value.flatMap((n) => uniqueTagsOf(findDetachmentMeta(n)))
-      );
-      const conflict = candidateTags.find((t) => existingTags.has(t));
-      if (conflict) return `Cannot share ${conflict} keyword`;
-    }
-
-    if (breakdown && breakdown.used + cost > breakdown.max) {
-      return "Not enough DP";
-    }
-    return null;
+    const cached = detachmentErrors.value.get(name);
+    return cached === undefined ? null : cached;
   }
 
   function canAddDetachment(name) {
@@ -551,10 +605,13 @@ export const useArmyListStore = defineStore("armyList", () => {
     else if (defaultList) setList(defaultList);
   }
 
+  // Shallow watcher: Vue tracks the .value reads inside toObject(), and every
+  // mutation path in this store reassigns refs (units.value = newArr) rather
+  // than editing in place — so a shallow watcher fires correctly without
+  // paying the cost of traversing every unit's every field per mutation.
   watch(
     () => toObject(),
-    (currentList) => save("currentList", currentList),
-    { deep: true }
+    (currentList) => debouncedSave("currentList", currentList),
   );
 
   return {
@@ -571,9 +628,12 @@ export const useArmyListStore = defineStore("armyList", () => {
     modelsTaken,
     enhancementsTaken,
     totalEnhancementsCount,
+    unitsByParent,
     effectiveMaxPoints,
     currentMFM,
     pointsBreakdown,
+    validationErrors,
+    detachmentErrors,
     getUnitValidationError,
     getEnhancementMeta,
     addUnit,
