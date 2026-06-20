@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { legalDropSlots, pickActiveSlot } from "../utils/legal-drop-slots";
 
 /**
@@ -26,6 +26,16 @@ export const useDragStore = defineStore("drag", () => {
   const ghostOffset = ref({ x: 0, y: 0 });
   const ghostSize = ref({ width: 0, height: 0 });
   const legalSlots = ref([]);
+  // Set of host unit IDs that the dragged unit could legally attach to.
+  // Consumed by ArmyListUnit to dim non-target rows during the drag, making
+  // the attach affordance visually obvious without changing drop behavior.
+  const attachHostIds = computed(() => {
+    const out = new Set();
+    for (const slot of legalSlots.value) {
+      if (slot.type === "attach") out.add(slot.hostId);
+    }
+    return out;
+  });
   const activeSlot = ref(null);
   const ghost = ref(null);
   // The dragged unit's full subtree, flattened to render order. Each entry
@@ -179,6 +189,7 @@ export const useDragStore = defineStore("drag", () => {
     ghostOffset,
     ghostSize,
     legalSlots,
+    attachHostIds,
     activeSlot,
     ghost,
     ghostSubtree,

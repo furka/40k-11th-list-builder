@@ -58,6 +58,18 @@ const isDragging = computed(
 // and dragging past a non-target row still triggers the hover background.
 const dragInFlight = computed(() => dragStore.draggedId !== null);
 
+// While dragging a unit that CAN attach to something, dim every row that
+// isn't a valid attach host so the legal targets pop visually. Gated on
+// `attachHostIds.size > 0` so reorder-only drags (bodyguards, vehicles)
+// don't paint a misleading fade across the whole list.
+const isNonAttachTarget = computed(() => {
+  if (!dragInFlight.value) return false;
+  if (isDragging.value) return false;
+  if (isAttachTarget.value) return false;
+  if (dragStore.attachHostIds.size === 0) return false;
+  return !dragStore.attachHostIds.has(props.unit.id);
+});
+
 const breakdown = computed(
   () => armyListStore.pointsBreakdown.perUnit[props.unit.id] ?? null
 );
@@ -200,6 +212,7 @@ function onPointerDown(e) {
       error: inValid,
       'army-list-unit--attach-target': isAttachTarget,
       'army-list-unit--dragging': isDragging,
+      'army-list-unit--dim': isNonAttachTarget,
       'army-list-unit--drag-mode': dragInFlight,
     }"
     @pointerdown="onPointerDown"
@@ -283,6 +296,14 @@ function onPointerDown(e) {
     // the ghost is the only visible copy. The wrapping ArmyListUnitNode also
     // sets this on itself so the grouping stripe (::before) fades too.
     opacity: 0;
+  }
+
+  &--dim {
+    // Applied to rows that aren't valid attach targets while an attachable
+    // unit is being dragged. The eased transition lets the dim settle in
+    // gently when the drag starts rather than flashing in.
+    opacity: 0.25;
+    transition: opacity 120ms ease-out;
   }
 
   &__name {

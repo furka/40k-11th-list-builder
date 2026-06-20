@@ -27,11 +27,15 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
   const ghost = ref(null);
   const insertIndex = ref(null);
   const insertAnchorRect = ref(null);
+  // Non-row drop targets (currently just "bin" — the codex panel). When the
+  // pointer is inside one of these rects we short-circuit the row hit-test.
+  const activeSlot = ref(null);
 
   // DOM elements are intentionally non-reactive — identity refs whose rects
   // we re-read on each pointer move. Insertion order matches detachment list
   // order; a JS Map preserves insertion order.
   const rows = new Map(); // name -> el
+  const slotEls = new Map(); // key -> el
 
   function start({ name, fromIndex: idx, pointer: ptr, grabOffset, size, dp, role }) {
     if (!name) return;
@@ -61,8 +65,31 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
     if (draggedName.value) recomputeInsert();
   }
 
+  function registerSlotEl(key, el) {
+    if (el) slotEls.set(key, el);
+    else slotEls.delete(key);
+    if (draggedName.value) recomputeInsert();
+  }
+
+  function unregisterSlotEl(key) {
+    slotEls.delete(key);
+    if (draggedName.value) recomputeInsert();
+  }
+
   function commit() {
-    if (!draggedName.value || insertIndex.value === null) {
+    if (!draggedName.value) {
+      cancel();
+      return null;
+    }
+    if (activeSlot.value?.type === "bin") {
+      const descriptor = {
+        type: "detachment-bin",
+        draggedName: draggedName.value,
+      };
+      cancel();
+      return descriptor;
+    }
+    if (insertIndex.value === null) {
       cancel();
       return null;
     }
@@ -88,14 +115,32 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
     fromIndex.value = 0;
     insertIndex.value = null;
     insertAnchorRect.value = null;
+    activeSlot.value = null;
     pointer.value = { x: 0, y: 0 };
     ghostOffset.value = { x: 0, y: 0 };
     ghostSize.value = { width: 0, height: 0 };
     ghost.value = null;
     rows.clear();
+    slotEls.clear();
   }
 
   function recomputeInsert() {
+    // Bin first: when the pointer is over the codex panel, it's a delete
+    // intent, not a reorder. Suppress the insertion line so we don't show
+    // a misleading "move here" affordance on top of the bin tint.
+    const binEl = slotEls.get("bin");
+    if (binEl) {
+      const r = binEl.getBoundingClientRect();
+      const { x, y } = pointer.value;
+      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
+        activeSlot.value = { type: "bin" };
+        insertIndex.value = null;
+        insertAnchorRect.value = null;
+        return;
+      }
+    }
+    activeSlot.value = null;
+
     const entries = [...rows.entries()].map(([name, el]) => ({
       name,
       rect: el.getBoundingClientRect(),
@@ -153,10 +198,13 @@ export const useDetachmentDragStore = defineStore("detachmentDrag", () => {
     ghost,
     insertIndex,
     insertAnchorRect,
+    activeSlot,
     start,
     updatePointer,
     registerRow,
     unregisterRow,
+    registerSlotEl,
+    unregisterSlotEl,
     commit,
     cancel,
   };

@@ -6,7 +6,9 @@ import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useAppStore } from "../stores/app";
 import { useDragStore } from "../stores/drag";
+import { useDetachmentDragStore } from "../stores/detachmentDrag";
 import { useSlotEl } from "../composables/useSlotEl";
+import { useDetachmentSlotEl } from "../composables/useDetachmentSlotEl";
 import { GROUP_NONE } from "../data/constants";
 import { isBattleLine } from "../utils/is-battleline";
 import { isDedicatedTransport } from "../utils/is-dedicated-transport";
@@ -15,6 +17,7 @@ const armyListStore = useArmyListStore();
 const codexStore = useCodexStore();
 const appStore = useAppStore();
 const dragStore = useDragStore();
+const detachmentDragStore = useDetachmentDragStore();
 
 const groupedUnits = computed(() => {
   const data = [];
@@ -55,8 +58,15 @@ const detachmentList = computed(() => codexStore.filteredDetachments);
 // invisible overlay-style draggable.
 const codexRootEl = ref(null);
 useSlotEl(codexRootEl, () => (dragStore.draggedId ? "bin" : null));
+useDetachmentSlotEl(codexRootEl, () =>
+  detachmentDragStore.draggedName ? "bin" : null
+);
 
-const binActive = computed(() => dragStore.activeSlot?.type === "bin");
+const binActive = computed(
+  () =>
+    dragStore.activeSlot?.type === "bin" ||
+    detachmentDragStore.activeSlot?.type === "bin"
+);
 
 // horizontal scroll using scrollwheel
 const codexEl = ref(null);
@@ -113,7 +123,7 @@ function onScrollWheel(e) {
       drag store (which reads codexRootEl's rect, not the overlay's).
     -->
     <div
-      v-if="dragStore.draggedId && armyListStore.faction"
+      v-if="(dragStore.draggedId || detachmentDragStore.draggedName) && armyListStore.faction"
       class="codex__bin-overlay"
       :class="{ 'codex__bin-overlay--active': binActive }"
     >

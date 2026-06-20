@@ -1,10 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
-import { useArmyListStore } from "../stores/armyList";
 import { useDetachmentDragStore } from "../stores/detachmentDrag";
 import { useDetachmentRow } from "../composables/useDetachmentRow";
 
-const armyListStore = useArmyListStore();
 const detachmentDragStore = useDetachmentDragStore();
 
 const props = defineProps({
@@ -26,8 +24,6 @@ const isDragging = computed(
 function onPointerDown(e) {
   if (props.readonly) return;
   if (e.button !== undefined && e.button !== 0) return;
-  // Don't start a drag when clicking the ✕ remove button.
-  if (e.target.closest("button")) return;
   e.preventDefault();
   const rect = e.currentTarget.getBoundingClientRect();
   detachmentDragStore.start({
@@ -39,10 +35,6 @@ function onPointerDown(e) {
     dp: props.dp,
     role: props.role,
   });
-}
-
-function remove() {
-  armyListStore.removeDetachment(props.name);
 }
 </script>
 
@@ -60,14 +52,6 @@ function remove() {
   >
     <span class="army-list-detachment__name">{{ props.name }}</span>
     <span class="army-list-detachment__badge">{{ props.dp }}DP</span>
-    <button
-      type="button"
-      class="army-list-detachment__remove"
-      @click="remove"
-      aria-label="Remove detachment"
-    >
-      ×
-    </button>
   </div>
 </template>
 
@@ -116,34 +100,12 @@ function remove() {
     padding: 1px 5px;
   }
 
-  &__remove {
-    background: none;
-    border: none;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
-    padding: 0 4px;
-
-    &:hover {
-      color: var(--color-negative);
-    }
-  }
-
   &--has-role {
     color: #fff;
 
     .army-list-detachment__badge {
       background-color: rgba(0, 0, 0, 0.35);
       color: #fff;
-    }
-
-    .army-list-detachment__remove {
-      color: rgba(255, 255, 255, 0.65);
-
-      &:hover {
-        color: #fff;
-      }
     }
   }
 }

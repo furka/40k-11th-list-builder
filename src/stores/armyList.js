@@ -15,6 +15,10 @@ import {
 import { wargearMaxPerUnit } from "../utils/wargear-limits";
 import { legalDropSlots } from "../utils/legal-drop-slots";
 
+function uniqueTagsOf(meta) {
+  return meta?.tags?.filter((t) => typeof t === "string" && t.startsWith("UNIQUE:")) ?? [];
+}
+
 export const useArmyListStore = defineStore("armyList", () => {
   const mfmStore = useMfmStore();
   const codexStore = useCodexStore();
@@ -447,6 +451,15 @@ export const useArmyListStore = defineStore("armyList", () => {
       if (existing) {
         return `Cannot add alongside a 3-DP detachment (${existing.name})`;
       }
+    }
+
+    const candidateTags = uniqueTagsOf(meta);
+    if (candidateTags.length) {
+      const existingTags = new Set(
+        detachments.value.flatMap((n) => uniqueTagsOf(findDetachmentMeta(n)))
+      );
+      const conflict = candidateTags.find((t) => existingTags.has(t));
+      if (conflict) return `Cannot share ${conflict} keyword`;
     }
 
     if (breakdown && breakdown.used + cost > breakdown.max) {

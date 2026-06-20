@@ -798,6 +798,79 @@ describe("armyList Wargear validation", () => {
   });
 });
 
+describe("armyList.whyCantAddDetachment — UNIQUE keyword exclusivity", () => {
+  const DET_MFM = {
+    EDITION: "11th",
+    MFM_VERSION: "V1.0 (detachment-test)",
+    FACTIONS: [
+      {
+        name: FACTION,
+        detachments: [
+          { name: "ALPHA",  dp: 1, role: null, leader: null, tags: ["UNIQUE: LIONS"],   enhancements: [] },
+          { name: "BRAVO",  dp: 1, role: null, leader: null, tags: ["UNIQUE: LIONS"],   enhancements: [] },
+          { name: "CHARLIE",dp: 1, role: null, leader: null, tags: ["UNIQUE: ARMOURY"], enhancements: [] },
+          { name: "DELTA",  dp: 1, role: null, leader: null, tags: [],                  enhancements: [] },
+          { name: "ECHO",   dp: 1, role: null, leader: null,                            enhancements: [] },
+          { name: "BIG",    dp: 3, role: null, leader: null, tags: ["UNIQUE: LIONS"],   enhancements: [] },
+        ],
+      },
+    ],
+    DATA_SHEETS: [],
+  };
+
+  let store;
+  beforeEach(() => {
+    setActivePinia(createPinia());
+    const mfm = useMfmStore();
+    mfm.MFM = { CURRENT: DET_MFM, [DET_MFM.MFM_VERSION]: DET_MFM };
+    mfm.getVersion = (v) => (v === DET_MFM.MFM_VERSION ? DET_MFM : null);
+    store = useArmyListStore();
+    store.setList({
+      faction: FACTION,
+      mfm_version: DET_MFM.MFM_VERSION,
+      maxPoints: 2000,
+      units: [],
+      detachments: [],
+    });
+  });
+
+  it("blocks a detachment sharing a UNIQUE tag with an already-added one", () => {
+    expect(store.addDetachment("ALPHA")).toBe(true);
+    expect(store.whyCantAddDetachment("BRAVO")).toBe(
+      "Cannot share UNIQUE: LIONS keyword"
+    );
+    expect(store.addDetachment("BRAVO")).toBe(false);
+  });
+
+  it("allows two detachments with DIFFERENT UNIQUE tags", () => {
+    expect(store.addDetachment("ALPHA")).toBe(true);
+    expect(store.whyCantAddDetachment("CHARLIE")).toBeNull();
+    expect(store.addDetachment("CHARLIE")).toBe(true);
+  });
+
+  it("allows a UNIQUE-tagged detachment alongside a non-tagged one", () => {
+    expect(store.addDetachment("ALPHA")).toBe(true);
+    expect(store.whyCantAddDetachment("DELTA")).toBeNull();
+    expect(store.addDetachment("DELTA")).toBe(true);
+  });
+
+  it("allows a detachment with no tags field at all (parity with missing-meta path)", () => {
+    expect(store.addDetachment("ECHO")).toBe(true);
+    expect(store.whyCantAddDetachment("DELTA")).toBeNull();
+  });
+
+  it("3-DP exclusivity still takes precedence over the UNIQUE check", () => {
+    // BIG carries UNIQUE: LIONS too, but it's also 3-DP, so once ALPHA is in
+    // we should hit the existing "3-DP detachments can't be combined…" reason
+    // rather than the new UNIQUE one. The candidate's own 3-DP check fires
+    // first in the function order.
+    expect(store.addDetachment("ALPHA")).toBe(true);
+    expect(store.whyCantAddDetachment("BIG")).toBe(
+      "3-DP detachments can't be combined with other detachments"
+    );
+  });
+});
+
 describe("armyList derived state — wargear isolation", () => {
   let store;
   beforeEach(() => {

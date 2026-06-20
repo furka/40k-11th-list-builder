@@ -48,9 +48,16 @@ function initializeApp() {
   const searchParams = new URLSearchParams(window.location.search);
   if (searchParams.size) {
     try {
-      const list = deserializeList(searchParams);
-      appStore.lists.unshift(armyListStore.toObject());
-      armyListStore.setList(list);
+      // The URL watcher mirrors the current list into the address bar, so on
+      // a plain reload the search string is just a re-serialization of the
+      // list we already restored from localStorage. Without this guard every
+      // reload would stash a near-duplicate of the current list into
+      // appStore.lists.
+      if (serializeList(armyListStore.toObject()) !== window.location.search) {
+        const list = deserializeList(searchParams);
+        appStore.lists.unshift(armyListStore.toObject());
+        armyListStore.setList(list);
+      }
     } catch (e) {
       console.error(e);
     }
@@ -175,6 +182,10 @@ watch(
       detachmentPointerUpHandler = () => {
         const result = detachmentDragStore.commit();
         if (!result) return;
+        if (result.type === "detachment-bin") {
+          armyListStore.removeDetachment(result.draggedName);
+          return;
+        }
         const arr = armyListStore.detachments.slice();
         arr.splice(result.fromIndex, 1);
         const adjusted =
