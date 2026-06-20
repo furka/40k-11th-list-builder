@@ -154,16 +154,25 @@ function openAllies() {
     }
 
     &__allies-button {
+      // Match the look of `.toolbar__button` / `.modal-button` /
+      // `.dropdown__button` (NEW / SAVED / OPTIONS / VIEW / SHARE) so the
+      // toolbar reads as one consistent button row.
+      align-items: center;
       background: var(--color-surface);
       border: 1px solid var(--color-divider);
       border-radius: 2px;
       color: var(--color-text);
       cursor: pointer;
+      display: flex;
+      flex-direction: row;
       flex-shrink: 0;
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 16px;
+      gap: 8px;
+      justify-content: center;
       letter-spacing: 0.5px;
-      padding: 6px 12px;
+      margin: 0 4px;
+      padding: 7px 12px;
       text-transform: uppercase;
 
       &:hover {
