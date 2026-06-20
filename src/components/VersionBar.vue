@@ -2,6 +2,8 @@
 import { computed } from "vue";
 import PACKAGE from "../../package.json";
 import RiskIcon from "../assets/risk-icon.svg";
+import GithubIcon from "../assets/github-icon.svg";
+import DiscordIcon from "../assets/discord-icon.svg";
 import { useArmyListStore } from "../stores/armyList";
 import { useMfmStore } from "../stores/mfm";
 
@@ -51,7 +53,29 @@ const availableMFMVersions = computed(() => {
         <span>New Version Available</span>
       </span>
     </div>
-    <span>app version {{ PACKAGE.version }}</span>
+    <div class="version-bar__right">
+      <span>app version {{ PACKAGE.version }}</span>
+      <a
+        class="version-bar__link"
+        href="https://github.com/furka/40k-11th-list-builder"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="View source on GitHub"
+        aria-label="GitHub repository"
+      >
+        <GithubIcon class="version-bar__link-icon" />
+      </a>
+      <a
+        class="version-bar__link"
+        href="https://discord.gg/CtbC5kBeJ2"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Join the Discord server"
+        aria-label="Discord server"
+      >
+        <DiscordIcon class="version-bar__link-icon" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -120,6 +144,29 @@ const availableMFMVersions = computed(() => {
       width: 16px;
       flex-shrink: 0;
     }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-text-muted);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__link-icon {
+    height: 16px;
+    width: 16px;
+    fill: currentColor;
   }
 }
 </style>
