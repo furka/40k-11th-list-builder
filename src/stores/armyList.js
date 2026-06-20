@@ -30,6 +30,7 @@ export const useArmyListStore = defineStore("armyList", () => {
   const sortOrder = ref("");
   const units = ref([]);
   const detachments = ref([]);
+  const allies = ref([]);
 
   const effectiveMaxPoints = computed(() => maxPoints.value);
 
@@ -202,8 +203,36 @@ export const useArmyListStore = defineStore("armyList", () => {
     const mfmVersionLabel = currentMFM.value?.MFM_VERSION || "unknown";
     const list = toObject();
 
+    const alliesSet = new Set(allies.value ?? []);
+
     function computeErrorFor(unit) {
       if (unit.error) return "Invalid Unit";
+
+      if (unit.allied) {
+        // The unit's source faction is pinned at add time on
+        // `unit.alliedFaction`. Same-named datasheets in different codexes
+        // can have different points costs, so the validity check is tied
+        // to that specific faction, not "any codex that happens to have a
+        // datasheet with this name". Legacy lists without the field fall
+        // back to a name-scan so we don't break existing saved armies.
+        const sourceFaction =
+          unit.alliedFaction ||
+          (() => {
+            for (const sheet of codexStore.compendium) {
+              if (sheet.name === unit.name && sheet.faction !== faction.value) {
+                return sheet.faction;
+              }
+            }
+            return null;
+          })();
+        if (
+          sourceFaction &&
+          sourceFaction !== faction.value &&
+          !alliesSet.has(sourceFaction)
+        ) {
+          return `Must ally ${sourceFaction}`;
+        }
+      }
 
       if (isWargearUnit(unit)) {
         if (!unit.attachedTo) return "Wargear must be attached to a unit";
@@ -573,6 +602,17 @@ export const useArmyListStore = defineStore("armyList", () => {
     modifiedDate.value = Date.now();
   }
 
+  /**
+   * Replace the allied-factions list. Units from a now-un-allied faction
+   * stay in the army but their per-unit validation flags them — the user
+   * can re-check the ally to restore them, or delete them by hand. See the
+   * `unit.allied && faction not in allies` branch in `computeErrorFor`.
+   */
+  function setAllies(arr) {
+    allies.value = Array.isArray(arr) ? arr.filter((n) => n !== faction.value) : [];
+    modifiedDate.value = Date.now();
+  }
+
   function setList(list) {
     name.value = list.name || "";
     faction.value = list.faction || "";
@@ -583,6 +623,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     sortOrder.value = list.sortOrder || "";
     units.value = list.units || [];
     detachments.value = Array.isArray(list.detachments) ? list.detachments : [];
+    allies.value = Array.isArray(list.allies) ? list.allies : [];
   }
 
   function toObject() {
@@ -596,6 +637,7 @@ export const useArmyListStore = defineStore("armyList", () => {
       sortOrder: sortOrder.value,
       units: units.value,
       detachments: detachments.value,
+      allies: allies.value,
     };
   }
 
@@ -624,6 +666,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     sortOrder,
     units,
     detachments,
+    allies,
     unitCounts,
     modelsTaken,
     enhancementsTaken,
@@ -647,6 +690,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     setDetachments,
     canAddDetachment,
     whyCantAddDetachment,
+    setAllies,
     setList,
     toObject,
     loadFromStorage,

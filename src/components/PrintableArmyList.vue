@@ -48,6 +48,19 @@ const titleLeft = computed(() => armyListStore.faction ?? "");
 const titleRight = computed(() => `${points.value} pts`);
 const titleLine = computed(() => dotLine(titleLeft.value, titleRight.value));
 
+const alliesLine = computed(() => {
+  // Only list allies that are actually contributing units to the army.
+  // A picked-but-empty ally bloats the printable header without telling
+  // the reader anything useful — and an ally with no units left after
+  // editing should drop off the line automatically.
+  const present = new Set();
+  for (const u of armyListStore.units) {
+    if (u.allied && u.alliedFaction) present.add(u.alliedFaction);
+  }
+  const list = (armyListStore.allies ?? []).filter((f) => present.has(f));
+  return list.length ? `ALLIES: ${list.join(", ")}` : "";
+});
+
 function formatUnit(unit) {
   if (unit.name === "Enhancements") {
     return `[Enh] ${unit.optionName}`;
@@ -127,6 +140,7 @@ const plainText = computed(() => {
   if (armyListStore.name) lines.push(armyListStore.name);
   lines.push(titleLine.value);
   lines.push("");
+  if (alliesLine.value) lines.push(alliesLine.value);
   if (detachmentRows.value.length) {
     for (const d of detachmentRows.value) lines.push(detachmentLine(d));
     lines.push("");
@@ -144,6 +158,7 @@ defineExpose({ plainText });
       <li v-if="armyListStore.name">{{ armyListStore.name }}</li>
       <li>{{ titleLine }}</li>
       <li>&nbsp;</li>
+      <li v-if="alliesLine">{{ alliesLine }}</li>
       <template v-if="detachmentRows.length">
         <li v-for="(d, i) in detachmentRows" :key="`d-${i}`">
           {{ detachmentLine(d) }}

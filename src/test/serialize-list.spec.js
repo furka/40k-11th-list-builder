@@ -131,6 +131,59 @@ describe("serializeList / deserializeList", () => {
     expect(restored.units[0].attachedTo).toBeUndefined();
   });
 
+  it("preserves the allies array round-trip", () => {
+    const data = {
+      name: "Mixed Forces",
+      faction: "CHAOS KNIGHTS",
+      maxPoints: 2000,
+      allies: ["CHAOS DAEMONS", "CHAOS SPACE MARINES"],
+      units: [],
+    };
+    const restored = deserializeList(
+      urlSearchParamsFromHash(serializeList(data))
+    );
+    expect(restored.allies).toEqual([
+      "CHAOS DAEMONS",
+      "CHAOS SPACE MARINES",
+    ]);
+  });
+
+  it("preserves the per-unit allied flag and alliedFaction round-trip", () => {
+    const data = {
+      faction: "CHAOS KNIGHTS",
+      allies: ["CHAOS DAEMONS"],
+      units: [
+        buildUnit({ id: "primary", name: "WAR DOG KARNIVORE", points: 130 }),
+        buildUnit({
+          id: "ally",
+          name: "BLOODLETTERS",
+          points: 110,
+          allied: true,
+          alliedFaction: "CHAOS DAEMONS",
+        }),
+      ],
+    };
+    const restored = deserializeList(
+      urlSearchParamsFromHash(serializeList(data))
+    );
+    const [primary, ally] = restored.units;
+    expect(primary.allied).toBeUndefined();
+    expect(primary.alliedFaction).toBeUndefined();
+    expect(ally.allied).toBe(true);
+    expect(ally.alliedFaction).toBe("CHAOS DAEMONS");
+  });
+
+  it("treats a missing allied param as not-allied (legacy URLs)", () => {
+    const params = new URLSearchParams();
+    params.append("un", encodeURIComponent("WAR DOG KARNIVORE"));
+    params.append("um", encodeURIComponent("1"));
+    params.append("uon", encodeURIComponent("1 model"));
+    params.append("up", encodeURIComponent("130"));
+
+    const restored = deserializeList(params);
+    expect(restored.units[0].allied).toBeUndefined();
+  });
+
   it("preserves wargear pseudo-units round-trip (parentDataSheet + attachedTo)", () => {
     const data = {
       units: [

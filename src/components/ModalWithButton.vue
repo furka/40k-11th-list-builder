@@ -100,7 +100,12 @@ function onPointerUp(event) {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: 16px;
-  max-height: 95svh;
+  // The close (X) button sits 40px ABOVE the dialog's top edge (see
+  // `&__close { top: -40px }` below). When the dialog centers itself via
+  // the browser's default `margin: auto`, a max-height of 95svh leaves
+  // only 2.5svh above — not enough for the button. Capping at 100svh − 100px
+  // guarantees ≥ 50px above the dialog so the X is always reachable.
+  max-height: calc(100svh - 100px);
   max-width: calc(100vw - 16px);
   min-height: 50vh;
   min-width: 50vh;

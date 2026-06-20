@@ -16,6 +16,7 @@ export const useCodexStore = defineStore("codex", () => {
   const appStore = useAppStore();
 
   const faction = ref(null);
+  const allies = ref([]);
   const currentMFM = ref(null);
 
   const compendium = computed(() => {
@@ -38,8 +39,11 @@ export const useCodexStore = defineStore("codex", () => {
   });
 
   const filteredCompendium = computed(() => {
+    const alliedSet = new Set(allies.value ?? []);
+
     let sheets = compendium.value.filter(
-      (unit) => unit.faction === faction.value
+      (unit) =>
+        unit.faction === faction.value || alliedSet.has(unit.faction)
     );
 
     if (appStore.codexFilter) {
@@ -60,7 +64,14 @@ export const useCodexStore = defineStore("codex", () => {
       sheets = [...sheets].sort(sortDataSheetAlphabetical);
     }
 
-    return sheets;
+    // Tag allied sheets so the codex card and the add-unit path can branch
+    // on a stable field. Shallow-clone instead of mutating the parsed
+    // compendium (which is deep-frozen elsewhere).
+    return sheets.map((s) =>
+      alliedSet.has(s.faction) && s.faction !== faction.value
+        ? { ...s, allied: true, alliedFaction: s.faction }
+        : s
+    );
   });
 
   const filteredDetachments = computed(() => {
@@ -92,6 +103,10 @@ export const useCodexStore = defineStore("codex", () => {
     faction.value = newFaction;
   }
 
+  function setAllies(newAllies) {
+    allies.value = Array.isArray(newAllies) ? [...newAllies] : [];
+  }
+
   function setCurrentMFM(mfm) {
     currentMFM.value = mfm;
   }
@@ -107,6 +122,7 @@ export const useCodexStore = defineStore("codex", () => {
 
   return {
     faction,
+    allies,
     currentMFM,
     compendium,
     compendiumByName,
@@ -114,6 +130,7 @@ export const useCodexStore = defineStore("codex", () => {
     filteredDetachments,
     enhancements,
     setFaction,
+    setAllies,
     setCurrentMFM,
     getDataSheet,
   };

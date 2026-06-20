@@ -8,16 +8,19 @@ import { isDedicatedTransport } from "../utils/is-dedicated-transport";
 import { unitMax } from "../utils/unit-max";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
+import { useCodexStore } from "../stores/codex";
 import { useCollectionStore } from "../stores/collection";
 import {
   findAvailableWargearHost,
   wargearMaxPerUnit,
 } from "../utils/wargear-limits";
+import { legalDropSlots } from "../utils/legal-drop-slots";
 import LeaderIcon from "../assets/leader-skull-icon.svg";
 import SupportIcon from "../assets/support-icon.svg";
 
 const armyListStore = useArmyListStore();
 const appStore = useAppStore();
+const codexStore = useCodexStore();
 const collectionStore = useCollectionStore();
 
 const props = defineProps({
@@ -33,7 +36,36 @@ function addUnit(option) {
     name: props.dataSheet.name,
     optionName: option.name,
   };
+  if (props.dataSheet.allied) {
+    newUnit.allied = true;
+    // Pin the source faction so validation (and any later points lookup) can
+    // tell whose codex this unit came from. Same-named datasheets in
+    // different codexes can have different points costs, so the lookup must
+    // not silently fall through to another faction's copy.
+    newUnit.alliedFaction = props.dataSheet.alliedFaction;
+  }
   armyListStore.addUnit(newUnit);
+
+  // Support characters MUST be attached to a host or they fail validation —
+  // auto-attach to the first legal host so a one-click add doesn't leave a
+  // red row that the user has to drag-resolve. Mirrors the same auto-attach
+  // behavior `addEnhancement` already implements for enhancements.
+  if (props.dataSheet.support?.attachesTo?.length) {
+    const slots = legalDropSlots(
+      armyListStore.units,
+      newUnit.id,
+      codexStore.getDataSheet
+    );
+    const attachHostIds = new Set(
+      slots.filter((s) => s.type === "attach").map((s) => s.hostId)
+    );
+    if (attachHostIds.size > 0) {
+      const firstHost = armyListStore.units.find((u) =>
+        attachHostIds.has(u.id)
+      );
+      if (firstHost) armyListStore.moveUnit(newUnit.id, firstHost.id, 0);
+    }
+  }
 }
 
 // Wargear is auto-attached to the first matching host (in army-list order)
@@ -240,6 +272,12 @@ const showInlineRoles = computed(() => appStore.group === GROUP_NONE);
       </div>
       <span class="data-sheet__pills">
         <span
+          v-if="props.dataSheet.allied"
+          class="data-sheet__pill data-sheet__pill--allied"
+          :title="`Allied unit — ${props.dataSheet.alliedFaction}`"
+          >ALLY</span
+        >
+        <span
           v-if="showInlineRoles && isBattleLine(props.dataSheet)"
           class="data-sheet__pill"
           title="Battleline"
@@ -441,6 +479,11 @@ const showInlineRoles = computed(() => appStore.group === GROUP_NONE);
     &--accent {
       background-color: var(--color-accent-dim);
       color: #0f1923;
+    }
+
+    &--allied {
+      background-color: #5b3da6;
+      color: #fff;
     }
   }
 

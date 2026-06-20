@@ -5,6 +5,7 @@ const MAP = {
   version: "v",
   mfm_version: "mfm",
   detachments: "ds",
+  allies: "al",
   sortOrder: "so",
 };
 
@@ -28,6 +29,13 @@ const UNIT_MAP = {
   // falls back to name-matching, which breaks when two detachments share an
   // enhancement name.
   detachment: "ud",
+  // "1" when the unit was added from an allied faction's datasheet pool,
+  // otherwise omitted. Used for visual distinction only — has no rule effect.
+  allied: "ua",
+  // Pinned source faction when `allied` is set — required to disambiguate
+  // same-named datasheets in different codexes (e.g. INTERCESSOR SQUAD
+  // exists in several Space Marine chapters, often at different points).
+  alliedFaction: "uaf",
 };
 
 const PARSERS = {
@@ -35,10 +43,14 @@ const PARSERS = {
   models: Number,
   points: Number,
   detachments: (v) => (v ? v.split(",") : []),
+  allies: (v) => (v ? v.split(",") : []),
+  allied: (v) => v === "1",
 };
 
 const SERIALIZERS = {
   detachments: (v) => (Array.isArray(v) ? v.join(",") : ""),
+  allies: (v) => (Array.isArray(v) ? v.join(",") : ""),
+  allied: (v) => (v ? "1" : ""),
 };
 
 export const serializeList = function (data) {
@@ -62,6 +74,8 @@ export const serializeList = function (data) {
       if (key === "attachedTo") {
         const idx = val ? indexById.get(val) : undefined;
         val = idx === undefined ? "" : String(idx);
+      } else if (SERIALIZERS[key]) {
+        val = SERIALIZERS[key](val);
       }
       search.append(sKey, encodeURIComponent(val || ""));
     });

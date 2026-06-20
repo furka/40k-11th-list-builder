@@ -19,35 +19,47 @@ const appStore = useAppStore();
 const dragStore = useDragStore();
 const detachmentDragStore = useDetachmentDragStore();
 
-const groupedUnits = computed(() => {
-  const data = [];
+// Group primary datasheets first, then one labelled section per allied
+// faction. Within each scope the existing Role grouping (or None) is
+// preserved. Ally section titles are prefixed with the faction name so the
+// user can tell whose units they're looking at.
+function buildGroupsForScope(sheets, scopeTitle) {
   if (appStore.group === GROUP_NONE) {
-    data.push({ title: "", units: codexStore.filteredCompendium });
-  } else {
-    const characters = { title: "Characters", units: [] };
-    const battleLine = { title: "Battle Line", units: [] };
-    const transports = { title: "Dedicated Transport", units: [] };
-    const other = { title: "Other", units: [] };
-    const fortifications = { title: "Fortifications", units: [] };
+    return [{ title: scopeTitle, units: sheets }];
+  }
+  const prefix = scopeTitle ? `${scopeTitle} — ` : "";
+  const characters = { title: `${prefix}Characters`, units: [] };
+  const battleLine = { title: `${prefix}Battle Line`, units: [] };
+  const transports = { title: `${prefix}Dedicated Transport`, units: [] };
+  const other = { title: `${prefix}Other`, units: [] };
+  const fortifications = { title: `${prefix}Fortifications`, units: [] };
+  for (const sheet of sheets) {
+    if (sheet.character) characters.units.push(sheet);
+    else if (isBattleLine(sheet)) battleLine.units.push(sheet);
+    else if (isDedicatedTransport(sheet)) transports.units.push(sheet);
+    else if (sheet.fortification) fortifications.units.push(sheet);
+    else other.units.push(sheet);
+  }
+  return [characters, battleLine, transports, other, fortifications];
+}
 
-    data.push(characters, battleLine, transports, other, fortifications);
-
-    codexStore.filteredCompendium.forEach((sheet) => {
-      if (sheet.character) {
-        characters.units.push(sheet);
-      } else if (isBattleLine(sheet)) {
-        battleLine.units.push(sheet);
-      } else if (isDedicatedTransport(sheet)) {
-        transports.units.push(sheet);
-      } else if (sheet.fortification) {
-        fortifications.units.push(sheet);
-      } else {
-        other.units.push(sheet);
-      }
-    });
+const groupedUnits = computed(() => {
+  const all = codexStore.filteredCompendium;
+  const primary = all.filter((s) => !s.allied);
+  const alliesOrder = armyListStore.allies ?? [];
+  const byAlly = new Map(alliesOrder.map((name) => [name, []]));
+  for (const sheet of all) {
+    if (!sheet.allied) continue;
+    if (!byAlly.has(sheet.alliedFaction)) byAlly.set(sheet.alliedFaction, []);
+    byAlly.get(sheet.alliedFaction).push(sheet);
   }
 
-  return data.filter((group) => group.units.length > 0);
+  const groups = [];
+  groups.push(...buildGroupsForScope(primary, ""));
+  for (const [faction, sheets] of byAlly) {
+    groups.push(...buildGroupsForScope(sheets, faction));
+  }
+  return groups.filter((group) => group.units.length > 0);
 });
 
 const detachmentList = computed(() => codexStore.filteredDetachments);

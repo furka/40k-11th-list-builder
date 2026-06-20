@@ -43,6 +43,7 @@ function initializeApp() {
   });
 
   codexStore.setFaction(armyListStore.faction);
+  codexStore.setAllies(armyListStore.allies);
   codexStore.setCurrentMFM(armyListStore.currentMFM);
 
   const searchParams = new URLSearchParams(window.location.search);
@@ -219,6 +220,14 @@ watch(
 );
 
 watch(
+  () => armyListStore.allies,
+  (newAllies) => {
+    codexStore.setAllies(newAllies);
+  },
+  { deep: true }
+);
+
+watch(
   () => armyListStore.currentMFM,
   (newMFM) => {
     codexStore.setCurrentMFM(newMFM);
@@ -309,7 +318,7 @@ onUnmounted(() => {
   --font-body: "Inter", system-ui, "Segoe UI", sans-serif;
   --font-family: var(--font-body);
   --toolbar-height: 44px;
-  --codex-toolbar-height: 64px;
+  --codex-toolbar-height: 50px;
   --version-bar-height: 22px;
   background-color: var(--color-bg);
   color: var(--color-text);

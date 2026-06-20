@@ -240,6 +240,11 @@ function onPointerDown(e) {
       {{ name }}
     </span>
     <span
+      v-if="props.unit.allied"
+      class="army-list-unit__ally-badge"
+      title="Allied unit"
+    >ALLY</span>
+    <span
       v-if="isUnitUpgrade"
       class="army-list-unit__upgrade-badge"
       title="Unit upgrade — attaches to a non-character unit"
@@ -291,9 +296,17 @@ function onPointerDown(e) {
   // Gate hover on :not(--drag-mode) so dragging over rows doesn't paint a
   // hover background that competes with the attach-target highlight (or
   // shows a "this row would react" affordance over rows that can't take a
-  // drop). When idle, hover behaves as before.
+  // drop).
   &:not(.army-list-unit--drag-mode):hover {
     background-color: var(--color-header);
+    z-index: 2;
+  }
+
+  // Hover treatment for invalid rows: a brighter red, so the row still
+  // reacts to the pointer without losing the "this is broken" cue. Comes
+  // after the plain :hover rule so it wins via source-order specificity.
+  &.error:not(.army-list-unit--drag-mode):hover {
+    background-color: #5b1d24;
     z-index: 2;
   }
 
@@ -376,6 +389,23 @@ function onPointerDown(e) {
 
   &__warning + &__name {
     margin-inline-start: 32px;
+  }
+
+  &__ally-badge {
+    align-items: center;
+    background-color: #5b3da6;
+    border-radius: 3px;
+    color: #fff;
+    cursor: help;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin: 0 4px;
+    padding: 1px 5px;
+    text-transform: uppercase;
   }
 
   // Matches Games Workshop's own visual language — bright green pill, full
