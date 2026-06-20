@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "mfm:scrape": "node --env-file-if-exists=.env scripts/scrape-mfm-11th/index.mjs",
     "mfm:scrape:refresh": "node --env-file-if-exists=.env scripts/scrape-mfm-11th/index.mjs --refresh"
   },
@@ -22,6 +23,7 @@
     "@anthropic-ai/sdk": "^0.104.2",
     "@pinia/testing": "^1.0.3",
     "@vitejs/plugin-vue": "^6.0.3",
+    "@vitest/coverage-v8": "^4.1.9",
     "@vue/test-utils": "^2.4.6",
     "jsdom": "^27.4.0",
     "pdfjs-dist": "^6.0.227",
