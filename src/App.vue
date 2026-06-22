@@ -22,7 +22,7 @@ import {
 import AppToolBar from "./components/AppToolBar.vue";
 import CodexToolBar from "./components/CodexToolBar.vue";
 import VersionBar from "./components/VersionBar.vue";
-import { deserializeList, serializeList } from "./utils/serialize-list";
+import { deserializeList } from "./utils/serialize-list";
 
 const armyListStore = useArmyListStore();
 const collectionStore = useCollectionStore();
@@ -46,22 +46,20 @@ function initializeApp() {
   codexStore.setAllies(armyListStore.allies);
   codexStore.setCurrentMFM(armyListStore.currentMFM);
 
-  const searchParams = new URLSearchParams(window.location.search);
-  if (searchParams.size) {
+  // URL search params are only ever an incoming shared list — import it
+  // once, then strip the params so a refresh can't re-trigger the import.
+  // Sharing-out is handled on demand by ShareListModal, not via auto-mirror.
+  if (window.location.search) {
     try {
-      // The URL watcher mirrors the current list into the address bar, so on
-      // a plain reload the search string is just a re-serialization of the
-      // list we already restored from localStorage. Without this guard every
-      // reload would stash a near-duplicate of the current list into
-      // appStore.lists.
-      if (serializeList(armyListStore.toObject()) !== window.location.search) {
-        const list = deserializeList(searchParams);
+      const list = deserializeList(new URLSearchParams(window.location.search));
+      if (armyListStore.faction) {
         appStore.lists.unshift(armyListStore.toObject());
-        armyListStore.setList(list);
       }
+      armyListStore.setList(list);
     } catch (e) {
       console.error(e);
     }
+    window.history.replaceState({}, "", window.location.pathname);
   }
 }
 
@@ -244,29 +242,6 @@ watch(
   () => applySortToList()
 );
 
-// Mirror the current list into the address bar via replaceState so the user
-// can just copy the URL to share. Skip empty/factionless lists to avoid
-// `?n=&f=&…` on a fresh app. replaceState (not pushState) — every keystroke
-// in the list name shouldn't add a browser-history entry.
-//
-// Debounced to 300ms because the URL is only consulted when the user copies
-// it; we don't need it in sync with every keystroke / drag tick. Shallow
-// watcher: every store mutation reassigns refs, so deep traversal of the
-// units array on every mutation is wasted work.
-let urlTimeoutId = 0;
-watch(
-  () => armyListStore.toObject(),
-  (list) => {
-    if (!list.faction) return;
-    if (urlTimeoutId) clearTimeout(urlTimeoutId);
-    urlTimeoutId = setTimeout(() => {
-      urlTimeoutId = 0;
-      const url = window.location.pathname + serializeList(list);
-      window.history.replaceState({}, "", url);
-    }, 300);
-  }
-);
-
 onMounted(() => {
   window.addEventListener("resize", handleResize);
 });
@@ -275,10 +250,6 @@ onUnmounted(() => {
   window.removeEventListener("resize", handleResize);
   detachDragListeners();
   detachDetachmentDragListeners();
-  if (urlTimeoutId) {
-    clearTimeout(urlTimeoutId);
-    urlTimeoutId = 0;
-  }
 });
 </script>
 
