@@ -23,3 +23,34 @@ export function findEnhancementPages(pages, enhancementName) {
   if (matches.length === 0) return null;
   return { pages: matches };
 }
+
+// Locate the page(s) describing a detachment's rules section in the Faction
+// Pack PDF. Two anchors are accepted:
+//
+//   1. "{NAME} DETACHMENT RULES" — the canonical heading for a detachment's
+//      main rules section.
+//   2. "{NAME} DETACHMENT" + "Keywords Section Change" on the same page —
+//      the errata pattern used in "Rules Updates" sections (e.g. CSM Chaos
+//      Cult, DA Company of Hunters). The change-to phrase is specific
+//      enough that false positives are unlikely; pages with multiple
+//      errata entries are included for every named detachment, and the LLM
+//      is told to extract only the rule for the detachment it's asked about.
+//
+// Over-includes: a page with either anchor gets through and the LLM decides
+// whether any keyword-grant rules are present. Returns { pages: string[] }
+// or null.
+export function findDetachmentRulesPages(pages, detachmentName) {
+  const key = enhancementNameKey(detachmentName);
+  if (!key) return null;
+  const detachmentRulesAnchor = key + "DETACHMENTRULES";
+  const detachmentAnchor = key + "DETACHMENT";
+  const errataMarker = "KEYWORDSSECTIONCHANGE";
+  const matches = pages.filter((p) => {
+    const n = normalize(p);
+    if (n.includes(detachmentRulesAnchor)) return true;
+    if (n.includes(detachmentAnchor) && n.includes(errataMarker)) return true;
+    return false;
+  });
+  if (matches.length === 0) return null;
+  return { pages: matches };
+}

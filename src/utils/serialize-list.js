@@ -7,6 +7,7 @@ const MAP = {
   detachments: "ds",
   allies: "al",
   sortOrder: "so",
+  bonusBattleline: "bb",
 };
 
 import { v4 as uuidv4 } from "uuid";
@@ -44,12 +45,16 @@ const PARSERS = {
   points: Number,
   detachments: (v) => (v ? v.split(",") : []),
   allies: (v) => (v ? v.split(",") : []),
+  bonusBattleline: (v) => (v ? v.split("|") : []),
   allied: (v) => v === "1",
 };
 
 const SERIALIZERS = {
   detachments: (v) => (Array.isArray(v) ? v.join(",") : ""),
   allies: (v) => (Array.isArray(v) ? v.join(",") : ""),
+  // `|` separator because datasheet names like "ORDO HERETICUS, PURGATION FORCE"
+  // contain commas and would otherwise round-trip incorrectly.
+  bonusBattleline: (v) => (Array.isArray(v) ? v.join("|") : ""),
   allied: (v) => (v ? "1" : ""),
 };
 

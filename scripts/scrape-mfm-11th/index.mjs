@@ -8,8 +8,12 @@ import { fetchFactionHtml, fetchFactionPackPdf } from "./fetch.mjs";
 import { extractFactionData } from "./extract.mjs";
 import { normalizeFactionData } from "./normalize.mjs";
 import { pdfToPages } from "./pdf-to-text.mjs";
-import { findEnhancementPages } from "./find-section.mjs";
+import { findEnhancementPages, findDetachmentRulesPages } from "./find-section.mjs";
 import { classifyWithLLM, flushLlmCache } from "./llm-classify.mjs";
+import {
+  classifyDetachmentGrantsWithLLM,
+  flushDetachmentGrantsCache,
+} from "./llm-classify-detachment-grants.mjs";
 import { enhancementNameKey } from "./name-key.mjs";
 import { createWarningSink } from "./warnings.mjs";
 
@@ -19,6 +23,10 @@ const FACTION_PACK_URLS_PATH = resolve(__dirname, "faction-pack-urls.json");
 const RESTRICTIONS_OUT = resolve(
   __dirname,
   "../../src/data/configs/enhancement-restrictions.auto.json"
+);
+const CONDITIONAL_GRANTS_OUT = resolve(
+  __dirname,
+  "../../src/data/configs/conditional-battleline.auto.json"
 );
 
 const FACTION_NAMES = {
@@ -328,6 +336,192 @@ function dropEmptyFields(restrictions) {
   return out;
 }
 
+// Detachment-conditional keyword grants: for each MFM detachment, find its
+// rules section in the PDF and ask the LLM whether it grants any composition
+// keywords (currently only BATTLELINE) to specific datasheets. Output is the
+// same shape consumed by src/utils/conditional-battleline.js — an array of
+// rules per faction, each rule wrapping a typed trigger object.
+//
+// MFM-driven (not PDF-driven): we know what detachments exist from MFM. The
+// scraper goes looking FOR each one's rules section, just like the
+// enhancement pass goes looking for each enhancement.
+async function scrapeDetachmentGrantsForFaction(
+  slug,
+  factionPayload,
+  factionPackUrls,
+  warnings,
+  llmClient,
+  { refresh }
+) {
+  const url = factionPackUrls[slug];
+  if (!url) return null;
+  let pdfBuf;
+  try {
+    pdfBuf = await fetchFactionPackPdf(slug, url, { refresh });
+  } catch (e) {
+    warnings.add("dgrants-pdf-fetch-failed", { slug, url, message: e.message });
+    return null;
+  }
+  let pages;
+  try {
+    pages = await pdfToPages(pdfBuf);
+  } catch (e) {
+    warnings.add("dgrants-pdf-parse-failed", { slug, message: e.message });
+    return null;
+  }
+
+  const datasheetNames = factionPayload.datasheets.map((d) => d.name);
+  const datasheetByKey = new Map();
+  for (const name of datasheetNames) datasheetByKey.set(enhancementNameKey(name), name);
+
+  const rules = [];
+  const counts = {
+    detachments: factionPayload.detachments.length,
+    sectionMissed: 0,
+    classified: 0,
+    cacheHits: 0,
+    rulesEmitted: 0,
+    failed: 0,
+  };
+
+  for (const det of factionPayload.detachments) {
+    const matched = findDetachmentRulesPages(pages, det.name);
+    if (!matched) {
+      warnings.add("dgrants-section-missing-in-pdf", { slug, detachment: det.name });
+      counts.sectionMissed++;
+      continue;
+    }
+
+    let result;
+    let cacheHit;
+    try {
+      const res = await classifyDetachmentGrantsWithLLM({
+        client: llmClient,
+        detachmentName: det.name,
+        pageTexts: matched.pages,
+        datasheetNames,
+      });
+      result = res.result;
+      cacheHit = res.cacheHit;
+    } catch (e) {
+      warnings.add("dgrants-llm-call-failed", {
+        slug,
+        detachment: det.name,
+        message: e.message,
+      });
+      counts.failed++;
+      continue;
+    }
+    if (cacheHit) counts.cacheHits++;
+    counts.classified++;
+
+    if (result.notDefined) continue;
+    if (!Array.isArray(result.grants) || result.grants.length === 0) continue;
+
+    for (const grant of result.grants) {
+      // Reconcile each unit name back to the canonical MFM string. Drop
+      // anything that doesn't map — the prompt instructs the model to only
+      // emit names from the closed vocabulary, but the safety check is cheap
+      // and matches the enhancement classifier's posture.
+      const canonical = [];
+      for (const u of grant.units ?? []) {
+        const real = datasheetByKey.get(enhancementNameKey(u));
+        if (real) canonical.push(real);
+      }
+      if (canonical.length === 0) continue;
+
+      const rule = {
+        trigger: { type: "detachment", name: det.name },
+      };
+      const keyword = (grant.keyword ?? "").toUpperCase();
+      if (keyword === "BATTLELINE") {
+        rule.battleLine = canonical;
+      } else {
+        // Future-proof: emit anyway under a `keyword` field the runtime can
+        // ignore until it learns about the new keyword.
+        rule.keyword = keyword;
+        rule.units = canonical;
+      }
+      rules.push(rule);
+      counts.rulesEmitted++;
+    }
+  }
+
+  console.log(
+    `    ${counts.detachments} detachment(s), ${counts.classified} classified` +
+      ` (${counts.rulesEmitted} rule(s) emitted, section-missing ${counts.sectionMissed},` +
+      ` failed ${counts.failed}, cache-hits ${counts.cacheHits})`
+  );
+  return rules;
+}
+
+async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape }) {
+  if (!existsSync(FACTION_PACK_URLS_PATH)) {
+    console.warn(
+      `Skipping detachment-grants pass: ${FACTION_PACK_URLS_PATH} missing.`
+    );
+    return;
+  }
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.warn(
+      `Skipping detachment-grants pass: ANTHROPIC_API_KEY is not set.`
+    );
+    return;
+  }
+  const factionPackUrls = JSON.parse(
+    readFileSync(FACTION_PACK_URLS_PATH, "utf8")
+  );
+
+  const Anthropic = (await import("@anthropic-ai/sdk")).default;
+  const llmClient = new Anthropic();
+
+  let existing = {};
+  if (!isFullScrape && existsSync(CONDITIONAL_GRANTS_OUT)) {
+    try {
+      existing = JSON.parse(await readFile(CONDITIONAL_GRANTS_OUT, "utf8"));
+    } catch (e) {
+      console.warn(`  ! could not parse existing ${CONDITIONAL_GRANTS_OUT}: ${e.message}`);
+    }
+  }
+
+  for (const slug of slugs) {
+    const factionPayload = scraped.get(slug);
+    if (!factionPayload) continue;
+    try {
+      process.stdout.write(`  ${slug} detachment-grants …\n`);
+      const rules = await scrapeDetachmentGrantsForFaction(
+        slug,
+        factionPayload,
+        factionPackUrls,
+        warnings,
+        llmClient,
+        { refresh }
+      );
+      if (rules === null) continue;
+      if (rules.length > 0) {
+        existing[factionPayload.faction] = rules;
+      } else {
+        delete existing[factionPayload.faction];
+      }
+    } catch (e) {
+      warnings.add("dgrants-pdf-parse-failed", { slug, message: e.message });
+    }
+  }
+
+  await flushDetachmentGrantsCache();
+
+  const sorted = {};
+  for (const k of Object.keys(existing).sort()) sorted[k] = existing[k];
+  await writeFile(
+    CONDITIONAL_GRANTS_OUT,
+    stableStringify(sorted) + "\n",
+    "utf8"
+  );
+  console.log(
+    `Wrote ${Object.keys(sorted).length} faction(s) to conditional-battleline.auto.json`
+  );
+}
+
 async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape }) {
   if (!existsSync(FACTION_PACK_URLS_PATH)) {
     console.warn(
@@ -468,6 +662,8 @@ async function main() {
     );
     console.log("\nFaction Pack PDF pass …");
     await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
+    console.log("\nDetachment-grants pass …");
+    await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape });
     await flushAndReport(warnings);
     if (failCount > 0) process.exitCode = 1;
     return;
@@ -502,6 +698,8 @@ async function main() {
   if (writeNew || refresh) {
     console.log("\nFaction Pack PDF pass …");
     await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
+    console.log("\nDetachment-grants pass …");
+    await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape });
   } else {
     console.log("\nSkipping Faction Pack PDF pass (MFM unchanged). Use --refresh to force.");
   }

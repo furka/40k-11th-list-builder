@@ -958,3 +958,59 @@ describe("armyList derived state — wargear isolation", () => {
   });
 });
 
+describe("armyList.toggleBonusBattleline", () => {
+  let store;
+  beforeEach(() => {
+    store = freshStore();
+  });
+
+  it("adds a datasheet name when not already present", () => {
+    expect(store.bonusBattleline).toEqual([]);
+    store.toggleBonusBattleline("WARBIKERS");
+    expect(store.bonusBattleline).toEqual(["WARBIKERS"]);
+  });
+
+  it("removes a datasheet name when already present", () => {
+    store.toggleBonusBattleline("WARBIKERS");
+    store.toggleBonusBattleline("WARBIKERS");
+    expect(store.bonusBattleline).toEqual([]);
+  });
+
+  it("accumulates multiple distinct entries", () => {
+    store.toggleBonusBattleline("WARBIKERS");
+    store.toggleBonusBattleline("STORMBOYZ");
+    expect(new Set(store.bonusBattleline)).toEqual(
+      new Set(["WARBIKERS", "STORMBOYZ"])
+    );
+  });
+
+  it("no-ops on falsy names", () => {
+    store.toggleBonusBattleline("");
+    store.toggleBonusBattleline(undefined);
+    store.toggleBonusBattleline(null);
+    expect(store.bonusBattleline).toEqual([]);
+  });
+
+  it("is included in toObject() output", () => {
+    store.toggleBonusBattleline("WARBIKERS");
+    expect(store.toObject().bonusBattleline).toEqual(["WARBIKERS"]);
+  });
+
+  it("survives a setList roundtrip", () => {
+    store.toggleBonusBattleline("WARBIKERS");
+    const snapshot = store.toObject();
+
+    // Simulate loading a different list, then loading the snapshot back.
+    store.setList({ faction: FACTION, units: [], detachments: [] });
+    expect(store.bonusBattleline).toEqual([]);
+
+    store.setList(snapshot);
+    expect(store.bonusBattleline).toEqual(["WARBIKERS"]);
+  });
+
+  it("defaults to [] when setList receives a list without bonusBattleline", () => {
+    store.setList({ faction: FACTION, units: [], detachments: [] });
+    expect(store.bonusBattleline).toEqual([]);
+  });
+});
+

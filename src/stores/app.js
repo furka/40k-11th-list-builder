@@ -12,7 +12,11 @@ export const useAppStore = defineStore("app", () => {
 
   const codexFilter = ref("");
   const editCollection = ref(restore("editCollection") ?? false);
-  const group = ref(restore("group") ?? GROUP_ROLE);
+  // Role is now the only supported grouping; coerce any legacy "None" value
+  // saved by older clients so the existing UI doesn't render against an
+  // unsupported state.
+  const savedGroup = restore("group");
+  const group = ref(savedGroup === GROUP_ROLE ? savedGroup : GROUP_ROLE);
   const sortOrder = ref(restore("sortOrder") ?? "A-Z");
 
   const showLegends = ref(restore("showLegends") ?? false);

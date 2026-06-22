@@ -22,145 +22,86 @@ npm run build
 npm run preview
 ```
 
+**Dev server lifecycle**: if you start a dev server (`npm run dev`, `npm run preview`, or any other long-running process) during a task, shut it down before ending the turn. Don't leave background servers running for the user to find later.
+
 ## Architecture
 
 ### Data Flow and State Management
 
-The application uses a reactive `appData` object (in `src/App.vue`) as the central state store. This object contains:
-- `currentList`: The active army list being edited
-- `lists`: Saved army lists stored in localStorage
-- `compendium`: All unit datasheets from the current MFM version
-- `factions`: Available factions and their detachments
-- `collection`: Array of units the user owns (with `name` and `owned` count)
-- UI state (filters, sort order, etc.)
+State is split across Pinia stores in `src/stores/`. Each store persists its own slice to `localStorage` via `save` / `debouncedSave` helpers from `src/utils/localStorage.js` (key prefix `"11th:"`). There is no central `appData` object — `src/App.vue` wires the stores together and triggers `loadFromStorage()` + `autoUpgradeMFMVersion()` on mount.
 
-State persistence is handled through Vue watchers that automatically save to localStorage when tracked properties change (see `track()` function in `src/App.vue`).
+The seven stores:
 
-#### AppData Structure Example
+- **`armyList`** (`src/stores/armyList.js`) — The active list being edited: `name`, `faction`, `maxPoints`, `mfm_version`, `version`, `modifiedDate`, `sortOrder`, `units`, `detachments`, `allies`, `bonusBattleline`. Also exposes ~20 computeds (validation errors, points breakdown, unit counts, attachment trees, etc.). Persisted to `"currentList"`.
+- **`app`** (`src/stores/app.js`) — UI prefs (`codexFilter`, `group`, `sortOrder`, `showLegends`, `showAvailableOnly`, `showPointsChanges`, `editCollection`) plus the saved-`lists` array. Window dimensions (`appHeight`, `appWidth`) live here but aren't persisted.
+- **`collection`** (`src/stores/collection.js`) — User's owned-unit counts as a `{ unitName: count }` map. Persisted to `"collection"`.
+- **`mfm`** (`src/stores/mfm.js`) — Wraps the aggregated MFM bundle (`MFM.CURRENT`, `MFM.PREVIOUS`), version lookup, and per-list upgrade helpers (`autoUpgradeMFMVersion`, `hasInvalidMFM`, `changes`).
+- **`codex`** (`src/stores/codex.js`) — Right-panel filtering state: active faction, allies, current MFM, derived `compendium` and lookup maps.
+- **`drag`** / **`detachmentDrag`** (`src/stores/drag.js`, `src/stores/detachmentDrag.js`) — Pointer-event drag-and-drop state for unit reordering and detachment reordering.
+
+#### Current List Shape
+
+`armyListStore.toObject()` returns a list with this shape (saved lists in `appStore.lists` use the same shape):
 
 ```javascript
 {
-  // UI State
-  appHeight: 1305,
-  appWidth: 1529,
-  codexFilter: "",               // Text filter for unit search
-  group: "None",                 // or "Role" for grouped display in ArmyCodex
-  sortOrder: "A-Z",              // Sort order: "A-Z", "Expensive first", "Cheap first"
-  showForgeWorld: true,          // Toggle visibility of Forge World units
-  showLegends: false,            // Toggle visibility of Legends units
-  showPointsChanges: true,       // Show point changes when upgrading MFM versions
-  editCollection: false,         // Whether collection editor is open
-  armyName: "",                  // Legacy field (replaced by currentList.name)
-
-  // Current Army List
-  currentList: {
-    name: "My Army",
-    faction: "THOUSAND SONS",              // Faction name (uppercase)
-    detachment: "HEXWARP THRALLBAND",      // Selected detachment
-    mfm_version: "VERSION 1.8",            // MFM version (underscore, not camel case)
-    version: "1.3.5",                      // App version when list was created
-    maxPoints: 2000,                       // Point limit for the army
-    units: [
-      {
-        // Regular unit example
-        id: "uuid-123",                    // Unique ID for drag-and-drop (added at runtime)
-        name: "Necron Warriors",
-        optionName: "10 models",           // May be omitted if unit has only one size
-        models: 10,
-        points: 100,
-        faction: "NECRONS",
-        battleLine: true,                  // Role flags (only present if true)
-        character: false,
-        epicHero: false,
-        dedicatedTransport: false,
-        fortification: false,
-        forgeWorld: false,
-        legends: false
-      },
-      {
-        // Enhancement example (special unit type)
-        name: "Enhancements",
-        optionName: "Dimensional Overseer",
-        points: 25,
-        // No models field for enhancements
-        // No faction field for enhancements
-      },
-      {
-        // Minimal unit example (some fields may be omitted)
-        id: "uuid-789",
-        name: "Ghost Ark",
-        models: 1,
-        points: 125
-        // optionName omitted when unit has single size option
-      }
-    ]
-  },
-
-  // Saved Lists
-  lists: [
-    { name: "Sisters 2k", faction: "ADEPTA SORORITAS", /* ... */ },
-    { name: "Necrons 1k", faction: "NECRONS", /* ... */ }
-  ],
-
-  // Deleted lists (for undo)
-  bin: [],
-
-  // User's Collection
-  collection: [
-    { name: "Battle Sisters Squad", owned: 2 },
-    { name: "Canoness", owned: 1 }
-  ],
-
-  // MFM Data (parsed from text files)
-  compendium: [
+  name: "My Army",
+  faction: "THOUSAND SONS",        // uppercase faction name
+  maxPoints: 2000,
+  mfm_version: "V1.0",             // matches a key in MFM (e.g. "V1.0")
+  version: "1.0.10",               // app version when list was created
+  modifiedDate: 1718000000000,
+  sortOrder: "manual",
+  detachments: ["HEXWARP THRALLBAND"],
+  allies: [],                      // array of allied faction names
+  bonusBattleline: [],             // manually-promoted datasheet names
+  units: [
     {
-      name: "Battle Sisters Squad",
-      faction: "ADEPTA SORORITAS",
-      battleLine: true,
-      character: false,
-      epicHero: false,
-      dedicatedTransport: false,
-      fortification: false,
-      forgeWorld: false,
-      legends: false,
-      sizes: [
-        { name: "10 models", models: 10, points: 110, bonus: false },
-        { name: "20 models", models: 20, points: 220, bonus: false }
-      ]
-    }
-  ],
-
-  // Available Factions
-  factions: [
+      id: "uuid-123",              // assigned at runtime, used for drag + attachment refs
+      name: "Necron Warriors",
+      optionName: "10 models",     // omitted if datasheet has a single size
+      models: 10,
+      points: 100,
+      faction: "NECRONS",
+      // Optional fields, present only when relevant:
+      // attachedTo: "uuid-parent"      — wargear / leaders / enhancements bound to a parent unit
+      // allied: true, alliedFaction: "ADEPTA SORORITAS"  — allied-detachment unit
+      // detachment: "HEXWARP THRALLBAND" — for "Enhancements" sentinels, names the source detachment
+      // parentDataSheet: "Necron Warriors" — wargear options keyed back to their host datasheet
+    },
     {
-      name: "ADEPTA SORORITAS",
-      detachments: [
-        { name: "HALLOWED MARTYRS" },
-        { name: "BRINGERS OF FLAME" }
-      ]
+      name: "Enhancements",        // sentinel; optionName carries the enhancement name
+      optionName: "Dimensional Overseer",
+      points: 25,
+      attachedTo: "uuid-character",
+      detachment: "HEXWARP THRALLBAND",
     }
   ]
 }
 ```
 
+Role booleans (`battleLine`, `character`, `epicHero`, …) are **not** copied onto units — look them up on the datasheet (see "Common Tasks" below). `src/stores/armyList.js` is the source of truth for the full field list and validation logic.
+
 ### MFM (Munitorum Field Manual) System
 
-The core data structure is built around parsing official Warhammer 40K points documents:
+The MFM data is scraped from the official GW faction-pack PDFs, not copy-pasted text:
 
-- **Source Files**: `src/data/munitorum-field-manual/MFM*.txt` - Direct copy-paste from official PDF documents
-- **Parser**: `src/utils/data-reader.js` - Parses raw text into structured data (FACTIONS, DATA_SHEETS, MFM_VERSION)
-- **Version Manager**: `src/utils/mfm.js` - Imports all MFM versions, provides `MFM.CURRENT`, `MFM.LATEST`, `MFM.PREVIOUS`
-- **Upgrades**: `src/utils/update-list-mfm.js` - Handles upgrading saved lists to new MFM versions, detecting point changes
+- **Source files**: `src/data/munitorum-field-manual-11th/v<siteVersion>-<scrapedAt>/` — one JSON per faction plus a `_manifest.json`. Each dated subdirectory is one historical snapshot.
+- **Parser**: `src/utils/data-reader-11th.js` — `parse11thFaction()` and `parse11thSnapshot()` produce `{ FACTIONS, DATA_SHEETS, MFM_VERSION }` from the scraped JSON.
+- **Aggregator**: `src/data/munitorum-field-manual-11th/index.js` — `load11thMFM()` auto-globs every snapshot dir at build time and produces `{ "V1.0": {...}, ..., CURRENT, PREVIOUS }`. Adding a new snapshot is zero-config.
+- **Version manager**: `src/stores/mfm.js` (`useMfmStore`) — exposes `MFM.CURRENT` / `MFM.PREVIOUS`, version lookup, plus per-list upgrade helpers (`autoUpgradeMFMVersion`, `hasInvalidMFM`, `changes`). `App.vue` calls `autoUpgradeMFMVersion()` for the current list and every saved list on mount.
 
-When adding a new MFM version, see `src/data/munitorum-field-manual/README.md` for the full step-by-step process (diffing, classifying new units, updating configs, importing, and verifying).
+To add a new MFM version, re-run `node scripts/scrape-mfm-11th/index.mjs`. The scraper either updates files in place (content unchanged) or mints a new dated snapshot dir; the aggregator picks it up automatically. The pipeline also runs `llm-classify.mjs` (datasheet role classification) and `llm-classify-detachment-grants.mjs` (detachment-level BATTLELINE grants → `src/data/configs/conditional-battleline.auto.json`).
 
 ### Component Structure
 
-- **App.vue**: Root component, manages global state and localStorage persistence
-- **ArmyList.vue**: Left panel showing selected units, supports drag-to-reorder via the pointer-event drag stores, visually scales based on points
-- **ArmyCodex.vue**: Right panel showing available units filtered by faction/detachment with grouping and sorting
-- **DataSheet.vue**: Individual unit card showing available sizes/options
-- **PrintableArmyList.vue**: Print-only view (hidden on screen, shown via CSS @media print)
+- **App.vue**: Root component; wires the Pinia stores and triggers load/auto-upgrade on mount.
+- **ArmyList.vue**: Left panel showing selected units; supports drag-to-reorder via the pointer-event drag stores; visually scales based on points.
+- **ArmyCodex.vue**: Right panel showing available units filtered by faction/detachment with grouping and sorting; also applies the conditional-battleline overlay.
+- **DataSheet.vue**: Individual unit card showing available sizes/options.
+- **CodexOptions.vue**: Right-panel options menu (sort order, Legends toggle, available-only toggle, points-changes toggle).
+- **BattlelineOverridesModal.vue**: Faction-wide datasheet picker for manually promoting units to BATTLELINE (writes to `armyListStore.bonusBattleline`).
+- **PrintableArmyList.vue**: Print-only view (hidden on screen, shown via CSS `@media print`).
 
 ### List Sharing System
 
@@ -171,7 +112,7 @@ Lists can be shared via URL using a compressed query string format:
 
 ### Configuration System
 
-`src/data/configs/index.js` and `config.json` define unit metadata by faction:
+`src/data/configs/index.js` and `config.json` define hand-curated unit metadata by faction:
 - `battle-line`: Units that count as Battle Line
 - `epic-hero`: Epic Hero units (limited to 3 per army)
 - `character`: Character units
@@ -179,6 +120,10 @@ Lists can be shared via URL using a compressed query string format:
 - `fortification`: Fortification units
 - `sub-factions`: Sub-faction mappings
 - `conditional`: Special rules for unit availability
+
+Two **auto-generated** companion files sit alongside `config.json` and must not be hand-edited (they're regenerated by the scraper):
+- `conditional-battleline.auto.json` — per-faction rules `{ trigger: { type: "detachment", name }, battleLine: [datasheet, ...] }`. Consumed by `src/utils/conditional-battleline.js` (`conditionalBattlelineUnits`, `autoBattlelineSource`) to promote datasheets to BATTLELINE when a triggering detachment is active. Manual overrides are merged in from `armyListStore.bonusBattleline` (driven by `BattlelineOverridesModal.vue`).
+- `enhancement-restrictions.auto.json` — scraped enhancement eligibility rules.
 
 This metadata is merged into datasheets during parsing.
 
@@ -233,4 +178,4 @@ When working with unit data or display logic, remember that units have:
 - `points`: Current point cost
 - `bonus`: Boolean indicating if option can be taken multiple times
 
-When making changes to unit filtering or grouping, the relevant logic is in `src/components/ArmyCodex.vue` which handles faction filtering, Forge World, Legends, and role-based grouping.
+When making changes to unit filtering or grouping, the relevant logic is in `src/components/ArmyCodex.vue` — it handles faction filtering, the Legends and "available-only" toggles, role-based grouping, and applies the conditional-battleline overlay.

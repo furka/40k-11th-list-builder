@@ -184,6 +184,30 @@ describe("serializeList / deserializeList", () => {
     expect(restored.units[0].allied).toBeUndefined();
   });
 
+  it("preserves bonusBattleline round-trip including names with commas and apostrophes", () => {
+    const data = {
+      faction: "ORKS",
+      // Datasheet names that exist in MFM and contain tricky characters:
+      // "WARRIOR BIOFORM ONSLAUGHT" → no special chars but mixed case
+      // Simulated "ORDO HERETICUS, PURGATION FORCE" → comma
+      // Simulated "SERPENT'S BROOD" → apostrophe
+      bonusBattleline: [
+        "WARBIKERS",
+        "ORDO HERETICUS, PURGATION FORCE",
+        "SERPENT'S BROOD",
+      ],
+      units: [],
+    };
+    const restored = deserializeList(
+      urlSearchParamsFromHash(serializeList(data))
+    );
+    expect(restored.bonusBattleline).toEqual([
+      "WARBIKERS",
+      "ORDO HERETICUS, PURGATION FORCE",
+      "SERPENT'S BROOD",
+    ]);
+  });
+
   it("preserves wargear pseudo-units round-trip (parentDataSheet + attachedTo)", () => {
     const data = {
       units: [

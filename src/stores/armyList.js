@@ -31,6 +31,7 @@ export const useArmyListStore = defineStore("armyList", () => {
   const units = ref([]);
   const detachments = ref([]);
   const allies = ref([]);
+  const bonusBattleline = ref([]);
 
   const effectiveMaxPoints = computed(() => maxPoints.value);
 
@@ -613,6 +614,15 @@ export const useArmyListStore = defineStore("armyList", () => {
     modifiedDate.value = Date.now();
   }
 
+  function toggleBonusBattleline(name) {
+    if (!name) return;
+    const current = bonusBattleline.value;
+    bonusBattleline.value = current.includes(name)
+      ? current.filter((n) => n !== name)
+      : [...current, name];
+    modifiedDate.value = Date.now();
+  }
+
   function setList(list) {
     name.value = list.name || "";
     faction.value = list.faction || "";
@@ -624,6 +634,9 @@ export const useArmyListStore = defineStore("armyList", () => {
     units.value = list.units || [];
     detachments.value = Array.isArray(list.detachments) ? list.detachments : [];
     allies.value = Array.isArray(list.allies) ? list.allies : [];
+    bonusBattleline.value = Array.isArray(list.bonusBattleline)
+      ? list.bonusBattleline
+      : [];
   }
 
   function toObject() {
@@ -638,6 +651,7 @@ export const useArmyListStore = defineStore("armyList", () => {
       units: units.value,
       detachments: detachments.value,
       allies: allies.value,
+      bonusBattleline: bonusBattleline.value,
     };
   }
 
@@ -667,6 +681,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     units,
     detachments,
     allies,
+    bonusBattleline,
     unitCounts,
     modelsTaken,
     enhancementsTaken,
@@ -691,6 +706,7 @@ export const useArmyListStore = defineStore("armyList", () => {
     canAddDetachment,
     whyCantAddDetachment,
     setAllies,
+    toggleBonusBattleline,
     setList,
     toObject,
     loadFromStorage,

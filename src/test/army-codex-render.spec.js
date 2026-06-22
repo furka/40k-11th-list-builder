@@ -8,7 +8,7 @@ import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useAppStore } from "../stores/app";
 import { useMfmStore } from "../stores/mfm";
-import { GROUP_NONE, GROUP_ROLE } from "../data/constants";
+import { GROUP_ROLE } from "../data/constants";
 
 const FACTION = "NECRONS";
 const ALLY_FACTION = "AELDARI";
@@ -151,17 +151,6 @@ describe("ArmyCodex.vue", () => {
     expect(titles).toContain("Battle Line");
     expect(titles).toContain("Dedicated Transport");
     expect(titles).toContain("Other");
-  });
-
-  it("collapses to a single titleless group when grouping is NONE", async () => {
-    const wrapper = mountCodex({ group: GROUP_NONE });
-    await nextTick();
-    const titles = wrapper
-      .findAll(".codex__group-title")
-      .map((t) => t.text())
-      .filter((t) => !t.startsWith("Detachments"));
-    expect(titles).toEqual([]);
-    expect(wrapper.findAll(".ds")).toHaveLength(4);
   });
 
   it("renders an ally faction as its own scoped group with the faction-name prefix", async () => {

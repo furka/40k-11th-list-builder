@@ -19,6 +19,10 @@ export const WARNING_CATEGORIES = [
   "llm-call-failed", // API error after retries; this enhancement had no classification
   "llm-empty-response", // LLM returned tool call but with no usable restriction fields
   "llm-api-key-missing", // ANTHROPIC_API_KEY unset; LLM pass skipped wholesale
+  "dgrants-pdf-fetch-failed", // detachment-grants pass: PDF fetch error
+  "dgrants-pdf-parse-failed", // detachment-grants pass: pdfjs extraction error
+  "dgrants-section-missing-in-pdf", // detachment section header not found in PDF text
+  "dgrants-llm-call-failed", // detachment-grants pass: API error
 ];
 
 // Lightweight in-memory accumulator. Each script creates its own sink per

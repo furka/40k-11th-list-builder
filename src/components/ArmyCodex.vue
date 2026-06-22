@@ -1,47 +1,49 @@
 <script setup>
 import DataSheet from "./DataSheet.vue";
 import CodexDetachmentCard from "./CodexDetachmentCard.vue";
+import BattlelineOverridesModal from "./BattlelineOverridesModal.vue";
 import { computed, ref } from "vue";
 import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
-import { useAppStore } from "../stores/app";
 import { useDragStore } from "../stores/drag";
 import { useDetachmentDragStore } from "../stores/detachmentDrag";
 import { useSlotEl } from "../composables/useSlotEl";
 import { useDetachmentSlotEl } from "../composables/useDetachmentSlotEl";
-import { GROUP_NONE } from "../data/constants";
 import { isBattleLine } from "../utils/is-battleline";
 import { isDedicatedTransport } from "../utils/is-dedicated-transport";
+import { conditionalBattlelineUnits } from "../utils/conditional-battleline";
+import SettingsIcon from "../assets/setting-fill-icon.svg";
 
 const armyListStore = useArmyListStore();
 const codexStore = useCodexStore();
-const appStore = useAppStore();
 const dragStore = useDragStore();
 const detachmentDragStore = useDetachmentDragStore();
 
+const battlelineModalOpen = ref(false);
+
 // Group primary datasheets first, then one labelled section per allied
-// faction. Within each scope the existing Role grouping (or None) is
-// preserved. Ally section titles are prefixed with the faction name so the
+// faction. Ally section titles are prefixed with the faction name so the
 // user can tell whose units they're looking at.
-function buildGroupsForScope(sheets, scopeTitle) {
-  if (appStore.group === GROUP_NONE) {
-    return [{ title: scopeTitle, units: sheets }];
-  }
+function buildGroupsForScope(sheets, scopeTitle, bonusBattlelineSet) {
   const prefix = scopeTitle ? `${scopeTitle} — ` : "";
-  const characters = { title: `${prefix}Characters`, units: [] };
-  const battleLine = { title: `${prefix}Battle Line`, units: [] };
-  const transports = { title: `${prefix}Dedicated Transport`, units: [] };
-  const other = { title: `${prefix}Other`, units: [] };
-  const fortifications = { title: `${prefix}Fortifications`, units: [] };
+  const characters = { kind: "characters", title: `${prefix}Characters`, units: [] };
+  const battleLine = { kind: "battleLine", title: `${prefix}Battle Line`, units: [] };
+  const transports = { kind: "transports", title: `${prefix}Dedicated Transport`, units: [] };
+  const other = { kind: "other", title: `${prefix}Other`, units: [] };
+  const fortifications = { kind: "fortifications", title: `${prefix}Fortifications`, units: [] };
   for (const sheet of sheets) {
     if (sheet.character) characters.units.push(sheet);
-    else if (isBattleLine(sheet)) battleLine.units.push(sheet);
+    else if (isBattleLine(sheet) || bonusBattlelineSet.has(sheet.name)) battleLine.units.push(sheet);
     else if (isDedicatedTransport(sheet)) transports.units.push(sheet);
     else if (sheet.fortification) fortifications.units.push(sheet);
     else other.units.push(sheet);
   }
   return [characters, battleLine, transports, other, fortifications];
 }
+
+const bonusBattlelineSet = computed(() =>
+  conditionalBattlelineUnits(armyListStore.toObject())
+);
 
 const groupedUnits = computed(() => {
   const all = codexStore.filteredCompendium;
@@ -55,11 +57,17 @@ const groupedUnits = computed(() => {
   }
 
   const groups = [];
-  groups.push(...buildGroupsForScope(primary, ""));
+  groups.push(...buildGroupsForScope(primary, "", bonusBattlelineSet.value));
   for (const [faction, sheets] of byAlly) {
-    groups.push(...buildGroupsForScope(sheets, faction));
+    groups.push(...buildGroupsForScope(sheets, faction, bonusBattlelineSet.value));
   }
-  return groups.filter((group) => group.units.length > 0);
+  // Keep primary Battle Line visible (with its cogwheel) even when empty, so
+  // users can open the override modal to mark a unit as Battleline.
+  return groups.filter(
+    (group) =>
+      group.units.length > 0 ||
+      (group.kind === "battleLine" && !group.title.includes(" — "))
+  );
 });
 
 const detachmentList = computed(() => codexStore.filteredDetachments);
@@ -100,7 +108,16 @@ function onScrollWheel(e) {
       <template v-if="codexStore.filteredCompendium.length > 0">
         <div class="codex__group" v-for="group in groupedUnits">
           <h2 class="codex__group-title" v-if="group.title">
-            {{ group.title }}
+            <span>{{ group.title }}</span>
+            <button
+              v-if="group.kind === 'battleLine' && !group.title.includes(' — ')"
+              type="button"
+              class="codex__group-cog"
+              title="Edit Battleline overrides"
+              @click="battlelineModalOpen = true"
+            >
+              <SettingsIcon class="codex__group-cog-icon" />
+            </button>
           </h2>
           <div class="codex__group-units">
             <DataSheet
@@ -141,6 +158,10 @@ function onScrollWheel(e) {
     >
       <span v-if="binActive" class="codex__bin-label">Drop to remove</span>
     </div>
+    <BattlelineOverridesModal
+      v-if="battlelineModalOpen"
+      @close="battlelineModalOpen = false"
+    />
   </div>
 </template>
 
@@ -169,16 +190,41 @@ function onScrollWheel(e) {
     flex-direction: row;
 
     &-title {
+      align-items: center;
       border-bottom: 1px solid var(--color-divider);
       color: var(--color-text-muted);
+      display: flex;
       font-family: var(--font-display);
       font-size: 16px;
       font-weight: 600;
+      gap: 8px;
       letter-spacing: 1.6px;
       margin: 16px 12px 0 12px;
       padding-bottom: 5px;
       text-transform: uppercase;
       writing-mode: initial;
+    }
+    &-cog {
+      align-items: center;
+      background: transparent;
+      border: none;
+      color: var(--color-text);
+      cursor: pointer;
+      display: inline-flex;
+      flex: 0 0 auto;
+      justify-content: center;
+      // Push to the inline-end of the title bar (right edge of the column).
+      margin-inline-start: auto;
+      padding: 0;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+    &-cog-icon {
+      fill: currentColor;
+      height: 18px;
+      width: 18px;
     }
     &-units {
       align-content: flex-start;

@@ -6,8 +6,6 @@ import {
   SORT_ALPHABETICAL,
   SORT_CHEAPEST_FIRST,
   SORT_EXPENSIVE_FIRST,
-  GROUP_NONE,
-  GROUP_ROLE,
 } from "../data/constants";
 import { useAppStore } from "../stores/app";
 import { useMfmStore } from "../stores/mfm";
@@ -84,16 +82,6 @@ const pointsChangesTitle = computed(() =>
           </select>
         </label>
 
-        <label title="Group Datasheets">
-          Group:
-          <select
-            :value="appStore.group"
-            @change="appStore.group = $event.target.value"
-          >
-            <option>{{ GROUP_NONE }}</option>
-            <option>{{ GROUP_ROLE }}</option>
-          </select>
-        </label>
       </div>
     </template>
   </DropDown>

@@ -1,10 +1,8 @@
 <script setup>
 import { computed } from "vue";
 import { v4 as uuidv4 } from "uuid";
-import { GROUP_NONE, SORT_EXPENSIVE_FIRST } from "../data/constants";
+import { SORT_EXPENSIVE_FIRST } from "../data/constants";
 import { sortOptionsPtsDescending } from "../utils/sort-functions";
-import { isBattleLine } from "../utils/is-battleline";
-import { isDedicatedTransport } from "../utils/is-dedicated-transport";
 import { unitMax } from "../utils/unit-max";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
@@ -233,7 +231,6 @@ function optionAvailable(option) {
   return enoughInCollection(option);
 }
 
-const showInlineRoles = computed(() => appStore.group === GROUP_NONE);
 </script>
 
 <template>
@@ -276,24 +273,6 @@ const showInlineRoles = computed(() => appStore.group === GROUP_NONE);
           class="data-sheet__pill data-sheet__pill--allied"
           :title="`Allied unit — ${props.dataSheet.alliedFaction}`"
           >ALLY</span
-        >
-        <span
-          v-if="showInlineRoles && isBattleLine(props.dataSheet)"
-          class="data-sheet__pill"
-          title="Battleline"
-          >B</span
-        >
-        <span
-          v-if="showInlineRoles && props.dataSheet.character"
-          class="data-sheet__pill"
-          title="Character"
-          >C</span
-        >
-        <span
-          v-if="showInlineRoles && isDedicatedTransport(props.dataSheet)"
-          class="data-sheet__pill"
-          title="Dedicated Transport"
-          >T</span
         >
         <span
           v-if="props.dataSheet.epicHero"

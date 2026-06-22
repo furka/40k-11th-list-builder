@@ -1,0 +1,58 @@
+{
+  "CHAOS SPACE MARINES": [
+    {
+      "trigger": {
+        "type": "detachment",
+        "name": "CHAOS CULT"
+      },
+      "battleLine": [
+        "TRAITOR GUARDSMEN SQUAD"
+      ]
+    }
+  ],
+  "DARK ANGELS": [
+    {
+      "trigger": {
+        "type": "detachment",
+        "name": "COMPANY OF HUNTERS"
+      },
+      "battleLine": [
+        "OUTRIDER SQUAD"
+      ]
+    }
+  ],
+  "ORKS": [
+    {
+      "trigger": {
+        "type": "detachment",
+        "name": "TAKTIKAL BRIGADE"
+      },
+      "battleLine": [
+        "STORMBOYZ"
+      ]
+    }
+  ],
+  "THOUSAND SONS": [
+    {
+      "trigger": {
+        "type": "detachment",
+        "name": "SERVANTS OF CHANGE"
+      },
+      "battleLine": [
+        "TZAANGORS"
+      ]
+    }
+  ],
+  "TYRANIDS": [
+    {
+      "trigger": {
+        "type": "detachment",
+        "name": "WARRIOR BIOFORM ONSLAUGHT"
+      },
+      "battleLine": [
+        "TYRANID WARRIORS WITH RANGED BIO-WEAPONS",
+        "TYRANID WARRIORS WITH MELEE BIO-WEAPONS"
+      ]
+    }
+  ]
+}

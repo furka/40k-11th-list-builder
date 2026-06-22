@@ -8,7 +8,7 @@ import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useAppStore } from "../stores/app";
 import { useMfmStore } from "../stores/mfm";
-import { GROUP_NONE, GROUP_ROLE } from "../data/constants";
+import { GROUP_ROLE } from "../data/constants";
 
 const FACTION = "NECRONS";
 
@@ -55,7 +55,7 @@ const TEST_MFM = {
   ],
 };
 
-function setupStores({ group = GROUP_NONE } = {}) {
+function setupStores({ group = GROUP_ROLE } = {}) {
   setActivePinia(createPinia());
   const mfm = useMfmStore();
   mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
@@ -116,22 +116,13 @@ describe("DataSheet.vue", () => {
     expect(wrapper.find(".data-sheet__name").text()).toMatch(/^1\s*\/\s*\d+/);
   });
 
-  it("renders inline role pills only when grouping is NONE", async () => {
-    setupStores({ group: GROUP_NONE });
+  it("does not render inline role pills (B/C/T) — role information is conveyed by group headers", async () => {
+    setupStores({ group: GROUP_ROLE });
     const w1 = mount(DataSheet, {
       props: { dataSheet: sheetFor("NECRON WARRIORS") },
     });
     await nextTick();
-    // Battle Line → "B" pill
-    expect(w1.findAll(".data-sheet__pill").map((p) => p.text())).toContain("B");
-
-    setupStores({ group: GROUP_ROLE });
-    const w2 = mount(DataSheet, {
-      props: { dataSheet: sheetFor("NECRON WARRIORS") },
-    });
-    await nextTick();
-    // Grouping is by role, so the inline B pill is suppressed.
-    expect(w2.findAll(".data-sheet__pill").map((p) => p.text())).not.toContain("B");
+    expect(w1.findAll(".data-sheet__pill").map((p) => p.text())).not.toContain("B");
   });
 
   it("always renders the Epic Hero pill regardless of grouping mode", async () => {
