@@ -1,6 +1,7 @@
 import enhancementRestrictionsAuto from "./enhancement-restrictions.auto.json";
 import enhancementRestrictionsBsdata from "./enhancement-restrictions.bsdata.auto.json";
 import enhancementRestrictionsManual from "./enhancement-restrictions.manual.json";
+import wargearRestrictionsBsdata from "./wargear-restrictions.bsdata.auto.json";
 
 /**
  * Faction → enhancement-name → per-enhancement restriction object, sourced
@@ -70,4 +71,23 @@ export function getEnhancementRestrictions(factionName, enhancementName) {
     readEntry(ENHANCEMENT_RESTRICTIONS_BSDATA, factionName, enhancementName) ??
     null
   );
+}
+
+/**
+ * Faction → datasheet → wargear-option-name → { maxPerUnit } map, scraped
+ * from BSData by `scripts/scrape-bsdata-wargear/`. Consumed at MFM parse
+ * time to populate `option.maxPerUnit` on each `wargearOptions[]` entry,
+ * which the runtime (`src/utils/wargear-limits.js`) already honors via
+ * `wargearMaxPerUnit()`. Options without a BSData-derived cap fall back
+ * to the existing 20-per-host placeholder.
+ */
+const WARGEAR_RESTRICTIONS_BSDATA = stripUnderscoreKeys(wargearRestrictionsBsdata);
+
+export function getWargearRestrictions(factionName, datasheetName) {
+  if (!factionName || !datasheetName) return null;
+  const factionEntry = WARGEAR_RESTRICTIONS_BSDATA?.[factionName];
+  if (!factionEntry || typeof factionEntry !== "object") return null;
+  const datasheetEntry = factionEntry[datasheetName];
+  if (!datasheetEntry || typeof datasheetEntry !== "object") return null;
+  return datasheetEntry;
 }

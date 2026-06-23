@@ -1,4 +1,4 @@
-import { getEnhancementRestrictions } from "../data/configs";
+import { getEnhancementRestrictions, getWargearRestrictions } from "../data/configs";
 import { getKeywordsFor } from "../data/keywords";
 
 const RESTRICTION_FIELDS = [
@@ -63,7 +63,13 @@ export function parse11thFaction(factionJson) {
 
     if (d.leader) sheet.leader = d.leader;
     if (d.support) sheet.support = d.support;
-    if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
+    if (d.wargearOptions?.length) {
+      sheet.wargearOptions = applyWargearRestrictions(
+        d.wargearOptions,
+        factionName,
+        d.name
+      );
+    }
 
     applyKeywordOverlay(sheet, factionName);
     return sheet;
@@ -120,6 +126,16 @@ function enrichEnhancement(enh, factionName) {
   const override = getEnhancementRestrictions(factionName, enh.name);
   if (!override) return enh;
   return { ...enh, ...pickRestrictions(override) };
+}
+
+function applyWargearRestrictions(options, factionName, datasheetName) {
+  const overrides = getWargearRestrictions(factionName, datasheetName);
+  if (!overrides) return options;
+  return options.map((opt) => {
+    const r = overrides[opt.name];
+    if (!r || typeof r.maxPerUnit !== "number") return opt;
+    return { ...opt, maxPerUnit: r.maxPerUnit };
+  });
 }
 
 function isPlainModelCountLabel(name, models) {

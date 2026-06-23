@@ -1,0 +1,341 @@
+{
+  "_source": "https://github.com/BSData/wh40k-10e",
+  "_ref": "main",
+  "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
+  "_committedAt": "2026-06-22T09:36:35Z",
+  "_generatedAt": "2026-06-23T15:16:09.193Z",
+  "_generator": "scripts/scrape-bsdata-wargear",
+  "ADEPTA SORORITAS": {
+    "DOMINION SQUAD": {
+      "Meltagun": {
+        "maxPerUnit": 4
+      }
+    },
+    "IMMOLATOR": {
+      "Twin multi-melta": {
+        "maxPerUnit": 1
+      }
+    },
+    "PARAGON WARSUITS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
+      }
+    },
+    "RETRIBUTOR SQUAD": {
+      "Multi-melta": {
+        "maxPerUnit": 4
+      }
+    }
+  },
+  "ADEPTUS CUSTODES": {
+    "CALADIUS GRAV-TANK": {
+      "Twin arachnus heavy blaze cannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "ADEPTUS MECHANICUS": {
+    "IRONSTRIDER BALLISTARII": {
+      "Twin cognis lascannon": {
+        "maxPerUnit": 3
+      }
+    },
+    "SKORPIUS DISINTEGRATOR": {
+      "Ferrumite cannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "AELDARI": {
+    "WRAITHKNIGHT": {
+      "Heavy wraithcannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "ASTRA MILITARUM": {
+    "FIELD ORDNANCE BATTERY": {
+      "Bombast field gun": {
+        "maxPerUnit": 2
+      }
+    },
+    "KRIEG HEAVY WEAPONS SQUAD": {
+      "Krieg heavy flamer": {
+        "maxPerUnit": 3
+      }
+    }
+  },
+  "BLACK TEMPLARS": {
+    "REDEMPTOR DREADNOUGHT": {
+      "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "TERMINATOR ASSAULT SQUAD": {
+      "Thunder Hammer": {
+        "maxPerUnit": 9
+      }
+    }
+  },
+  "BLOOD ANGELS": {
+    "REDEMPTOR DREADNOUGHT": {
+      "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "TERMINATOR ASSAULT SQUAD": {
+      "Thunder Hammer": {
+        "maxPerUnit": 9
+      }
+    }
+  },
+  "CHAOS KNIGHTS": {
+    "KNIGHT DESPOILER": {
+      "Despoiler battle cannon": {
+        "maxPerUnit": 1
+      },
+      "Despoiler gatling cannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "CHAOS SPACE MARINES": {
+    "DEFILER": {
+      "Hades lascannon": {
+        "maxPerUnit": 1
+      },
+      "Heavy reaper autocannon": {
+        "maxPerUnit": 1
+      }
+    },
+    "FORGEFIEND": {
+      "Ectoplasma cannon": {
+        "maxPerUnit": 2
+      }
+    }
+  },
+  "DARK ANGELS": {
+    "REDEMPTOR DREADNOUGHT": {
+      "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "TERMINATOR ASSAULT SQUAD": {
+      "Thunder Hammer": {
+        "maxPerUnit": 9
+      }
+    }
+  },
+  "DEATH GUARD": {
+    "DEFILER": {
+      "Hades lascannon": {
+        "maxPerUnit": 1
+      },
+      "Heavy reaper autocannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "DEATHWATCH": {
+    "DEATHWATCH TERMINATOR SQUAD": {
+      "Thunder Hammer": {
+        "maxPerUnit": 9
+      }
+    },
+    "REDEMPTOR DREADNOUGHT": {
+      "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "DRUKHARI": {
+    "RAVAGER": {
+      "Dark lance": {
+        "maxPerUnit": 3
+      }
+    },
+    "SCOURGES WITH HEAVY WEAPONS": {
+      "Dark lance": {
+        "maxPerUnit": 4
+      },
+      "Haywire blaster": {
+        "maxPerUnit": 4
+      }
+    }
+  },
+  "EMPEROR’S CHILDREN": {
+    "DEFILER": {
+      "Hades lascannon": {
+        "maxPerUnit": 1
+      },
+      "Heavy reaper autocannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "GENESTEALER CULTS": {
+    "ACHILLES RIDGERUNNERS": {
+      "Heavy mining laser": {
+        "maxPerUnit": 2
+      }
+    }
+  },
+  "GREY KNIGHTS": {
+    "BROTHERHOOD TERMINATOR SQUAD": {
+      "Psycannon": {
+        "maxPerUnit": 1
+      }
+    },
+    "GRAND MASTER IN NEMESIS DREADKNIGHT": {
+      "Heavy psycannon": {
+        "maxPerUnit": 1
+      },
+      "Sublimator": {
+        "maxPerUnit": 1
+      }
+    },
+    "NEMESIS DREADKNIGHT": {
+      "Heavy psycannon": {
+        "maxPerUnit": 1
+      }
+    },
+    "PALADIN SQUAD": {
+      "Psycannon": {
+        "maxPerUnit": 2
+      }
+    },
+    "PURGATION SQUAD": {
+      "Psycannon": {
+        "maxPerUnit": 4
+      }
+    },
+    "PURIFIER SQUAD": {
+      "Psycannon": {
+        "maxPerUnit": 2
+      }
+    }
+  },
+  "IMPERIAL AGENTS": {
+    "GREY KNIGHTS TERMINATOR SQUAD": {
+      "Psycannon": {
+        "maxPerUnit": 1
+      }
+    },
+    "SISTERS OF BATTLE IMMOLATOR": {
+      "Twin multi-melta": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "IMPERIAL KNIGHTS": {
+    "KNIGHT CRUSADER": {
+      "Rapid-fire battle cannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "SPACE MARINES": {
+    "REDEMPTOR DREADNOUGHT": {
+      "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "TERMINATOR ASSAULT SQUAD": {
+      "Thunder Hammer": {
+        "maxPerUnit": 9
+      }
+    },
+    "VICTRIX HONOUR GUARD": {
+      "Banner of Macragge": {
+        "maxPerUnit": 1
+      },
+      "Blades of honour": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "SPACE WOLVES": {
+    "REDEMPTOR DREADNOUGHT": {
+      "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "TERMINATOR ASSAULT SQUAD": {
+      "Thunder Hammer": {
+        "maxPerUnit": 9
+      }
+    },
+    "THUNDERWOLF CAVALRY": {
+      "Storm Shield": {
+        "maxPerUnit": 6
+      }
+    },
+    "WOLF GUARD TERMINATORS": {
+      "Storm Shield": {
+        "maxPerUnit": 9
+      }
+    }
+  },
+  "THOUSAND SONS": {
+    "DEFILER": {
+      "Hades lascannon": {
+        "maxPerUnit": 1
+      },
+      "Heavy reaper autocannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "TYRANIDS": {
+    "TYRANNOFEX": {
+      "Acid spray": {
+        "maxPerUnit": 1
+      },
+      "Rupture cannon": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "T’AU EMPIRE": {
+    "BROADSIDE BATTLESUITS": {
+      "High-yield missile pods": {
+        "maxPerUnit": 2
+      }
+    },
+    "CRISIS FIREKNIFE BATTLESUITS": {
+      "Missile pod": {
+        "maxPerUnit": 8
+      }
+    },
+    "CRISIS STARSCYTHE BATTLESUITS": {
+      "T’au flamer": {
+        "maxPerUnit": 4
+      }
+    },
+    "GHOSTKEEL BATTLESUIT": {
+      "Cyclic Ion Raker": {
+        "maxPerUnit": 1
+      }
+    },
+    "PATHFINDER TEAM": {
+      "Ion rifle": {
+        "maxPerUnit": 3
+      }
+    },
+    "RIPTIDE BATTLESUIT": {
+      "Ion accelerator": {
+        "maxPerUnit": 1
+      }
+    }
+  },
+  "WORLD EATERS": {
+    "DEFILER": {
+      "Hades lascannon": {
+        "maxPerUnit": 1
+      },
+      "Heavy reaper autocannon": {
+        "maxPerUnit": 1
+      }
+    }
+  }
+}
