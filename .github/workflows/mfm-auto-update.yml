@@ -82,6 +82,21 @@ jobs:
           echo "scraped_at=$SCRAPED_AT" >> "$GITHUB_OUTPUT"
           echo "dir_name=$DIR_NAME" >> "$GITHUB_OUTPUT"
 
+      - name: Build MFM changelog
+        if: steps.changes.outputs.changed == 'true'
+        id: changelog
+        run: |
+          CHANGES_FILE=src/data/munitorum-field-manual-11th/${{ steps.mfm-version.outputs.dir_name }}/_changes.md
+          if [ -f "$CHANGES_FILE" ]; then
+            {
+              echo 'body<<MFM_BODY_EOF'
+              cat "$CHANGES_FILE"
+              echo 'MFM_BODY_EOF'
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "body=_(no \`_changes.md\` found in snapshot dir)_" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Open or update PR
         if: steps.changes.outputs.changed == 'true'
         id: cpr
@@ -99,6 +114,8 @@ jobs:
             - **Version directory:** `${{ steps.mfm-version.outputs.dir_name }}`
             - **Scraped at:** `${{ steps.mfm-version.outputs.scraped_at }}`
             - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            ${{ steps.changelog.outputs.body }}
 
             `enhancement-restrictions.auto.json`, `conditional-battleline.auto.json`, and `mfm-pdf-keywords.auto.json` may have been refreshed by the Claude-powered PDF passes — review the diff before merging. `manual-overrides.json` may also be touched by the prune reconciliation step (`npm run bsdata:prune-overrides`) that runs after the scrape.
 

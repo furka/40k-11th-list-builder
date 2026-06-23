@@ -24,10 +24,13 @@ npm run mfm:scrape          # uses cached HTML where unchanged
 npm run mfm:scrape:refresh  # forces a re-fetch of every faction page
 ```
 
-Each scrape that detects content changes mints a new
+Each scrape that detects content changes mints a new sparse
 `src/data/munitorum-field-manual-11th/v<siteVersion>-<date>/` directory
-alongside any older snapshots so existing saved lists can still resolve
-points from their original MFM version.
+alongside any older snapshots. Sparse means only the faction JSONs whose
+content actually changed are written into the new dir, plus a
+`_changes.md` summary of points/datasheet changes vs the previous
+snapshot. Older snapshots and saved lists keep resolving points from
+their original MFM version via the overlay aggregator.
 
 # History
 

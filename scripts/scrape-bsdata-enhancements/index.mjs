@@ -26,6 +26,7 @@ import {
   iterEnhancements,
   analyzeEnhancement,
 } from "./extract-enhancements.mjs";
+import { resolveSnapshotState } from "../scrape-mfm-11th/snapshot-resolve.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..", "..");
@@ -180,32 +181,20 @@ async function main() {
   );
 }
 
-// Load the set of enhancement names per faction from the latest MFM
-// snapshot's raw JSON files. We use this as ground truth for "this name
-// belongs to this faction" so cross-faction BSData shared library files
-// don't spray duplicates everywhere.
+// Load the set of enhancement names per faction from the resolved MFM
+// snapshot overlay. We use this as ground truth for "this name belongs to
+// this faction" so cross-faction BSData shared library files don't spray
+// duplicates everywhere.
 //
-// Reads the snapshot dirs directly rather than importing the runtime
-// aggregator — the aggregator's transitive `import "../utils/..."` chain
-// only resolves under Vite, not bare Node ESM.
+// Reads the snapshot dirs directly via the Node-fs overlay helper rather
+// than importing the runtime aggregator — the aggregator's transitive
+// `import "../utils/..."` chain only resolves under Vite, not bare Node ESM.
 async function loadMfmEnhancementNames() {
-  const { readdir } = await import("node:fs/promises");
   const mfmRoot = resolve(REPO_ROOT, "src", "data", "munitorum-field-manual-11th");
-  const dirs = (await readdir(mfmRoot, { withFileTypes: true }))
-    .filter((d) => d.isDirectory() && /^v/.test(d.name))
-    .map((d) => d.name)
-    .sort(); // YYYY-MM-DD suffix → alphabetical = chronological
-  if (dirs.length === 0) throw new Error("No MFM snapshot dirs found");
-  const latestDir = resolve(mfmRoot, dirs[dirs.length - 1]);
-
-  const factionFiles = (await readdir(latestDir)).filter(
-    (f) => f.endsWith(".json") && !f.startsWith("_")
-  );
+  const resolved = await resolveSnapshotState(mfmRoot);
+  if (!resolved) throw new Error("No MFM snapshot dirs found");
   const out = new Map();
-  for (const fname of factionFiles) {
-    const payload = JSON.parse(
-      await readFile(resolve(latestDir, fname), "utf8")
-    );
+  for (const payload of Object.values(resolved.factions)) {
     const factionName = payload.faction;
     if (!factionName) continue;
     const names = new Set();

@@ -5,6 +5,11 @@
 //
 // Only touches the detachment.role field — leaves enhancements, datasheets,
 // dp, tags untouched. Safe to re-run.
+//
+// Operates on the literal contents of the latest snapshot dir, NOT the
+// overlay-resolved set. Do not run after a sparse scrape unless you intend to
+// densify the latest dir: patched faction files will be committed back into
+// the sparse snapshot and the dir will no longer be sparse.
 
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";

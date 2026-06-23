@@ -3,10 +3,15 @@ import { parse11thSnapshot } from "../../utils/data-reader-11th";
 /**
  * Enumerate every 11th-edition snapshot in this directory and produce a
  * version-keyed MFM bucket. Each subdirectory `v<siteVersion>-<scrapedAt>/`
- * is one historical snapshot containing a `_manifest.json` and one JSON file
- * per faction. Adding a new snapshot is zero-config — re-running the scraper
- * either updates files in place (content unchanged) or mints a new
- * subdirectory that this aggregator will automatically pick up at build time.
+ * is one historical snapshot containing a `_manifest.json` and a JSON file
+ * for each faction whose data changed since the prior snapshot. Snapshots
+ * are sparse: an older snapshot may carry every faction, a newer one may
+ * only carry the factions that actually changed. The resolved faction set
+ * for snapshot N is the running overlay of every snapshot up to N.
+ *
+ * Re-running the scraper either updates files in place (content unchanged
+ * since the previous run, no new dir minted) or mints a new sparse
+ * subdirectory that this aggregator picks up at build time.
  *
  * Output:
  *   {
@@ -19,7 +24,7 @@ import { parse11thSnapshot } from "../../utils/data-reader-11th";
 export function load11thMFM() {
   const modules = import.meta.glob("./*/*.json", { eager: true });
 
-  const snapshots = {};
+  const sparseSnapshots = {};
 
   for (const path in modules) {
     const data = modules[path].default ?? modules[path];
@@ -28,14 +33,14 @@ export function load11thMFM() {
     if (!match) continue;
     const [, dirName, fileName] = match;
 
-    if (!snapshots[dirName]) {
-      snapshots[dirName] = { manifest: null, factions: {} };
+    if (!sparseSnapshots[dirName]) {
+      sparseSnapshots[dirName] = { manifest: null, factions: {} };
     }
 
     if (fileName === "_manifest") {
-      snapshots[dirName].manifest = data;
+      sparseSnapshots[dirName].manifest = data;
     } else {
-      snapshots[dirName].factions[fileName] = data;
+      sparseSnapshots[dirName].factions[fileName] = data;
     }
   }
 
@@ -44,16 +49,20 @@ export function load11thMFM() {
   let previous = null;
 
   // Sort version directories alphabetically — names embed YYYY-MM-DD so this
-  // is chronological. Iterate in order to find CURRENT and PREVIOUS.
-  const sortedDirs = Object.keys(snapshots).sort();
+  // is chronological. Walk in order, layering each snapshot's faction files
+  // on top of the running set, then parse the resolved (not sparse) state.
+  const sortedDirs = Object.keys(sparseSnapshots).sort();
+  const carryFactions = {};
 
   for (const dirName of sortedDirs) {
-    const snap = snapshots[dirName];
+    const snap = sparseSnapshots[dirName];
     if (!snap.manifest) {
       console.warn(`11th edition snapshot "${dirName}" is missing _manifest.json. Skipping.`);
       continue;
     }
-    const parsed = parse11thSnapshot(snap);
+    Object.assign(carryFactions, snap.factions);
+    const resolved = { manifest: snap.manifest, factions: { ...carryFactions } };
+    const parsed = parse11thSnapshot(resolved);
     MFM[parsed.MFM_VERSION] = parsed;
     previous = current;
     current = parsed;

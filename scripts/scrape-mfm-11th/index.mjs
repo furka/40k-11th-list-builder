@@ -1,4 +1,4 @@
-import { writeFile, mkdir, readFile, readdir } from "node:fs/promises";
+import { writeFile, mkdir, readFile } from "node:fs/promises";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -29,6 +29,8 @@ import {
 } from "./llm-classify-keywords.mjs";
 import { enhancementNameKey } from "./name-key.mjs";
 import { createWarningSink } from "./warnings.mjs";
+import { listSnapshotDirs, resolveSnapshotState } from "./snapshot-resolve.mjs";
+import { diffSnapshots } from "./diff-snapshot.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_ROOT = resolve(__dirname, "../../src/data/munitorum-field-manual-11th");
@@ -115,40 +117,15 @@ async function scrapeOne(slug, { refresh }) {
   return normalized;
 }
 
-async function listVersionDirs() {
-  if (!existsSync(OUT_ROOT)) return [];
-  const entries = await readdir(OUT_ROOT, { withFileTypes: true });
-  return entries
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .sort(); // alphabetical = chronological because of YYYY-MM-DD suffix
-}
-
-async function readVersionDir(dirName) {
-  const dirPath = join(OUT_ROOT, dirName);
-  const manifestPath = join(dirPath, "_manifest.json");
-  if (!existsSync(manifestPath)) return null;
-
-  const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
-  const factions = {};
-  const entries = await readdir(dirPath);
-  for (const fname of entries) {
-    if (fname === "_manifest.json" || !fname.endsWith(".json")) continue;
-    const slug = fname.replace(/\.json$/, "");
-    factions[slug] = JSON.parse(await readFile(join(dirPath, fname), "utf8"));
-  }
-  return { manifest, factions };
-}
-
-function payloadsEqual(latest, scraped) {
-  // latest.factions: { [slug]: payload }, scraped: Map<slug, payload>
-  const latestKeys = Object.keys(latest.factions).sort();
+function payloadsEqualToResolved(priorResolved, scraped) {
+  if (!priorResolved) return false;
+  const priorKeys = Object.keys(priorResolved.factions).sort();
   const scrapedKeys = [...scraped.keys()].sort();
-  if (latestKeys.length !== scrapedKeys.length) return false;
-  for (let i = 0; i < latestKeys.length; i++) {
-    if (latestKeys[i] !== scrapedKeys[i]) return false;
+  if (priorKeys.length !== scrapedKeys.length) return false;
+  for (let i = 0; i < priorKeys.length; i++) {
+    if (priorKeys[i] !== scrapedKeys[i]) return false;
     if (
-      stableStringify(latest.factions[latestKeys[i]]) !==
+      stableStringify(priorResolved.factions[priorKeys[i]]) !==
       stableStringify(scraped.get(scrapedKeys[i]))
     ) {
       return false;
@@ -157,17 +134,30 @@ function payloadsEqual(latest, scraped) {
   return true;
 }
 
-async function writeVersionDir({ siteVersion, scrapedAt, scraped }) {
+// Sparse write: only emit faction JSONs whose payload differs from the
+// resolved prior state. Always emit `_manifest.json` (for traceability) and
+// `_changes.md` (the human-readable diff the PR workflow embeds).
+async function writeVersionDir({
+  siteVersion,
+  scrapedAt,
+  scraped,
+  priorResolved,
+  priorDirName,
+}) {
   const dirName = `${siteVersion.toLowerCase()}-${scrapedAt}`;
   const dirPath = join(OUT_ROOT, dirName);
   await ensureDir(dirPath);
 
+  const priorFactions = priorResolved?.factions ?? {};
+  const writtenFactionSlugs = [];
   for (const [slug, payload] of scraped) {
-    await writeFile(
-      join(dirPath, `${slug}.json`),
-      stableStringify(payload),
-      "utf8"
-    );
+    const newJson = stableStringify(payload);
+    const priorPayload = priorFactions[slug];
+    if (priorPayload !== undefined && stableStringify(priorPayload) === newJson) {
+      continue;
+    }
+    await writeFile(join(dirPath, `${slug}.json`), newJson, "utf8");
+    writtenFactionSlugs.push(slug);
   }
 
   const manifest = { siteVersion, scrapedAt };
@@ -177,7 +167,17 @@ async function writeVersionDir({ siteVersion, scrapedAt, scraped }) {
     "utf8"
   );
 
-  return { dirName };
+  const priorMap = new Map(Object.entries(priorFactions));
+  const nextMap = new Map(priorMap);
+  for (const [slug, payload] of scraped) nextMap.set(slug, payload);
+  const changesMd = diffSnapshots(priorMap, nextMap, {
+    siteVersion: siteVersion.toUpperCase(),
+    scrapedAt,
+    priorDirName,
+  });
+  await writeFile(join(dirPath, "_changes.md"), changesMd + "\n", "utf8");
+
+  return { dirName, writtenFactionSlugs };
 }
 
 // PDF pass: for each MFM enhancement, find its section in the PDF text and
@@ -886,9 +886,9 @@ async function main() {
   // scrape. Comparison only proceeds if the scrape covered every faction.
   const isFullScrape = !only;
 
-  const versionDirs = await listVersionDirs();
+  const versionDirs = await listSnapshotDirs(OUT_ROOT);
   const latestDirName = versionDirs[versionDirs.length - 1];
-  const latest = latestDirName ? await readVersionDir(latestDirName) : null;
+  const priorResolved = await resolveSnapshotState(OUT_ROOT);
 
   if (!isFullScrape) {
     console.log(
@@ -911,26 +911,32 @@ async function main() {
   let writeNew = false;
   let reason = "";
 
-  if (!latest) {
+  if (!priorResolved) {
     writeNew = true;
     reason = "no existing version directory";
-  } else if (!payloadsEqual(latest, scraped)) {
+  } else if (!payloadsEqualToResolved(priorResolved, scraped)) {
     writeNew = true;
-    reason = `content differs from latest ("${latestDirName}")`;
+    reason = `content differs from resolved state at "${latestDirName}"`;
   } else {
     console.log(
-      `Unchanged from latest ("${latestDirName}"). No new version directory written.`
+      `Unchanged from resolved state at "${latestDirName}". No new version directory written.`
     );
   }
 
   if (writeNew) {
     const scrapedAt = new Date().toISOString().slice(0, 10);
-    const { dirName } = await writeVersionDir({
+    const { dirName, writtenFactionSlugs } = await writeVersionDir({
       siteVersion,
       scrapedAt,
       scraped,
+      priorResolved,
+      priorDirName: latestDirName,
     });
-    console.log(`Wrote new version dir "${dirName}" (${reason}).`);
+    console.log(
+      `Wrote sparse snapshot "${dirName}" (${reason}): ` +
+        `${writtenFactionSlugs.length} of ${scraped.size} faction file(s) — ` +
+        `${writtenFactionSlugs.join(", ") || "(none)"}.`
+    );
     console.log(`siteVersion = "${siteVersion.toUpperCase()}".`);
   }
 

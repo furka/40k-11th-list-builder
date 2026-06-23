@@ -86,12 +86,14 @@ Role booleans (`battleLine`, `character`, `epicHero`, …) are **not** copied on
 
 The MFM data is scraped from the official GW faction-pack PDFs, not copy-pasted text:
 
-- **Source files**: `src/data/munitorum-field-manual-11th/v<siteVersion>-<scrapedAt>/` — one JSON per faction plus a `_manifest.json`. Each dated subdirectory is one historical snapshot.
-- **Parser**: `src/utils/data-reader-11th.js` — `parse11thFaction()` and `parse11thSnapshot()` produce `{ FACTIONS, DATA_SHEETS, MFM_VERSION }` from the scraped JSON.
-- **Aggregator**: `src/data/munitorum-field-manual-11th/index.js` — `load11thMFM()` auto-globs every snapshot dir at build time and produces `{ "V1.0": {...}, ..., CURRENT, PREVIOUS }`. Adding a new snapshot is zero-config.
+- **Source files**: `src/data/munitorum-field-manual-11th/v<siteVersion>-<scrapedAt>/` — sparse historical snapshots. Each dated subdirectory contains a `_manifest.json`, a `_changes.md` (human-readable diff vs the prior snapshot), and **only the faction JSONs whose payload changed** since the previous snapshot. The full faction set for any snapshot is reconstructed by walking all snapshots oldest→newest and layering each one's files on top of the running set (see `snapshot-resolve.mjs` for the Node helper, `index.js` for the Vite/browser equivalent).
+- **Parser**: `src/utils/data-reader-11th.js` — `parse11thFaction()` and `parse11thSnapshot()` produce `{ FACTIONS, DATA_SHEETS, MFM_VERSION }` from the resolved snapshot.
+- **Aggregator**: `src/data/munitorum-field-manual-11th/index.js` — `load11thMFM()` auto-globs every snapshot dir at build time, builds the overlay-resolved state for each, and produces `{ "V1.0": {...}, ..., CURRENT, PREVIOUS }`. Adding a new snapshot is zero-config.
 - **Version manager**: `src/stores/mfm.js` (`useMfmStore`) — exposes `MFM.CURRENT` / `MFM.PREVIOUS`, version lookup, plus per-list upgrade helpers (`autoUpgradeMFMVersion`, `hasInvalidMFM`, `changes`). `App.vue` calls `autoUpgradeMFMVersion()` for the current list and every saved list on mount.
 
-To add a new MFM version, re-run `node scripts/scrape-mfm-11th/index.mjs`. The scraper either updates files in place (content unchanged) or mints a new dated snapshot dir; the aggregator picks it up automatically. The pipeline also runs `llm-classify.mjs` (datasheet role classification) and `llm-classify-detachment-grants.mjs` (detachment-level BATTLELINE grants → `src/data/configs/conditional-battleline.auto.json`).
+To add a new MFM version, re-run `node scripts/scrape-mfm-11th/index.mjs`. The scraper either updates files in place (content unchanged, no new dir) or mints a new sparse snapshot dir + `_changes.md`; the aggregator picks it up automatically. The pipeline also runs `llm-classify.mjs` (datasheet role classification) and `llm-classify-detachment-grants.mjs` (detachment-level BATTLELINE grants → `src/data/configs/conditional-battleline.auto.json`).
+
+**Other snapshot consumers** (`scripts/audit-and-prune-overrides.mjs`, `scripts/scrape-bsdata-{enhancements,wargear}/index.mjs`, `scripts/scrape-mfm-11th/audit-restrictions.mjs`) all go through `snapshot-resolve.mjs`'s `resolveSnapshotState`/`resolveSnapshotStateSync` to get the overlay-resolved set — never read a snapshot dir directly with `readdir`, or unchanged factions in older sparse snapshots will silently disappear.
 
 ### Component Structure
 

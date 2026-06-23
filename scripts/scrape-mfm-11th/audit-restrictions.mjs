@@ -11,11 +11,12 @@
 //
 // Run with: `node scripts/scrape-mfm-11th/audit-restrictions.mjs`
 
-import { readFileSync, readdirSync } from "node:fs";
-import { dirname, resolve, join } from "node:path";
+import { readFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { buildKeywordVocab, splitAgainstVocab } from "./keyword-vocab.mjs";
+import { resolveSnapshotStateSync } from "./snapshot-resolve.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const RESTRICTIONS_PATHS = [
@@ -146,22 +147,14 @@ console.log("These entries will never satisfy the runtime's byte-exact name matc
 console.log("Likely causes: scraper typo, apostrophe drift, BSData-only variant (e.g. '[CRUCIBLE]').");
 process.exit(0);
 
-// Walk the most recent MFM snapshot dir and return a per-faction Set of
-// canonical datasheet names. Mirrors the technique in
+// Walk the resolved (overlay) MFM snapshot state and return a per-faction
+// Set of canonical datasheet names. Mirrors the technique in
 // scripts/scrape-bsdata-enhancements/index.mjs `loadMfmEnhancementNames`.
 function loadMfmDatasheetNames(mfmRoot) {
-  const dirs = readdirSync(mfmRoot, { withFileTypes: true })
-    .filter((d) => d.isDirectory() && /^v/.test(d.name))
-    .map((d) => d.name)
-    .sort();
-  if (dirs.length === 0) return new Map();
-  const latestDir = join(mfmRoot, dirs[dirs.length - 1]);
-  const files = readdirSync(latestDir).filter(
-    (f) => f.endsWith(".json") && !f.startsWith("_")
-  );
+  const resolved = resolveSnapshotStateSync(mfmRoot);
+  if (!resolved) return new Map();
   const out = new Map();
-  for (const f of files) {
-    const payload = JSON.parse(readFileSync(join(latestDir, f), "utf8"));
+  for (const payload of Object.values(resolved.factions)) {
     const factionName = payload.faction;
     if (!factionName) continue;
     const names = new Set();

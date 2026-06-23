@@ -27,10 +27,12 @@
  *
  * Run via `npm run bsdata:prune-overrides`.
  */
-import { readFile, writeFile, readdir } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { dirname, resolve, join } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { resolveSnapshotState } from "./scrape-mfm-11th/snapshot-resolve.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..");
@@ -122,24 +124,16 @@ async function loadJsonOrEmpty(path) {
   }
 }
 
-// Load the latest MFM snapshot's per-faction datasheet name lists. Used by
-// the audit step to detect manual-override keys that don't correspond to a
-// real MFM datasheet (stale entries from earlier editions or renamed
-// datasheets). Returns `{ [factionName]: { rawNames: string[], byNorm: Map<normName, rawName> } }`.
+// Load the resolved (overlay across all snapshots) per-faction datasheet
+// name lists. Used by the audit step to detect manual-override keys that
+// don't correspond to a real MFM datasheet (stale entries from earlier
+// editions or renamed datasheets). Returns
+// `{ [factionName]: { rawNames: string[], byNorm: Map<normName, rawName> } }`.
 async function loadMfmDatasheets() {
-  if (!existsSync(MFM_SNAPSHOT_ROOT)) return {};
-  const dirs = (await readdir(MFM_SNAPSHOT_ROOT, { withFileTypes: true }))
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .sort();
-  if (dirs.length === 0) return {};
-  const latest = join(MFM_SNAPSHOT_ROOT, dirs[dirs.length - 1]);
-  const files = (await readdir(latest)).filter(
-    (f) => f.endsWith(".json") && f !== "_manifest.json"
-  );
+  const resolved = await resolveSnapshotState(MFM_SNAPSHOT_ROOT);
+  if (!resolved) return {};
   const out = {};
-  for (const f of files) {
-    const data = JSON.parse(await readFile(join(latest, f), "utf8"));
+  for (const data of Object.values(resolved.factions)) {
     const rawNames = data.datasheets.map((d) => d.name);
     const byNorm = new Map();
     for (const n of rawNames) byNorm.set(normalizeName(n), n);

@@ -414,9 +414,6 @@
       "allowedHosts": [
         "TROUPE MASTER"
       ],
-      "requiredKeywords": [
-        "CHARACTER"
-      ],
       "characterOnly": true
     },
     "Higher Duty": {
@@ -698,15 +695,6 @@
       "characterOnly": true
     },
     "On the Archtraitor’s Bridge": {
-      "allowedHosts": [
-        "DEATH COMPANY CAPTAIN",
-        "DEATH COMPANY CAPTAIN WITH JUMP PACK",
-        "DEATH COMPANY DREADNOUGHT",
-        "DEATH COMPANY MARINES",
-        "DEATH COMPANY MARINES WITH BOLT RIFLES",
-        "DEATH COMPANY MARINES WITH JUMP PACKS",
-        "LEMARTES"
-      ],
       "requiredKeywords": [
         "DEATH COMPANY"
       ]
@@ -1446,7 +1434,8 @@
     "Exalted Patron": {
       "allowedHosts": [
         "LORD EXULTANT"
-      ]
+      ],
+      "characterOnly": true
     },
     "Soulstain Made Manifest": {
       "requiredKeywords": [
@@ -1456,17 +1445,21 @@
       "characterOnly": true
     },
     "Spiritsliver": {
+      "allowedHosts": [
+        "DAEMON PRINCE OF SLAANESH",
+        "DAEMON PRINCE OF SLAANESH WITH WINGS"
+      ],
       "requiredKeywords": [
         "EMPEROR’S CHILDREN",
+        "DAEMON",
         "DAEMON PRINCE"
-      ]
+      ],
+      "characterOnly": true
     },
     "Tears of the Phoenix": {
       "requiredKeywords": [
-        "EMPEROR’S CHILDREN",
-        "CHARACTER"
-      ],
-      "characterOnly": true
+        "EMPEROR’S CHILDREN"
+      ]
     },
     "Cacophonic Accompaniment": {
       "allowedHosts": [
@@ -1957,6 +1950,9 @@
     "Quantum Goad": {
       "allowedHosts": [
         "C’TAN SHARD OF THE NIGHTBRINGER"
+      ],
+      "requiredKeywords": [
+        "C’TAN SHARD OF THE NIGHTBRINGER"
       ]
     },
     "Reletavistic Tether": {
@@ -1969,6 +1965,9 @@
     },
     "Singularity Matrix": {
       "allowedHosts": [
+        "C’TAN SHARD OF THE DECEIVER"
+      ],
+      "requiredKeywords": [
         "C’TAN SHARD OF THE DECEIVER"
       ]
     },
@@ -2290,10 +2289,8 @@
     },
     "Immolator": {
       "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "CHARACTER"
-      ],
-      "characterOnly": true
+        "ADEPTUS ASTARTES"
+      ]
     },
     "Bellicose Weapon Spirits": {
       "nonCharacterOnly": true
@@ -2497,10 +2494,8 @@
     },
     "Stormseers’ Wisdom": {
       "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "CHARACTER"
-      ],
-      "characterOnly": true
+        "ADEPTUS ASTARTES"
+      ]
     },
     "Death in the Dark": {
       "requiredKeywords": [
@@ -2607,75 +2602,6 @@
     "Weaver of Sagas": {
       "allowedHosts": [
         "WOLF PRIEST"
-      ]
-    }
-  },
-  "T’AU EMPIRE": {
-    "Negation Emitters": {
-      "allowedHosts": [
-        "STEALTH BATTLESUITS"
-      ],
-      "requiredKeywords": [
-        "STEALTH"
-      ],
-      "nonCharacterOnly": true
-    },
-    "Unmasking Suite": {
-      "allowedHosts": [
-        "GHOSTKEEL BATTLESUIT",
-        "PATHFINDER TEAM",
-        "STEALTH BATTLESUITS"
-      ],
-      "nonCharacterOnly": true
-    },
-    "Admired Leader": {
-      "requiredKeywords": [
-        "T’AU EMPIRE"
-      ]
-    },
-    "Student of Kauyon": {
-      "requiredKeywords": [
-        "KROOT",
-        "SHAPER"
-      ]
-    },
-    "Plasma Accelerator Rifle": {
-      "requiredKeywords": [
-        "BATTLESUIT"
-      ],
-      "characterOnly": true
-    },
-    "Supernova Launcher": {
-      "requiredKeywords": [
-        "BATTLESUIT"
-      ]
-    },
-    "Thermoneutronic Projector": {
-      "requiredKeywords": [
-        "BATTLESUIT"
-      ]
-    },
-    "Through Unity, Devastation": {
-      "requiredKeywords": [
-        "T’AU EMPIRE"
-      ]
-    },
-    "Coordinated Exploitation": {
-      "requiredKeywords": [
-        "T’AU EMPIRE"
-      ],
-      "characterOnly": true
-    },
-    "Strike Swiftly": {
-      "requiredKeywords": [
-        "T’AU EMPIRE"
-      ],
-      "characterOnly": true
-    },
-    "Puretide Engram Neurochip": {
-      "requiredKeywords": [
-        "T’AU EMPIRE",
-        "BATTLESUIT"
       ]
     }
   },
@@ -2827,6 +2753,77 @@
         "TYRANID PRIME WITH LASH WHIP",
         "WINGED TYRANID PRIME"
       ]
+    }
+  },
+  "T’AU EMPIRE": {
+    "Negation Emitters": {
+      "allowedHosts": [
+        "STEALTH BATTLESUITS"
+      ],
+      "requiredKeywords": [
+        "STEALTH"
+      ],
+      "nonCharacterOnly": true
+    },
+    "Unmasking Suite": {
+      "allowedHosts": [
+        "GHOSTKEEL BATTLESUIT",
+        "PATHFINDER TEAM",
+        "STEALTH BATTLESUITS"
+      ],
+      "nonCharacterOnly": true
+    },
+    "Admired Leader": {
+      "requiredKeywords": [
+        "T’AU EMPIRE"
+      ]
+    },
+    "Student of Kauyon": {
+      "requiredKeywords": [
+        "KROOT",
+        "SHAPER"
+      ]
+    },
+    "Plasma Accelerator Rifle": {
+      "requiredKeywords": [
+        "BATTLESUIT"
+      ],
+      "characterOnly": true
+    },
+    "Supernova Launcher": {
+      "requiredKeywords": [
+        "BATTLESUIT"
+      ]
+    },
+    "Thermoneutronic Projector": {
+      "requiredKeywords": [
+        "BATTLESUIT"
+      ]
+    },
+    "Through Unity, Devastation": {
+      "requiredKeywords": [
+        "T’AU EMPIRE"
+      ]
+    },
+    "Coordinated Exploitation": {
+      "requiredKeywords": [
+        "T’AU EMPIRE",
+        "CHARACTER"
+      ],
+      "characterOnly": true
+    },
+    "Strike Swiftly": {
+      "requiredKeywords": [
+        "T’AU EMPIRE"
+      ],
+      "characterOnly": true
+    },
+    "Puretide Engram Neurochip": {
+      "requiredKeywords": [
+        "T’AU EMPIRE",
+        "BATTLESUIT"
+      ],
+      "nonCharacterOnly": true
     }
   },
   "WORLD EATERS": {

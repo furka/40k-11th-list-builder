@@ -16,7 +16,7 @@
  * BSData's `main` to a commit SHA at scrape time, cache by SHA. Reuses
  * fetch/cache and the faction mapping from the sibling keyword scraper.
  */
-import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,6 +30,7 @@ import {
   extractWargearCaps,
   normalizeName,
 } from "./extract-wargear.mjs";
+import { resolveSnapshotState } from "../scrape-mfm-11th/snapshot-resolve.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..", "..");
@@ -195,27 +196,16 @@ async function main() {
 }
 
 // Mirror loadMfmEnhancementNames in scrape-bsdata-enhancements: read the
-// latest MFM snapshot directly off disk so we don't depend on the Vite-
+// resolved MFM snapshot overlay off disk so we don't depend on the Vite-
 // only runtime aggregator. Returns
 //   Map<factionName, Map<datasheetName, wargearOptions[]>>
 // keyed verbatim from the MFM JSON.
 async function loadMfmWargearOptions() {
   const mfmRoot = resolve(REPO_ROOT, "src", "data", "munitorum-field-manual-11th");
-  const dirs = (await readdir(mfmRoot, { withFileTypes: true }))
-    .filter((d) => d.isDirectory() && /^v/.test(d.name))
-    .map((d) => d.name)
-    .sort();
-  if (dirs.length === 0) throw new Error("No MFM snapshot dirs found");
-  const latestDir = resolve(mfmRoot, dirs[dirs.length - 1]);
-
-  const factionFiles = (await readdir(latestDir)).filter(
-    (f) => f.endsWith(".json") && !f.startsWith("_")
-  );
+  const resolved = await resolveSnapshotState(mfmRoot);
+  if (!resolved) throw new Error("No MFM snapshot dirs found");
   const out = new Map();
-  for (const fname of factionFiles) {
-    const payload = JSON.parse(
-      await readFile(resolve(latestDir, fname), "utf8")
-    );
+  for (const payload of Object.values(resolved.factions)) {
     const factionName = payload.faction;
     if (!factionName) continue;
     const byDatasheet = new Map();

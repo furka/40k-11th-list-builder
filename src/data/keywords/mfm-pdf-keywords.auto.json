@@ -1,6 +1,6 @@
 {
   "_source": "MFM Faction Pack PDFs (https://mfm.warhammer-community.com/)",
-  "_generatedAt": "2026-06-23T11:55:10.427Z",
+  "_generatedAt": "2026-06-23T17:25:13.206Z",
   "_generator": "scripts/scrape-mfm-11th",
   "ADEPTA SORORITAS": {
     "BATTLE SANCTUM": [
@@ -916,7 +916,7 @@
       "COMMAND SQUAD",
       "EPIC HERO",
       "GRENADES",
-      "HELL’S LAST",
+      "HELL'S LAST",
       "IMPERIUM",
       "INFANTRY",
       "OFFICER",
@@ -1323,7 +1323,7 @@
       "VULTURE GUNSHIP"
     ],
     "’IRON HAND’ STRAKEN": [
-      "’IRON HAND’ STRAKEN",
+      "'IRON HAND' STRAKEN",
       "ASTRA MILITARUM",
       "CHARACTER",
       "EPIC HERO",
@@ -1512,7 +1512,7 @@
   },
   "CHAOS DAEMONS": {
     "AETAOS’RAU’KERES": [
-      "AETAOS’RAU’KERES",
+      "AETAOS'RAU'KERES",
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -1526,7 +1526,7 @@
       "TZEENTCH"
     ],
     "AN’GGRATH THE UNBOUND": [
-      "AN’GGRATH THE UNBOUND",
+      "AN'GGRATH THE UNBOUND",
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -1546,7 +1546,7 @@
       "NURGLE"
     ],
     "BE’LAKOR": [
-      "BE’LAKOR",
+      "BE'LAKOR",
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -2046,7 +2046,7 @@
       "MONSTER",
       "PSYKER",
       "SLAANESH",
-      "SYLL’ESSKE"
+      "SYLL'ESSKE"
     ],
     "THE BLUE SCRIBES": [
       "CHAOS",
@@ -2990,7 +2990,7 @@
   },
   "EMPEROR’S CHILDREN": {
     "CHAOS RHINO": [
-      "EMPEROR’S CHILDREN",
+      "EMPEROR'S CHILDREN",
       "FRAME",
       "TRANSPORT"
     ],
@@ -2998,7 +2998,7 @@
       "CHAOS",
       "DAEMON",
       "DEFILER",
-      "EMPEROR’S CHILDREN",
+      "EMPEROR'S CHILDREN",
       "SLAANESH",
       "VEHICLE",
       "WALKER"
@@ -3507,7 +3507,7 @@
       "VEHICLE"
     ],
     "C’TAN SHARD OF THE DECEIVER": [
-      "C’TAN SHARD OF THE DECEIVER",
+      "C'TAN SHARD OF THE DECEIVER",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
@@ -3515,7 +3515,7 @@
       "NECRONS"
     ],
     "C’TAN SHARD OF THE NIGHTBRINGER": [
-      "C’TAN SHARD OF THE NIGHTBRINGER",
+      "C'TAN SHARD OF THE NIGHTBRINGER",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
@@ -3523,7 +3523,7 @@
       "NECRONS"
     ],
     "C’TAN SHARD OF THE VOID DRAGON": [
-      "C’TAN SHARD OF THE VOID DRAGON",
+      "C'TAN SHARD OF THE VOID DRAGON",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
@@ -3625,7 +3625,7 @@
       "FLY",
       "MONSTER",
       "NECRONS",
-      "TRANSCENDENT C’TAN"
+      "TRANSCENDENT C'TAN"
     ],
     "VARGARD OBYRON": [
       "CHARACTER",
@@ -4904,7 +4904,7 @@
       "INFANTRY",
       "SALAMANDERS",
       "TACTICUS",
-      "VULKAN HE’STAN"
+      "VULKAN HE'STAN"
     ],
     "WARDENS OF ULTRAMAR": [
       "ADEPTUS ASTARTES",
@@ -5166,249 +5166,6 @@
       "WOLF SCOUTS"
     ]
   },
-  "T’AU EMPIRE": {
-    "AUN’SHI": [
-      "AUN’SHI",
-      "CHARACTER",
-      "EPIC HERO",
-      "ETHEREAL",
-      "INFANTRY",
-      "T’AU EMPIRE"
-    ],
-    "AUN’VA": [
-      "AUN’VA",
-      "CHARACTER",
-      "EPIC HERO",
-      "ETHEREAL",
-      "INFANTRY",
-      "T’AU EMPIRE"
-    ],
-    "AX-1-0 TIGER SHARK": [
-      "AIRCRAFT",
-      "AX-1-0 TIGER SHARK",
-      "FLY",
-      "FRAME",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "BARRACUDA": [
-      "AIRCRAFT",
-      "BARRACUDA",
-      "FLY",
-      "FRAME",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "COMMANDER IN CRISIS BATTLESUIT": [
-      "BATTLESUIT",
-      "CHARACTER",
-      "COMMANDER IN CRISIS BATTLESUIT",
-      "FLY",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER"
-    ],
-    "CRISIS BATTLESUITS": [
-      "BATTLESUIT",
-      "CRISIS",
-      "FLY",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER"
-    ],
-    "DEVILFISH": [
-      "AIRCRAFT",
-      "FLY",
-      "FRAME",
-      "MANTA",
-      "MARKERLIGHT",
-      "T’AU EMPIRE",
-      "TITANIC",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
-    "DRONE SENTRY TURRET": [
-      "DRONE SENTRY TURRET",
-      "FORTIFICATION",
-      "FRAME",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "ETHEREAL": [
-      "CHARACTER",
-      "EPIC HERO",
-      "ETHEREAL",
-      "INFANTRY",
-      "T’AU EMPIRE"
-    ],
-    "GREAT KNARLOC": [
-      "FRAME",
-      "GREAT KNARLOC",
-      "KROOT",
-      "MONSTER",
-      "T’AU EMPIRE"
-    ],
-    "HAMMERHEAD GUNSHIP": [
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "FRAME",
-      "LONGSTRIKE",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "HEAVY GUN DRONES": [
-      "FLY",
-      "HEAVY GUN DRONES",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "KNARLOC RIDERS": [
-      "KNARLOC RIDERS",
-      "KROOT",
-      "MOUNTED",
-      "T’AU EMPIRE"
-    ],
-    "LONGSTRIKE": [
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "FRAME",
-      "LONGSTRIKE",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "MANTA": [
-      "AIRCRAFT",
-      "FLY",
-      "FRAME",
-      "MANTA",
-      "MARKERLIGHT",
-      "T’AU EMPIRE",
-      "TITANIC",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
-    "ORCA DROPSHIP": [
-      "AIRCRAFT",
-      "FLY",
-      "FRAME",
-      "ORCA DROPSHIP",
-      "T’AU EMPIRE",
-      "TITANIC",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
-    "REMORA STEALTH DRONES": [
-      "FLY",
-      "MARKERLIGHT",
-      "REMORA STEALTH DRONES",
-      "T’AU EMPIRE",
-      "VEHICLE"
-    ],
-    "REMOTE SENSOR TOWER": [
-      "FORTIFICATION",
-      "FRAME",
-      "REMOTE SENSOR TOWER",
-      "T’AU EMPIRE"
-    ],
-    "R’VARNA BATTLESUIT": [
-      "BATTLESUIT",
-      "FLY",
-      "R’VARNA",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER"
-    ],
-    "SHAS’O R’ALAI": [
-      "BATTLESUIT",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "MARKERLIGHT",
-      "SHAS’O R’ALAI",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER"
-    ],
-    "STEALTH BATTLESUITS": [
-      "BATTLESUIT",
-      "FLY",
-      "GRENADES",
-      "INFANTRY",
-      "MARKERLIGHT",
-      "STEALTH",
-      "T’AU EMPIRE"
-    ],
-    "TA’UNAR SUPREMACY ARMOUR": [
-      "FRAME",
-      "T’AU EMPIRE",
-      "TA’UNAR SUPREMACY ARMOUR",
-      "TITANIC",
-      "TOWERING",
-      "VEHICLE",
-      "WALKER"
-    ],
-    "TETRAS": [
-      "FLY",
-      "FRAME",
-      "MARKERLIGHT",
-      "T’AU EMPIRE",
-      "TETRAS",
-      "VEHICLE"
-    ],
-    "THE TWIN LANCE": [
-      "BATTLESUIT",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "T’AU EMPIRE",
-      "THE TWIN LANCE",
-      "VEHICLE",
-      "WALKER"
-    ],
-    "TIDEWALL SHIELDLINE": [
-      "FRAME",
-      "T’AU EMPIRE"
-    ],
-    "TIGER SHARK": [
-      "AIRCRAFT",
-      "FLY",
-      "FRAME",
-      "T’AU EMPIRE",
-      "TIGER SHARK",
-      "VEHICLE"
-    ],
-    "TX42 PIRANHA": [
-      "FLY",
-      "FRAME",
-      "T’AU EMPIRE",
-      "TX42 PIRANHA",
-      "VEHICLE"
-    ],
-    "VESPID STINGWINGS": [
-      "FLY",
-      "INFANTRY",
-      "T’AU EMPIRE",
-      "VESPID STINGWINGS"
-    ],
-    "XV9 HAZARD BATTLESUITS": [
-      "BATTLESUIT",
-      "FLY",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER",
-      "XV9 HAZARD"
-    ],
-    "Y’VAHRA BATTLESUIT": [
-      "BATTLESUIT",
-      "FLY",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER",
-      "Y’VAHRA"
-    ]
-  },
   "THOUSAND SONS": {
     "DEFILER": [
       "CHAOS",
@@ -5531,6 +5288,249 @@
       "SYNAPSE",
       "TYRANID PRIME WITH LASH WHIP",
       "TYRANIDS"
+    ]
+  },
+  "T’AU EMPIRE": {
+    "AUN’SHI": [
+      "AUN'SHI",
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
+    ],
+    "AUN’VA": [
+      "AUN'VA",
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
+    ],
+    "AX-1-0 TIGER SHARK": [
+      "AIRCRAFT",
+      "AX-1-0 TIGER SHARK",
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "BARRACUDA": [
+      "AIRCRAFT",
+      "BARRACUDA",
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "COMMANDER IN CRISIS BATTLESUIT": [
+      "BATTLESUIT",
+      "CHARACTER",
+      "COMMANDER IN CRISIS BATTLESUIT",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CRISIS BATTLESUITS": [
+      "BATTLESUIT",
+      "CRISIS",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DEVILFISH": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "MANTA",
+      "MARKERLIGHT",
+      "T'AU EMPIRE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DRONE SENTRY TURRET": [
+      "DRONE SENTRY TURRET",
+      "FORTIFICATION",
+      "FRAME",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "ETHEREAL": [
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
+    ],
+    "GREAT KNARLOC": [
+      "FRAME",
+      "GREAT KNARLOC",
+      "KROOT",
+      "MONSTER",
+      "T'AU EMPIRE"
+    ],
+    "HAMMERHEAD GUNSHIP": [
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "FRAME",
+      "LONGSTRIKE",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "HEAVY GUN DRONES": [
+      "FLY",
+      "HEAVY GUN DRONES",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "KNARLOC RIDERS": [
+      "KNARLOC RIDERS",
+      "KROOT",
+      "MOUNTED",
+      "T'AU EMPIRE"
+    ],
+    "LONGSTRIKE": [
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "FRAME",
+      "LONGSTRIKE",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "MANTA": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "MANTA",
+      "MARKERLIGHT",
+      "T'AU EMPIRE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "ORCA DROPSHIP": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "ORCA DROPSHIP",
+      "T'AU EMPIRE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "REMORA STEALTH DRONES": [
+      "FLY",
+      "MARKERLIGHT",
+      "REMORA STEALTH DRONES",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "REMOTE SENSOR TOWER": [
+      "FORTIFICATION",
+      "FRAME",
+      "REMOTE SENSOR TOWER",
+      "T'AU EMPIRE"
+    ],
+    "R’VARNA BATTLESUIT": [
+      "BATTLESUIT",
+      "FLY",
+      "R'VARNA",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "SHAS’O R’ALAI": [
+      "BATTLESUIT",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "MARKERLIGHT",
+      "SHAS'O R'ALAI",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "STEALTH BATTLESUITS": [
+      "BATTLESUIT",
+      "FLY",
+      "GRENADES",
+      "INFANTRY",
+      "MARKERLIGHT",
+      "STEALTH",
+      "T'AU EMPIRE"
+    ],
+    "TA’UNAR SUPREMACY ARMOUR": [
+      "FRAME",
+      "T'AU EMPIRE",
+      "TA'UNAR SUPREMACY ARMOUR",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "TETRAS": [
+      "FLY",
+      "FRAME",
+      "MARKERLIGHT",
+      "T'AU EMPIRE",
+      "TETRAS",
+      "VEHICLE"
+    ],
+    "THE TWIN LANCE": [
+      "BATTLESUIT",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "T'AU EMPIRE",
+      "THE TWIN LANCE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "TIDEWALL SHIELDLINE": [
+      "FRAME",
+      "T'AU EMPIRE"
+    ],
+    "TIGER SHARK": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "TIGER SHARK",
+      "VEHICLE"
+    ],
+    "TX42 PIRANHA": [
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "TX42 PIRANHA",
+      "VEHICLE"
+    ],
+    "VESPID STINGWINGS": [
+      "FLY",
+      "INFANTRY",
+      "T'AU EMPIRE",
+      "VESPID STINGWINGS"
+    ],
+    "XV9 HAZARD BATTLESUITS": [
+      "BATTLESUIT",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER",
+      "XV9 HAZARD"
+    ],
+    "Y’VAHRA BATTLESUIT": [
+      "BATTLESUIT",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER",
+      "Y'VAHRA"
     ]
   },
   "WORLD EATERS": {

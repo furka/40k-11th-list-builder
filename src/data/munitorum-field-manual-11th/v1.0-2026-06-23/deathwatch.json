@@ -1,5 +1,5 @@
 {
-  "faction": "BLOOD ANGELS",
+  "faction": "DEATHWATCH",
   "siteVersion": "v1.0",
   "detachments": [
     {
@@ -27,36 +27,6 @@
         {
           "name": "The Imperium’s Sword",
           "points": 25
-        }
-      ]
-    },
-    {
-      "name": "ANGELIC INHERITORS",
-      "dp": 3,
-      "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: GRACE"
-      ],
-      "enhancements": [
-        {
-          "name": "Blazing Icon",
-          "points": 20
-        },
-        {
-          "name": "Ordained Sacrifice",
-          "points": 25
-        },
-        {
-          "name": "Prescient Flash",
-          "points": 20
-        },
-        {
-          "name": "Troubling Visions",
-          "points": 15
         }
       ]
     },
@@ -145,6 +115,34 @@
       ]
     },
     {
+      "name": "BLACK SPEAR TASK FORCE",
+      "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Beacon Angelis",
+          "points": 25
+        },
+        {
+          "name": "Osseus Key",
+          "points": 15
+        },
+        {
+          "name": "The Tome of Ectoclades",
+          "points": 30
+        },
+        {
+          "name": "Thief of Secrets",
+          "points": 25
+        }
+      ]
+    },
+    {
       "name": "CERAMITE SENTINELS",
       "dp": 3,
       "role": {
@@ -169,26 +167,6 @@
         {
           "name": "Spy-skull Data Link",
           "points": 15
-        }
-      ]
-    },
-    {
-      "name": "ENCARMINE SPEARTIP",
-      "dp": 1,
-      "role": {
-        "name": "DISRUPTION",
-        "color": "#1A3A5C"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Angelic Executioner",
-          "points": 25
-        },
-        {
-          "name": "Shadow of Abomination",
-          "points": 25
         }
       ]
     },
@@ -327,56 +305,6 @@
       ]
     },
     {
-      "name": "LEGACY OF GRACE",
-      "dp": 1,
-      "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: GRACE"
-      ],
-      "enhancements": [
-        {
-          "name": "Aureole of the Angel",
-          "points": 20
-        },
-        {
-          "name": "Blood Boil",
-          "points": 10
-        }
-      ]
-    },
-    {
-      "name": "LIBERATOR ASSAULT GROUP",
-      "dp": 3,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Gift of Foresight",
-          "points": 15
-        },
-        {
-          "name": "Icon of the Angel",
-          "points": 20
-        },
-        {
-          "name": "Rage-fuelled Warrior",
-          "points": 35
-        },
-        {
-          "name": "Speed of the Primarch",
-          "points": 25
-        }
-      ]
-    },
-    {
       "name": "LIBRARIUS CONCLAVE",
       "dp": 1,
       "role": {
@@ -437,36 +365,6 @@
       ]
     },
     {
-      "name": "RAGE-CURSED ONSLAUGHT",
-      "dp": 3,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: DOOMED"
-      ],
-      "enhancements": [
-        {
-          "name": "Angel’s Fang",
-          "points": 25
-        },
-        {
-          "name": "Carmine Reliquary",
-          "points": 30
-        },
-        {
-          "name": "Master of the Red Thirst",
-          "points": 25
-        },
-        {
-          "name": "Sanguinary Tear",
-          "points": 35
-        }
-      ]
-    },
-    {
       "name": "STORMLANCE TASK FORCE",
       "dp": 2,
       "role": {
@@ -516,64 +414,6 @@
       ]
     },
     {
-      "name": "THE ANGELIC HOST",
-      "dp": 2,
-      "role": {
-        "name": "DISRUPTION",
-        "color": "#1A3A5C"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Archangel’s Shard",
-          "points": 15
-        },
-        {
-          "name": "Artisan of War",
-          "points": 20
-        },
-        {
-          "name": "Gleaming Pinions",
-          "points": 25
-        },
-        {
-          "name": "Visage of Death",
-          "points": 15
-        }
-      ]
-    },
-    {
-      "name": "THE LOST BRETHREN",
-      "dp": 2,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: DOOMED"
-      ],
-      "enhancements": [
-        {
-          "name": "Blood Shard",
-          "points": 25
-        },
-        {
-          "name": "Sanguinius’ Grace",
-          "points": 20
-        },
-        {
-          "name": "To Slay The Warmaster",
-          "points": 15
-        },
-        {
-          "name": "Vengeful Onslaught",
-          "points": 10
-        }
-      ]
-    },
-    {
       "name": "VANGUARD SPEARHEAD",
       "dp": 2,
       "role": {
@@ -600,55 +440,11 @@
           "points": 25
         }
       ]
-    },
-    {
-      "name": "WRATH OF THE DOOMED",
-      "dp": 1,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: DOOMED"
-      ],
-      "enhancements": [
-        {
-          "name": "Instinctive Interception",
-          "points": 10
-        },
-        {
-          "name": "On the Archtraitor’s Bridge",
-          "points": 20
-        }
-      ]
     }
   ],
   "datasheets": [
     {
-      "name": "ASTORATH",
-      "leader": {
-        "attachesTo": [
-          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
-          "DEATH COMPANY MARINES WITH JUMP PACKS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BAAL PREDATOR",
+      "name": "CORVUS BLACKSTAR",
       "leader": null,
       "support": null,
       "sizes": [
@@ -658,152 +454,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 135
+              "points": 180
             }
           ]
         }
       ]
     },
     {
-      "name": "BLOOD ANGELS CAPTAIN",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "COMPANY HEROES",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "TACTICAL SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CHIEF LIBRARIAN MEPHISTON",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "COMMANDER DANTE",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSORS WITH JUMP PACKS",
-          "SANGUINARY GUARD",
-          "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 125
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEATH COMPANY CAPTAIN",
-      "leader": {
-        "attachesTo": [
-          "DEATH COMPANY MARINES",
-          "DEATH COMPANY MARINES WITH BOLT RIFLES",
-          "DEATH COMPANY MARINES WITH BOLTGUNS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEATH COMPANY CAPTAIN WITH JUMP PACK",
-      "leader": {
-        "attachesTo": [
-          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
-          "DEATH COMPANY MARINES WITH JUMP PACKS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEATH COMPANY DREADNOUGHT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 160
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEATH COMPANY MARINES",
+      "name": "DEATHWATCH TERMINATOR SQUAD",
       "leader": null,
       "support": null,
       "sizes": [
@@ -813,12 +471,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 95
+              "points": 180
             }
           ]
         },
@@ -828,140 +481,150 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 170
+              "points": 330
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Thunder Hammer",
+          "points": 5
         }
       ]
     },
     {
-      "name": "DEATH COMPANY MARINES WITH BOLT RIFLES",
+      "name": "DEATHWATCH VETERANS",
       "leader": null,
       "support": null,
       "sizes": [
         {
           "name": "5 models",
           "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 90
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 155,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 165
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEATH COMPANY MARINES WITH JUMP PACKS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 135
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 230,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 245
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "LEMARTES",
-      "leader": {
-        "attachesTo": [
-          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
-          "DEATH COMPANY MARINES WITH JUMP PACKS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
           "tiers": [
             {
               "minCount": 1,
               "points": 100
             }
           ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
         }
       ]
     },
     {
-      "name": "SANGUINARY GUARD",
+      "name": "DECIMUS KILL TEAM",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "3 models",
-          "models": 3,
+          "name": "5 models",
+          "models": 5,
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 145
+              "points": 100
             }
           ]
         },
         {
-          "name": "6 models",
-          "models": 6,
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FORTIS KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 195,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INDOMITOR KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPECTRUS KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TALONSTRIKE KILL TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 265,
               "maxCount": 2
             },
             {
@@ -973,42 +636,14 @@
       ]
     },
     {
-      "name": "SANGUINARY PRIEST",
-      "leader": null,
-      "support": {
+      "name": "WATCH CAPTAIN ARTEMIS",
+      "leader": {
         "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "DESOLATION SQUAD",
-          "DEVASTATOR SQUAD",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "TACTICAL SQUAD"
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "FORTIS KILL TEAM"
         ]
       },
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "THE SANGUINOR",
-      "leader": null,
       "support": null,
       "sizes": [
         {
@@ -1017,7 +652,30 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WATCH MASTER",
+      "leader": {
+        "attachesTo": [
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "FORTIS KILL TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
             }
           ]
         }
@@ -1188,7 +846,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 75
             }
           ]
         },
@@ -1215,12 +873,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 85,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 95
             }
           ]
         },
@@ -1230,12 +888,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 190
+              "points": 170
             }
           ]
         }
@@ -1317,12 +975,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
+              "points": 80,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 95
+              "points": 90
             }
           ]
         },
@@ -1332,12 +990,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 170
             }
           ]
         }
@@ -1493,7 +1151,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 75
             }
           ]
         }
@@ -1562,7 +1220,6 @@
           "CRUSADER SQUAD",
           "DEATH COMPANY MARINES",
           "DEATH COMPANY MARINES WITH BOLT RIFLES",
-          "DEATH COMPANY MARINES WITH BOLTGUNS",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
           "FORTIS KILL TEAM",
@@ -1641,7 +1298,6 @@
       "leader": {
         "attachesTo": [
           "ASSAULT INTERCESSORS WITH JUMP PACKS",
-          "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
           "DEATH COMPANY MARINES WITH JUMP PACKS",
           "TALONSTRIKE KILL TEAM",
           "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
@@ -1655,7 +1311,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 75
             }
           ]
         }
@@ -1695,33 +1351,6 @@
             {
               "minCount": 2,
               "points": 210
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEVASTATOR SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 200
             }
           ]
         }
@@ -2526,7 +2155,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 70
             }
           ]
         },
@@ -2730,43 +2359,6 @@
       ]
     },
     {
-      "name": "SCOUT SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 75
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 130
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "STERNGUARD VETERAN SQUAD",
       "leader": null,
       "support": null,
@@ -2933,23 +2525,6 @@
       ]
     },
     {
-      "name": "TACTICAL SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 140
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "TECHMARINE",
       "leader": {
         "attachesTo": [
@@ -2973,66 +2548,6 @@
             {
               "minCount": 1,
               "points": 55
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TERMINATOR ASSAULT SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 155
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 310
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Thunder Hammer",
-          "points": 5
-        }
-      ]
-    },
-    {
-      "name": "TERMINATOR SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 320
             }
           ]
         }
@@ -3066,12 +2581,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 115
+              "points": 110
             }
           ]
         },
@@ -3081,12 +2596,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 200,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 210
             }
           ]
         }
@@ -3135,250 +2650,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "BROTHER CORBULO",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "DESOLATION SQUAD",
-          "DEVASTATOR SQUAD",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "TACTICAL SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "CAPTAIN TYCHO",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "COMPANY HEROES",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "TACTICAL SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "DEATH COMPANY DREADNOUGHT WITH MAGNA-GRAPPLE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 145
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "DEATH COMPANY MARINES WITH BOLTGUNS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 125
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 250
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 140
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 280
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "FURIOSO DREADNOUGHT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "GABRIEL SETH",
-      "leader": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "COMPANY HEROES",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "TACTICAL SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "LIBRARIAN DREADNOUGHT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 170
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "SANGUINARY PRIEST WITH JUMP PACK",
-      "leader": null,
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSORS WITH JUMP PACKS",
-          "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
-        ]
-      },
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "TYCHO THE LOST",
-      "leader": {
-        "attachesTo": [
-          "DEATH COMPANY MARINES",
-          "DEATH COMPANY MARINES WITH BOLT RIFLES",
-          "DEATH COMPANY MARINES WITH BOLTGUNS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ],
-      "legends": true
     }
   ]
 }
