@@ -195,6 +195,10 @@ export async function classifyWithLLM({
     };
   }
 
+  if (process.env.MFM_SCRAPE_CACHE_ONLY === "1") {
+    throw new Error(`cache-only mode: no cached response for ${enhancementName}`);
+  }
+
   const pagesBody = pageTexts
     .map((p, i) => `--- PAGE ${i + 1} ---\n${p}`)
     .join("\n\n");

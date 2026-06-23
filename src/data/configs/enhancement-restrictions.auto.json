@@ -2268,30 +2268,6 @@
         "ANCIENT"
       ]
     },
-    "Adamantine Mantle": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "CHARACTER"
-      ],
-      "characterOnly": true
-    },
-    "Forged in Battle": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ]
-    },
-    "War-tempered Artifice": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "INFANTRY"
-      ],
-      "nonCharacterOnly": true
-    },
-    "Immolator": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ]
-    },
     "Bellicose Weapon Spirits": {
       "nonCharacterOnly": true
     },

@@ -136,16 +136,35 @@ export async function flushKeywordCache() {
 // Sequential per-faction calls share the cache-controlled system block (faction
 // name in the cached header) so the Anthropic ephemeral cache fires for the
 // 2nd+ datasheet in the same faction.
+//
+// `siblingDatasheetNames` is the upper-cased set of every OTHER datasheet name
+// in this faction. Used to detect cross-datasheet leakage in the LLM response
+// (Haiku occasionally pulls a neighbour's stat block when two are flattened
+// onto the same PDF page, returning the neighbour's keyword set verbatim). If
+// the returned keywords list contains a sibling name, the whole response is
+// treated as suspect (`notFound: true`) — partial scrubs leave the other
+// hallucinated keywords (CHARACTER, CRYPTEK, …) in place, which is worse than
+// dropping the entry and falling back to BSData. Applied to BOTH cache hits
+// and fresh API responses so reusing the existing cache cleans existing leaks.
 export async function classifyKeywordsWithLLM({
   client,
   datasheetName,
   pageTexts,
   factionName,
+  siblingDatasheetNames,
 }) {
   const cache = await getCache();
   const key = makeCacheKey({ datasheetName, pageTexts });
   if (cache[key]) {
-    return { result: cache[key].response, cacheHit: true };
+    const filtered = filterLeakage(cache[key].response, siblingDatasheetNames);
+    return { result: filtered.result, cacheHit: true, leaked: filtered.leaked };
+  }
+
+  // Cache-only mode for re-running the keyword pass over an existing cache
+  // without paying for fresh LLM calls (e.g. when scrubbing a known data
+  // quality issue from already-cached responses).
+  if (process.env.MFM_SCRAPE_CACHE_ONLY === "1") {
+    throw new Error(`cache-only mode: no cached response for ${datasheetName}`);
   }
 
   const pagesBody = pageTexts
@@ -193,7 +212,27 @@ export async function classifyKeywordsWithLLM({
   };
   scheduleFlush(cache);
 
-  return { result: normalized, cacheHit: false };
+  const filtered = filterLeakage(normalized, siblingDatasheetNames);
+  return { result: filtered.result, cacheHit: false, leaked: filtered.leaked };
+}
+
+// Detects the "neighbour stat block" leak signature: the LLM returned at least
+// one sibling datasheet's name as a keyword. When that happens the rest of
+// the keyword set is almost always copied from that sibling too, so we drop
+// the entry entirely (notFound) rather than try to partial-scrub.
+function filterLeakage(response, siblingDatasheetNames) {
+  if (!response || !(siblingDatasheetNames instanceof Set) || siblingDatasheetNames.size === 0) {
+    return { result: response, leaked: null };
+  }
+  const kw = response.keywords ?? [];
+  const leaked = kw.filter((k) => siblingDatasheetNames.has(k));
+  if (leaked.length === 0) {
+    return { result: response, leaked: null };
+  }
+  return {
+    result: { keywords: [], factionKeywords: [], notFound: true },
+    leaked,
+  };
 }
 
 function normalizeResult(raw) {
