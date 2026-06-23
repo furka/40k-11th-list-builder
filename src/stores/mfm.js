@@ -1,7 +1,20 @@
 import { defineStore } from "pinia";
 import { load11thMFM } from "../data/munitorum-field-manual-11th";
 import { resolveTier } from "../utils/list-points";
-import deepFreeze from "deep-freeze";
+
+function deepFreeze(o) {
+  Object.freeze(o);
+  Object.getOwnPropertyNames(o).forEach((prop) => {
+    if (
+      o[prop] !== null &&
+      (typeof o[prop] === "object" || typeof o[prop] === "function") &&
+      !Object.isFrozen(o[prop])
+    ) {
+      deepFreeze(o[prop]);
+    }
+  });
+  return o;
+}
 
 // Legacy MFM versions used to embed the scrape date — "V1.0 (2026-06-17)".
 // Strip that suffix so old saved lists and bookmarked share URLs still resolve

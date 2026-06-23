@@ -20,8 +20,7 @@
     "bsdata:prune-overrides": "node scripts/audit-and-prune-overrides.mjs"
   },
   "dependencies": {
-    "deep-freeze": "^0.0.1",
-    "pinia": "^3.0.3",
+"pinia": "^3.0.3",
     "uuid": "^14.0.0",
     "vite-svg-loader": "^4.0.0",
     "vue": "^3.2.47"
