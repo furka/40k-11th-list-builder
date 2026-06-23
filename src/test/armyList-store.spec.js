@@ -133,6 +133,22 @@ const TEST_MFM = {
         { name: "Doomsday gauss flayer", points: 10 },
       ],
     },
+    {
+      // Explicit non-CHARACTER squad used by allowedHosts / requiredKeywords
+      // tests as the "wrong host" stand-in. The Enhancement-validation
+      // describe block only patches mfmStore.getVersion, not the codex
+      // store's lookup, so without this entry getDataSheet("IMMORTALS")
+      // falls through to real Necron data and a faulty keyword overlay
+      // (mfm-pdf-keywords mis-classifying IMMORTALS as CHARACTER) would
+      // mask the actual rule under test.
+      name: "IMMORTALS",
+      faction: FACTION,
+      edition: "11th",
+      keywords: ["BATTLELINE", "INFANTRY", "NECRONS"],
+      sizes: [
+        { name: "10 models", models: 10, basePoints: 140, tiers: [{ minCount: 1, points: 140 }] },
+      ],
+    },
   ],
 };
 
@@ -453,11 +469,15 @@ describe("armyList Enhancement validation", () => {
   beforeEach(() => {
     setActivePinia(createPinia());
     const mfm = useMfmStore();
-    // The store reads currentMFM via mfmStore.getVersion(version). The
-    // closure-internal MFM dict can't be reassigned from outside, so we
-    // override getVersion to hand back our synthetic MFM directly. This is
-    // the only way to make `availableEnhancementNames` see test detachments
-    // without touching the real game data.
+    // The armyList store reads currentMFM via mfmStore.getVersion(version);
+    // patching that hands back our synthetic MFM for availableEnhancementNames.
+    // But the codex store's compendium reads mfmStore.MFM.CURRENT directly,
+    // and falls back to real data if .MFM isn't reassigned — so we patch both.
+    // Without the .MFM override, getDataSheet(name) for any datasheet absent
+    // from TEST_MFM would silently resolve to the real codex (with its
+    // keyword overlay), turning unrelated data-quality regressions into
+    // spurious test failures here.
+    mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
     mfm.getVersion = (v) => (v === TEST_MFM.MFM_VERSION ? TEST_MFM : null);
     store = useArmyListStore();
     store.setList({

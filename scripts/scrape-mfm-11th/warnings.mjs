@@ -33,6 +33,7 @@ export const WARNING_CATEGORIES = [
   "kw-stat-block-absent", // name appears in cross-references but not as a stat block (codex-resident)
   "kw-llm-call-failed", // PDF keyword pass: API error
   "kw-empty-response", // LLM returned no keywords for a datasheet section
+  "kw-leaked-datasheet-name", // LLM returned a sibling datasheet's name as a keyword (signature of two stat blocks getting flattened together); entry dropped, falls back to BSData
   "requiredkeyword-split", // post-LLM repair split a multi-token concatenation into atomics
   "requiredkeyword-promoted", // post-LLM repair promoted a stray datasheet name from requiredKeywords to allowedHosts
   "requiredkeyword-dropped", // post-LLM repair couldn't decompose a non-vocab entry — dropped it

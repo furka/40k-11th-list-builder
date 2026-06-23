@@ -543,7 +543,16 @@ async function scrapePdfKeywordsForFaction(
     cacheHits: 0,
     empty: 0,
     failed: 0,
+    leaked: 0, // sibling-datasheet leakage detected; entry dropped
   };
+
+  // Set of every datasheet name in this faction, used by the classifier to
+  // detect cross-stat-block leakage (when Haiku returns a neighbour's keyword
+  // set verbatim because two stat blocks are flattened onto the same PDF
+  // page). The current sheet is removed per-iteration below.
+  const allSiblingNames = new Set(
+    factionPayload.datasheets.map((d) => d.name.toUpperCase())
+  );
 
   for (const sheet of factionPayload.datasheets) {
     const matched = findDatasheetPages(pages, sheet.name);
@@ -553,17 +562,23 @@ async function scrapePdfKeywordsForFaction(
       continue;
     }
 
+    const siblingDatasheetNames = new Set(allSiblingNames);
+    siblingDatasheetNames.delete(sheet.name.toUpperCase());
+
     let result;
     let cacheHit;
+    let leaked;
     try {
       const res = await classifyKeywordsWithLLM({
         client: llmClient,
         datasheetName: sheet.name,
         pageTexts: matched.pages,
         factionName: factionPayload.faction,
+        siblingDatasheetNames,
       });
       result = res.result;
       cacheHit = res.cacheHit;
+      leaked = res.leaked;
     } catch (e) {
       warnings.add("kw-llm-call-failed", {
         slug,
@@ -574,6 +589,14 @@ async function scrapePdfKeywordsForFaction(
       continue;
     }
     if (cacheHit) counts.cacheHits++;
+    if (leaked) {
+      warnings.add("kw-leaked-datasheet-name", {
+        slug,
+        datasheet: sheet.name,
+        leaked,
+      });
+      counts.leaked++;
+    }
 
     if (result.notFound) {
       warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
@@ -599,6 +622,7 @@ async function scrapePdfKeywordsForFaction(
     `    ${counts.datasheets} datasheet(s), ${counts.classified} written from PDF` +
       ` (codex-resident ${counts.codexResident + counts.statBlockAbsent},` +
       ` empty ${counts.empty}, failed ${counts.failed},` +
+      ` leaked ${counts.leaked},` +
       ` cache-hits ${counts.cacheHits})`
   );
   return out;
