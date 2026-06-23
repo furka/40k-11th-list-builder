@@ -1,0 +1,3148 @@
+{
+  "faction": "ASTRA MILITARUM",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "ABHUMAN AUXILIARIES",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": {
+        "attachesTo": [
+          "OGRYN SQUAD",
+          "BULLGRYN SQUAD"
+        ]
+      },
+      "tags": [
+        "UNIQUE: ABHUMAN"
+      ],
+      "enhancements": [
+        {
+          "name": "Exemplar of Duty",
+          "points": 10,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Sharp Eyes",
+          "points": 10,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "ARMOURED INFANTRY",
+      "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Exemplary Officer",
+          "points": 20
+        },
+        {
+          "name": "Grand Strategist",
+          "points": 25
+        },
+        {
+          "name": "Master Manoeuvrist",
+          "points": 15
+        },
+        {
+          "name": "Omnissian Unguents",
+          "points": 35
+        }
+      ]
+    },
+    {
+      "name": "BRIDGEHEAD STRIKE",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Bombast-class Vox-array",
+          "points": 15
+        },
+        {
+          "name": "Priority Drop Beacon",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "COMBINED ARMS",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Death Mask of Ollanius",
+          "points": 10
+        },
+        {
+          "name": "Drill Commander",
+          "points": 20
+        },
+        {
+          "name": "Grand Strategist",
+          "points": 15
+        },
+        {
+          "name": "Reactive Command",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "DESIGNATION FORCE",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: RECON"
+      ],
+      "enhancements": [
+        {
+          "name": "Long-range Scout",
+          "points": 10,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Recon Star",
+          "points": 10,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "GRIZZLED COMPANY",
+      "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": {
+        "attachesTo": [
+          "OGRYN SQUAD",
+          "BULLGRYN SQUAD"
+        ]
+      },
+      "tags": [
+        "UNIQUE: ABHUMAN"
+      ],
+      "enhancements": [
+        {
+          "name": "Abhuman Detail",
+          "points": 20
+        },
+        {
+          "name": "Aquilan Eye",
+          "points": 20
+        },
+        {
+          "name": "Laud Hailer",
+          "points": 10
+        },
+        {
+          "name": "Spec Ops Veteran",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "HAMMER OF THE EMPEROR",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Calm Under Fire",
+          "points": 15
+        },
+        {
+          "name": "Indomitable Steed",
+          "points": 15
+        },
+        {
+          "name": "Regimental Banner",
+          "points": 20
+        },
+        {
+          "name": "Veteran Crew",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "MECHANISED ASSAULT",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Bold Leadership",
+          "points": 25
+        },
+        {
+          "name": "Sacred Unguents",
+          "points": 10
+        },
+        {
+          "name": "Smoke Grenades",
+          "points": 10
+        },
+        {
+          "name": "Vanguard Honours",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "RECON ELEMENT",
+      "dp": 3,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: RECON"
+      ],
+      "enhancements": [
+        {
+          "name": "Guerrilla Honours",
+          "points": 25
+        },
+        {
+          "name": "Scare Gas Grenades",
+          "points": 5
+        },
+        {
+          "name": "Survival Gear",
+          "points": 5
+        },
+        {
+          "name": "Tripwires",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "SIEGE REGIMENT",
+      "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Eager Advance",
+          "points": 20
+        },
+        {
+          "name": "Flash Grenades",
+          "points": 20
+        },
+        {
+          "name": "Legacy Sidearm",
+          "points": 10
+        },
+        {
+          "name": "Stalwart’s Honours",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "STEEL HAMMER",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Assault Hatches",
+          "points": 25
+        },
+        {
+          "name": "Battalion Commander",
+          "points": 30
+        },
+        {
+          "name": "Engine Speaker",
+          "points": 15
+        },
+        {
+          "name": "Titan Killer",
+          "points": 20
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "AEGIS DEFENCE LINE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARMOURED SENTINELS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ARTILLERY TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ATTILAN ROUGH RIDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AVENGER STRIKE FIGHTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BANEBLADE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 450,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 470
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BANEHAMMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 420,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BANESWORD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 450,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 470
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BASILISK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BULLGRYN SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 215
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CADIAN CASTELLAN",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "KASRKIN"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CADIAN COMMAND SQUAD",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CADIAN HEAVY WEAPONS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CADIAN RECON SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CADIAN SHOCK TROOPS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CATACHAN COMMAND SQUAD",
+      "leader": {
+        "attachesTo": [
+          "CATACHAN JUNGLE FIGHTERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CATACHAN HEAVY WEAPONS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CATACHAN JUNGLE FIGHTERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CENTAUR RSV",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHIMERA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMMISSAR",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS",
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMMISSAR GRAVES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMMISSAR GRAVES ON FOOT",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS",
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMMISSAR YARRICK",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS",
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CYCLOPS DEMOLITION VEHICLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH KORPS OF KRIEG",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH RIDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHSTRIKE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOOMHAMMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 415,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 435
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FIELD ORDNANCE BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Bombast field gun",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "GAUNT’S GHOSTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELLHAMMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 420,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELLHOUND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HIPPOGRIFF AFV",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HYDRA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KASRKIN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KRIEG COMBAT ENGINEERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KRIEG COMMAND SQUAD",
+      "leader": {
+        "attachesTo": [
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KRIEG COMBAT ENGINEERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KRIEG HEAVY WEAPONS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Krieg heavy flamer",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS BATTLE TANK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 195
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS COMMANDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 235,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 250
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS DEMOLISHER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS ERADICATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS EXECUTIONER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS EXTERMINATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS PUNISHER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMAN RUSS VANQUISHER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD MARSHAL DREIR",
+      "leader": {
+        "attachesTo": [
+          "DEATH RIDERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD SOLAR LEONTUS",
+      "leader": {
+        "attachesTo": [
+          "ATTILAN ROUGH RIDERS",
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "DEATH RIDERS",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MANTICORE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MILITARUM TEMPESTUS COMMAND SQUAD",
+      "leader": {
+        "attachesTo": [
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MINISTORUM PRIEST",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS",
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NORK DEDDOG",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OGRYN BODYGUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OGRYN SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PRIMARIS PSYKER",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS",
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RATLINGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROGAL DORN BATTLE TANK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 260,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 275
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROGAL DORN COMMANDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 290,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 305
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SCOUT SENTINELS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SHADOWSWORD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 410,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 430
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SLY MARBO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORMLORD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 430,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 450
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORMSWORD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 465,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 485
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TAUROX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TAUROX PRIME",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECH-PRIEST ENGINSEER",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "KRIEG COMBAT ENGINEERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TEMPESTUS AQUILONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TEMPESTUS SCIONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 165
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "URSULA CREED",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "KASRKIN"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VALKYRIE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WYVERN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AQUILA LANDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ARKURIAN STORMHAMMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 480
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ARMAGEDDON-PATTERN MEDUSA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ARVUS LIGHTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ATLAS RECOVERY VEHICLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CARNODON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CENTAUR LIGHT CARRIER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "COLOSSUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CRASSUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH KORPS GRENADIER SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH RIDER COMMISSAR",
+      "leader": {
+        "attachesTo": [
+          "DEATH RIDERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DOMINUS ARMOURED SIEGE BOMBARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 325
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "EARTHSHAKER CARRIAGE BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "EARTHSHAKER PLATFORM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ELYSIAN DROP SENTINEL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "ELYSIAN SNIPER SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GORGON HEAVY TRANSPORT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GRIFFON MORTAR CARRIER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HADES BREACHING DRILL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HEAVY MORTAR TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HEAVY QUAD LAUNCHER TEAM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HELL'S LAST",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HYDRA PLATFORM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "‘IRON HAND’ STRAKEN",
+      "leader": {
+        "attachesTo": [
+          "CATACHAN JUNGLE FIGHTERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MACHARIUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MACHARIUS OMEGA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MACHARIUS VANQUISHER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 285
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MACHARIUS VULCAN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MALCADOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MALCADOR ANNIHILATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 270
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MALCADOR DEFENDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MALCADOR INFERNUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 235
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MANTICORE PLATFORM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MARAUDER BOMBER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 345
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MARAUDER DESTROYER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 375
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MEDUSA CARRIAGE BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MINOTAUR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 225
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MUKAALI RIDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MUNITORUM SERVITORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PRAETOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PROVISIONALLY PREPARED",
+      "leader": {
+        "attachesTo": [
+          "RATLINGS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "QUARTERMASTER CADRE SQUAD",
+      "leader": {
+        "attachesTo": [
+          "DEATH KORPS GRENADIER SQUAD",
+          "DEATH KORPS OF KRIEG",
+          "KRIEG COMBAT ENGINEERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RAPIER LASER DESTROYER BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "REGIMENTAL ATTACHÉS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "REIN AND RAUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SABRE WEAPONS BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SALAMANDER COMMAND VEHICLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SALAMANDER SCOUT VEHICLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SENTINEL POWERLIFTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SERGEANT HARKER",
+      "leader": {
+        "attachesTo": [
+          "CATACHAN JUNGLE FIGHTERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMBLADE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 415
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORM CHIMERA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STYGIES DESTROYER TANK HUNTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TARANTULA BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TAUROS ASSAULT VEHICLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TAUROS VENATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TROJAN SUPPORT VEHICLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VALDOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 285
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VALKYRIE SKY TALON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VENDETTA GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 255
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VOSS-PATTERN LIGHTNING",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VULTURE GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 225
+            }
+          ]
+        }
+      ],
+      "legends": true
+    }
+  ]
+}

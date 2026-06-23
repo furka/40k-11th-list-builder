@@ -1,0 +1,1862 @@
+{
+  "faction": "NECRONS",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "ANNIHILATION LEGION",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Eldritch Nightmare",
+          "points": 10
+        },
+        {
+          "name": "Eternal Madness",
+          "points": 20
+        },
+        {
+          "name": "Ingrained Superiority",
+          "points": 5
+        },
+        {
+          "name": "Soulless Reaper",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "AWAKENED DYNASTY",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: DYNASTY"
+      ],
+      "enhancements": [
+        {
+          "name": "Enaegic Dermal Bond",
+          "points": 30
+        },
+        {
+          "name": "Nether-realm Casket",
+          "points": 20
+        },
+        {
+          "name": "Phasal Subjugator",
+          "points": 35
+        },
+        {
+          "name": "Veil of Darkness",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK COURT",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Autodivinator",
+          "points": 15
+        },
+        {
+          "name": "Dimensional Sanctum",
+          "points": 20
+        },
+        {
+          "name": "Hyperphasic Fulcrum",
+          "points": 15
+        },
+        {
+          "name": "Metalodermal Tesla Weave",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "CRYPTEK CONCLAVE",
+      "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Atomic Disintegrators",
+          "points": 10
+        },
+        {
+          "name": "Gauntlet of Compression",
+          "points": 20
+        },
+        {
+          "name": "Gravitic Bolas",
+          "points": 15
+        },
+        {
+          "name": "Quantum Abacus",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "CURSED LEGION",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": {
+        "attachesTo": [
+          "LOKHUST DESTROYERS",
+          "SKORPEKH DESTROYERS",
+          "LOKHUST HEAVY DESTROYERS",
+          "OPHYDIAN DESTROYERS"
+        ]
+      },
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Cursed Circlet",
+          "points": 25
+        },
+        {
+          "name": "Destroyer Ankh",
+          "points": 20
+        },
+        {
+          "name": "Mark of the Nekrosor",
+          "points": 20
+        },
+        {
+          "name": "Murdermind",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "HAND OF THE DYNASTY",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: DYNASTY"
+      ],
+      "enhancements": [
+        {
+          "name": "Enlivened Sentinels",
+          "points": 20,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Tools of Dominion",
+          "points": 15,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "HYPERCRYPT LEGION",
+      "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: HYPERCRYPT"
+      ],
+      "enhancements": [
+        {
+          "name": "Arisen Tyrant",
+          "points": 25
+        },
+        {
+          "name": "Dimensional Overseer",
+          "points": 25
+        },
+        {
+          "name": "Hyperspatial Transfer Node",
+          "points": 15
+        },
+        {
+          "name": "Osteoclave Fulcrum",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "OBEISANCE PHALANX",
+      "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Eternal Conqueror",
+          "points": 25
+        },
+        {
+          "name": "Honourable Combatant",
+          "points": 10
+        },
+        {
+          "name": "Unflinching Will",
+          "points": 20
+        },
+        {
+          "name": "Warrior Noble",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "PANTHEON OF WOE",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Animus Damper",
+          "points": 35
+        },
+        {
+          "name": "Quantum Goad",
+          "points": 45
+        },
+        {
+          "name": "Reletavistic Tether",
+          "points": 40
+        },
+        {
+          "name": "Singularity Matrix",
+          "points": 45
+        }
+      ]
+    },
+    {
+      "name": "SKYSHROUD SPEARHEAD",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Deepening Madness",
+          "points": 20,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Recursive Reanimation",
+          "points": 5,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "STARSHATTER ARSENAL",
+      "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Chrono-impedance Fields",
+          "points": 25
+        },
+        {
+          "name": "Demanding Leader",
+          "points": 10
+        },
+        {
+          "name": "Dread Majesty",
+          "points": 30
+        },
+        {
+          "name": "Miniaturised Nebuloscope",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "THE PHAERON'S ARMOURY",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: HYPERCRYPT"
+      ],
+      "enhancements": [
+        {
+          "name": "Mortality Shroud (Aura)",
+          "points": 10,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Prelocational Optimiser",
+          "points": 25
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "ANNIHILATION BARGE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK DOOMSTALKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK MACROCYTES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK REANIMATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK SCARAB SWARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK SPYDERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK TOMB CRAWLERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CANOPTEK WRAITHS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 115
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CATACOMB COMMAND BARGE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHRONOMANCER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CONVERGENCE OF DOMINION",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CRYPTOTHRALLS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C’TAN SHARD OF THE DECEIVER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 330
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C’TAN SHARD OF THE NIGHTBRINGER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 360
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C’TAN SHARD OF THE VOID DRAGON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 345
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHMARKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOOM SCYTHE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DOOMSDAY ARK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 220
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FLAYED ONES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GEOMANCER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "CANOPTEK MACROCYTES",
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GHOST ARK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HEXMARK DESTROYER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ILLUMINOR SZERAS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMMORTALS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMOTEKH THE STORMLORD",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LOKHUST DESTROYERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LOKHUST HEAVY DESTROYERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LOKHUST LORD",
+      "leader": {
+        "attachesTo": [
+          "LOKHUST DESTROYERS",
+          "LOKHUST HEAVY DESTROYERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LYCHGUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MONOLITH",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 420,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 440
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NECRON WARRIORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEKROSOR AMMENTAR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NIGHT SCYTHE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OBELISK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 310
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OPHYDIAN DESTROYERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 155
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ORIKAN THE DIVINER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OVERLORD",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OVERLORD WITH TRANSLOCATION SHROUD",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLASMANCER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PSYCHOMANCER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ROYAL WARDEN",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SERAPTEK HEAVY CONSTRUCT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 540,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 570
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKORPEKH DESTROYERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SKORPEKH LORD",
+      "leader": {
+        "attachesTo": [
+          "SKORPEKH DESTROYERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECHNOMANCER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "CANOPTEK WRAITHS",
+          "IMMORTALS",
+          "NECRON WARRIORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TESSERACT VAULT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 445,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 465
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THE SILENT KING",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TOMB BLADES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRANSCENDENT C’TAN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 340,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 360
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRAZYN THE INFINITE",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRIARCH PRAETORIANS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRIARCH STALKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ANRAKYR THE TRAVELLER",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CANOPTEK ACANTHRITES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CANOPTEK TOMB SENTINEL",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CANOPTEK TOMB STALKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GAUSS PYLON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LORD",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NEMESOR ZAHNDREKH",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "NIGHT SHROUD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SENTRY PYLONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TESSERACT ARK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TOMB CITADEL WALLS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VARGARD OBYRON",
+      "leader": {
+        "attachesTo": [
+          "IMMORTALS",
+          "LYCHGUARD",
+          "NECRON WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    }
+  ]
+}

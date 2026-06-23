@@ -10,8 +10,9 @@
     "Mark of Devotion": {
       "requiredKeywords": [
         "ADEPTA SORORITAS",
-        "MODEL"
-      ]
+        "CHARACTER"
+      ],
+      "characterOnly": true
     },
     "Sanctified Amulet": {
       "requiredKeywords": [
@@ -48,7 +49,8 @@
     },
     "Hagiomnifex": {
       "requiredKeywords": [
-        "ADEPTA SORORITAS CHARACTER"
+        "ADEPTA SORORITAS",
+        "CHARACTER"
       ],
       "characterOnly": true
     }
@@ -63,8 +65,7 @@
     "Fierce Conqueror": {
       "allowedHosts": [
         "SHIELD-CAPTAIN"
-      ],
-      "characterOnly": true
+      ]
     },
     "Praesidius": {
       "requiredKeywords": [
@@ -87,7 +88,8 @@
     "Interred Expertise": {
       "requiredKeywords": [
         "ADEPTUS CUSTODES WALKER"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Castellan’s Mark": {
       "allowedHosts": [
@@ -108,8 +110,7 @@
       "requiredKeywords": [
         "ANATHEMA PSYKANA",
         "ANATHEMA PSYKANA"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Adamantine Talisman": {
       "requiredKeywords": [
@@ -124,8 +125,7 @@
     "Honoured Fallen": {
       "requiredKeywords": [
         "ADEPTUS CUSTODES VEHICLE"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Veteran of the Kataphraktoi": {
       "requiredKeywords": [
@@ -155,7 +155,8 @@
     "Explorator Dispensation": {
       "allowedHosts": [
         "SKITARII MARSHAL"
-      ]
+      ],
+      "characterOnly": true
     },
     "Stealth-screened Cybercanids": {
       "allowedHosts": [
@@ -190,6 +191,9 @@
       "allowedHosts": [
         "SKITARII MARSHAL"
       ],
+      "requiredKeywords": [
+        "CHARACTER"
+      ],
       "characterOnly": true
     },
     "Cognitive Reinforcement": {
@@ -217,15 +221,77 @@
       ]
     },
     "TL-4ø9": {
-      "allowedHosts": [
-        "TECH-PRIEST DOMINUS",
-        "TECH-PRIEST ENGINSEER",
-        "TECH-PRIEST MANIPULUS"
-      ],
       "requiredKeywords": [
-        "TECH-PRIEST"
-      ],
-      "characterOnly": true
+        "[",
+        "\"",
+        "T",
+        "E",
+        "C",
+        "H",
+        "-",
+        "P",
+        "R",
+        "I",
+        "E",
+        "S",
+        "T",
+        "\"",
+        "]",
+        "a",
+        "n",
+        "t",
+        "m",
+        "l",
+        ":",
+        "p",
+        "a",
+        "r",
+        "a",
+        "m",
+        "e",
+        "t",
+        "e",
+        "r",
+        ">",
+        "\n",
+        "<",
+        "p",
+        "a",
+        "r",
+        "a",
+        "m",
+        "e",
+        "t",
+        "e",
+        "r",
+        " ",
+        "n",
+        "a",
+        "m",
+        "e",
+        "=",
+        "\"",
+        "r",
+        "e",
+        "q",
+        "u",
+        "i",
+        "r",
+        "e",
+        "d",
+        "K",
+        "e",
+        "y",
+        "w",
+        "o",
+        "r",
+        "d",
+        "s",
+        "\"",
+        ">",
+        "[",
+        "]"
+      ]
     },
     "Vingh’s Wafers of Dynamism": {
       "allowedHosts": [
@@ -259,13 +325,15 @@
   "AELDARI": {
     "Guiding Presence": {
       "requiredKeywords": [
-        "AELDARI PSYKER"
+        "AELDARI",
+        "PSYKER"
       ],
       "characterOnly": true
     },
     "Spirit Stone of Raelyth": {
       "requiredKeywords": [
-        "AELDARI PSYKER"
+        "AELDARI",
+        "PSYKER"
       ]
     },
     "Archraider": {
@@ -294,13 +362,13 @@
     },
     "Adrenal Infusions": {
       "requiredKeywords": [
-        "ANHRATHE",
-        "INFANTRY"
-      ],
-      "nonCharacterOnly": true
+        "INFANTRY",
+        "ANHRATHE"
+      ]
     },
     "Alacritous Assault": {
       "requiredKeywords": [
+        "ANHRATHE",
         "ANHRATHE"
       ]
     },
@@ -323,7 +391,8 @@
     "Mistweave": {
       "allowedHosts": [
         "SHADOWSEER"
-      ]
+      ],
+      "characterOnly": true
     },
     "Breath of Vaul": {
       "requiredKeywords": [
@@ -353,7 +422,8 @@
     "Key of Ghosts": {
       "requiredKeywords": [
         "HARLEQUINS"
-      ]
+      ],
+      "characterOnly": true
     },
     "Shedskin Raiment": {
       "allowedHosts": [
@@ -370,13 +440,13 @@
     "Higher Duty": {
       "allowedHosts": [
         "SPIRITSEER"
-      ],
-      "characterOnly": true
+      ]
     },
     "Prelude Performer": {
       "requiredKeywords": [
         "HARLEQUINS"
-      ]
+      ],
+      "characterOnly": true
     },
     "Shadowfall Masks": {
       "allowedHosts": [
@@ -400,7 +470,8 @@
     },
     "Exemplary Officer": {
       "requiredKeywords": [
-        "INFANTRY OFFICER"
+        "INFANTRY",
+        "OFFICER"
       ]
     },
     "Grand Strategist": {
@@ -422,7 +493,8 @@
     "Bombast-class Vox-array": {
       "requiredKeywords": [
         "MILITARUM TEMPESTUS OFFICER"
-      ]
+      ],
+      "characterOnly": true
     },
     "Priority Drop Beacon": {
       "requiredKeywords": [
@@ -439,7 +511,8 @@
     },
     "Recon Star": {
       "requiredKeywords": [
-        "ASTRA MILITARUM INFANTRY PLATOON"
+        "PLATOON",
+        "ASTRA MILITARUM INFANTRY"
       ],
       "nonCharacterOnly": true
     },
@@ -452,7 +525,8 @@
     "Aquilan Eye": {
       "requiredKeywords": [
         "ASTRA MILITARUM OFFICER"
-      ]
+      ],
+      "characterOnly": true
     },
     "Laud Hailer": {
       "requiredKeywords": [
@@ -461,9 +535,7 @@
     },
     "Spec Ops Veteran": {
       "requiredKeywords": [
-        "ASTRA MILITARUM",
-        "INFANTRY",
-        "OFFICER"
+        "ASTRA MILITARUM INFANTRY OFFICER"
       ]
     },
     "Assault Hatches": {
@@ -500,13 +572,13 @@
     "Inheritors of Sigismund": {
       "allowedHosts": [
         "SWORD BRETHREN SQUAD"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Guiding Omens": {
       "allowedHosts": [
         "EMPEROR’S CHAMPION"
-      ],
-      "characterOnly": true
+      ]
     },
     "Adaptable Executioner": {
       "allowedHosts": [
@@ -567,7 +639,8 @@
       "requiredKeywords": [
         "ADEPTUS ASTARTES",
         "PSYKER"
-      ]
+      ],
+      "characterOnly": true
     },
     "Angel’s Fang": {
       "requiredKeywords": [
@@ -588,7 +661,8 @@
     "Sanguinary Tear": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ]
+      ],
+      "characterOnly": true
     },
     "Gleaming Pinions": {
       "requiredKeywords": [
@@ -597,24 +671,14 @@
     },
     "Instinctive Interception": {
       "requiredKeywords": [
+        "DEATH COMPANY",
         "DEATH COMPANY"
       ]
     },
     "On the Archtraitor's Bridge": {
-      "allowedHosts": [
-        "DEATH COMPANY CAPTAIN",
-        "DEATH COMPANY CAPTAIN WITH JUMP PACK",
-        "DEATH COMPANY DREADNOUGHT",
-        "DEATH COMPANY MARINES",
-        "DEATH COMPANY MARINES WITH BOLT RIFLES",
-        "DEATH COMPANY MARINES WITH JUMP PACKS",
-        "DEATH COMPANY MARINES WITH BOLTGUNS",
-        "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
-        "DEATH COMPANY DREADNOUGHT WITH MAGNA-GRAPPLE",
-        "LEMARTES"
-      ],
       "requiredKeywords": [
-        "DEATH COMPANY"
+        "DEATH COMPANY",
+        "DEATH COMPANY MODEL"
       ]
     }
   },
@@ -626,8 +690,7 @@
     },
     "Fury’s Cage": {
       "requiredKeywords": [
-        "LEGIONES DAEMONICA KHORNE",
-        "MONSTER"
+        "LEGIONES DAEMONICA KHORNE MONSTER"
       ]
     },
     "Gateway Unto Damnation": {
@@ -657,7 +720,8 @@
       "requiredKeywords": [
         "KHORNE",
         "LEGIONES DAEMONICA"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Soulstealer": {
       "requiredKeywords": [
@@ -680,8 +744,7 @@
     "Avatar of Perfection": {
       "requiredKeywords": [
         "LEGIONES DAEMONICA SLAANESH MONSTER"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Dreaming Crown": {
       "requiredKeywords": [
@@ -697,8 +760,7 @@
     "Soul Glutton": {
       "requiredKeywords": [
         "LEGIONES DAEMONICA SLAANESH MONSTER"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Swollen with Power": {
       "requiredKeywords": [
@@ -740,8 +802,7 @@
     "Infernal Puppeteer": {
       "requiredKeywords": [
         "LEGIONES DAEMONICA TZEENTCH MONSTER"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Neverblade": {
       "requiredKeywords": [
@@ -770,8 +831,7 @@
     },
     "Bane-forged Weapons": {
       "requiredKeywords": [
-        "LEGIONES DAEMONICA",
-        "BATTLELINE"
+        "LEGIONES DAEMONICA BATTLELINE"
       ],
       "nonCharacterOnly": true
     },
@@ -896,8 +956,7 @@
     "Cybinfernal Font": {
       "requiredKeywords": [
         "HERETIC ASTARTES"
-      ],
-      "notOnEpicHeroes": true
+      ]
     },
     "Mark of the Soul Forges": {
       "requiredKeywords": [
@@ -990,21 +1049,14 @@
       ]
     },
     "Fratricidal Trophies": {
-      "allowedHosts": [
-        "CHAOS LORD IN TERMINATOR ARMOUR",
-        "CHAOS TERMINATOR SQUAD",
-        "SORCERER IN TERMINATOR ARMOUR"
-      ],
       "requiredKeywords": [
-        "HERETIC ASTARTES",
-        "TERMINATOR"
+        "HERETIC ASTARTES TERMINATOR"
       ]
     },
     "Weaponised Hatred": {
       "requiredKeywords": [
         "HERETIC ASTARTES"
-      ],
-      "characterOnly": true
+      ]
     },
     "Eager for Vengeance": {
       "requiredKeywords": [
@@ -1041,7 +1093,6 @@
   "DARK ANGELS": {
     "Mounted Strategist": {
       "requiredKeywords": [
-        "RAVENWING",
         "RAVENWING"
       ]
     },
@@ -1072,7 +1123,8 @@
       "requiredKeywords": [
         "DEATHWING",
         "DEEP STRIKE"
-      ]
+      ],
+      "characterOnly": true
     },
     "Inescapable Interrogation": {
       "allowedHosts": [
@@ -1103,10 +1155,16 @@
       ]
     },
     "Lord of the Hunt": {
+      "allowedHosts": [
+        "RAVENWING BLACK KNIGHTS",
+        "RAVENWING COMMAND SQUAD",
+        "RAVENWING DARKSHROUD",
+        "RAVENWING DARK TALON",
+        "RAVENWING TALONMASTER"
+      ],
       "requiredKeywords": [
         "RAVENWING"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Stalwart Champion": {
       "allowedHosts": [
@@ -1143,6 +1201,12 @@
       "nonCharacterOnly": true
     },
     "Parasitic Woe‑reaper": {
+      "allowedHosts": [
+        "FOETID BLOAT-DRONE",
+        "FOETID BLOAT-DRONE WITH HEAVY BLIGHT LAUNCHER",
+        "HELBRUTE",
+        "MYPHITIC BLIGHT-HAULERS"
+      ],
       "requiredKeywords": [
         "CONTAGION ENGINE"
       ],
@@ -1162,7 +1226,8 @@
     },
     "Host of the Hybridised Pox": {
       "requiredKeywords": [
-        "DEATH GUARD INFANTRY",
+        "DEATH GUARD",
+        "INFANTRY",
         "DEATH GUARD INFANTRY"
       ],
       "limit": 1
@@ -1170,13 +1235,13 @@
     "Rejuvenating Swarm": {
       "requiredKeywords": [
         "DEATH GUARD INFANTRY"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Beckoning Blight": {
       "requiredKeywords": [
         "DEATH GUARD"
-      ],
-      "characterOnly": true
+      ]
     }
   },
   "DEATHWATCH": {
@@ -1189,13 +1254,12 @@
       "allowedHosts": [
         "WATCH MASTER",
         "TECHMARINE"
-      ]
+      ],
+      "characterOnly": true
     },
     "The Tome of Ectoclades": {
       "allowedHosts": [
-        "WATCH MASTER"
-      ],
-      "requiredKeywords": [
+        "WATCH MASTER",
         "CAPTAIN"
       ],
       "characterOnly": true
@@ -1216,8 +1280,7 @@
     "Periapt of Torments": {
       "allowedHosts": [
         "SUCCUBUS"
-      ],
-      "characterOnly": true
+      ]
     },
     "Contempt for Rivals": {
       "allowedHosts": [
@@ -1240,7 +1303,8 @@
     },
     "Conductor of Torment": {
       "requiredKeywords": [
-        "DRUKHARI"
+        "DRUKHARI",
+        "MODEL"
       ]
     },
     "Reaper’s Cowl": {
@@ -1292,8 +1356,7 @@
       ],
       "requiredKeywords": [
         "EMPEROR'S CHILDREN"
-      ],
-      "characterOnly": true
+      ]
     },
     "Tears of the Phoenix": {
       "requiredKeywords": [
@@ -1356,10 +1419,8 @@
     },
     "Enraptured Damnation": {
       "requiredKeywords": [
-        "GENESTEALER CULTS",
-        "CHARACTER"
-      ],
-      "characterOnly": true
+        "GENESTEALER CULTS"
+      ]
     },
     "Inhuman Integration": {
       "requiredKeywords": [
@@ -1426,9 +1487,6 @@
         "MAGUS",
         "PRIMUS"
       ],
-      "requiredKeywords": [
-        "CHARACTER"
-      ],
       "characterOnly": true
     }
   },
@@ -1442,7 +1500,8 @@
     "Vigilance of Titan": {
       "requiredKeywords": [
         "TERMINATOR"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Boons of Deimos": {
       "allowedHosts": [
@@ -1458,7 +1517,6 @@
     },
     "Eye of the Augurium": {
       "requiredKeywords": [
-        "GREY KNIGHTS",
         "GREY KNIGHTS"
       ]
     },
@@ -1486,15 +1544,16 @@
     },
     "Phial of the Abyss": {
       "requiredKeywords": [
-        "GREY KNIGHTS",
-        "INFANTRY"
+        "GREY KNIGHTS INFANTRY"
       ],
       "nonCharacterOnly": true
     },
     "Radiant Champion": {
       "requiredKeywords": [
-        "GREY KNIGHTS INFANTRY"
-      ]
+        "GREY KNIGHTS",
+        "INFANTRY"
+      ],
+      "nonCharacterOnly": true
     }
   },
   "IMPERIAL AGENTS": {
@@ -1535,8 +1594,7 @@
     "Hunter’s Eye": {
       "requiredKeywords": [
         "IMPERIAL KNIGHTS"
-      ],
-      "characterOnly": true
+      ]
     },
     "Mysterious Guardian": {
       "requiredKeywords": [
@@ -1570,9 +1628,10 @@
       "nonCharacterOnly": true
     },
     "Gyro-optimised Actuators": {
-      "requiredKeywords": [
-        "ARMIGER",
-        "ARMIGER"
+      "allowedHosts": [
+        "ARMIGER HELVERIN",
+        "ARMIGER MOIRAX",
+        "ARMIGER WARGLAIVE"
       ],
       "nonCharacterOnly": true
     }
@@ -1599,9 +1658,6 @@
     "Shroudwërke Talismans": {
       "allowedHosts": [
         "HERNKYN YAEGIRS"
-      ],
-      "requiredKeywords": [
-        "YAEGIRS"
       ],
       "nonCharacterOnly": true
     },
@@ -1660,10 +1716,18 @@
       ]
     },
     "Gravitic Bolas": {
+      "allowedHosts": [
+        "CHRONOMANCER",
+        "GEOMANCER",
+        "ILLUMINOR SZERAS",
+        "PLASMANCER",
+        "PSYCHOMANCER",
+        "TECHNOMANCER"
+      ],
       "requiredKeywords": [
-        "CRYPTEK",
-        "CRYPTK"
-      ]
+        "CRYPTEK"
+      ],
+      "characterOnly": true
     },
     "Quantum Abacus": {
       "requiredKeywords": [
@@ -1690,7 +1754,8 @@
     "Murdermind": {
       "requiredKeywords": [
         "CRYPTEK"
-      ]
+      ],
+      "characterOnly": true
     },
     "Enlivened Sentinels": {
       "allowedHosts": [
@@ -1725,8 +1790,12 @@
       ]
     },
     "Deepening Madness": {
+      "allowedHosts": [
+        "LOKHUST DESTROYERS"
+      ],
       "requiredKeywords": [
-        "DESTROYER CULT MOUNTED"
+        "DESTROYER CULT",
+        "MOUNTED"
       ],
       "nonCharacterOnly": true
     },
@@ -1766,8 +1835,7 @@
     "Prelocational Optimiser": {
       "requiredKeywords": [
         "NECRONS"
-      ],
-      "characterOnly": true
+      ]
     }
   },
   "ORKS": {
@@ -1787,7 +1855,7 @@
       "characterOnly": true
     },
     "Supercharged Squig Oil": {
-      "requiredKeywords": [
+      "allowedHosts": [
         "MEK"
       ]
     },
@@ -1808,6 +1876,9 @@
     "Da Kaptin": {
       "allowedHosts": [
         "WARBOSS"
+      ],
+      "requiredKeywords": [
+        "CHARACTER"
       ],
       "characterOnly": true
     },
@@ -1879,8 +1950,7 @@
     "Mork’s Kunnin’": {
       "requiredKeywords": [
         "ORKS"
-      ],
-      "characterOnly": true
+      ]
     },
     "Slippery Git": {
       "allowedHosts": [
@@ -1889,21 +1959,20 @@
       "requiredKeywords": [
         "INFANTRY"
       ],
-      "characterOnly": true
+      "characterOnly": true,
+      "notOnEpicHeroes": true
     }
   },
   "SPACE MARINES": {
     "Armoured Commander": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
+      ]
     },
     "Liberator": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
+      ]
     },
     "Shock Deployment": {
       "requiredKeywords": [
@@ -1994,13 +2063,15 @@
     },
     "Disciple of Rhetoricus": {
       "requiredKeywords": [
-        "ADEPTUS ASTARTES TERMINATOR"
+        "ADEPTUS ASTARTES",
+        "TERMINATOR"
       ]
     },
     "Indomitable Champion": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES TERMINATOR"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Malodraxian Standard": {
       "allowedHosts": [
@@ -2042,12 +2113,6 @@
       ],
       "nonCharacterOnly": true
     },
-    "Artificer Armour": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
-    },
     "Fire Discipline": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
@@ -2068,8 +2133,7 @@
     "Spiritus Ferrum": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
+      ]
     },
     "Steel Font": {
       "requiredKeywords": [
@@ -2109,7 +2173,8 @@
     "Target Augury Web": {
       "allowedHosts": [
         "TECHMARINE"
-      ]
+      ],
+      "characterOnly": true
     },
     "Celerity": {
       "requiredKeywords": [
@@ -2120,8 +2185,7 @@
     "Fusillade": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES PSYKER"
-      ],
-      "characterOnly": true
+      ]
     },
     "Obfuscation": {
       "requiredKeywords": [
@@ -2184,13 +2248,14 @@
     "Seals of Reconquest": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
+      ]
     },
     "Blackwing Shroud": {
       "requiredKeywords": [
-        "ADEPTUS ASTARTES INFANTRY"
-      ]
+        "ADEPTUS ASTARTES",
+        "INFANTRY"
+      ],
+      "nonCharacterOnly": true
     },
     "Coronal Susurrant": {
       "requiredKeywords": [
@@ -2200,7 +2265,8 @@
     "Hunter’s Instincts": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ]
+      ],
+      "characterOnly": true
     },
     "Umbral Raptor": {
       "requiredKeywords": [
@@ -2209,8 +2275,7 @@
     },
     "Chogorian Huntmaster": {
       "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "MOUNTED"
+        "ADEPTUS ASTARTES MOUNTED"
       ]
     },
     "Hunter’s Eye": {
@@ -2263,10 +2328,13 @@
       "nonCharacterOnly": true
     },
     "Thirst for Glory": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES TERMINATOR"
+      "allowedHosts": [
+        "WOLF GUARD TERMINATORS"
       ],
-      "characterOnly": true
+      "requiredKeywords": [
+        "ADEPTUS ASTARTES",
+        "TERMINATOR"
+      ]
     },
     "Wolf-touched": {
       "requiredKeywords": [
@@ -2296,13 +2364,13 @@
     "Howlmaw": {
       "allowedHosts": [
         "WOLF PRIEST"
-      ]
+      ],
+      "characterOnly": true
     },
     "Skjald’s Foretelling": {
       "allowedHosts": [
         "WOLF GUARD BATTLE LEADER"
-      ],
-      "characterOnly": true
+      ]
     },
     "Eye of the Hunter": {
       "allowedHosts": [
@@ -2338,6 +2406,11 @@
       ]
     },
     "Student of Kauyon": {
+      "allowedHosts": [
+        "KROOT FLESH SHAPER",
+        "KROOT TRAIL SHAPER",
+        "KROOT WAR SHAPER"
+      ],
       "requiredKeywords": [
         "KROOT SHAPER"
       ]
@@ -2360,8 +2433,7 @@
     },
     "Through Unity, Devastation": {
       "requiredKeywords": [
-        "T'AU EMPIRE",
-        "CHARACTER"
+        "T'AU EMPIRE"
       ],
       "characterOnly": true
     },
@@ -2374,13 +2446,13 @@
     "Strike Swiftly": {
       "requiredKeywords": [
         "T'AU EMPIRE"
-      ],
-      "characterOnly": true
+      ]
     },
     "Puretide Engram Neurochip": {
       "requiredKeywords": [
         "T'AU EMPIRE BATTLESUIT"
-      ]
+      ],
+      "nonCharacterOnly": true
     }
   },
   "THOUSAND SONS": {
@@ -2408,7 +2480,8 @@
     "Noctilith Mantle": {
       "requiredKeywords": [
         "THOUSAND SONS"
-      ]
+      ],
+      "characterOnly": true
     },
     "Curse of Life": {
       "requiredKeywords": [
@@ -2420,7 +2493,8 @@
     "Eruption of Vitality": {
       "requiredKeywords": [
         "INFANTRY/MOUNTED",
-        "THOUSAND SONS PSYKER"
+        "THOUSAND SONS",
+        "PSYKER"
       ]
     },
     "Occulus Infernum": {
@@ -2510,8 +2584,7 @@
     "Neuronode": {
       "requiredKeywords": [
         "TYRANIDS"
-      ],
-      "characterOnly": true
+      ]
     },
     "Elevated Might": {
       "allowedHosts": [
@@ -2521,8 +2594,8 @@
     },
     "Ocular Adaptation": {
       "allowedHosts": [
-        "WINGED TYRANID PRIME",
-        "TYRANID PRIME WITH LASH WHIP"
+        "TYRANID PRIME WITH LASH WHIP",
+        "WINGED TYRANID PRIME"
       ]
     }
   },
@@ -2540,9 +2613,13 @@
       "nonCharacterOnly": true
     },
     "Gore-stained Veterans": {
+      "allowedHosts": [
+        "CHAOS TERMINATORS"
+      ],
       "requiredKeywords": [
         "TERMINATOR SQUAD"
-      ]
+      ],
+      "nonCharacterOnly": true
     },
     "Sanctified in Slaughter": {
       "allowedHosts": [
@@ -2563,7 +2640,8 @@
     },
     "Gateways to Glory": {
       "requiredKeywords": [
-        "WORLD EATERS DAEMON PRINCE"
+        "WORLD EATERS",
+        "DAEMON PRINCE"
       ]
     }
   }
