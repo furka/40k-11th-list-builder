@@ -1,6 +1,6 @@
 {
   "_source": "MFM Faction Pack PDFs (https://mfm.warhammer-community.com/)",
-  "_generatedAt": "2026-06-23T17:25:13.206Z",
+  "_generatedAt": "2026-06-23T18:57:40.506Z",
   "_generator": "scripts/scrape-mfm-11th",
   "ADEPTA SORORITAS": {
     "BATTLE SANCTUM": [
@@ -14,12 +14,7 @@
       "ADEPTA SORORITAS",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY",
-      "SANCTIFIERS"
-    ],
-    "CASTIGATOR": [
-      "ADEPTA SORORITAS",
-      "FRAME"
+      "INFANTRY"
     ],
     "CELESTIAN INSIDIANTS": [
       "ADEPTA SORORITAS",
@@ -49,10 +44,10 @@
       "IMPERIUM",
       "INFANTRY"
     ],
-    "IMMOLATOR": [
+    "EXORCIST": [
       "ADEPTA SORORITAS",
-      "FRAME",
-      "TRANSPORT"
+      "DEDICATED TRANSPORT",
+      "VEHICLE"
     ],
     "INTRANZIA FRAYE": [
       "ADEPTA SORORITAS",
@@ -89,6 +84,10 @@
       "FRAME",
       "IMPERIUM",
       "MOUNTED"
+    ],
+    "ANATHEMA PSYKANA RHINO": [
+      "ADEPTUS CUSTODES",
+      "FRAME"
     ],
     "AQUILON CUSTODIANS": [
       "ADEPTUS CUSTODES",
@@ -200,6 +199,7 @@
     "CYBERNETICA DATASMITH": [
       "ADEPTUS MECHANICUS",
       "CHARACTER",
+      "EPIC HERO",
       "SUPPORT",
       "TECH-PRIEST"
     ],
@@ -247,9 +247,15 @@
       "INFANTRY",
       "SERVITOR BATTLECLADE"
     ],
+    "SKORPIUS DISINTEGRATOR": [
+      "ADEPTUS MECHANICUS",
+      "FRAME",
+      "VEHICLE"
+    ],
     "SKORPIUS DUNERIDER": [
       "ADEPTUS MECHANICUS",
       "FRAME",
+      "SKITARII",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -290,16 +296,6 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY"
-    ],
-    "ASURMEN": [
-      "AELDARI",
-      "ASURYANI",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "INFANTRY",
-      "JUMP PACK",
-      "PHOENIX LORD"
     ],
     "AUTARCH": [
       "AELDARI",
@@ -372,13 +368,6 @@
       "CORSAIR REAVER BAND",
       "GRENADES",
       "INFANTRY"
-    ],
-    "FALCON": [
-      "AELDARI",
-      "ASURYANI",
-      "FLY",
-      "TRANSPORT",
-      "VEHICLE"
     ],
     "FIRESTORM": [
       "AELDARI",
@@ -468,11 +457,6 @@
       "INFANTRY",
       "PRINCE YRIEL"
     ],
-    "RANGERS": [
-      "ASURYANI",
-      "CHARACTER",
-      "INFANTRY"
-    ],
     "SCORPION": [
       "AELDARI",
       "ASURYANI",
@@ -519,6 +503,15 @@
       "STARFANGS",
       "VEHICLE"
     ],
+    "STRIKING SCORPIONS": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "KARANDRAS",
+      "PHOENIX LORD"
+    ],
     "VAMPIRE HUNTER": [
       "AELDARI",
       "AIRCRAFT",
@@ -545,14 +538,6 @@
       "FLY",
       "VEHICLE",
       "VYPERS"
-    ],
-    "WARLOCK": [
-      "AELDARI",
-      "ASURYANI",
-      "CHARACTER",
-      "INFANTRY",
-      "PSYKER",
-      "SUPPORT"
     ],
     "WARP HUNTER": [
       "AELDARI",
@@ -946,6 +931,14 @@
       "HYDRA PLATFORM",
       "IMPERIUM"
     ],
+    "KRIEG COMBAT ENGINEERS": [
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KRIEG",
+      "REGIMENT"
+    ],
     "MACHARIUS": [
       "ASTRA MILITARUM",
       "FRAME",
@@ -1087,6 +1080,11 @@
       "IMPERIUM",
       "INFANTRY",
       "MUNITORUM SERVITORS"
+    ],
+    "OGRYN BODYGUARD": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "OGRYN"
     ],
     "PRAETOR": [
       "ASTRA MILITARUM",
@@ -1255,11 +1253,6 @@
       "SMOKE",
       "TEMPESTUS AQUILONS"
     ],
-    "TEMPESTUS SCIONS": [
-      "ASTRA MILITARUM",
-      "DEEP STRIKE",
-      "INFANTRY"
-    ],
     "TROJAN SUPPORT VEHICLE": [
       "ASTRA MILITARUM",
       "FRAME",
@@ -1333,7 +1326,22 @@
       "OFFICER"
     ]
   },
+  "BLACK TEMPLARS": {
+    "LAND RAIDER": [
+      "BLACK TEMPLARS",
+      "LAND RAIDER"
+    ],
+    "LAND RAIDER CRUSADER": [
+      "BLACK TEMPLARS",
+      "FRAME",
+      "LAND RAIDER"
+    ]
+  },
   "BLOOD ANGELS": {
+    "BAAL PREDATOR": [
+      "BLOOD ANGELS",
+      "FRAME"
+    ],
     "BROTHER CORBULO": [
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
@@ -1344,17 +1352,6 @@
       "IMPERIUM",
       "INFANTRY",
       "SANGUINARY PRIEST"
-    ],
-    "CAPTAIN": [
-      "ADEPTUS ASTARTES",
-      "BLOOD ANGELS",
-      "CAPTAIN",
-      "CHARACTER",
-      "EPIC HERO",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY",
-      "TYCHO"
     ],
     "CAPTAIN TYCHO": [
       "ADEPTUS ASTARTES",
@@ -1418,7 +1415,7 @@
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
       "DEATH COMPANY",
-      "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
+      "DEATH COMPANY MARINES WITH JUMP PACKS",
       "FLY",
       "GRENADES",
       "IMPERIUM",
@@ -1475,6 +1472,13 @@
       "SMOKE",
       "VEHICLE",
       "WALKER"
+    ],
+    "SANGUINARY GUARD": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CHARACTER",
+      "INFANTRY",
+      "JUMP PACK"
     ],
     "SANGUINARY PRIEST": [
       "ADEPTUS ASTARTES",
@@ -1853,6 +1857,7 @@
       "HORRORS",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "PINK",
       "TZEENTCH"
     ],
     "PLAGUE DRONES": [
@@ -2231,11 +2236,16 @@
       "VEHICLE"
     ],
     "CHAOS LAND RAIDER": [
-      "CHAOS SPACE MARINES",
       "FRAME",
       "HERETIC ASTARTES",
       "TRANSPORT",
       "VEHICLE"
+    ],
+    "CHAOS LORD IN TERMINATOR ARMOUR": [
+      "CHAOS",
+      "CHARACTER",
+      "HERETIC ASTARTES",
+      "TERMINATOR"
     ],
     "CHAOS LORD ON BIKE": [
       "CHAOS",
@@ -2288,13 +2298,6 @@
     ],
     "CHAOS PREDATOR ANNIHILATOR": [
       "CHAOS SPACE MARINES",
-      "FRAME",
-      "HERETIC ASTARTES",
-      "TANK",
-      "VEHICLE"
-    ],
-    "CHAOS PREDATOR DESTRUCTOR": [
-      "CHAOS",
       "FRAME",
       "HERETIC ASTARTES",
       "TANK",
@@ -2500,6 +2503,14 @@
       "CHAOS SPACE MARINES",
       "FRAME"
     ],
+    "OBLITERATORS": [
+      "CHAOS",
+      "CHAOS SPACE MARINES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "MONSTER",
+      "OBLITERATORS"
+    ],
     "RAPTORS": [
       "CHAOS",
       "FLY",
@@ -2623,12 +2634,6 @@
       "SORCERER",
       "STEED OF SLAANESH"
     ],
-    "TRAITOR GUARDSMEN SQUAD": [
-      "CHAOS",
-      "DAMNED",
-      "HERETIC ASTARTES",
-      "INFANTRY"
-    ],
     "WARP TALONS": [
       "CHAOS",
       "DAEMON",
@@ -2641,6 +2646,15 @@
     ]
   },
   "DARK ANGELS": {
+    "ANCIENT": [
+      "ADEPTUS ASTARTES",
+      "DARK ANGELS",
+      "DEATHWING",
+      "DEATHWING COMMAND SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "TERMINATOR"
+    ],
     "DEATHWING COMMAND SQUAD": [
       "ADEPTUS ASTARTES",
       "DARK ANGELS",
@@ -2662,11 +2676,8 @@
       "TERMINATOR"
     ],
     "LAND SPEEDER VENGEANCE": [
-      "CHARACTER",
       "DARK ANGELS",
       "FLY",
-      "FRAME",
-      "MONSTER",
       "RAVENWING",
       "VEHICLE"
     ],
@@ -2744,6 +2755,10 @@
       "NURGLE",
       "VEHICLE",
       "WALKER"
+    ],
+    "MIASMIC MALIGNIFIER": [
+      "DEATH GUARD",
+      "FRAME"
     ]
   },
   "DEATHWATCH": {
@@ -2757,16 +2772,6 @@
       "JUMP PACK",
       "KILL TEAM",
       "TALONSTRIKE KILL TEAM"
-    ],
-    "CAPTAIN": [
-      "ADEPTUS ASTARTES",
-      "CAPTAIN",
-      "CHARACTER",
-      "DEATHWATCH",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY",
-      "WATCH MASTER"
     ],
     "CORVUS BLACKSTAR": [
       "ADEPTUS ASTARTES",
@@ -2938,6 +2943,12 @@
       "HAEMONCULUS COVENS",
       "INFANTRY"
     ],
+    "KABALITE WARRIORS": [
+      "AELDARI",
+      "DRUKHARI",
+      "INFANTRY",
+      "KABAL"
+    ],
     "RAVEN STRIKE FIGHTER": [
       "AELDARI",
       "AIRCRAFT",
@@ -2975,14 +2986,7 @@
       "INFANTRY",
       "URIEN RAKARTH"
     ],
-    "VENOM": [
-      "DRUKHARI",
-      "FRAME",
-      "SKIMMER",
-      "TRANSPORT"
-    ],
     "WYCHES": [
-      "CHARACTER",
       "DRUKHARI",
       "INFANTRY",
       "WYCH CULT"
@@ -3005,6 +3009,12 @@
     ]
   },
   "GENESTEALER CULTS": {
+    "GOLIATH TRUCK": [
+      "FRAME",
+      "GENESTEALER CULTS",
+      "MOUNTED",
+      "VEHICLE"
+    ],
     "TECTONIC FRAGDRILL": [
       "FORTIFICATION",
       "FRAME",
@@ -3075,6 +3085,7 @@
     ],
     "RAZORBACK": [
       "DEDICATED TRANSPORT",
+      "FRAME",
       "GREY KNIGHTS",
       "IMPERIUM",
       "RELIC RAZORBACK",
@@ -3100,12 +3111,6 @@
       "INFANTRY",
       "ORDO XENOS",
       "RETINUE"
-    ],
-    "CORVUS BLACKSTAR": [
-      "FRAME",
-      "IMPERIAL AGENTS",
-      "TRANSPORT",
-      "VEHICLE"
     ],
     "DAEMONHOST": [
       "AGENTS OF THE IMPERIUM",
@@ -3170,10 +3175,13 @@
     "INQUISITOR": [
       "AGENTS OF THE IMPERIUM",
       "CHARACTER",
+      "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY",
-      "INQUISITOR"
+      "INQUISITOR",
+      "KROYLE",
+      "MOUNTED",
+      "ORDO XENOS"
     ],
     "INQUISITOR EISENHORN": [
       "AGENTS OF THE IMPERIUM",
@@ -3228,10 +3236,6 @@
       "INQUISITOR",
       "OSTROMANDEUS"
     ],
-    "INQUISITORIAL CHIMERA": [
-      "FRAME",
-      "IMPERIAL AGENTS"
-    ],
     "JANUS DRAIK": [
       "AGENTS OF THE IMPERIUM",
       "CHARACTER",
@@ -3260,12 +3264,6 @@
       "KILL TEAM",
       "KILL TEAM CASSIUS",
       "ORDO XENOS"
-    ],
-    "MINISTORUM PRIEST": [
-      "AGENTS OF THE IMPERIUM",
-      "CHARACTER",
-      "IMPERIUM",
-      "INFANTRY"
     ],
     "NEYAM SHAI MURAD": [
       "AGENTS OF THE IMPERIUM",
@@ -3333,6 +3331,13 @@
       "ORDO XENOS",
       "RETINUE",
       "VETERAN BIKE SQUAD"
+    ],
+    "VINDICARE ASSASSIN": [
+      "AGENTS OF THE IMPERIUM",
+      "ASSASSIN",
+      "CHARACTER",
+      "IMPERIUM",
+      "OFFICIO ASSASSINORUM"
     ]
   },
   "IMPERIAL KNIGHTS": {
@@ -3454,9 +3459,9 @@
       "LEAGUES OF VOTANN"
     ],
     "SAGITAUR": [
-      "CAVALRY",
+      "CHARACTER",
       "LEAGUES OF VOTANN",
-      "TRANSPORT"
+      "MOUNTED"
     ]
   },
   "NECRONS": {
@@ -3502,8 +3507,9 @@
     ],
     "CATACOMB COMMAND BARGE": [
       "CHARACTER",
-      "FRAME",
+      "FLY",
       "NECRONS",
+      "NOBLE",
       "VEHICLE"
     ],
     "C’TAN SHARD OF THE DECEIVER": [
@@ -3539,6 +3545,13 @@
       "VEHICLE"
     ],
     "GEOMANCER": [
+      "CHARACTER",
+      "CRYPTEK",
+      "GEOMANCER",
+      "INFANTRY",
+      "NECRONS"
+    ],
+    "IMMORTALS": [
       "CHARACTER",
       "CRYPTEK",
       "GEOMANCER",
@@ -3590,7 +3603,6 @@
       "NECRONS"
     ],
     "SERAPTEK HEAVY CONSTRUCT": [
-      "FRAME",
       "NECRONS",
       "SERAPTEK HEAVY CONSTRUCT",
       "TITANIC",
@@ -3654,8 +3666,7 @@
       "FRAME",
       "ORKS",
       "TRANSPORT",
-      "VEHICLE",
-      "WAGON"
+      "VEHICLE"
     ],
     "BIG GUNZ": [
       "ARTILLERY",
@@ -3710,9 +3721,11 @@
     ],
     "BLITZA-BOMMER": [
       "AIRCRAFT",
+      "FLY",
       "FRAME",
+      "MONSTER",
       "ORKS",
-      "VEHICLE"
+      "SPEED FREEKS"
     ],
     "BOSS ZAGSTRUK": [
       "BOSS ZAGSTRUK",
@@ -3738,8 +3751,8 @@
     "BURNA-BOMMER": [
       "AIRCRAFT",
       "FRAME",
-      "MONSTER",
-      "ORKS"
+      "ORKS",
+      "VEHICLE"
     ],
     "CHINORK WARKOPTA": [
       "CHINORK WARKOPTA",
@@ -3914,12 +3927,9 @@
       "SPEED FREEKS"
     ],
     "SQUIGGOTH": [
-      "FRAME",
-      "GARGANTUAN SQUIGGOTH",
       "MONSTER",
       "ORKS",
-      "TITANIC",
-      "TOWERING",
+      "SQUIGGOTH",
       "TRANSPORT"
     ],
     "TANKBUSTAS": [
@@ -3927,6 +3937,12 @@
       "INFANTRY",
       "ORKS",
       "TANKBUSTAS"
+    ],
+    "TRUKK": [
+      "FRAME",
+      "ORKS",
+      "TRANSPORT",
+      "VEHICLE"
     ],
     "UFTHAK BLACKHAWK": [
       "CHARACTER",
@@ -3937,11 +3953,12 @@
       "UFTHAK BLACKHAWK",
       "WARBOSS"
     ],
-    "WARBOSS": [
+    "WARBIKERS": [
       "CHARACTER",
-      "INFANTRY",
+      "MOUNTED",
       "ORKS",
-      "WARBOSS"
+      "PAINBOY ON WARBIKE",
+      "SPEED FREEKS"
     ],
     "WARBOSS ON WARBIKE": [
       "CHARACTER",
@@ -3992,7 +4009,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "EPIC HERO",
+      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -4319,6 +4336,8 @@
     ],
     "HEAVY INTERCESSOR SQUAD": [
       "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
     ],
@@ -4337,6 +4356,17 @@
       "IMPERIAL SPACE MARINE",
       "IMPERIUM",
       "INFANTRY"
+    ],
+    "IMPULSOR": [
+      "ADEPTUS ASTARTES",
+      "VEHICLE"
+    ],
+    "INCEPTOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "TACTICUS"
     ],
     "INTERCESSOR SQUAD": [
       "ADEPTUS ASTARTES",
@@ -4386,13 +4416,6 @@
       "IMPERIUM",
       "LAND RAIDER ACHILLES",
       "SMOKE",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
-    "LAND RAIDER CRUSADER": [
-      "ADEPTUS ASTARTES",
-      "IMPERIUM",
-      "LAND RAIDER",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -4547,7 +4570,7 @@
       "GRENADES",
       "IMPERIUM",
       "MOUNTED",
-      "OUTRIDER"
+      "OUTRIDER SQUAD"
     ],
     "PRIMARIS COMPANY CHAMPION": [
       "ADEPTUS ASTARTES",
@@ -4600,6 +4623,12 @@
       "INFANTRY",
       "RELIC TERMINATOR SQUAD",
       "TERMINATOR"
+    ],
+    "REPULSOR": [
+      "ADEPTUS ASTARTES",
+      "HEAVY TRANSPORT",
+      "TRANSPORT",
+      "VEHICLE"
     ],
     "RHINO": [
       "ADEPTUS ASTARTES",
@@ -4780,12 +4809,6 @@
       "TERMINATOR ASSAULT SQUAD",
       "TERMINATORS"
     ],
-    "TERMINATOR SQUAD": [
-      "ADEPTUS ASTARTES",
-      "CHARACTER",
-      "INFANTRY",
-      "TERMINATOR"
-    ],
     "TERMINUS ULTRA": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -4867,11 +4890,6 @@
     ],
     "VICTRIX HONOUR GUARD": [
       "ADEPTUS ASTARTES",
-      "ANCIENT",
-      "CHAMPION",
-      "CHAPTER ANCIENT",
-      "CHAPTER CHAMPION",
-      "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS",
@@ -5088,11 +5106,11 @@
     "WOLF GUARD BATTLE LEADER": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
-      "MOUNTED",
+      "INFANTRY",
       "SPACE WOLVES",
-      "WOLF GUARD BATTLE LEADER ON THUNDERWOLF"
+      "TERMINATOR",
+      "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR"
     ],
     "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR": [
       "ADEPTUS ASTARTES",
@@ -5167,11 +5185,18 @@
     ]
   },
   "THOUSAND SONS": {
+    "CHAOS RHINO": [
+      "CHAOS",
+      "FRAME",
+      "THOUSAND SONS",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
     "DEFILER": [
       "CHAOS",
       "DAEMON",
-      "DEATH GUARD",
       "DEFILER",
+      "THOUSAND SONS",
       "TZEENTCH",
       "VEHICLE",
       "WALKER"
@@ -5235,10 +5260,13 @@
       "SYNAPSE",
       "TYRANIDS"
     ],
-    "MAWLOC": [
-      "MONSTER",
-      "TYRANIDS",
-      "VANGUARD INVADER"
+    "NEUROLICTOR": [
+      "SYNAPSE",
+      "TYRANIDS"
+    ],
+    "NORN ASSIMILATOR": [
+      "HARVESTER",
+      "TYRANIDS"
     ],
     "PSYCHOPHAGE": [
       "SMOKE",
@@ -5340,30 +5368,12 @@
       "VEHICLE",
       "WALKER"
     ],
-    "DEVILFISH": [
-      "AIRCRAFT",
-      "FLY",
-      "FRAME",
-      "MANTA",
-      "MARKERLIGHT",
-      "T'AU EMPIRE",
-      "TITANIC",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "DRONE SENTRY TURRET": [
       "DRONE SENTRY TURRET",
       "FORTIFICATION",
       "FRAME",
       "T'AU EMPIRE",
       "VEHICLE"
-    ],
-    "ETHEREAL": [
-      "CHARACTER",
-      "EPIC HERO",
-      "ETHEREAL",
-      "INFANTRY",
-      "T'AU EMPIRE"
     ],
     "GREAT KNARLOC": [
       "FRAME",
@@ -5491,6 +5501,10 @@
       "VEHICLE",
       "WALKER"
     ],
+    "TIDEWALL GUNRIG": [
+      "FRAME",
+      "T'AU EMPIRE"
+    ],
     "TIDEWALL SHIELDLINE": [
       "FRAME",
       "T'AU EMPIRE"
@@ -5534,13 +5548,6 @@
     ]
   },
   "WORLD EATERS": {
-    "CHAOS RHINO": [
-      "CHAOS",
-      "FRAME",
-      "TRANSPORT",
-      "VEHICLE",
-      "WORLD EATERS"
-    ],
     "DEFILER": [
       "CHAOS",
       "DAEMON",
