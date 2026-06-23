@@ -169,6 +169,10 @@ export async function classifyDetachmentGrantsWithLLM({
     return { result: cache[key].response, cacheHit: true };
   }
 
+  if (process.env.MFM_SCRAPE_CACHE_ONLY === "1") {
+    throw new Error(`cache-only mode: no cached response for ${detachmentName}`);
+  }
+
   const pagesBody = pageTexts
     .map((p, i) => `--- PAGE ${i + 1} ---\n${p}`)
     .join("\n\n");
