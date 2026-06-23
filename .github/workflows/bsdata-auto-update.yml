@@ -1,4 +1,4 @@
-name: BSData keywords auto-update
+name: BSData auto-update
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       refresh:
-        description: "Bypass scraper cache (re-fetch all .cat files from upstream)"
+        description: "Bypass scraper caches (re-fetch all .cat files from upstream)"
         type: boolean
         default: false
 
@@ -17,7 +17,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: bsdata-keywords-auto-update
+  group: bsdata-auto-update
   cancel-in-progress: false
 
 jobs:
@@ -38,31 +38,41 @@ jobs:
       - name: Restore scraper cache
         uses: actions/cache@v4
         with:
-          path: scripts/scrape-bsdata-keywords/.cache
-          key: bsdata-scrape-cache-${{ hashFiles('scripts/scrape-bsdata-keywords/**/*.mjs', 'scripts/scrape-bsdata-keywords/faction-mapping.json') }}
+          path: |
+            scripts/scrape-bsdata-keywords/.cache
+            scripts/scrape-bsdata-enhancements/.cache
+            scripts/scrape-bsdata-wargear/.cache
+          key: bsdata-scrape-cache-${{ hashFiles('scripts/scrape-bsdata-keywords/**/*.mjs', 'scripts/scrape-bsdata-keywords/faction-mapping.json', 'scripts/scrape-bsdata-enhancements/**/*.mjs', 'scripts/scrape-bsdata-wargear/**/*.mjs') }}
           restore-keys: |
             bsdata-scrape-cache-
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run scraper
+      - name: Run BSData scrapers
         run: |
           if [ "${{ inputs.refresh }}" = "true" ]; then
             npm run bsdata:scrape:refresh
+            npm run bsdata:enhancements:refresh
+            npm run bsdata:wargear:refresh
           else
             npm run bsdata:scrape
+            npm run bsdata:enhancements
+            npm run bsdata:wargear
           fi
+
+      - name: Reconcile manual overrides
+        run: npm run bsdata:prune-overrides
 
       - name: Detect changes
         id: changes
         run: |
-          if [ -z "$(git status --porcelain src/data/keywords/bsdata-keywords.auto.json)" ]; then
-            echo "No BSData keyword changes detected."
+          if [ -z "$(git status --porcelain src/data/keywords/bsdata-keywords.auto.json src/data/configs/enhancement-restrictions.bsdata.auto.json src/data/configs/wargear-restrictions.bsdata.auto.json src/data/keywords/manual-overrides.json)" ]; then
+            echo "No BSData changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "Changes detected:"
-            git status --porcelain src/data/keywords/bsdata-keywords.auto.json
+            git status --porcelain src/data/keywords/bsdata-keywords.auto.json src/data/configs/enhancement-restrictions.bsdata.auto.json src/data/configs/wargear-restrictions.bsdata.auto.json src/data/keywords/manual-overrides.json
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -82,19 +92,25 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: bsdata-keywords-auto-update
+          branch: bsdata-auto-update
           base: main
-          commit-message: "chore(keywords): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
-          title: "chore(keywords): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
+          commit-message: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
+          title: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
           body: |
-            Automated BSData keyword scrape detected changes.
+            Automated BSData scrape detected changes across one or more outputs.
 
             - **Source:** [BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}](https://github.com/BSData/wh40k-10e/commit/${{ steps.bsdata-sha.outputs.sha }})
             - **Upstream committed at:** `${{ steps.bsdata-sha.outputs.committed }}`
             - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
-            Diff `src/data/keywords/bsdata-keywords.auto.json` to see which datasheets' keyword sets shifted. Tests run via the `pr-tests` workflow gate the merge.
+            Files that may be in this diff:
+            - `src/data/keywords/bsdata-keywords.auto.json` — per-datasheet keywords
+            - `src/data/configs/enhancement-restrictions.bsdata.auto.json` — enhancement eligibility rules
+            - `src/data/configs/wargear-restrictions.bsdata.auto.json` — wargear option caps
+            - `src/data/keywords/manual-overrides.json` — may be touched by the prune reconciliation step (`npm run bsdata:prune-overrides`) that runs after the three scrapers
+
+            Tests run via the `pr-tests` workflow gate the merge.
           labels: |
-            keywords
+            bsdata
             automated
           delete-branch: false
