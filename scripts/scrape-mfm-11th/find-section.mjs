@@ -39,6 +39,26 @@ export function findEnhancementPages(pages, enhancementName) {
 // Over-includes: a page with either anchor gets through and the LLM decides
 // whether any keyword-grant rules are present. Returns { pages: string[] }
 // or null.
+// Filter Faction Pack PDF pages down to those that mention the named
+// datasheet. Used by the keyword classifier to scope the LLM's reading
+// window. Returns null when the datasheet's name doesn't appear anywhere in
+// the PDF — the EXPECTED case for any unit whose datasheet was stripped
+// from the PDF when its codex shipped (the codex becomes the source of
+// truth; the PDF only carries post-codex additions and errata).
+//
+// Same over-include posture as findEnhancementPages: a page that mentions
+// the datasheet only as a leader.attachesTo reference, stratagem trigger,
+// or enhancement host still gets through. The LLM is told to extract only
+// from the actual stat block and return `notFound: true` when only
+// cross-references are present.
+export function findDatasheetPages(pages, datasheetName) {
+  const key = enhancementNameKey(datasheetName);
+  if (!key) return null;
+  const matches = pages.filter((p) => normalize(p).includes(key));
+  if (matches.length === 0) return null;
+  return { pages: matches };
+}
+
 export function findDetachmentRulesPages(pages, detachmentName) {
   const key = enhancementNameKey(detachmentName);
   if (!key) return null;

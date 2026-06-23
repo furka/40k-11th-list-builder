@@ -2,30 +2,34 @@ import { describe, it, expect } from "vitest";
 import { legalDropSlots, pickActiveSlot } from "../utils/legal-drop-slots";
 
 const SHEETS = {
-  "NECRON WARRIORS": { name: "NECRON WARRIORS", battleLine: true },
-  IMMORTALS: { name: "IMMORTALS", battleLine: true },
+  "NECRON WARRIORS": { name: "NECRON WARRIORS", keywords: ["BATTLELINE"] },
+  IMMORTALS: { name: "IMMORTALS", keywords: ["BATTLELINE"] },
   LYCHGUARD: { name: "LYCHGUARD" },
   "DOOMSDAY ARK": { name: "DOOMSDAY ARK" },
   IMOTEKH: {
     name: "IMOTEKH",
-    character: true,
-    epicHero: true,
+    keywords: ["CHARACTER", "EPIC HERO"],
     leader: { attachesTo: ["IMMORTALS", "LYCHGUARD", "NECRON WARRIORS"] },
   },
   OVERLORD: {
     name: "OVERLORD",
-    character: true,
+    keywords: ["CHARACTER"],
     leader: { attachesTo: ["NECRON WARRIORS"] },
   },
   CHRONOMANCER: {
     name: "CHRONOMANCER",
-    character: true,
+    keywords: ["CHARACTER"],
     support: { attachesTo: ["IMMORTALS", "NECRON WARRIORS"] },
   },
   PLASMANCER: {
     name: "PLASMANCER",
-    character: true,
+    keywords: ["CHARACTER"],
     support: { attachesTo: ["NECRON WARRIORS"] },
+  },
+  // Daemon for requiredKeywords enforcement tests.
+  BLOODLETTERS: {
+    name: "BLOODLETTERS",
+    keywords: ["BATTLELINE", "LEGIONES DAEMONICA KHORNE"],
   },
   Enhancements: { name: "Enhancements", enhancements: true },
 };
@@ -265,12 +269,11 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ).toEqual(["w"]);
   });
 
-  it("requiredKeywords alone is dormant: enhancement attaches to any host", () => {
-    // The validator records requiredKeywords as captured-but-not-enforced.
-    // Until datasheet keyword tracking lands, units pass through.
+  it("requiredKeywords narrows attach slots to hosts that carry every listed keyword", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
+      u("bl", "BLOODLETTERS"),
       enh("e", "Slaughterthirst"),
     ];
     const meta = {
@@ -279,27 +282,28 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     };
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
-    ).toEqual(["im", "w"]);
+    ).toEqual(["bl"]);
   });
 
-  it("allowedHosts is suppressed when requiredKeywords is also present", () => {
-    // All-or-none enforcement: the captured rule was a disjunction
-    // (Captain OR Adeptus Astartes Terminator model only) and we can't check
-    // the keyword half yet, so the validator skips the datasheet half too
-    // rather than under-permitting. Any host is allowed.
+  it("allowedHosts OR requiredKeywords — either match satisfies the rule (disjunction)", () => {
+    // BSData-sourced keywords let us enforce the original PDF disjunction:
+    // "Captain OR Adeptus Astartes Terminator model only" becomes
+    // allowedHosts = [Captain], requiredKeywords = [TERMINATOR]. Either match
+    // is sufficient.
     const units = [
-      u("w", "NECRON WARRIORS"),
-      u("im", "IMMORTALS"),
+      u("w", "NECRON WARRIORS"), // neither
+      u("bl", "BLOODLETTERS"), // keyword match (LEGIONES DAEMONICA KHORNE)
       enh("e", "Mixed Restriction"),
     ];
     const meta = {
       name: "Mixed Restriction",
       allowedHosts: ["NECRON WARRIORS"],
-      requiredKeywords: ["ADEPTUS ASTARTES TERMINATOR"],
+      requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
     };
+    // Both NECRON WARRIORS (name match) and BLOODLETTERS (keyword match) pass.
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
-    ).toEqual(["im", "w"]);
+    ).toEqual(["bl", "w"]);
   });
 
   it("an enhancement with no restriction fields can attach to any host", () => {

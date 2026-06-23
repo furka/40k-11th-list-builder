@@ -1,0 +1,100 @@
+name: BSData keywords auto-update
+
+on:
+  schedule:
+    # Daily at 14:00 UTC — 1 hour after MFM auto-update so PR diffs don't
+    # collide on the same minute.
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Bypass scraper cache (re-fetch all .cat files from upstream)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: bsdata-keywords-auto-update
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Restore scraper cache
+        uses: actions/cache@v4
+        with:
+          path: scripts/scrape-bsdata-keywords/.cache
+          key: bsdata-scrape-cache-${{ hashFiles('scripts/scrape-bsdata-keywords/**/*.mjs', 'scripts/scrape-bsdata-keywords/faction-mapping.json') }}
+          restore-keys: |
+            bsdata-scrape-cache-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run scraper
+        run: |
+          if [ "${{ inputs.refresh }}" = "true" ]; then
+            npm run bsdata:scrape:refresh
+          else
+            npm run bsdata:scrape
+          fi
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain src/data/keywords/bsdata-keywords.auto.json)" ]; then
+            echo "No BSData keyword changes detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changes detected:"
+            git status --porcelain src/data/keywords/bsdata-keywords.auto.json
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Read resolved BSData SHA
+        if: steps.changes.outputs.changed == 'true'
+        id: bsdata-sha
+        run: |
+          SHA=$(node -p "require('./src/data/keywords/bsdata-keywords.auto.json')._sha")
+          SHORT=$(echo "$SHA" | cut -c1-8)
+          COMMITTED=$(node -p "require('./src/data/keywords/bsdata-keywords.auto.json')._committedAt")
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          echo "short=$SHORT" >> "$GITHUB_OUTPUT"
+          echo "committed=$COMMITTED" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update PR
+        if: steps.changes.outputs.changed == 'true'
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: bsdata-keywords-auto-update
+          base: main
+          commit-message: "chore(keywords): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
+          title: "chore(keywords): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
+          body: |
+            Automated BSData keyword scrape detected changes.
+
+            - **Source:** [BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}](https://github.com/BSData/wh40k-10e/commit/${{ steps.bsdata-sha.outputs.sha }})
+            - **Upstream committed at:** `${{ steps.bsdata-sha.outputs.committed }}`
+            - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            Diff `src/data/keywords/bsdata-keywords.auto.json` to see which datasheets' keyword sets shifted. Tests run via the `pr-tests` workflow gate the merge.
+          labels: |
+            keywords
+            automated
+          delete-branch: false

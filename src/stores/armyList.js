@@ -13,6 +13,7 @@ import {
 } from "../utils/attachment-rules";
 import { wargearMaxPerUnit } from "../utils/wargear-limits";
 import { legalDropSlots } from "../utils/legal-drop-slots";
+import { hasKeyword, getKeywords } from "../utils/keywords";
 
 function uniqueTagsOf(meta) {
   return meta?.tags?.filter((t) => typeof t === "string" && t.startsWith("UNIQUE:")) ?? [];
@@ -24,7 +25,7 @@ export const useArmyListStore = defineStore("armyList", () => {
   const name = ref("");
   const faction = ref("");
   const maxPoints = ref(2000);
-  const mfm_version = ref("");
+  const mfm_version = ref(mfmStore.MFM.CURRENT?.MFM_VERSION || "");
   const version = ref("");
   const modifiedDate = ref(Date.now());
   const sortOrder = ref("");
@@ -303,21 +304,33 @@ export const useArmyListStore = defineStore("armyList", () => {
         }
 
         const hostDs = codexStore.getDataSheet(host.name);
-        if (meta?.characterOnly && !hostDs?.character) {
+        if (meta?.characterOnly && !hasKeyword(hostDs, "CHARACTER")) {
           return "Enhancement can only attach to a character";
         }
-        if (meta?.nonCharacterOnly && hostDs?.character) {
+        if (meta?.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) {
           return "Unit upgrades can't attach to characters";
         }
-        if (meta?.notOnEpicHeroes && hostDs?.epicHero) {
+        if (meta?.notOnEpicHeroes && hasKeyword(hostDs, "EPIC HERO")) {
           return "Enhancement can't be given to Epic Heroes";
         }
-        if (
-          meta?.allowedHosts?.length &&
-          !meta?.requiredKeywords?.length &&
-          !meta.allowedHosts.includes(host.name)
-        ) {
-          return `Enhancement can only attach to: ${meta.allowedHosts.join(", ")}`;
+        // `allowedHosts` and `requiredKeywords` form a disjunction: the host
+        // is legal if either its datasheet name is on the allowlist OR every
+        // required keyword is present on its keyword set. See
+        // legal-drop-slots.js for the matching enforcement at drop time.
+        if (meta?.allowedHosts?.length || meta?.requiredKeywords?.length) {
+          const nameMatch = meta.allowedHosts?.includes(host.name);
+          const hostKeywords = getKeywords(hostDs);
+          const keywordMatch =
+            meta.requiredKeywords?.length > 0 &&
+            meta.requiredKeywords.every((k) => hostKeywords.has(k));
+          if (!nameMatch && !keywordMatch) {
+            const parts = [];
+            if (meta.allowedHosts?.length) parts.push(meta.allowedHosts.join(", "));
+            if (meta.requiredKeywords?.length) {
+              parts.push(`unit with ${meta.requiredKeywords.join(" + ")}`);
+            }
+            return `Enhancement can only attach to: ${parts.join(" or ")}`;
+          }
         }
 
         return false;

@@ -38,7 +38,7 @@ const TEST_MFM = {
     {
       name: "CHAOS LORD",
       faction: OTHER_ALLY,
-      character: true,
+      keywords: ["CHARACTER"],
       sizes: [
         { name: "1 model", models: 1, basePoints: 80, tiers: [{ minCount: 1, points: 80 }] },
       ],

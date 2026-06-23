@@ -4,9 +4,11 @@ import ModalWithButton from "./ModalWithButton.vue";
 import NewIcon from "../assets/file-line-icon.svg";
 import { useAppStore } from "../stores/app";
 import { useMfmStore } from "../stores/mfm";
+import { useArmyListStore } from "../stores/armyList";
 
 const appStore = useAppStore();
 const mfmStore = useMfmStore();
+const armyListStore = useArmyListStore();
 
 const factions = computed(() => {
   const list = mfmStore.MFM.CURRENT.FACTIONS.map((f) => f.name);
@@ -20,7 +22,11 @@ function selectFaction(name) {
 </script>
 
 <template>
-  <ModalWithButton class="new-list-modal" title="Create a new army list">
+  <ModalWithButton
+    class="new-list-modal"
+    title="Create a new army list"
+    :attention="!armyListStore.faction"
+  >
     <template v-slot:button>
       <NewIcon class="modal-button__icon" />
       <span>New</span>

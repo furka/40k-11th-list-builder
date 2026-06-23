@@ -1,7 +1,6 @@
 import { isBattleLine } from "./is-battleline";
-import { isDedicatedTransport } from "./is-dedicated-transport";
+import { hasKeyword } from "./keywords";
 import { battleSizeRules } from "./battle-size";
-import { conditionalBattlelineUnits } from "./conditional-battleline";
 
 /**
  * Returns the maximum number of copies of `option` (a datasheet) the list
@@ -9,15 +8,15 @@ import { conditionalBattlelineUnits } from "./conditional-battleline";
  * Hero is always 1. The base caps come from the battle-size table (Incursion
  * 2 / Battleline 4, Strike Force 3 / Battleline 6).
  *
- * Conditional Battleline (detachment-granted via `conditional-battleline.auto.json`
- * or user-marked via `list.bonusBattleline`) also gets the doubled cap.
+ * Detachment-conditional Battleline and user-marked `list.bonusBattleline`
+ * grants are absorbed by `isBattleLine(option, list)` via the dynamic
+ * effective-keywords union.
  */
 export function unitMax(option, list) {
-  if (option.epicHero) return 1;
+  if (hasKeyword(option, "EPIC HERO")) return 1;
 
   const rules = battleSizeRules(list);
-  const grantedBl = conditionalBattlelineUnits(list).has(option.name);
-  if (isBattleLine(option) || isDedicatedTransport(option) || grantedBl) {
+  if (isBattleLine(option, list) || hasKeyword(option, "DEDICATED TRANSPORT")) {
     return rules.battlelineCap;
   }
   return rules.unitCap;

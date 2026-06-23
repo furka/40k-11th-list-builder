@@ -27,7 +27,7 @@ const TEST_MFM = {
     {
       name: "NECRON WARRIORS",
       faction: FACTION,
-      battleLine: true,
+      keywords: ["BATTLELINE"],
       sizes: [
         { name: "10 models", models: 10, basePoints: 100 },
         { name: "20 models", models: 20, basePoints: 200 },
@@ -36,7 +36,7 @@ const TEST_MFM = {
     {
       name: "IMOTEKH",
       faction: FACTION,
-      character: true,
+      keywords: ["CHARACTER"],
       leader: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [{ name: "1 model", models: 1, basePoints: 100 }],
     },
@@ -49,7 +49,7 @@ const TEST_MFM = {
     {
       name: "FARSEER",
       faction: ALLY_FACTION,
-      character: true,
+      keywords: ["CHARACTER"],
       sizes: [{ name: "1 model", models: 1, basePoints: 100 }],
     },
   ],

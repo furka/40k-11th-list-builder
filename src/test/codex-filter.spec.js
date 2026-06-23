@@ -33,30 +33,30 @@ describe("matchesDatasheet", () => {
   });
 
   it("'battle line' (with and without space) surfaces battleline units", () => {
-    const s = sheet({ battleLine: true });
+    const s = sheet({ keywords: ["BATTLELINE"] });
     expect(matchesDatasheet(s, "battle line")).toBe(true);
     expect(matchesDatasheet(s, "battleline")).toBe(true);
     expect(matchesDatasheet(s, "BATTLE LINE")).toBe(true);
   });
 
   it("'character' surfaces character units", () => {
-    expect(matchesDatasheet(sheet({ character: true }), "character")).toBe(true);
+    expect(matchesDatasheet(sheet({ keywords: ["CHARACTER"] }), "character")).toBe(true);
   });
 
   it("'epic hero' (with and without space) surfaces epic-hero units", () => {
-    const s = sheet({ epicHero: true });
+    const s = sheet({ keywords: ["EPIC HERO"] });
     expect(matchesDatasheet(s, "epic hero")).toBe(true);
     expect(matchesDatasheet(s, "epichero")).toBe(true);
   });
 
   it("'transport' / 'dedicated transport' surfaces dedicated-transport units", () => {
-    const s = sheet({ dedicatedTransport: true });
+    const s = sheet({ keywords: ["DEDICATED TRANSPORT"] });
     expect(matchesDatasheet(s, "transport")).toBe(true);
     expect(matchesDatasheet(s, "dedicated transport")).toBe(true);
   });
 
   it("'fortification' surfaces fortifications", () => {
-    expect(matchesDatasheet(sheet({ fortification: true }), "fortification")).toBe(true);
+    expect(matchesDatasheet(sheet({ keywords: ["FORTIFICATION"] }), "fortification")).toBe(true);
   });
 
   it("'legends' surfaces legends units", () => {
@@ -72,7 +72,7 @@ describe("matchesDatasheet", () => {
   });
 
   it("does not cross-match: typing 'leader' should not surface non-leaders", () => {
-    expect(matchesDatasheet(sheet({ character: true }), "leader")).toBe(false);
+    expect(matchesDatasheet(sheet({ keywords: ["CHARACTER"] }), "leader")).toBe(false);
     expect(matchesDatasheet(sheet({ legends: true }), "leader")).toBe(false);
   });
 });

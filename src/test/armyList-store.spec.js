@@ -55,7 +55,7 @@ const TEST_MFM = {
       name: "NECRON WARRIORS",
       faction: FACTION,
       edition: "11th",
-      battleLine: true,
+      keywords: ["BATTLELINE"],
       sizes: [
         { name: "10 models", models: 10, basePoints: 80, tiers: [{ minCount: 1, points: 80 }] },
       ],
@@ -64,8 +64,7 @@ const TEST_MFM = {
       name: "IMOTEKH THE STORMLORD",
       faction: FACTION,
       edition: "11th",
-      character: true,
-      epicHero: true,
+      keywords: ["CHARACTER", "EPIC HERO"],
       leader: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [
         { name: "1 model", models: 1, basePoints: 100, tiers: [{ minCount: 1, points: 100 }] },
@@ -75,7 +74,7 @@ const TEST_MFM = {
       name: "CHRONOMANCER",
       faction: FACTION,
       edition: "11th",
-      character: true,
+      keywords: ["CHARACTER"],
       support: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [
         { name: "1 model", models: 1, basePoints: 80, tiers: [{ minCount: 1, points: 80 }] },
@@ -613,24 +612,39 @@ describe("armyList Enhancement validation", () => {
     expect(store.getUnitValidationError(e)).toBe(false);
   });
 
-  it("requiredKeywords alone is dormant: passes on any host (no enforcement yet)", () => {
-    // "Daemon-only Upgrade" has only requiredKeywords — the validator
-    // captures it for the future keyword-aware path but doesn't enforce.
+  it("requiredKeywords blocks hosts that don't carry every listed keyword", () => {
+    // "Daemon-only Upgrade" has requiredKeywords: [LEGIONES DAEMONICA KHORNE].
+    // IMMORTALS doesn't carry that keyword — the BSData overlay tags it as
+    // BATTLELINE / INFANTRY / NECRONS, not Khorne — so the validator blocks
+    // the attachment.
     const host = hostUnit("host", "IMMORTALS", 10);
     const e = { ...enh("e", "Daemon-only Upgrade"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toMatch(
+      /^Enhancement can only attach to:.*LEGIONES DAEMONICA KHORNE/
+    );
+  });
+
+  it("allowedHosts OR requiredKeywords is a disjunction — name match alone passes", () => {
+    // "Mixed Disjunction" has allowedHosts: [NECRON WARRIORS] AND
+    // requiredKeywords: [ADEPTUS ASTARTES TERMINATOR]. The host is NECRON
+    // WARRIORS by name, so it satisfies the disjunction even though it lacks
+    // the TERMINATOR keyword.
+    const host = hostUnit("host", "NECRON WARRIORS", 10);
+    const e = { ...enh("e", "Mixed Disjunction"), attachedTo: "host" };
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
   });
 
-  it("allowedHosts is suppressed when requiredKeywords is also present", () => {
-    // "Mixed Disjunction" has allowedHosts: [NECRON WARRIORS] AND
-    // requiredKeywords: [ADEPTUS ASTARTES TERMINATOR]. The captured rule
-    // was a disjunction; the validator can't fully check it, so it skips
-    // enforcement entirely (under-enforce rather than wrongly block).
+  it("allowedHosts OR requiredKeywords blocks when neither side matches", () => {
+    // Same enhancement, host that fails BOTH conditions — different name AND
+    // missing the required keyword.
     const host = hostUnit("host", "IMMORTALS", 10);
     const e = { ...enh("e", "Mixed Disjunction"), attachedTo: "host" };
     store.setUnits([host, e]);
-    expect(store.getUnitValidationError(e)).toBe(false);
+    expect(store.getUnitValidationError(e)).toMatch(
+      /^Enhancement can only attach to: NECRON WARRIORS or unit with ADEPTUS ASTARTES TERMINATOR/
+    );
   });
 
   it("flags a missing host", () => {
@@ -1011,6 +1025,71 @@ describe("armyList.toggleBonusBattleline", () => {
   it("defaults to [] when setList receives a list without bonusBattleline", () => {
     store.setList({ faction: FACTION, units: [], detachments: [] });
     expect(store.bonusBattleline).toEqual([]);
+  });
+});
+
+describe("armyList.mfm_version default", () => {
+  beforeEach(() => {
+    setActivePinia(createPinia());
+    // The setList watcher persists via localStorage; clear so cross-test
+    // bleed from earlier suites can't masquerade as a "saved" current list.
+    localStorage.clear();
+  });
+
+  it("initializes to MFM.CURRENT.MFM_VERSION on a fresh store", () => {
+    // The bug this guards against: leaving mfm_version as "" meant the
+    // VersionBar dropdown showed "unknown" and no version selected on first
+    // app open, because autoUpgradeMFMVersion skips lists with falsy versions.
+    const mfm = useMfmStore();
+    mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
+    const list = useArmyListStore();
+    expect(list.mfm_version).toBe(TEST_MFM.MFM_VERSION);
+  });
+
+  it("falls back to empty string when MFM.CURRENT is missing", () => {
+    const mfm = useMfmStore();
+    mfm.MFM = {};
+    const list = useArmyListStore();
+    expect(list.mfm_version).toBe("");
+  });
+
+  it("loadFromStorage with no saved currentList preserves the default", () => {
+    const mfm = useMfmStore();
+    mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
+    const list = useArmyListStore();
+    list.loadFromStorage();
+    expect(list.mfm_version).toBe(TEST_MFM.MFM_VERSION);
+  });
+
+  it("setList does not auto-migrate a saved list's mfm_version to CURRENT", () => {
+    // Saved lists must keep their recorded version verbatim — the user
+    // explicitly opted out of silent migration.
+    const mfm = useMfmStore();
+    mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
+    const list = useArmyListStore();
+    list.setList({
+      faction: FACTION,
+      mfm_version: "V0.9",
+      units: [],
+      detachments: [],
+    });
+    expect(list.mfm_version).toBe("V0.9");
+  });
+
+  it("setList preserves an empty mfm_version on a saved list", () => {
+    // The VersionBar's "unknown" option exists specifically for legacy saved
+    // lists whose mfm_version is empty. setList must leave that state alone
+    // so the defensive UI can surface it.
+    const mfm = useMfmStore();
+    mfm.MFM = { CURRENT: TEST_MFM, [TEST_MFM.MFM_VERSION]: TEST_MFM };
+    const list = useArmyListStore();
+    list.setList({
+      faction: FACTION,
+      mfm_version: "",
+      units: [],
+      detachments: [],
+    });
+    expect(list.mfm_version).toBe("");
   });
 });
 

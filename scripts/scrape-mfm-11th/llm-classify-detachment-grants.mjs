@@ -74,9 +74,24 @@ const GRANTS_TOOL = {
   },
 };
 
+// Narrow a faction's datasheet roster to just the names that actually appear
+// in the PDF pages for this classification. The PROMPT still gets the full
+// roster (closed vocabulary unchanged), but the cache key only needs to
+// depend on names that could plausibly affect THIS detachment's answer.
+// Without this narrowing, adding/renaming any single datasheet in a faction
+// invalidates the cache for every detachment in the faction.
+function narrowDatasheetNames(datasheetNames, pageTexts) {
+  const haystack = pageTexts.join("\n").toLowerCase()
+    .replace(/[‘’]/g, "'");
+  return datasheetNames.filter((name) => {
+    const needle = name.toLowerCase().replace(/[‘’]/g, "'");
+    return haystack.includes(needle);
+  });
+}
+
 function makeCacheKey({ detachmentName, pageTexts, datasheetNames }) {
   const h = createHash("sha256");
-  h.update("detachment-grants:");
+  h.update("detachment-grants:v2:");
   h.update(MODEL_ID);
   h.update("\0");
   // The system prompt drives extraction behaviour — hash it so a prompt
@@ -145,7 +160,11 @@ export async function classifyDetachmentGrantsWithLLM({
   datasheetNames,
 }) {
   const cache = await getCache();
-  const key = makeCacheKey({ detachmentName, pageTexts, datasheetNames });
+  const key = makeCacheKey({
+    detachmentName,
+    pageTexts,
+    datasheetNames: narrowDatasheetNames(datasheetNames, pageTexts),
+  });
   if (cache[key]) {
     return { result: cache[key].response, cacheHit: true };
   }

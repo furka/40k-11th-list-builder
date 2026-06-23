@@ -11,7 +11,7 @@ import { useSlotEl } from "../composables/useSlotEl";
 import { useDetachmentSlotEl } from "../composables/useDetachmentSlotEl";
 import { isBattleLine } from "../utils/is-battleline";
 import { isDedicatedTransport } from "../utils/is-dedicated-transport";
-import { conditionalBattlelineUnits } from "../utils/conditional-battleline";
+import { hasKeyword } from "../utils/keywords";
 import SettingsIcon from "../assets/setting-fill-icon.svg";
 
 const armyListStore = useArmyListStore();
@@ -23,8 +23,11 @@ const battlelineModalOpen = ref(false);
 
 // Group primary datasheets first, then one labelled section per allied
 // faction. Ally section titles are prefixed with the faction name so the
-// user can tell whose units they're looking at.
-function buildGroupsForScope(sheets, scopeTitle, bonusBattlelineSet) {
+// user can tell whose units they're looking at. `list` is the active army
+// list snapshot — used by isBattleLine to absorb detachment-conditional
+// grants and the user's bonusBattleline overrides into the BATTLELINE
+// keyword check.
+function buildGroupsForScope(sheets, scopeTitle, list) {
   const prefix = scopeTitle ? `${scopeTitle} — ` : "";
   const characters = { kind: "characters", title: `${prefix}Characters`, units: [] };
   const battleLine = { kind: "battleLine", title: `${prefix}Battle Line`, units: [] };
@@ -32,21 +35,18 @@ function buildGroupsForScope(sheets, scopeTitle, bonusBattlelineSet) {
   const other = { kind: "other", title: `${prefix}Other`, units: [] };
   const fortifications = { kind: "fortifications", title: `${prefix}Fortifications`, units: [] };
   for (const sheet of sheets) {
-    if (sheet.character) characters.units.push(sheet);
-    else if (isBattleLine(sheet) || bonusBattlelineSet.has(sheet.name)) battleLine.units.push(sheet);
+    if (hasKeyword(sheet, "CHARACTER")) characters.units.push(sheet);
+    else if (isBattleLine(sheet, list)) battleLine.units.push(sheet);
     else if (isDedicatedTransport(sheet)) transports.units.push(sheet);
-    else if (sheet.fortification) fortifications.units.push(sheet);
+    else if (hasKeyword(sheet, "FORTIFICATION")) fortifications.units.push(sheet);
     else other.units.push(sheet);
   }
   return [characters, battleLine, transports, other, fortifications];
 }
 
-const bonusBattlelineSet = computed(() =>
-  conditionalBattlelineUnits(armyListStore.toObject())
-);
-
 const groupedUnits = computed(() => {
   const all = codexStore.filteredCompendium;
+  const list = armyListStore.toObject();
   const primary = all.filter((s) => !s.allied);
   const alliesOrder = armyListStore.allies ?? [];
   const byAlly = new Map(alliesOrder.map((name) => [name, []]));
@@ -57,9 +57,9 @@ const groupedUnits = computed(() => {
   }
 
   const groups = [];
-  groups.push(...buildGroupsForScope(primary, "", bonusBattlelineSet.value));
+  groups.push(...buildGroupsForScope(primary, "", list));
   for (const [faction, sheets] of byAlly) {
-    groups.push(...buildGroupsForScope(sheets, faction, bonusBattlelineSet.value));
+    groups.push(...buildGroupsForScope(sheets, faction, list));
   }
   // Keep primary Battle Line visible (with its cogwheel) even when empty, so
   // users can open the override modal to mark a unit as Battleline.
@@ -100,7 +100,7 @@ function onScrollWheel(e) {
   <div class="codex" ref="codexRootEl">
     <div v-if="!armyListStore.faction" class="codex__blank">
       <p>
-        No army list yet &mdash; hit <b>New</b> to pick a faction.
+        Hit <b>New</b> to pick a faction. <span class="codex__blank-arrow" aria-hidden="true">&uarr;</span>
       </p>
     </div>
     <template v-else>
@@ -271,19 +271,30 @@ function onScrollWheel(e) {
     writing-mode: initial;
   }
   &__blank {
-    align-items: center;
     color: var(--color-text-muted);
-    display: flex;
-    flex-grow: 1;
     font-family: var(--font-body);
-    font-size: 18px;
-    justify-content: center;
-    padding: 32px;
-    text-align: center;
+    font-size: 16px;
+    padding: 12px 110px 0 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+
+    p {
+      margin: 0;
+    }
 
     b {
       color: var(--color-text);
     }
+  }
+  &__blank-arrow {
+    color: var(--color-accent);
+    display: inline-block;
+    font-size: 22px;
+    line-height: 1;
+    margin-left: 4px;
+    transform: translateY(2px);
   }
 }
 </style>

@@ -10,7 +10,10 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "mfm:scrape": "node --env-file-if-exists=.env scripts/scrape-mfm-11th/index.mjs",
-    "mfm:scrape:refresh": "node --env-file-if-exists=.env scripts/scrape-mfm-11th/index.mjs --refresh"
+    "mfm:scrape:refresh": "node --env-file-if-exists=.env scripts/scrape-mfm-11th/index.mjs --refresh",
+    "bsdata:scrape": "node scripts/scrape-bsdata-keywords/index.mjs",
+    "bsdata:scrape:refresh": "node scripts/scrape-bsdata-keywords/index.mjs --refresh",
+    "bsdata:prune-overrides": "node scripts/audit-and-prune-overrides.mjs"
   },
   "dependencies": {
     "deep-freeze": "^0.0.1",
@@ -25,6 +28,7 @@
     "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/coverage-v8": "^4.1.9",
     "@vue/test-utils": "^2.4.6",
+    "fast-xml-parser": "^4.5.6",
     "jsdom": "^27.4.0",
     "pdfjs-dist": "^6.0.227",
     "playwright": "^1.61.0",

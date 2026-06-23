@@ -25,7 +25,7 @@ const TEST_MFM = {
     {
       name: "NECRON WARRIORS",
       faction: FACTION,
-      battleLine: true,
+      keywords: ["BATTLELINE"],
       sizes: [
         { name: "10 models", models: 10, basePoints: 100 },
         { name: "20 models", models: 20, basePoints: 200 },
@@ -34,15 +34,14 @@ const TEST_MFM = {
     {
       name: "IMOTEKH",
       faction: FACTION,
-      character: true,
-      epicHero: true,
+      keywords: ["CHARACTER", "EPIC HERO"],
       leader: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [{ name: "1 model", models: 1, basePoints: 100 }],
     },
     {
       name: "CHRONOMANCER",
       faction: FACTION,
-      character: true,
+      keywords: ["CHARACTER"],
       support: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [{ name: "1 model", models: 1, basePoints: 80 }],
     },

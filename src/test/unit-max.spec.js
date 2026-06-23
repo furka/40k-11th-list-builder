@@ -16,12 +16,12 @@ function strikeForceList(overrides = {}) {
 
 describe("unitMax", () => {
   it("returns 1 for an Epic Hero regardless of list state", () => {
-    expect(unitMax({ name: "WAZDAKKA GUTSMEK", epicHero: true }, strikeForceList())).toBe(1);
+    expect(unitMax({ name: "WAZDAKKA GUTSMEK", keywords: ["EPIC HERO"] }, strikeForceList())).toBe(1);
   });
 
   it("returns the battleline cap for a static Battleline unit", () => {
     expect(
-      unitMax({ name: "BOYZ", battleLine: true }, strikeForceList())
+      unitMax({ name: "BOYZ", keywords: ["BATTLELINE"] }, strikeForceList())
     ).toBe(6);
   });
 
@@ -41,7 +41,7 @@ describe("unitMax", () => {
 
   it("uses incursion caps when maxPoints <= 1000", () => {
     const list = strikeForceList({ maxPoints: 1000 });
-    expect(unitMax({ name: "BOYZ", battleLine: true }, list)).toBe(4);
+    expect(unitMax({ name: "BOYZ", keywords: ["BATTLELINE"] }, list)).toBe(4);
     expect(unitMax({ name: "STORMBOYZ" }, list)).toBe(2);
   });
 });

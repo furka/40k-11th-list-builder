@@ -1,5 +1,5 @@
-import { CONFIGS, getEnhancementRestrictions } from "../data/configs";
-import { normalizeString } from "./name-match";
+import { getEnhancementRestrictions } from "../data/configs";
+import { getKeywordsFor } from "../data/keywords";
 
 const RESTRICTION_FIELDS = [
   "characterOnly",
@@ -30,9 +30,11 @@ function pickRestrictions(source) {
  *     enhancementOptions: [ ...flattened enhancement entries ]
  *   }
  *
- * Role booleans (battleLine, character, epicHero, dedicatedTransport,
- * fortification) are layered on from `config.json`. Leader/Support
- * attaches-to relationships come straight from the scrape.
+ * Per-datasheet `keywords` (BATTLELINE, CHARACTER, INFANTRY, FLY, etc.) are
+ * layered on from `src/data/keywords/` — BSData baseline plus manual
+ * overrides. Role-membership checks elsewhere use the keyword set rather
+ * than per-role booleans. Leader/Support attaches-to relationships come
+ * straight from the scrape.
  */
 export function parse11thFaction(factionJson) {
   const factionName = factionJson.faction;
@@ -63,7 +65,7 @@ export function parse11thFaction(factionJson) {
     if (d.support) sheet.support = d.support;
     if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
 
-    applyConfigRoleFlags(sheet);
+    applyKeywordOverlay(sheet, factionName);
     return sheet;
   });
 
@@ -126,16 +128,9 @@ function isPlainModelCountLabel(name, models) {
   return !!m && Number(m[1]) === models;
 }
 
-function applyConfigRoleFlags(sheet) {
-  const normalized = normalizeString(sheet.name);
-
-  if (CONFIGS["epic-hero"].includes(normalized)) sheet.epicHero = true;
-  if (CONFIGS["battle-line"].includes(normalized)) sheet.battleLine = true;
-  if (CONFIGS["fortification"].includes(normalized)) sheet.fortification = true;
-  if (CONFIGS["dedicated-transport"].includes(normalized)) {
-    sheet.dedicatedTransport = true;
-  }
-  if (CONFIGS["character"].includes(normalized)) sheet.character = true;
+function applyKeywordOverlay(sheet, factionName) {
+  const keywords = getKeywordsFor(factionName, sheet.name);
+  if (keywords.length > 0) sheet.keywords = keywords;
 }
 
 /**

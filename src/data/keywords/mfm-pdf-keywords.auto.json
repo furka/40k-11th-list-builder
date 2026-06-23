@@ -1,0 +1,5554 @@
+{
+  "_source": "MFM Faction Pack PDFs (https://mfm.warhammer-community.com/)",
+  "_generatedAt": "2026-06-23T08:56:39.800Z",
+  "_generator": "scripts/scrape-mfm-11th",
+  "ADEPTA SORORITAS": {
+    "BATTLE SANCTUM": [
+      "ADEPTA SORORITAS",
+      "BATTLE SANCTUM",
+      "FORTIFICATION",
+      "IMPERIUM",
+      "TOWERING"
+    ],
+    "BATTLE SISTERS SQUAD": [
+      "ADEPTA SORORITAS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SANCTIFIERS"
+    ],
+    "CASTIGATOR": [
+      "ADEPTA SORORITAS",
+      "FRAME"
+    ],
+    "CELESTIAN INSIDIANTS": [
+      "ADEPTA SORORITAS",
+      "CELESTIAN INSIDIANTS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "CELESTIAN SACRESANT AVELINE": [
+      "ADEPTA SORORITAS",
+      "CELESTIAN SACRESANT AVELINE",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "CRUSADERS": [
+      "ADEPTA SORORITAS",
+      "CRUSADERS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "DEATH CULT ASSASSINS": [
+      "ADEPTA SORORITAS",
+      "DEATH CULT ASSASSINS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "IMMOLATOR": [
+      "ADEPTA SORORITAS",
+      "FRAME",
+      "TRANSPORT"
+    ],
+    "INTRANZIA FRAYE": [
+      "ADEPTA SORORITAS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INTRANZIA FRAYE",
+      "PENITENT",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "REPRESSOR": [
+      "ADEPTA SORORITAS",
+      "DEDICATED TRANSPORT",
+      "IMPERIUM",
+      "REPRESSOR",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "SANCTIFIERS": [
+      "ADEPTA SORORITAS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SANCTIFIERS"
+    ]
+  },
+  "ADEPTUS CUSTODES": {
+    "AGAMATUS CUSTODIANS": [
+      "ADEPTUS CUSTODES",
+      "AGAMATUS CUSTODIANS",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "AQUILON CUSTODIANS": [
+      "ADEPTUS CUSTODES",
+      "AQUILON CUSTODIANS",
+      "IMPERIUM",
+      "INFANTRY",
+      "TERMINATOR"
+    ],
+    "ARES GUNSHIP": [
+      "ADEPTUS CUSTODES",
+      "AIRCRAFT",
+      "ARES GUNSHIP",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "CALADIUS GRAV-TANK": [
+      "ADEPTUS CUSTODES",
+      "CALADIUS GRAV-TANK",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "CONTEMPTOR-ACHILLUS DREADNOUGHT": [
+      "ADEPTUS CUSTODES",
+      "CONTEMPTOR - ACHILLUS DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CONTEMPTOR-GALATUS DREADNOUGHT": [
+      "ADEPTUS CUSTODES",
+      "CONTEMPTOR-GALATUS DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CORONUS GRAV-CARRIER": [
+      "ADEPTUS CUSTODES",
+      "CORONUS GRAV-CARRIER",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CUSTODIAN GUARD": [
+      "ADEPTUS CUSTODES",
+      "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS": [
+      "ADEPTUS CUSTODES",
+      "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "ORION ASSAULT DROPSHIP": [
+      "ADEPTUS CUSTODES",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "ORION ASSAULT DROPSHIP",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "PALLAS GRAV-ATTACK": [
+      "ADEPTUS CUSTODES",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "PALLAS GRAV-ATTACK",
+      "VEHICLE"
+    ],
+    "SAGITTARUM CUSTODIANS": [
+      "ADEPTUS CUSTODES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SAGITTARUM CUSTODIANS"
+    ],
+    "TELEMON HEAVY DREADNOUGHT": [
+      "ADEPTUS CUSTODES",
+      "IMPERIUM",
+      "TELEMON HEAVY DREADNOUGHT",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "VENATARI CUSTODIANS": [
+      "ADEPTUS CUSTODES",
+      "FLY",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "VENATARI CUSTODIANS"
+    ],
+    "VERTUS PRAETORS": [
+      "ADEPTUS CUSTODES",
+      "AGAMATUS CUSTODIANS",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "MOUNTED"
+    ]
+  },
+  "ADEPTUS MECHANICUS": {
+    "CYBERNETICA DATASMITH": [
+      "ADEPTUS MECHANICUS",
+      "CHARACTER",
+      "SUPPORT",
+      "TECH-PRIEST"
+    ],
+    "HASTARII EXTERMINATORS": [
+      "ADEPTUS MECHANICUS",
+      "EXTERMINATORS",
+      "HASTARII",
+      "IMPERIUM",
+      "INFANTRY",
+      "SKITARII"
+    ],
+    "HASTARII FUSILIERS": [
+      "ADEPTUS MECHANICUS",
+      "FUSILIERS",
+      "HASTARII",
+      "IMPERIUM",
+      "INFANTRY",
+      "SKITARII"
+    ],
+    "KATAPHRON BREACHERS": [
+      "ADEPTUS MECHANICUS",
+      "CULT MECHANICUS",
+      "IMPERIUM",
+      "INFANTRY",
+      "SERVITOR BATTLECLADE"
+    ],
+    "SECUTARII HOPLITES": [
+      "ADEPTUS MECHANICUS",
+      "IMPERIUM",
+      "INFANTRY",
+      "SECUTARII HOPLITES",
+      "SKITARII"
+    ],
+    "SECUTARII PELTASTS": [
+      "ADEPTUS MECHANICUS",
+      "IMPERIUM",
+      "INFANTRY",
+      "SECUTARII PELTASTS",
+      "SKITARII"
+    ],
+    "SERVITOR BATTLECLADE": [
+      "ADEPTUS MECHANICUS",
+      "CULT MECHANICUS",
+      "IMPERIUM",
+      "INFANTRY",
+      "SERVITOR BATTLECLADE"
+    ],
+    "SKORPIUS DUNERIDER": [
+      "ADEPTUS MECHANICUS",
+      "FRAME",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "TERRAX-PATTERN TERMITE": [
+      "ADEPTUS MECHANICUS",
+      "DEDICATED TRANSPORT",
+      "IMPERIUM",
+      "TERRAX-PATTERN TERMITE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "THULIA GHULD": [
+      "ADEPTUS MECHANICUS",
+      "CHARACTER",
+      "CULT MECHANICUS",
+      "EPIC HERO",
+      "IMPERIUM",
+      "MONSTER",
+      "TECH-PRIEST",
+      "THULIA GHULD"
+    ],
+    "X-101": [
+      "ADEPTUS MECHANICUS",
+      "CHARACTER",
+      "CULT MECHANICUS",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "X-101"
+    ]
+  },
+  "AELDARI": {
+    "AMALLYN SHADOWGUIDE": [
+      "AELDARI",
+      "AMALLYN SHADOWGUIDE",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "INFANTRY"
+    ],
+    "ASURMEN": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "INFANTRY",
+      "JUMP PACK",
+      "PHOENIX LORD"
+    ],
+    "AUTARCH": [
+      "AELDARI",
+      "ASURYANI",
+      "AUTARCH",
+      "AUTARCH SKYRUNNER",
+      "CHARACTER",
+      "FLY",
+      "FRAME",
+      "MOUNTED"
+    ],
+    "AUTARCH SKYRUNNER": [
+      "AELDARI",
+      "ASURYANI",
+      "AUTARCH",
+      "AUTARCH SKYRUNNER",
+      "CHARACTER",
+      "FLY",
+      "FRAME",
+      "MOUNTED"
+    ],
+    "BONESINGER": [
+      "AELDARI",
+      "ASURYANI",
+      "BONESINGER",
+      "CHARACTER",
+      "INFANTRY",
+      "PSYKER"
+    ],
+    "COBRA": [
+      "AELDARI",
+      "ASURYANI",
+      "COBRA",
+      "FLY",
+      "FRAME",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "CORSAIR CLOUD DANCER BAND": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "CORSAIR CLOUD DANCER BAND",
+      "FRAME",
+      "GRENADES",
+      "MOUNTED"
+    ],
+    "CORSAIR REAVER BAND": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "CORSAIR REAVER BAND",
+      "GRENADES",
+      "INFANTRY"
+    ],
+    "CORSAIR SKYREAVERS": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "CORSAIR SKYREAVERS",
+      "FLY",
+      "GRENADES",
+      "INFANTRY",
+      "JUMP PACK"
+    ],
+    "CORSAIR VOIDREAVERS": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "CORSAIR REAVER BAND",
+      "GRENADES",
+      "INFANTRY"
+    ],
+    "FALCON": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "FIRESTORM": [
+      "AELDARI",
+      "FIRESTORM",
+      "FLY",
+      "FRAME",
+      "VEHICLE"
+    ],
+    "HORNET": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "HORNET",
+      "VEHICLE"
+    ],
+    "ILLIC NIGHTSPEAR": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "ILLIC NIGHTSPEAR",
+      "INFANTRY"
+    ],
+    "IRILLYTH": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "INFANTRY",
+      "IRILLYTH",
+      "JUMP PACK",
+      "PHOENIX LORD"
+    ],
+    "KARANDRAS": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "KARANDRAS",
+      "PHOENIX LORD"
+    ],
+    "KHARSETH": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "KHARSETH",
+      "PSYKER"
+    ],
+    "LYNX": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "LYNX",
+      "VEHICLE"
+    ],
+    "NIGHTWING": [
+      "AELDARI",
+      "AIRCAFT",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "NIGHTWING",
+      "VEHICLE"
+    ],
+    "PHOENIX": [
+      "AELDARI",
+      "AIRCRAFT",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "PHOENIX",
+      "VEHICLE"
+    ],
+    "PRINCE YRIEL": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "PRINCE YRIEL"
+    ],
+    "RANGERS": [
+      "ASURYANI",
+      "CHARACTER",
+      "INFANTRY"
+    ],
+    "SCORPION": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "SCORPION",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "SHADOW SPECTRES": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "INFANTRY",
+      "JUMP PACK",
+      "SHADOW SPECTRES"
+    ],
+    "SHROUD RUNNERS": [
+      "AELDARI",
+      "AMALLYN SHADOWGUIDE",
+      "ASURYANI",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "INFANTRY"
+    ],
+    "SKATHACH WRAITHKNIGHT": [
+      "AELDARI",
+      "ASURYANI",
+      "MONSTER",
+      "SKATHACH WRAITHKNIGHT",
+      "TITANIC",
+      "TOWERING",
+      "WALKER",
+      "WRAITH CONSTRUCT"
+    ],
+    "STARFANGS": [
+      "AELDARI",
+      "ANHRATHE",
+      "ASURYANI",
+      "FLY",
+      "GRENADES",
+      "SMOKE",
+      "STARFANGS",
+      "VEHICLE"
+    ],
+    "VAMPIRE HUNTER": [
+      "AELDARI",
+      "AIRCRAFT",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "TITANIC",
+      "VAMPIRE HUNTER",
+      "VEHICLE"
+    ],
+    "VAMPIRE RAIDER": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "TITANIC",
+      "TRANSPORT",
+      "VAMPIRE RAIDER",
+      "VEHICLE"
+    ],
+    "VYPER": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "VEHICLE",
+      "VYPERS"
+    ],
+    "WARLOCK": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "INFANTRY",
+      "PSYKER",
+      "SUPPORT"
+    ],
+    "WARP HUNTER": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "FRAME",
+      "VEHICLE",
+      "WARP HUNTER"
+    ],
+    "WASP ASSAULT WALKER": [
+      "AELDARI",
+      "ASURYANI",
+      "FLY",
+      "VEHICLE",
+      "WALKER",
+      "WASP ASSAULT WALKER"
+    ],
+    "WEBWAY GATE": [
+      "AELDARI",
+      "ASURYANI",
+      "FORTIFICATION",
+      "FRAME",
+      "WEBWAY GATE"
+    ],
+    "WINDRIDERS": [
+      "AELDARI",
+      "ASURYANI",
+      "AUTARCH",
+      "AUTARCH SKYRUNNER",
+      "CHARACTER",
+      "FLY",
+      "FRAME",
+      "MOUNTED"
+    ],
+    "WRAITHKNIGHT": [
+      "AELDARI",
+      "ASURYANI",
+      "MONSTER",
+      "SKATHACH WRAITHKNIGHT",
+      "TITANIC",
+      "TOWERING",
+      "WALKER",
+      "WRAITH CONSTRUCT"
+    ],
+    "WRAITHSEER": [
+      "AELDARI",
+      "ASURYANI",
+      "MONSTER",
+      "PSYKER",
+      "WALKER",
+      "WRAITH CONSTRUCT",
+      "WRAITHSEER"
+    ]
+  },
+  "ASTRA MILITARUM": {
+    "AQUILA LANDER": [
+      "AQUILA LANDER",
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "ARKURIAN STORMHAMMER": [
+      "ARKURIAN STORMHAMMER",
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "ARMAGEDDON-PATTERN MEDUSA": [
+      "ARMAGEDDON-PATTERN MEDUSA",
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "ARTILLERY TEAM": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "HEAVY MORTAR TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "REGIMENT"
+    ],
+    "ARVUS LIGHTER": [
+      "ARVUS LIGHTER",
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "ATLAS RECOVERY VEHICLE": [
+      "ASTRA MILITARUM",
+      "ATLAS RECOVERY VEHICLE",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "AVENGER STRIKE FIGHTER": [
+      "AIRCRAFT",
+      "ASTRA MILITARUM",
+      "AVENGER STRIKE FIGHTER",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "CADIAN RECON SQUAD": [
+      "ASTRA MILITARUM",
+      "CADIAN RECON SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "REGIMENT",
+      "SMOKE"
+    ],
+    "CARNODON": [
+      "ASTRA MILITARUM",
+      "CARNODON",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "CENTAUR LIGHT CARRIER": [
+      "ASTRA MILITARUM",
+      "CENTAUR LIGHT CARRIER",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CENTAUR RSV": [
+      "ASTRA MILITARUM",
+      "CENTAUR RSV",
+      "DEDICATED TRANSPORT",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CHIMERA": [
+      "ASTRA MILITARUM",
+      "DEDICATED TRANSPORT",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "STORM CHIMERA",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "COLOSSUS": [
+      "ASTRA MILITARUM",
+      "COLOSSUS",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "COMMISSAR": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMISSAR YARRICK",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER"
+    ],
+    "COMMISSAR GRAVES": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMISSAR GRAVES",
+      "EPIC HERO",
+      "IMPERIUM",
+      "OFFICER",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "COMMISSAR GRAVES ON FOOT": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMISSAR GRAVES ON FOOT",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "COMMISSAR YARRICK": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMISSAR YARRICK",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER"
+    ],
+    "CRASSUS": [
+      "ASTRA MILITARUM",
+      "CRASSUS",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CYCLOPS DEMOLITION VEHICLE": [
+      "ASTRA MILITARUM",
+      "CYCLOPS DEMOLITION VEHICLE",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "DEATH KORPS GRENADIER SQUAD": [
+      "ASTRA MILITARUM",
+      "DEATH KORPS GRENADIER SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KRIEG",
+      "PLATOON",
+      "REGIMENT"
+    ],
+    "DEATH KORPS OF KRIEG": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMISSAR YARRICK",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER"
+    ],
+    "DEATH RIDER COMMISSAR": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "DEATH RIDER COMMISSAR",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "OFFICER"
+    ],
+    "DEATH RIDERS": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "DEATH RIDER COMMISSAR",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "OFFICER"
+    ],
+    "DOMINUS ARMOURED SIEGE BOMBARD": [
+      "ASTRA MILITARUM",
+      "DOMINUS ARMOURED SIEGE BOMBARD",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "EARTHSHAKER CARRIAGE BATTERY": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "EARTHSHAKER CARRIAGE BATTERY",
+      "FRAME",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "REGIMENT"
+    ],
+    "EARTHSHAKER PLATFORM": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "EARTHSHAKER PLATFORM",
+      "FORTIFICATION",
+      "FRAME",
+      "IMPERIUM"
+    ],
+    "ELYSIAN DROP SENTINEL": [
+      "ASTRA MILITARUM",
+      "ELYSIAN DROP SENTINEL",
+      "IMPERIUM",
+      "REGIMENT",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "ELYSIAN SNIPER SQUAD": [
+      "ASTRA MILITARUM",
+      "ELYSIAN SNIPER SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "REGIMENT"
+    ],
+    "GORGON HEAVY TRANSPORT": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "GORGON HEAVY TRANSPORT",
+      "IMPERIUM",
+      "SMOKE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "GRIFFON MORTAR CARRIER": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FRAME",
+      "GRIFFON MORTAR CARRIER",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "HADES BREACHING DRILL": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "HADES BREACHING DRILL",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "HEAVY MORTAR TEAM": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "HEAVY MORTAR TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "REGIMENT"
+    ],
+    "HEAVY QUAD LAUNCHER TEAM": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "HEAVY QUAD LAUNCHER TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "REGIMENT"
+    ],
+    "HELL'S LAST": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMAND SQUAD",
+      "EPIC HERO",
+      "GRENADES",
+      "HELL'S LAST",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER",
+      "PLATOON"
+    ],
+    "HIPPOGRIFF AFV": [
+      "ASTRA MILITARUM",
+      "HIPPOGRIFF AFV",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "HYDRA": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FORTIFICATION",
+      "FRAME",
+      "HYDRA PLATFORM",
+      "IMPERIUM"
+    ],
+    "HYDRA PLATFORM": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FORTIFICATION",
+      "FRAME",
+      "HYDRA PLATFORM",
+      "IMPERIUM"
+    ],
+    "MACHARIUS": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MACHARIUS",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "MACHARIUS OMEGA": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MACHARIUS OMEGA",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "MACHARIUS VANQUISHER": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MACHARIUS VANQUISHER",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "MACHARIUS VULCAN": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MACHARIUS VULCAN",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "MALCADOR": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MALCADOR",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "MALCADOR ANNIHILATOR": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MALCADOR ANNIHILATOR",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "MALCADOR DEFENDER": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MALCADOR DEFENDER",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "MALCADOR INFERNUS": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MALCADOR INFERNUS",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "MANTICORE": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FORTIFICATION",
+      "FRAME",
+      "IMPERIUM",
+      "MANTICORE PLATFORM"
+    ],
+    "MANTICORE PLATFORM": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FORTIFICATION",
+      "FRAME",
+      "IMPERIUM",
+      "MANTICORE PLATFORM"
+    ],
+    "MARAUDER BOMBER": [
+      "AIRCRAFT",
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "MARAUDER BOMBER",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "MARAUDER DESTROYER": [
+      "AIRCRAFT",
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "MARAUDER DESTROYER",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "MEDUSA CARRIAGE BATTERY": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "MEDUSA CARRIAGE BATTERY",
+      "REGIMENT"
+    ],
+    "MINOTAUR": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MINOTAUR",
+      "SMOKE",
+      "SQUADRON",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "MUKAALI RIDERS": [
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "MUKAALI RIDERS",
+      "REGIMENT"
+    ],
+    "MUNITORUM SERVITORS": [
+      "ASTRA MILITARUM",
+      "IMPERIUM",
+      "INFANTRY",
+      "MUNITORUM SERVITORS"
+    ],
+    "PRAETOR": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "PRAETOR",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "PROVISIONALLY PREPARED": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "PROVISIONALLY PREPARED"
+    ],
+    "QUARTERMASTER CADRE SQUAD": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KRIEG",
+      "QUARTERMASTER CADRE SQUAD",
+      "REGIMENT"
+    ],
+    "RAPIER LASER DESTROYER BATTERY": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "RAPIER LASER DESTROYER BATTERY",
+      "REGIMENT"
+    ],
+    "RATLINGS": [
+      "ASTRA MILITARUM",
+      "IMPERIUM",
+      "INFANTRY",
+      "RATLINGS"
+    ],
+    "REGIMENTAL ATTACHÉS": [
+      "ASTRA MILITARUM",
+      "IMPERIUM",
+      "INFANTRY",
+      "PSYKER",
+      "REGIMENTAL ATTACHÉS"
+    ],
+    "REIN AND RAUS": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "REIN AND RAUS"
+    ],
+    "SABRE WEAPONS BATTERY": [
+      "ARTILLERY",
+      "ASTRA MILITARUM",
+      "FORTIFICATION",
+      "IMPERIUM",
+      "SABRE WEAPONS BATTERY"
+    ],
+    "SALAMANDER COMMAND VEHICLE": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SALAMANDER COMMAND VEHICLE",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "SALAMANDER SCOUT VEHICLE": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SALAMANDER SCOUT VEHICLE",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE"
+    ],
+    "SENTINEL POWERLIFTER": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "REGIMENT",
+      "SENTINEL POWERLIFTER",
+      "SMOKE",
+      "SQUADRON",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "SERGEANT HARKER": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER",
+      "SERGEANT HARKER"
+    ],
+    "STORM CHIMERA": [
+      "ASTRA MILITARUM",
+      "DEDICATED TRANSPORT",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "STORM CHIMERA",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "STORMBLADE": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "STORMBLADE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "STYGIES DESTROYER TANK HUNTER": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "STYGIES DESTROYER TANK HUNTER",
+      "VEHICLE"
+    ],
+    "TARANTULA BATTERY": [
+      "ASTRA MILITARUM",
+      "IMPERIUM",
+      "TARANTULA BATTERY",
+      "VEHICLE"
+    ],
+    "TAUROS ASSAULT VEHICLE": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MOUNTED",
+      "REGIMENT",
+      "TAUROS",
+      "TAUROS ASSAULT VEHICLE"
+    ],
+    "TAUROS VENATOR": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "MOUNTED",
+      "REGIMENT",
+      "TAUROS",
+      "TAUROS VENATOR"
+    ],
+    "TEMPESTUS AQUILONS": [
+      "ASTRA MILITARUM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "MILITARUM TEMPESTUS",
+      "REGIMENT",
+      "SMOKE",
+      "TEMPESTUS AQUILONS"
+    ],
+    "TEMPESTUS SCIONS": [
+      "ASTRA MILITARUM",
+      "DEEP STRIKE",
+      "INFANTRY"
+    ],
+    "TROJAN SUPPORT VEHICLE": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SQUADRON",
+      "TROJAN SUPPORT VEHICLE",
+      "VEHICLE"
+    ],
+    "VALDOR": [
+      "ASTRA MILITARUM",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TITANIC",
+      "VALDOR",
+      "VEHICLE"
+    ],
+    "VALKYRIE": [
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VALKYRIE SKY TALON",
+      "VEHICLE"
+    ],
+    "VALKYRIE SKY TALON": [
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VALKYRIE SKY TALON",
+      "VEHICLE"
+    ],
+    "VENDETTA GUNSHIP": [
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE",
+      "VENDETTA GUNSHIP"
+    ],
+    "VOSS-PATTERN LIGHTNING": [
+      "AIRCRAFT",
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE",
+      "VOSS-PATTERN LIGHTNING"
+    ],
+    "VULTURE GUNSHIP": [
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE",
+      "VULTURE GUNSHIP"
+    ],
+    "‘IRON HAND’ STRAKEN": [
+      "'IRON HAND' STRAKEN",
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER"
+    ]
+  },
+  "BLOOD ANGELS": {
+    "BROTHER CORBULO": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "BROTHER CORBULO",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SANGUINARY PRIEST"
+    ],
+    "CAPTAIN": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TYCHO"
+    ],
+    "CAPTAIN TYCHO": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TYCHO"
+    ],
+    "DEATH COMPANY DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY DREADNOUGHT",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DEATH COMPANY DREADNOUGHT WITH MAGNA-GRAPPLE": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY DREADNOUGHT",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DEATH COMPANY MARINES": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY",
+      "DEATH COMPANY MARINES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "DEATH COMPANY MARINES WITH BOLTGUNS": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY",
+      "DEATH COMPANY MARINES WITH BOLTGUNS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY",
+      "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK"
+    ],
+    "DEATH COMPANY MARINES WITH JUMP PACKS": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY",
+      "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK"
+    ],
+    "DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DEATH COMPANY DREADNOUGHT",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "FURIOSO DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DREADNOUGHT",
+      "FURIOSO DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "GABRIEL SETH": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CHAPTER MASTER",
+      "CHARACTER",
+      "EPIC HERO",
+      "GABRIEL SETH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "LIBRARIAN": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "LIBRARIAN DREADNOUGHT",
+      "PSYKER",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "LIBRARIAN DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "LIBRARIAN DREADNOUGHT",
+      "PSYKER",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "SANGUINARY PRIEST": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CHARACTER",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "SANGUINARY PRIEST"
+    ],
+    "SANGUINARY PRIEST WITH JUMP PACK": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CHARACTER",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "SANGUINARY PRIEST"
+    ],
+    "TYCHO THE LOST": [
+      "ADEPTUS ASTARTES",
+      "BLOOD ANGELS",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TYCHO THE LOST"
+    ]
+  },
+  "CHAOS DAEMONS": {
+    "AETAOS’RAU’KERES": [
+      "AETAOS'RAU'KERES",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER",
+      "TITANIC",
+      "TOWERING",
+      "TZEENTCH"
+    ],
+    "AN’GGRATH THE UNBOUND": [
+      "AN'GGRATH THE UNBOUND",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "TITANIC",
+      "TOWERING"
+    ],
+    "BEASTS OF NURGLE": [
+      "BEAST",
+      "BEASTS OF NURGLE",
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "NURGLE"
+    ],
+    "BE’LAKOR": [
+      "BE'LAKOR",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER"
+    ],
+    "BLOODCRUSHERS": [
+      "BLOODCRUSHERS",
+      "CHAOS",
+      "DAEMON",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MOUNTED"
+    ],
+    "BLOODLETTERS": [
+      "BATTLELINE",
+      "BLOODLETTERS",
+      "CHAOS",
+      "DAEMON",
+      "INFANTRY",
+      "KHORNE",
+      "LEGIONES DAEMONICA"
+    ],
+    "BLOODMASTER": [
+      "BLOODMASTER",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "KHORNE",
+      "LEGIONES DAEMONICA"
+    ],
+    "BLOODTHIRSTER": [
+      "BLOODTHIRSTER",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "FLY",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MONSTER"
+    ],
+    "BLUE HORRORS": [
+      "BATTLELINE",
+      "BLUE",
+      "BRIMSTONE",
+      "CHAOS",
+      "DAEMON",
+      "HORRORS",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "TZEENTCH"
+    ],
+    "BURNING CHARIOT": [
+      "BURNING CHARIOT",
+      "CHAOS",
+      "DAEMON",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "TZEENTCH"
+    ],
+    "CHANGECASTER": [
+      "CHANGECASTER",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "PSYKER",
+      "TZEENTCH"
+    ],
+    "CONTORTED EPITOME": [
+      "CHAOS",
+      "CHARACTER",
+      "CONTORTED EPITOME",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "PSYKER",
+      "SLAANESH"
+    ],
+    "DAEMON PRINCE OF CHAOS": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "DAEMON PRINCE OF CHAOS",
+      "LEGIONES DAEMONICA",
+      "MONSTER"
+    ],
+    "DAEMON PRINCE OF CHAOS WITH WINGS": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "DAEMON PRINCE OF CHAOS WITH WINGS",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MONSTER"
+    ],
+    "DAEMONETTES": [
+      "BATTLELINE",
+      "CHAOS",
+      "DAEMON",
+      "DAEMONETTES",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "SLAANESH"
+    ],
+    "EPIDEMIUS": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "EPIDEMIUS",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "NURGLE"
+    ],
+    "EXALTED FLAMER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EXALTED FLAMER",
+      "FLY",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "TZEENTCH"
+    ],
+    "FATESKIMMER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "FATESKIMMER",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "PSYKER",
+      "TZEENTCH"
+    ],
+    "FECULENT GNARLMAW": [
+      "CHAOS",
+      "DAEMON",
+      "FECULENT GNARLMAW",
+      "FORTIFICATION",
+      "FRAME",
+      "LEGIONES DAEMONICA",
+      "NURGLE"
+    ],
+    "FIENDS": [
+      "BEAST",
+      "CHAOS",
+      "DAEMON",
+      "FIENDS",
+      "LEGIONES DAEMONICA",
+      "SLAANESH"
+    ],
+    "FLAMERS": [
+      "CHAOS",
+      "DAEMON",
+      "FLAMERS",
+      "FLY",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "TZEENTCH"
+    ],
+    "FLESH HOUNDS": [
+      "BEAST",
+      "CHAOS",
+      "DAEMON",
+      "FLESH HOUNDS",
+      "KHORNE",
+      "LEGIONES DAEMONICA"
+    ],
+    "FLUXMASTER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "FLUXMASTER",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "PSYKER",
+      "TZEENTCH"
+    ],
+    "FURIES": [
+      "CHAOS",
+      "DAEMON",
+      "FLY",
+      "FURIES",
+      "INFANTRY",
+      "LEGIONES DAEMONICA"
+    ],
+    "GIANT CHAOS SPAWN": [
+      "CHAOS",
+      "GIANT CHAOS SPAWN",
+      "LEGIONES DAEMONICA",
+      "MONSTER"
+    ],
+    "GREAT UNCLEAN ONE": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "GREAT UNCLEAN ONE",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "NURGLE",
+      "PSYKER"
+    ],
+    "HELLFLAYERS": [
+      "CHAOS",
+      "DAEMON",
+      "HELLFLAYERS",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "SLAANESH"
+    ],
+    "HERALD OF SLAANESH ON STEED OF SLAANESH": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "HERALD OF SLAANESH",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "PSYKER",
+      "SLAANESH"
+    ],
+    "HORTICULOUS SLIMUX": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "HORTICULOUS SLIMUX",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "NURGLE"
+    ],
+    "INFERNAL ENRAPTURESS": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "INFERNAL ENRAPTURESS",
+      "LEGIONES DAEMONICA",
+      "SLAANESH"
+    ],
+    "KAIROS FATEWEAVER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "FLY",
+      "KAIROS FATEWEAVER",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER",
+      "TZEENTCH"
+    ],
+    "KARANAK": [
+      "BEAST",
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "KARANAK",
+      "KHORNE",
+      "LEGIONES DAEMONICA"
+    ],
+    "KEEPER OF SECRETS": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "KEEPER OF SECRETS",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER",
+      "SLAANESH"
+    ],
+    "LORD OF CHANGE": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "LORD OF CHANGE",
+      "MONSTER",
+      "PSYKER",
+      "TZEENTCH"
+    ],
+    "NURGLINGS": [
+      "BATTLELINE",
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "NURGLINGS",
+      "SWARM"
+    ],
+    "PINK HORRORS": [
+      "BATTLELINE",
+      "CHAOS",
+      "DAEMON",
+      "HORRORS",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "TZEENTCH"
+    ],
+    "PLAGUE DRONES": [
+      "CHAOS",
+      "DAEMON",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "NURGLE",
+      "PLAGUE DRONES"
+    ],
+    "PLAGUE TOADS": [
+      "BEAST",
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "PLAGUE TOADS"
+    ],
+    "PLAGUEBEARERS": [
+      "BATTLELINE",
+      "CHAOS",
+      "DAEMON",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "PLAGUEBEARERS"
+    ],
+    "POX RIDERS": [
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "NURGLE",
+      "POX RIDERS"
+    ],
+    "POXBRINGER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "POXBRINGER",
+      "PSYKER"
+    ],
+    "RENDMASTER ON BLOOD THRONE": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "RENDMASTER ON BLOOD THRONE"
+    ],
+    "ROTIGUS": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "NURGLE",
+      "PSYKER",
+      "ROTIGUS"
+    ],
+    "SCABEIATHRAX THE BLOATED": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "NURGLE",
+      "PSYKER",
+      "SCABEIATHRAX THE BLOATED"
+    ],
+    "SCREAMERS": [
+      "BEAST",
+      "CHAOS",
+      "DAEMON",
+      "FLY",
+      "FRAME",
+      "LEGIONES DAEMONICA",
+      "SCREAMERS",
+      "TZEENTCH"
+    ],
+    "SEEKERS": [
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "SEEKERS",
+      "SLAANESH"
+    ],
+    "SHALAXI HELBANE": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER",
+      "SHALAXI HELBANE",
+      "SLAANESH"
+    ],
+    "SKARBRAND": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "SKARBRAND"
+    ],
+    "SKULL ALTAR": [
+      "CHAOS",
+      "DAEMON",
+      "FORTIFICATION",
+      "FRAME",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "SKULL ALTAR"
+    ],
+    "SKULL CANNON": [
+      "CHAOS",
+      "DAEMON",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "SKULL CANNON"
+    ],
+    "SKULLMASTER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "SKULLMASTER"
+    ],
+    "SKULLTAKER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "INFANTRY",
+      "KHORNE",
+      "LEGIONES DAEMONICA",
+      "SKULLTAKER"
+    ],
+    "SLOPPITY BILEPIPER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "SLOPPITY BILEPIPER"
+    ],
+    "SOUL GRINDER": [
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "SOUL GRINDER",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "SPINED CHAOS BEAST": [
+      "CHAOS",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "SPINED CHAOS BEAST"
+    ],
+    "SPOILPOX SCRIVENER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "SPOILPOX SCRIVENER"
+    ],
+    "SYLL’ESSKE": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER",
+      "SLAANESH",
+      "SYLL'ESSKE"
+    ],
+    "THE BLUE SCRIBES": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "FLY",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "THE BLUE SCRIBES",
+      "TZEENTCH"
+    ],
+    "THE CHANGELING": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "PSYKER",
+      "THE CHANGELING",
+      "TZEENTCH"
+    ],
+    "THE MASQUE OF SLAANESH": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "FLY",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "SLAANESH",
+      "THE MASQUE OF SLAANESH"
+    ],
+    "TORMENTBRINGER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "MOUNTED",
+      "PSYKER",
+      "SLAANESH",
+      "TORMENTBRINGER"
+    ],
+    "TRANCEWEAVER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "INFANTRY",
+      "LEGIONES DAEMONICA",
+      "PSYKER",
+      "SLAANESH",
+      "TRANCEWEAVER"
+    ],
+    "ZARAKYNEL": [
+      "CHAOS",
+      "CHARACTER",
+      "DAEMON",
+      "EPIC HERO",
+      "LEGIONES DAEMONICA",
+      "MONSTER",
+      "PSYKER",
+      "SLAANESH",
+      "ZARAKYNEL"
+    ]
+  },
+  "CHAOS KNIGHTS": {
+    "CHAOS ACASTUS KNIGHT ASTERIUS": [
+      "ACASTUS",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "FRAME",
+      "KNIGHT ASTERIUS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS ACASTUS KNIGHT PORPHYRION": [
+      "ACASTUS",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "FRAME",
+      "KNIGHT PORPHYRION",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS CERASTUS KNIGHT ACHERON": [
+      "CERASTUS",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "CHARACTER",
+      "KNIGHT ACHERON",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS CERASTUS KNIGHT ATRAPOS": [
+      "CERASTUS",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "CHARACTER",
+      "KNIGHT ATRAPOS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS CERASTUS KNIGHT CASTIGATOR": [
+      "CERASTUS",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "CHARACTER",
+      "KNIGHT CASTIGATOR",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS CERASTUS KNIGHT LANCER": [
+      "CERASTUS",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "CHARACTER",
+      "KNIGHT LANCER",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS QUESTORIS KNIGHT MAGAERA": [
+      "ABHORRENT",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "CHARACTER",
+      "KNIGHT MAGAERA",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS QUESTORIS KNIGHT STYRIX": [
+      "ABHORRENT",
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "CHARACTER",
+      "KNIGHT STYRIX",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "WAR DOG MOIRAX": [
+      "CHAOS",
+      "CHAOS KNIGHTS",
+      "MOIRAX",
+      "VEHICLE",
+      "WALKER",
+      "WAR DOG"
+    ]
+  },
+  "CHAOS SPACE MARINES": {
+    "BLOOD SLAUGHTERER": [
+      "BLOOD SLAUGHTERER",
+      "CHAOS",
+      "DAEMON",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "KHORNE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CHAOS DEIMOS PREDATOR": [
+      "CHAOS",
+      "DEIMOS PREDATOR",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "CHAOS LAND RAIDER": [
+      "CHAOS SPACE MARINES",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CHAOS LORD ON BIKE": [
+      "CHAOS",
+      "CHAOS LORD ON BIKE",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "MOUNTED"
+    ],
+    "CHAOS LORD ON DISC OF TZEENTCH": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "DISC OF TZEENTCH",
+      "FLY",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "TZEENTCH"
+    ],
+    "CHAOS LORD ON JUGGERNAUT": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "JUGGERNAUT",
+      "KHORNE",
+      "MOUNTED"
+    ],
+    "CHAOS LORD ON PALANQUIN OF NURGLE": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "NURGLE",
+      "PALANQUIN OF NURGLE"
+    ],
+    "CHAOS LORD ON STEED OF SLAANESH": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "MOUNTED",
+      "SLAANESH",
+      "STEED OF SLAANESH"
+    ],
+    "CHAOS PREDATOR ANNIHILATOR": [
+      "CHAOS SPACE MARINES",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "TANK",
+      "VEHICLE"
+    ],
+    "CHAOS PREDATOR DESTRUCTOR": [
+      "CHAOS",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "TANK",
+      "VEHICLE"
+    ],
+    "CHAOS RHINO": [
+      "FRAME",
+      "HERETIC ASTARTES",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CHAOS THUNDERHAWK": [
+      "AIRCRAFT",
+      "CHAOS",
+      "FLY",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "THUNDERHAWK",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CHAOS VINDICATOR": [
+      "FRAME",
+      "HERETIC ASTARTES"
+    ],
+    "CULTIST MOB": [
+      "BATTLELINE",
+      "CHAOS",
+      "CULTIST MOB WITH FIREARMS",
+      "DAMNED",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY"
+    ],
+    "CULTIST MOB WITH FIREARMS": [
+      "BATTLELINE",
+      "CHAOS",
+      "CULTIST MOB WITH FIREARMS",
+      "DAMNED",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY"
+    ],
+    "DECIMATOR": [
+      "CHAOS",
+      "DAEMON",
+      "DECIMATOR",
+      "HERETIC ASTARTES",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DEFILER": [
+      "CHAOS",
+      "DAEMON",
+      "DEFILER",
+      "HERETIC ASTARTES",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DREADCLAW DROP POD": [
+      "CHAOS",
+      "DREADCLAW DROP POD",
+      "FLY",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "EXALTED CHAMPION": [
+      "CHAOS",
+      "CHARACTER",
+      "EXALTED CHAMPION",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY"
+    ],
+    "GELLERPOX INFECTED": [
+      "CHAOS",
+      "DAMNED",
+      "GELLERPOX INFECTED",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "NURGLE"
+    ],
+    "GREATER BLIGHT DRONE": [
+      "CHAOS",
+      "DAEMON",
+      "FLY",
+      "GREATER BLIGHT DRONE",
+      "HERETIC ASTARTES",
+      "NURGLE",
+      "VEHICLE"
+    ],
+    "GREATER BRASS SCORPION": [
+      "CHAOS",
+      "DAEMON",
+      "FRAME",
+      "GREATER BRASS SCORPION",
+      "HERETIC ASTARTES",
+      "KHORNE",
+      "TITANIC",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "HELL BLADE": [
+      "AIRCRAFT",
+      "CHAOS",
+      "FLY",
+      "FRAME",
+      "HELL BLADE",
+      "HERETIC ASTARTES",
+      "VEHICLE"
+    ],
+    "HELL TALON": [
+      "AIRCRAFT",
+      "CHAOS",
+      "FLY",
+      "FRAME",
+      "HELL TALON",
+      "HERETIC ASTARTES",
+      "VEHICLE"
+    ],
+    "HURON BLACKHEART": [
+      "CHAOS",
+      "CHAOS UNDIVIDED",
+      "CHARACTER",
+      "EPIC HERO",
+      "HERETIC ASTARTES",
+      "HURON BLACKHEART",
+      "INFANTRY"
+    ],
+    "KHARYBDIS ASSAULT CLAW": [
+      "CHAOS",
+      "FLY",
+      "FRAME",
+      "HERETIC ASTARTES",
+      "KHARYBDIS ASSAULT CLAW",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "KRAVEK MORNE": [
+      "CHAOS",
+      "CHAOS UNDIVIDED",
+      "CHARACTER",
+      "EPIC HERO",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "KRAVEK MORNE",
+      "TERMINATOR"
+    ],
+    "KYTAN RAVAGER": [
+      "CHAOS",
+      "DAEMON",
+      "HERETIC ASTARTES",
+      "KHORNE",
+      "KYTAN RAVAGER",
+      "TITANIC",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "MASTERS OF THE MAELSTROM": [
+      "CHAOS",
+      "CHAOS UNDIVIDED",
+      "EPIC HERO",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "MASTERS OF THE MAELSTROM"
+    ],
+    "MUTILATORS": [
+      "CHAOS",
+      "DAEMON",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "MUTILATORS"
+    ],
+    "MUTOID VERMIN": [
+      "CHAOS",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "MUTOID VERMIN",
+      "NURGLE",
+      "SWARM"
+    ],
+    "NEGAVOLT CULTISTS": [
+      "CHAOS",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "NEGAVOLT CULTISTS"
+    ],
+    "NEMESIS CLAW": [
+      "CHAOS",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "NEMESIS CLAW",
+      "PSYKER"
+    ],
+    "NOCTILITH CROWN": [
+      "CHAOS SPACE MARINES",
+      "FRAME"
+    ],
+    "RAPTORS": [
+      "CHAOS",
+      "FLY",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "JUMP PACKS",
+      "RAPTORS"
+    ],
+    "RED CORSAIRS RAIDERS": [
+      "CHAOS",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "RED CORSAIRS RAIDERS"
+    ],
+    "RED CORSAIRS REAVE-CAPTAIN": [
+      "CHAOS",
+      "CHARACTER",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "RED CORSAIRS REAVE-CAPTAIN"
+    ],
+    "RENEGADE ENFORCER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAMNED",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "RENEGADE ENFORCER"
+    ],
+    "RENEGADE HEAVY WEAPONS SQUAD": [
+      "CHAOS",
+      "DAMNED",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "RENEGADE HEAVY WEAPONS SQUAD"
+    ],
+    "RENEGADE OGRYN BEAST HANDLER": [
+      "BEASTS",
+      "CHAOS",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "RENEGADE OGRYN BEAST HANDLER"
+    ],
+    "RENEGADE OGRYN BRUTES": [
+      "CHAOS",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "RENEGADE OGRYN BRUTES"
+    ],
+    "RENEGADE PLAGUE OGRYNS": [
+      "CHAOS",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "NURGLE",
+      "RENEGADE PLAGUE OGRYNS"
+    ],
+    "ROGUE PSYKER": [
+      "CHAOS",
+      "CHARACTER",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "PSYKER",
+      "ROGUE PSYKER"
+    ],
+    "SORCERER": [
+      "CHAOS",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "MOUNTED",
+      "SLAANESH",
+      "SORCERER",
+      "STEED OF SLAANESH"
+    ],
+    "SORCERER ON BIKE": [
+      "CHAOS",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "MOUNTED",
+      "PSYKER",
+      "SORCERER ON BIKE"
+    ],
+    "SORCERER ON DISC OF TZEENTCH": [
+      "CHAOS",
+      "CHARACTER",
+      "DISC OF TZEENTCH",
+      "FLY",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "PSYKER",
+      "SORCERER",
+      "TZEENTCH"
+    ],
+    "SORCERER ON PALANQUIN OF NURGLE": [
+      "CHAOS",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "NURGLE",
+      "PALANQUIN OF NURGLE",
+      "PSYKER",
+      "SORCERER"
+    ],
+    "SORCERER ON STEED OF SLAANESH": [
+      "CHAOS",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "MOUNTED",
+      "SLAANESH",
+      "SORCERER",
+      "STEED OF SLAANESH"
+    ],
+    "TRAITOR GUARDSMEN SQUAD": [
+      "CHAOS",
+      "DAMNED",
+      "HERETIC ASTARTES",
+      "INFANTRY"
+    ],
+    "WARP TALONS": [
+      "CHAOS",
+      "DAEMON",
+      "FLY",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "JUMP PACKS",
+      "WARP TALONS"
+    ]
+  },
+  "DARK ANGELS": {
+    "DEATHWING COMMAND SQUAD": [
+      "ADEPTUS ASTARTES",
+      "DARK ANGELS",
+      "DEATHWING",
+      "DEATHWING COMMAND SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "TERMINATOR"
+    ],
+    "DEATHWING STRIKEMASTER": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "DARK ANGELS",
+      "DEATHWING",
+      "DEATHWING STRIKEMASTER",
+      "IMPERIUM",
+      "INFANTRY",
+      "LIEUTENANT",
+      "TERMINATOR"
+    ],
+    "LAND SPEEDER VENGEANCE": [
+      "CHARACTER",
+      "DARK ANGELS",
+      "FLY",
+      "FRAME",
+      "MONSTER",
+      "RAVENWING",
+      "VEHICLE"
+    ],
+    "LIEUTENANT": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "DARK ANGELS",
+      "DEATHWING",
+      "DEATHWING STRIKEMASTER",
+      "IMPERIUM",
+      "INFANTRY",
+      "LIEUTENANT",
+      "TERMINATOR"
+    ],
+    "RAVENWING TALONMASTER": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "DARK ANGELS",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "RAVENWING",
+      "RAVENWING TALONMASTER",
+      "VEHICLE"
+    ]
+  },
+  "DEATH GUARD": {
+    "DEATH GUARD CHAOS LORD": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "DEATH GUARD",
+      "GRENADES",
+      "INFANTRY",
+      "NURGLE"
+    ],
+    "DEATH GUARD CHAOS LORD IN TERMINATOR ARMOUR": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "DEATH GUARD",
+      "INFANTRY",
+      "NURGLE",
+      "TERMINATOR"
+    ],
+    "DEATH GUARD CULTISTS": [
+      "CHAOS",
+      "CULTISTS",
+      "DEATH GUARD",
+      "INFANTRY",
+      "NURGLE"
+    ],
+    "DEATH GUARD POSSESSED": [
+      "CHAOS",
+      "DAEMON",
+      "DEATH GUARD",
+      "INFANTRY",
+      "POSSESSED"
+    ],
+    "DEATH GUARD SORCERER IN TERMINATOR ARMOUR": [
+      "CHAOS",
+      "CHARACTER",
+      "DEATH GUARD",
+      "INFANTRY",
+      "NURGLE",
+      "PSYKER",
+      "SORCERER",
+      "TERMINATOR"
+    ],
+    "DEFILER": [
+      "CHAOS",
+      "DAEMON",
+      "DEATH GUARD",
+      "DEFILER",
+      "NURGLE",
+      "VEHICLE",
+      "WALKER"
+    ]
+  },
+  "DEATHWATCH": {
+    "ASSAULT INTERCESSORS WITH JUMP PACKS": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
+    ],
+    "CAPTAIN": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "WATCH MASTER"
+    ],
+    "CORVUS BLACKSTAR": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DEATHWATCH TERMINATOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "DEATHWATCH VETERANS": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
+    "DECIMUS KILL TEAM": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
+    "FORTIS KILL TEAM": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FORTIS KILL TEAM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
+    "HEAVY INTERCESSOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
+    "INDOMITOR KILL TEAM": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
+    "INFILTRATOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
+    "INTERCESSOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FORTIS KILL TEAM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
+    "SPECTRUS KILL TEAM": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
+    "STERNGUARD VETERAN SQUAD": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
+    "TALONSTRIKE KILL TEAM": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
+    ],
+    "WATCH CAPTAIN ARTEMIS": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "WATCH MASTER": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "WATCH MASTER"
+    ]
+  },
+  "DRUKHARI": {
+    "BEASTMASTER": [
+      "AELDARI",
+      "BEASTMASTER",
+      "BEASTS",
+      "CHARACTER",
+      "DRUKHARI",
+      "FLY",
+      "MOUNTED"
+    ],
+    "COURT OF THE ARCHON": [
+      "AELDARI",
+      "COURT OF THE ARCHON",
+      "DRUKHARI",
+      "INFANTRY",
+      "KABAL"
+    ],
+    "GROTESQUES": [
+      "AELDARI",
+      "DRUKHARI",
+      "GROTESQUES",
+      "HAEMONCULUS COVENS",
+      "INFANTRY"
+    ],
+    "RAVEN STRIKE FIGHTER": [
+      "AELDARI",
+      "AIRCRAFT",
+      "DRUKHARI",
+      "FLY",
+      "FRAME",
+      "RAVEN STRIKE FIGHTER",
+      "VEHICLE"
+    ],
+    "REAPER": [
+      "AELDARI",
+      "DRUKHARI",
+      "FLY",
+      "FRAME",
+      "KABAL",
+      "REAPER",
+      "VEHICLE"
+    ],
+    "TANTALUS": [
+      "AELDARI",
+      "DRUKHARI",
+      "FLY",
+      "FRAME",
+      "TANTALUS",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "URIEN RAKARTH": [
+      "AELDARI",
+      "CHARACTER",
+      "DRUKHARI",
+      "EPIC HERO",
+      "HAEMONCULUS",
+      "HAEMONCULUS COVENS",
+      "INFANTRY",
+      "URIEN RAKARTH"
+    ],
+    "VENOM": [
+      "DRUKHARI",
+      "FRAME",
+      "SKIMMER",
+      "TRANSPORT"
+    ],
+    "WYCHES": [
+      "CHARACTER",
+      "DRUKHARI",
+      "INFANTRY",
+      "WYCH CULT"
+    ]
+  },
+  "EMPEROR'S CHILDREN": {
+    "CHAOS RHINO": [
+      "EMPEROR'S CHILDREN",
+      "FRAME",
+      "TRANSPORT"
+    ],
+    "DEFILER": [
+      "CHAOS",
+      "DAEMON",
+      "DEFILER",
+      "EMPEROR'S CHILDREN",
+      "SLAANESH",
+      "VEHICLE",
+      "WALKER"
+    ]
+  },
+  "GENESTEALER CULTS": {
+    "TECTONIC FRAGDRILL": [
+      "FORTIFICATION",
+      "FRAME",
+      "GENESTEALER CULTS",
+      "TECTONIC FRAGDRILL",
+      "VEHICLE"
+    ]
+  },
+  "GREY KNIGHTS": {
+    "BROTHER-CAPTAIN": [
+      "BROTHER-CAPTAIN STERN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "INFANTRY",
+      "PSYKER",
+      "TERMINATOR"
+    ],
+    "BROTHER-CAPTAIN STERN": [
+      "BROTHER-CAPTAIN STERN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "INFANTRY",
+      "PSYKER",
+      "TERMINATOR"
+    ],
+    "GREY KNIGHTS DREADNOUGHT": [
+      "DREADNOUGHT",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "PSYKER",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "GREY KNIGHTS RELIC RAZORBACK": [
+      "DEDICATED TRANSPORT",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "RELIC RAZORBACK",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "GREY KNIGHTS THUNDERHAWK GUNSHIP": [
+      "FLY",
+      "FRAME",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "THUNDERHAWK GUNSHIP",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "KALDOR DRAIGO": [
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KALDOR DRAIGO",
+      "PSYKER",
+      "TERMINATOR"
+    ],
+    "RAZORBACK": [
+      "DEDICATED TRANSPORT",
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "RELIC RAZORBACK",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "SERVITORS": [
+      "GREY KNIGHTS",
+      "IMPERIUM",
+      "INFANTRY",
+      "SERVITORS"
+    ]
+  },
+  "IMPERIAL AGENTS": {
+    "AQUILA KILL TEAM": [
+      "AGENTS OF THE IMPERIUM",
+      "AQUILA KILL TEAM",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "ORDO XENOS",
+      "RETINUE"
+    ],
+    "CORVUS BLACKSTAR": [
+      "FRAME",
+      "IMPERIAL AGENTS",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DAEMONHOST": [
+      "AGENTS OF THE IMPERIUM",
+      "DAEMON",
+      "DAEMONHOST",
+      "IMPERIUM",
+      "INFANTRY",
+      "PSYKER",
+      "RETINUE"
+    ],
+    "DAMNED LEGIONNAIRES": [
+      "AGENTS OF THE IMPERIUM",
+      "DAMNED LEGIONNAIRES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "RETINUE"
+    ],
+    "DEATHWATCH KILL TEAM": [
+      "AGENTS OF THE IMPERIUM",
+      "AQUILA KILL TEAM",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "ORDO XENOS",
+      "RETINUE"
+    ],
+    "DEATHWATCH TERMINATOR SQUAD": [
+      "AGENTS OF THE IMPERIUM",
+      "DEATHWATCH",
+      "IMPERIUM",
+      "INFANTRY",
+      "ORDO XENOS",
+      "RETINUE",
+      "TERMINATOR",
+      "TERMINATOR SQUAD"
+    ],
+    "FORTIS KILL TEAM": [
+      "AGENTS OF THE IMPERIUM",
+      "DEATHWATCH",
+      "FORTIS KILL TEAM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "ORDO XENOS",
+      "RETINUE"
+    ],
+    "INDOMITOR KILL TEAM": [
+      "AGENTS OF THE IMPERIUM",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM",
+      "ORDO XENOS",
+      "RETINUE"
+    ],
+    "INQUISITOR": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "INQUISITOR"
+    ],
+    "INQUISITOR EISENHORN": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EISENHORN",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "INQUISITOR",
+      "ORDO XENOS",
+      "PSYKER"
+    ],
+    "INQUISITOR IN TERMINATOR ARMOUR": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "INQUISITOR",
+      "TERMINATOR"
+    ],
+    "INQUISITOR KARAMAZOV": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INQUISITOR",
+      "KARAMAZOV",
+      "ORDO HERETICUS",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "INQUISITOR KROYLE": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INQUISITOR",
+      "KROYLE",
+      "MOUNTED",
+      "ORDO XENOS"
+    ],
+    "INQUISITOR OSTROMANDEUS": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "INQUISITOR",
+      "OSTROMANDEUS"
+    ],
+    "INQUISITORIAL CHIMERA": [
+      "FRAME",
+      "IMPERIAL AGENTS"
+    ],
+    "JANUS DRAIK": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JANUS DRAIK",
+      "VOIDFARERS"
+    ],
+    "JOKAERO WEAPONSMITH": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "IMPERIUM",
+      "INFANTRY",
+      "JOKAERO WEAPONSMITH"
+    ],
+    "KILL TEAM CASSIUS": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "KILL TEAM CASSIUS",
+      "ORDO XENOS"
+    ],
+    "MINISTORUM PRIEST": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "NEYAM SHAI MURAD": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "NEYAM SHAI MURAD",
+      "VOIDFARERS"
+    ],
+    "PROTEUS KILL TEAM": [
+      "AGENTS OF THE IMPERIUM",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "ORDO XENOS",
+      "PROTEUS KILL TEAM",
+      "RETINUE"
+    ],
+    "SANCTIFIERS": [
+      "AGENTS OF THE IMPERIUM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "RETINUE",
+      "SANCTIFIERS"
+    ],
+    "SISTERS OF BATTLE SQUAD": [
+      "AGENTS OF THE IMPERIUM",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "RETINUE",
+      "SANCTIFIERS"
+    ],
+    "SPECTRUS KILL TEAM": [
+      "AGENTS OF THE IMPERIUM",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "ORDO XENOS",
+      "RETINUE",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
+    "UR-025": [
+      "AGENTS OF THE IMPERIUM",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "UR-025"
+    ],
+    "VETERAN BIKE SQUAD": [
+      "AGENTS OF THE IMPERIUM",
+      "DEATHWATCH",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "ORDO XENOS",
+      "RETINUE",
+      "VETERAN BIKE SQUAD"
+    ]
+  },
+  "IMPERIAL KNIGHTS": {
+    "ACASTUS KNIGHT ASTERIUS": [
+      "ACASTUS",
+      "FRAME",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT ASTERIUS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "ACASTUS KNIGHT PORPHYRION": [
+      "ACASTUS",
+      "FRAME",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT PORPHYRION",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "ARMIGER MOIRAX": [
+      "ARMIGER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "MOIRAX",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CERASTUS KNIGHT ACHERON": [
+      "CERASTUS",
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT ACHERON",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CERASTUS KNIGHT ATRAPOS": [
+      "CERASTUS",
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT ATRAPOS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CERASTUS KNIGHT CASTIGATOR": [
+      "CERASTUS",
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT CASTIGATOR",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CERASTUS KNIGHT LANCER": [
+      "CERASTUS",
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT LANCER",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "KNIGHT DESTRIER": [
+      "BELLATUS",
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT DESTRIER",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "QUESTORIS KNIGHT MAGAERA": [
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT MAGAERA",
+      "QUESTORIS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "QUESTORIS KNIGHT STYRIX": [
+      "CHARACTER",
+      "IMPERIAL KNIGHTS",
+      "IMPERIUM",
+      "KNIGHT STYRIX",
+      "QUESTORIS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ]
+  },
+  "LEAGUES OF VOTANN": {
+    "BEREHK STORNBRÖW": [
+      "BEREHK STORNBRÖW",
+      "CHARACTER",
+      "CTHONIAN",
+      "EPIC HERO",
+      "INFANTRY",
+      "LEAGUES OF VOTANN"
+    ],
+    "SAGITAUR": [
+      "CAVALRY",
+      "LEAGUES OF VOTANN",
+      "TRANSPORT"
+    ]
+  },
+  "NECRONS": {
+    "ANRAKYR THE TRAVELLER": [
+      "ANRAKYR THE TRAVELLER",
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "NECRONS",
+      "NOBLE"
+    ],
+    "CANOPTEK ACANTHRITES": [
+      "ACANTHRITES",
+      "BEASTS",
+      "CANOPTEK",
+      "FLY",
+      "NECRONS"
+    ],
+    "CANOPTEK MACROCYTES": [
+      "BEASTS",
+      "CANOPTEK",
+      "FLY",
+      "MACROCYTES",
+      "NECRONS"
+    ],
+    "CANOPTEK TOMB CRAWLERS": [
+      "BEASTS",
+      "CANOPTEK",
+      "NECRONS",
+      "TOMB CRAWLERS"
+    ],
+    "CANOPTEK TOMB SENTINEL": [
+      "CANOPTEK",
+      "MONSTER",
+      "NECRONS",
+      "TOMB SENTINEL"
+    ],
+    "CANOPTEK TOMB STALKER": [
+      "CANOPTEK",
+      "MONSTER",
+      "NECRONS",
+      "TOMB STALKER"
+    ],
+    "CATACOMB COMMAND BARGE": [
+      "CHARACTER",
+      "FRAME",
+      "NECRONS",
+      "VEHICLE"
+    ],
+    "C’TAN SHARD OF THE DECEIVER": [
+      "C'TAN SHARD OF THE DECEIVER",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "MONSTER",
+      "NECRONS"
+    ],
+    "C’TAN SHARD OF THE NIGHTBRINGER": [
+      "C'TAN SHARD OF THE NIGHTBRINGER",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "MONSTER",
+      "NECRONS"
+    ],
+    "C’TAN SHARD OF THE VOID DRAGON": [
+      "C'TAN SHARD OF THE VOID DRAGON",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "MONSTER",
+      "NECRONS"
+    ],
+    "GAUSS PYLON": [
+      "FORTIFICATION",
+      "GAUSS PYLON",
+      "NECRONS",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE"
+    ],
+    "GEOMANCER": [
+      "CHARACTER",
+      "CRYPTEK",
+      "GEOMANCER",
+      "INFANTRY",
+      "NECRONS"
+    ],
+    "LORD": [
+      "CHARACTER",
+      "INFANTRY",
+      "LORD",
+      "NECRONS",
+      "NOBLE"
+    ],
+    "MONOLITH": [
+      "FRAME",
+      "NECRONS",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "NEKROSOR AMMENTAR": [
+      "CHARACTER",
+      "DESTROYER CULT",
+      "EPIC HERO",
+      "INFANTRY",
+      "NECRONS",
+      "NEKROSOR AMMENTAR"
+    ],
+    "NEMESOR ZAHNDREKH": [
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "NECRONS",
+      "NEMESOR ZAHNDREKH",
+      "NOBLE"
+    ],
+    "NIGHT SHROUD": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "NECRONS",
+      "NIGHT SHROUD",
+      "VEHICLE"
+    ],
+    "ROYAL WARDEN": [
+      "CHARACTER",
+      "CRYPTEK",
+      "GEOMANCER",
+      "INFANTRY",
+      "NECRONS"
+    ],
+    "SERAPTEK HEAVY CONSTRUCT": [
+      "FRAME",
+      "NECRONS",
+      "SERAPTEK HEAVY CONSTRUCT",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "TESSERACT ARK": [
+      "FLY",
+      "NECRONS",
+      "TESSERACT ARK",
+      "VEHICLE"
+    ],
+    "THE SILENT KING": [
+      "CHARACTER",
+      "EPIC HERO",
+      "NECRONS",
+      "THE SILENT KING",
+      "TRIARCH",
+      "VEHICLE"
+    ],
+    "TOMB CITADEL WALLS": [
+      "FORTIFICATION",
+      "FRAME",
+      "NECRONS",
+      "TITANIC",
+      "TOMB CITADEL",
+      "VEHICLE"
+    ],
+    "TRANSCENDENT C’TAN": [
+      "CHARACTER",
+      "FLY",
+      "MONSTER",
+      "NECRONS",
+      "TRANSCENDENT C'TAN"
+    ],
+    "VARGARD OBYRON": [
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "NECRONS",
+      "VARGARD OBYRON"
+    ]
+  },
+  "ORKS": {
+    "ATTACK FIGHTA": [
+      "AIRCRAFT",
+      "ATTACK FIGHTA",
+      "FLY",
+      "ORKS",
+      "SPEED FREEKS",
+      "VEHICLE"
+    ],
+    "BANNERNOB": [
+      "BANNERNOB",
+      "CHARACTER",
+      "INFANTRY",
+      "ORKS"
+    ],
+    "BATTLEWAGON": [
+      "FRAME",
+      "ORKS",
+      "TRANSPORT",
+      "VEHICLE",
+      "WAGON"
+    ],
+    "BIG GUNZ": [
+      "ARTILLERY",
+      "BIG GUNZ",
+      "GROTS",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "BIG MEK": [
+      "BIG MEK",
+      "DAKKARIG",
+      "ORKS",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "BIG MEK DAKKARIG": [
+      "BIG MEK",
+      "DAKKARIG",
+      "ORKS",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "BIG MEK ON WARBIKE": [
+      "BIG MEK",
+      "BIG MEK ON WARBIKE",
+      "CHARACTER",
+      "GRENADES",
+      "MOUNTED",
+      "ORKS",
+      "SPEED FREEKS"
+    ],
+    "BIG MEK WITH KUSTOM FORCE FIELD": [
+      "BIG MEK",
+      "BIG MEK WITH KUSTOM FORCE FIELD",
+      "CHARACTER",
+      "GRENADES",
+      "INFANTRY",
+      "MEK",
+      "ORKS"
+    ],
+    "BIG TRAKK": [
+      "BIG TRAKK",
+      "ORKS",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "BIGBOSS": [
+      "BIGBOSS",
+      "CHARACTER",
+      "INFANTRY",
+      "ORKS"
+    ],
+    "BLITZA-BOMMER": [
+      "AIRCRAFT",
+      "FRAME",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "BOSS ZAGSTRUK": [
+      "BOSS ZAGSTRUK",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "INFANTRY",
+      "JUMP PACK",
+      "ORKS"
+    ],
+    "BOYZ": [
+      "BOYZ",
+      "GRENADES",
+      "INFANTRY",
+      "ORKS"
+    ],
+    "BREAKA BOYZ": [
+      "BREAKA BOYZ",
+      "GRENADES",
+      "INFANTRY",
+      "ORKS"
+    ],
+    "BURNA-BOMMER": [
+      "AIRCRAFT",
+      "FRAME",
+      "MONSTER",
+      "ORKS"
+    ],
+    "CHINORK WARKOPTA": [
+      "CHINORK WARKOPTA",
+      "FLY",
+      "ORKS",
+      "SPEED FREEKS",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DA RED GOBBO": [
+      "CHARACTER",
+      "DA RED GOBBO",
+      "EPIC HERO",
+      "GRENADES",
+      "GROTS",
+      "INFANTRY",
+      "ORKS"
+    ],
+    "DEFF ROLLA BATTLE FORTRESS": [
+      "DEFF ROLLA BATTLE FORTRESS",
+      "ORKS",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DEFFKOPTAS": [
+      "DEFFKOPTAS WITH BIG SHOOTAS",
+      "FLY",
+      "GRENADES",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "DEFFKOPTAS WITH BIG SHOOTAS": [
+      "DEFFKOPTAS WITH BIG SHOOTAS",
+      "FLY",
+      "GRENADES",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "FIGHTA-BOMMER": [
+      "AIRCRAFT",
+      "FIGHTA-BOMMER",
+      "FLY",
+      "ORKS",
+      "SPEED FREEKS",
+      "VEHICLE"
+    ],
+    "GARGANTUAN SQUIGGOTH": [
+      "FRAME",
+      "GARGANTUAN SQUIGGOTH",
+      "MONSTER",
+      "ORKS",
+      "TITANIC",
+      "TOWERING",
+      "TRANSPORT"
+    ],
+    "GROT BOMM LAUNCHA": [
+      "GROT BOMM LAUNCHA",
+      "GROTS",
+      "MOUNTED",
+      "ORKS",
+      "SPEED FREEKS"
+    ],
+    "GROT MEGA-TANK": [
+      "GROT MEGA-TANK",
+      "GROTS",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "GROT TANKS": [
+      "GROT TANKS",
+      "GROTS",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "KANNONWAGON": [
+      "KANNONWAGON",
+      "ORKS",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "KAPTIN BADRUKK": [
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "KAPTIN BADRUKK",
+      "ORKS"
+    ],
+    "KILL KRUSHA": [
+      "KILL KRUSHA",
+      "ORKS",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "KILL TANK": [
+      "KILL TANK",
+      "ORKS",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LIFTA WAGON": [
+      "LIFTA WAGON",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "MAD DOK GROTSNIK": [
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "MAD DOK GROTSNIK",
+      "ORKS",
+      "PAINBOY"
+    ],
+    "MEGA DREAD": [
+      "MEGA DREAD",
+      "ORKS",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "MEK": [
+      "BIG MEK",
+      "DAKKARIG",
+      "ORKS",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "MEKA-DREAD": [
+      "MEKA-DREAD",
+      "ORKS",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "MEKBOY WORKSHOP": [
+      "FORTIFICATION",
+      "MEKBOY WORKSHOP",
+      "ORKS",
+      "VEHICLE"
+    ],
+    "NOBZ": [
+      "CHARACTER",
+      "INFANTRY",
+      "NOBZ",
+      "ORKS"
+    ],
+    "NOBZ ON WARBIKES": [
+      "GRENADES",
+      "MOUNTED",
+      "NOBZ ON WARBIKES",
+      "ORKS",
+      "SPEED FREEKS"
+    ],
+    "PAINBOY": [
+      "CHARACTER",
+      "MOUNTED",
+      "ORKS",
+      "PAINBOY ON WARBIKE",
+      "SPEED FREEKS"
+    ],
+    "PAINBOY ON WARBIKE": [
+      "CHARACTER",
+      "MOUNTED",
+      "ORKS",
+      "PAINBOY ON WARBIKE",
+      "SPEED FREEKS"
+    ],
+    "SKORCHAS": [
+      "MOUNTED",
+      "ORKS",
+      "SKORCHAS",
+      "SPEED FREEKS"
+    ],
+    "SQUIGGOTH": [
+      "FRAME",
+      "GARGANTUAN SQUIGGOTH",
+      "MONSTER",
+      "ORKS",
+      "TITANIC",
+      "TOWERING",
+      "TRANSPORT"
+    ],
+    "TANKBUSTAS": [
+      "GRENADES",
+      "INFANTRY",
+      "ORKS",
+      "TANKBUSTAS"
+    ],
+    "UFTHAK BLACKHAWK": [
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "INFANTRY",
+      "ORKS",
+      "UFTHAK BLACKHAWK",
+      "WARBOSS"
+    ],
+    "WARBOSS": [
+      "CHARACTER",
+      "INFANTRY",
+      "ORKS",
+      "WARBOSS"
+    ],
+    "WARBOSS ON WARBIKE": [
+      "CHARACTER",
+      "GRENADES",
+      "MOUNTED",
+      "ORKS",
+      "SPEED FREEKS",
+      "WARBOSS"
+    ],
+    "WARBUGGIES": [
+      "MOUNTED",
+      "ORKS",
+      "SPEED FREEKS",
+      "WARBUGGIES"
+    ],
+    "WARTRAKK": [
+      "MOUNTED",
+      "ORKS",
+      "SPEED FREEKS",
+      "WARTRAKK"
+    ],
+    "WAZDAKKA GUTSMEK": [
+      "CHARACTER",
+      "EPIC HERO",
+      "MOUNTED",
+      "ORKS",
+      "SMOKE",
+      "SPEED FREEKS",
+      "VEHICLE",
+      "WAZDAKKA GUTSMEK"
+    ]
+  },
+  "SPACE MARINES": {
+    "AETHON SHAAN": [
+      "ADEPTUS ASTARTES",
+      "AETHON SHAAN",
+      "CHAPTER MASTER",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "RAVEN GUARD",
+      "TACTICUS"
+    ],
+    "ANCIENT": [
+      "ADEPTUS ASTARTES",
+      "ANCIENT",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS"
+    ],
+    "ANCIENT ON BIKE": [
+      "ADEPTUS ASTARTES",
+      "ANCIENT",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "APOTHECARY": [
+      "ADEPTUS ASTARTES",
+      "APOTHECARY",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "APOTHECARY ON BIKE": [
+      "ADEPTUS ASTARTES",
+      "APOTHECARY",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "ASSAULT INTERCESSORS WITH JUMP PACKS": [
+      "ADEPTUS ASTARTES",
+      "ASSAULT SQUAD WITH JUMP PACKS",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK"
+    ],
+    "ASSAULT SQUAD": [
+      "ADEPTUS ASTARTES",
+      "ASSAULT SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "ASSAULT SQUAD WITH JUMP PACKS": [
+      "ADEPTUS ASTARTES",
+      "ASSAULT SQUAD WITH JUMP PACKS",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK"
+    ],
+    "ASTARTES SERVITORS": [
+      "ADEPTUS ASTARTES",
+      "ASTARTES SERVITORS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "ASTRAEUS": [
+      "ADEPTUS ASTARTES",
+      "ASTRAEUS",
+      "FRAME",
+      "IMPERIUM",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "ATTACK BIKE SQUAD": [
+      "ADEPTUS ASTARTES",
+      "ATTACK BIKE SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "BIKE SQUAD": [
+      "ADEPTUS ASTARTES",
+      "BIKE SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "CAANOK VAR": [
+      "ADEPTUS ASTARTES",
+      "CAANOK VAR",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "IRON HANDS",
+      "TERMINATOR"
+    ],
+    "CAESTUS ASSAULT RAM": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "CAESTUS ASSAULT RAM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "CAPTAIN": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS",
+      "TITUS",
+      "ULTRAMARINES"
+    ],
+    "CAPTAIN ON BIKE": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "CAPTAIN TITUS": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS",
+      "TITUS",
+      "ULTRAMARINES"
+    ],
+    "CARAB CULLN THE RISEN": [
+      "ADEPTUS ASTARTES",
+      "CARAB CULLN THE RISEN",
+      "CHARACTER",
+      "DREADNOUGHT",
+      "EPIC HERO",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CATO SICARIUS": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CATO",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "SICARIUS",
+      "TACTICUS",
+      "ULTRAMARINES"
+    ],
+    "CERBERUS": [
+      "ADEPTUS ASTARTES",
+      "CERBERUS",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "CHAPLAIN": [
+      "ADEPTUS ASTARTES",
+      "CHAPLAIN CASSIUS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "ULTRAMARINES"
+    ],
+    "CHAPLAIN CASSIUS": [
+      "ADEPTUS ASTARTES",
+      "CHAPLAIN CASSIUS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "ULTRAMARINES"
+    ],
+    "CHAPLAIN VENERABLE DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "CHAPLAIN VENERABLE DREADNOUGHT",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "COMMAND SQUAD": [
+      "ADEPTUS ASTARTES",
+      "COMMAND SQUAD",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "COMPANY CHAMPION ON BIKE": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "COMPANY CHAMPION",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "COMPANY HEROES": [
+      "ADEPTUS ASTARTES",
+      "ANCIENT",
+      "COMPANY HEROES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS",
+      "ULTRAMARINES"
+    ],
+    "COMPANY VETERANS ON BIKES": [
+      "ADEPTUS ASTARTES",
+      "COMPANY VETERANS",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
+    "DARNATH LYSANDER": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DARNATH LYSANDER",
+      "EPIC HERO",
+      "IMPERIAL FISTS",
+      "IMPERIUM",
+      "INFANTRY",
+      "TERMINATOR"
+    ],
+    "DEATHSTORM DROP POD": [
+      "ADEPTUS ASTARTES",
+      "DEATHSTORM DROP POD",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "DEIMOS PREDATOR": [
+      "ADEPTUS ASTARTES",
+      "DEIMOS PREDATOR",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "DEREDEO DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DEREDEO DREADNOUGHT",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DREADNOUGHT DROP POD": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT DROP POD",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DROP POD": [
+      "ADEPTUS ASTARTES",
+      "DEDICATED TRANSPORT",
+      "DROP POD",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "ERADICATOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "ERADICATOR SQUAD WITH HEAVY BOLTERS": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "FALCHION": [
+      "ADEPTUS ASTARTES",
+      "FALCHION",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "FELLBLADE": [
+      "ADEPTUS ASTARTES",
+      "FELLBLADE",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TITANIC",
+      "VEHICLE"
+    ],
+    "FIRE RAPTOR GUNSHIP": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FIRE RAPTOR GUNSHIP",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
+    "HEAVY INTERCESSOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "INFANTRY",
+      "TACTICUS"
+    ],
+    "HUNTER": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "HUNTER",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "IMPERIAL SPACE MARINE": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIAL SPACE MARINE",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "INTERCESSOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "INTERCESSOR SQUAD",
+      "TACTICUS"
+    ],
+    "IRONCLAD DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "IRONCLAD DREADNOUGHT",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "JAVELIN ATTACK SPEEDER": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "JAVELIN ATTACK SPEEDER",
+      "VEHICLE"
+    ],
+    "KRATOS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "KRATOS",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "LAND RAIDER": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "LAND RAIDER",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND RAIDER ACHILLES": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "LAND RAIDER ACHILLES",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND RAIDER CRUSADER": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "LAND RAIDER",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND RAIDER EXCELSIOR": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "LAND RAIDER EXCELSIOR",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND RAIDER HELIOS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "LAND RAIDER HELIOS",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND RAIDER PROMETHEUS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "LAND RAIDER PROMETHEUS",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND RAIDER PROTEUS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "LAND RAIDER PROTEUS",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND SPEEDER": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "IMPERIUM",
+      "LAND SPEEDER",
+      "VEHICLE"
+    ],
+    "LAND SPEEDER STORM": [
+      "ADEPTUS ASTARTES",
+      "DEDICATED TRANSPORT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "LAND SPEEDER STORM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "LAND SPEEDER TEMPEST": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "LAND SPEEDER TEMPEST",
+      "VEHICLE"
+    ],
+    "LAND SPEEDER TORNADO": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "LAND SPEEDER TORNADO",
+      "VEHICLE"
+    ],
+    "LAND SPEEDER TYPHOON": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "LAND SPEEDER TYPHOON",
+      "VEHICLE"
+    ],
+    "LEVIATHAN DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "LEVIATHAN DREADNOUGHT",
+      "SMOKE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "LIBRARIAN": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "LIBRARIAN",
+      "PSYKER"
+    ],
+    "LIBRARIAN ON BIKE": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "LIBRARIAN",
+      "MOUNTED",
+      "PSYKER"
+    ],
+    "LIBRARIAN WITH JUMP PACK": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "LIBRARIAN",
+      "PSYKER"
+    ],
+    "MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS": [
+      "ADEPTUS ASTARTES",
+      "CHAPTER MASTER",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "MARNEUS CALGAR",
+      "TERMINATOR",
+      "ULTRAMARINES"
+    ],
+    "MASTODON": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "MASTODON",
+      "SMOKE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "MORTIS DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "MORTIS DREADNOUGHT",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "OUTRIDER SQUAD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "OUTRIDER"
+    ],
+    "PRIMARIS COMPANY CHAMPION": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "PRIMARIS COMPANY CHAMPION",
+      "TACTICUS"
+    ],
+    "RAPIER CARRIER": [
+      "ADEPTUS ASTARTES",
+      "ARTILLERY",
+      "FRAME",
+      "IMPERIUM",
+      "RAPIER CARRIER",
+      "VEHICLE"
+    ],
+    "RAZORBACK": [
+      "ADEPTUS ASTARTES",
+      "DEDICATED TRANSPORT",
+      "FRAME",
+      "IMPERIUM",
+      "RELIC RAZORBACK",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "RELIC CONTEMPTOR DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "RELIC CONTEMPTOR DREADNOUGHT",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "RELIC RAZORBACK": [
+      "ADEPTUS ASTARTES",
+      "DEDICATED TRANSPORT",
+      "FRAME",
+      "IMPERIUM",
+      "RELIC RAZORBACK",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "RELIC TERMINATOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "INFANTRY",
+      "RELIC TERMINATOR SQUAD",
+      "TERMINATOR"
+    ],
+    "RHINO": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "RHINO PRIMARIS",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "RHINO PRIMARIS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "RHINO PRIMARIS",
+      "SMOKE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "SCOUT BIKE SQUAD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "SCOUT BIKE SQUAD",
+      "SMOKE"
+    ],
+    "SCOUT SNIPER SQUAD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SCOUT SNIPER SQUAD",
+      "SMOKE"
+    ],
+    "SERGEANT CHRONUS": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "SERGEANT CHRONUS",
+      "ULTRAMARINES"
+    ],
+    "SERGEANT TELION": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "SERGEANT TELION",
+      "ULTRAMARINES"
+    ],
+    "SICARAN ARCUS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SICARAN ARCUS",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "SICARAN BATTLE TANK": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SICARAN BATTLE TANK",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "SICARAN OMEGA": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SICARAN OMEGA",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "SICARAN PUNISHER": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SICARAN PUNISHER",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "SICARAN VENATOR": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SICARAN VENATOR",
+      "SMOKE",
+      "VEHICLE"
+    ],
+    "SOKAR-PATTERN STORMBIRD": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "SOKAR-PATTERN STORMBIRD",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "SPARTAN": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "SPARTAN",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "STALKER": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "STALKER",
+      "VEHICLE"
+    ],
+    "STORM EAGLE GUNSHIP": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "STORM EAGLE GUNSHIP",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "SUBODEN KHAN": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "SUBODEN KHAN",
+      "WHITE SCARS"
+    ],
+    "TARANTULA AIR DEFENCE BATTERY": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "TARANTULA AIR DEFENCE BATTERY",
+      "VEHICLE"
+    ],
+    "TARANTULA SENTRY BATTERY": [
+      "ADEPTUS ASTARTES",
+      "ARTILLERY",
+      "FRAME",
+      "IMPERIUM",
+      "TARANTULA SENTRY BATTERY",
+      "VEHICLE"
+    ],
+    "TECHMARINE": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "TECHMARINE"
+    ],
+    "TECHMARINE ON BIKE": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "TECHMARINE"
+    ],
+    "TERMINATOR ASSAULT SQUAD": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TERMINATOR ASSAULT SQUAD",
+      "TERMINATORS"
+    ],
+    "TERMINATOR SQUAD": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "INFANTRY",
+      "TERMINATOR"
+    ],
+    "TERMINUS ULTRA": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TERMINUS ULTRA",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "TERRAX-PATTERN TERMITE": [
+      "ADEPTUS ASTARTES",
+      "DEDICATED TRANSPORT",
+      "FRAME",
+      "IMPERIUM",
+      "TERRAX-PATTERN TERMITE",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "THUNDERFIRE CANNON": [
+      "ADEPTUS ASTARTES",
+      "ARTILLERY",
+      "FRAME",
+      "IMPERIUM",
+      "THUNDERFIRE CANNON",
+      "VEHICLE"
+    ],
+    "THUNDERHAWK GUNSHIP": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "IMPERIUM",
+      "THUNDERHAWK GUNSHIP",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "THUNDERHAWK TRANSPORTER": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "THUNDERHAWK TRANSPORTER",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "TYPHON": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "TYPHON",
+      "VEHICLE"
+    ],
+    "TYRANNIC WAR VETERANS": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TYRANNIC WAR VETERANS",
+      "ULTRAMARINES"
+    ],
+    "VANGUARD VETERAN SQUAD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "VANGUARD VETERAN SQUAD"
+    ],
+    "VENERABLE DREADNOUGHT": [
+      "ADEPTUS ASTARTES",
+      "DREADNOUGHT",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "VENERABLE",
+      "WALKER"
+    ],
+    "VICTRIX HONOUR GUARD": [
+      "ADEPTUS ASTARTES",
+      "ANCIENT",
+      "CHAMPION",
+      "CHAPTER ANCIENT",
+      "CHAPTER CHAMPION",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS",
+      "ULTRAMARINES",
+      "VICTRIX HONOUR GUARD"
+    ],
+    "VINDICATOR": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "VINDICATOR LASER DESTROYER"
+    ],
+    "VINDICATOR LASER DESTROYER": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "VINDICATOR LASER DESTROYER"
+    ],
+    "VULKAN HE’STAN": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SALAMANDERS",
+      "TACTICUS",
+      "VULKAN HE'STAN"
+    ],
+    "WARDENS OF ULTRAMAR": [
+      "ADEPTUS ASTARTES",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS",
+      "ULTRAMARINES",
+      "WARDENS OF ULTRAMAR"
+    ],
+    "WHIRLWIND": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "WHIRLWIND SCORPIUS"
+    ],
+    "WHIRLWIND SCORPIUS": [
+      "ADEPTUS ASTARTES",
+      "FRAME",
+      "IMPERIUM",
+      "SMOKE",
+      "VEHICLE",
+      "WHIRLWIND SCORPIUS"
+    ],
+    "XIPHON INTERCEPTOR": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "VEHICLE",
+      "XIPHON INTERCEPTOR"
+    ]
+  },
+  "SPACE WOLVES": {
+    "ASSAULT INTERCESSORS WITH JUMP PACKS": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "SKYCLAWS",
+      "SPACE WOLVES"
+    ],
+    "CANIS WOLFBORN": [
+      "ADEPTUS ASTARTES",
+      "CANIS WOLFBORN",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "MOUNTED",
+      "SPACE WOLVES"
+    ],
+    "CYBERWOLF": [
+      "ADEPTUS ASTARTES",
+      "BEAST",
+      "CHARACTER",
+      "CYBERWOLF",
+      "IMPERIUM",
+      "SPACE WOLVES"
+    ],
+    "HARALD DEATHWOLF": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "HARALD DEATHWOLF",
+      "IMPERIUM",
+      "MOUNTED",
+      "SPACE WOLVES"
+    ],
+    "HOUNDS OF MORKAI": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "HOUNDS OF MORKAI",
+      "IMPERIUM",
+      "INFANTRY",
+      "PHOBOS",
+      "SMOKE",
+      "SPACE WOLVES"
+    ],
+    "KROM DRAGONGAZE": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KROM DRAGONGAZE",
+      "SPACE WOLVES"
+    ],
+    "LOGAN GRIMNAR": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "SPACE WOLVES"
+    ],
+    "LOGAN GRIMNAR ON STORMRIDER": [
+      "ADEPTUS ASTARTES",
+      "CHAPTER MASTER",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "LOGAN GRIMNAR ON STORMRIDER",
+      "MOUNTED",
+      "SPACE WOLVES"
+    ],
+    "LONG FANGS": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "LONG FANGS",
+      "SPACE WOLVES"
+    ],
+    "LUKAS THE TRICKSTER": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "LUKAS THE TRICKSTER",
+      "SPACE WOLVES"
+    ],
+    "SKYCLAWS": [
+      "ADEPTUS ASTARTES",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "SKYCLAWS",
+      "SPACE WOLVES"
+    ],
+    "STERNGUARD VETERAN SQUAD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SPACE WOLVES",
+      "WOLF GUARD"
+    ],
+    "STORMFANG GUNSHIP": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "SPACE WOLVES",
+      "STORMFANG GUNSHIP",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "STORMWOLF": [
+      "ADEPTUS ASTARTES",
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "SPACE WOLVES",
+      "STORMWOLF",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "WOLF GUARD": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SPACE WOLVES",
+      "WOLF GUARD"
+    ],
+    "WOLF GUARD BATTLE LEADER": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "SPACE WOLVES",
+      "WOLF GUARD BATTLE LEADER ON THUNDERWOLF"
+    ],
+    "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "IMPERIUM",
+      "INFANTRY",
+      "SPACE WOLVES",
+      "TERMINATOR",
+      "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR"
+    ],
+    "WOLF GUARD BATTLE LEADER ON THUNDERWOLF": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "SPACE WOLVES",
+      "WOLF GUARD BATTLE LEADER ON THUNDERWOLF"
+    ],
+    "WOLF GUARD PACK LEADER": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "PACK LEADER",
+      "SPACE WOLVES",
+      "WOLF GUARD PACK LEADER"
+    ],
+    "WOLF GUARD PACK LEADER IN TERMINATOR ARMOUR": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "PACK LEADER",
+      "SPACE WOLVES",
+      "TERMINATOR",
+      "WOLF GUARD PACK LEADER IN TERMINATOR ARMOUR"
+    ],
+    "WOLF GUARD PACK LEADER WITH JUMP PACK": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "PACK LEADER",
+      "SPACE WOLVES",
+      "WOLF GUARD PACK LEADER WITH JUMP PACK"
+    ],
+    "WOLF LORD ON THUNDERWOLF": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED",
+      "SPACE WOLVES",
+      "WOLF LORD ON THUNDERWOLF"
+    ],
+    "WOLF SCOUTS": [
+      "ADEPTUS ASTARTES",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "PHOBOS",
+      "SMOKE",
+      "SPACE WOLVES",
+      "WOLF SCOUTS"
+    ]
+  },
+  "T'AU EMPIRE": {
+    "AUN’SHI": [
+      "AUN'SHI",
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
+    ],
+    "AUN’VA": [
+      "AUN'VA",
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
+    ],
+    "AX-1-0 TIGER SHARK": [
+      "AIRCRAFT",
+      "AX-1-0 TIGER SHARK",
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "BARRACUDA": [
+      "AIRCRAFT",
+      "BARRACUDA",
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "COMMANDER IN CRISIS BATTLESUIT": [
+      "BATTLESUIT",
+      "CHARACTER",
+      "COMMANDER IN CRISIS BATTLESUIT",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "CRISIS BATTLESUITS": [
+      "BATTLESUIT",
+      "CRISIS",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "DEVILFISH": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "MANTA",
+      "MARKERLIGHT",
+      "T'AU EMPIRE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "DRONE SENTRY TURRET": [
+      "DRONE SENTRY TURRET",
+      "FORTIFICATION",
+      "FRAME",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "ETHEREAL": [
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
+    ],
+    "GREAT KNARLOC": [
+      "FRAME",
+      "GREAT KNARLOC",
+      "KROOT",
+      "MONSTER",
+      "T'AU EMPIRE"
+    ],
+    "HAMMERHEAD GUNSHIP": [
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "FRAME",
+      "LONGSTRIKE",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "HEAVY GUN DRONES": [
+      "FLY",
+      "HEAVY GUN DRONES",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "KNARLOC RIDERS": [
+      "KNARLOC RIDERS",
+      "KROOT",
+      "MOUNTED",
+      "T'AU EMPIRE"
+    ],
+    "LONGSTRIKE": [
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "FRAME",
+      "LONGSTRIKE",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "MANTA": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "MANTA",
+      "MARKERLIGHT",
+      "T'AU EMPIRE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "ORCA DROPSHIP": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "ORCA DROPSHIP",
+      "T'AU EMPIRE",
+      "TITANIC",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "REMORA STEALTH DRONES": [
+      "FLY",
+      "MARKERLIGHT",
+      "REMORA STEALTH DRONES",
+      "T'AU EMPIRE",
+      "VEHICLE"
+    ],
+    "REMOTE SENSOR TOWER": [
+      "FORTIFICATION",
+      "FRAME",
+      "REMOTE SENSOR TOWER",
+      "T'AU EMPIRE"
+    ],
+    "R’VARNA BATTLESUIT": [
+      "BATTLESUIT",
+      "FLY",
+      "R'VARNA",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "SHAS’O R’ALAI": [
+      "BATTLESUIT",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "MARKERLIGHT",
+      "SHAS'O R'ALAI",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "STEALTH BATTLESUITS": [
+      "BATTLESUIT",
+      "FLY",
+      "GRENADES",
+      "INFANTRY",
+      "MARKERLIGHT",
+      "STEALTH",
+      "T'AU EMPIRE"
+    ],
+    "TA’UNAR SUPREMACY ARMOUR": [
+      "FRAME",
+      "T'AU EMPIRE",
+      "TA'UNAR SUPREMACY ARMOUR",
+      "TITANIC",
+      "TOWERING",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "TETRAS": [
+      "FLY",
+      "FRAME",
+      "MARKERLIGHT",
+      "T'AU EMPIRE",
+      "TETRAS",
+      "VEHICLE"
+    ],
+    "THE TWIN LANCE": [
+      "BATTLESUIT",
+      "CHARACTER",
+      "EPIC HERO",
+      "FLY",
+      "T'AU EMPIRE",
+      "THE TWIN LANCE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "TIDEWALL SHIELDLINE": [
+      "FRAME",
+      "T'AU EMPIRE"
+    ],
+    "TIGER SHARK": [
+      "AIRCRAFT",
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "TIGER SHARK",
+      "VEHICLE"
+    ],
+    "TX42 PIRANHA": [
+      "FLY",
+      "FRAME",
+      "T'AU EMPIRE",
+      "TX42 PIRANHA",
+      "VEHICLE"
+    ],
+    "VESPID STINGWINGS": [
+      "FLY",
+      "INFANTRY",
+      "T'AU EMPIRE",
+      "VESPID STINGWINGS"
+    ],
+    "XV9 HAZARD BATTLESUITS": [
+      "BATTLESUIT",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER",
+      "XV9 HAZARD"
+    ],
+    "Y’VAHRA BATTLESUIT": [
+      "BATTLESUIT",
+      "FLY",
+      "T'AU EMPIRE",
+      "VEHICLE",
+      "WALKER",
+      "Y'VAHRA"
+    ]
+  },
+  "THOUSAND SONS": {
+    "DEFILER": [
+      "CHAOS",
+      "DAEMON",
+      "DEATH GUARD",
+      "DEFILER",
+      "TZEENTCH",
+      "VEHICLE",
+      "WALKER"
+    ]
+  },
+  "TYRANIDS": {
+    "BARBED HIERODULE": [
+      "BARBED HIERODULE",
+      "FRAME",
+      "GREAT DEVOURER",
+      "MONSTER",
+      "TYRANIDS"
+    ],
+    "DIMACHAERON": [
+      "DIMACHAERON",
+      "FRAME",
+      "GREAT DEVOURER",
+      "MONSTER",
+      "TYRANIDS"
+    ],
+    "HARRIDAN": [
+      "FLY",
+      "FRAME",
+      "GREAT DEVOURER",
+      "HARRIDAN",
+      "MONSTER",
+      "TITANIC",
+      "TRANSPORT",
+      "TYRANIDS"
+    ],
+    "HIEROPHANT": [
+      "FRAME",
+      "GREAT DEVOURER",
+      "HIEROPHANT",
+      "MONSTER",
+      "TITANIC",
+      "TOWERING",
+      "TRANSPORT",
+      "TYRANIDS"
+    ],
+    "HIVE TYRANT": [
+      "CHARACTER",
+      "MONSTER",
+      "SYNAPSE",
+      "TYRANIDS"
+    ],
+    "HYPERADAPTED RAVENERS": [
+      "BURROWERS",
+      "GREAT DEVOURER",
+      "HYPERADAPTED RAVENERS",
+      "INFANTRY",
+      "TYRANIDS",
+      "VANGUARD INVADER"
+    ],
+    "MALANTHROPE": [
+      "CHARACTER",
+      "FLY",
+      "GREAT DEVOURER",
+      "INFANTRY",
+      "MALANTHROPE",
+      "SYNAPSE",
+      "TYRANIDS"
+    ],
+    "MAWLOC": [
+      "MONSTER",
+      "TYRANIDS",
+      "VANGUARD INVADER"
+    ],
+    "PSYCHOPHAGE": [
+      "SMOKE",
+      "TYRANIDS"
+    ],
+    "RAVENERS": [
+      "BURROWERS",
+      "GREAT DEVOURER",
+      "INFANTRY",
+      "RAVENERS",
+      "TYRANIDS",
+      "VANGUARD INVADER"
+    ],
+    "SCYTHED HIERODULE": [
+      "FRAME",
+      "GREAT DEVOURER",
+      "MONSTER",
+      "SCYTHED HIERODULE",
+      "TYRANIDS"
+    ],
+    "SKY-SLASHER SWARMS": [
+      "FLY",
+      "GREAT DEVOURER",
+      "SKY-SLASHER SWARMS",
+      "SWARM",
+      "TYRANIDS"
+    ],
+    "THE RED TERROR": [
+      "BURROWER",
+      "CHARACTER",
+      "EPIC HERO",
+      "GREAT DEVOURER",
+      "MONSTER",
+      "THE RED TERROR",
+      "TYRANIDS",
+      "VANGUARD INVADER"
+    ],
+    "TRYGON": [
+      "CHARACTER",
+      "MONSTER",
+      "TYRANIDS"
+    ],
+    "TYRANID PRIME WITH LASH WHIP": [
+      "CHARACTER",
+      "GREAT DEVOURER",
+      "INFANTRY",
+      "SYNAPSE",
+      "TYRANID PRIME WITH LASH WHIP",
+      "TYRANIDS"
+    ]
+  },
+  "WORLD EATERS": {
+    "CHAOS RHINO": [
+      "CHAOS",
+      "FRAME",
+      "TRANSPORT",
+      "VEHICLE",
+      "WORLD EATERS"
+    ],
+    "DEFILER": [
+      "CHAOS",
+      "DAEMON",
+      "DEFILER",
+      "KHORNE",
+      "VEHICLE",
+      "WALKER",
+      "WORLD EATERS"
+    ]
+  }
+}

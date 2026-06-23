@@ -203,10 +203,10 @@ describe("sortListByRole via sortTree", () => {
   // Stand-in datasheets keyed by name. Mirrors the shape codexStore.getDataSheet
   // returns: only the role flags read by sortListByRole are present.
   const sheets = {
-    "Lone Captain": { character: true },
+    "Lone Captain": { keywords: ["CHARACTER"] },
     "Standalone Enhancement": { enhancements: true },
     "Servitor Drone": { support: true },
-    "Intercessor Squad": { battleLine: true },
+    "Intercessor Squad": { keywords: ["BATTLELINE"] },
     Captain: { leader: true },
     Lieutenant: { leader: true },
     Veil: { enhancements: true },

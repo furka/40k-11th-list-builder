@@ -3,10 +3,10 @@ import { createPinia, setActivePinia } from "pinia";
 import { useDragStore } from "../stores/drag";
 
 const SHEETS = {
-  "NECRON WARRIORS": { name: "NECRON WARRIORS", battleLine: true },
+  "NECRON WARRIORS": { name: "NECRON WARRIORS", keywords: ["BATTLELINE"] },
   IMOTEKH: {
     name: "IMOTEKH",
-    character: true,
+    keywords: ["CHARACTER"],
     leader: { attachesTo: ["NECRON WARRIORS"] },
   },
   Enhancements: { name: "Enhancements", enhancements: true },

@@ -77,8 +77,24 @@ const RESTRICTION_TOOL = {
   },
 };
 
+// Narrow a faction's datasheet roster to just the names that actually appear
+// in the PDF pages for this classification. The PROMPT still gets the full
+// roster (closed vocabulary unchanged), but the cache key only needs to
+// depend on names that could plausibly affect THIS enhancement's answer.
+// Without this narrowing, adding/renaming any single datasheet in a faction
+// invalidates the cache for every enhancement in the faction.
+function narrowDatasheetNames(datasheetNames, pageTexts) {
+  const haystack = pageTexts.join("\n").toLowerCase()
+    .replace(/[‘’]/g, "'");
+  return datasheetNames.filter((name) => {
+    const needle = name.toLowerCase().replace(/[‘’]/g, "'");
+    return haystack.includes(needle);
+  });
+}
+
 function makeCacheKey({ enhancementName, pageTexts, datasheetNames }) {
   const h = createHash("sha256");
+  h.update("v2:");
   h.update(MODEL_ID);
   h.update("\0");
   h.update(enhancementName);
@@ -149,7 +165,11 @@ export async function classifyWithLLM({
   datasheetNames,
 }) {
   const cache = await getCache();
-  const key = makeCacheKey({ enhancementName, pageTexts, datasheetNames });
+  const key = makeCacheKey({
+    enhancementName,
+    pageTexts,
+    datasheetNames: narrowDatasheetNames(datasheetNames, pageTexts),
+  });
   if (cache[key]) {
     return { restrictions: cache[key].response, cacheHit: true };
   }

@@ -4,6 +4,7 @@ import CloseIcon from "../assets/close-line-icon.svg";
 import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { isBattleLine } from "../utils/is-battleline";
+import { hasKeyword } from "../utils/keywords";
 import { autoBattlelineSource } from "../utils/conditional-battleline";
 
 const emit = defineEmits(["close"]);
@@ -28,7 +29,7 @@ const factionDatasheets = computed(() => {
     .filter(
       (s) =>
         s.faction === armyListStore.faction &&
-        !s.epicHero &&
+        !hasKeyword(s, "EPIC HERO") &&
         !isBattleLine(s)
     )
     .slice()

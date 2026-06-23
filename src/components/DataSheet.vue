@@ -13,6 +13,7 @@ import {
   wargearMaxPerUnit,
 } from "../utils/wargear-limits";
 import { legalDropSlots } from "../utils/legal-drop-slots";
+import { hasKeyword } from "../utils/keywords";
 import LeaderIcon from "../assets/leader-skull-icon.svg";
 import SupportIcon from "../assets/support-icon.svg";
 
@@ -275,7 +276,7 @@ function optionAvailable(option) {
           >ALLY</span
         >
         <span
-          v-if="props.dataSheet.epicHero"
+          v-if="hasKeyword(props.dataSheet, 'EPIC HERO')"
           class="data-sheet__pill data-sheet__pill--accent"
           title="Epic Hero"
           >E</span

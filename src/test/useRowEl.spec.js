@@ -7,7 +7,7 @@ import { useRowEl } from "../composables/useRowEl";
 import { useDragStore } from "../stores/drag";
 
 const SHEETS = {
-  "NECRON WARRIORS": { name: "NECRON WARRIORS", battleLine: true },
+  "NECRON WARRIORS": { name: "NECRON WARRIORS", keywords: ["BATTLELINE"] },
   IMOTEKH: { name: "IMOTEKH", leader: { attachesTo: ["NECRON WARRIORS"] } },
 };
 const getDataSheet = (n) => SHEETS[n] ?? null;

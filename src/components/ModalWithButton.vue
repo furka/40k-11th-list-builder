@@ -4,6 +4,7 @@ import CloseIcon from "../assets/close-line-icon.svg";
 
 const props = defineProps({
   title: String,
+  attention: { type: Boolean, default: false },
 });
 
 const dialog = ref(null);
@@ -38,7 +39,12 @@ function onPointerUp(event) {
 
 <template>
   <div>
-    <button class="modal-button" @click="openDialog" :title="props.title">
+    <button
+      class="modal-button"
+      :class="{ 'modal-button--attention': props.attention }"
+      @click="openDialog"
+      :title="props.title"
+    >
       <slot name="button"></slot>
     </button>
 
@@ -86,10 +92,28 @@ function onPointerUp(event) {
     border-color: var(--color-accent);
   }
 
+  &--attention {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    animation: modal-button-pulse 1.6s ease-out infinite;
+  }
+
   &__icon {
     fill: currentColor;
     height: 17px;
     width: 17px;
+  }
+}
+
+@keyframes modal-button-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 162, 58, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(232, 162, 58, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 162, 58, 0);
   }
 }
 

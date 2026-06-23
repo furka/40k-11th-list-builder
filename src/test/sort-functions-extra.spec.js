@@ -69,11 +69,11 @@ describe("sortOptionsPtsDescending", () => {
 
 describe("sortListByRole — uncovered priority branches", () => {
   const sheets = {
-    "Hero": { epicHero: true },
-    "Tank": { dedicatedTransport: true },
-    "Bastion": { fortification: true },
-    "Squad": { battleLine: true },
-    "Mystery": { /* no role flags at all */ },
+    "Hero": { keywords: ["EPIC HERO"] },
+    "Tank": { keywords: ["DEDICATED TRANSPORT"] },
+    "Bastion": { keywords: ["FORTIFICATION"] },
+    "Squad": { keywords: ["BATTLELINE"] },
+    "Mystery": { /* no keywords at all */ },
     "Captain": { leader: true },
   };
   const getDataSheet = (name) => sheets[name] ?? null;

@@ -30,9 +30,10 @@
  * OPTIONS section in the MFM. When present, each entry is a free-form
  * upgrade row (no models / tiers — flat per-occurrence cost).
  *
- * The role booleans (battleLine, character, epicHero, dedicatedTransport,
- * fortification) are not produced here — they are layered on by the runtime
- * parser via `config.json` lookup, mirroring the 10th-edition flow.
+ * Per-datasheet `keywords` (BATTLELINE, CHARACTER, INFANTRY, FLY, etc.) are
+ * not produced here — they're attached by the runtime parser via the
+ * keyword overlay at `src/data/keywords/` (BSData-sourced + manual
+ * overrides).
  */
 export function normalizeFactionData(factionSlug, factionName, raw) {
   return {

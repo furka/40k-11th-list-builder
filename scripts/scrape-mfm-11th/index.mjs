@@ -8,12 +8,20 @@ import { fetchFactionHtml, fetchFactionPackPdf } from "./fetch.mjs";
 import { extractFactionData } from "./extract.mjs";
 import { normalizeFactionData } from "./normalize.mjs";
 import { pdfToPages } from "./pdf-to-text.mjs";
-import { findEnhancementPages, findDetachmentRulesPages } from "./find-section.mjs";
+import {
+  findEnhancementPages,
+  findDetachmentRulesPages,
+  findDatasheetPages,
+} from "./find-section.mjs";
 import { classifyWithLLM, flushLlmCache } from "./llm-classify.mjs";
 import {
   classifyDetachmentGrantsWithLLM,
   flushDetachmentGrantsCache,
 } from "./llm-classify-detachment-grants.mjs";
+import {
+  classifyKeywordsWithLLM,
+  flushKeywordCache,
+} from "./llm-classify-keywords.mjs";
 import { enhancementNameKey } from "./name-key.mjs";
 import { createWarningSink } from "./warnings.mjs";
 
@@ -27,6 +35,10 @@ const RESTRICTIONS_OUT = resolve(
 const CONDITIONAL_GRANTS_OUT = resolve(
   __dirname,
   "../../src/data/configs/conditional-battleline.auto.json"
+);
+const MFM_KEYWORDS_OUT = resolve(
+  __dirname,
+  "../../src/data/keywords/mfm-pdf-keywords.auto.json"
 );
 
 const FACTION_NAMES = {
@@ -455,6 +467,194 @@ async function scrapeDetachmentGrantsForFaction(
   return rules;
 }
 
+// Per-datasheet KEYWORDS line scrape. For each MFM datasheet, find its stat
+// block in the Faction Pack PDF and ask the LLM to extract the KEYWORDS and
+// FACTION KEYWORDS lines. Output goes into mfm-pdf-keywords.auto.json and is
+// consumed by src/data/keywords/index.js as the middle priority layer
+// (above BSData, below manual overrides).
+//
+// EXPECTED coverage gap: GW strips a datasheet from the MFM Faction Pack PDF
+// once its codex is published — the codex is then the source of truth and
+// the PDF only carries post-codex additions and errata. So per faction we
+// typically classify ~20–40% of the MFM datasheets here; the rest are
+// "kw-not-in-pdf" / "kw-stat-block-absent" warnings, which are FINE — the
+// keyword loader falls back to BSData for those. The value of this pass is
+// freshness on units BSData hasn't yet caught and errata that override the
+// codex version.
+async function scrapePdfKeywordsForFaction(
+  slug,
+  factionPayload,
+  factionPackUrls,
+  warnings,
+  llmClient,
+  { refresh }
+) {
+  const url = factionPackUrls[slug];
+  if (!url) return null;
+  let pdfBuf;
+  try {
+    pdfBuf = await fetchFactionPackPdf(slug, url, { refresh });
+  } catch (e) {
+    warnings.add("kw-pdf-fetch-failed", { slug, url, message: e.message });
+    return null;
+  }
+  let pages;
+  try {
+    pages = await pdfToPages(pdfBuf);
+  } catch (e) {
+    warnings.add("kw-pdf-parse-failed", { slug, message: e.message });
+    return null;
+  }
+
+  const out = {};
+  const counts = {
+    datasheets: factionPayload.datasheets.length,
+    codexResident: 0, // name not in PDF at all — almost certainly codex-only
+    statBlockAbsent: 0, // name only in cross-refs (codex-only or errata-only)
+    classified: 0, // LLM saw a stat block and extracted keywords
+    cacheHits: 0,
+    empty: 0,
+    failed: 0,
+  };
+
+  for (const sheet of factionPayload.datasheets) {
+    const matched = findDatasheetPages(pages, sheet.name);
+    if (!matched) {
+      warnings.add("kw-not-in-pdf", { slug, datasheet: sheet.name });
+      counts.codexResident++;
+      continue;
+    }
+
+    let result;
+    let cacheHit;
+    try {
+      const res = await classifyKeywordsWithLLM({
+        client: llmClient,
+        datasheetName: sheet.name,
+        pageTexts: matched.pages,
+        factionName: factionPayload.faction,
+      });
+      result = res.result;
+      cacheHit = res.cacheHit;
+    } catch (e) {
+      warnings.add("kw-llm-call-failed", {
+        slug,
+        datasheet: sheet.name,
+        message: e.message,
+      });
+      counts.failed++;
+      continue;
+    }
+    if (cacheHit) counts.cacheHits++;
+
+    if (result.notFound) {
+      warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
+      counts.statBlockAbsent++;
+      continue;
+    }
+
+    const merged = [...new Set([...result.keywords, ...result.factionKeywords])].sort();
+    if (merged.length === 0) {
+      warnings.add("kw-empty-response", { slug, datasheet: sheet.name });
+      counts.empty++;
+      continue;
+    }
+    out[sheet.name] = merged;
+    counts.classified++;
+  }
+
+  // Codex-resident + stat-block-absent are EXPECTED for any faction with a
+  // published codex — those units fall back to BSData via the keyword
+  // loader's layer merge. The "written" count is the freshness signal: that's
+  // what BSData/manual can be superseded by.
+  console.log(
+    `    ${counts.datasheets} datasheet(s), ${counts.classified} written from PDF` +
+      ` (codex-resident ${counts.codexResident + counts.statBlockAbsent},` +
+      ` empty ${counts.empty}, failed ${counts.failed},` +
+      ` cache-hits ${counts.cacheHits})`
+  );
+  return out;
+}
+
+async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape }) {
+  if (!existsSync(FACTION_PACK_URLS_PATH)) {
+    console.warn(
+      `Skipping PDF keyword pass: ${FACTION_PACK_URLS_PATH} missing.`
+    );
+    return;
+  }
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.warn(
+      `Skipping PDF keyword pass: ANTHROPIC_API_KEY is not set.`
+    );
+    return;
+  }
+  const factionPackUrls = JSON.parse(
+    readFileSync(FACTION_PACK_URLS_PATH, "utf8")
+  );
+
+  const Anthropic = (await import("@anthropic-ai/sdk")).default;
+  const llmClient = new Anthropic();
+
+  let existing = {};
+  if (!isFullScrape && existsSync(MFM_KEYWORDS_OUT)) {
+    try {
+      existing = JSON.parse(await readFile(MFM_KEYWORDS_OUT, "utf8"));
+    } catch (e) {
+      console.warn(`  ! could not parse existing ${MFM_KEYWORDS_OUT}: ${e.message}`);
+    }
+  }
+
+  for (const slug of slugs) {
+    const factionPayload = scraped.get(slug);
+    if (!factionPayload) continue;
+    try {
+      process.stdout.write(`  ${slug} keywords …\n`);
+      const factionOut = await scrapePdfKeywordsForFaction(
+        slug,
+        factionPayload,
+        factionPackUrls,
+        warnings,
+        llmClient,
+        { refresh }
+      );
+      if (factionOut === null) continue;
+      if (Object.keys(factionOut).length > 0) {
+        existing[factionPayload.faction] = factionOut;
+      } else {
+        delete existing[factionPayload.faction];
+      }
+    } catch (e) {
+      warnings.add("kw-pdf-parse-failed", { slug, message: e.message });
+    }
+  }
+
+  await flushKeywordCache();
+
+  // Stable, sorted output: faction keys + (within each) datasheet keys, plus
+  // a small header for traceability of which scrape produced this snapshot.
+  const sortedFactions = {};
+  for (const k of Object.keys(existing).filter((x) => !x.startsWith("_")).sort()) {
+    const factionEntries = existing[k];
+    const sortedSheets = {};
+    for (const sk of Object.keys(factionEntries).sort()) {
+      sortedSheets[sk] = factionEntries[sk];
+    }
+    sortedFactions[k] = sortedSheets;
+  }
+  const payload = {
+    _source: "MFM Faction Pack PDFs (https://mfm.warhammer-community.com/)",
+    _generatedAt: new Date().toISOString(),
+    _generator: "scripts/scrape-mfm-11th",
+    ...sortedFactions,
+  };
+  await ensureDir(dirname(MFM_KEYWORDS_OUT));
+  await writeFile(MFM_KEYWORDS_OUT, stableStringify(payload) + "\n", "utf8");
+  console.log(
+    `Wrote ${Object.keys(sortedFactions).length} faction(s) to mfm-pdf-keywords.auto.json`
+  );
+}
+
 async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape }) {
   if (!existsSync(FACTION_PACK_URLS_PATH)) {
     console.warn(
@@ -664,6 +864,8 @@ async function main() {
     await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
     console.log("\nDetachment-grants pass …");
     await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape });
+    console.log("\nPDF keyword pass …");
+    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape });
     await flushAndReport(warnings);
     if (failCount > 0) process.exitCode = 1;
     return;
@@ -700,6 +902,8 @@ async function main() {
     await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
     console.log("\nDetachment-grants pass …");
     await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape });
+    console.log("\nPDF keyword pass …");
+    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape });
   } else {
     console.log("\nSkipping Faction Pack PDF pass (MFM unchanged). Use --refresh to force.");
   }

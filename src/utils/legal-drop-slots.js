@@ -46,6 +46,7 @@
 
 import { isEnhancementUnit, isWargearUnit } from "./attachment-rules";
 import { wargearMaxPerUnit, wargearCountOn } from "./wargear-limits";
+import { hasKeyword, getKeywords } from "./keywords";
 
 const MAX_DEPTH = 3;
 
@@ -206,20 +207,21 @@ export function legalDropSlots(
       // src/data/configs/enhancement-restrictions.auto.json for the schema.
       if (enhancementMeta) {
         const hostDs = getDataSheet(host.name);
-        if (enhancementMeta.characterOnly && !hostDs?.character) return false;
-        if (enhancementMeta.nonCharacterOnly && hostDs?.character) return false;
-        if (enhancementMeta.notOnEpicHeroes && hostDs?.epicHero) return false;
-        // All-or-none enforcement: when `requiredKeywords` is present the
-        // captured rule is a disjunction we can only partially check
-        // (datasheet-match half is enforceable, keyword-match half isn't yet),
-        // so we skip the allowedHosts check rather than under-permit. See
-        // src/data/configs/index.js for the full schema and rationale.
-        if (
-          enhancementMeta.allowedHosts?.length &&
-          !enhancementMeta.requiredKeywords?.length &&
-          !enhancementMeta.allowedHosts.includes(host.name)
-        ) {
-          return false;
+        if (enhancementMeta.characterOnly && !hasKeyword(hostDs, "CHARACTER")) return false;
+        if (enhancementMeta.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) return false;
+        if (enhancementMeta.notOnEpicHeroes && hasKeyword(hostDs, "EPIC HERO")) return false;
+        // `requiredKeywords` + `allowedHosts` are disjunctions ("Captain OR
+        // Adeptus Astartes Terminator model"): the host satisfies the rule
+        // if EITHER its datasheet name matches `allowedHosts` OR its keyword
+        // set contains every entry in `requiredKeywords`. The datasheet half
+        // is checked first, keyword half second.
+        if (enhancementMeta.allowedHosts?.length || enhancementMeta.requiredKeywords?.length) {
+          const nameMatch = enhancementMeta.allowedHosts?.includes(host.name);
+          const hostKeywords = getKeywords(hostDs);
+          const keywordMatch =
+            enhancementMeta.requiredKeywords?.length > 0 &&
+            enhancementMeta.requiredKeywords.every((k) => hostKeywords.has(k));
+          if (!nameMatch && !keywordMatch) return false;
         }
       }
     } else {

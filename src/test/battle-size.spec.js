@@ -63,8 +63,8 @@ describe("unitMax", () => {
   });
 
   it("caps Epic Hero at 1 regardless of battle size", () => {
-    expect(unitMax({ epicHero: true }, incursion)).toBe(1);
-    expect(unitMax({ epicHero: true }, strikeForce)).toBe(1);
+    expect(unitMax({ keywords: ["EPIC HERO"] }, incursion)).toBe(1);
+    expect(unitMax({ keywords: ["EPIC HERO"] }, strikeForce)).toBe(1);
   });
 
   it("standard unit cap is 2 at Incursion, 3 at Strike Force", () => {
@@ -74,13 +74,13 @@ describe("unitMax", () => {
 
   it("Battleline doubles the standard cap", () => {
     isBattleLine.mockReturnValue(true);
-    expect(unitMax({ battleLine: true }, incursion)).toBe(4);
-    expect(unitMax({ battleLine: true }, strikeForce)).toBe(6);
+    expect(unitMax({ keywords: ["BATTLELINE"] }, incursion)).toBe(4);
+    expect(unitMax({ keywords: ["BATTLELINE"] }, strikeForce)).toBe(6);
   });
 
   it("Dedicated Transport uses the Battleline cap", () => {
     isDedicatedTransport.mockReturnValue(true);
-    expect(unitMax({ dedicatedTransport: true }, incursion)).toBe(4);
-    expect(unitMax({ dedicatedTransport: true }, strikeForce)).toBe(6);
+    expect(unitMax({ keywords: ["DEDICATED TRANSPORT"] }, incursion)).toBe(4);
+    expect(unitMax({ keywords: ["DEDICATED TRANSPORT"] }, strikeForce)).toBe(6);
   });
 });

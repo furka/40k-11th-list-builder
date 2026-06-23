@@ -23,6 +23,16 @@ export const WARNING_CATEGORIES = [
   "dgrants-pdf-parse-failed", // detachment-grants pass: pdfjs extraction error
   "dgrants-section-missing-in-pdf", // detachment section header not found in PDF text
   "dgrants-llm-call-failed", // detachment-grants pass: API error
+  "kw-pdf-fetch-failed", // PDF keyword pass: PDF fetch error
+  "kw-pdf-parse-failed", // PDF keyword pass: pdfjs extraction error
+  // Note: kw-not-in-pdf is EXPECTED for any unit defined in a published
+  // codex — GW strips a datasheet from the MFM Faction Pack once the codex
+  // ships, so the PDF only carries post-codex additions and errata. These
+  // entries fall back to BSData via the keyword-loader merge.
+  "kw-not-in-pdf", // datasheet's name doesn't appear in any PDF page (codex-resident)
+  "kw-stat-block-absent", // name appears in cross-references but not as a stat block (codex-resident)
+  "kw-llm-call-failed", // PDF keyword pass: API error
+  "kw-empty-response", // LLM returned no keywords for a datasheet section
 ];
 
 // Lightweight in-memory accumulator. Each script creates its own sink per

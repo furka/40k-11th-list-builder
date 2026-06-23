@@ -25,14 +25,13 @@ const TEST_MFM = {
     {
       name: "NECRON WARRIORS",
       faction: FACTION,
-      battleLine: true,
+      keywords: ["BATTLELINE"],
       sizes: [{ name: "10 models", models: 10, basePoints: 100 }],
     },
     {
       name: "IMOTEKH THE STORMLORD",
       faction: FACTION,
-      character: true,
-      epicHero: true,
+      keywords: ["CHARACTER", "EPIC HERO"],
       leader: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [{ name: "1 model", models: 1, basePoints: 100 }],
     },

@@ -8,15 +8,15 @@ import {
 } from "../utils/attachment-rules";
 
 const SHEETS = {
-  "NECRON WARRIORS": { name: "NECRON WARRIORS", battleLine: true },
+  "NECRON WARRIORS": { name: "NECRON WARRIORS", keywords: ["BATTLELINE"] },
   IMOTEKH: {
     name: "IMOTEKH",
-    character: true,
+    keywords: ["CHARACTER"],
     leader: { attachesTo: ["IMMORTALS", "LYCHGUARD", "NECRON WARRIORS"] },
   },
   CHRONOMANCER: {
     name: "CHRONOMANCER",
-    character: true,
+    keywords: ["CHARACTER"],
     support: { attachesTo: ["IMMORTALS", "NECRON WARRIORS"] },
   },
   IMMORTALS: { name: "IMMORTALS" },

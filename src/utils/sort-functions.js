@@ -1,5 +1,6 @@
 import { nameEquals } from "./name-match";
 import { buildTree, descendantIds } from "./attachment-tree";
+import { hasKeyword } from "./keywords";
 
 export const sortDataSheetAlphabetical = function (a, b) {
   a = a.name.toLowerCase();
@@ -95,13 +96,13 @@ export const sortListByRole = function (getDataSheet) {
 
       if (!dataSheet && !isEnhancement) return 5;
 
-      if (dataSheet?.character || dataSheet?.epicHero) return 1;
+      if (hasKeyword(dataSheet, "CHARACTER") || hasKeyword(dataSheet, "EPIC HERO")) return 1;
       if (dataSheet?.leader) return 1;
       if (isEnhancement) return 2;
       if (dataSheet?.support) return 3;
-      if (dataSheet?.battleLine) return 4;
-      if (dataSheet?.dedicatedTransport) return 5;
-      if (dataSheet?.fortification) return 8;
+      if (hasKeyword(dataSheet, "BATTLELINE")) return 4;
+      if (hasKeyword(dataSheet, "DEDICATED TRANSPORT")) return 5;
+      if (hasKeyword(dataSheet, "FORTIFICATION")) return 8;
       return 6;
     };
 

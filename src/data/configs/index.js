@@ -1,34 +1,4 @@
-import configs from "./config.json";
 import enhancementRestrictionsAuto from "./enhancement-restrictions.auto.json";
-import { normalizeString } from "../../utils/name-match";
-
-// Faction-keyed role classifications, flattened into normalized name arrays
-// the parser consults at load time. The source HTML doesn't expose these
-// per-unit, so they're curated manually. Legends classification used to live
-// here too; it's now scraped (see `scrape-mfm-11th/index.mjs`).
-export const CONFIGS = {
-  "battle-line": [],
-  "dedicated-transport": [],
-  "epic-hero": [],
-  character: [],
-  fortification: [],
-};
-
-for (const key in configs) {
-  const config = configs[key];
-
-  for (const role of [
-    "battle-line",
-    "character",
-    "epic-hero",
-    "dedicated-transport",
-    "fortification",
-  ]) {
-    if (config[role]) {
-      CONFIGS[role].push(...config[role].map((i) => normalizeString(i)));
-    }
-  }
-}
 
 /**
  * Faction → enhancement-name → per-enhancement restriction object, scraped
@@ -37,18 +7,13 @@ for (const key in configs) {
  * scraper and re-run it, don't patch the JSON.
  *
  * Each entry may set any subset of:
- *   - characterOnly:    boolean — host must have `character: true`
- *   - nonCharacterOnly: boolean — host must NOT have `character: true`
- *   - notOnEpicHeroes:  boolean — host must NOT have `epicHero: true`
+ *   - characterOnly:    boolean — host must carry the CHARACTER keyword
+ *   - nonCharacterOnly: boolean — host must NOT carry the CHARACTER keyword
+ *   - notOnEpicHeroes:  boolean — host must NOT carry the EPIC HERO keyword
  *   - allowedHosts:     string[] — host datasheet name must be in this list
- *   - requiredKeywords: string[] — captured from the PDF's host phrase but not
- *                       yet enforced (datasheet keyword tracking is a future
- *                       scope). When present, the validator suppresses the
- *                       allowedHosts check too: the captured rule was a
- *                       disjunction ("Captain OR Adeptus Astartes Terminator
- *                       model only") and we'd rather under-enforce than
- *                       wrongly block by checking only half. Will activate
- *                       when datasheet keyword tracking is added.
+ *   - requiredKeywords: string[] — every keyword must be present on the host
+ *                       datasheet's keyword set (sourced via the BSData
+ *                       overlay + manual overrides at `src/data/keywords/`)
  *   - limit:            number — max copies of this enhancement in the army
  *   - autoTake:         string[] — reserved; future auto-attach behavior
  *
