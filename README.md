@@ -14,7 +14,7 @@ npm run dev
 Points and datasheets are read straight from the official
 [Munitorum Field Manual](https://mfm.warhammer-community.com/). Detachment
 rules, enhancements, and unit keywords are pulled from the official Faction
-Pack PDFs (parsed with the help of Claude). For older content that Games
+Pack PDFs (parsed by Claude). For older content that Games
 Workshop doesn't publish online, the app falls back to the community-maintained
 [BSData](https://github.com/BSData/wh40k-10e) catalogs.
 
