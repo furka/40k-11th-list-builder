@@ -87,6 +87,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.AUTO_PR_TOKEN }}
           branch: mfm-auto-update
           base: main
           commit-message: "chore(mfm): auto-update to ${{ steps.mfm-version.outputs.version }} (scraped ${{ steps.mfm-version.outputs.scraped_at }})"

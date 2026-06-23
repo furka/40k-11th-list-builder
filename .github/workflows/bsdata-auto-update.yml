@@ -92,6 +92,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.AUTO_PR_TOKEN }}
           branch: bsdata-auto-update
           base: main
           commit-message: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
