@@ -33,6 +33,9 @@ export const WARNING_CATEGORIES = [
   "kw-stat-block-absent", // name appears in cross-references but not as a stat block (codex-resident)
   "kw-llm-call-failed", // PDF keyword pass: API error
   "kw-empty-response", // LLM returned no keywords for a datasheet section
+  "requiredkeyword-split", // post-LLM repair split a multi-token concatenation into atomics
+  "requiredkeyword-promoted", // post-LLM repair promoted a stray datasheet name from requiredKeywords to allowedHosts
+  "requiredkeyword-dropped", // post-LLM repair couldn't decompose a non-vocab entry — dropped it
 ];
 
 // Lightweight in-memory accumulator. Each script creates its own sink per

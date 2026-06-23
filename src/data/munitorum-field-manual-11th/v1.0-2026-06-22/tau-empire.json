@@ -1,5 +1,5 @@
 {
-  "faction": "T'AU EMPIRE",
+  "faction": "T’AU EMPIRE",
   "siteVersion": "v1.0",
   "detachments": [
     {
@@ -449,7 +449,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "T'au flamer",
+          "name": "T’au flamer",
           "points": 5
         }
       ]

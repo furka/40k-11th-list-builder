@@ -37,13 +37,28 @@ const TEST_MFM = {
             {
               name: "Daemon-only Upgrade",
               points: 10,
+              nonCharacterOnly: true,
               requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
             },
             {
               name: "Mixed Disjunction",
               points: 10,
+              nonCharacterOnly: true,
               allowedHosts: ["NECRON WARRIORS"],
               requiredKeywords: ["ADEPTUS ASTARTES TERMINATOR"],
+            },
+            {
+              // Real-world shape: Necron "Quantum Goad" whitelists the
+              // Nightbringer (CHARACTER + EPIC HERO + MONSTER) as its only
+              // legal host. The universal EPIC HERO block must yield to the
+              // explicit allowedHosts whitelist here. The apostrophe is the
+              // curly U+2019 form that MFM and the real auto.json use; this
+              // also serves as a regression check that the validator's
+              // byte-exact `host.name === entry` match preserves the unicode
+              // through the Pinia store.
+              name: "Quantum Goad",
+              points: 25,
+              allowedHosts: ["C’TAN SHARD OF THE NIGHTBRINGER"],
             },
           ],
         },
@@ -68,6 +83,33 @@ const TEST_MFM = {
       leader: { attachesTo: ["NECRON WARRIORS"] },
       sizes: [
         { name: "1 model", models: 1, basePoints: 100, tiers: [{ minCount: 1, points: 100 }] },
+      ],
+    },
+    {
+      // Ordinary CHARACTER leader — used as the default attach host in tests
+      // that need a valid CHARACTER target without the EPIC HERO complication.
+      name: "OVERLORD",
+      faction: FACTION,
+      edition: "11th",
+      keywords: ["CHARACTER"],
+      leader: { attachesTo: ["NECRON WARRIORS"] },
+      sizes: [
+        { name: "1 model", models: 1, basePoints: 70, tiers: [{ minCount: 1, points: 70 }] },
+      ],
+    },
+    {
+      // EPIC HERO MONSTER used to verify that an enhancement explicitly
+      // naming this datasheet in allowedHosts can attach despite the universal
+      // EPIC HERO block (muster-armies §25.04 "unless otherwise stated").
+      // Apostrophe is the curly U+2019 form matching MFM; the Quantum Goad
+      // fixture's allowedHosts entry must use the same byte form (byte-exact
+      // match).
+      name: "C’TAN SHARD OF THE NIGHTBRINGER",
+      faction: FACTION,
+      edition: "11th",
+      keywords: ["CHARACTER", "EPIC HERO", "FLY", "MONSTER", "NECRONS"],
+      sizes: [
+        { name: "1 model", models: 1, basePoints: 320, tiers: [{ minCount: 1, points: 320 }] },
       ],
     },
     {
@@ -437,8 +479,9 @@ describe("armyList Enhancement validation", () => {
   // Host stand-in for tests that need a valid attachment target. Distinct
   // ids per host keep duplicate-limit tests from also tripping the drag-time
   // "max 1 enh per host" rule (which the validator doesn't enforce, but the
-  // shape mirrors real-world usage).
-  const charHost = (id) => ({ id, name: "IMOTEKH THE STORMLORD", models: 1 });
+  // shape mirrors real-world usage). OVERLORD is a plain CHARACTER (no EPIC
+  // HERO) so it survives the universal-default checks.
+  const charHost = (id) => ({ id, name: "OVERLORD", models: 1 });
 
   it("passes a single enhancement attached to a valid host", () => {
     const h = charHost("h");
@@ -563,7 +606,7 @@ describe("armyList Enhancement validation", () => {
   });
 
   it("passes a characterOnly enhancement attached to a character", () => {
-    const host = hostUnit("host", "IMOTEKH THE STORMLORD");
+    const host = hostUnit("host", "OVERLORD");
     const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host" };
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
@@ -585,10 +628,40 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
-  it("by default (no restriction fields) an enhancement passes on any host", () => {
-    // "Unrestricted Boon" has no restriction fields. Attach it to a vehicle
-    // (no character, no epicHero) and confirm the validator stays silent.
+  it("EPIC HERO block yields to an explicit allowedHosts whitelist (Quantum Goad on the Nightbringer; curly U+2019 apostrophe round-trip)", () => {
+    // The host name MUST use the same curly U+2019 apostrophe as the
+    // Quantum Goad fixture's allowedHosts entry — byte-exact match. This
+    // doubles as a regression test that the validator preserves the
+    // unicode through the Pinia store path.
+    const host = hostUnit("host", "C’TAN SHARD OF THE NIGHTBRINGER");
+    const e = { ...enh("e", "Quantum Goad"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
+  it("EPIC HERO block still fires for a different Epic Hero NOT named in allowedHosts (Quantum Goad on Imotekh)", () => {
+    const host = hostUnit("host", "IMOTEKH THE STORMLORD");
+    const e = { ...enh("e", "Quantum Goad"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(
+      "Enhancement can't be given to Epic Heroes"
+    );
+  });
+
+  it("by default (no restriction fields) an enhancement still requires CHARACTER (muster-armies §25.04)", () => {
+    // "Unrestricted Boon" has no restriction fields. The universal default
+    // from §25.04 ("Only CHARACTER units can be given enhancements unless
+    // otherwise stated") fires anyway — a vehicle host gets rejected.
     const host = hostUnit("host", "DOOMSDAY ARK", 1);
+    const e = { ...enh("e", "Unrestricted Boon"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(
+      "Enhancement can only attach to a character"
+    );
+  });
+
+  it("by default (no restriction fields) an enhancement passes on a plain CHARACTER host", () => {
+    const host = hostUnit("host", "OVERLORD");
     const e = { ...enh("e", "Unrestricted Boon"), attachedTo: "host" };
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(false);
@@ -659,18 +732,21 @@ describe("armyList Enhancement validation", () => {
   it("flags a second enhancement in the same attached unit (one on squad, one on attached leader)", () => {
     const squad = { id: "w", name: "NECRON WARRIORS", models: 10 };
     const leader = {
-      id: "imo",
-      name: "IMOTEKH THE STORMLORD",
+      id: "ovr",
+      name: "OVERLORD",
       models: 1,
       attachedTo: "w",
     };
+    // "Enlivened Sentinels" is an Upgrade, so it legally targets the
+    // non-CHARACTER squad. "Arisen Tyrant" is a plain enhancement, so it
+    // legally targets the CHARACTER leader.
     const onSquad = {
-      ...enh("a", "Unrestricted Boon"),
+      ...enh("a", "Enlivened Sentinels"),
       attachedTo: "w",
     };
     const onLeader = {
       ...enh("b", "Arisen Tyrant"),
-      attachedTo: "imo",
+      attachedTo: "ovr",
     };
     store.setUnits([squad, leader, onSquad, onLeader]);
     expect(store.getUnitValidationError(onSquad)).toBe(false);
@@ -684,13 +760,13 @@ describe("armyList Enhancement validation", () => {
     const squad2 = { id: "w2", name: "NECRON WARRIORS", models: 10 };
     const leader1 = {
       id: "l1",
-      name: "IMOTEKH THE STORMLORD",
+      name: "OVERLORD",
       models: 1,
       attachedTo: "w1",
     };
     const leader2 = {
       id: "l2",
-      name: "IMOTEKH THE STORMLORD",
+      name: "OVERLORD",
       models: 1,
       attachedTo: "w2",
     };

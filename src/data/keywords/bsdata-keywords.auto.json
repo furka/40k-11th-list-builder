@@ -2249,9 +2249,9 @@
       "MOUNTED",
       "REGIMENT"
     ],
-    "Augmented Bone 'Ead [Crucible]": [
+    "Augmented Bone ’Ead [Crucible]": [
       "ASTRA MILITARUM",
-      "AUGMENTED BONE 'EAD",
+      "AUGMENTED BONE ’EAD",
       "CHARACTER",
       "CRUCIBLE",
       "GRENADES",
@@ -2649,13 +2649,13 @@
       "INFANTRY",
       "REGIMENT"
     ],
-    "Hell's Last": [
+    "Hell’s Last": [
       "ASTRA MILITARUM",
       "CHARACTER",
       "COMMAND SQUAD",
       "EPIC HERO",
       "GRENADES",
-      "HELL'S LAST",
+      "HELL’S LAST",
       "IMPERIUM",
       "INFANTRY",
       "OFFICER",
@@ -3352,7 +3352,7 @@
       "VEHICLE",
       "WYVERN"
     ],
-    "‘Iron Hand’ Straken": [
+    "’Iron Hand’ Straken": [
       "ASTRA MILITARUM",
       "CHARACTER",
       "EPIC HERO",
@@ -3360,7 +3360,7 @@
       "IMPERIUM",
       "INFANTRY",
       "OFFICER",
-      "‘IRON HAND’ STRAKEN"
+      "’IRON HAND’ STRAKEN"
     ]
   },
   "BLACK TEMPLARS": {
@@ -3777,21 +3777,21 @@
       "INFANTRY",
       "PHOBOS"
     ],
-    "Emperor's Champion": [
+    "Emperor’s Champion": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
       "CHARACTER",
-      "EMPEROR'S CHAMPION",
+      "EMPEROR’S CHAMPION",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
     ],
-    "Emperor's Champion (Anointed)": [
+    "Emperor’s Champion (Anointed)": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
       "CHARACTER",
-      "EMPEROR'S CHAMPION",
+      "EMPEROR’S CHAMPION",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
@@ -5889,8 +5889,8 @@
     ]
   },
   "CHAOS DAEMONS": {
-    "Aetaos'rau'keres": [
-      "AETAOS'RAU'KERES",
+    "Aetaos’rau’keres": [
+      "AETAOS’RAU’KERES",
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -5905,8 +5905,8 @@
       "TZEENTCH NON-BATTLELINE"
     ],
     "Alluress": [],
-    "An'ggrath the Unbound": [
-      "AN'GGRATH THE UNBOUND",
+    "An’ggrath the Unbound": [
+      "AN’GGRATH THE UNBOUND",
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -5918,8 +5918,8 @@
       "TITANIC",
       "TOWERING"
     ],
-    "Be'lakor": [
-      "BE'LAKOR",
+    "Be’lakor": [
+      "BE’LAKOR",
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -6600,7 +6600,7 @@
       "SHADOW LEGION",
       "SPOILPOX SCRIVENER"
     ],
-    "Syll'esske": [
+    "Syll’esske": [
       "CHAOS",
       "CHARACTER",
       "DAEMON",
@@ -6610,7 +6610,7 @@
       "PSYKER",
       "SLAANESH",
       "SLAANESH NON-BATTLELINE",
-      "SYLL'ESSKE"
+      "SYLL’ESSKE"
     ],
     "The Blue Scribes": [
       "CHAOS",
@@ -8499,13 +8499,13 @@
       "LIEUTENANT WITH COMBI-WEAPON",
       "PHOBOS"
     ],
-    "Lion El'Jonson": [
+    "Lion El’Jonson": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
       "DARK ANGELS",
       "EPIC HERO",
       "IMPERIUM",
-      "LION EL'JONSON",
+      "LION EL’JONSON",
       "MONSTER",
       "PRIMARCH"
     ],
@@ -11729,7 +11729,7 @@
       "YVRAINE"
     ]
   },
-  "EMPEROR'S CHILDREN": {
+  "EMPEROR’S CHILDREN": {
     "Alluress": [],
     "Blissbringer": [],
     "Champion of Excess [Crucible]": [
@@ -11737,14 +11737,14 @@
       "CHAOS",
       "CHARACTER",
       "CRUCIBLE",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "GRENADES",
       "INFANTRY",
       "SLAANESH"
     ],
     "Chaos Land Raider": [
       "CHAOS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "LAND RAIDER",
       "SLAANESH",
       "SMOKE",
@@ -11754,7 +11754,7 @@
     "Chaos Rhino": [
       "CHAOS",
       "DEDICATED TRANSPORT",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "RHINO",
       "SLAANESH",
       "SMOKE",
@@ -11765,12 +11765,12 @@
       "BEAST",
       "CHAOS",
       "CHAOS SPAWN",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "SLAANESH"
     ],
     "Chaos Terminators": [
       "CHAOS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "INFANTRY",
       "SLAANESH",
       "TERMINATOR",
@@ -11781,7 +11781,7 @@
       "CHARACTER",
       "DAEMON",
       "DAEMON PRINCE",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "MONSTER",
       "SLAANESH"
     ],
@@ -11790,7 +11790,7 @@
       "CHARACTER",
       "DAEMON",
       "DAEMON PRINCE WITH WINGS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "FLY",
       "MONSTER",
       "SLAANESH"
@@ -11810,7 +11810,7 @@
       "CHAOS",
       "DAEMON",
       "DEFILER",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "SLAANESH",
       "VEHICLE",
       "WALKER"
@@ -11819,7 +11819,7 @@
       "CHAOS",
       "CHARACTER",
       "CRUCIBLE",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "EXCRUCIATOR",
       "GRENADES",
       "INFANTRY",
@@ -11837,7 +11837,7 @@
     ],
     "Flawless Blades": [
       "CHAOS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "FLAWLESS BLADES",
       "GRENADES",
       "INFANTRY",
@@ -11847,7 +11847,7 @@
       "CHAOS",
       "CHARACTER",
       "CRUCIBLE",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "FLAWLESS CHAMPION",
       "GRENADES",
       "INFANTRY",
@@ -11857,7 +11857,7 @@
       "CHAOS",
       "CHARACTER",
       "DAEMON",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "EPIC HERO",
       "FLY",
       "FULGRIM",
@@ -11871,7 +11871,7 @@
       "AIRCRAFT",
       "CHAOS",
       "DAEMON",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "FLY",
       "HELDRAKE",
       "SLAANESH",
@@ -11880,7 +11880,7 @@
     "Infractors": [
       "BATTLELINE",
       "CHAOS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "GRENADES",
       "INFANTRY",
       "INFRACTORS",
@@ -11899,7 +11899,7 @@
     "Lord Exultant": [
       "CHAOS",
       "CHARACTER",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "GRENADES",
       "INFANTRY",
       "LORD EXULTANT",
@@ -11908,7 +11908,7 @@
     "Lord Kakophonist": [
       "CHAOS",
       "CHARACTER",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "GRENADES",
       "INFANTRY",
       "LORD KAKOPHONIST",
@@ -11917,7 +11917,7 @@
     "Lucius the Eternal": [
       "CHAOS",
       "CHARACTER",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "EPIC HERO",
       "INFANTRY",
       "LUCIUS THE ETERNAL",
@@ -11926,7 +11926,7 @@
     "Maulerfiend": [
       "CHAOS",
       "DAEMON",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "MAULERFIEND",
       "SLAANESH",
       "VEHICLE",
@@ -11934,7 +11934,7 @@
     ],
     "Noise Marines": [
       "CHAOS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "INFANTRY",
       "NOISE MARINES",
       "SLAANESH"
@@ -11963,7 +11963,7 @@
     "Sorcerer": [
       "CHAOS",
       "CHARACTER",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "GRENADES",
       "INFANTRY",
       "PSYKER",
@@ -11974,7 +11974,7 @@
     "Tormentors": [
       "BATTLELINE",
       "CHAOS",
-      "EMPEROR'S CHILDREN",
+      "EMPEROR’S CHILDREN",
       "GRENADES",
       "INFANTRY",
       "SLAANESH",
@@ -14418,24 +14418,24 @@
       "NECRONS",
       "NOBLE"
     ],
-    "C'tan Shard of the Deceiver": [
-      "C'TAN SHARD OF THE DECEIVER",
+    "C’tan Shard of the Deceiver": [
+      "C’TAN SHARD OF THE DECEIVER",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
       "MONSTER",
       "NECRONS"
     ],
-    "C'tan Shard of the Nightbringer": [
-      "C'TAN SHARD OF THE NIGHTBRINGER",
+    "C’tan Shard of the Nightbringer": [
+      "C’TAN SHARD OF THE NIGHTBRINGER",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
       "MONSTER",
       "NECRONS"
     ],
-    "C'tan Shard of the Void Dragon": [
-      "C'TAN SHARD OF THE VOID DRAGON",
+    "C’tan Shard of the Void Dragon": [
+      "C’TAN SHARD OF THE VOID DRAGON",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
@@ -14827,12 +14827,12 @@
       "NECRONS",
       "TOMB BLADES"
     ],
-    "Transcendent C'tan": [
+    "Transcendent C’tan": [
       "CHARACTER",
       "FLY",
       "MONSTER",
       "NECRONS",
-      "TRANSCENDENT C'TAN"
+      "TRANSCENDENT C’TAN"
     ],
     "Trazyn the Infinite": [
       "CHARACTER",
@@ -14969,8 +14969,8 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Big'ed Bossbunka": [
-      "BIG'ED BOSSBUNKA",
+    "Big’ed Bossbunka": [
+      "BIG’ED BOSSBUNKA",
       "FORTIFICATION",
       "ORKS",
       "TRANSPORT",
@@ -15053,14 +15053,14 @@
       "INFANTRY",
       "ORKS"
     ],
-    "Da Red Gobbo's A-bomb-inable Snowman": [
+    "Da Red Gobbo’s A-bomb-inable Snowman": [
       "CHARACTER",
       "DA RED GOBBO A-BOMB-INABLE SNOWMAN",
       "EPIC HERO",
       "INFANTRY",
       "ORKS"
     ],
-    "Da Red Gobbo's Tinboy": [
+    "Da Red Gobbo’s Tinboy": [
       "CHARACTER",
       "DA RED GOBBO",
       "EPIC HERO",
@@ -16213,14 +16213,14 @@
       "PHOBOS",
       "RAVEN GUARD"
     ],
-    "Kor'sarro Khan": [
+    "Kor’sarro Khan": [
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
-      "KOR'SARRO KHAN",
+      "KOR’SARRO KHAN",
       "TACTICUS",
       "WHITE SCARS"
     ],
@@ -16869,7 +16869,7 @@
       "VEHICLE",
       "VINDICATOR"
     ],
-    "Vulkan He'stan": [
+    "Vulkan He’stan": [
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
@@ -16879,7 +16879,7 @@
       "INFANTRY",
       "SALAMANDERS",
       "TACTICUS",
-      "VULKAN HE'STAN"
+      "VULKAN HE’STAN"
     ],
     "Wardens of Ultramar": [
       "ADEPTUS ASTARTES",
@@ -18345,39 +18345,39 @@
       "WULFEN WITH STORM SHIELDS"
     ]
   },
-  "T'AU EMPIRE": {
+  "T’AU EMPIRE": {
     "AX-1-0 Tiger Shark": [
       "AIRCRAFT",
       "AX-1-0 TIGER SHARK",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
-    "Aun'shi": [
-      "AUN'SHI",
+    "Aun’shi": [
+      "AUN’SHI",
       "CHARACTER",
       "EPIC HERO",
       "ETHEREAL",
       "INFANTRY",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
-    "Aun'va": [
-      "AUN'VA",
+    "Aun’va": [
+      "AUN’VA",
       "CHARACTER",
       "EPIC HERO",
       "ETHEREAL",
       "INFANTRY",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Barracuda": [
       "AIRCRAFT",
       "BARRACUDA",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Battlesuit Veteran [Crucible]": [
@@ -18387,7 +18387,7 @@
       "CRUCIBLE",
       "FLY",
       "INFANTRY",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Breacher Team": [
       "BATTLELINE",
@@ -18397,13 +18397,13 @@
       "INFANTRY",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Broadside Battlesuits": [
       "BATTLESUIT",
       "BROADSIDE",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18413,7 +18413,7 @@
       "GRENADES",
       "INFANTRY",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Commander Farsight": [
       "BATTLESUIT",
@@ -18422,7 +18422,7 @@
       "EPIC HERO",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18434,7 +18434,7 @@
       "FLY",
       "INFANTRY",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Commander in Coldstar Battlesuit": [
       "BATTLESUIT",
@@ -18442,7 +18442,7 @@
       "COMMANDER IN COLDSTAR BATTLESUIT",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18452,7 +18452,7 @@
       "COMMANDER IN CRISIS BATTLESUIT",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18462,7 +18462,7 @@
       "COMMANDER IN ENFORCER BATTLESUIT",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18471,7 +18471,7 @@
       "CRISIS",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18481,7 +18481,7 @@
       "FIREKNIFE",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18491,7 +18491,7 @@
       "FLY",
       "NON-KROOT",
       "STARSCYTHE",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18501,7 +18501,7 @@
       "FLY",
       "NON-KROOT",
       "SUNFORGE",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18512,14 +18512,14 @@
       "INFANTRY",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Devilfish": [
       "DEDICATED TRANSPORT",
       "DEVILFISH",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -18527,7 +18527,7 @@
       "DRONE SENTRY TURRET",
       "FORTIFICATION",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Ethereal": [
@@ -18535,7 +18535,7 @@
       "ETHEREAL",
       "INFANTRY",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Firesight Team": [
       "CHARACTER",
@@ -18543,7 +18543,7 @@
       "INFANTRY",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Ghostkeel Battlesuit": [
       "BATTLESUIT",
@@ -18551,7 +18551,7 @@
       "GHOSTKEEL",
       "NON-KROOT",
       "SMOKE",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18559,13 +18559,13 @@
       "GREAT KNARLOC",
       "KROOT",
       "MONSTER",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Hammerhead Gunship": [
       "FLY",
       "HAMMERHEAD GUNSHIP",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Heavy Gun Drones": [
@@ -18573,7 +18573,7 @@
       "HEAVY GUN DRONES",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Kinband Champion [Crucible]": [
@@ -18582,27 +18582,27 @@
       "INFANTRY",
       "KINBAND CHAMPION",
       "KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Knarloc Riders": [
       "KNARLOC RIDERS",
       "KROOT",
       "MOUNTED",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Kroot Carnivores": [
       "CARNIVORES",
       "GRENADES",
       "INFANTRY",
       "KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Kroot Farstalkers": [
       "FARSTALKERS",
       "GRENADES",
       "INFANTRY",
       "KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Kroot Flesh Shaper": [
       "CHARACTER",
@@ -18610,27 +18610,27 @@
       "INFANTRY",
       "KROOT",
       "SHAPER",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Kroot Hounds": [
       "BEAST",
       "HOUNDS",
       "KROOT",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Kroot Lone-spear": [
       "CHARACTER",
       "KROOT",
       "LONE-SPEAR",
       "MOUNTED",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Kroot Trail Shaper": [
       "CHARACTER",
       "INFANTRY",
       "KROOT",
       "SHAPER",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TRAIL SHAPER"
     ],
     "Kroot War Shaper": [
@@ -18638,7 +18638,7 @@
       "INFANTRY",
       "KROOT",
       "SHAPER",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "WAR SHAPER"
     ],
     "Krootox Rampagers": [
@@ -18646,14 +18646,14 @@
       "KROOT",
       "KROOTOX RAMPAGERS",
       "MOUNTED",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Krootox Riders": [
       "GRENADES",
       "KROOT",
       "KROOTOX RIDERS",
       "MOUNTED",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Longstrike": [
       "CHARACTER",
@@ -18661,7 +18661,7 @@
       "FLY",
       "LONGSTRIKE",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Manta": [
@@ -18670,7 +18670,7 @@
       "MANTA",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TITANIC",
       "TRANSPORT",
       "VEHICLE"
@@ -18680,7 +18680,7 @@
       "FLY",
       "NON-KROOT",
       "ORCA DROPSHIP",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TITANIC",
       "TRANSPORT",
       "VEHICLE"
@@ -18691,22 +18691,22 @@
       "MARKERLIGHT",
       "NON-KROOT",
       "PATHFINDER TEAM",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Piranha": [
       "FLY",
       "NON-KROOT",
       "PIRANHA",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Piranhas": [],
-    "R'varna Battlesuit": [
+    "R’varna Battlesuit": [
       "BATTLESUIT",
       "FLY",
       "NON-KROOT",
-      "R'VARNA",
-      "T'AU EMPIRE",
+      "R’VARNA",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18715,7 +18715,7 @@
       "FLY",
       "NON-KROOT",
       "RAZORSHARK STRIKE FIGHTER",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Remora Stealth Drones": [
@@ -18723,41 +18723,41 @@
       "MARKERLIGHT",
       "NON-KROOT",
       "REMORA STEALTH DRONES",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Remote Sensor Tower": [
       "FORTIFICATION",
       "NON-KROOT",
       "REMOTE SENSOR TOWER",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Riptide Battlesuit": [
       "BATTLESUIT",
       "FLY",
       "NON-KROOT",
       "RIPTIDE",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
-    "Shas'nel [Crucible]": [
+    "Shas’nel [Crucible]": [
       "CHARACTER",
       "CRUCIBLE",
       "GRENADES",
       "INFANTRY",
-      "SHAS'NEL",
-      "T'AU EMPIRE"
+      "SHAS’NEL",
+      "T’AU EMPIRE"
     ],
-    "Shas'o R'alai": [
+    "Shas’o R’alai": [
       "BATTLESUIT",
       "CHARACTER",
       "EPIC HERO",
       "FLY",
       "MARKERLIGHT",
       "NON-KROOT",
-      "SHAS'O R'ALAI",
-      "T'AU EMPIRE",
+      "SHAS’O R’ALAI",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18766,7 +18766,7 @@
       "MARKERLIGHT",
       "NON-KROOT",
       "SKY RAY GUNSHIP",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Stealth Battlesuits": [
@@ -18777,12 +18777,12 @@
       "MARKERLIGHT",
       "NON-KROOT",
       "STEALTH",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Stormsurge": [
       "NON-KROOT",
       "STORMSURGE",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TITANIC",
       "TOWERING",
       "VEHICLE",
@@ -18796,27 +18796,27 @@
       "MARKERLIGHT",
       "NON-KROOT",
       "STRIKE TEAM",
-      "T'AU EMPIRE"
+      "T’AU EMPIRE"
     ],
     "Sun Shark Bomber": [
       "AIRCRAFT",
       "FLY",
       "NON-KROOT",
       "SUN SHARK BOMBER",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "TX42 Piranha": [
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TX42 PIRANHA",
       "VEHICLE"
     ],
-    "Ta'unar Supremacy Armour": [
+    "Ta’unar Supremacy Armour": [
       "NON-KROOT",
-      "T'AU EMPIRE",
-      "TA'UNAR SUPREMACY ARMOUR",
+      "T’AU EMPIRE",
+      "TA’UNAR SUPREMACY ARMOUR",
       "TITANIC",
       "TOWERING",
       "VEHICLE",
@@ -18826,14 +18826,14 @@
       "DRONE",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TACTICAL DRONES"
     ],
     "Tetras": [
       "FLY",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TETRAS",
       "VEHICLE"
     ],
@@ -18843,7 +18843,7 @@
       "EPIC HERO",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "THE TWIN LANCE",
       "VEHICLE",
       "WALKER"
@@ -18852,7 +18852,7 @@
       "FLY",
       "FORTIFICATION",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TIDEWALL DRONEPORT",
       "TRANSPORT",
       "VEHICLE"
@@ -18861,7 +18861,7 @@
       "FLY",
       "FORTIFICATION",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TIDEWALL GUNRIG",
       "TRANSPORT",
       "VEHICLE"
@@ -18870,7 +18870,7 @@
       "FLY",
       "FORTIFICATION",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TIDEWALL SHIELDLINE",
       "TRANSPORT",
       "VEHICLE"
@@ -18879,7 +18879,7 @@
       "AIRCRAFT",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "TIGER SHARK",
       "VEHICLE"
     ],
@@ -18887,26 +18887,26 @@
       "FLY",
       "INFANTRY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VESPID STINGWINGS"
     ],
     "XV9 Hazard Battlesuits": [
       "BATTLESUIT",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER",
       "XV9 HAZARD"
     ],
-    "Y'vahra Battlesuit": [
+    "Y’vahra Battlesuit": [
       "BATTLESUIT",
       "FLY",
       "NON-KROOT",
-      "T'AU EMPIRE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER",
-      "Y'VAHRA"
+      "Y’VAHRA"
     ]
   },
   "THOUSAND SONS": {
@@ -19771,12 +19771,12 @@
       "TYRANIDS",
       "VENOMTHROPES"
     ],
-    "Von Ryan's Leapers": [
+    "Von Ryan’s Leapers": [
       "GREAT DEVOURER",
       "INFANTRY",
       "TYRANIDS",
       "VANGUARD INVADER",
-      "VON RYAN'S LEAPERS"
+      "VON RYAN’S LEAPERS"
     ],
     "Winged Hive Tyrant": [
       "CHARACTER",

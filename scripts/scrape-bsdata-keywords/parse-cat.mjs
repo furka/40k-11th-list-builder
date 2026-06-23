@@ -1,5 +1,7 @@
 import { XMLParser } from "fast-xml-parser";
 
+import { normalizeApostrophes } from "../../src/utils/apostrophe-normalization.js";
+
 const parser = new XMLParser({
   ignoreAttributes: false,
   attributeNamePrefix: "@_",
@@ -81,8 +83,11 @@ function buildEntry(node) {
   const id = node["@_id"];
   // Strip the [Legends] suffix FIRST so the name-fix map lookup sees the
   // bare name. BSData carries some typo'd names under both Legends and
-  // non-Legends variants — both need the fix.
-  const name = applyNameFix(stripLegendsSuffix(node["@_name"] ?? ""));
+  // non-Legends variants — both need the fix. Apostrophe normalization runs
+  // last so any byte form returned by the fix map ends up canonical.
+  const name = normalizeApostrophes(
+    applyNameFix(stripLegendsSuffix(node["@_name"] ?? ""))
+  );
   const type = node["@_type"] ?? "";
 
   const categoryLinks = collectCategoryLinks(node);
@@ -175,7 +180,7 @@ function normalizeKeyword(raw) {
   let s = String(raw).trim();
   const colonIdx = s.indexOf(":");
   if (colonIdx !== -1) s = s.slice(colonIdx + 1).trim();
-  return s.toUpperCase();
+  return normalizeApostrophes(s.toUpperCase());
 }
 
 // MFM tracks Legends status as a `legends: true` flag on the datasheet; BSData

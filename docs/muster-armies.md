@@ -123,17 +123,29 @@ update this file together with any affected enforcement code.
 
 ## How this app enforces the rules
 
-This table maps each rule above to the module that enforces it. When a
-rule has an "unless otherwise stated" carve-out (e.g. only CHARACTER
-units, no EPIC HEROES, no duplicates), enforcement is opt-in per
-enhancement via metadata in
+This table maps each rule above to the module that enforces it.
+
+The CHARACTER and EPIC HERO defaults from §25.04 ("unless otherwise
+stated") are applied as **universal defaults** by the validators — they
+no longer require a per-enhancement opt-in. Two carve-outs apply:
+
+1. The `nonCharacterOnly` flag, derived from the "(Upgrade)" suffix in
+   [`scripts/scrape-mfm-11th/extract.mjs`](../scripts/scrape-mfm-11th/extract.mjs),
+   exempts Upgrades from the CHARACTER rule.
+2. An enhancement that explicitly names this host in its `allowedHosts`
+   whitelist is "otherwise stating" — both the CHARACTER and the EPIC
+   HERO defaults yield to that whitelist. Example: Necron *Quantum Goad*
+   has `allowedHosts: ["C'TAN SHARD OF THE NIGHTBRINGER"]`, and the
+   Nightbringer is an EPIC HERO MONSTER — the explicit name override
+   allows attachment despite the universal EPIC HERO block.
+
+Per-enhancement metadata in
 [`src/data/configs/enhancement-restrictions.auto.json`](../src/data/configs/enhancement-restrictions.auto.json) —
 LLM-scraped from the official Faction Pack PDFs by
-[`scripts/scrape-mfm-11th/`](../scripts/scrape-mfm-11th/) — plus the
-`nonCharacterOnly` flag the scraper derives from the "(Upgrade)" suffix
-in [`scripts/scrape-mfm-11th/extract.mjs`](../scripts/scrape-mfm-11th/extract.mjs).
-The scraper output is the single source of truth: fixes go in the
-scraper, not the JSON.
+[`scripts/scrape-mfm-11th/`](../scripts/scrape-mfm-11th/) — layers
+narrower restrictions on top (`allowedHosts`, `requiredKeywords`,
+`limit`). The scraper output is the single source of truth: fixes go in
+the scraper, not the JSON.
 
 | Rule | Enforced by |
 | --- | --- |
@@ -146,10 +158,15 @@ scraper, not the JSON.
 | Enhancement must be attached; never on another enhancement | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/stores/armyList.js`](../src/stores/armyList.js) |
 | Support unit must be attached to a bodyguard | [`src/stores/armyList.js`](../src/stores/armyList.js) (`getUnitValidationError`) |
 | Leader attaches only to its `attachesTo` list; max 1 leader and max 1 support per host | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/utils/attachment-rules.js`](../src/utils/attachment-rules.js) |
-| Only CHARACTER units can be given enhancements (per-enhancement opt-in) | `characterOnly` flag, checked in [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/stores/armyList.js`](../src/stores/armyList.js) |
-| EPIC HEROES cannot have enhancements (per-enhancement opt-in) | `notOnEpicHeroes` flag |
+| **Only CHARACTER units can be given enhancements** (universal default; bypassed by `nonCharacterOnly` or a host in `allowedHosts`) | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/stores/armyList.js`](../src/stores/armyList.js) |
+| **EPIC HEROES cannot have enhancements** (universal default; bypassed by a host in `allowedHosts`) | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/stores/armyList.js`](../src/stores/armyList.js) |
 | At most N copies of the same enhancement (per-enhancement opt-in) | `limit` field |
 | Upgrade-tagged enhancements can attach to non-character units | `nonCharacterOnly` flag, derived from the "(Upgrade)" suffix during scrape |
+
+The `characterOnly` and `notOnEpicHeroes` flags still appear in the
+scraped JSON for ~130 / ~3 enhancements respectively but the validators
+no longer consult them — they're redundant with the universal defaults.
+A follow-up can drop them from the scraper schema.
 
 ### Rules deliberately NOT auto-enforced
 
@@ -157,12 +174,12 @@ scraper, not the JSON.
   marker. Selecting which CHARACTER model is the Warlord is left to the
   player.
 - **Up-to-three of the same Upgrade and "2nd/3rd don't count toward the
-  enhancement total".** The default `limit` field treats the cap as a
-  hard ceiling and counts every copy. Until a dedicated `isUpgrade`
-  flag is added, lists can already include duplicates of Upgrade
-  enhancements (the default validator is permissive without a `limit`),
-  but the per-army enhancement count will tick up by one for every
-  copy.
+  enhancement total".** The same-name uniqueness rule (default 1 per
+  army for normal enhancements, default 3 for Upgrades) is not yet
+  applied as a default. Today it's only enforced when an enhancement
+  carries an explicit `limit` field. The Upgrade-counts-as-one carve-out
+  for the per-army total is also not yet applied. Tracked for a later
+  change.
 - **Detachment-specific must-include / cannot-include rules** (e.g.
   "your army must include X" on a detachment). The roster builder
   trusts the player to read the detachment text and obey it.

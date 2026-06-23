@@ -13,6 +13,8 @@
     "mfm:scrape:refresh": "node --env-file-if-exists=.env scripts/scrape-mfm-11th/index.mjs --refresh",
     "bsdata:scrape": "node scripts/scrape-bsdata-keywords/index.mjs",
     "bsdata:scrape:refresh": "node scripts/scrape-bsdata-keywords/index.mjs --refresh",
+    "bsdata:enhancements": "node scripts/scrape-bsdata-enhancements/index.mjs",
+    "bsdata:enhancements:refresh": "node scripts/scrape-bsdata-enhancements/index.mjs --refresh",
     "bsdata:prune-overrides": "node scripts/audit-and-prune-overrides.mjs"
   },
   "dependencies": {

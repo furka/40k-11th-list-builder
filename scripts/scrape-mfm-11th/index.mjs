@@ -13,7 +13,12 @@ import {
   findDetachmentRulesPages,
   findDatasheetPages,
 } from "./find-section.mjs";
-import { classifyWithLLM, flushLlmCache } from "./llm-classify.mjs";
+import {
+  classifyWithLLM,
+  flushLlmCache,
+  repairRequiredKeywords,
+} from "./llm-classify.mjs";
+import { buildKeywordVocab } from "./keyword-vocab.mjs";
 import {
   classifyDetachmentGrantsWithLLM,
   flushDetachmentGrantsCache,
@@ -196,7 +201,7 @@ async function scrapePdfRestrictionsForFaction(
   factionPackUrls,
   warnings,
   llmClient,
-  { refresh }
+  { refresh, factionKeywordVocab, globalKeywordVocab }
 ) {
   const url = factionPackUrls[slug];
   if (!url) {
@@ -269,6 +274,7 @@ async function scrapePdfRestrictionsForFaction(
         enhancementName: enh.name,
         pageTexts: matched.pages,
         datasheetNames,
+        factionKeywordVocab,
       });
       restrictions = result.restrictions;
       cacheHit = result.cacheHit;
@@ -313,6 +319,28 @@ async function scrapePdfRestrictionsForFaction(
           ...(restrictions.requiredKeywords ?? []),
           ...orphaned,
         ];
+      }
+    }
+
+    // Repair requiredKeywords against the closed keyword vocab. Runs AFTER
+    // allowedHosts demotion so orphaned hosts that turned out to be real
+    // datasheet names get promoted back, multi-token concatenations get
+    // split, and unknown tokens get dropped. See repairRequiredKeywords()
+    // in llm-classify.mjs for the full contract.
+    if (globalKeywordVocab) {
+      const repairs = repairRequiredKeywords(restrictions, {
+        globalKeywordVocab,
+        datasheetByKey,
+        nameKey: enhancementNameKey,
+      });
+      for (const r of repairs) {
+        if (r.kind === "split") {
+          warnings.add("requiredkeyword-split", { slug, name: enh.name, entry: r.entry, into: r.into });
+        } else if (r.kind === "promoted-to-allowedHosts") {
+          warnings.add("requiredkeyword-promoted", { slug, name: enh.name, entry: r.entry, datasheet: r.datasheet });
+        } else if (r.kind === "dropped") {
+          warnings.add("requiredkeyword-dropped", { slug, name: enh.name, entry: r.entry });
+        }
       }
     }
 
@@ -761,9 +789,16 @@ async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFull
     }
   }
 
+  // Build the closed keyword vocabulary the LLM gets (per-faction in the
+  // prompt for cache efficiency, global for the post-LLM auto-repair pass).
+  // Reads fresh from disk so the just-written mfm-pdf-keywords.auto.json
+  // from the preceding PDF keyword pass is included.
+  const { perFaction, global: globalKeywordVocab } = buildKeywordVocab();
+
   for (const slug of slugs) {
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
+    const factionKeywordVocab = [...(perFaction.get(factionPayload.faction) ?? [])];
     try {
       process.stdout.write(`  ${slug} PDF …\n`);
       const out = await scrapePdfRestrictionsForFaction(
@@ -772,7 +807,7 @@ async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFull
         factionPackUrls,
         warnings,
         llmClient,
-        { refresh }
+        { refresh, factionKeywordVocab, globalKeywordVocab }
       );
       if (out === null) continue;
       if (Object.keys(out).length > 0) {
@@ -860,12 +895,14 @@ async function main() {
       `Partial scrape (--only). Skipping version-dir write. ` +
         `Run without --only to produce a full version directory.`
     );
+    // Keywords pass runs FIRST so the restrictions pass can build its closed
+    // keyword vocab from the freshest mfm-pdf-keywords.auto.json layer.
+    console.log("\nPDF keyword pass …");
+    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape });
     console.log("\nFaction Pack PDF pass …");
     await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
     console.log("\nDetachment-grants pass …");
     await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape });
-    console.log("\nPDF keyword pass …");
-    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape });
     await flushAndReport(warnings);
     if (failCount > 0) process.exitCode = 1;
     return;
@@ -898,12 +935,14 @@ async function main() {
   }
 
   if (writeNew || refresh) {
+    // Keywords pass runs FIRST so the restrictions pass can build its closed
+    // keyword vocab from the freshest mfm-pdf-keywords.auto.json layer.
+    console.log("\nPDF keyword pass …");
+    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape });
     console.log("\nFaction Pack PDF pass …");
     await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape });
     console.log("\nDetachment-grants pass …");
     await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape });
-    console.log("\nPDF keyword pass …");
-    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape });
   } else {
     console.log("\nSkipping Faction Pack PDF pass (MFM unchanged). Use --refresh to force.");
   }

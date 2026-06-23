@@ -202,14 +202,27 @@ export function legalDropSlots(
       // Universal rule: enhancements can never attach to another enhancement,
       // regardless of restriction metadata.
       if (isEnhancementUnit(host)) return false;
-      // Optional per-enhancement restrictions on the metadata. Each field is
-      // checked independently and skipped when falsy. See
-      // src/data/configs/enhancement-restrictions.auto.json for the schema.
+      // Per-enhancement restriction schema lives in
+      // src/data/configs/enhancement-restrictions.auto.json. Universal
+      // defaults (CHARACTER, no EPIC HERO) apply to every enhancement;
+      // opt-in fields (nonCharacterOnly, allowedHosts, requiredKeywords)
+      // are checked when present.
+      const hostDs = getDataSheet(host.name);
+      // muster-armies §25.04: enhancements default to CHARACTER-only and to
+      // never going on EPIC HEROES, "unless otherwise stated." An
+      // enhancement that explicitly names this host in `allowedHosts` IS
+      // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
+      // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
+      // CHARACTER). The universal defaults are suppressed for that host.
+      const hostExplicitlyAllowed = enhancementMeta?.allowedHosts?.includes(host.name);
+      if (
+        !enhancementMeta?.nonCharacterOnly &&
+        !hostExplicitlyAllowed &&
+        !hasKeyword(hostDs, "CHARACTER")
+      ) return false;
+      if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) return false;
       if (enhancementMeta) {
-        const hostDs = getDataSheet(host.name);
-        if (enhancementMeta.characterOnly && !hasKeyword(hostDs, "CHARACTER")) return false;
         if (enhancementMeta.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) return false;
-        if (enhancementMeta.notOnEpicHeroes && hasKeyword(hostDs, "EPIC HERO")) return false;
         // `requiredKeywords` + `allowedHosts` are disjunctions ("Captain OR
         // Adeptus Astartes Terminator model"): the host satisfies the rule
         // if EITHER its datasheet name matches `allowedHosts` OR its keyword

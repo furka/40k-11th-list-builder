@@ -225,7 +225,7 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Assassins' Eye",
+          "name": "Assassins’ Eye",
           "points": 15,
           "nonCharacterOnly": true
         },
@@ -289,7 +289,7 @@
           "points": 25
         },
         {
-          "name": "Weavers' Wail",
+          "name": "Weavers’ Wail",
           "points": 20
         }
       ]

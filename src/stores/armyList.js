@@ -304,13 +304,24 @@ export const useArmyListStore = defineStore("armyList", () => {
         }
 
         const hostDs = codexStore.getDataSheet(host.name);
-        if (meta?.characterOnly && !hasKeyword(hostDs, "CHARACTER")) {
+        // muster-armies §25.04: enhancements default to CHARACTER-only and to
+        // never going on EPIC HEROES, "unless otherwise stated." An
+        // enhancement that explicitly names this host in `allowedHosts` IS
+        // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
+        // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
+        // CHARACTER). The universal defaults are suppressed for that host.
+        const hostExplicitlyAllowed = meta?.allowedHosts?.includes(host.name);
+        if (
+          !meta?.nonCharacterOnly &&
+          !hostExplicitlyAllowed &&
+          !hasKeyword(hostDs, "CHARACTER")
+        ) {
           return "Enhancement can only attach to a character";
         }
         if (meta?.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) {
           return "Unit upgrades can't attach to characters";
         }
-        if (meta?.notOnEpicHeroes && hasKeyword(hostDs, "EPIC HERO")) {
+        if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) {
           return "Enhancement can't be given to Epic Heroes";
         }
         // `allowedHosts` and `requiredKeywords` form a disjunction: the host

@@ -25,6 +25,9 @@ import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { splitAgainstVocab } from "./keyword-vocab.mjs";
+import { normalizeApostrophesDeep } from "../../src/utils/apostrophe-normalization.js";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = resolve(__dirname, ".cache");
 const CACHE_PATH = resolve(CACHE_DIR, "llm-classifications.json");
@@ -39,7 +42,7 @@ If you cannot find such a definition section in the supplied pages — only stra
 
 Rules for filling each field when the definition IS present:
 - allowedHosts: array of UPPERCASE datasheet names from the provided list that the enhancement's host phrase names. Only include names that appear in the provided datasheet list verbatim (after uppercasing). [] if the host phrase is a keyword/role tag rather than a specific datasheet, or if there's no host restriction.
-- requiredKeywords: array of UPPERCASE keyword/role tokens from the host phrase that do NOT appear in the provided datasheet list — e.g. "GRAVIS", "HERETIC ASTARTES VEHICLE", "LEGIONES DAEMONICA KHORNE". Both fields can be populated for the same restriction when the host phrase mixes a datasheet name with a keyword.
+- requiredKeywords: array of ATOMIC UPPERCASE keywords from the provided faction keyword vocabulary. Each entry MUST be a single keyword exactly as it appears in that vocabulary — NEVER concatenate two keywords into one string. A host phrase like "ADEPTUS CUSTODES WALKER model only" must emit ["ADEPTUS CUSTODES", "WALKER"] (two separate entries), not ["ADEPTUS CUSTODES WALKER"] (one combined string). Likewise "LEGIONES DAEMONICA KHORNE MONSTER" → ["LEGIONES DAEMONICA", "KHORNE", "MONSTER"]. If a token from the host phrase isn't in the vocabulary, omit it. Both allowedHosts and requiredKeywords can be populated together when the host phrase mixes a datasheet name with a keyword.
 - characterOnly: true only if the text explicitly restricts to CHARACTER models/units.
 - nonCharacterOnly: true only if the text marks this enhancement as an Upgrade applicable to non-CHARACTER units.
 - notOnEpicHeroes: true only if the text excludes EPIC HEROES explicitly.
@@ -77,24 +80,28 @@ const RESTRICTION_TOOL = {
   },
 };
 
-// Narrow a faction's datasheet roster to just the names that actually appear
-// in the PDF pages for this classification. The PROMPT still gets the full
-// roster (closed vocabulary unchanged), but the cache key only needs to
-// depend on names that could plausibly affect THIS enhancement's answer.
-// Without this narrowing, adding/renaming any single datasheet in a faction
-// invalidates the cache for every enhancement in the faction.
-function narrowDatasheetNames(datasheetNames, pageTexts) {
+// Narrow a faction's datasheet roster (or keyword vocab) to just the tokens
+// that actually appear in the PDF pages for this classification. The PROMPT
+// still gets the full set (closed vocabulary unchanged), but the cache key
+// only needs to depend on tokens that could plausibly affect THIS
+// enhancement's answer. Without this narrowing, adding/renaming any single
+// datasheet (or keyword) in a faction invalidates the cache for every
+// enhancement in the faction.
+function narrowToPages(tokens, pageTexts) {
   const haystack = pageTexts.join("\n").toLowerCase()
     .replace(/[‘’]/g, "'");
-  return datasheetNames.filter((name) => {
-    const needle = name.toLowerCase().replace(/[‘’]/g, "'");
+  return tokens.filter((tok) => {
+    const needle = tok.toLowerCase().replace(/[‘’]/g, "'");
     return haystack.includes(needle);
   });
 }
 
-function makeCacheKey({ enhancementName, pageTexts, datasheetNames }) {
+function makeCacheKey({ enhancementName, pageTexts, datasheetNames, factionKeywordVocab }) {
   const h = createHash("sha256");
-  h.update("v2:");
+  // v3 invalidates v2 caches built before requiredKeywords got a closed
+  // vocabulary — the prompt and post-validator differ enough that previous
+  // responses can't be reused.
+  h.update("v3:");
   h.update(MODEL_ID);
   h.update("\0");
   h.update(enhancementName);
@@ -104,9 +111,11 @@ function makeCacheKey({ enhancementName, pageTexts, datasheetNames }) {
     h.update(p);
     h.update("\0");
   }
-  // datasheetNames sorted for stability — order shouldn't affect the answer
-  // but stable order keeps the cache key stable.
+  // Sorted for stability — order shouldn't affect the answer but stable order
+  // keeps the cache key stable.
   h.update([...datasheetNames].sort().join("|"));
+  h.update("\0");
+  h.update([...(factionKeywordVocab ?? [])].sort().join("|"));
   return h.digest("hex");
 }
 
@@ -158,20 +167,32 @@ export async function flushLlmCache() {
 
 // Single-call classification. The caller is responsible for awaiting calls
 // sequentially within a faction so prompt caching can fire.
+//
+// `factionKeywordVocab` is the per-faction list of atomic keywords (one of
+// these per array entry — never concatenations) that the LLM may emit in
+// `requiredKeywords`. Post-response repair (splitting concatenations,
+// promoting stray datasheet names to allowedHosts) lives in the caller in
+// index.mjs so it runs AFTER allowedHosts orphan-demotion as well; see
+// `repairRequiredKeywords` exported below.
 export async function classifyWithLLM({
   client,
   enhancementName,
   pageTexts,
   datasheetNames,
+  factionKeywordVocab = [],
 }) {
   const cache = await getCache();
   const key = makeCacheKey({
     enhancementName,
     pageTexts,
-    datasheetNames: narrowDatasheetNames(datasheetNames, pageTexts),
+    datasheetNames: narrowToPages(datasheetNames, pageTexts),
+    factionKeywordVocab: narrowToPages(factionKeywordVocab, pageTexts),
   });
   if (cache[key]) {
-    return { restrictions: cache[key].response, cacheHit: true };
+    return {
+      restrictions: cache[key].response,
+      cacheHit: true,
+    };
   }
 
   const pagesBody = pageTexts
@@ -179,8 +200,9 @@ export async function classifyWithLLM({
     .join("\n\n");
 
   // Anthropic SDK call. System block carries the per-faction datasheet list
-  // under cache_control so subsequent calls within the faction read the
-  // ephemeral cache. tool_choice forces the model to return the schema.
+  // and keyword vocab under cache_control so subsequent calls within the
+  // faction read the ephemeral cache. tool_choice forces the model to return
+  // the schema.
   const response = await client.messages.create({
     model: MODEL_ID,
     max_tokens: 1024,
@@ -191,6 +213,12 @@ export async function classifyWithLLM({
         text:
           "Faction datasheet names (the only allowedHosts you may emit):\n" +
           datasheetNames.join("\n"),
+      },
+      {
+        type: "text",
+        text:
+          "Faction keyword vocabulary (the only requiredKeywords tokens you may emit; each entry MUST appear in this list verbatim, never concatenated):\n" +
+          factionKeywordVocab.join("\n"),
         cache_control: { type: "ephemeral" },
       },
     ],
@@ -214,8 +242,13 @@ export async function classifyWithLLM({
       `Model did not call the restriction tool (stop_reason=${response.stop_reason})`
     );
   }
-  const restrictions = toolBlock.input;
-  assertWellFormed(restrictions);
+  // Canonicalize apostrophe variants in the LLM-extracted strings before
+  // caching — Haiku occasionally emits a STRAIGHT apostrophe even when the
+  // source PDF text used a CURLY one, and the runtime validator does a
+  // byte-exact `host.name === entry` match. Normalizing here keeps the
+  // cache and the persisted enhancement-restrictions.auto.json honest.
+  const restrictions = normalizeApostrophesDeep(toolBlock.input);
+  assertNotCharacterCorrupted(restrictions);
 
   cache[key] = {
     response: restrictions,
@@ -227,12 +260,12 @@ export async function classifyWithLLM({
   return { restrictions, cacheHit: false };
 }
 
-// Sanity check the structured response before caching it. Haiku occasionally
-// emits literal tool-use XML syntax inside a string-array field — the parser
-// then splits the string character-by-character, producing arrays full of
-// single-character entries. Catch that and throw so the caller surfaces a
-// `llm-call-failed` warning and the entry isn't written to the auto.json.
-function assertWellFormed(restrictions) {
+// First-line sanity check. Haiku occasionally emits literal tool-use XML
+// syntax inside a string-array field — the parser then splits the string
+// character-by-character, producing arrays full of single-character entries.
+// Catch that and throw so the caller surfaces a `llm-call-failed` warning
+// and the entry isn't written to the auto.json.
+function assertNotCharacterCorrupted(restrictions) {
   for (const field of ["allowedHosts", "requiredKeywords"]) {
     const arr = restrictions?.[field];
     if (!Array.isArray(arr)) continue;
@@ -242,4 +275,59 @@ function assertWellFormed(restrictions) {
       );
     }
   }
+}
+
+// Post-LLM auto-repair for requiredKeywords entries that aren't in the global
+// keyword vocabulary. The closed-vocab prompt fixes most cases at source, but
+// Haiku occasionally concatenates or hallucinates anyway — this pass:
+//
+//   1. Splits multi-token concatenations against the global vocab when the
+//      pieces tile exactly ("ADEPTUS CUSTODES WALKER" → ["ADEPTUS CUSTODES",
+//      "WALKER"]).
+//   2. Promotes datasheet names that landed in requiredKeywords by mistake to
+//      allowedHosts ("WORLD EATERS DAEMON PRINCE" — a real datasheet).
+//   3. Drops everything else with a "dropped" repair record so the caller can
+//      surface a warning.
+//
+// Uses the GLOBAL vocab (union across factions) rather than per-faction, so
+// universal role keywords like CHARACTER/PSYKER aren't rejected just because
+// the LLM was wrong about which faction owns them.
+//
+// Returns an array of repair records for telemetry/warnings. Mutates
+// `restrictions` in place.
+export function repairRequiredKeywords(restrictions, { globalKeywordVocab, datasheetByKey, nameKey }) {
+  const repairs = [];
+  const reqs = restrictions?.requiredKeywords;
+  if (!Array.isArray(reqs) || reqs.length === 0) return repairs;
+  if (!globalKeywordVocab) return repairs;
+
+  const fixed = [];
+  for (const entry of reqs) {
+    if (typeof entry !== "string" || !entry) continue;
+    if (globalKeywordVocab.has(entry)) {
+      fixed.push(entry);
+      continue;
+    }
+    const split = splitAgainstVocab(entry, globalKeywordVocab);
+    if (split && split.length > 1) {
+      fixed.push(...split);
+      repairs.push({ kind: "split", entry, into: split });
+      continue;
+    }
+    if (datasheetByKey && nameKey) {
+      const datasheet = datasheetByKey.get(nameKey(entry));
+      if (datasheet) {
+        const hosts = (restrictions.allowedHosts ??= []);
+        if (!hosts.includes(datasheet)) hosts.push(datasheet);
+        repairs.push({ kind: "promoted-to-allowedHosts", entry, datasheet });
+        continue;
+      }
+    }
+    repairs.push({ kind: "dropped", entry });
+  }
+
+  const deduped = [...new Set(fixed)];
+  if (deduped.length > 0) restrictions.requiredKeywords = deduped;
+  else delete restrictions.requiredKeywords;
+  return repairs;
 }

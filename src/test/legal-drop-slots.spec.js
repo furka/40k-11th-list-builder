@@ -31,6 +31,13 @@ const SHEETS = {
     name: "BLOODLETTERS",
     keywords: ["BATTLELINE", "LEGIONES DAEMONICA KHORNE"],
   },
+  // EPIC HERO MONSTER — used by the "Quantum Goad on the Nightbringer"
+  // regression test: an explicit allowedHosts whitelist must override the
+  // universal EPIC HERO block.
+  NIGHTBRINGER: {
+    name: "NIGHTBRINGER",
+    keywords: ["CHARACTER", "EPIC HERO", "FLY", "MONSTER", "NECRONS"],
+  },
   Enhancements: { name: "Enhancements", enhancements: true },
 };
 const getDataSheet = (name) => SHEETS[name] ?? null;
@@ -133,37 +140,36 @@ describe("legalDropSlots — support rules", () => {
 });
 
 describe("legalDropSlots — enhancement rules", () => {
-  it("attaches to any host (bodyguard or character)", () => {
+  it("attaches only to a CHARACTER by default (muster-armies §25.04), blocking bodyguards and EPIC HEROES", () => {
     const units = [
-      u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH"),
-      u("d", "DOOMSDAY ARK"),
+      u("w", "NECRON WARRIORS"), // bodyguard, not CHARACTER
+      u("imo", "IMOTEKH"), // CHARACTER + EPIC HERO
+      u("d", "DOOMSDAY ARK"), // vehicle, not CHARACTER
+      u("o", "OVERLORD"), // ordinary CHARACTER
       enh("e", "Veil of Darkness"),
     ];
-    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toEqual(
-      ["d", "imo", "w"].sort()
-    );
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toEqual(["o"]);
   });
 
-  it("attaches to a character that is itself attached to a unit (depth 2)", () => {
+  it("attaches to a CHARACTER that is itself attached to a unit (depth 2)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
+      u("o", "OVERLORD", "w"),
       enh("e", "Veil of Darkness"),
     ];
-    // Allowed: enhancement → leader → unit. enhancementCount on imo = 0.
-    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toContain("imo");
+    // Allowed: enhancement → leader → unit. enhancementCount on o = 0.
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toContain("o");
   });
 
   it("rejects a second enhancement on a host that already has one (max-1 enh per host)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
-      enh("e1", "Veil of Darkness", "imo"),
+      u("o", "OVERLORD", "w"),
+      enh("e1", "Veil of Darkness", "o"),
       enh("e2", "Arisen Tyrant"),
     ];
-    // imo already has e1; e2 cannot also attach to imo.
-    expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).not.toContain("imo");
+    // o already has e1; e2 cannot also attach to o.
+    expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).not.toContain("o");
   });
 
   // 25.04 "No unit (including attached units) can have more than one
@@ -172,28 +178,29 @@ describe("legalDropSlots — enhancement rules", () => {
   it("rejects a second enhancement anywhere in the attached unit (squad+attached leader share a tree)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
-      enh("e1", "Veil of Darkness", "imo"),
+      u("o", "OVERLORD", "w"),
+      enh("e1", "Veil of Darkness", "o"),
       enh("e2", "Arisen Tyrant"),
     ];
     // e1 sits on the attached leader; e2 should not be allowed to attach to
     // the squad itself either, since both share one attached unit.
     const ids = attachIds(legalDropSlots(units, "e2", getDataSheet));
     expect(ids).not.toContain("w");
-    expect(ids).not.toContain("imo");
+    expect(ids).not.toContain("o");
   });
 
   it("still allows enhancements on a SEPARATE attached unit", () => {
     const units = [
       u("w1", "NECRON WARRIORS"),
       u("w2", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w1"),
-      enh("e1", "Veil of Darkness", "imo"),
+      u("o1", "OVERLORD", "w1"),
+      u("o2", "OVERLORD", "w2"),
+      enh("e1", "Veil of Darkness", "o1"),
       enh("e2", "Arisen Tyrant"),
     ];
-    // e1 is on imo (attached to w1). w2 is a different attached unit with no
-    // enhancements — e2 must still be droppable onto w2.
-    expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).toContain("w2");
+    // e1 is on o1 (attached to w1). o2 is attached to a different squad with
+    // no enhancements yet — e2 must still be droppable onto o2.
+    expect(attachIds(legalDropSlots(units, "e2", getDataSheet))).toContain("o2");
   });
 
   it("rejects enhancement-on-enhancement universally (no attach slot to an enh host)", () => {
@@ -222,15 +229,15 @@ describe("legalDropSlots — enhancement rules", () => {
 });
 
 describe("legalDropSlots — enhancement host rules (with metadata)", () => {
-  // Enhancements default to unrestricted: every host is legal unless a
-  // restriction field on the metadata says otherwise. Each restriction
-  // field is opt-in; falsy/missing = no check.
+  // Universal defaults from muster-armies §25.04 (CHARACTER required, EPIC
+  // HERO blocked) apply to every enhancement. Opt-in fields on the metadata
+  // (nonCharacterOnly, allowedHosts, requiredKeywords) layer on top.
 
-  it("nonCharacterOnly narrows attach slots to non-character hosts", () => {
+  it("nonCharacterOnly narrows attach slots to non-character hosts (and is the only carve-out from the CHARACTER default)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
-      u("imo", "IMOTEKH"), // character
+      u("imo", "IMOTEKH"), // CHARACTER + EPIC HERO
       enh("e", "Enlivened Sentinels"),
     ];
     const meta = { name: "Enlivened Sentinels", nonCharacterOnly: true };
@@ -239,18 +246,18 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ).toEqual(["im", "w"]);
   });
 
-  it("characterOnly narrows attach slots to character hosts", () => {
+  it("CHARACTER default narrows attach slots to CHARACTER hosts (and EPIC HEROES stay blocked)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
-      u("imo", "IMOTEKH"), // character
-      u("chr", "CHRONOMANCER"), // character (support)
+      u("imo", "IMOTEKH"), // CHARACTER + EPIC HERO — blocked by the EPIC HERO rule
+      u("chr", "CHRONOMANCER"), // plain CHARACTER
       enh("e", "Dimensional Overseer"),
     ];
-    const meta = { name: "Dimensional Overseer", characterOnly: true };
+    const meta = { name: "Dimensional Overseer" };
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
-    ).toEqual(["chr", "imo"]);
+    ).toEqual(["chr"]);
   });
 
   it("allowedHosts narrows to specific datasheet names, independent of other flags", () => {
@@ -269,7 +276,7 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ).toEqual(["w"]);
   });
 
-  it("requiredKeywords narrows attach slots to hosts that carry every listed keyword", () => {
+  it("requiredKeywords narrows attach slots to hosts that carry every listed keyword (Upgrade so the CHARACTER default doesn't fire)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("im", "IMMORTALS"),
@@ -278,6 +285,7 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ];
     const meta = {
       name: "Slaughterthirst",
+      nonCharacterOnly: true,
       requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
     };
     expect(
@@ -289,7 +297,8 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     // BSData-sourced keywords let us enforce the original PDF disjunction:
     // "Captain OR Adeptus Astartes Terminator model only" becomes
     // allowedHosts = [Captain], requiredKeywords = [TERMINATOR]. Either match
-    // is sufficient.
+    // is sufficient. nonCharacterOnly here just keeps the CHARACTER default
+    // out of the picture so the disjunction is what's actually being tested.
     const units = [
       u("w", "NECRON WARRIORS"), // neither
       u("bl", "BLOODLETTERS"), // keyword match (LEGIONES DAEMONICA KHORNE)
@@ -297,6 +306,7 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ];
     const meta = {
       name: "Mixed Restriction",
+      nonCharacterOnly: true,
       allowedHosts: ["NECRON WARRIORS"],
       requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
     };
@@ -306,44 +316,57 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ).toEqual(["bl", "w"]);
   });
 
-  it("an enhancement with no restriction fields can attach to any host", () => {
+  it("an enhancement with no restriction fields still requires CHARACTER (muster-armies §25.04) and blocks EPIC HEROES", () => {
     const units = [
-      u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH"),
+      u("w", "NECRON WARRIORS"), // not CHARACTER
+      u("imo", "IMOTEKH"), // CHARACTER + EPIC HERO
+      u("o", "OVERLORD"), // plain CHARACTER — the only legal host
       enh("e", "Veil of Darkness"),
     ];
     const meta = { name: "Veil of Darkness" };
     expect(attachIds(legalDropSlots(units, "e", getDataSheet, meta))).toEqual(
-      ["imo", "w"]
+      ["o"]
     );
   });
 
-  it("notOnEpicHeroes excludes epic heroes (but allows ordinary characters)", () => {
+  it("EPIC HERO block yields to an explicit allowedHosts whitelist (Quantum Goad on the Nightbringer)", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH"), // character + epicHero
-      u("o", "OVERLORD"), // character, not epic
-      enh("e", "Restricted Enh"),
+      u("imo", "IMOTEKH"), // EPIC HERO, NOT in allowedHosts → still blocked
+      u("nb", "NIGHTBRINGER"), // EPIC HERO, IS in allowedHosts → allowed
+      u("o", "OVERLORD"), // plain CHARACTER, not in allowedHosts → not allowed (whitelist excludes)
+      enh("e", "Quantum Goad"),
     ];
     const meta = {
-      name: "Restricted Enh",
-      characterOnly: true,
-      notOnEpicHeroes: true,
+      name: "Quantum Goad",
+      allowedHosts: ["NIGHTBRINGER"],
     };
+    expect(
+      attachIds(legalDropSlots(units, "e", getDataSheet, meta))
+    ).toEqual(["nb"]);
+  });
+
+  it("EPIC HEROES are blocked even without any opt-in flag (muster-armies §25.04)", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH"), // CHARACTER + EPIC HERO
+      u("o", "OVERLORD"), // plain CHARACTER
+      enh("e", "Restricted Enh"),
+    ];
+    const meta = { name: "Restricted Enh" };
     expect(attachIds(legalDropSlots(units, "e", getDataSheet, meta))).toEqual([
       "o",
     ]);
   });
 
-  it("falls back to free-form host when enhancementMeta is omitted", () => {
+  it("with metadata omitted, the CHARACTER default still narrows to plain CHARACTER hosts", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
       u("imo", "IMOTEKH"),
+      u("o", "OVERLORD"),
       enh("e", "Veil of Darkness"),
     ];
-    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toEqual(
-      ["imo", "w"]
-    );
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toEqual(["o"]);
   });
 });
 
@@ -388,15 +411,15 @@ describe("legalDropSlots — wargear rules", () => {
   });
 
   it("does NOT count wargear toward the enhancement-per-host cap", () => {
-    // imo already has 1 wargear attached. A dragged enhancement should still
-    // be allowed onto imo because wargear lives in its own cardinality bucket.
+    // o already has 1 wargear attached. A dragged enhancement should still
+    // be allowed onto o because wargear lives in its own cardinality bucket.
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
-      wgr("wo", "IMOTEKH", "imo"),
+      u("o", "OVERLORD", "w"),
+      wgr("wo", "OVERLORD", "o"),
       enh("e", "Veil of Darkness"),
     ];
-    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toContain("imo");
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toContain("o");
   });
 
   it("emits NO root reorder slots — wargear must stay attached to a host", () => {
@@ -516,21 +539,50 @@ describe("legalDropSlots — reorder slot enumeration", () => {
   it("emits M+1 reorder slots under each legal host", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
+      u("o", "OVERLORD", "w"),
       u("c", "CHRONOMANCER", "w"),
       enh("e", "Veil"),
     ];
-    // Dragging e (enhancement). It can attach to w, imo, c.
-    // Under w: there are 2 children (imo + c), e isn't currently a child → 3 reorder slots under w.
-    // Under imo: 0 children → 1 reorder slot under imo.
-    // Under c: 0 children → 1 reorder slot under c.
+    // Dragging e (plain enhancement → CHARACTER default applies). Legal
+    // hosts are o and c (CHARACTERs); the NECRON WARRIORS squad isn't legal,
+    // so no reorder slots under it.
+    // Under o: 0 children → 1 reorder slot.
+    // Under c: 0 children → 1 reorder slot.
     const slots = legalDropSlots(units, "e", getDataSheet);
     const underW = byType(slots, "reorder").filter((s) => s.parentId === "w");
-    const underImo = byType(slots, "reorder").filter((s) => s.parentId === "imo");
+    const underO = byType(slots, "reorder").filter((s) => s.parentId === "o");
     const underC = byType(slots, "reorder").filter((s) => s.parentId === "c");
-    expect(underW).toHaveLength(3);
-    expect(underImo).toHaveLength(1);
+    expect(underW).toHaveLength(0);
+    expect(underO).toHaveLength(1);
     expect(underC).toHaveLength(1);
+  });
+
+  it("emits M+1 reorder slots under a multi-child host (M > 0 case via wargear)", () => {
+    // Wargear has its own host-eligibility logic (parentDataSheet match), so
+    // it can attach to a non-CHARACTER squad and gives us a clean way to
+    // verify the M+1 enumeration when M > 0. Three wargear already attached
+    // to w; dragging a fourth → 4 reorder slots under w (the three siblings'
+    // 3 gaps plus 1 for the dragged unit not currently being a child).
+    // Wait — the dragged unit IS currently a child of w (a3). The validator
+    // excludes the dragged unit from sibling counts, so M = 2 (a0, a1, a2
+    // minus dragged a0). Pick a4 as dragged → siblings a0..a3, M = 4 → 5
+    // reorder slots, but the dragged isn't a child so M = 4 → 5 slots.
+    const units = [u("w", "NECRON WARRIORS")];
+    const wgr = (id, attachedTo) => ({
+      id,
+      name: "Wargear",
+      parentDataSheet: "NECRON WARRIORS",
+      optionName: "Gauss flayer",
+      attachedTo,
+    });
+    units.push(wgr("a0", "w"));
+    units.push(wgr("a1", "w"));
+    units.push(wgr("a2", "w"));
+    units.push(wgr("drag")); // unattached
+    const slots = legalDropSlots(units, "drag", getDataSheet);
+    const underW = byType(slots, "reorder").filter((s) => s.parentId === "w");
+    // 3 children + 1 (M+1 with M=3) → 4 reorder slots.
+    expect(underW).toHaveLength(4);
   });
 
   it("excludes the dragged unit from sibling counts under its current parent", () => {
@@ -575,12 +627,12 @@ describe("legalDropSlots — attach-slot parent metadata", () => {
   it("attach slot under a nested host carries the host's parent id and dragged-excluded index", () => {
     const units = [
       u("w", "NECRON WARRIORS"),
-      u("imo", "IMOTEKH", "w"),
+      u("o", "OVERLORD", "w"),
       enh("e", "Veil"),
     ];
     const slots = legalDropSlots(units, "e", getDataSheet);
-    const attachToImo = slots.find((s) => s.type === "attach" && s.hostId === "imo");
-    expect(attachToImo).toMatchObject({ parentKey: "w", indexInParent: 0 });
+    const attachToO = slots.find((s) => s.type === "attach" && s.hostId === "o");
+    expect(attachToO).toMatchObject({ parentKey: "w", indexInParent: 0 });
   });
 });
 

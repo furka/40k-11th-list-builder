@@ -1,3 +1,3 @@
 {
-  "_comment": "Hand-curated keyword overrides for datasheets BSData hasn't picked up (typically new 11e units added between BSData ref bumps) or where BSData's classification is wrong for 11e. Audited + pruned by scripts/audit-and-prune-overrides.mjs after every BSData / PDF refresh. Shape mirrors bsdata-keywords.auto.json — overrides win on conflict at the datasheet level (the whole keyword array is replaced, not unioned)."
+  "_comment": "Hand-curated keyword overrides for datasheets BSData hasn’t picked up (typically new 11e units added between BSData ref bumps) or where BSData’s classification is wrong for 11e. Audited + pruned by scripts/audit-and-prune-overrides.mjs after every BSData / PDF refresh. Shape mirrors bsdata-keywords.auto.json — overrides win on conflict at the datasheet level (the whole keyword array is replaced, not unioned)."
 }

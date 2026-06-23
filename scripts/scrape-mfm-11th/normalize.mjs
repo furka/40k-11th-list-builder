@@ -1,3 +1,5 @@
+import { normalizeApostrophesDeep } from "../../src/utils/apostrophe-normalization.js";
+
 /**
  * Normalize intermediate extracted JSON into the shape the runtime parser
  * (`src/utils/data-reader-11th.js`) expects to consume.
@@ -36,7 +38,11 @@
  * overrides).
  */
 export function normalizeFactionData(factionSlug, factionName, raw) {
-  return {
+  // Canonicalize apostrophe-like unicode codepoints across every string in
+  // the payload so byte-exact comparisons downstream (allowedHosts, the
+  // attachment validator's `host.name === entry` checks) don't drift on
+  // typographic variants. See src/utils/apostrophe-normalization.js.
+  return normalizeApostrophesDeep({
     faction: factionName,
     siteVersion: raw.siteVersion,
     detachments: raw.detachments.map((d) => ({
@@ -57,7 +63,7 @@ export function normalizeFactionData(factionSlug, factionName, raw) {
       if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
       return sheet;
     }),
-  };
+  });
 }
 
 function normalizeSizes(tiers) {

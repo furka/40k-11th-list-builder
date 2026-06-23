@@ -1,0 +1,1520 @@
+{
+  "_source": "https://github.com/BSData/wh40k-10e",
+  "_ref": "main",
+  "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
+  "_committedAt": "2026-06-22T09:36:35Z",
+  "_generatedAt": "2026-06-23T13:05:48.088Z",
+  "_generator": "scripts/scrape-bsdata-enhancements",
+  "ADEPTA SORORITAS": {
+    "Catechism of Divine Penitence": {
+      "allowedHosts": [
+        "CANONESS",
+        "CANONESS WITH JUMP PACK",
+        "MILITANT COMMANDER [CRUCIBLE]",
+        "PALATINE"
+      ]
+    },
+    "Iron Surplice of Saint Istalela": {
+      "allowedHosts": [
+        "CANONESS",
+        "CANONESS WITH JUMP PACK",
+        "MILITANT COMMANDER [CRUCIBLE]",
+        "PALATINE"
+      ]
+    },
+    "Litanies of Faith": {
+      "allowedHosts": [
+        "CANONESS",
+        "CANONESS WITH JUMP PACK",
+        "MILITANT COMMANDER [CRUCIBLE]",
+        "PALATINE"
+      ]
+    },
+    "Mantle of Ophelia": {
+      "allowedHosts": [
+        "CANONESS",
+        "CANONESS WITH JUMP PACK",
+        "MILITANT COMMANDER [CRUCIBLE]",
+        "PALATINE"
+      ]
+    },
+    "Refrain of Enduring Faith": {
+      "requiredKeywords": [
+        "PENITENT"
+      ]
+    },
+    "Verse of Holy Piety": {
+      "requiredKeywords": [
+        "PENITENT"
+      ]
+    }
+  },
+  "ADEPTUS CUSTODES": {
+    "Admonimortis": {
+      "requiredKeywords": [
+        "SHIELD-CAPTAIN"
+      ]
+    },
+    "Auric Mantle": {
+      "allowedHosts": [
+        "BLADE CHAMPION",
+        "SHIELD-CAPTAIN",
+        "SHIELD-CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
+        "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE",
+        "VALERIAN"
+      ]
+    },
+    "Enhanced Voidsheen Cloak": {
+      "requiredKeywords": [
+        "ANATHEMA PSYKANA"
+      ]
+    },
+    "Fierce Conqueror": {
+      "requiredKeywords": [
+        "SHIELD-CAPTAIN"
+      ]
+    },
+    "From the Hall of Armouries": {
+      "requiredKeywords": [
+        "SHIELD-CAPTAIN"
+      ]
+    },
+    "Oblivion Knight": {
+      "requiredKeywords": [
+        "ANATHEMA PSYKANA"
+      ]
+    },
+    "Panoptispex": {
+      "allowedHosts": [
+        "BLADE CHAMPION",
+        "SHIELD-CAPTAIN",
+        "SHIELD-CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
+        "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE",
+        "VALERIAN"
+      ]
+    },
+    "Raptor Blade": {
+      "requiredKeywords": [
+        "ANATHEMA PSYKANA"
+      ]
+    }
+  },
+  "ADEPTUS MECHANICUS": {
+    "Cantic Thrallnet": {
+      "allowedHosts": [
+        "SKITARII MARSHAL"
+      ]
+    },
+    "Clandestine Infiltrator": {
+      "requiredKeywords": [
+        "SKITARII"
+      ]
+    },
+    "Cognitive Reinforcement": {
+      "requiredKeywords": [
+        "CYBERNETICA DATASMITH"
+      ]
+    },
+    "Inloaded Lethality": {
+      "allowedHosts": [
+        "TECH-PRIEST DOMINUS",
+        "TECH-PRIEST MANIPULUS"
+      ]
+    },
+    "Veiled Hunter": {
+      "allowedHosts": [
+        "SKITARII MARSHAL"
+      ]
+    }
+  },
+  "AELDARI": {
+    "Aspect of Murder": {
+      "allowedHosts": [
+        "AUTARCH",
+        "AUTARCH SKYRUNNER",
+        "AUTARCH WAYLEAPER"
+      ]
+    },
+    "Guiding Presence": {
+      "requiredKeywords": [
+        "AELDARI"
+      ]
+    },
+    "Higher Duty": {
+      "requiredKeywords": [
+        "SPIRITSEER"
+      ]
+    },
+    "Light of Clarity": {
+      "requiredKeywords": [
+        "SPIRITSEER"
+      ]
+    },
+    "Mantle of Wisdom": {
+      "allowedHosts": [
+        "AUTARCH",
+        "AUTARCH SKYRUNNER",
+        "AUTARCH WAYLEAPER"
+      ]
+    },
+    "Pirate Prince": {
+      "requiredKeywords": [
+        "PRINCE YRIEL"
+      ]
+    },
+    "Rune of Mists": {
+      "requiredKeywords": [
+        "SPIRITSEER"
+      ]
+    },
+    "Shimmerstone": {
+      "allowedHosts": [
+        "AUTARCH",
+        "AUTARCH SKYRUNNER",
+        "AUTARCH WAYLEAPER"
+      ]
+    },
+    "Spirit Stone of Raelyth": {
+      "requiredKeywords": [
+        "AELDARI"
+      ]
+    },
+    "Stave of Kurnous": {
+      "requiredKeywords": [
+        "SPIRITSEER"
+      ]
+    },
+    "Strategic Savant": {
+      "allowedHosts": [
+        "AUTARCH",
+        "AUTARCH SKYRUNNER",
+        "AUTARCH WAYLEAPER"
+      ]
+    }
+  },
+  "ASTRA MILITARUM": {
+    "Abhuman Detail": {
+      "requiredKeywords": [
+        "COMMISSAR"
+      ]
+    },
+    "Aquilan Eye": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Bold Leadership": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Bombast-class Vox-array": {
+      "allowedHosts": [
+        "CADIAN CASTELLAN",
+        "CADIAN COMMAND SQUAD",
+        "CATACHAN COMMAND SQUAD",
+        "COMMISSAR",
+        "COMMISSAR GRAVES",
+        "COMMISSAR YARRICK",
+        "DEATH RIDER COMMISSAR",
+        "FRONT-LINE COMMANDER [CRUCIBLE]",
+        "GAUNT’S GHOSTS",
+        "HELL’S LAST",
+        "KRIEG COMMAND SQUAD",
+        "LEMAN RUSS COMMANDER",
+        "LORD MARSHAL DREIR",
+        "LORD SOLAR LEONTUS",
+        "MILITARUM TEMPESTUS COMMAND SQUAD",
+        "ROGAL DORN COMMANDER",
+        "SENTINEL COMMANDER [CRUCIBLE]",
+        "SERGEANT HARKER",
+        "TEMPESTUS AQUILONS",
+        "TEMPESTUS SCIONS",
+        "URSULA CREED",
+        "’IRON HAND’ STRAKEN"
+      ]
+    },
+    "Calm Under Fire": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Death Mask of Ollanius": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Drill Commander": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Eager Advance": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Engine Speaker": {
+      "requiredKeywords": [
+        "TECH-PRIEST ENGINSEER"
+      ]
+    },
+    "Exemplary Officer": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Flash Grenades": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Grand Strategist": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Guerrilla Honours": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Indomitable Steed": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Laud Hailer": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Legacy Sidearm": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Master Manoeuvrist": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Reactive Command": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Regimental Banner": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Sacred Unguents": {
+      "requiredKeywords": [
+        "TECH-PRIEST ENGINSEER"
+      ]
+    },
+    "Smoke Grenades": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Spec Ops Veteran": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Vanguard Honours": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
+    "Veteran Crew": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    }
+  },
+  "BLACK TEMPLARS": {
+    "Adept of the Omnissiah": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Benediction of Fury": {
+      "requiredKeywords": [
+        "CHAPLAIN"
+      ]
+    },
+    "Champion of Humanity": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Execute and Redeploy": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Honour Indefatigable": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Imperialis of the Eternal Crusade": {
+      "requiredKeywords": [
+        "ANCIENT"
+      ]
+    },
+    "Incendiary Animus": {
+      "allowedHosts": [
+        "CHAPLAIN",
+        "CHAPLAIN IN TERMINATOR ARMOUR",
+        "CHAPLAIN ON BIKE",
+        "CHAPLAIN WITH JUMP PACK",
+        "EXECRATOR",
+        "JUDICIAR"
+      ]
+    },
+    "Indomitable Fury": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Merciless Denunciation": {
+      "allowedHosts": [
+        "CHAPLAIN",
+        "CHAPLAIN IN TERMINATOR ARMOUR",
+        "CHAPLAIN ON BIKE",
+        "CHAPLAIN WITH JUMP PACK",
+        "EXECRATOR",
+        "JUDICIAR"
+      ]
+    },
+    "Shadow War Veteran": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Shock Deployment": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Target Augury Web": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Warden of Honour": {
+      "requiredKeywords": [
+        "CRUSADE ANCIENT"
+      ]
+    }
+  },
+  "BLOOD ANGELS": {
+    "Adept of the Omnissiah": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Carmine Reliquary": {
+      "requiredKeywords": [
+        "CHAPLAIN"
+      ]
+    },
+    "Champion of Humanity": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Execute and Redeploy": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Honour Indefatigable": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Indomitable Fury": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Shadow War Veteran": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Shock Deployment": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Target Augury Web": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    }
+  },
+  "CHAOS DAEMONS": {
+    "The Everstave": {
+      "requiredKeywords": [
+        "LORD OF CHANGE"
+      ]
+    }
+  },
+  "CHAOS KNIGHTS": {
+    "Aspect of the Beast": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Bestial Aspect": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Blade of Celerity": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Blasphemous Engine": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Blessing of the Dark Master": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Fleshmetal Fusion": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Knight Diabolus": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Loping Predator": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Malevolent Heraldry": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Mirror of Fates": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Octagram of Conjuration": {
+      "requiredKeywords": [
+        "KNIGHT ABOMINANT"
+      ]
+    },
+    "Panoply of the Cursed Knights": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Putrid Carapace": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Throne Mechanicum of Skulls": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Veil of Medrengard": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Warp-borne Stalker": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    }
+  },
+  "CHAOS SPACE MARINES": {
+    "Amulet of Tainted Vigour": {
+      "allowedHosts": [
+        "DARK APOSTLE"
+      ]
+    },
+    "Bastion Plate": {
+      "requiredKeywords": [
+        "CHAOS LORD"
+      ]
+    },
+    "Crown of Worms": {
+      "requiredKeywords": [
+        "WARPSMITH"
+      ]
+    },
+    "Cybinfernal Font": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Dread Reputation": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Eager for Vengeance": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Eye of Abaddon": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Eye of the Warp": {
+      "requiredKeywords": [
+        "DAEMON PRINCE WITH WINGS"
+      ]
+    },
+    "Falsehood": {
+      "requiredKeywords": [
+        "CHAOS LORD"
+      ]
+    },
+    "Greyveil Hex": {
+      "requiredKeywords": [
+        "CHAOS LORD"
+      ]
+    },
+    "Helm of All-Seeing": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Incendiary Goad": {
+      "allowedHosts": [
+        "ACCURSED CULTISTS",
+        "CULTIST FIREBRAND",
+        "CULTIST MOB",
+        "CULTIST MOB WITH FIREARMS",
+        "DARK APOSTLE",
+        "DARK COMMUNE",
+        "FELLGOR BEASTMEN",
+        "GELLERPOX INFECTED",
+        "MUTOID VERMIN",
+        "NEGAVOLT CULTISTS",
+        "RENEGADE ENFORCER",
+        "RENEGADE HEAVY WEAPONS SQUAD",
+        "RENEGADE OGRYN BEAST HANDLER",
+        "RENEGADE OGRYN BRUTES",
+        "RENEGADE PLAGUE OGRYNS",
+        "ROGUE PSYKER",
+        "TRAITOR ENFORCER",
+        "TRAITOR GUARDSMEN SQUAD"
+      ]
+    },
+    "Infernal Fulgurite": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Invigorated Mechatendrils": {
+      "requiredKeywords": [
+        "WARPSMITH"
+      ]
+    },
+    "Living Carapace": {
+      "requiredKeywords": [
+        "CHAOS LORD"
+      ]
+    },
+    "Mark of Legend": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Mark of the Soul Forges": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Prime Test Subject": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Raid Leader": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Sorrowscent Vulture": {
+      "allowedHosts": [
+        "CHAOS LORD WITH JUMP PACK"
+      ]
+    },
+    "Surgical Precision": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Tzagulla": {
+      "requiredKeywords": [
+        "DAEMON PRINCE WITH WINGS"
+      ]
+    },
+    "Voice of the Tyrant": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    },
+    "Warped Foresight": {
+      "allowedHosts": [
+        "ACCURSED CULTISTS",
+        "CULTIST FIREBRAND",
+        "CULTIST MOB",
+        "CULTIST MOB WITH FIREARMS",
+        "DARK APOSTLE",
+        "DARK COMMUNE",
+        "FELLGOR BEASTMEN",
+        "GELLERPOX INFECTED",
+        "MUTOID VERMIN",
+        "NEGAVOLT CULTISTS",
+        "RENEGADE ENFORCER",
+        "RENEGADE HEAVY WEAPONS SQUAD",
+        "RENEGADE OGRYN BEAST HANDLER",
+        "RENEGADE OGRYN BRUTES",
+        "RENEGADE PLAGUE OGRYNS",
+        "ROGUE PSYKER",
+        "TRAITOR ENFORCER",
+        "TRAITOR GUARDSMEN SQUAD"
+      ]
+    },
+    "Wyredjinn": {
+      "requiredKeywords": [
+        "DAMNED"
+      ]
+    }
+  },
+  "DARK ANGELS": {
+    "Adept of the Omnissiah": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Champion of Humanity": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Champion of the Deathwing": {
+      "requiredKeywords": [
+        "DEATHWING"
+      ]
+    },
+    "Deathwing Assault": {
+      "requiredKeywords": [
+        "DEATHWING"
+      ]
+    },
+    "Execute and Redeploy": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Eye of the Unseen": {
+      "requiredKeywords": [
+        "DEATHWING"
+      ]
+    },
+    "Honour Indefatigable": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Indomitable Fury": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Lord of the Ravenwing": {
+      "requiredKeywords": [
+        "RAVENWING"
+      ]
+    },
+    "Master of Manoeuvre": {
+      "requiredKeywords": [
+        "RAVENWING"
+      ]
+    },
+    "Master-crafted Weapon": {
+      "requiredKeywords": [
+        "RAVENWING"
+      ]
+    },
+    "Mounted Strategist": {
+      "requiredKeywords": [
+        "RAVENWING"
+      ]
+    },
+    "Pennant of Remembrance": {
+      "requiredKeywords": [
+        "ANCIENT"
+      ]
+    },
+    "Recon Hunter": {
+      "requiredKeywords": [
+        "RAVENWING"
+      ]
+    },
+    "Shadow War Veteran": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Shock Deployment": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Singular Will": {
+      "requiredKeywords": [
+        "DEATHWING"
+      ]
+    },
+    "Target Augury Web": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    }
+  },
+  "DEATH GUARD": {
+    "Bilemaw Blight": {
+      "requiredKeywords": [
+        "MALIGNANT PLAGUECASTER"
+      ]
+    },
+    "Cornucophagus": {
+      "requiredKeywords": [
+        "LORD OF POXES"
+      ]
+    },
+    "Entropic Knell": {
+      "requiredKeywords": [
+        "GREAT UNCLEAN ONE"
+      ]
+    },
+    "Final Ingredient": {
+      "requiredKeywords": [
+        "BIOLOGUS PUTRIFIER"
+      ]
+    },
+    "Needle of Nurgle": {
+      "requiredKeywords": [
+        "PLAGUE SURGEON"
+      ]
+    },
+    "Sorrowsyphon": {
+      "requiredKeywords": [
+        "MALIGNANT PLAGUECASTER"
+      ]
+    },
+    "Tendrilous Emissions": {
+      "requiredKeywords": [
+        "LORD OF VIRULENCE"
+      ]
+    },
+    "Tome of Bounteous Blessings": {
+      "requiredKeywords": [
+        "MALIGNANT PLAGUECASTER"
+      ]
+    },
+    "Visions of Virulence": {
+      "requiredKeywords": [
+        "MALIGNANT PLAGUECASTER"
+      ]
+    },
+    "Witherbone Pipes": {
+      "requiredKeywords": [
+        "NOXIOUS BLIGHTBRINGER"
+      ]
+    }
+  },
+  "DEATHWATCH": {
+    "Adept of the Omnissiah": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Champion of Humanity": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Execute and Redeploy": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Honour Indefatigable": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Indomitable Fury": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Osseus Key": {
+      "allowedHosts": [
+        "TECHMARINE",
+        "TECHMARINE ON BIKE",
+        "WATCH MASTER"
+      ]
+    },
+    "Shadow War Veteran": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Shock Deployment": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Target Augury Web": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "The Tome of Ectoclades": {
+      "requiredKeywords": [
+        "WATCH MASTER"
+      ]
+    }
+  },
+  "DRUKHARI": {
+    "Chronoshard": {
+      "requiredKeywords": [
+        "SUCCUBUS"
+      ]
+    },
+    "Crucible of Malediction": {
+      "requiredKeywords": [
+        "HAEMONCULUS"
+      ]
+    },
+    "Eye of Spite": {
+      "requiredKeywords": [
+        "SUCCUBUS"
+      ]
+    },
+    "Informant Network": {
+      "requiredKeywords": [
+        "ARCHON"
+      ]
+    },
+    "Labyrinthine Cunning": {
+      "requiredKeywords": [
+        "ARCHON"
+      ]
+    },
+    "Leechbite Plate": {
+      "requiredKeywords": [
+        "ARCHON"
+      ]
+    },
+    "Master Artisan": {
+      "requiredKeywords": [
+        "HAEMONCULUS"
+      ]
+    },
+    "Master Nemesine": {
+      "requiredKeywords": [
+        "HAEMONCULUS"
+      ]
+    },
+    "Master Regenesist": {
+      "requiredKeywords": [
+        "HAEMONCULUS"
+      ]
+    },
+    "Periapt of Torments": {
+      "requiredKeywords": [
+        "SUCCUBUS"
+      ]
+    },
+    "Pharmacophex": {
+      "requiredKeywords": [
+        "SUCCUBUS"
+      ]
+    },
+    "Towering Arrogance": {
+      "requiredKeywords": [
+        "ARCHON"
+      ]
+    },
+    "Webway Awl": {
+      "requiredKeywords": [
+        "ARCHON"
+      ]
+    }
+  },
+  "EMPEROR’S CHILDREN": {
+    "Blinding Speed": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Distortion": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Eager to Prove": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Empyric Suffusion": {
+      "requiredKeywords": [
+        "KEEPER OF SECRETS"
+      ]
+    },
+    "Exalted Patron": {
+      "requiredKeywords": [
+        "LORD EXULTANT"
+      ]
+    },
+    "Faultless Opportunist": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Heretek Adept": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Intoxicating Musk": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Loathsome Dexterity": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Pledge of Dark Glory": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Pledge of Eternal Servitude": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Pledge of Mortal Pain": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Pledge of Unholy Fortune": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Possessed Blade": {
+      "requiredKeywords": [
+        "KEEPER OF SECRETS"
+      ]
+    },
+    "Proud and Vainglorious": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Repulsed by Weakness": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Rise to the Challenge": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Slayer of Champions": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Soulstain Made Manifest": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Spearhead Striker": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Spiritsliver": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Steeped in Suffering": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Tactical Perfection": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    },
+    "Tears of the Phoenix": {
+      "requiredKeywords": [
+        "EMPEROR’S CHILDREN"
+      ]
+    }
+  },
+  "IMPERIAL AGENTS": {
+    "Amulet of Auto-chastisement": {
+      "requiredKeywords": [
+        "WATCH MASTER"
+      ]
+    },
+    "Beacon Angelis": {
+      "requiredKeywords": [
+        "WATCH MASTER"
+      ]
+    },
+    "Combat Landers": {
+      "requiredKeywords": [
+        "VOIDFARERS"
+      ]
+    },
+    "Daemon Slayer": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "Fleetmaster": {
+      "requiredKeywords": [
+        "VOIDFARERS"
+      ]
+    },
+    "Formidable Resolve": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "Gift of the Prescient": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "Grimoire of True Names": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "Ignis Judicium": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "Liber Heresius": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "No Escape": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    },
+    "Witch Hunter": {
+      "requiredKeywords": [
+        "INQUISITOR"
+      ]
+    }
+  },
+  "LEAGUES OF VOTANN": {
+    "Calculated Tenacity": {
+      "allowedHosts": [
+        "BRÔKHYR IRON-MASTER",
+        "MEMNYR STRATEGIST"
+      ]
+    },
+    "Graviton Vault": {
+      "allowedHosts": [
+        "BRÔKHYR IRON-MASTER"
+      ]
+    },
+    "High Kâhl": {
+      "requiredKeywords": [
+        "KÂHL"
+      ]
+    },
+    "Mantle of Elders": {
+      "requiredKeywords": [
+        "MEMNYR STRATEGIST"
+      ]
+    },
+    "Mercenary Prospector": {
+      "requiredKeywords": [
+        "KÂHL"
+      ]
+    },
+    "Metaphysical Brokerage": {
+      "requiredKeywords": [
+        "MEMNYR STRATEGIST"
+      ]
+    },
+    "Precursive Judgement": {
+      "requiredKeywords": [
+        "KÂHL"
+      ]
+    },
+    "Quake Multigenerator": {
+      "requiredKeywords": [
+        "KÂHL"
+      ]
+    },
+    "Signature Restoration": {
+      "allowedHosts": [
+        "BRÔKHYR IRON-MASTER"
+      ]
+    },
+    "Tactical Alchemy": {
+      "requiredKeywords": [
+        "KÂHL"
+      ]
+    }
+  },
+  "NECRONS": {
+    "Atomic Disintegrators": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Autodivinator": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Cursed Circlet": {
+      "allowedHosts": [
+        "CATACOMB COMMAND BARGE",
+        "CHRONOMANCER",
+        "GEOMANCER",
+        "HEXMARK DESTROYER",
+        "HYPERSCIENTIST [CRUCIBLE]",
+        "ILLUMINOR SZERAS",
+        "LOKHUST DESTROYERS",
+        "LOKHUST HEAVY DESTROYERS",
+        "LOKHUST LORD",
+        "NEKROSOR AMMENTAR",
+        "OPHYDIAN DESTROYERS",
+        "ORIKAN THE DIVINER",
+        "OVERLORD",
+        "OVERLORD WITH TRANSLOCATION SHROUD",
+        "PLASMANCER",
+        "PSYCHOMANCER",
+        "SKORPEKH DESTROYERS",
+        "SKORPEKH LORD",
+        "TECHNOMANCER"
+      ]
+    },
+    "Destroyer Ankh": {
+      "allowedHosts": [
+        "CATACOMB COMMAND BARGE",
+        "OVERLORD",
+        "OVERLORD WITH TRANSLOCATION SHROUD"
+      ]
+    },
+    "Dimensional Sanctum": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Dread Majesty": {
+      "allowedHosts": [
+        "CATACOMB COMMAND BARGE",
+        "OVERLORD",
+        "OVERLORD WITH TRANSLOCATION SHROUD"
+      ]
+    },
+    "Eldritch Nightmare": {
+      "requiredKeywords": [
+        "DESTROYER CULT"
+      ]
+    },
+    "Eternal Conqueror": {
+      "requiredKeywords": [
+        "OVERLORD"
+      ]
+    },
+    "Gravitic Bolas": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Honourable Combatant": {
+      "requiredKeywords": [
+        "OVERLORD"
+      ]
+    },
+    "Hyperphasic Fulcrum": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Mark of the Nekrosor": {
+      "allowedHosts": [
+        "CATACOMB COMMAND BARGE",
+        "CHRONOMANCER",
+        "GEOMANCER",
+        "HEXMARK DESTROYER",
+        "HYPERSCIENTIST [CRUCIBLE]",
+        "ILLUMINOR SZERAS",
+        "LOKHUST DESTROYERS",
+        "LOKHUST HEAVY DESTROYERS",
+        "LOKHUST LORD",
+        "NEKROSOR AMMENTAR",
+        "OPHYDIAN DESTROYERS",
+        "ORIKAN THE DIVINER",
+        "OVERLORD",
+        "OVERLORD WITH TRANSLOCATION SHROUD",
+        "PLASMANCER",
+        "PSYCHOMANCER",
+        "SKORPEKH DESTROYERS",
+        "SKORPEKH LORD",
+        "TECHNOMANCER"
+      ]
+    },
+    "Metalodermal Tesla Weave": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Murdermind": {
+      "requiredKeywords": [
+        "CRYPTEK"
+      ]
+    },
+    "Unflinching Will": {
+      "requiredKeywords": [
+        "OVERLORD"
+      ]
+    },
+    "Warrior Noble": {
+      "requiredKeywords": [
+        "OVERLORD"
+      ]
+    }
+  },
+  "ORKS": {
+    "Dakkamek": {
+      "requiredKeywords": [
+        "BEASTBOSS ON SQUIGOSAUR"
+      ]
+    },
+    "Headwoppa’s Killchoppa": {
+      "requiredKeywords": [
+        "BEASTBOSS ON SQUIGOSAUR"
+      ]
+    }
+  },
+  "SPACE MARINES": {
+    "Adept of the Omnissiah": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Champion of Humanity": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Coronal Susurrant": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Execute and Redeploy": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Honour Indefatigable": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Indomitable Fury": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Malodraxian Standard": {
+      "requiredKeywords": [
+        "ANCIENT"
+      ]
+    },
+    "Shadow War Veteran": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Shock Deployment": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Target Augury Web": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    }
+  },
+  "SPACE WOLVES": {
+    "Adept of the Omnissiah": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    },
+    "Champion of Humanity": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Execute and Redeploy": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Honour Indefatigable": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Howlmaw": {
+      "requiredKeywords": [
+        "WOLF PRIEST"
+      ]
+    },
+    "Indomitable Fury": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Shadow War Veteran": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Shock Deployment": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Target Augury Web": {
+      "requiredKeywords": [
+        "TECHMARINE"
+      ]
+    }
+  },
+  "THOUSAND SONS": {
+    "Bray Lord": {
+      "allowedHosts": [
+        "INFERNAL MASTER",
+        "SORCERER",
+        "SORCERER IN TERMINATOR ARMOUR",
+        "SORCERER ON DISC OF TZEENTCH"
+      ]
+    },
+    "Diamond of Distortion": {
+      "requiredKeywords": [
+        "TZAANGOR SHAMAN"
+      ]
+    },
+    "Flowing Flesh": {
+      "requiredKeywords": [
+        "TZAANGOR SHAMAN"
+      ]
+    },
+    "Warpmeld Dagger": {
+      "requiredKeywords": [
+        "TZAANGOR SHAMAN"
+      ]
+    }
+  },
+  "TYRANIDS": {
+    "Chameleonic": {
+      "requiredKeywords": [
+        "VANGUARD INVADER"
+      ]
+    },
+    "Psychostatic Disruption": {
+      "requiredKeywords": [
+        "SYNAPSE"
+      ]
+    },
+    "Stalker": {
+      "requiredKeywords": [
+        "VANGUARD INVADER"
+      ]
+    },
+    "Synaptic Control": {
+      "requiredKeywords": [
+        "SYNAPSE"
+      ]
+    },
+    "Trygon Prime": {
+      "requiredKeywords": [
+        "TRYGON"
+      ]
+    },
+    "Vanguard Intellect": {
+      "allowedHosts": [
+        "HYPERADAPTED RAVENERS",
+        "PARASITE OF MORTREX",
+        "TRYGON",
+        "WINGED HIVE TYRANT",
+        "WINGED TYRANID PRIME"
+      ]
+    }
+  },
+  "WORLD EATERS": {
+    "Disciple of Khorne": {
+      "requiredKeywords": [
+        "LORD ON JUGGERNAUT"
+      ]
+    },
+    "Malicious Vigour": {
+      "requiredKeywords": [
+        "SLAUGHTERBOUND"
+      ]
+    }
+  }
+}

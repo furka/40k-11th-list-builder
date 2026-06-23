@@ -1,0 +1,20 @@
+{
+  "_comment": "Hand-curated overrides for enhancement-restrictions.auto.json. Same shape — keys are faction names, values are { enhancementName: restrictionObject }. A manual entry REPLACES (not merges with) the matching auto.json entry for that (faction, enhancement) pair. Use for cases the scraper/LLM can’t get right (esoteric rules text, dropped tokens that should have been kept, etc). Keep small — fix at the scraper when possible. Keys starting with ’_’ are ignored.",
+  "_schema": {
+    "FACTION_NAME": {
+      "Enhancement Name": {
+        "allowedHosts": [
+          "DATASHEET NAME"
+        ],
+        "requiredKeywords": [
+          "ATOMIC",
+          "KEYWORDS"
+        ],
+        "characterOnly": true,
+        "nonCharacterOnly": true,
+        "notOnEpicHeroes": true,
+        "limit": 1
+      }
+    }
+  }
+}
