@@ -85,8 +85,8 @@
       },
       "leader": {
         "attachesTo": [
-          "JAKHALS",
-          "GOREMONGERS"
+          "GOREMONGERS",
+          "JAKHALS"
         ]
       },
       "tags": [],
@@ -148,8 +148,8 @@
       },
       "leader": {
         "attachesTo": [
-          "FLESH HOUNDS",
-          "BLOODCRUSHERS"
+          "BLOODCRUSHERS",
+          "FLESH HOUNDS"
         ]
       },
       "tags": [],

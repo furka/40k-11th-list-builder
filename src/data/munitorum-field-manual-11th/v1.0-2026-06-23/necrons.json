@@ -125,10 +125,10 @@
       },
       "leader": {
         "attachesTo": [
-          "SKORPEKH DESTROYERS",
           "LOKHUST DESTROYERS",
-          "OPHYDIAN DESTROYERS",
-          "LOKHUST HEAVY DESTROYERS"
+          "SKORPEKH DESTROYERS",
+          "LOKHUST HEAVY DESTROYERS",
+          "OPHYDIAN DESTROYERS"
         ]
       },
       "tags": [],

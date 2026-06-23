@@ -11,8 +11,8 @@
       },
       "leader": {
         "attachesTo": [
-          "BULLGRYN SQUAD",
-          "OGRYN SQUAD"
+          "OGRYN SQUAD",
+          "BULLGRYN SQUAD"
         ]
       },
       "tags": [
@@ -140,8 +140,8 @@
       },
       "leader": {
         "attachesTo": [
-          "BULLGRYN SQUAD",
-          "OGRYN SQUAD"
+          "OGRYN SQUAD",
+          "BULLGRYN SQUAD"
         ]
       },
       "tags": [

@@ -783,6 +783,7 @@
       "support": {
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
           "CRUSADER SQUAD",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
@@ -1033,6 +1034,7 @@
           "CRUSADER SQUAD",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
           "FORTIS KILL TEAM",
           "HELLBLASTER SQUAD",
           "INFERNUS SQUAD",
@@ -2006,6 +2008,7 @@
           "INCURSOR SQUAD",
           "INFILTRATOR SQUAD",
           "REIVER SQUAD",
+          "SCOUT SQUAD",
           "SPECTRUS KILL TEAM"
         ]
       },
