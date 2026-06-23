@@ -22,22 +22,22 @@
   "dependencies": {
     "deep-freeze": "^0.0.1",
     "pinia": "^3.0.3",
-    "uuid": "^14.0.0",
-    "vite-svg-loader": "^4.0.0",
-    "vue": "^3.2.47"
+    "uuid": "^14.0.1",
+    "vite-svg-loader": "^5.1.1",
+    "vue": "^3.5.38"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "^0.104.2",
+    "@anthropic-ai/sdk": "^0.105.0",
     "@pinia/testing": "^1.0.3",
-    "@vitejs/plugin-vue": "^6.0.3",
+    "@vitejs/plugin-vue": "^6.0.7",
     "@vitest/coverage-v8": "^4.1.9",
-    "@vue/test-utils": "^2.4.6",
-    "fast-xml-parser": "^5.7.0",
-    "jsdom": "^27.4.0",
+    "@vue/test-utils": "^2.4.11",
+    "fast-xml-parser": "^5.9.3",
+    "jsdom": "^29.1.1",
     "pdfjs-dist": "^6.0.227",
-    "playwright": "^1.61.0",
-    "sass": "^1.63.6",
-    "vite": "^8.0.16",
-    "vitest": "^4.1.0"
+    "playwright": "^1.61.1",
+    "sass": "^1.101.0",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
   }
 }
