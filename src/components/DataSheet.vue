@@ -13,7 +13,7 @@ import {
   wargearMaxPerUnit,
 } from "../utils/wargear-limits";
 import { legalDropSlots } from "../utils/legal-drop-slots";
-import { hasKeyword } from "../utils/keywords";
+import { hasKeyword, getEffectiveKeywords } from "../utils/keywords";
 import LeaderIcon from "../assets/leader-skull-icon.svg";
 import SupportIcon from "../assets/support-icon.svg";
 
@@ -232,6 +232,13 @@ function optionAvailable(option) {
   return enoughInCollection(option);
 }
 
+const keywords = computed(() => {
+  const set = getEffectiveKeywords(props.dataSheet, armyListStore.toObject());
+  return [...set].sort();
+});
+
+const keywordsText = computed(() => keywords.value.join(", "));
+
 </script>
 
 <template>
@@ -286,6 +293,12 @@ function optionAvailable(option) {
           class="data-sheet__pill"
           v-tooltip="'Legends'"
           >Lg</span
+        >
+        <span
+          v-if="keywords.length && !appStore.showKeywords"
+          class="data-sheet__pill data-sheet__pill--info"
+          v-tooltip="keywordsText"
+          >K</span
         >
       </span>
     </div>
@@ -363,6 +376,13 @@ function optionAvailable(option) {
       <div class="data-sheet__role-attaches">
         {{ props.dataSheet.support.attachesTo.join(", ") }}
       </div>
+    </div>
+    <div
+      v-if="appStore.showKeywords && keywords.length"
+      class="data-sheet__keywords"
+    >
+      <span class="data-sheet__keywords-label">Keywords:</span>
+      <span class="data-sheet__keywords-list">{{ keywordsText }}</span>
     </div>
   </div>
 </template>
@@ -465,6 +485,11 @@ function optionAvailable(option) {
       background-color: #5b3da6;
       color: #fff;
     }
+
+    &--info {
+      background-color: var(--color-divider);
+      color: var(--color-text-muted);
+    }
   }
 
   &__tier-label {
@@ -551,6 +576,27 @@ function optionAvailable(option) {
     letter-spacing: 0.6px;
     margin-top: 4px;
     text-transform: uppercase;
+  }
+
+  &__keywords {
+    border-top: 1px solid var(--color-divider);
+    color: var(--color-text-muted);
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+    padding: 6px 10px 8px;
+  }
+
+  &__keywords-label {
+    color: var(--color-text);
+    margin-inline-end: 4px;
+    text-transform: uppercase;
+  }
+
+  &__keywords-list {
+    text-transform: capitalize;
   }
 
   ul {

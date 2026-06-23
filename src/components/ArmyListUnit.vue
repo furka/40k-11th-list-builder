@@ -2,6 +2,7 @@
 import { computed, ref, watch, onMounted, onBeforeUnmount } from "vue";
 import RiskIcon from "../assets/risk-icon.svg";
 import { nameEquals } from "../utils/name-match";
+import { formatEnhancementRestrictions } from "../utils/enhancement-restrictions";
 import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useDragStore } from "../stores/drag";
@@ -111,6 +112,13 @@ const name = computed(() => {
   }
 
   return name;
+});
+
+const rowTooltip = computed(() => {
+  if (props.unit.name !== "Enhancements") return name.value;
+  const meta = armyListStore.getEnhancementMeta(props.unit);
+  const restrictions = formatEnhancementRestrictions(meta);
+  return restrictions ? `${name.value}\n${restrictions}` : name.value;
 });
 
 // Dynamic font scaling for the name span. When the full name would overflow
@@ -223,7 +231,7 @@ function onPointerDown(e) {
     ref="rowEl"
     class="army-list-unit"
     :data-id="props.unit.id"
-    v-tooltip="name"
+    v-tooltip="rowTooltip"
     :class="{
       error: inValid,
       'army-list-unit--attach-target': isAttachTarget,

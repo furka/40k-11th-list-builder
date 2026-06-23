@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
+import { formatEnhancementRestrictions } from "../utils/enhancement-restrictions";
 
 const armyListStore = useArmyListStore();
 const appStore = useAppStore();
@@ -90,13 +91,13 @@ function onEnhancementClick(enh) {
         v-for="enh in detachment.enhancements"
         :key="enh.name"
         :class="{ maxed: disabled }"
+        v-tooltip="formatEnhancementRestrictions(enh)"
         @click="onEnhancementClick(enh)"
       >
         <span class="data-sheet__option-name">{{ enh.name }}</span>
         <span
           v-if="enh.nonCharacterOnly"
           class="detachment-sheet__upgrade-badge"
-          v-tooltip="'Unit upgrade — attaches to a non-character unit'"
         >UPGRADE</span>
         <span class="data-sheet__option-spacer"></span>
         <span class="data-sheet__points">{{ enh.points }} pts</span>
