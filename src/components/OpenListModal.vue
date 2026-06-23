@@ -108,7 +108,7 @@ function deleteList(list) {
               :class="
                 derived.get(list).outdated ? 'open-modal__mfm-version--outdated' : ''
               "
-              :title="
+              v-tooltip="
                 derived.get(list).outdated ? `List has outdated MFM version` : ''
               "
             >
@@ -119,14 +119,14 @@ function deleteList(list) {
             <button
               class="open-modal__copy"
               @click="copyList(list)"
-              title="Duplicate list"
+              v-tooltip="'Duplicate list'"
             >
               <CopyIcon />
             </button>
             <button
               class="open-modal__delete"
               @click="deleteList(list)"
-              title="DELETE LIST?"
+              v-tooltip="'DELETE LIST?'"
               :disabled="hasCurrent && index === 0"
             >
               <DeleteIcon />

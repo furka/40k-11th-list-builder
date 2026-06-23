@@ -53,7 +53,7 @@ useDetectOutsideClick(component, () => {
       class="dropdown__button"
       @click="toggleDialog"
       ref="button"
-      :title="props.title"
+      v-tooltip="props.title"
     >
       <slot name="button"></slot>
     </button>

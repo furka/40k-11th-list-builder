@@ -1,0 +1,32 @@
+.app-tooltip {
+  position: fixed;
+  inset: auto;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 6px 10px;
+  border: 1px solid #e8a23a;
+  border-radius: 4px;
+  background: #243447;
+  color: #e6ecf2;
+  font-family: "Inter", system-ui, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  max-width: 280px;
+  width: max-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  word-wrap: break-word;
+  white-space: normal;
+  z-index: 2147483647;
+  display: none;
+}
+
+.app-tooltip:popover-open {
+  display: block;
+}
+
+.app-tooltip.app-tooltip--visible {
+  display: block;
+}

@@ -29,7 +29,7 @@ const pointsChangesTitle = computed(() =>
     </template>
     <template v-slot:content>
       <div class="codex-options__content">
-        <label :title="pointsChangesTitle" :class="{ disabled: !hasPreviousMFM }">
+        <label v-tooltip="pointsChangesTitle" :class="{ disabled: !hasPreviousMFM }">
           <input
             type="checkbox"
             :checked="appStore.showPointsChanges"
@@ -39,7 +39,7 @@ const pointsChangesTitle = computed(() =>
           Points Changes
         </label>
 
-        <label title="Show Legends units">
+        <label v-tooltip="'Show Legends units'">
           <input
             type="checkbox"
             :checked="appStore.showLegends"
@@ -49,7 +49,7 @@ const pointsChangesTitle = computed(() =>
         </label>
 
         <label
-          title="Hide units / detachments that aren't available to add instead of dimming them"
+          v-tooltip="`Hide units / detachments that aren't available to add instead of dimming them`"
         >
           <input
             type="checkbox"
@@ -60,7 +60,7 @@ const pointsChangesTitle = computed(() =>
         </label>
 
         <label
-          title="Set which units are available in your personal collection"
+          v-tooltip="'Set which units are available in your personal collection'"
         >
           <input
             type="checkbox"
@@ -70,7 +70,7 @@ const pointsChangesTitle = computed(() =>
           Edit Collection
         </label>
 
-        <label title="Sort Datasheets">
+        <label v-tooltip="'Sort Datasheets'">
           Sort:
           <select
             :value="appStore.sortOrder"

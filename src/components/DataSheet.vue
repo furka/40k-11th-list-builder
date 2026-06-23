@@ -247,7 +247,7 @@ function optionAvailable(option) {
       <label
         v-if="!props.dataSheet.enhancements && appStore.editCollection"
         class="data-sheet__owned-label"
-        title="How many of these do you own?"
+        v-tooltip="'How many of these do you own?'"
         @click.stop
       >
         Owned:
@@ -264,7 +264,7 @@ function optionAvailable(option) {
       <div
         v-else-if="!props.dataSheet.enhancements && owned < 999"
         class="data-sheet__count"
-        title="Models in this list / models you own"
+        v-tooltip="'Models in this list / models you own'"
       >
         {{ modelsTaken }} / {{ owned }}
       </div>
@@ -272,19 +272,19 @@ function optionAvailable(option) {
         <span
           v-if="props.dataSheet.allied"
           class="data-sheet__pill data-sheet__pill--allied"
-          :title="`Allied unit — ${props.dataSheet.alliedFaction}`"
+          v-tooltip="`Allied unit — ${props.dataSheet.alliedFaction}`"
           >ALLY</span
         >
         <span
           v-if="hasKeyword(props.dataSheet, 'EPIC HERO')"
           class="data-sheet__pill data-sheet__pill--accent"
-          title="Epic Hero"
+          v-tooltip="'Epic Hero'"
           >E</span
         >
         <span
           v-if="props.dataSheet.legends"
           class="data-sheet__pill"
-          title="Legends"
+          v-tooltip="'Legends'"
           >Lg</span
         >
       </span>
@@ -327,7 +327,7 @@ function optionAvailable(option) {
           v-for="(wo, wi) in props.dataSheet.wargearOptions"
           :key="`wgr-${wi}`"
           :class="{ maxed: !wargearAvailable(wo) }"
-          :title="wargearTooltip(wo)"
+          v-tooltip="wargearTooltip(wo)"
           @click="wargearAvailable(wo) && addWargear(wo)"
         >
           <span class="data-sheet__option-label">

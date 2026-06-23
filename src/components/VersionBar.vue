@@ -47,7 +47,7 @@ const availableMFMVersions = computed(() => {
       <span
         v-if="mfmStore.isListOutdated(armyListStore.toObject())"
         class="version-bar__warning"
-        title="This list has point changes compared to the latest MFM version. Change the MFM version to the left to update."
+        v-tooltip="'This list has point changes compared to the latest MFM version. Change the MFM version to the left to update.'"
       >
         <RiskIcon class="version-bar__warning-icon" />
         <span>New Version Available</span>
@@ -60,7 +60,7 @@ const availableMFMVersions = computed(() => {
         href="https://github.com/furka/40k-11th-list-builder"
         target="_blank"
         rel="noopener noreferrer"
-        title="View source on GitHub"
+        v-tooltip="'View source on GitHub'"
         aria-label="GitHub repository"
       >
         <GithubIcon class="version-bar__link-icon" />
@@ -70,7 +70,7 @@ const availableMFMVersions = computed(() => {
         href="https://discord.gg/CtbC5kBeJ2"
         target="_blank"
         rel="noopener noreferrer"
-        title="Join the Discord server"
+        v-tooltip="'Join the Discord server'"
         aria-label="Discord server"
       >
         <DiscordIcon class="version-bar__link-icon" />

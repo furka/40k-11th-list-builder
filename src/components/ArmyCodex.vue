@@ -113,7 +113,7 @@ function onScrollWheel(e) {
               v-if="group.kind === 'battleLine' && !group.title.includes(' — ')"
               type="button"
               class="codex__group-cog"
-              title="Edit Battleline overrides"
+              v-tooltip="'Edit Battleline overrides'"
               @click="battlelineModalOpen = true"
             >
               <SettingsIcon class="codex__group-cog-icon" />

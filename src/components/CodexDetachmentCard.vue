@@ -50,7 +50,7 @@ function onEnhancementClick(enh) {
     v-if="!appStore.showAvailableOnly || !disabled"
     class="data-sheet detachment-sheet"
     :class="{ 'detachment-sheet--selected': selected }"
-    :title="disabled ? cantAddReason : ''"
+    v-tooltip="disabled ? cantAddReason : ''"
   >
     <div
       class="data-sheet__title detachment-sheet__title"
@@ -96,7 +96,7 @@ function onEnhancementClick(enh) {
         <span
           v-if="enh.nonCharacterOnly"
           class="detachment-sheet__upgrade-badge"
-          title="Unit upgrade — attaches to a non-character unit"
+          v-tooltip="'Unit upgrade — attaches to a non-character unit'"
         >UPGRADE</span>
         <span class="data-sheet__option-spacer"></span>
         <span class="data-sheet__points">{{ enh.points }} pts</span>

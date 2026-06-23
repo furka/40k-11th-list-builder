@@ -117,7 +117,7 @@ function onPointerUp(e) {
             :disabled="rowStateFor(sheet).locked"
             :aria-pressed="rowStateFor(sheet).on"
             @click="toggle(sheet)"
-            :title="rowStateFor(sheet).label"
+            v-tooltip="rowStateFor(sheet).label"
           >
             <span class="bl-modal__toggle-track">
               <span class="bl-modal__toggle-knob" />

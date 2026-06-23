@@ -134,7 +134,7 @@ useSlotEl(armyListEl, () => (dragStore.draggedId ? "army-list-area" : null));
           <RiskIcon
             v-if="dpOver"
             class="army-list-detachments__warning-icon"
-            title="Your detachments exceed the DP budget for this battle size. Remove a detachment or raise your max points."
+            v-tooltip="'Your detachments exceed the DP budget for this battle size. Remove a detachment or raise your max points.'"
           />
           {{ dp.used }} / {{ dp.max }} DP
         </span>

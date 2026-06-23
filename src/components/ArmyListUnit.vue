@@ -223,7 +223,7 @@ function onPointerDown(e) {
     ref="rowEl"
     class="army-list-unit"
     :data-id="props.unit.id"
-    :title="name"
+    v-tooltip="name"
     :class="{
       error: inValid,
       'army-list-unit--attach-target': isAttachTarget,
@@ -233,7 +233,7 @@ function onPointerDown(e) {
     }"
     @pointerdown="onPointerDown"
   >
-    <span class="army-list-unit__warning" :title="inValid" v-if="inValid">
+    <span class="army-list-unit__warning" v-tooltip="inValid" v-if="inValid">
       <RiskIcon class="army-list-unit__warning-icon" />
     </span>
     <span ref="nameRef" class="army-list-unit__name">
@@ -242,12 +242,12 @@ function onPointerDown(e) {
     <span
       v-if="props.unit.allied"
       class="army-list-unit__ally-badge"
-      title="Allied unit"
+      v-tooltip="'Allied unit'"
     >ALLY</span>
     <span
       v-if="isUnitUpgrade"
       class="army-list-unit__upgrade-badge"
-      title="Unit upgrade — attaches to a non-character unit"
+      v-tooltip="'Unit upgrade — attaches to a non-character unit'"
     >UPGRADE</span>
     <span v-if="tierLabel" class="army-list-unit__tier">
       ({{ tierLabel }})

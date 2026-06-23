@@ -46,7 +46,7 @@ function onPointerDown(e) {
       'army-list-detachment--has-role': !!props.role,
       'army-list-detachment--dragging': isDragging,
     }"
-    :title="props.role ? `${props.name} — ${props.role.name}` : props.name"
+    v-tooltip="props.role ? `${props.name} — ${props.role.name}` : props.name"
     :style="props.role ? { backgroundColor: props.role.color, borderColor: 'transparent' } : null"
     @pointerdown="onPointerDown"
   >

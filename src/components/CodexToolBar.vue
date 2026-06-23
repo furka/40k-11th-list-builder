@@ -45,7 +45,7 @@ function openAllies() {
         type="button"
         class="toolbar__allies-button"
         :class="{ 'toolbar__allies-button--active': alliesCount > 0 }"
-        :title="alliesCount > 0 ? 'Edit allied factions' : 'Add allied factions'"
+        v-tooltip="alliesCount > 0 ? 'Edit allied factions' : 'Add allied factions'"
         @click="openAllies"
       >
         Allies<span v-if="alliesCount > 0" class="toolbar__allies-count">

@@ -43,7 +43,7 @@ function onPointerUp(event) {
       class="modal-button"
       :class="{ 'modal-button--attention': props.attention }"
       @click="openDialog"
-      :title="props.title"
+      v-tooltip="props.title"
     >
       <slot name="button"></slot>
     </button>
