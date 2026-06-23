@@ -48,6 +48,15 @@ const pointsChangesTitle = computed(() =>
           Legends
         </label>
 
+        <label v-tooltip="'Show full keyword list at the bottom of each datasheet'">
+          <input
+            type="checkbox"
+            :checked="appStore.showKeywords"
+            @change="appStore.showKeywords = $event.target.checked"
+          />
+          Show Keywords
+        </label>
+
         <label
           v-tooltip="`Hide units / detachments that aren't available to add instead of dimming them`"
         >
