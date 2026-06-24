@@ -97,7 +97,6 @@ let pointerMoveHandler = null;
 let pointerUpHandler = null;
 let pointerCancelHandler = null;
 let keyDownHandler = null;
-let keyUpHandler = null;
 
 function detachDragListeners() {
   if (pointerMoveHandler) {
@@ -105,18 +104,16 @@ function detachDragListeners() {
     window.removeEventListener("pointerup", pointerUpHandler);
     window.removeEventListener("pointercancel", pointerCancelHandler);
     window.removeEventListener("keydown", keyDownHandler);
-    window.removeEventListener("keyup", keyUpHandler);
     pointerMoveHandler = null;
     pointerUpHandler = null;
     pointerCancelHandler = null;
     keyDownHandler = null;
-    keyUpHandler = null;
   }
 }
 
-// Ctrl (Windows/Linux) or Cmd (Mac) held during a drag bypasses attachment
-// restrictions for that drop — a transient mirror of the "Bypass restrictions"
-// toggle.
+// Ctrl (Windows/Linux) or Cmd (Mac) drives the "Bypass restrictions" toggle:
+// pressing forces it on, releasing forces it off (see `updateBypassKey`). Every
+// gate just reads `appStore.freeAttach`, so no handler re-checks the key.
 const isBypassModifier = (e) => e.ctrlKey || e.metaKey;
 
 let detachmentPointerMoveHandler = null;
@@ -142,7 +139,6 @@ watch(
   (id) => {
     if (id && !pointerMoveHandler) {
       pointerMoveHandler = (e) => {
-        dragStore.setBypass(isBypassModifier(e));
         dragStore.updatePointer(e.clientX, e.clientY);
       };
       pointerUpHandler = () => {
@@ -172,18 +168,12 @@ watch(
       };
       pointerCancelHandler = () => dragStore.cancel();
       keyDownHandler = (e) => {
-        if (e.key === "Escape") {
-          dragStore.cancel();
-          return;
-        }
-        dragStore.setBypass(isBypassModifier(e));
+        if (e.key === "Escape") dragStore.cancel();
       };
-      keyUpHandler = (e) => dragStore.setBypass(isBypassModifier(e));
       window.addEventListener("pointermove", pointerMoveHandler);
       window.addEventListener("pointerup", pointerUpHandler);
       window.addEventListener("pointercancel", pointerCancelHandler);
       window.addEventListener("keydown", keyDownHandler);
-      window.addEventListener("keyup", keyUpHandler);
     } else if (!id) {
       detachDragListeners();
     }
@@ -263,16 +253,22 @@ watch(
   () => applySortToList()
 );
 
-// Track the bypass modifier globally (outside of any drag) so the codex can
-// live-update its disabled styling — rows blocked only by a unit's max are
-// addable while Ctrl/Cmd is held, so they shouldn't look disabled then.
+// Pressing the bypass modifier turns the toggle on, releasing turns it off.
+// We act only on the held-state *transition* (guarded by `bypassKeyHeld`) so a
+// repeated keydown — or a click made while the key is down — isn't clobbered.
 const updateBypassKey = (e) => {
-  appStore.bypassKeyHeld = isBypassModifier(e);
+  const held = isBypassModifier(e);
+  if (held === appStore.bypassKeyHeld) return;
+  appStore.bypassKeyHeld = held;
+  appStore.freeAttach = held;
 };
 // A window blur can swallow the keyup (e.g. Alt-Tab while holding Ctrl), so
-// reset on blur to avoid the styling getting stuck in the bypassed state.
+// reset on blur to avoid the toggle getting stuck on. A toggle turned on by a
+// plain click (key not held) is left alone.
 const clearBypassKey = () => {
+  if (!appStore.bypassKeyHeld) return;
   appStore.bypassKeyHeld = false;
+  appStore.freeAttach = false;
 };
 
 onMounted(() => {

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref, watch } from "vue";
+import { computed, ref, watch } from "vue";
 import { save, restore, debouncedSave } from "../utils/localStorage";
 import { GROUP_ROLE, SORT_MANUAL } from "../data/constants";
 import { useArmyListStore } from "./armyList";
@@ -22,12 +22,21 @@ export const useAppStore = defineStore("app", () => {
   const showLegends = ref(restore("showLegends") ?? false);
   const showPointsChanges = ref(restore("showPointsChanges") ?? false);
   const showKeywords = ref(restore("showKeywords") ?? false);
+  // The single source of truth for the "Bypass restrictions" switch and every
+  // add/attach gate. Driven three ways (see App.vue): a click toggles it,
+  // pressing Ctrl/Cmd forces it on, releasing forces it off.
   const freeAttach = ref(restore("freeAttach") ?? false);
-  // True while a bypass modifier (Ctrl / Cmd) is held, tracked globally so the
-  // codex can drop the disabled styling on rows that the modifier would let you
-  // add (e.g. over-max units). Transient — not persisted. Updated by global key
-  // listeners in App.vue.
+  // Tracks whether the bypass modifier is currently held so App.vue can drive
+  // `freeAttach` on the press/release *transitions* only — and not clobber a
+  // click made mid-hold. Transient; not persisted.
   const bypassKeyHeld = ref(false);
+
+  // Bypass Restrictions / Edit Collection live inline in the codex toolbar when
+  // it's wide enough, and fall back into the Options dropdown otherwise. Driving
+  // this from one reactive flag keeps the two render sites mutually exclusive —
+  // a pair of opposing CSS media queries collides with ToggleSwitch's own
+  // `display` and can leave both copies visible.
+  const inlineCodexToggles = computed(() => appWidth.value >= 1536);
 
   const lists = ref(restore("lists") ?? []);
 
@@ -107,6 +116,7 @@ export const useAppStore = defineStore("app", () => {
     showKeywords,
     freeAttach,
     bypassKeyHeld,
+    inlineCodexToggles,
     lists,
     setAppDimensions,
     createNewList,

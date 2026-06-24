@@ -185,18 +185,17 @@ function rowAvailable(row, tierGroup) {
   return (
     tierGroup.tierEnabled &&
     optionAvailable(row.size, {
-      bypassMax: appStore.freeAttach || appStore.bypassKeyHeld,
+      bypassMax: appStore.freeAttach,
     })
   );
 }
 
-// The Ctrl/⌘ modifier must add even on a row that's greyed by `maxed`, so the
-// click can't be guarded by `rowAvailable` — it's resolved here instead. Only
-// the unit-max cap is bypassed; collection ownership and price-tier gating
-// still apply.
-function onAddClick(row, group, event) {
+// Bypass must add even on a row that's greyed by `maxed`, so the click can't be
+// guarded by `rowAvailable` — it's resolved here instead. Only the unit-max cap
+// is bypassed; collection ownership and price-tier gating still apply.
+function onAddClick(row, group) {
   if (!group.tierEnabled) return;
-  const bypassMax = appStore.freeAttach || event.ctrlKey || event.metaKey;
+  const bypassMax = appStore.freeAttach;
   if (!optionAvailable(row.size, { bypassMax })) return;
   addUnit(row.size, bypassMax);
 }
@@ -330,7 +329,7 @@ const keywordsText = computed(() => keywords.value.join(", "));
         <li
           v-for="(row, ri) in group.rows"
           :key="ri"
-          @click="onAddClick(row, group, $event)"
+          @click="onAddClick(row, group)"
           :class="{ maxed: !rowAvailable(row, group) }"
         >
           <span class="data-sheet__option-label">

@@ -5,14 +5,12 @@ import { formatEnhancementRestrictions } from "../utils/enhancement-restrictions
 import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useDragStore } from "../stores/drag";
-import { useAppStore } from "../stores/app";
 import { scaledHeightPx } from "../utils/unit-sizing";
 import { useRowEl } from "../composables/useRowEl";
 
 const armyListStore = useArmyListStore();
 const codexStore = useCodexStore();
 const dragStore = useDragStore();
-const appStore = useAppStore();
 
 const props = defineProps({
   unit: Object,
@@ -242,8 +240,6 @@ function onPointerDown(e) {
     scale: props.scale,
     rowBaseline: inheritedBaseline || "22px",
     enhancementMeta,
-    freeAttach: appStore.freeAttach,
-    bypass: e.ctrlKey || e.metaKey,
   });
 }
 </script>

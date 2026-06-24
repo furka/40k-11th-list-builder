@@ -2,22 +2,26 @@
 import { computed, ref } from "vue";
 import CodexOptions from "./CodexOptions.vue";
 import SortArmyButton from "./SortArmyButton.vue";
+import ToggleSwitch from "./ToggleSwitch.vue";
 import ToolBar from "./ToolBar.vue";
 import AlliesPickerModal from "./AlliesPickerModal.vue";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
+import { bypassTitle } from "../utils/bypass-title";
 const armyListStore = useArmyListStore();
 const appStore = useAppStore();
 
 const alliesModalRef = ref(null);
 
-const primaryTitle = computed(() => armyListStore.faction);
-const alliesSuffix = computed(() => {
-  const list = (armyListStore.allies ?? []).filter(Boolean);
-  return list.length ? ` + ${list.join(" + ")}` : "";
-});
+const freeAttachLabel = computed(() =>
+  appStore.freeAttach ? "Bypass Restrictions" : "Enforce Restrictions"
+);
+const editCollectionLabel = computed(() =>
+  appStore.editCollection ? "Edit Collection" : "Lock Collection"
+);
 
-const alliesCount = computed(() => armyListStore.allies.length);
+const primaryTitle = computed(() => armyListStore.faction);
+const allyNames = computed(() => (armyListStore.allies ?? []).filter(Boolean));
 
 function openAllies() {
   alliesModalRef.value?.open();
@@ -32,26 +36,40 @@ function openAllies() {
 
     <div class="toolbar__group toolbar__group--faction">
       <span class="toolbar__faction-label">
-        {{ primaryTitle }}<span
-          v-if="alliesSuffix"
+        {{ primaryTitle
+        }}<span
+          v-for="ally in allyNames"
+          :key="ally"
           class="toolbar__faction-label-allies"
-          >{{ alliesSuffix }}</span
+        >
+          + {{ ally }}</span
+        ><button
+          type="button"
+          class="toolbar__faction-label-allies toolbar__add-allies"
+          v-tooltip="
+            allyNames.length ? 'Edit allied factions' : 'Add allied factions'
+          "
+          @click="openAllies"
+        >
+          + Add Allies</button
         >
       </span>
     </div>
 
-    <div class="toolbar__group toolbar__group--allies">
-      <button
-        type="button"
-        class="toolbar__allies-button"
-        :class="{ 'toolbar__allies-button--active': alliesCount > 0 }"
-        v-tooltip="alliesCount > 0 ? 'Edit allied factions' : 'Add allied factions'"
-        @click="openAllies"
-      >
-        Allies<span v-if="alliesCount > 0" class="toolbar__allies-count">
-          · {{ alliesCount }}
-        </span>
-      </button>
+    <div
+      v-if="appStore.inlineCodexToggles"
+      class="toolbar__group toolbar__group--toggles"
+    >
+      <ToggleSwitch
+        v-model="appStore.freeAttach"
+        :label="freeAttachLabel"
+        :tooltip="bypassTitle"
+      />
+      <ToggleSwitch
+        v-model="appStore.editCollection"
+        :label="editCollectionLabel"
+        tooltip="Set which units are available in your personal collection"
+      />
     </div>
 
     <div class="toolbar__group toolbar__group--filter">
@@ -124,11 +142,18 @@ function openAllies() {
       &--sort {
         display: flex;
         justify-content: flex-end;
-        min-width: 250px;
+        // Match the 250px army-list pane (ArmyList.vue) so the sort button's
+        // right edge meets the army-list / codex seam.
+        width: 250px;
+        flex-shrink: 0;
+      }
 
-        @media (max-width: 768px) {
-          min-width: 0;
-        }
+      // Rendered only when appStore.inlineCodexToggles is true; otherwise the
+      // switches live in the Options dropdown (see CodexOptions.vue).
+      &--toggles {
+        flex-shrink: 0;
+        gap: 16px;
+        margin: 0 8px;
       }
 
       &--filter {
@@ -139,55 +164,38 @@ function openAllies() {
 
       &--faction {
         flex-grow: 1;
-        // min-width: 0 lets the centered label shrink + truncate instead of
+        // Cancel the toolbar's 4px inter-group gap so the title's left edge
+        // sits exactly on the codex seam (right after the 250px sort group).
+        margin-inline-start: -4px;
+        // min-width: 0 lets the faction label shrink + truncate instead of
         // pushing this flex group wider than its share of the toolbar (which
         // would either overflow the fixed 64px toolbar height or shove
         // adjacent groups off-screen — the army list's layout math depends
         // on the toolbar staying its declared height).
         min-width: 0;
-        justify-content: center;
-      }
-
-      &--allies {
-        flex-shrink: 0;
+        justify-content: flex-start;
+        // Bottom-align the Add Allies button with the title's descender so it
+        // anchors to the same baseline as the faction name.
+        align-items: flex-end;
+        gap: 12px;
       }
     }
 
-    &__allies-button {
-      // Match the look of `.toolbar__button` / `.modal-button` /
-      // `.dropdown__button` (NEW / SAVED / OPTIONS / VIEW / SHARE) so the
-      // toolbar reads as one consistent button row.
-      align-items: center;
-      background: var(--color-surface);
-      border: 1px solid var(--color-divider);
-      border-radius: 2px;
-      color: var(--color-text);
+    &__add-allies {
+      // Rendered as the last link in the faction chain, styled like an ally
+      // (inherits .toolbar__faction-label-allies) but interactive.
+      background: none;
+      border: 0;
+      padding: 0;
       cursor: pointer;
-      display: flex;
-      flex-direction: row;
-      flex-shrink: 0;
-      font-family: var(--font-display);
-      font-size: 16px;
-      gap: 8px;
-      justify-content: center;
-      letter-spacing: 0.5px;
-      margin: 0 4px;
-      padding: 7px 12px;
+      font-family: inherit;
       text-transform: uppercase;
+      color: #fff;
+      opacity: 1;
 
       &:hover {
-        background: var(--color-header);
-        border-color: var(--color-accent);
-      }
-
-      &--active {
-        border-color: var(--color-accent);
         color: var(--color-accent);
       }
-    }
-
-    &__allies-count {
-      font-weight: 600;
     }
   }
 }

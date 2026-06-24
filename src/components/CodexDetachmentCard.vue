@@ -31,11 +31,11 @@ function enhancementTaken(enh) {
   return armyListStore.enhancementsTaken.has(enh.name);
 }
 
-// While the bypass modifier is held, a taken enhancement is addable again, so
-// it shouldn't look disabled — same live-update behaviour as the codex unit
-// rows under Ctrl/Cmd.
+// While bypass is active (toggle on or modifier held), a taken enhancement is
+// addable again, so it shouldn't look disabled — same live-update behaviour as
+// the codex unit rows.
 function enhancementDisabled(enh) {
-  return enhancementTaken(enh) && !appStore.bypassKeyHeld;
+  return enhancementTaken(enh) && !appStore.freeAttach;
 }
 
 function onTitleClick() {
@@ -43,12 +43,12 @@ function onTitleClick() {
   armyListStore.addDetachment(props.detachment.name);
 }
 
-function onEnhancementClick(enh, event) {
+function onEnhancementClick(enh) {
   if (disabled.value) return;
-  // Holding Ctrl/⌘ bypasses the per-army duplicate limit, mirroring the
-  // unit-max bypass — the extra copy is stamped so it skips the validation
-  // error and shows the "restrictions bypassed" badge.
-  const bypass = event.ctrlKey || event.metaKey;
+  // Bypass relaxes the per-army duplicate limit, mirroring the unit-max bypass —
+  // the extra copy is stamped so it skips the validation error and shows the
+  // "restrictions bypassed" badge.
+  const bypass = appStore.freeAttach;
   const taken = enhancementTaken(enh);
   if (taken && !bypass) return;
   if (!selected.value) {
@@ -117,7 +117,7 @@ function onEnhancementClick(enh, event) {
             ? 'Already in your army — hold Ctrl to add anyway'
             : formatEnhancementRestrictions(enh)
         "
-        @click="onEnhancementClick(enh, $event)"
+        @click="onEnhancementClick(enh)"
       >
         <span class="data-sheet__option-name">{{ enh.name }}</span>
         <span

@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { createPinia, setActivePinia } from "pinia";
 import { useDragStore } from "../stores/drag";
+import { useAppStore } from "../stores/app";
 
 const SHEETS = {
   "NECRON WARRIORS": { name: "NECRON WARRIORS", keywords: ["BATTLELINE"] },
@@ -36,6 +37,7 @@ function startDraggingImo(drag, pointer = { x: 0, y: 0 }) {
 describe("drag store", () => {
   let drag;
   beforeEach(() => {
+    localStorage.clear();
     setActivePinia(createPinia());
     drag = useDragStore();
   });
@@ -218,7 +220,7 @@ describe("drag store", () => {
     const attachHosts = (d) =>
       d.legalSlots.filter((s) => s.type === "attach").map((s) => s.hostId);
 
-    function startDraggingWarriors(d, { bypass = false, pointer = { x: 0, y: 0 } } = {}) {
+    function startDraggingWarriors(d, { pointer = { x: 0, y: 0 } } = {}) {
       d.start({
         unit: UNITS[0], // NECRON WARRIORS — a regular unit, normally unattachable
         pointer,
@@ -226,30 +228,31 @@ describe("drag store", () => {
         getDataSheet,
         grabOffset: { x: 0, y: 0 },
         size: { width: 200, height: 32 },
-        bypass,
       });
     }
 
-    it("seeds bypass from start() so a regular unit can attach", () => {
+    it("reads the bypass state at start() so a regular unit can attach", () => {
       startDraggingWarriors(drag);
       expect(attachHosts(drag)).toEqual([]);
       drag.cancel();
-      startDraggingWarriors(drag, { bypass: true });
+      useAppStore().freeAttach = true;
+      startDraggingWarriors(drag);
       expect(attachHosts(drag)).toContain("imo");
     });
 
-    it("recomputes legality live as the modifier toggles mid-drag", () => {
+    it("recomputes legality live as bypass toggles mid-drag", () => {
+      const app = useAppStore();
       startDraggingWarriors(drag);
       expect(attachHosts(drag)).toEqual([]);
-      drag.setBypass(true);
+      app.freeAttach = true;
       expect(attachHosts(drag)).toContain("imo");
-      drag.setBypass(false);
+      app.freeAttach = false;
       expect(attachHosts(drag)).toEqual([]);
     });
 
-    it("commit carries forced=true when the bypass modifier is held", () => {
+    it("commit carries forced=true when bypass is active", () => {
       startDraggingWarriors(drag, { pointer: { x: 50, y: 120 } });
-      drag.setBypass(true);
+      useAppStore().freeAttach = true;
       drag.registerRow("imo", fakeEl(ROW_RECT), {
         parentKey: "root",
         indexInParent: 0,
