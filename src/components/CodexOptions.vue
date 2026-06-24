@@ -13,11 +13,8 @@ import { useMfmStore } from "../stores/mfm";
 const appStore = useAppStore();
 const mfmStore = useMfmStore();
 
-const hasPreviousMFM = computed(() => !!mfmStore.MFM.PREVIOUS);
-const pointsChangesTitle = computed(() =>
-  hasPreviousMFM.value
-    ? "Show points changes compared to previous MFM"
-    : "No previous MFM version to compare against yet"
+const hasPreviousVersion = computed(
+  () => !!mfmStore.getPreviousMFM(mfmStore.MFM.CURRENT)
 );
 
 const bypassModifierKey = (() => {
@@ -36,11 +33,13 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
     </template>
     <template v-slot:content>
       <div class="codex-options__content">
-        <label v-tooltip="pointsChangesTitle" :class="{ disabled: !hasPreviousMFM }">
+        <label
+          v-if="hasPreviousVersion"
+          v-tooltip="'Show points changes compared to previous MFM version'"
+        >
           <input
             type="checkbox"
             :checked="appStore.showPointsChanges"
-            :disabled="!hasPreviousMFM"
             @change="appStore.showPointsChanges = $event.target.checked"
           />
           Points Changes
