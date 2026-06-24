@@ -26,43 +26,13 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
 </script>
 
 <template>
-  <DropDown class="codex-options" position="right" title="Codex display options">
+  <DropDown class="codex-options" position="right">
     <template v-slot:button>
       <OptionsIcon class="dropdown__icon" />
       <span>Options</span>
     </template>
     <template v-slot:content>
       <div class="codex-options__content">
-        <label
-          v-if="hasPreviousVersion"
-          v-tooltip="'Show points changes compared to previous MFM version'"
-        >
-          <input
-            type="checkbox"
-            :checked="appStore.showPointsChanges"
-            @change="appStore.showPointsChanges = $event.target.checked"
-          />
-          Points Changes
-        </label>
-
-        <label v-tooltip="'Show Legends units'">
-          <input
-            type="checkbox"
-            :checked="appStore.showLegends"
-            @change="appStore.showLegends = $event.target.checked"
-          />
-          Legends
-        </label>
-
-        <label v-tooltip="'Show full keyword list at the bottom of each datasheet'">
-          <input
-            type="checkbox"
-            :checked="appStore.showKeywords"
-            @change="appStore.showKeywords = $event.target.checked"
-          />
-          Show Keywords
-        </label>
-
         <label v-tooltip="bypassTitle">
           <input
             type="checkbox"
@@ -81,6 +51,36 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
             @change="appStore.editCollection = $event.target.checked"
           />
           Edit Collection
+        </label>
+
+        <label v-tooltip="'Show Legends units'">
+          <input
+            type="checkbox"
+            :checked="appStore.showLegends"
+            @change="appStore.showLegends = $event.target.checked"
+          />
+          Legends
+        </label>
+
+        <label
+          v-if="hasPreviousVersion"
+          v-tooltip="'Show points changes compared to previous MFM version'"
+        >
+          <input
+            type="checkbox"
+            :checked="appStore.showPointsChanges"
+            @change="appStore.showPointsChanges = $event.target.checked"
+          />
+          Points Changes
+        </label>
+
+        <label v-tooltip="'Show full keyword list at the bottom of each datasheet'">
+          <input
+            type="checkbox"
+            :checked="appStore.showKeywords"
+            @change="appStore.showKeywords = $event.target.checked"
+          />
+          Show Keywords
         </label>
 
         <label v-tooltip="'Sort Datasheets'">
