@@ -62,7 +62,6 @@ const keywordsLabel = computed(() =>
         <ToggleSwitch
           v-model="appStore.showLegends"
           :label="legendsLabel"
-          tooltip="Show Legends units"
         />
 
         <ToggleSwitch
@@ -75,7 +74,6 @@ const keywordsLabel = computed(() =>
         <ToggleSwitch
           v-model="appStore.showKeywords"
           :label="keywordsLabel"
-          tooltip="Show keywords on datasheets"
         />
 
         <label v-tooltip="'Sort Datasheets'">
@@ -106,6 +104,7 @@ const keywordsLabel = computed(() =>
     background-color: var(--color-bg);
     border: 1px solid var(--color-divider);
     border-radius: 2px;
+    box-sizing: border-box;
     color: var(--color-text);
     font-family: var(--font-body);
     font-size: 15px;
@@ -128,7 +127,8 @@ const keywordsLabel = computed(() =>
 
   select {
     flex-grow: 1;
-    margin-inline-start: 8px;
+    height: auto;
+    min-width: 0;
   }
 
   label {

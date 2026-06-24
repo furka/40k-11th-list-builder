@@ -6,7 +6,7 @@ import ToolBar from "./ToolBar.vue";
 import AlliesPickerModal from "./AlliesPickerModal.vue";
 import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
-import { bypassTitle } from "../utils/bypass-title";
+import { bypassTitle, enforceTitle } from "../utils/bypass-title";
 const armyListStore = useArmyListStore();
 const appStore = useAppStore();
 
@@ -15,8 +15,16 @@ const alliesModalRef = ref(null);
 const freeAttachLabel = computed(() =>
   appStore.freeAttach ? "Bypass Restrictions" : "Enforce Restrictions"
 );
+const freeAttachTooltip = computed(() =>
+  appStore.freeAttach ? bypassTitle : enforceTitle
+);
 const editCollectionLabel = computed(() =>
   appStore.editCollection ? "Edit Collection" : "Lock Collection"
+);
+const editCollectionTooltip = computed(() =>
+  appStore.editCollection
+    ? "Set which units are available in your personal collection"
+    : "Unlock the collection to set which units are available in your personal collection"
 );
 
 const primaryTitle = computed(() => armyListStore.faction);
@@ -58,12 +66,12 @@ function openAllies() {
       <ToggleSwitch
         v-model="appStore.freeAttach"
         :label="freeAttachLabel"
-        :tooltip="bypassTitle"
+        :tooltip="freeAttachTooltip"
       />
       <ToggleSwitch
         v-model="appStore.editCollection"
         :label="editCollectionLabel"
-        tooltip="Set which units are available in your personal collection"
+        :tooltip="editCollectionTooltip"
       />
     </div>
 
@@ -74,6 +82,7 @@ function openAllies() {
         @input="appStore.codexFilter = $event.target.value"
         placeholder="Filter Datasheets"
         class="toolbar__codex-filter"
+        v-tooltip="'Filter datasheets by name, keyword, or wargear'"
       />
     </div>
 
