@@ -36,6 +36,8 @@ export function matchesDatasheet(sheet, query) {
   if (!q) return true;
   if (sheet.name.toLowerCase().includes(q)) return true;
   if (sheet.keywords?.some((k) => k.toLowerCase().includes(q))) return true;
+  if (sheet.wargearOptions?.some((wo) => wo.name.toLowerCase().includes(q)))
+    return true;
   return matchesRoleLabel(sheet, q);
 }
 
