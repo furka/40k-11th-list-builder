@@ -23,6 +23,22 @@ const bypassModifierKey = (() => {
   return /mac|iphone|ipad|ipod/i.test(platform) ? "⌘" : "Ctrl";
 })();
 const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr hold ${bypassModifierKey} while dragging.`;
+
+const freeAttachLabel = computed(() =>
+  appStore.freeAttach ? "Enforce Restrictions" : "Bypass Restrictions"
+);
+const editCollectionLabel = computed(() =>
+  appStore.editCollection ? "Lock Collection" : "Edit Collection"
+);
+const legendsLabel = computed(() =>
+  appStore.showLegends ? "Hide Legends" : "Show Legends"
+);
+const pointsChangesLabel = computed(() =>
+  appStore.showPointsChanges ? "Hide Points Changes" : "Show Points Changes"
+);
+const keywordsLabel = computed(() =>
+  appStore.showKeywords ? "Hide Keywords" : "Show Keywords"
+);
 </script>
 
 <template>
@@ -39,7 +55,8 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
             :checked="appStore.freeAttach"
             @change="appStore.freeAttach = $event.target.checked"
           />
-          Bypass restrictions
+          <span class="switch"></span>
+          {{ freeAttachLabel }}
         </label>
 
         <label
@@ -50,7 +67,8 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
             :checked="appStore.editCollection"
             @change="appStore.editCollection = $event.target.checked"
           />
-          Edit Collection
+          <span class="switch"></span>
+          {{ editCollectionLabel }}
         </label>
 
         <label v-tooltip="'Show Legends units'">
@@ -59,7 +77,8 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
             :checked="appStore.showLegends"
             @change="appStore.showLegends = $event.target.checked"
           />
-          Legends
+          <span class="switch"></span>
+          {{ legendsLabel }}
         </label>
 
         <label
@@ -71,16 +90,18 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
             :checked="appStore.showPointsChanges"
             @change="appStore.showPointsChanges = $event.target.checked"
           />
-          Points Changes
+          <span class="switch"></span>
+          {{ pointsChangesLabel }}
         </label>
 
-        <label v-tooltip="'Show full keyword list at the bottom of each datasheet'">
+        <label v-tooltip="'Show keywords on datasheets'">
           <input
             type="checkbox"
             :checked="appStore.showKeywords"
             @change="appStore.showKeywords = $event.target.checked"
           />
-          Show Keywords
+          <span class="switch"></span>
+          {{ keywordsLabel }}
         </label>
 
         <label v-tooltip="'Sort Datasheets'">
@@ -137,9 +158,50 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
   }
 
   input[type="checkbox"] {
-    width: 1em;
-    height: 1em;
-    accent-color: var(--color-accent);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .switch {
+    flex-shrink: 0;
+    position: relative;
+    width: 34px;
+    height: 18px;
+    border-radius: 999px;
+    background-color: var(--color-divider);
+    transition: background-color 0.15s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      inset-inline-start: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--color-surface);
+      transition: transform 0.15s ease;
+    }
+  }
+
+  input[type="checkbox"]:checked + .switch {
+    background-color: var(--color-accent);
+
+    &::after {
+      transform: translateX(16px);
+    }
+  }
+
+  input[type="checkbox"]:focus-visible + .switch {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 
   label {
