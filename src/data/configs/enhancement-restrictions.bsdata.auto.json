@@ -3,7 +3,7 @@
   "_ref": "main",
   "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
   "_committedAt": "2026-06-22T09:36:35Z",
-  "_generatedAt": "2026-06-23T13:05:48.088Z",
+  "_generatedAt": "2026-06-24T16:25:15.178Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -64,6 +64,11 @@
         "VALERIAN"
       ]
     },
+    "Castellan’s Mark": {
+      "requiredKeywords": [
+        "SHIELD-CAPTAIN"
+      ]
+    },
     "Enhanced Voidsheen Cloak": {
       "requiredKeywords": [
         "ANATHEMA PSYKANA"
@@ -77,6 +82,11 @@
     "From the Hall of Armouries": {
       "requiredKeywords": [
         "SHIELD-CAPTAIN"
+      ]
+    },
+    "Huntress’ Eye": {
+      "requiredKeywords": [
+        "ANATHEMA PSYKANA"
       ]
     },
     "Oblivion Knight": {
@@ -324,6 +334,11 @@
         "OFFICER"
       ]
     },
+    "Stalwart’s Honours": {
+      "requiredKeywords": [
+        "OFFICER"
+      ]
+    },
     "Vanguard Honours": {
       "requiredKeywords": [
         "OFFICER"
@@ -497,6 +512,11 @@
         "WAR DOG"
       ]
     },
+    "Hunter’s Helm": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
     "Knight Diabolus": {
       "requiredKeywords": [
         "WAR DOG"
@@ -517,6 +537,11 @@
         "WAR DOG"
       ]
     },
+    "Nightmare’s Master": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
     "Octagram of Conjuration": {
       "requiredKeywords": [
         "KNIGHT ABOMINANT"
@@ -527,12 +552,22 @@
         "WAR DOG"
       ]
     },
+    "Preyslayer’s Mantle": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
     "Putrid Carapace": {
       "requiredKeywords": [
         "WAR DOG"
       ]
     },
     "Throne Mechanicum of Skulls": {
+      "requiredKeywords": [
+        "WAR DOG"
+      ]
+    },
+    "Tyrant’s Shadow": {
       "requiredKeywords": [
         "WAR DOG"
       ]
@@ -549,6 +584,11 @@
     }
   },
   "CHAOS SPACE MARINES": {
+    "Akshur’s Binding Runes": {
+      "requiredKeywords": [
+        "DAEMON PRINCE WITH WINGS"
+      ]
+    },
     "Amulet of Tainted Vigour": {
       "allowedHosts": [
         "DARK APOSTLE"
@@ -562,6 +602,28 @@
     "Crown of Worms": {
       "requiredKeywords": [
         "WARPSMITH"
+      ]
+    },
+    "Cultist’s Brand": {
+      "allowedHosts": [
+        "ACCURSED CULTISTS",
+        "CULTIST FIREBRAND",
+        "CULTIST MOB",
+        "CULTIST MOB WITH FIREARMS",
+        "DARK APOSTLE",
+        "DARK COMMUNE",
+        "FELLGOR BEASTMEN",
+        "GELLERPOX INFECTED",
+        "MUTOID VERMIN",
+        "NEGAVOLT CULTISTS",
+        "RENEGADE ENFORCER",
+        "RENEGADE HEAVY WEAPONS SQUAD",
+        "RENEGADE OGRYN BEAST HANDLER",
+        "RENEGADE OGRYN BRUTES",
+        "RENEGADE PLAGUE OGRYNS",
+        "ROGUE PSYKER",
+        "TRAITOR ENFORCER",
+        "TRAITOR GUARDSMEN SQUAD"
       ]
     },
     "Cybinfernal Font": {
@@ -651,6 +713,11 @@
         "DAMNED"
       ]
     },
+    "Night’s Shroud": {
+      "requiredKeywords": [
+        "CHAOS LORD"
+      ]
+    },
     "Prime Test Subject": {
       "requiredKeywords": [
         "DAMNED"
@@ -679,6 +746,11 @@
     "Voice of the Tyrant": {
       "requiredKeywords": [
         "DAMNED"
+      ]
+    },
+    "Warmaster’s Gift": {
+      "requiredKeywords": [
+        "CHAOS LORD"
       ]
     },
     "Warped Foresight": {
@@ -971,128 +1043,6 @@
     "Webway Awl": {
       "requiredKeywords": [
         "ARCHON"
-      ]
-    }
-  },
-  "EMPEROR’S CHILDREN": {
-    "Blinding Speed": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Distortion": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Eager to Prove": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Empyric Suffusion": {
-      "requiredKeywords": [
-        "KEEPER OF SECRETS"
-      ]
-    },
-    "Exalted Patron": {
-      "requiredKeywords": [
-        "LORD EXULTANT"
-      ]
-    },
-    "Faultless Opportunist": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Heretek Adept": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Intoxicating Musk": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Loathsome Dexterity": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Pledge of Dark Glory": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Pledge of Eternal Servitude": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Pledge of Mortal Pain": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Pledge of Unholy Fortune": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Possessed Blade": {
-      "requiredKeywords": [
-        "KEEPER OF SECRETS"
-      ]
-    },
-    "Proud and Vainglorious": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Repulsed by Weakness": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Rise to the Challenge": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Slayer of Champions": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Soulstain Made Manifest": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Spearhead Striker": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Spiritsliver": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Steeped in Suffering": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Tactical Perfection": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
-    "Tears of the Phoenix": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
       ]
     }
   },
@@ -1436,6 +1386,11 @@
     "Shock Deployment": {
       "requiredKeywords": [
         "GRAVIS"
+      ]
+    },
+    "Skjald’s Foretelling": {
+      "requiredKeywords": [
+        "BATTLE LEADER"
       ]
     },
     "Target Augury Web": {

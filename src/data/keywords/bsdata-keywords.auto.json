@@ -3,7 +3,7 @@
   "_ref": "main",
   "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
   "_committedAt": "2026-06-22T09:36:35Z",
-  "_generatedAt": "2026-06-23T10:28:20.635Z",
+  "_generatedAt": "2026-06-24T16:25:11.520Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -2649,18 +2649,6 @@
       "INFANTRY",
       "REGIMENT"
     ],
-    "Hell’s Last": [
-      "ASTRA MILITARUM",
-      "CHARACTER",
-      "COMMAND SQUAD",
-      "EPIC HERO",
-      "GRENADES",
-      "HELL’S LAST",
-      "IMPERIUM",
-      "INFANTRY",
-      "OFFICER",
-      "PLATOON"
-    ],
     "Hellhammer": [
       "ASTRA MILITARUM",
       "HELLHAMMER",
@@ -2676,6 +2664,18 @@
       "SMOKE",
       "SQUADRON",
       "VEHICLE"
+    ],
+    "Hell’s Last": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMAND SQUAD",
+      "EPIC HERO",
+      "GRENADES",
+      "HELL’S LAST",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER",
+      "PLATOON"
     ],
     "Hippogriff AFV": [
       "ASTRA MILITARUM",
@@ -5918,6 +5918,17 @@
       "TITANIC",
       "TOWERING"
     ],
+    "Beast of Nurgle": [],
+    "Beasts of Nurgle": [
+      "BEAST",
+      "BEASTS OF NURGLE",
+      "CHAOS",
+      "DAEMON",
+      "LEGIONES DAEMONICA",
+      "NURGLE",
+      "NURGLE NON-BATTLELINE",
+      "SHADOW LEGION"
+    ],
     "Be’lakor": [
       "BE’LAKOR",
       "CHAOS",
@@ -5930,17 +5941,6 @@
       "PSYKER",
       "SHADOW LEGION",
       "UNDIVIDED"
-    ],
-    "Beast of Nurgle": [],
-    "Beasts of Nurgle": [
-      "BEAST",
-      "BEASTS OF NURGLE",
-      "CHAOS",
-      "DAEMON",
-      "LEGIONES DAEMONICA",
-      "NURGLE",
-      "NURGLE NON-BATTLELINE",
-      "SHADOW LEGION"
     ],
     "Bloodcrushers": [
       "BLOODCRUSHERS",
@@ -11729,7 +11729,7 @@
       "YVRAINE"
     ]
   },
-  "EMPEROR’S CHILDREN": {
+  "EMPEROR'S CHILDREN": {
     "Alluress": [],
     "Blissbringer": [],
     "Champion of Excess [Crucible]": [
@@ -14418,30 +14418,6 @@
       "NECRONS",
       "NOBLE"
     ],
-    "C’tan Shard of the Deceiver": [
-      "C’TAN SHARD OF THE DECEIVER",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "MONSTER",
-      "NECRONS"
-    ],
-    "C’tan Shard of the Nightbringer": [
-      "C’TAN SHARD OF THE NIGHTBRINGER",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "MONSTER",
-      "NECRONS"
-    ],
-    "C’tan Shard of the Void Dragon": [
-      "C’TAN SHARD OF THE VOID DRAGON",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "MONSTER",
-      "NECRONS"
-    ],
     "Canoptek Acanthrites": [
       "ACANTHRITES",
       "BEAST",
@@ -14534,6 +14510,30 @@
     "Cryptothralls": [
       "CRYPTOTHRALLS",
       "INFANTRY",
+      "NECRONS"
+    ],
+    "C’tan Shard of the Deceiver": [
+      "CHARACTER",
+      "C’TAN SHARD OF THE DECEIVER",
+      "EPIC HERO",
+      "FLY",
+      "MONSTER",
+      "NECRONS"
+    ],
+    "C’tan Shard of the Nightbringer": [
+      "CHARACTER",
+      "C’TAN SHARD OF THE NIGHTBRINGER",
+      "EPIC HERO",
+      "FLY",
+      "MONSTER",
+      "NECRONS"
+    ],
+    "C’tan Shard of the Void Dragon": [
+      "CHARACTER",
+      "C’TAN SHARD OF THE VOID DRAGON",
+      "EPIC HERO",
+      "FLY",
+      "MONSTER",
       "NECRONS"
     ],
     "Deathmarks": [
@@ -18345,7 +18345,7 @@
       "WULFEN WITH STORM SHIELDS"
     ]
   },
-  "T’AU EMPIRE": {
+  "T'AU EMPIRE": {
     "AX-1-0 Tiger Shark": [
       "AIRCRAFT",
       "AX-1-0 TIGER SHARK",
@@ -18519,8 +18519,8 @@
       "DEVILFISH",
       "FLY",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TRANSPORT",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Drone Sentry Turret": [
@@ -18630,8 +18630,8 @@
       "INFANTRY",
       "KROOT",
       "SHAPER",
-      "T’AU EMPIRE",
-      "TRAIL SHAPER"
+      "TRAIL SHAPER",
+      "T’AU EMPIRE"
     ],
     "Kroot War Shaper": [
       "CHARACTER",
@@ -18670,9 +18670,9 @@
       "MANTA",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TITANIC",
       "TRANSPORT",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Orca Dropship": [
@@ -18680,9 +18680,9 @@
       "FLY",
       "NON-KROOT",
       "ORCA DROPSHIP",
-      "T’AU EMPIRE",
       "TITANIC",
       "TRANSPORT",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Pathfinder Team": [
@@ -18701,15 +18701,6 @@
       "VEHICLE"
     ],
     "Piranhas": [],
-    "R’varna Battlesuit": [
-      "BATTLESUIT",
-      "FLY",
-      "NON-KROOT",
-      "R’VARNA",
-      "T’AU EMPIRE",
-      "VEHICLE",
-      "WALKER"
-    ],
     "Razorshark Strike Fighter": [
       "AIRCRAFT",
       "FLY",
@@ -18737,6 +18728,15 @@
       "FLY",
       "NON-KROOT",
       "RIPTIDE",
+      "T’AU EMPIRE",
+      "VEHICLE",
+      "WALKER"
+    ],
+    "R’varna Battlesuit": [
+      "BATTLESUIT",
+      "FLY",
+      "NON-KROOT",
+      "R’VARNA",
       "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
@@ -18782,9 +18782,9 @@
     "Stormsurge": [
       "NON-KROOT",
       "STORMSURGE",
-      "T’AU EMPIRE",
       "TITANIC",
       "TOWERING",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18809,32 +18809,32 @@
     "TX42 Piranha": [
       "FLY",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TX42 PIRANHA",
-      "VEHICLE"
-    ],
-    "Ta’unar Supremacy Armour": [
-      "NON-KROOT",
       "T’AU EMPIRE",
-      "TA’UNAR SUPREMACY ARMOUR",
-      "TITANIC",
-      "TOWERING",
-      "VEHICLE",
-      "WALKER"
+      "VEHICLE"
     ],
     "Tactical Drones": [
       "DRONE",
       "FLY",
       "NON-KROOT",
+      "TACTICAL DRONES",
+      "T’AU EMPIRE"
+    ],
+    "Ta’unar Supremacy Armour": [
+      "NON-KROOT",
+      "TA’UNAR SUPREMACY ARMOUR",
+      "TITANIC",
+      "TOWERING",
       "T’AU EMPIRE",
-      "TACTICAL DRONES"
+      "VEHICLE",
+      "WALKER"
     ],
     "Tetras": [
       "FLY",
       "MARKERLIGHT",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TETRAS",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "The Twin Lance": [
@@ -18843,8 +18843,8 @@
       "EPIC HERO",
       "FLY",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "THE TWIN LANCE",
+      "T’AU EMPIRE",
       "VEHICLE",
       "WALKER"
     ],
@@ -18852,35 +18852,35 @@
       "FLY",
       "FORTIFICATION",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TIDEWALL DRONEPORT",
       "TRANSPORT",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Tidewall Gunrig": [
       "FLY",
       "FORTIFICATION",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TIDEWALL GUNRIG",
       "TRANSPORT",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Tidewall Shieldline": [
       "FLY",
       "FORTIFICATION",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TIDEWALL SHIELDLINE",
       "TRANSPORT",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Tiger Shark": [
       "AIRCRAFT",
       "FLY",
       "NON-KROOT",
-      "T’AU EMPIRE",
       "TIGER SHARK",
+      "T’AU EMPIRE",
       "VEHICLE"
     ],
     "Vespid Stingwings": [
