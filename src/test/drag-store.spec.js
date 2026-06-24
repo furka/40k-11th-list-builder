@@ -214,6 +214,69 @@ describe("drag store", () => {
     });
   });
 
+  describe("bypass modifier", () => {
+    const attachHosts = (d) =>
+      d.legalSlots.filter((s) => s.type === "attach").map((s) => s.hostId);
+
+    function startDraggingWarriors(d, { bypass = false, pointer = { x: 0, y: 0 } } = {}) {
+      d.start({
+        unit: UNITS[0], // NECRON WARRIORS — a regular unit, normally unattachable
+        pointer,
+        units: UNITS,
+        getDataSheet,
+        grabOffset: { x: 0, y: 0 },
+        size: { width: 200, height: 32 },
+        bypass,
+      });
+    }
+
+    it("seeds bypass from start() so a regular unit can attach", () => {
+      startDraggingWarriors(drag);
+      expect(attachHosts(drag)).toEqual([]);
+      drag.cancel();
+      startDraggingWarriors(drag, { bypass: true });
+      expect(attachHosts(drag)).toContain("imo");
+    });
+
+    it("recomputes legality live as the modifier toggles mid-drag", () => {
+      startDraggingWarriors(drag);
+      expect(attachHosts(drag)).toEqual([]);
+      drag.setBypass(true);
+      expect(attachHosts(drag)).toContain("imo");
+      drag.setBypass(false);
+      expect(attachHosts(drag)).toEqual([]);
+    });
+
+    it("commit carries forced=true when the bypass modifier is held", () => {
+      startDraggingWarriors(drag, { pointer: { x: 50, y: 120 } });
+      drag.setBypass(true);
+      drag.registerRow("imo", fakeEl(ROW_RECT), {
+        parentKey: "root",
+        indexInParent: 0,
+      });
+      drag.updatePointer(50, 120);
+      expect(drag.commit()).toMatchObject({
+        type: "attach",
+        hostId: "imo",
+        forced: true,
+      });
+    });
+
+    it("a normal (non-bypass) attach commits with forced=false", () => {
+      startDraggingImo(drag, { x: 50, y: 120 });
+      drag.registerRow("w", fakeEl(ROW_RECT), {
+        parentKey: "root",
+        indexInParent: 0,
+      });
+      drag.updatePointer(50, 120);
+      expect(drag.commit()).toMatchObject({
+        type: "attach",
+        hostId: "w",
+        forced: false,
+      });
+    });
+  });
+
   describe("cancel", () => {
     it("clears all transient state including rows and ghost offsets", () => {
       startDraggingImo(drag, { x: 50, y: 120 });

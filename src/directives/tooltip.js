@@ -204,10 +204,22 @@ function onLeave(e) {
   if (!el._tooltipFocused) scheduleHide(el);
 }
 
+// Only reveal on focus when it's keyboard-driven. Native modal <dialog>s restore
+// focus to the trigger button on close; without this gate the tooltip would pop
+// back up and stay stuck after a mouse user clicks a tooltip-button that opens a
+// modal. :focus-visible is false for focus restored after a pointer interaction.
+function focusIsVisible(el) {
+  try {
+    return el.matches(":focus-visible");
+  } catch {
+    return true;
+  }
+}
+
 function onFocus(e) {
   const el = e.currentTarget;
   el._tooltipFocused = true;
-  scheduleShow(el);
+  if (focusIsVisible(el)) scheduleShow(el);
 }
 
 function onBlur(e) {

@@ -63,10 +63,10 @@ const alliesLine = computed(() => {
 
 function formatUnit(unit) {
   if (unit.name === "Enhancements") {
-    return `[Enh] ${unit.optionName}`;
+    return unit.optionName;
   }
   if (unit.name === "Wargear") {
-    return `[Wgr] ${unit.optionName}`;
+    return unit.optionName;
   }
 
   let name = unit.name;

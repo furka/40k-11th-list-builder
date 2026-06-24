@@ -97,6 +97,7 @@ let pointerMoveHandler = null;
 let pointerUpHandler = null;
 let pointerCancelHandler = null;
 let keyDownHandler = null;
+let keyUpHandler = null;
 
 function detachDragListeners() {
   if (pointerMoveHandler) {
@@ -104,12 +105,19 @@ function detachDragListeners() {
     window.removeEventListener("pointerup", pointerUpHandler);
     window.removeEventListener("pointercancel", pointerCancelHandler);
     window.removeEventListener("keydown", keyDownHandler);
+    window.removeEventListener("keyup", keyUpHandler);
     pointerMoveHandler = null;
     pointerUpHandler = null;
     pointerCancelHandler = null;
     keyDownHandler = null;
+    keyUpHandler = null;
   }
 }
+
+// Ctrl (Windows/Linux) or Cmd (Mac) held during a drag bypasses attachment
+// restrictions for that drop — a transient mirror of the "Bypass restrictions"
+// toggle.
+const isBypassModifier = (e) => e.ctrlKey || e.metaKey;
 
 let detachmentPointerMoveHandler = null;
 let detachmentPointerUpHandler = null;
@@ -133,8 +141,10 @@ watch(
   () => dragStore.draggedId,
   (id) => {
     if (id && !pointerMoveHandler) {
-      pointerMoveHandler = (e) =>
+      pointerMoveHandler = (e) => {
+        dragStore.setBypass(isBypassModifier(e));
         dragStore.updatePointer(e.clientX, e.clientY);
+      };
       pointerUpHandler = () => {
         const result = dragStore.commit();
         if (!result) return;
@@ -147,7 +157,12 @@ watch(
           );
         } else if (result.type === "attach") {
           armyListStore.sortOrder = SORT_MANUAL;
-          armyListStore.moveUnit(result.draggedId, result.hostId);
+          armyListStore.moveUnit(
+            result.draggedId,
+            result.hostId,
+            undefined,
+            result.forced
+          );
         } else if (result.type === "bin") {
           // Dragging-to-trash means "delete the whole thing" — take the
           // dragged unit plus any attached subtree with it. removeUnit's
@@ -157,12 +172,18 @@ watch(
       };
       pointerCancelHandler = () => dragStore.cancel();
       keyDownHandler = (e) => {
-        if (e.key === "Escape") dragStore.cancel();
+        if (e.key === "Escape") {
+          dragStore.cancel();
+          return;
+        }
+        dragStore.setBypass(isBypassModifier(e));
       };
+      keyUpHandler = (e) => dragStore.setBypass(isBypassModifier(e));
       window.addEventListener("pointermove", pointerMoveHandler);
       window.addEventListener("pointerup", pointerUpHandler);
       window.addEventListener("pointercancel", pointerCancelHandler);
       window.addEventListener("keydown", keyDownHandler);
+      window.addEventListener("keyup", keyUpHandler);
     } else if (!id) {
       detachDragListeners();
     }

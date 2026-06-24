@@ -13,59 +13,50 @@ import { useMfmStore } from "../stores/mfm";
 const appStore = useAppStore();
 const mfmStore = useMfmStore();
 
-const hasPreviousMFM = computed(() => !!mfmStore.MFM.PREVIOUS);
-const pointsChangesTitle = computed(() =>
-  hasPreviousMFM.value
-    ? "Show points changes compared to previous MFM"
-    : "No previous MFM version to compare against yet"
+const hasPreviousVersion = computed(
+  () => !!mfmStore.getPreviousMFM(mfmStore.MFM.CURRENT)
+);
+
+const bypassModifierKey = (() => {
+  if (typeof navigator === "undefined") return "Ctrl";
+  const platform = navigator.userAgentData?.platform || navigator.platform || "";
+  return /mac|iphone|ipad|ipod/i.test(platform) ? "⌘" : "Ctrl";
+})();
+const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr hold ${bypassModifierKey} while dragging.`;
+
+const freeAttachLabel = computed(() =>
+  appStore.freeAttach ? "Enforce Restrictions" : "Bypass Restrictions"
+);
+const editCollectionLabel = computed(() =>
+  appStore.editCollection ? "Lock Collection" : "Edit Collection"
+);
+const legendsLabel = computed(() =>
+  appStore.showLegends ? "Hide Legends" : "Show Legends"
+);
+const pointsChangesLabel = computed(() =>
+  appStore.showPointsChanges ? "Hide Points Changes" : "Show Points Changes"
+);
+const keywordsLabel = computed(() =>
+  appStore.showKeywords ? "Hide Keywords" : "Show Keywords"
 );
 </script>
 
 <template>
-  <DropDown class="codex-options" position="right" title="Codex display options">
+  <DropDown class="codex-options" position="right">
     <template v-slot:button>
       <OptionsIcon class="dropdown__icon" />
       <span>Options</span>
     </template>
     <template v-slot:content>
       <div class="codex-options__content">
-        <label v-tooltip="pointsChangesTitle" :class="{ disabled: !hasPreviousMFM }">
+        <label v-tooltip="bypassTitle">
           <input
             type="checkbox"
-            :checked="appStore.showPointsChanges"
-            :disabled="!hasPreviousMFM"
-            @change="appStore.showPointsChanges = $event.target.checked"
+            :checked="appStore.freeAttach"
+            @change="appStore.freeAttach = $event.target.checked"
           />
-          Points Changes
-        </label>
-
-        <label v-tooltip="'Show Legends units'">
-          <input
-            type="checkbox"
-            :checked="appStore.showLegends"
-            @change="appStore.showLegends = $event.target.checked"
-          />
-          Legends
-        </label>
-
-        <label v-tooltip="'Show full keyword list at the bottom of each datasheet'">
-          <input
-            type="checkbox"
-            :checked="appStore.showKeywords"
-            @change="appStore.showKeywords = $event.target.checked"
-          />
-          Show Keywords
-        </label>
-
-        <label
-          v-tooltip="`Hide units / detachments that aren't available to add instead of dimming them`"
-        >
-          <input
-            type="checkbox"
-            :checked="appStore.showAvailableOnly"
-            @change="appStore.showAvailableOnly = $event.target.checked"
-          />
-          Show available only
+          <span class="switch"></span>
+          {{ freeAttachLabel }}
         </label>
 
         <label
@@ -76,7 +67,41 @@ const pointsChangesTitle = computed(() =>
             :checked="appStore.editCollection"
             @change="appStore.editCollection = $event.target.checked"
           />
-          Edit Collection
+          <span class="switch"></span>
+          {{ editCollectionLabel }}
+        </label>
+
+        <label v-tooltip="'Show Legends units'">
+          <input
+            type="checkbox"
+            :checked="appStore.showLegends"
+            @change="appStore.showLegends = $event.target.checked"
+          />
+          <span class="switch"></span>
+          {{ legendsLabel }}
+        </label>
+
+        <label
+          v-if="hasPreviousVersion"
+          v-tooltip="'Show points changes compared to previous MFM version'"
+        >
+          <input
+            type="checkbox"
+            :checked="appStore.showPointsChanges"
+            @change="appStore.showPointsChanges = $event.target.checked"
+          />
+          <span class="switch"></span>
+          {{ pointsChangesLabel }}
+        </label>
+
+        <label v-tooltip="'Show keywords on datasheets'">
+          <input
+            type="checkbox"
+            :checked="appStore.showKeywords"
+            @change="appStore.showKeywords = $event.target.checked"
+          />
+          <span class="switch"></span>
+          {{ keywordsLabel }}
         </label>
 
         <label v-tooltip="'Sort Datasheets'">
@@ -133,9 +158,50 @@ const pointsChangesTitle = computed(() =>
   }
 
   input[type="checkbox"] {
-    width: 1em;
-    height: 1em;
-    accent-color: var(--color-accent);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .switch {
+    flex-shrink: 0;
+    position: relative;
+    width: 34px;
+    height: 18px;
+    border-radius: 999px;
+    background-color: var(--color-divider);
+    transition: background-color 0.15s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      inset-inline-start: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: var(--color-surface);
+      transition: transform 0.15s ease;
+    }
+  }
+
+  input[type="checkbox"]:checked + .switch {
+    background-color: var(--color-accent);
+
+    &::after {
+      transform: translateX(16px);
+    }
+  }
+
+  input[type="checkbox"]:focus-visible + .switch {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
   }
 
   label {

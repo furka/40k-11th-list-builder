@@ -104,6 +104,28 @@ describe("attachedToError", () => {
     );
     expect(err).toBe("This unit can't be attached to another");
   });
+
+  it("returns null for an otherwise-illegal attachment flagged forcedAttach", () => {
+    // Same regular-unit-on-a-character case as above, but the manual override
+    // flag suppresses the error.
+    expect(
+      attachedToError(
+        { ...unit("NECRON WARRIORS"), attachedTo: "x", forcedAttach: true },
+        unit("IMOTEKH"),
+        getDataSheet
+      )
+    ).toBeNull();
+  });
+
+  it("still flags a forcedAttach unit whose host went missing", () => {
+    expect(
+      attachedToError(
+        { ...unit("NECRON WARRIORS"), attachedTo: "ghost", forcedAttach: true },
+        null,
+        getDataSheet
+      )
+    ).toBe("Attached to a missing unit");
+  });
 });
 
 describe("isWargearUnit", () => {

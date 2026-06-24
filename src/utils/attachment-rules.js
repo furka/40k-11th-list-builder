@@ -75,6 +75,10 @@ export function attachedToError(unit, host, getDataSheet) {
   if (!unit.attachedTo) return null;
   if (!host) return "Attached to a missing unit";
 
+  // A manual free-attach override (set at drop time) intentionally ignores the
+  // normal restrictions, so it must not surface a red error.
+  if (unit.forcedAttach) return null;
+
   if (isEnhancementUnit(unit)) return null;
 
   if (isWargearUnit(unit)) {

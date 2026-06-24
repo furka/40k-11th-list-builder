@@ -244,7 +244,7 @@ const keywordsText = computed(() => keywords.value.join(", "));
 <template>
   <div
     class="data-sheet"
-    v-if="options.length && hasOwned && (!appStore.showAvailableOnly || !maxed)"
+    v-if="options.length && hasOwned"
   >
     <div class="data-sheet__title" :class="{ maxed: maxed }">
       <span class="data-sheet__name">
@@ -313,7 +313,6 @@ const keywordsText = computed(() => keywords.value.join(", "));
         <li
           v-for="(row, ri) in group.rows"
           :key="ri"
-          v-show="!appStore.showAvailableOnly || rowAvailable(row, group)"
           @click="rowAvailable(row, group) && addUnit(row.size)"
           :class="{ maxed: !rowAvailable(row, group) }"
         >

@@ -11,6 +11,10 @@ function onClosed() {
   feedback.value = "";
 }
 
+function printList() {
+  window.print();
+}
+
 function copyToClipboard() {
   const text = listRef.value?.plainText ?? "";
   navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
@@ -41,10 +45,13 @@ function copyToClipboard() {
     <template v-slot:content>
       <div class="view-modal__content">
         <PrintableArmyList ref="listRef" />
-        <button class="view-modal__button" @click="copyToClipboard">
-          Copy to Clipboard
-        </button>
         <span class="view-modal__feedback">{{ feedback }}</span>
+        <div class="view-modal__actions">
+          <button class="view-modal__button" @click="printList">Print</button>
+          <button class="view-modal__button" @click="copyToClipboard">
+            Copy to Clipboard
+          </button>
+        </div>
       </div>
     </template>
   </ModalWithButton>
@@ -61,6 +68,11 @@ function copyToClipboard() {
     color: var(--color-text-muted);
     text-align: center;
     height: 28px;
+    margin-block-start: auto;
+  }
+  &__actions {
+    display: flex;
+    gap: 8px;
   }
   &__button {
     background-color: var(--color-accent);
@@ -72,12 +84,10 @@ function copyToClipboard() {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-block-start: 16px;
-    margin-block-end: 16px;
     padding: 10px 14px;
     text-transform: uppercase;
     user-select: none;
-    align-self: stretch;
+    flex: 1;
 
     &:hover {
       background-color: #f3b14e;

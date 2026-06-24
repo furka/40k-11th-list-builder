@@ -168,6 +168,25 @@ scraped JSON for ~130 / ~3 enhancements respectively but the validators
 no longer consult them — they're redundant with the universal defaults.
 A follow-up can drop them from the scraper schema.
 
+### Free-attach override
+
+An opt-in **"Attach freely"** toggle (`appStore.freeAttach`, surfaced in
+CodexOptions) lets the player attach any unit/enhancement to any host to model
+special datasheet rules the data doesn't capture (e.g. Cryptothralls joining a
+Cryptek-led unit). It relaxes **only the SOFT "unless otherwise stated"
+attachment-placement rules**: leader/support `attachesTo` lists, the max-1-leader
+and max-1-support per host caps, "regular units can't attach", and the
+enhancement host-eligibility defaults (CHARACTER-only, EPIC HERO block,
+`nonCharacterOnly`, `allowedHosts`, `requiredKeywords`).
+
+It never relaxes **HARD** rules: the one-enhancement-per-attached-unit cap
+(§25.04), "enhancement must be attached / never on another enhancement", the
+structural Forming-Attached-Units (19.01) invariants (single parent, no cycles,
+depth ≤ 3), or any roster/battle-size count (unit max, enhancement count cap,
+per-enhancement `limit`, DP). An overridden attachment is stamped with a
+per-unit `forcedAttach` flag (serialised as `ufa`, shown as an `OVERRIDE` badge)
+which suppresses the soft host-eligibility errors only.
+
 ### Rules deliberately NOT auto-enforced
 
 - **Warlord designation.** The roster carries no explicit Warlord

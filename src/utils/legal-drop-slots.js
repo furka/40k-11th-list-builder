@@ -139,7 +139,8 @@ export function legalDropSlots(
   units,
   draggedId,
   getDataSheet,
-  enhancementMeta = null
+  enhancementMeta = null,
+  freeAttach = false
 ) {
   const dragged = units.find((u) => u.id === draggedId);
   if (!dragged) return [];
@@ -174,6 +175,24 @@ export function legalDropSlots(
     const hostDepth = depthOf(host, byId);
     if (hostDepth + 1 + draggedSubtreeDepth > MAX_DEPTH - 1) return false;
 
+    // Free-attach override: relax the SOFT attachment-placement restrictions
+    // (leader/support attachesTo lists, 1-leader/1-support caps, "regular units
+    // can't attach", and enhancement host-eligibility). It never relaxes HARD
+    // rules: the structural guards above (no self/cycle, depth ≤ 3) and — for
+    // enhancements — the one-enhancement-per-attached-unit cap below, which is a
+    // top-level muster-armies §25.04 rule, not an "unless otherwise stated" one.
+    // A wargear/enhancement HOST never participates, and a dragged wargear is
+    // out of scope (it stays bound to its parent datasheet).
+    const freeUnitAttach =
+      freeAttach &&
+      !draggedIsWargear &&
+      !isWargearUnit(host) &&
+      !isEnhancementUnit(host);
+    // Non-enhancement units fully short-circuit. A dragged enhancement falls
+    // through so the HARD per-attached-unit cap at the end still runs; its
+    // soft host-eligibility checks are skipped via `freeUnitAttach` below.
+    if (freeUnitAttach && !draggedIsEnhancement) return true;
+
     if (draggedIsWargear) {
       // Wargear is scoped to its declared parent datasheet.
       if (host.name !== dragged.parentDataSheet) return false;
@@ -200,41 +219,46 @@ export function legalDropSlots(
       if (!draggedDs.support.attachesTo.includes(host.name)) return false;
     } else if (draggedIsEnhancement) {
       // Universal rule: enhancements can never attach to another enhancement,
-      // regardless of restriction metadata.
+      // regardless of restriction metadata. HARD — holds even under free attach.
       if (isEnhancementUnit(host)) return false;
-      // Per-enhancement restriction schema lives in
-      // src/data/configs/enhancement-restrictions.auto.json. Universal
-      // defaults (CHARACTER, no EPIC HERO) apply to every enhancement;
-      // opt-in fields (nonCharacterOnly, allowedHosts, requiredKeywords)
-      // are checked when present.
-      const hostDs = getDataSheet(host.name);
-      // muster-armies §25.04: enhancements default to CHARACTER-only and to
-      // never going on EPIC HEROES, "unless otherwise stated." An
-      // enhancement that explicitly names this host in `allowedHosts` IS
-      // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
-      // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
-      // CHARACTER). The universal defaults are suppressed for that host.
-      const hostExplicitlyAllowed = enhancementMeta?.allowedHosts?.includes(host.name);
-      if (
-        !enhancementMeta?.nonCharacterOnly &&
-        !hostExplicitlyAllowed &&
-        !hasKeyword(hostDs, "CHARACTER")
-      ) return false;
-      if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) return false;
-      if (enhancementMeta) {
-        if (enhancementMeta.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) return false;
-        // `requiredKeywords` + `allowedHosts` are disjunctions ("Captain OR
-        // Adeptus Astartes Terminator model"): the host satisfies the rule
-        // if EITHER its datasheet name matches `allowedHosts` OR its keyword
-        // set contains every entry in `requiredKeywords`. The datasheet half
-        // is checked first, keyword half second.
-        if (enhancementMeta.allowedHosts?.length || enhancementMeta.requiredKeywords?.length) {
-          const nameMatch = enhancementMeta.allowedHosts?.includes(host.name);
-          const hostKeywords = getKeywords(hostDs);
-          const keywordMatch =
-            enhancementMeta.requiredKeywords?.length > 0 &&
-            enhancementMeta.requiredKeywords.every((k) => hostKeywords.has(k));
-          if (!nameMatch && !keywordMatch) return false;
+      // The host-eligibility checks below are the SOFT "unless otherwise stated"
+      // defaults; the free-attach override skips them. The HARD
+      // one-enhancement-per-attached-unit cap (after this if/else) still runs.
+      if (!freeUnitAttach) {
+        // Per-enhancement restriction schema lives in
+        // src/data/configs/enhancement-restrictions.auto.json. Universal
+        // defaults (CHARACTER, no EPIC HERO) apply to every enhancement;
+        // opt-in fields (nonCharacterOnly, allowedHosts, requiredKeywords)
+        // are checked when present.
+        const hostDs = getDataSheet(host.name);
+        // muster-armies §25.04: enhancements default to CHARACTER-only and to
+        // never going on EPIC HEROES, "unless otherwise stated." An
+        // enhancement that explicitly names this host in `allowedHosts` IS
+        // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
+        // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
+        // CHARACTER). The universal defaults are suppressed for that host.
+        const hostExplicitlyAllowed = enhancementMeta?.allowedHosts?.includes(host.name);
+        if (
+          !enhancementMeta?.nonCharacterOnly &&
+          !hostExplicitlyAllowed &&
+          !hasKeyword(hostDs, "CHARACTER")
+        ) return false;
+        if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) return false;
+        if (enhancementMeta) {
+          if (enhancementMeta.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) return false;
+          // `requiredKeywords` + `allowedHosts` are disjunctions ("Captain OR
+          // Adeptus Astartes Terminator model"): the host satisfies the rule
+          // if EITHER its datasheet name matches `allowedHosts` OR its keyword
+          // set contains every entry in `requiredKeywords`. The datasheet half
+          // is checked first, keyword half second.
+          if (enhancementMeta.allowedHosts?.length || enhancementMeta.requiredKeywords?.length) {
+            const nameMatch = enhancementMeta.allowedHosts?.includes(host.name);
+            const hostKeywords = getKeywords(hostDs);
+            const keywordMatch =
+              enhancementMeta.requiredKeywords?.length > 0 &&
+              enhancementMeta.requiredKeywords.every((k) => hostKeywords.has(k));
+            if (!nameMatch && !keywordMatch) return false;
+          }
         }
       }
     } else {

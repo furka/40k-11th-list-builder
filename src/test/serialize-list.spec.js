@@ -97,6 +97,25 @@ describe("serializeList / deserializeList", () => {
     expect(params.getAll("uat")).toEqual(["", "", "1"]);
   });
 
+  it("round-trips the forcedAttach override flag", () => {
+    const data = {
+      units: [
+        buildUnit({ id: "host", name: "IMOTEKH", models: 1, points: 100 }),
+        buildUnit({ id: "guest", attachedTo: "host", forcedAttach: true }),
+        buildUnit({ id: "plain" }),
+      ],
+    };
+    const restored = deserializeList(
+      urlSearchParamsFromHash(serializeList(data))
+    );
+    const [host, guest, plain] = restored.units;
+    expect(guest.attachedTo).toBe(host.id);
+    expect(guest.forcedAttach).toBe(true);
+    // Units without the override don't gain a spurious flag.
+    expect(host.forcedAttach).toBeUndefined();
+    expect(plain.forcedAttach).toBeUndefined();
+  });
+
   it("deserialises legacy URLs without `uat` params — every unit lands at root", () => {
     const params = new URLSearchParams();
     // Mimic a legacy share URL that only had the original four unit fields

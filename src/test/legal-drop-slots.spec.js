@@ -519,6 +519,117 @@ describe("legalDropSlots — structural rules", () => {
   });
 });
 
+describe("legalDropSlots — free attach override", () => {
+  it("lets a regular bodyguard attach to any host when freeAttach is on", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("im", "IMMORTALS"),
+      u("d", "DOOMSDAY ARK"),
+      u("w2", "NECRON WARRIORS"), // dragged — normally unattachable
+    ];
+    // Off (default): no attach slots. On: every other host is legal.
+    expect(attachIds(legalDropSlots(units, "w2", getDataSheet))).toEqual([]);
+    expect(
+      attachIds(legalDropSlots(units, "w2", getDataSheet, null, true))
+    ).toEqual(["d", "im", "w"]);
+  });
+
+  it("bypasses the leader.attachesTo whitelist and the max-1-leader cap", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("imo", "IMOTEKH", "w"), // w already has a leader
+      u("d", "DOOMSDAY ARK"),
+      u("o", "OVERLORD"), // OVERLORD.attachesTo = ["NECRON WARRIORS"] only
+    ];
+    // Normally OVERLORD can only land on NECRON WARRIORS, and not on w (capped).
+    // Free attach allows w (despite the existing leader) and d (off-list).
+    const ids = attachIds(legalDropSlots(units, "o", getDataSheet, null, true));
+    expect(ids).toContain("w");
+    expect(ids).toContain("d");
+  });
+
+  it("still enforces the structural guards (no self, no cycle, depth ≤ 3)", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("o", "OVERLORD", "w"),
+      enh("e1", "Veil of Darkness", "o"), // o's subtree depth = 1
+    ];
+    // Self and descendant (cycle) stay illegal even under free attach.
+    const ids = attachIds(legalDropSlots(units, "o", getDataSheet, null, true));
+    expect(ids).not.toContain("o"); // self
+    expect(ids).not.toContain("e1"); // own descendant
+  });
+
+  it("lets an enhancement attach to any non-sentinel host (incl. non-CHARACTERs)", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"), // bodyguard — normally illegal for an enh
+      u("d", "DOOMSDAY ARK"), // vehicle — normally illegal
+      u("o", "OVERLORD"), // CHARACTER — legal even without override
+      enh("e", "Veil of Darkness"),
+    ];
+    // Off (default): CHARACTER-only → just o. On: every real host is legal.
+    expect(attachIds(legalDropSlots(units, "e", getDataSheet))).toEqual(["o"]);
+    expect(
+      attachIds(legalDropSlots(units, "e", getDataSheet, null, true))
+    ).toEqual(["d", "o", "w"]);
+  });
+
+  it("still enforces the one-enhancement-per-attached-unit HARD cap under freeAttach", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      u("o", "OVERLORD", "w"),
+      enh("e1", "Veil of Darkness", "o"),
+      enh("e2", "Arisen Tyrant"),
+    ];
+    // o's attached unit (w ← o ← e1) already holds an enhancement. This is a
+    // HARD muster-armies §25.04 rule, so the override must NOT relax it: neither
+    // o nor its squad w is a legal host for a second enhancement.
+    const ids = attachIds(legalDropSlots(units, "e2", getDataSheet, null, true));
+    expect(ids).not.toContain("o");
+    expect(ids).not.toContain("w");
+  });
+
+  it("still blocks enhancement-on-enhancement even with freeAttach on", () => {
+    const units = [
+      u("w", "NECRON WARRIORS"),
+      enh("e1", "Veil of Darkness"),
+      enh("e2", "Arisen Tyrant"),
+    ];
+    expect(
+      attachIds(legalDropSlots(units, "e2", getDataSheet, null, true))
+    ).not.toContain("e1");
+  });
+
+  it("does not relax wargear intrinsic rules (dragged wargear stays bound to its datasheet)", () => {
+    const units = [
+      u("im", "IMMORTALS"),
+      u("d", "DOOMSDAY ARK"),
+      {
+        id: "wo",
+        name: "Wargear",
+        parentDataSheet: "DOOMSDAY ARK",
+        optionName: "Bombast field gun",
+      },
+    ];
+    // Free attach doesn't broaden wargear — only DOOMSDAY ARK is a legal host.
+    expect(
+      attachIds(legalDropSlots(units, "wo", getDataSheet, null, true))
+    ).toEqual(["d"]);
+  });
+
+  it("does not offer an enhancement sentinel as a host for a regular unit", () => {
+    const units = [
+      u("im", "IMMORTALS"),
+      enh("e", "Veil of Darkness"), // a sentinel, not a real unit
+      u("w", "NECRON WARRIORS"), // dragged
+    ];
+    // im is a legal free-attach host; the Enhancements sentinel is not.
+    expect(
+      attachIds(legalDropSlots(units, "w", getDataSheet, null, true))
+    ).toEqual(["im"]);
+  });
+});
+
 describe("legalDropSlots — reorder slot enumeration", () => {
   it("emits N+1 root reorder slots for N other root units", () => {
     const units = [

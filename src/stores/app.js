@@ -20,9 +20,9 @@ export const useAppStore = defineStore("app", () => {
   const sortOrder = ref(restore("sortOrder") ?? "A-Z");
 
   const showLegends = ref(restore("showLegends") ?? false);
-  const showAvailableOnly = ref(restore("showAvailableOnly") ?? false);
   const showPointsChanges = ref(restore("showPointsChanges") ?? false);
   const showKeywords = ref(restore("showKeywords") ?? false);
+  const freeAttach = ref(restore("freeAttach") ?? false);
 
   const lists = ref(restore("lists") ?? []);
 
@@ -30,9 +30,9 @@ export const useAppStore = defineStore("app", () => {
   watch(group, (newGroup) => save("group", newGroup));
   watch(sortOrder, (newSortOrder) => save("sortOrder", newSortOrder));
   watch(showLegends, (newValue) => save("showLegends", newValue));
-  watch(showAvailableOnly, (newValue) => save("showAvailableOnly", newValue));
   watch(showPointsChanges, (newValue) => save("showPointsChanges", newValue));
   watch(showKeywords, (newValue) => save("showKeywords", newValue));
+  watch(freeAttach, (newValue) => save("freeAttach", newValue));
   watch(lists, (newLists) => debouncedSave("lists", newLists), { deep: true });
 
   function setAppDimensions(height, width) {
@@ -98,9 +98,9 @@ export const useAppStore = defineStore("app", () => {
     group,
     sortOrder,
     showLegends,
-    showAvailableOnly,
     showPointsChanges,
     showKeywords,
+    freeAttach,
     lists,
     setAppDimensions,
     createNewList,
