@@ -172,6 +172,7 @@ function onScrollWheel(e) {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  min-height: 0;
   overflow-x: auto;
   overflow-y: hidden;
   position: relative;

@@ -1,7 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
 import CodexOptions from "./CodexOptions.vue";
-import SortArmyButton from "./SortArmyButton.vue";
 import ToggleSwitch from "./ToggleSwitch.vue";
 import ToolBar from "./ToolBar.vue";
 import AlliesPickerModal from "./AlliesPickerModal.vue";
@@ -30,10 +29,6 @@ function openAllies() {
 
 <template>
   <ToolBar class="codex-toolbar">
-    <div class="toolbar__group toolbar__group--sort">
-      <SortArmyButton />
-    </div>
-
     <div class="toolbar__group toolbar__group--faction">
       <span class="toolbar__faction-label">
         {{ primaryTitle
@@ -89,10 +84,9 @@ function openAllies() {
     <!--
       Mounted inside the toolbar so CodexToolBar stays a single-root
       component — fragments (multi-root) disable Vue's class fallthrough,
-      and App.vue depends on `app__codex-toolbar` reaching the toolbar
-      element to set its fixed 64px height. The dialog itself is
-      `display: none` until opened (and `position: fixed` when modal),
-      so it doesn't participate in the toolbar's flex layout.
+      which App.vue relies on for any class passed to <CodexToolBar>. The
+      dialog itself is `display: none` until opened (and `position: fixed`
+      when modal), so it doesn't participate in the toolbar's flex layout.
     -->
     <AlliesPickerModal ref="alliesModalRef" />
   </ToolBar>
@@ -100,14 +94,10 @@ function openAllies() {
 
 <style scoped lang="scss">
 .codex-toolbar {
-  // Override the base toolbar's center-alignment so every group in this
-  // taller (64px) toolbar sits on the bottom edge — the big faction title
-  // visually anchors to the codex panel below instead of floating in space.
-  align-items: flex-end;
-  // The default toolbar has padded space on the sides only via gap; for a
-  // bottom-aligned title we want a hair of breathing room below.
-  padding-bottom: 4px;
-
+  // Keep the base toolbar's center-alignment: the right-side controls
+  // (toggles, filter, options) sit vertically centered. Only the faction
+  // group opts out (align-self: flex-end below) so the big title still
+  // anchors to the codex panel beneath it.
   .toolbar {
     &__codex-filter {
       width: 7em;
@@ -116,7 +106,7 @@ function openAllies() {
     &__faction-label {
       text-transform: uppercase;
       font-family: var(--font-display);
-      font-size: 45px;
+      font-size: 40px;
       line-height: 1;
       letter-spacing: 0.5px;
       min-width: 0;
@@ -139,21 +129,11 @@ function openAllies() {
     }
 
     &__group {
-      &--sort {
-        display: flex;
-        justify-content: flex-end;
-        // Match the 250px army-list pane (ArmyList.vue) so the sort button's
-        // right edge meets the army-list / codex seam.
-        width: 250px;
-        flex-shrink: 0;
-      }
-
       // Rendered only when appStore.inlineCodexToggles is true; otherwise the
       // switches live in the Options dropdown (see CodexOptions.vue).
       &--toggles {
         flex-shrink: 0;
-        gap: 16px;
-        margin: 0 8px;
+        gap: 8px;
       }
 
       &--filter {
@@ -164,20 +144,17 @@ function openAllies() {
 
       &--faction {
         flex-grow: 1;
-        // Cancel the toolbar's 4px inter-group gap so the title's left edge
-        // sits exactly on the codex seam (right after the 250px sort group).
-        margin-inline-start: -4px;
         // min-width: 0 lets the faction label shrink + truncate instead of
         // pushing this flex group wider than its share of the toolbar (which
-        // would either overflow the fixed 64px toolbar height or shove
-        // adjacent groups off-screen — the army list's layout math depends
-        // on the toolbar staying its declared height).
+        // would shove adjacent groups off-screen — the army list's layout
+        // math depends on the toolbar staying its declared height).
         min-width: 0;
         justify-content: flex-start;
-        // Bottom-align the Add Allies button with the title's descender so it
-        // anchors to the same baseline as the faction name.
+        // Bottom-anchor the whole group to the bar (the other groups stay
+        // centered), and bottom-align the Add Allies button with the title's
+        // descender so it shares the faction name's baseline.
+        align-self: flex-end;
         align-items: flex-end;
-        gap: 12px;
       }
     }
 

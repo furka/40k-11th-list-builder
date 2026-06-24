@@ -21,6 +21,8 @@ import {
 } from "./utils/sort-functions";
 import AppToolBar from "./components/AppToolBar.vue";
 import CodexToolBar from "./components/CodexToolBar.vue";
+import ListPointsBar from "./components/ListPointsBar.vue";
+import ListSortBar from "./components/ListSortBar.vue";
 import VersionBar from "./components/VersionBar.vue";
 import { deserializeList } from "./utils/serialize-list";
 
@@ -290,11 +292,17 @@ onUnmounted(() => {
 
 <template>
   <div class="app">
-    <AppToolBar class="app__toolbar" />
-    <CodexToolBar v-if="armyListStore.faction" class="app__codex-toolbar" />
-    <div class="app__body" :class="{ 'app__body--blank': !armyListStore.faction }">
-      <ArmyList v-if="armyListStore.faction" />
-      <ArmyCodex />
+    <div class="app__main">
+      <div v-if="armyListStore.faction" class="app__list-column">
+        <ListPointsBar />
+        <ListSortBar />
+        <ArmyList />
+      </div>
+      <div class="app__codex-column">
+        <AppToolBar />
+        <CodexToolBar v-if="armyListStore.faction" />
+        <ArmyCodex />
+      </div>
     </div>
     <VersionBar />
     <!--
@@ -324,32 +332,34 @@ onUnmounted(() => {
   --font-body: "Inter", system-ui, "Segoe UI", sans-serif;
   --font-family: var(--font-body);
   --toolbar-height: 44px;
-  --codex-toolbar-height: 50px;
   --version-bar-height: 22px;
+  --control-height: 34px;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
   position: relative;
   overflow: hidden;
 
-  &__toolbar {
-    height: var(--toolbar-height);
-  }
-
-  &__codex-toolbar {
-    height: var(--codex-toolbar-height);
-  }
-
-  &__body {
+  &__main {
     display: flex;
-    height: calc(100svh - var(--toolbar-height) - var(--codex-toolbar-height) - var(--version-bar-height));
+    height: calc(100svh - var(--version-bar-height));
     justify-content: center;
     position: relative;
     z-index: 1;
+  }
 
-    &--blank {
-      height: calc(100svh - var(--toolbar-height) - var(--version-bar-height));
-    }
+  &__list-column {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 250px;
+  }
+
+  &__codex-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 }
 

@@ -75,6 +75,7 @@ useDetectOutsideClick(component, () => {
     background: var(--color-surface);
     border: 1px solid var(--color-divider);
     border-radius: 2px;
+    box-sizing: border-box;
     color: var(--color-text);
     cursor: pointer;
     display: flex;
@@ -82,10 +83,10 @@ useDetectOutsideClick(component, () => {
     font-family: var(--font-display);
     font-size: 16px;
     gap: 8px;
+    height: var(--control-height);
     justify-content: center;
     letter-spacing: 0.5px;
     padding: 7px 12px;
-    margin: 0 4px;
     text-transform: uppercase;
 
     &:hover {

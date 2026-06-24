@@ -218,8 +218,8 @@ function focusIsVisible(el) {
 
 function onFocus(e) {
   const el = e.currentTarget;
-  el._tooltipFocused = true;
-  if (focusIsVisible(el)) scheduleShow(el);
+  el._tooltipFocused = focusIsVisible(el);
+  if (el._tooltipFocused) scheduleShow(el);
 }
 
 function onBlur(e) {

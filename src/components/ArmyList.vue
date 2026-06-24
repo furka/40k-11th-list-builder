@@ -172,8 +172,9 @@ useSlotEl(armyListEl, () => (dragStore.draggedId ? "army-list-area" : null));
 .army-list-pane {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
-  width: 250px;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
 }
 
 .army-list-detachments {

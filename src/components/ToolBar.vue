@@ -17,10 +17,12 @@
   color: var(--color-text);
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
   font-family: var(--font-display);
-  height: 44px;
+  height: var(--toolbar-height);
   justify-content: space-between;
-  gap: 4px;
+  gap: 8px;
+  padding: 0 8px;
   position: relative;
   z-index: 3;
 
@@ -33,6 +35,10 @@
     font-family: var(--font-display);
     font-size: 18px;
     padding: 5px 8px;
+    // Content-box height tuned so total height (+ 10px padding + 2px border)
+    // equals the buttons' --control-height. Kept content-box so the points
+    // input's ch-based inline width still measures the number, not the box.
+    height: calc(var(--control-height) - 12px);
 
     option {
       background-color: var(--color-surface);
@@ -54,6 +60,7 @@
     background: var(--color-surface);
     border: 1px solid var(--color-divider);
     border-radius: 2px;
+    box-sizing: border-box;
     color: var(--color-text);
     cursor: pointer;
     display: flex;
@@ -61,10 +68,10 @@
     font-family: var(--font-display);
     font-size: 16px;
     gap: 8px;
+    height: var(--control-height);
     justify-content: center;
     letter-spacing: 0.5px;
     padding: 7px 12px;
-    margin: 0 4px;
     text-transform: uppercase;
 
     &:hover {
@@ -86,6 +93,7 @@
     flex-direction: row;
     flex-shrink: 1;
     font-size: var(--font-size);
+    gap: 8px;
     justify-content: flex-end;
   }
 
