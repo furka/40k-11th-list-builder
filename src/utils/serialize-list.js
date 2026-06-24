@@ -41,6 +41,10 @@ const UNIT_MAP = {
   // override. Carried so a shared list keeps the override (and suppresses the
   // otherwise "Only X allowed" error).
   forcedMax: "ufm",
+  // "1" when a duplicate enhancement was added past its per-army limit via the
+  // bypass override. Carried so a shared list keeps the override (and
+  // suppresses the otherwise "Only X of this enhancement allowed" error).
+  forcedLimit: "ufl",
   // Pinned source faction when `allied` is set — required to disambiguate
   // same-named datasheets in different codexes (e.g. INTERCESSOR SQUAD
   // exists in several Space Marine chapters, often at different points).
@@ -57,6 +61,7 @@ const PARSERS = {
   allied: (v) => v === "1",
   forcedAttach: (v) => v === "1",
   forcedMax: (v) => v === "1",
+  forcedLimit: (v) => v === "1",
 };
 
 const SERIALIZERS = {
@@ -68,6 +73,7 @@ const SERIALIZERS = {
   allied: (v) => (v ? "1" : ""),
   forcedAttach: (v) => (v ? "1" : ""),
   forcedMax: (v) => (v ? "1" : ""),
+  forcedLimit: (v) => (v ? "1" : ""),
 };
 
 export const serializeList = function (data) {

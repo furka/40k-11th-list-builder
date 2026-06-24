@@ -160,7 +160,8 @@ the scraper, not the JSON.
 | Leader attaches only to its `attachesTo` list; max 1 leader and max 1 support per host | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/utils/attachment-rules.js`](../src/utils/attachment-rules.js) |
 | **Only CHARACTER units can be given enhancements** (universal default; bypassed by `nonCharacterOnly` or a host in `allowedHosts`) | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/stores/armyList.js`](../src/stores/armyList.js) |
 | **EPIC HEROES cannot have enhancements** (universal default; bypassed by a host in `allowedHosts`) | [`src/utils/legal-drop-slots.js`](../src/utils/legal-drop-slots.js) and [`src/stores/armyList.js`](../src/stores/armyList.js) |
-| At most N copies of the same enhancement (per-enhancement opt-in) | `limit` field |
+| **Your army cannot include more than one of the same enhancement** (universal default: 1 per army, 3 for Upgrades; an explicit `limit` overrides) | [`src/stores/armyList.js`](../src/stores/armyList.js) (`effectiveEnhancementLimit`, consumed by `enhancementsTaken` for codex availability and `getUnitValidationError` post-hoc) |
+| 2nd/3rd copy of the same Upgrade does not count toward the army enhancement total | [`src/stores/armyList.js`](../src/stores/armyList.js) (`totalEnhancementsCount` and the `overCountIds` billing pass in `getUnitValidationError`) |
 | Upgrade-tagged enhancements can attach to non-character units | `nonCharacterOnly` flag, derived from the "(Upgrade)" suffix during scrape |
 
 The `characterOnly` and `notOnEpicHeroes` flags still appear in the
@@ -192,13 +193,6 @@ which suppresses the soft host-eligibility errors only.
 - **Warlord designation.** The roster carries no explicit Warlord
   marker. Selecting which CHARACTER model is the Warlord is left to the
   player.
-- **Up-to-three of the same Upgrade and "2nd/3rd don't count toward the
-  enhancement total".** The same-name uniqueness rule (default 1 per
-  army for normal enhancements, default 3 for Upgrades) is not yet
-  applied as a default. Today it's only enforced when an enhancement
-  carries an explicit `limit` field. The Upgrade-counts-as-one carve-out
-  for the per-army total is also not yet applied. Tracked for a later
-  change.
 - **Detachment-specific must-include / cannot-include rules** (e.g.
   "your army must include X" on a detachment). The roster builder
   trusts the player to read the detachment text and obey it.

@@ -100,6 +100,10 @@ const isForcedAttach = computed(() => Boolean(props.unit.forcedAttach));
 // it shows the same badge and skips the over-max validation error.
 const isForcedMax = computed(() => Boolean(props.unit.forcedMax));
 
+// A duplicate enhancement added past its per-army limit via the bypass
+// override — flagged so it shows the same badge and skips the limit error.
+const isForcedLimit = computed(() => Boolean(props.unit.forcedLimit));
+
 const isEnhancementRow = computed(() =>
   nameEquals(props.unit.name, "Enhancements")
 );
@@ -291,7 +295,7 @@ function onPointerDown(e) {
       v-tooltip="'Upgrade'"
     >U</span>
     <span
-      v-if="isForcedAttach || isForcedMax"
+      v-if="isForcedAttach || isForcedMax || isForcedLimit"
       class="army-list-unit__badge army-list-unit__badge--bypass"
       v-tooltip="'Restrictions bypassed'"
     >B</span>

@@ -565,6 +565,30 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
+  it("a forcedLimit copy bypasses the same-name limit error", () => {
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const first = { ...enh("a", "Veil of Darkness"), attachedTo: "h1" };
+    const dup = {
+      ...enh("b", "Veil of Darkness"),
+      attachedTo: "h2",
+      forcedLimit: true,
+    };
+    store.setUnits([h1, h2, first, dup]);
+    expect(store.getUnitValidationError(first)).toBe(false);
+    expect(store.getUnitValidationError(dup)).toBe(false);
+  });
+
+  it("addEnhancement({ forced: true }) stamps forcedLimit on the unit", () => {
+    store.addEnhancement({
+      optionName: "Veil of Darkness",
+      detachment: "AWAKENED DYNASTY",
+      forced: true,
+    });
+    const added = store.units.find((u) => u.name === "Enhancements");
+    expect(added.forcedLimit).toBe(true);
+  });
+
   it("with three copies of a limit-1 enhancement, both later copies flag", () => {
     const h1 = charHost("h1");
     const h2 = charHost("h2");
@@ -582,9 +606,9 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
-  it("permits any number of copies of an enhancement with no `limit`", () => {
-    // "Stackable Boon" has no limit field; the validator should not flag
-    // duplicates.
+  it("defaults a normal enhancement with no `limit` to 1 per army (§25.04)", () => {
+    // "Stackable Boon" has no limit field and is not an Upgrade, so the
+    // universal same-name default of 1 applies: the 2nd+ copies are flagged.
     const h1 = charHost("h1");
     const h2 = charHost("h2");
     const h3 = charHost("h3");
@@ -593,8 +617,76 @@ describe("armyList Enhancement validation", () => {
     const c = { ...enh("c", "Stackable Boon"), attachedTo: "h3" };
     store.setUnits([h1, h2, h3, a, b, c]);
     expect(store.getUnitValidationError(a)).toBe(false);
-    expect(store.getUnitValidationError(b)).toBe(false);
-    expect(store.getUnitValidationError(c)).toBe(false);
+    expect(store.getUnitValidationError(b)).toBe(
+      "Only 1 of this enhancement allowed"
+    );
+    expect(store.getUnitValidationError(c)).toBe(
+      "Only 1 of this enhancement allowed"
+    );
+  });
+
+  it("defaults an Upgrade (no `limit`) to 3 per army, flagging the 4th", () => {
+    // "Enlivened Sentinels" is nonCharacterOnly (an Upgrade) with no limit
+    // field, so §25.04's up-to-three default applies. Upgrades attach to
+    // non-CHARACTER units, so hosts are NECRON WARRIORS squads.
+    const warrior = (id) => ({ id, name: "NECRON WARRIORS", models: 10 });
+    const hosts = ["h1", "h2", "h3", "h4"].map(warrior);
+    const copies = ["a", "b", "c", "d"].map((id, i) => ({
+      ...enh(id, "Enlivened Sentinels"),
+      attachedTo: hosts[i].id,
+    }));
+    store.setUnits([...hosts, ...copies]);
+    expect(store.getUnitValidationError(copies[0])).toBe(false);
+    expect(store.getUnitValidationError(copies[1])).toBe(false);
+    expect(store.getUnitValidationError(copies[2])).toBe(false);
+    expect(store.getUnitValidationError(copies[3])).toBe(
+      "Only 3 of this enhancement allowed"
+    );
+  });
+
+  it("an explicit `limit` overrides the same-name default", () => {
+    // "Not For Heroes" carries limit: 1 explicitly; the default would also be
+    // 1, but this pins the override path. Use a limit:1 enhancement and confirm
+    // the cap message reports the explicit number.
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const a = { ...enh("a", "Not For Heroes"), attachedTo: "h1" };
+    const b = { ...enh("b", "Not For Heroes"), attachedTo: "h2" };
+    store.setUnits([h1, h2, a, b]);
+    expect(store.getUnitValidationError(a)).toBe(false);
+    expect(store.getUnitValidationError(b)).toBe(
+      "Only 1 of this enhancement allowed"
+    );
+  });
+
+  it("repeat Upgrade copies don't count toward the battle-size total (§25.04)", () => {
+    // Three copies of one Upgrade bill a single slot, so adding four distinct
+    // normal enhancements alongside stays within the Strike Force cap of 4;
+    // a fifth distinct enhancement is what trips the cap, not the Upgrade
+    // repeats. totalEnhancementsCount reflects the same billing.
+    const warrior = (id) => ({ id, name: "NECRON WARRIORS", models: 10 });
+    const wHosts = ["w1", "w2", "w3"].map(warrior);
+    const upgrades = ["u1", "u2", "u3"].map((id, i) => ({
+      ...enh(id, "Enlivened Sentinels"),
+      attachedTo: wHosts[i].id,
+    }));
+    const cHosts = ["c1", "c2", "c3"].map((id) => charHost(id));
+    const normals = [
+      { ...enh("n1", "Veil of Darkness"), attachedTo: "c1" },
+      { ...enh("n2", "Arisen Tyrant"), attachedTo: "c2" },
+      { ...enh("n3", "Stackable Boon"), attachedTo: "c3" },
+    ];
+    store.setUnits([...wHosts, ...cHosts, ...upgrades, ...normals]);
+
+    // 3 Upgrade copies (1 billable) + 3 distinct normals (3 billable) = 4 toward
+    // the cap, so none are flagged. Without the carve-out the raw count of 6
+    // would trip the Strike Force cap of 4.
+    expect(store.totalEnhancementsCount).toBe(4);
+    for (const u of [...upgrades, ...normals]) {
+      expect(store.getUnitValidationError(u)).not.toBe(
+        "Only 4 enhancements allowed in Strike Force"
+      );
+    }
   });
 
   it("'not available in this detachment' takes precedence over the limit cap", () => {
@@ -1105,6 +1197,19 @@ describe("armyList derived state — wargear isolation", () => {
     expect(store.enhancementsTaken.has("Doomsday gauss flayer")).toBe(
       false
     );
+  });
+
+  it("treats an Upgrade as taken only once it reaches its limit of 3", () => {
+    const copies = (n) =>
+      Array.from({ length: n }, (_, i) => ({
+        id: `e${i}`,
+        name: "Enhancements",
+        optionName: "Enlivened Sentinels",
+      }));
+    store.setUnits(copies(2));
+    expect(store.enhancementsTaken.has("Enlivened Sentinels")).toBe(false);
+    store.setUnits(copies(3));
+    expect(store.enhancementsTaken.has("Enlivened Sentinels")).toBe(true);
   });
 
   it("does NOT count wargear in totalEnhancementsCount", () => {

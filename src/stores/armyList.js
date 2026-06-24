@@ -62,23 +62,44 @@ export const useArmyListStore = defineStore("armyList", () => {
     return taken;
   });
 
+  // Names whose copies have reached their effective limit — these are no longer
+  // selectable in the codex. Normal enhancements cap at 1; Upgrades cap at 3
+  // (§25.04). Only real Enhancement sentinels are counted; the old "any
+  // optionName" predicate silently absorbed wargear option names ("per Bombast
+  // field gun"), poisoning enhancement uniqueness checks.
   const enhancementsTaken = computed(() => {
-    const taken = new Set();
+    const counts = new Map();
+    const metaByName = new Map();
     units.value.forEach((unit) => {
-      // Only real Enhancement sentinels go into the uniqueness set. The old
-      // "any optionName" predicate would silently absorb wargear option names
-      // ("per Bombast field gun"), poisoning enhancement uniqueness checks.
       if (unit.name === "Enhancements" && unit.optionName) {
-        taken.add(unit.optionName);
+        counts.set(unit.optionName, (counts.get(unit.optionName) || 0) + 1);
+        if (!metaByName.has(unit.optionName)) {
+          metaByName.set(unit.optionName, getEnhancementMeta(unit));
+        }
       }
     });
+    const taken = new Set();
+    for (const [name, count] of counts) {
+      if (count >= effectiveEnhancementLimit(metaByName.get(name))) {
+        taken.add(name);
+      }
+    }
     return taken;
   });
 
+  // §25.04: the 2nd/3rd copy of the same Upgrade does not count toward the
+  // army's enhancement total, so a distinct Upgrade name bills at most one slot.
   const totalEnhancementsCount = computed(() => {
+    const countedUpgrades = new Set();
     let count = 0;
     units.value.forEach((unit) => {
-      if (unit.name === "Enhancements") count++;
+      if (unit.name !== "Enhancements") return;
+      const meta = getEnhancementMeta(unit);
+      if (meta?.nonCharacterOnly) {
+        if (countedUpgrades.has(unit.optionName)) return;
+        countedUpgrades.add(unit.optionName);
+      }
+      count++;
     });
     return count;
   });
@@ -120,6 +141,14 @@ export const useArmyListStore = defineStore("armyList", () => {
       if (enh) return enh;
     }
     return null;
+  }
+
+  // muster-armies §25.04 same-name uniqueness: a default of 1 per army, raised
+  // to 3 for Upgrades (`nonCharacterOnly`, derived from the "(Upgrade)" suffix).
+  // An explicit scraped `limit` overrides the default.
+  function effectiveEnhancementLimit(meta) {
+    if (typeof meta?.limit === "number") return meta.limit;
+    return meta?.nonCharacterOnly ? 3 : 1;
   }
 
   // Single-pass per-unit validation. Each component reads via
@@ -213,6 +242,23 @@ export const useArmyListStore = defineStore("armyList", () => {
     const mfmVersionLabel = currentMFM.value?.MFM_VERSION || "unknown";
     const list = toObject();
 
+    // §25.04 battle-size enhancement cap, with the Upgrade carve-out: repeat
+    // copies of the same Upgrade are free, so only the first occurrence of each
+    // Upgrade name bills a slot. An enhancement is flagged once the running
+    // billable count has already reached the cap.
+    const overCountIds = new Set();
+    if (rules) {
+      const countedUpgrades = new Set();
+      let billableUsed = 0;
+      for (const u of allEnhancements) {
+        const m = getEnhancementMeta(u);
+        if (m?.nonCharacterOnly && countedUpgrades.has(u.optionName)) continue;
+        if (m?.nonCharacterOnly) countedUpgrades.add(u.optionName);
+        if (billableUsed >= rules.maxEnhancements) overCountIds.add(u.id);
+        billableUsed++;
+      }
+    }
+
     const alliesSet = new Set(allies.value ?? []);
 
     function computeErrorFor(unit) {
@@ -278,21 +324,17 @@ export const useArmyListStore = defineStore("armyList", () => {
 
         const meta = getEnhancementMeta(unit);
 
-        if (typeof meta?.limit === "number") {
+        if (!unit.forcedLimit) {
+          const limit = effectiveEnhancementLimit(meta);
           const sameOption = enhByOption.get(unit.optionName) ?? [];
           const indexOfThis = sameOption.findIndex((u) => u.id === unit.id);
-          if (indexOfThis >= meta.limit) {
-            return `Only ${meta.limit} of this enhancement allowed`;
+          if (indexOfThis >= limit) {
+            return `Only ${limit} of this enhancement allowed`;
           }
         }
 
-        if (rules) {
-          const indexOfThis = allEnhancements.findIndex(
-            (u) => u.id === unit.id
-          );
-          if (indexOfThis >= rules.maxEnhancements) {
-            return `Only ${rules.maxEnhancements} enhancements allowed in ${rules.label}`;
-          }
+        if (rules && overCountIds.has(unit.id)) {
+          return `Only ${rules.maxEnhancements} enhancements allowed in ${rules.label}`;
         }
 
         if (!unit.attachedTo) return "Enhancement must be attached to a unit";
@@ -419,12 +461,13 @@ export const useArmyListStore = defineStore("armyList", () => {
    * (allowedHosts, characterOnly, requiredKeywords suppression, etc.) is
    * respected identically to a drag.
    */
-  function addEnhancement({ optionName, detachment }) {
+  function addEnhancement({ optionName, detachment, forced = false }) {
     const id =
       typeof crypto !== "undefined" && crypto.randomUUID
         ? crypto.randomUUID()
         : `enh-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     const unit = { id, name: "Enhancements", optionName, detachment };
+    if (forced) unit.forcedLimit = true;
     addUnit(unit);
 
     const meta = getEnhancementMeta(unit);

@@ -1,9 +1,11 @@
 <script setup>
 import { computed } from "vue";
 import { useArmyListStore } from "../stores/armyList";
+import { useAppStore } from "../stores/app";
 import { formatEnhancementRestrictions } from "../utils/enhancement-restrictions";
 
 const armyListStore = useArmyListStore();
+const appStore = useAppStore();
 
 const props = defineProps({
   detachment: Object,
@@ -21,13 +23,34 @@ const disabled = computed(
   () => !selected.value && cantAddReason.value !== null
 );
 
+// An enhancement name that has hit its per-army limit (1 by default, 3 for
+// Upgrades — see armyListStore.effectiveEnhancementLimit) is no longer
+// selectable. Mirrors the DataSheet codex gate so the detachment card can't
+// stack duplicates past §25.04.
+function enhancementTaken(enh) {
+  return armyListStore.enhancementsTaken.has(enh.name);
+}
+
+// While the bypass modifier is held, a taken enhancement is addable again, so
+// it shouldn't look disabled — same live-update behaviour as the codex unit
+// rows under Ctrl/Cmd.
+function enhancementDisabled(enh) {
+  return enhancementTaken(enh) && !appStore.bypassKeyHeld;
+}
+
 function onTitleClick() {
   if (disabled.value || selected.value) return;
   armyListStore.addDetachment(props.detachment.name);
 }
 
-function onEnhancementClick(enh) {
+function onEnhancementClick(enh, event) {
   if (disabled.value) return;
+  // Holding Ctrl/⌘ bypasses the per-army duplicate limit, mirroring the
+  // unit-max bypass — the extra copy is stamped so it skips the validation
+  // error and shows the "restrictions bypassed" badge.
+  const bypass = event.ctrlKey || event.metaKey;
+  const taken = enhancementTaken(enh);
+  if (taken && !bypass) return;
   if (!selected.value) {
     const ok = armyListStore.addDetachment(props.detachment.name);
     if (!ok) return;
@@ -40,6 +63,7 @@ function onEnhancementClick(enh) {
     // Tag the parent detachment so removeDetachment can cascade-delete this
     // enhancement when the parent leaves the list (drag-to-bin etc.).
     detachment: props.detachment.name,
+    forced: taken && bypass,
   });
 }
 </script>
@@ -87,9 +111,13 @@ function onEnhancementClick(enh) {
       <li
         v-for="enh in detachment.enhancements"
         :key="enh.name"
-        :class="{ maxed: disabled }"
-        v-tooltip="formatEnhancementRestrictions(enh)"
-        @click="onEnhancementClick(enh)"
+        :class="{ maxed: disabled || enhancementDisabled(enh) }"
+        v-tooltip="
+          enhancementTaken(enh)
+            ? 'Already in your army — hold Ctrl to add anyway'
+            : formatEnhancementRestrictions(enh)
+        "
+        @click="onEnhancementClick(enh, $event)"
       >
         <span class="data-sheet__option-name">{{ enh.name }}</span>
         <span
