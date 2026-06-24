@@ -1,11 +1,9 @@
 <script setup>
 import { computed } from "vue";
 import { useArmyListStore } from "../stores/armyList";
-import { useAppStore } from "../stores/app";
 import { formatEnhancementRestrictions } from "../utils/enhancement-restrictions";
 
 const armyListStore = useArmyListStore();
-const appStore = useAppStore();
 
 const props = defineProps({
   detachment: Object,
@@ -48,7 +46,6 @@ function onEnhancementClick(enh) {
 
 <template>
   <div
-    v-if="!appStore.showAvailableOnly || !disabled"
     class="data-sheet detachment-sheet"
     :class="{ 'detachment-sheet--selected': selected }"
     v-tooltip="disabled ? cantAddReason : ''"

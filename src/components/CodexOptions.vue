@@ -63,17 +63,6 @@ const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr h
           Show Keywords
         </label>
 
-        <label
-          v-tooltip="`Hide units / detachments that aren't available to add instead of dimming them`"
-        >
-          <input
-            type="checkbox"
-            :checked="appStore.showAvailableOnly"
-            @change="appStore.showAvailableOnly = $event.target.checked"
-          />
-          Show available only
-        </label>
-
         <label v-tooltip="bypassTitle">
           <input
             type="checkbox"

@@ -33,7 +33,7 @@ State is split across Pinia stores in `src/stores/`. Each store persists its own
 The seven stores:
 
 - **`armyList`** (`src/stores/armyList.js`) — The active list being edited: `name`, `faction`, `maxPoints`, `mfm_version`, `version`, `modifiedDate`, `sortOrder`, `units`, `detachments`, `allies`, `bonusBattleline`. Also exposes ~20 computeds (validation errors, points breakdown, unit counts, attachment trees, etc.). Persisted to `"currentList"`.
-- **`app`** (`src/stores/app.js`) — UI prefs (`codexFilter`, `group`, `sortOrder`, `showLegends`, `showAvailableOnly`, `showPointsChanges`, `editCollection`) plus the saved-`lists` array. Window dimensions (`appHeight`, `appWidth`) live here but aren't persisted.
+- **`app`** (`src/stores/app.js`) — UI prefs (`codexFilter`, `group`, `sortOrder`, `showLegends`, `showPointsChanges`, `editCollection`) plus the saved-`lists` array. Window dimensions (`appHeight`, `appWidth`) live here but aren't persisted.
 - **`collection`** (`src/stores/collection.js`) — User's owned-unit counts as a `{ unitName: count }` map. Persisted to `"collection"`.
 - **`mfm`** (`src/stores/mfm.js`) — Wraps the aggregated MFM bundle (`MFM.CURRENT`, `MFM.PREVIOUS`), version lookup, and per-list upgrade helpers (`autoUpgradeMFMVersion`, `hasInvalidMFM`, `changes`).
 - **`codex`** (`src/stores/codex.js`) — Right-panel filtering state: active faction, allies, current MFM, derived `compendium` and lookup maps.
@@ -180,4 +180,4 @@ When working with unit data or display logic, remember that units have:
 - `points`: Current point cost
 - `bonus`: Boolean indicating if option can be taken multiple times
 
-When making changes to unit filtering or grouping, the relevant logic is in `src/components/ArmyCodex.vue` — it handles faction filtering, the Legends and "available-only" toggles, role-based grouping, and applies the conditional-battleline overlay.
+When making changes to unit filtering or grouping, the relevant logic is in `src/components/ArmyCodex.vue` — it handles faction filtering, the Legends toggle, role-based grouping, and applies the conditional-battleline overlay.
