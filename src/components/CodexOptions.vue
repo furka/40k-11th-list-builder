@@ -22,7 +22,7 @@ const bypassModifierKey = (() => {
   const platform = navigator.userAgentData?.platform || navigator.platform || "";
   return /mac|iphone|ipad|ipod/i.test(platform) ? "⌘" : "Ctrl";
 })();
-const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr hold ${bypassModifierKey} while dragging.`;
+const bypassTitle = `Add or attach units and enhancements without restrictions.\n\nOr hold ${bypassModifierKey} while clicking or dragging.`;
 
 const freeAttachLabel = computed(() =>
   appStore.freeAttach ? "Enforce Restrictions" : "Bypass Restrictions"

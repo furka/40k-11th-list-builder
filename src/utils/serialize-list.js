@@ -37,6 +37,10 @@ const UNIT_MAP = {
   // bypassing the normal Leader/Support restrictions. Carried so a shared list
   // keeps the override (and suppresses the otherwise-illegal-attachment error).
   forcedAttach: "ufa",
+  // "1" when the unit was added over its per-list maximum via the bypass
+  // override. Carried so a shared list keeps the override (and suppresses the
+  // otherwise "Only X allowed" error).
+  forcedMax: "ufm",
   // Pinned source faction when `allied` is set — required to disambiguate
   // same-named datasheets in different codexes (e.g. INTERCESSOR SQUAD
   // exists in several Space Marine chapters, often at different points).
@@ -52,6 +56,7 @@ const PARSERS = {
   bonusBattleline: (v) => (v ? v.split("|") : []),
   allied: (v) => v === "1",
   forcedAttach: (v) => v === "1",
+  forcedMax: (v) => v === "1",
 };
 
 const SERIALIZERS = {
@@ -62,6 +67,7 @@ const SERIALIZERS = {
   bonusBattleline: (v) => (Array.isArray(v) ? v.join("|") : ""),
   allied: (v) => (v ? "1" : ""),
   forcedAttach: (v) => (v ? "1" : ""),
+  forcedMax: (v) => (v ? "1" : ""),
 };
 
 export const serializeList = function (data) {

@@ -26,8 +26,8 @@ const props = defineProps({
   dataSheet: Object,
 });
 
-function addUnit(option) {
-  if (!optionAvailable(option)) return;
+function addUnit(option, bypassMax = false) {
+  if (!optionAvailable(option, { bypassMax })) return;
 
   const newUnit = {
     id: uuidv4(),
@@ -35,6 +35,7 @@ function addUnit(option) {
     name: props.dataSheet.name,
     optionName: option.name,
   };
+  if (bypassMax && maxed.value) newUnit.forcedMax = true;
   if (props.dataSheet.allied) {
     newUnit.allied = true;
     // Pin the source faction so validation (and any later points lookup) can
@@ -181,7 +182,23 @@ function ord(n) {
 }
 
 function rowAvailable(row, tierGroup) {
-  return tierGroup.tierEnabled && optionAvailable(row.size);
+  return (
+    tierGroup.tierEnabled &&
+    optionAvailable(row.size, {
+      bypassMax: appStore.freeAttach || appStore.bypassKeyHeld,
+    })
+  );
+}
+
+// The Ctrl/⌘ modifier must add even on a row that's greyed by `maxed`, so the
+// click can't be guarded by `rowAvailable` — it's resolved here instead. Only
+// the unit-max cap is bypassed; collection ownership and price-tier gating
+// still apply.
+function onAddClick(row, group, event) {
+  if (!group.tierEnabled) return;
+  const bypassMax = appStore.freeAttach || event.ctrlKey || event.metaKey;
+  if (!optionAvailable(row.size, { bypassMax })) return;
+  addUnit(row.size, bypassMax);
 }
 
 const count = computed(
@@ -226,8 +243,8 @@ function enhancementTaken(enhancement) {
   return armyListStore.enhancementsTaken.has(enhancement.name);
 }
 
-function optionAvailable(option) {
-  if (maxed.value) return false;
+function optionAvailable(option, { bypassMax = false } = {}) {
+  if (maxed.value && !bypassMax) return false;
   if (props.dataSheet.enhancements) return !enhancementTaken(option);
   return enoughInCollection(option);
 }
@@ -313,7 +330,7 @@ const keywordsText = computed(() => keywords.value.join(", "));
         <li
           v-for="(row, ri) in group.rows"
           :key="ri"
-          @click="rowAvailable(row, group) && addUnit(row.size)"
+          @click="onAddClick(row, group, $event)"
           :class="{ maxed: !rowAvailable(row, group) }"
         >
           <span class="data-sheet__option-label">

@@ -23,6 +23,11 @@ export const useAppStore = defineStore("app", () => {
   const showPointsChanges = ref(restore("showPointsChanges") ?? false);
   const showKeywords = ref(restore("showKeywords") ?? false);
   const freeAttach = ref(restore("freeAttach") ?? false);
+  // True while a bypass modifier (Ctrl / Cmd) is held, tracked globally so the
+  // codex can drop the disabled styling on rows that the modifier would let you
+  // add (e.g. over-max units). Transient — not persisted. Updated by global key
+  // listeners in App.vue.
+  const bypassKeyHeld = ref(false);
 
   const lists = ref(restore("lists") ?? []);
 
@@ -101,6 +106,7 @@ export const useAppStore = defineStore("app", () => {
     showPointsChanges,
     showKeywords,
     freeAttach,
+    bypassKeyHeld,
     lists,
     setAppDimensions,
     createNewList,

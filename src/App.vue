@@ -263,12 +263,30 @@ watch(
   () => applySortToList()
 );
 
+// Track the bypass modifier globally (outside of any drag) so the codex can
+// live-update its disabled styling — rows blocked only by a unit's max are
+// addable while Ctrl/Cmd is held, so they shouldn't look disabled then.
+const updateBypassKey = (e) => {
+  appStore.bypassKeyHeld = isBypassModifier(e);
+};
+// A window blur can swallow the keyup (e.g. Alt-Tab while holding Ctrl), so
+// reset on blur to avoid the styling getting stuck in the bypassed state.
+const clearBypassKey = () => {
+  appStore.bypassKeyHeld = false;
+};
+
 onMounted(() => {
   window.addEventListener("resize", handleResize);
+  window.addEventListener("keydown", updateBypassKey);
+  window.addEventListener("keyup", updateBypassKey);
+  window.addEventListener("blur", clearBypassKey);
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", handleResize);
+  window.removeEventListener("keydown", updateBypassKey);
+  window.removeEventListener("keyup", updateBypassKey);
+  window.removeEventListener("blur", clearBypassKey);
   detachDragListeners();
   detachDetachmentDragListeners();
 });

@@ -96,6 +96,10 @@ const isUnitUpgrade = computed(() => {
 // attachment.
 const isForcedAttach = computed(() => Boolean(props.unit.forcedAttach));
 
+// A unit added over its per-list maximum via the bypass override — flagged so
+// it shows the same badge and skips the over-max validation error.
+const isForcedMax = computed(() => Boolean(props.unit.forcedMax));
+
 const isEnhancementRow = computed(() =>
   nameEquals(props.unit.name, "Enhancements")
 );
@@ -287,7 +291,7 @@ function onPointerDown(e) {
       v-tooltip="'Upgrade'"
     >U</span>
     <span
-      v-if="isForcedAttach"
+      v-if="isForcedAttach || isForcedMax"
       class="army-list-unit__badge army-list-unit__badge--bypass"
       v-tooltip="'Restrictions bypassed'"
     >B</span>

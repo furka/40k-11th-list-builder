@@ -152,6 +152,14 @@ export const useArmyListStore = defineStore("armyList", () => {
       }
     }
 
+    // Once any copy of a datasheet is added over its max via the bypass
+    // override, the overage is acknowledged for the whole datasheet — the
+    // error is keyed on total count, so suppressing only the flagged copy
+    // would leave the others red.
+    const forcedMaxNames = new Set(
+      all.filter((u) => u.forcedMax).map((u) => u.name)
+    );
+
     const rootIdMemo = new Map();
     function rootIdOf(u) {
       if (!u) return null;
@@ -367,7 +375,9 @@ export const useArmyListStore = defineStore("armyList", () => {
       }
 
       const max = unitMax(datasheet, list);
-      if (count > max) return `Only ${max} of this unit allowed`;
+      if (count > max && !forcedMaxNames.has(unit.name)) {
+        return `Only ${max} of this unit allowed`;
+      }
 
       if (datasheet.support && !unit.attachedTo) {
         return "Support character must attach to a unit";
