@@ -216,6 +216,38 @@ describe("armyList.moveUnit", () => {
     store.moveUnit("c", null, 0);
     expect(store.units.map((u) => u.id)).toEqual(["c", "a", "b"]);
   });
+
+  it("stamps forcedAttach when attaching with forced=true and clears it on detach", () => {
+    store.setUnits([
+      unit({ id: "host", name: "NECRON WARRIORS", models: 10 }),
+      unit({ id: "guest", name: "NECRON WARRIORS", models: 10 }),
+    ]);
+    store.moveUnit("guest", "host", 0, true);
+    expect(store.units.find((u) => u.id === "guest").forcedAttach).toBe(true);
+    // Detaching to root drops the override.
+    store.moveUnit("guest", null, 1);
+    expect(store.units.find((u) => u.id === "guest").forcedAttach).toBeUndefined();
+  });
+
+  it("preserves an existing forcedAttach on a plain reorder (forced=undefined)", () => {
+    store.setUnits([
+      unit({ id: "host", name: "NECRON WARRIORS", models: 10 }),
+      unit({ id: "g1", name: "NECRON WARRIORS", attachedTo: "host", forcedAttach: true }),
+      unit({ id: "g2", name: "NECRON WARRIORS", attachedTo: "host" }),
+    ]);
+    // Reorder g1 within its host's children — no forced arg.
+    store.moveUnit("g1", "host", 1);
+    expect(store.units.find((u) => u.id === "g1").forcedAttach).toBe(true);
+  });
+
+  it("clears forcedAttach when re-attaching with forced=false", () => {
+    store.setUnits([
+      unit({ id: "host", name: "NECRON WARRIORS", models: 10 }),
+      unit({ id: "guest", name: "NECRON WARRIORS", attachedTo: "host", forcedAttach: true }),
+    ]);
+    store.moveUnit("guest", "host", 0, false);
+    expect(store.units.find((u) => u.id === "guest").forcedAttach).toBeUndefined();
+  });
 });
 
 describe("armyList.addEnhancement", () => {
@@ -613,6 +645,46 @@ describe("armyList Enhancement validation", () => {
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toBe(
       "Enhancement can only attach to a character"
+    );
+  });
+
+  it("a forcedAttach enhancement on a non-character host produces no host-eligibility error", () => {
+    const host = hostUnit("host", "NECRON WARRIORS", 10);
+    const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host", forcedAttach: true };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
+  it("a forcedAttach enhancement still trips the one-per-attached-unit HARD cap", () => {
+    const host = hostUnit("host", "OVERLORD"); // plain CHARACTER
+    const first = { ...enh("a", "Unrestricted Boon"), attachedTo: "host" };
+    const second = {
+      ...enh("b", "Stackable Boon"),
+      attachedTo: "host",
+      forcedAttach: true,
+    };
+    store.setUnits([host, first, second]);
+    // The per-attached-unit cap is a HARD §25.04 rule — the override must NOT
+    // relax it even though `second` is force-attached.
+    expect(store.getUnitValidationError(first)).toBe(false);
+    expect(store.getUnitValidationError(second)).toBe(
+      "Only one enhancement per attached unit"
+    );
+  });
+
+  it("still enforces army-construction limits on a forcedAttach enhancement (per-enhancement limit)", () => {
+    // forcedAttach relaxes host eligibility, NOT the army-wide `limit` cap.
+    const h1 = charHost("h1");
+    const h2 = charHost("h2");
+    const first = { ...enh("a", "Veil of Darkness"), attachedTo: "h1" };
+    const dup = {
+      ...enh("b", "Veil of Darkness"),
+      attachedTo: "h2",
+      forcedAttach: true,
+    };
+    store.setUnits([h1, h2, first, dup]);
+    expect(store.getUnitValidationError(dup)).toBe(
+      "Only 1 of this enhancement allowed"
     );
   });
 

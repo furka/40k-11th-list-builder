@@ -158,7 +158,7 @@ describe("PrintableArmyList.vue", () => {
     expect(attached).toMatch(/^└─ IMOTEKH/);
   });
 
-  it("formats Wargear as '[Wgr] <name>' with the host's wargearOption price", async () => {
+  it("formats Wargear by name with the host's wargearOption price", async () => {
     // Wargear pricing walks to the host's datasheet (list-points.js:60–66),
     // so the wargear must be attached to a unit whose MFM datasheet actually
     // carries the option — DOOMSDAY ARK here.
@@ -181,7 +181,7 @@ describe("PrintableArmyList.vue", () => {
     });
     await nextTick();
     const lines = wrapper.findAll("li").map((li) => li.text());
-    expect(lines.some((l) => /\[Wgr\] Doomsday gauss flayer\.+10 pts/.test(l))).toBe(true);
+    expect(lines.some((l) => /Doomsday gauss flayer\.+10 pts/.test(l))).toBe(true);
   });
 
   it("renders each selected detachment with its DP cost", async () => {

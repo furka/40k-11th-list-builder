@@ -23,6 +23,7 @@ export const useAppStore = defineStore("app", () => {
   const showAvailableOnly = ref(restore("showAvailableOnly") ?? false);
   const showPointsChanges = ref(restore("showPointsChanges") ?? false);
   const showKeywords = ref(restore("showKeywords") ?? false);
+  const freeAttach = ref(restore("freeAttach") ?? false);
 
   const lists = ref(restore("lists") ?? []);
 
@@ -33,6 +34,7 @@ export const useAppStore = defineStore("app", () => {
   watch(showAvailableOnly, (newValue) => save("showAvailableOnly", newValue));
   watch(showPointsChanges, (newValue) => save("showPointsChanges", newValue));
   watch(showKeywords, (newValue) => save("showKeywords", newValue));
+  watch(freeAttach, (newValue) => save("freeAttach", newValue));
   watch(lists, (newLists) => debouncedSave("lists", newLists), { deep: true });
 
   function setAppDimensions(height, width) {
@@ -101,6 +103,7 @@ export const useAppStore = defineStore("app", () => {
     showAvailableOnly,
     showPointsChanges,
     showKeywords,
+    freeAttach,
     lists,
     setAppDimensions,
     createNewList,

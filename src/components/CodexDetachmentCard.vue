@@ -255,15 +255,15 @@ function onEnhancementClick(enh) {
     margin-right: 6px;
   }
 
-  // Mirrors ArmyListUnit's __upgrade-badge so the same visual cue marks
-  // unit-upgrade enhancements in both the codex panel and the list. Matches
-  // Games Workshop's own visual language — bright green pill, full "UPGRADE"
-  // word in uppercase white.
+  // Mirrors ArmyListUnit's upgrade badge so the same visual cue marks
+  // unit-upgrade enhancements in both the codex panel and the list — bright
+  // green pill with dark text for contrast (the list spells it "U", the codex
+  // has room for the full "UPGRADE" word).
   &__upgrade-badge {
     align-items: center;
     background-color: var(--color-positive);
     border-radius: 3px;
-    color: #fff;
+    color: var(--color-bg);
     cursor: help;
     display: inline-flex;
     flex-shrink: 0;

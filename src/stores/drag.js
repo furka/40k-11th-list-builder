@@ -26,6 +26,11 @@ export const useDragStore = defineStore("drag", () => {
   const ghostOffset = ref({ x: 0, y: 0 });
   const ghostSize = ref({ width: 0, height: 0 });
   const legalSlots = ref([]);
+  // True while a bypass modifier (Ctrl / Cmd) is held during the drag. ORed
+  // with the persisted `freeAttach` pref to relax attachment restrictions for
+  // this one drag. Tracked reactively so legality recomputes live as the key is
+  // pressed/released mid-drag.
+  const bypassKey = ref(false);
   // Set of host unit IDs that the dragged unit could legally attach to.
   // Consumed by ArmyListUnit to dim non-target rows during the drag, making
   // the attach affordance visually obvious without changing drop behavior.
@@ -58,6 +63,10 @@ export const useDragStore = defineStore("drag", () => {
   const slotEls = new Map();
   const rows = new Map(); // unitId -> { el, parentKey, indexInParent }
 
+  // Inputs to legalDropSlots captured at drag start, retained so a mid-drag
+  // bypass-key change can recompute legality without re-snapshotting the list.
+  let dragInputs = null;
+
   let rowRectCache = new Map(); // unitId -> DOMRect
   let slotRectCache = new Map(); // slotKey -> DOMRect
   let rectsValid = false;
@@ -88,9 +97,13 @@ export const useDragStore = defineStore("drag", () => {
     scale: scaleArg,
     rowBaseline: rowBaselineArg,
     enhancementMeta = null,
+    freeAttach = false,
+    bypass = false,
   }) {
     if (!unit?.id) return;
     draggedId.value = unit.id;
+    bypassKey.value = bypass;
+    dragInputs = { units, getDataSheet, enhancementMeta, freeAttach };
     pointer.value = { x: ptr?.x ?? 0, y: ptr?.y ?? 0 };
     ghostOffset.value = {
       x: grabOffset?.x ?? 0,
@@ -106,7 +119,8 @@ export const useDragStore = defineStore("drag", () => {
       units,
       unit.id,
       getDataSheet,
-      enhancementMeta
+      enhancementMeta,
+      freeAttach || bypass
     );
     ghost.value = {
       name: unit.name,
@@ -140,6 +154,24 @@ export const useDragStore = defineStore("drag", () => {
   function updatePointer(x, y) {
     if (!draggedId.value) return;
     pointer.value = { x, y };
+    activeSlot.value = computeActiveSlot();
+  }
+
+  // Toggle the bypass modifier mid-drag (Ctrl/Cmd pressed or released). Recomputes
+  // the legal drop slots — and therefore the active slot — against the new
+  // effective bypass state. No-op when the state is unchanged or no drag is live.
+  function setBypass(on) {
+    const next = Boolean(on);
+    if (bypassKey.value === next) return;
+    bypassKey.value = next;
+    if (!draggedId.value || !dragInputs) return;
+    legalSlots.value = legalDropSlots(
+      dragInputs.units,
+      draggedId.value,
+      dragInputs.getDataSheet,
+      dragInputs.enhancementMeta,
+      dragInputs.freeAttach || next
+    );
     activeSlot.value = computeActiveSlot();
   }
 
@@ -181,7 +213,13 @@ export const useDragStore = defineStore("drag", () => {
       cancel();
       return null;
     }
-    const descriptor = { ...activeSlot.value, draggedId: draggedId.value };
+    const descriptor = {
+      ...activeSlot.value,
+      draggedId: draggedId.value,
+      // Effective bypass at drop time — drives the persisted `forcedAttach`
+      // flag so an override made via the held key sticks like a toggled one.
+      forced: Boolean(dragInputs?.freeAttach || bypassKey.value),
+    };
     cancel();
     return descriptor;
   }
@@ -189,6 +227,8 @@ export const useDragStore = defineStore("drag", () => {
   function cancel() {
     draggedId.value = null;
     activeSlot.value = null;
+    bypassKey.value = false;
+    dragInputs = null;
     legalSlots.value = [];
     ghost.value = null;
     ghostSubtree.value = [];
@@ -240,6 +280,7 @@ export const useDragStore = defineStore("drag", () => {
     rowBaseline,
     start,
     updatePointer,
+    setBypass,
     registerSlotEl,
     unregisterSlotEl,
     registerRow,

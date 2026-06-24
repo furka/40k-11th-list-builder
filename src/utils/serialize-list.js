@@ -33,6 +33,10 @@ const UNIT_MAP = {
   // "1" when the unit was added from an allied faction's datasheet pool,
   // otherwise omitted. Used for visual distinction only — has no rule effect.
   allied: "ua",
+  // "1" when the user manually attached this unit via the free-attach override,
+  // bypassing the normal Leader/Support restrictions. Carried so a shared list
+  // keeps the override (and suppresses the otherwise-illegal-attachment error).
+  forcedAttach: "ufa",
   // Pinned source faction when `allied` is set — required to disambiguate
   // same-named datasheets in different codexes (e.g. INTERCESSOR SQUAD
   // exists in several Space Marine chapters, often at different points).
@@ -47,6 +51,7 @@ const PARSERS = {
   allies: (v) => (v ? v.split(",") : []),
   bonusBattleline: (v) => (v ? v.split("|") : []),
   allied: (v) => v === "1",
+  forcedAttach: (v) => v === "1",
 };
 
 const SERIALIZERS = {
@@ -56,6 +61,7 @@ const SERIALIZERS = {
   // contain commas and would otherwise round-trip incorrectly.
   bonusBattleline: (v) => (Array.isArray(v) ? v.join("|") : ""),
   allied: (v) => (v ? "1" : ""),
+  forcedAttach: (v) => (v ? "1" : ""),
 };
 
 export const serializeList = function (data) {

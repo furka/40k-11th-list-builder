@@ -294,6 +294,9 @@ export const useArmyListStore = defineStore("armyList", () => {
           return "Enhancement can't be attached to another enhancement";
         }
 
+        // HARD rule (muster-armies §25.04, "No unit (including attached units)
+        // can have more than one enhancement") — enforced even under the
+        // free-attach override.
         const rootId = rootIdOf(host);
         if (rootId) {
           const inTree = enhancementsInTree(rootId);
@@ -303,44 +306,49 @@ export const useArmyListStore = defineStore("armyList", () => {
           }
         }
 
-        const hostDs = codexStore.getDataSheet(host.name);
-        // muster-armies §25.04: enhancements default to CHARACTER-only and to
-        // never going on EPIC HEROES, "unless otherwise stated." An
-        // enhancement that explicitly names this host in `allowedHosts` IS
-        // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
-        // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
-        // CHARACTER). The universal defaults are suppressed for that host.
-        const hostExplicitlyAllowed = meta?.allowedHosts?.includes(host.name);
-        if (
-          !meta?.nonCharacterOnly &&
-          !hostExplicitlyAllowed &&
-          !hasKeyword(hostDs, "CHARACTER")
-        ) {
-          return "Enhancement can only attach to a character";
-        }
-        if (meta?.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) {
-          return "Unit upgrades can't attach to characters";
-        }
-        if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) {
-          return "Enhancement can't be given to Epic Heroes";
-        }
-        // `allowedHosts` and `requiredKeywords` form a disjunction: the host
-        // is legal if either its datasheet name is on the allowlist OR every
-        // required keyword is present on its keyword set. See
-        // legal-drop-slots.js for the matching enforcement at drop time.
-        if (meta?.allowedHosts?.length || meta?.requiredKeywords?.length) {
-          const nameMatch = meta.allowedHosts?.includes(host.name);
-          const hostKeywords = getKeywords(hostDs);
-          const keywordMatch =
-            meta.requiredKeywords?.length > 0 &&
-            meta.requiredKeywords.every((k) => hostKeywords.has(k));
-          if (!nameMatch && !keywordMatch) {
-            const parts = [];
-            if (meta.allowedHosts?.length) parts.push(meta.allowedHosts.join(", "));
-            if (meta.requiredKeywords?.length) {
-              parts.push(`unit with ${meta.requiredKeywords.join(" + ")}`);
+        // The host-eligibility defaults are the SOFT "unless otherwise stated"
+        // rules (§25.04); a manual free-attach override bypasses them, the same
+        // way the unit override bypasses the leader/support caps.
+        if (!unit.forcedAttach) {
+          const hostDs = codexStore.getDataSheet(host.name);
+          // muster-armies §25.04: enhancements default to CHARACTER-only and to
+          // never going on EPIC HEROES, "unless otherwise stated." An
+          // enhancement that explicitly names this host in `allowedHosts` IS
+          // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
+          // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
+          // CHARACTER). The universal defaults are suppressed for that host.
+          const hostExplicitlyAllowed = meta?.allowedHosts?.includes(host.name);
+          if (
+            !meta?.nonCharacterOnly &&
+            !hostExplicitlyAllowed &&
+            !hasKeyword(hostDs, "CHARACTER")
+          ) {
+            return "Enhancement can only attach to a character";
+          }
+          if (meta?.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) {
+            return "Unit upgrades can't attach to characters";
+          }
+          if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) {
+            return "Enhancement can't be given to Epic Heroes";
+          }
+          // `allowedHosts` and `requiredKeywords` form a disjunction: the host
+          // is legal if either its datasheet name is on the allowlist OR every
+          // required keyword is present on its keyword set. See
+          // legal-drop-slots.js for the matching enforcement at drop time.
+          if (meta?.allowedHosts?.length || meta?.requiredKeywords?.length) {
+            const nameMatch = meta.allowedHosts?.includes(host.name);
+            const hostKeywords = getKeywords(hostDs);
+            const keywordMatch =
+              meta.requiredKeywords?.length > 0 &&
+              meta.requiredKeywords.every((k) => hostKeywords.has(k));
+            if (!nameMatch && !keywordMatch) {
+              const parts = [];
+              if (meta.allowedHosts?.length) parts.push(meta.allowedHosts.join(", "));
+              if (meta.requiredKeywords?.length) {
+                parts.push(`unit with ${meta.requiredKeywords.join(" + ")}`);
+              }
+              return `Enhancement can only attach to: ${parts.join(" or ")}`;
             }
-            return `Enhancement can only attach to: ${parts.join(" or ")}`;
           }
         }
 
@@ -471,12 +479,25 @@ export const useArmyListStore = defineStore("armyList", () => {
    * sibling order on-screen aligned with flat-array order avoids a confusing
    * gap between the visible row position and the price tier.
    */
-  function moveUnit(id, parentId, sibIdx) {
+  /**
+   * `forced` flags a free-attach override (the user dropped onto a host the
+   * normal rules would forbid). `true` stamps `forcedAttach`, `false` clears
+   * it, and `undefined` preserves whatever the unit already carries — so a
+   * plain reorder under the same host doesn't strip an existing override.
+   * Detaching to root always clears it.
+   */
+  function moveUnit(id, parentId, sibIdx, forced) {
     const idx = units.value.findIndex((u) => u.id === id);
     if (idx === -1) return;
     const next = { ...units.value[idx] };
-    if (parentId) next.attachedTo = parentId;
-    else delete next.attachedTo;
+    if (parentId) {
+      next.attachedTo = parentId;
+      if (forced === true) next.forcedAttach = true;
+      else if (forced === false) delete next.forcedAttach;
+    } else {
+      delete next.attachedTo;
+      delete next.forcedAttach;
+    }
 
     const arr = [...units.value];
     arr.splice(idx, 1);

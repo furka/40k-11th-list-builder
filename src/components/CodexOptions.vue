@@ -19,6 +19,13 @@ const pointsChangesTitle = computed(() =>
     ? "Show points changes compared to previous MFM"
     : "No previous MFM version to compare against yet"
 );
+
+const bypassModifierKey = (() => {
+  if (typeof navigator === "undefined") return "Ctrl";
+  const platform = navigator.userAgentData?.platform || navigator.platform || "";
+  return /mac|iphone|ipad|ipod/i.test(platform) ? "⌘" : "Ctrl";
+})();
+const bypassTitle = `Attach units and enhancements without restrictions.\n\nOr hold ${bypassModifierKey} while dragging.`;
 </script>
 
 <template>
@@ -66,6 +73,15 @@ const pointsChangesTitle = computed(() =>
             @change="appStore.showAvailableOnly = $event.target.checked"
           />
           Show available only
+        </label>
+
+        <label v-tooltip="bypassTitle">
+          <input
+            type="checkbox"
+            :checked="appStore.freeAttach"
+            @change="appStore.freeAttach = $event.target.checked"
+          />
+          Bypass restrictions
         </label>
 
         <label

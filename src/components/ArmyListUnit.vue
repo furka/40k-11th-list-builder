@@ -1,17 +1,18 @@
 <script setup>
 import { computed, ref, watch, onMounted, onBeforeUnmount } from "vue";
-import RiskIcon from "../assets/risk-icon.svg";
 import { nameEquals } from "../utils/name-match";
 import { formatEnhancementRestrictions } from "../utils/enhancement-restrictions";
 import { useArmyListStore } from "../stores/armyList";
 import { useCodexStore } from "../stores/codex";
 import { useDragStore } from "../stores/drag";
+import { useAppStore } from "../stores/app";
 import { scaledHeightPx } from "../utils/unit-sizing";
 import { useRowEl } from "../composables/useRowEl";
 
 const armyListStore = useArmyListStore();
 const codexStore = useCodexStore();
 const dragStore = useDragStore();
+const appStore = useAppStore();
 
 const props = defineProps({
   unit: Object,
@@ -90,6 +91,17 @@ const isUnitUpgrade = computed(() => {
   return Boolean(armyListStore.getEnhancementMeta(props.unit)?.nonCharacterOnly);
 });
 
+// A manual free-attach override — the attachment ignores the normal
+// leader/support restrictions, so flag it to distinguish it from a rules-legal
+// attachment.
+const isForcedAttach = computed(() => Boolean(props.unit.forcedAttach));
+
+const isEnhancementRow = computed(() =>
+  nameEquals(props.unit.name, "Enhancements")
+);
+
+const isWargearRow = computed(() => nameEquals(props.unit.name, "Wargear"));
+
 // Just the points-proportional portion of the row; the row's `flex-basis`
 // composes this with the inherited `--row-baseline` CSS variable.
 const scaledHeight = computed(() => scaledHeightPx(unitPoints.value, props.scale));
@@ -102,9 +114,9 @@ const name = computed(() => {
   }
 
   if (nameEquals(props.unit.name, "Enhancements")) {
-    name += `[Enh] ${props.unit.optionName}`;
+    name += props.unit.optionName;
   } else if (nameEquals(props.unit.name, "Wargear")) {
-    name += `[Wgr] ${props.unit.optionName}`;
+    name += props.unit.optionName;
   } else if (props.unit.optionName) {
     name += `${props.unit.name} — ${props.unit.optionName}`;
   } else {
@@ -222,6 +234,8 @@ function onPointerDown(e) {
     scale: props.scale,
     rowBaseline: inheritedBaseline || "22px",
     enhancementMeta,
+    freeAttach: appStore.freeAttach,
+    bypass: e.ctrlKey || e.metaKey,
   });
 }
 </script>
@@ -241,25 +255,42 @@ function onPointerDown(e) {
     }"
     @pointerdown="onPointerDown"
   >
-    <span class="army-list-unit__warning" v-tooltip="inValid" v-if="inValid">
-      <RiskIcon class="army-list-unit__warning-icon" />
-    </span>
     <span ref="nameRef" class="army-list-unit__name">
       {{ name }}
     </span>
+    <span v-if="tierLabel" class="army-list-unit__tier">
+      ({{ tierLabel }})
+    </span>
+    <span
+      class="army-list-unit__badge army-list-unit__badge--warning"
+      v-tooltip="inValid"
+      v-if="inValid"
+    >!</span>
+    <span
+      v-if="isEnhancementRow"
+      class="army-list-unit__badge army-list-unit__badge--enh"
+      v-tooltip="'Enhancement'"
+    >E</span>
+    <span
+      v-if="isWargearRow"
+      class="army-list-unit__badge army-list-unit__badge--wargear"
+      v-tooltip="'Wargear'"
+    >W</span>
     <span
       v-if="props.unit.allied"
-      class="army-list-unit__ally-badge"
+      class="army-list-unit__badge army-list-unit__badge--ally"
       v-tooltip="'Allied unit'"
     >ALLY</span>
     <span
       v-if="isUnitUpgrade"
-      class="army-list-unit__upgrade-badge"
-      v-tooltip="'Unit upgrade — attaches to a non-character unit'"
-    >UPGRADE</span>
-    <span v-if="tierLabel" class="army-list-unit__tier">
-      ({{ tierLabel }})
-    </span>
+      class="army-list-unit__badge army-list-unit__badge--upgrade"
+      v-tooltip="'Upgrade'"
+    >U</span>
+    <span
+      v-if="isForcedAttach"
+      class="army-list-unit__badge army-list-unit__badge--bypass"
+      v-tooltip="'Restrictions bypassed'"
+    >B</span>
     <span class="army-list-unit__points" v-if="unitPoints > 0">
       {{ unitPoints }} pts
     </span>
@@ -380,60 +411,49 @@ function onPointerDown(e) {
     font-family: var(--font-display);
     font-size: 11px;
     font-weight: 600;
+    margin-inline-end: 6px;
     white-space: nowrap;
   }
 
-  &__warning {
-    color: var(--color-negative);
+  // One shared badge style so every row marker reads identically. Dark text on
+  // the bright fills gives much stronger letter/background contrast than white
+  // did on the lighter amber/green pills. Each `--modifier` only sets its fill;
+  // override gets its own teal so it isn't a second amber alongside the "E".
+  &__badge {
+    align-items: center;
+    border-radius: 3px;
+    color: var(--color-bg);
     cursor: help;
-    padding: 4px;
-    position: absolute;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: 0.3px;
+    margin: 0 2px;
+    min-width: 12px;
+    padding: 0 3px;
+    text-transform: uppercase;
 
-    &-icon {
-      height: 24px;
-      width: 24px;
+    &--warning {
+      background-color: var(--color-negative);
     }
-  }
-
-  &__warning + &__name {
-    margin-inline-start: 32px;
-  }
-
-  &__ally-badge {
-    align-items: center;
-    background-color: #5b3da6;
-    border-radius: 3px;
-    color: #fff;
-    cursor: help;
-    display: inline-flex;
-    flex-shrink: 0;
-    font-family: var(--font-display);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    margin: 0 4px;
-    padding: 1px 5px;
-    text-transform: uppercase;
-  }
-
-  // Matches Games Workshop's own visual language — bright green pill, full
-  // "UPGRADE" word in uppercase white. Same look in the codex enhancement
-  // list (CodexDetachmentCard.vue) so the cue reads consistently across panels.
-  &__upgrade-badge {
-    align-items: center;
-    background-color: var(--color-positive);
-    border-radius: 3px;
-    color: #fff;
-    cursor: help;
-    display: inline-flex;
-    flex-shrink: 0;
-    font-family: var(--font-display);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    margin: 0 4px;
-    padding: 1px 5px;
-    text-transform: uppercase;
+    &--enh {
+      background-color: var(--color-accent);
+    }
+    &--wargear {
+      background-color: #6fa8dc;
+    }
+    &--ally {
+      background-color: #9d83e0;
+    }
+    &--upgrade {
+      background-color: var(--color-positive);
+    }
+    &--bypass {
+      background-color: #46c7c0;
+    }
   }
 }
 </style>
