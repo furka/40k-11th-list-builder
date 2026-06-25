@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-10e",
   "_ref": "main",
-  "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
-  "_committedAt": "2026-06-22T09:36:35Z",
-  "_generatedAt": "2026-06-24T16:25:11.520Z",
+  "_sha": "52914f259d4e509379fc653e3b13d2e38edb102e",
+  "_committedAt": "2026-06-24T16:46:10Z",
+  "_generatedAt": "2026-06-25T16:29:48.070Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
