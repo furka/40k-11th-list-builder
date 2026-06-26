@@ -1,0 +1,910 @@
+{
+  "_source": "MFM Faction Pack PDFs — Rules Updates (errata) sections",
+  "_generator": "scripts/scrape-mfm-11th/scrape-errata-keywords.mjs",
+  "ADEPTA SORORITAS": {
+    "CASTIGATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "EXORCIST": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "IMMOLATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SORORITAS RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "ADEPTUS CUSTODES": {
+    "ANATHEMA PSYKANA RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "VENERABLE LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "VERTUS PRAETORS": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "ADEPTUS MECHANICUS": {
+    "ARCHAEOPTER TRANSVECTOR": {
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "SKORPIUS DISINTEGRATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SKORPIUS DUNERIDER": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "AELDARI": {
+    "CRIMSON HUNTER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HEMLOCK WRAITHFIGHTER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "WARLOCK CONCLAVE": {
+      "remove": [
+        "CHARACTER"
+      ]
+    },
+    "WARLOCK SKYRUNNERS": {
+      "remove": [
+        "CHARACTER"
+      ]
+    }
+  },
+  "ASTRA MILITARUM": {
+    "AEGIS DEFENCE LINE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "BANEBLADE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "BANEHAMMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "BANESWORD": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "BASILISK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHIMERA": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "DEATHSTRIKE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "DOOMHAMMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HELLHAMMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HELLHOUND": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HYDRA": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS BATTLE TANK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS COMMANDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS DEMOLISHER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS ERADICATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS EXECUTIONER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS EXTERMINATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS PUNISHER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LEMAN RUSS VANQUISHER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "MANTICORE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "MILITARUM TEMPESTUS COMMAND SQUAD": {
+      "remove": [
+        "REGIMENT"
+      ]
+    },
+    "OGRYN BODYGUARD": {
+      "add": [
+        "CHARACTER"
+      ]
+    },
+    "ROGAL DORN BATTLE TANK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "ROGAL DORN COMMANDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SHADOWSWORD": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORMLORD": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORMSWORD": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TAUROX": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TAUROX PRIME": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "VALKYRIE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "WYVERN": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "BLACK TEMPLARS": {
+    "GLADIATOR LANCER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GLADIATOR REAPER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GLADIATOR VALIANT": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "IMPULSOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LAND RAIDER CRUSADER": {
+      "add": [
+        "FRAME",
+        "LAND RAIDER"
+      ]
+    },
+    "REPULSOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "REPULSOR EXECUTIONER": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "BLOOD ANGELS": {
+    "BAAL PREDATOR": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "CHAOS SPACE MARINES": {
+    "CHAOS LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS LORD IN TERMINATOR ARMOUR": {
+      "add": [
+        "CHAOS LORD"
+      ]
+    },
+    "CHAOS PREDATOR ANNIHILATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR DESTRUCTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS VINDICATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HELDRAKE": {
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "KHORNE LORD OF SKULLS": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "NOCTILITH CROWN": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "DARK ANGELS": {
+    "LAND SPEEDER VENGEANCE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RAVENWING DARKSHROUD": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SAMMAEL": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "DEATH GUARD": {
+    "CHAOS LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR ANNIHILATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR DESTRUCTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "MIASMIC MALIGNIFIER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "PLAGUEBURST CRAWLER": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "DRUKHARI": {
+    "RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RAVAGER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RAZORWING JETFIGHTER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "VENOM": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "VOIDRAVEN BOMBER": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "EMPEROR’S CHILDREN": {
+    "CHAOS LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "GENESTEALER CULTS": {
+    "GOLIATH ROCKGRINDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GOLIATH TRUCK": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "GREY KNIGHTS": {
+    "LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LAND RAIDER CRUSADER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LAND RAIDER REDEEMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RAZORBACK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORMHAWK INTERCEPTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORMRAVEN GUNSHIP": {
+      "add": [
+        "FRAME"
+      ],
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "STORMTALON GUNSHIP": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "IMPERIAL AGENTS": {
+    "CORVUS BLACKSTAR": {
+      "add": [
+        "FRAME"
+      ],
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "IMPERIAL RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "INQUISITORIAL CHIMERA": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SISTERS OF BATTLE IMMOLATOR": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "LEAGUES OF VOTANN": {
+    "HEKATON LAND FORTRESS": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SAGITAUR": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "NECRONS": {
+    "ANNIHILATION BARGE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CATACOMB COMMAND BARGE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CONVERGENCE OF DOMINION": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GHOST ARK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "MONOLITH": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "NIGHT SCYTHE": {
+      "add": [
+        "DEEP STRIKE",
+        "FRAME"
+      ],
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "OBELISK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SERAPTEK HEAVY CONSTRUCT": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TESSERACT VAULT": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "THE SILENT KING": {
+      "add": [
+        "CHARACTER",
+        "EPIC HERO",
+        "TRIARCH",
+        "VEHICLE"
+      ]
+    },
+    "TRIARCH STALKER": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "ORKS": {
+    "BATTLEWAGON": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "BLITZA-BOMMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "BURNA-BOMMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "DAKKAJET": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HUNTA RIG": {
+      "add": [
+        "FRAME",
+        "MONSTER"
+      ],
+      "remove": [
+        "VEHICLE"
+      ]
+    },
+    "KILL RIG": {
+      "add": [
+        "FRAME",
+        "MONSTER"
+      ],
+      "remove": [
+        "VEHICLE"
+      ]
+    },
+    "STOMPA": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TRUKK": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "SPACE MARINES": {
+    "DROP POD": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GLADIATOR LANCER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GLADIATOR REAPER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "GLADIATOR VALIANT": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HAMMERFALL BUNKER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "IMPULSOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "INVADER ATV": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LAND RAIDER CRUSADER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "LAND RAIDER REDEEMER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "PREDATOR ANNIHILATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "PREDATOR DESTRUCTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RAZORBACK": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "REPULSOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "REPULSOR EXECUTIONER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORM SPEEDER HAILSTRIKE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORM SPEEDER HAMMERSTRIKE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORM SPEEDER THUNDERSTRIKE": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORMHAWK INTERCEPTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "STORMRAVEN GUNSHIP": {
+      "add": [
+        "FRAME"
+      ],
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "STORMTALON GUNSHIP": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "VINDICATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "WHIRLWIND": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "THOUSAND SONS": {
+    "CHAOS LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR ANNIHILATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR DESTRUCTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS VINDICATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HELDRAKE": {
+      "remove": [
+        "AIRCRAFT"
+      ]
+    }
+  },
+  "TYRANIDS": {
+    "BROODLORD": {
+      "add": [
+        "SYNAPSE"
+      ]
+    },
+    "MAWLOC": {
+      "add": [
+        "VANGUARD INVADER"
+      ]
+    },
+    "NEUROLICTOR": {
+      "add": [
+        "SYNAPSE"
+      ]
+    },
+    "NORN ASSIMILATOR": {
+      "add": [
+        "HARVESTER"
+      ]
+    },
+    "PARASITE OF MORTREX": {
+      "add": [
+        "SYNAPSE"
+      ]
+    },
+    "PSYCHOPHAGE": {
+      "add": [
+        "SMOKE"
+      ]
+    },
+    "RAVENERS": {
+      "add": [
+        "VANGUARD INVADER"
+      ]
+    },
+    "TRYGON": {
+      "add": [
+        "VANGUARD INVADER"
+      ]
+    }
+  },
+  "T’AU EMPIRE": {
+    "DEVILFISH": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HAMMERHEAD GUNSHIP": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "PIRANHAS": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "RAZORSHARK STRIKE FIGHTER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SKY RAY GUNSHIP": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "SUN SHARK BOMBER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TIDEWALL DRONEPORT": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TIDEWALL GUNRIG": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "TIDEWALL SHIELDLINE": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  },
+  "WORLD EATERS": {
+    "CHAOS LAND RAIDER": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR ANNIHILATOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS PREDATOR DESTRUCTOR": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "CHAOS RHINO": {
+      "add": [
+        "FRAME"
+      ]
+    },
+    "HELDRAKE": {
+      "remove": [
+        "AIRCRAFT"
+      ]
+    },
+    "KHORNE LORD OF SKULLS": {
+      "add": [
+        "FRAME"
+      ]
+    }
+  }
+}

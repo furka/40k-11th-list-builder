@@ -37,6 +37,10 @@ export const WARNING_CATEGORIES = [
   "requiredkeyword-split", // post-LLM repair split a multi-token concatenation into atomics
   "requiredkeyword-promoted", // post-LLM repair promoted a stray datasheet name from requiredKeywords to allowedHosts
   "requiredkeyword-dropped", // post-LLM repair couldn't decompose a non-vocab entry — dropped it
+  "errata-url-missing", // errata pass: no Faction Pack URL for this slug
+  "errata-pdf-failed", // errata pass: PDF fetch/parse error
+  "errata-llm-failed", // errata pass: API error
+  "errata-datasheet-unmatched", // errata named a datasheet not in the MFM vocab; change dropped
 ];
 
 // Lightweight in-memory accumulator. Each script creates its own sink per

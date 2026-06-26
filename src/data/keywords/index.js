@@ -1,6 +1,7 @@
 import bsdata from "./bsdata-keywords.auto.json";
 import mfmPdf from "./mfm-pdf-keywords.auto.json";
 import overrides from "./manual-overrides.json";
+import errata from "./errata-keywords.auto.json";
 import { normalizeString } from "../../utils/name-match";
 
 /**
@@ -33,6 +34,12 @@ import { normalizeString } from "../../utils/name-match";
  * (apostrophes, hyphens, etc.) via `normalizeString`.
  */
 export const KEYWORDS_BY_FACTION = buildLookup();
+// Post-codex errata keyword deltas (Faction Pack "Rules Updates" sections),
+// applied ON TOP of the resolved layers in getKeywordsFor. Unlike the layers
+// (which replace the whole array), errata is an add/remove delta — a datasheet
+// whose stat block is no longer in the pack still gets its corrected keywords
+// (e.g. Aeldari Warlock Conclave losing CHARACTER; vehicles gaining FRAME).
+const ERRATA_BY_FACTION = buildErrataLookup();
 
 function buildLookup() {
   const out = new Map();
@@ -40,6 +47,23 @@ function buildLookup() {
   applyLayer(out, bsdata);    // broad community baseline
   applyLayer(out, mfmPdf);    // GW-authoritative, supersedes BSData
   applyLayer(out, overrides); // explicit human fix, supersedes everything
+  return out;
+}
+
+function buildErrataLookup() {
+  const out = new Map();
+  for (const [factionName, sheets] of Object.entries(errata)) {
+    if (factionName.startsWith("_")) continue;
+    if (!sheets || typeof sheets !== "object") continue;
+    const factionMap = ensureFactionMap(out, factionName);
+    for (const [sheetName, delta] of Object.entries(sheets)) {
+      if (!delta || typeof delta !== "object") continue;
+      factionMap.set(normalizeString(sheetName), {
+        add: Array.isArray(delta.add) ? delta.add : [],
+        remove: Array.isArray(delta.remove) ? delta.remove : [],
+      });
+    }
+  }
   return out;
 }
 
@@ -69,6 +93,23 @@ function ensureFactionMap(root, factionName) {
 export function getKeywordsFor(factionName, datasheetName) {
   if (!factionName || !datasheetName) return [];
   const factionMap = KEYWORDS_BY_FACTION.get(normalizeString(factionName));
-  if (!factionMap) return [];
-  return factionMap.get(normalizeString(datasheetName)) ?? [];
+  const base = factionMap?.get(normalizeString(datasheetName)) ?? [];
+
+  const delta = ERRATA_BY_FACTION.get(normalizeString(factionName))?.get(
+    normalizeString(datasheetName)
+  );
+  if (!delta) return base;
+
+  // Apply the errata delta on a COPY (never mutate the cached layer array):
+  // drop removed keywords, then append added ones not already present.
+  const removed = new Set(delta.remove.map((k) => k.toUpperCase()));
+  const result = base.filter((k) => !removed.has(k.toUpperCase()));
+  const present = new Set(result.map((k) => k.toUpperCase()));
+  for (const k of delta.add) {
+    if (!present.has(k.toUpperCase())) {
+      result.push(k);
+      present.add(k.toUpperCase());
+    }
+  }
+  return result;
 }
