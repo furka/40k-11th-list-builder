@@ -245,7 +245,7 @@ export function legalDropSlots(
         ) return false;
         if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) return false;
         if (enhancementMeta) {
-          if (enhancementMeta.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) return false;
+          if (enhancementMeta.nonCharacterOnly && !hostExplicitlyAllowed && hasKeyword(hostDs, "CHARACTER")) return false;
           // `requiredKeywords` + `allowedHosts` are disjunctions ("Captain OR
           // Adeptus Astartes Terminator model"): the host satisfies the rule
           // if EITHER its datasheet name matches `allowedHosts` OR its keyword

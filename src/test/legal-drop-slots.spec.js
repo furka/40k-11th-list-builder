@@ -31,6 +31,13 @@ const SHEETS = {
     name: "BLOODLETTERS",
     keywords: ["BATTLELINE", "LEGIONES DAEMONICA KHORNE"],
   },
+  // Daemon CHARACTER carrying the same keyword as BLOODLETTERS — proves a
+  // requiredKeywords match does NOT override the nonCharacterOnly "can't go on
+  // characters" rule (only an explicit allowedHosts NAME does).
+  SKULLTAKER: {
+    name: "SKULLTAKER",
+    keywords: ["CHARACTER", "LEGIONES DAEMONICA KHORNE"],
+  },
   // EPIC HERO MONSTER — used by the "Quantum Goad on the Nightbringer"
   // regression test: an explicit allowedHosts whitelist must override the
   // universal EPIC HERO block.
@@ -293,6 +300,26 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     ).toEqual(["bl"]);
   });
 
+  it("a requiredKeywords match does NOT let a nonCharacterOnly upgrade onto a CHARACTER (only an allowedHosts name does)", () => {
+    // SKULLTAKER carries LEGIONES DAEMONICA KHORNE (satisfies requiredKeywords)
+    // but is a CHARACTER. With no allowedHosts naming it, the nonCharacterOnly
+    // "can't go on characters" rule still blocks it — only the non-character
+    // BLOODLETTERS is a legal host.
+    const units = [
+      u("bl", "BLOODLETTERS"),
+      u("sk", "SKULLTAKER"),
+      enh("e", "Slaughterthirst"),
+    ];
+    const meta = {
+      name: "Slaughterthirst",
+      nonCharacterOnly: true,
+      requiredKeywords: ["LEGIONES DAEMONICA KHORNE"],
+    };
+    expect(
+      attachIds(legalDropSlots(units, "e", getDataSheet, meta))
+    ).toEqual(["bl"]);
+  });
+
   it("allowedHosts OR requiredKeywords — either match satisfies the rule (disjunction)", () => {
     // BSData-sourced keywords let us enforce the original PDF disjunction:
     // "Captain OR Adeptus Astartes Terminator model only" becomes
@@ -344,6 +371,26 @@ describe("legalDropSlots — enhancement host rules (with metadata)", () => {
     expect(
       attachIds(legalDropSlots(units, "e", getDataSheet, meta))
     ).toEqual(["nb"]);
+  });
+
+  it("nonCharacterOnly block yields to an explicit allowedHosts whitelist on a CHARACTER host", () => {
+    // A nonCharacterOnly upgrade normally can't go on a CHARACTER, but an
+    // explicit allowedHosts entry is the §25.04 "unless otherwise stated"
+    // override — it must win even when the whitelisted host is a CHARACTER
+    // (mirrors the real Nightforged Battery → LAND SPEEDER VENGEANCE case).
+    const units = [
+      u("w", "NECRON WARRIORS"), // non-character, not in allowedHosts → excluded by whitelist
+      u("o", "OVERLORD"), // CHARACTER, IS in allowedHosts → allowed despite nonCharacterOnly
+      enh("e", "Char Upgrade"),
+    ];
+    const meta = {
+      name: "Char Upgrade",
+      nonCharacterOnly: true,
+      allowedHosts: ["OVERLORD"],
+    };
+    expect(
+      attachIds(legalDropSlots(units, "e", getDataSheet, meta))
+    ).toEqual(["o"]);
   });
 
   it("EPIC HEROES are blocked even without any opt-in flag (muster-armies §25.04)", () => {

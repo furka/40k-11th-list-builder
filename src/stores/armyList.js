@@ -375,7 +375,11 @@ export const useArmyListStore = defineStore("armyList", () => {
           ) {
             return "Enhancement can only attach to a character";
           }
-          if (meta?.nonCharacterOnly && hasKeyword(hostDs, "CHARACTER")) {
+          if (
+            meta?.nonCharacterOnly &&
+            !hostExplicitlyAllowed &&
+            hasKeyword(hostDs, "CHARACTER")
+          ) {
             return "Unit upgrades can't attach to characters";
           }
           if (hasKeyword(hostDs, "EPIC HERO") && !hostExplicitlyAllowed) {

@@ -31,6 +31,17 @@ const TEST_MFM = {
               nonCharacterOnly: true,
               allowedHosts: ["NECRON WARRIORS"],
             },
+            {
+              // Upgrade whose allowedHosts whitelists a CHARACTER. The
+              // nonCharacterOnly "can't go on a character" default must yield to
+              // the explicit allowedHosts override (§25.04 "unless otherwise
+              // stated"), the same way the EPIC HERO default yields for
+              // "Quantum Goad".
+              name: "Char-allowed Upgrade",
+              points: 5,
+              nonCharacterOnly: true,
+              allowedHosts: ["OVERLORD"],
+            },
             { name: "Stackable Boon", points: 10, characterOnly: true },
             { name: "Unrestricted Boon", points: 10 },
             { name: "Not For Heroes", points: 15, characterOnly: true, notOnEpicHeroes: true, limit: 1 },
@@ -147,6 +158,29 @@ const TEST_MFM = {
       keywords: ["BATTLELINE", "INFANTRY", "NECRONS"],
       sizes: [
         { name: "10 models", models: 10, basePoints: 140, tiers: [{ minCount: 1, points: 140 }] },
+      ],
+    },
+    {
+      // Non-character carrying "LEGIONES DAEMONICA KHORNE" — a legal host for
+      // the keyword-only "Daemon-only Upgrade" (proves the keyword is matchable).
+      name: "BLOODLETTERS",
+      faction: FACTION,
+      edition: "11th",
+      keywords: ["BATTLELINE", "INFANTRY", "LEGIONES DAEMONICA KHORNE"],
+      sizes: [
+        { name: "10 models", models: 10, basePoints: 100, tiers: [{ minCount: 1, points: 100 }] },
+      ],
+    },
+    {
+      // CHARACTER carrying the SAME keyword — used to prove a requiredKeywords
+      // match does NOT override the nonCharacterOnly "can't go on characters"
+      // rule (only an explicit allowedHosts NAME does).
+      name: "SKULLTAKER",
+      faction: FACTION,
+      edition: "11th",
+      keywords: ["CHARACTER", "INFANTRY", "LEGIONES DAEMONICA KHORNE"],
+      sizes: [
+        { name: "1 model", models: 1, basePoints: 90, tiers: [{ minCount: 1, points: 90 }] },
       ],
     },
   ],
@@ -789,6 +823,17 @@ describe("armyList Enhancement validation", () => {
     );
   });
 
+  it("nonCharacterOnly block yields to an explicit allowedHosts whitelist on a CHARACTER host", () => {
+    // "Char-allowed Upgrade" is nonCharacterOnly but whitelists OVERLORD (a
+    // CHARACTER) in allowedHosts. The "upgrades can't go on characters" default
+    // must yield to the explicit whitelist (§25.04 "unless otherwise stated"),
+    // the same way the EPIC HERO block yields for Quantum Goad.
+    const host = hostUnit("host", "OVERLORD");
+    const e = { ...enh("e", "Char-allowed Upgrade"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
   it("passes a characterOnly enhancement attached to a character", () => {
     const host = hostUnit("host", "OVERLORD");
     const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host" };
@@ -879,6 +924,30 @@ describe("armyList Enhancement validation", () => {
     store.setUnits([host, e]);
     expect(store.getUnitValidationError(e)).toMatch(
       /^Enhancement can only attach to:.*LEGIONES DAEMONICA KHORNE/
+    );
+  });
+
+  it("a nonCharacterOnly upgrade attaches to a NON-character carrying the required keyword", () => {
+    // BLOODLETTERS has LEGIONES DAEMONICA KHORNE and is not a character, so the
+    // keyword-only "Daemon-only Upgrade" is legal here. This is the positive
+    // baseline for the character-block test below.
+    const host = hostUnit("host", "BLOODLETTERS", 10);
+    const e = { ...enh("e", "Daemon-only Upgrade"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(false);
+  });
+
+  it("a requiredKeywords match does NOT override the character block (only an allowedHosts name does)", () => {
+    // SKULLTAKER satisfies the requiredKeywords (LEGIONES DAEMONICA KHORNE) but
+    // is a CHARACTER, and "Daemon-only Upgrade" has no allowedHosts naming it.
+    // nonCharacterOnly means "not for characters", and a keyword match must NOT
+    // grant character eligibility — otherwise e.g. an "ADEPTUS ASTARTES" upgrade
+    // would attach to every Space Marine character.
+    const host = hostUnit("host", "SKULLTAKER");
+    const e = { ...enh("e", "Daemon-only Upgrade"), attachedTo: "host" };
+    store.setUnits([host, e]);
+    expect(store.getUnitValidationError(e)).toBe(
+      "Unit upgrades can't attach to characters"
     );
   });
 
