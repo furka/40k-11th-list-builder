@@ -150,7 +150,7 @@ const TEST_MFM = {
       // describe block only patches mfmStore.getVersion, not the codex
       // store's lookup, so without this entry getDataSheet("IMMORTALS")
       // falls through to real Necron data and a faulty keyword overlay
-      // (mfm-pdf-keywords mis-classifying IMMORTALS as CHARACTER) would
+      // (faction-pack-keywords mis-classifying IMMORTALS as CHARACTER) would
       // mask the actual rule under test.
       name: "IMMORTALS",
       faction: FACTION,

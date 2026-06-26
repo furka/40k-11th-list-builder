@@ -1,7 +1,7 @@
 {
-  "_source": "MFM Faction Pack PDFs (https://mfm.warhammer-community.com/)",
-  "_generatedAt": "2026-06-23T19:49:28.668Z",
-  "_generator": "scripts/scrape-mfm-11th",
+  "_source": "Warhammer 40,000 Faction Pack PDFs",
+  "_generatedAt": "2026-06-26T09:59:04.041Z",
+  "_generator": "scripts/scrape-faction-pack-11th",
   "ADEPTA SORORITAS": {
     "BATTLE SANCTUM": [
       "ADEPTA SORORITAS",
@@ -202,7 +202,8 @@
       "CULT MECHANICUS",
       "IMPERIUM",
       "INFANTRY",
-      "SERVITOR BATTLECLADE"
+      "SERVITOR BATTLECLADE",
+      "TECH-PRIEST"
     ],
     "TERRAX-PATTERN TERMITE": [
       "ADEPTUS MECHANICUS",
@@ -241,16 +242,6 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY"
-    ],
-    "ASURMEN": [
-      "AELDARI",
-      "ASURYANI",
-      "CHARACTER",
-      "EPIC HERO",
-      "FLY",
-      "INFANTRY",
-      "JUMP PACK",
-      "PHOENIX LORD"
     ],
     "BONESINGER": [
       "AELDARI",
@@ -295,13 +286,6 @@
       "GRENADES",
       "INFANTRY",
       "JUMP PACK"
-    ],
-    "FALCON": [
-      "AELDARI",
-      "ASURYANI",
-      "FLY",
-      "TRANSPORT",
-      "VEHICLE"
     ],
     "FIRESTORM": [
       "AELDARI",
@@ -391,11 +375,6 @@
       "INFANTRY",
       "PRINCE YRIEL"
     ],
-    "RANGERS": [
-      "ASURYANI",
-      "CHARACTER",
-      "INFANTRY"
-    ],
     "SCORPION": [
       "AELDARI",
       "ASURYANI",
@@ -459,14 +438,6 @@
       "FLY",
       "VEHICLE",
       "VYPERS"
-    ],
-    "WARLOCK": [
-      "AELDARI",
-      "ASURYANI",
-      "CHARACTER",
-      "INFANTRY",
-      "PSYKER",
-      "SUPPORT"
     ],
     "WARP HUNTER": [
       "AELDARI",
@@ -603,6 +574,15 @@
       "SMOKE",
       "SQUADRON",
       "VEHICLE"
+    ],
+    "COMMISSAR": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "COMMISSAR",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "OFFICER"
     ],
     "COMMISSAR GRAVES": [
       "ASTRA MILITARUM",
@@ -1086,11 +1066,6 @@
       "SMOKE",
       "TEMPESTUS AQUILONS"
     ],
-    "TEMPESTUS SCIONS": [
-      "ASTRA MILITARUM",
-      "DEEP STRIKE",
-      "INFANTRY"
-    ],
     "TROJAN SUPPORT VEHICLE": [
       "ASTRA MILITARUM",
       "FRAME",
@@ -1107,6 +1082,15 @@
       "SMOKE",
       "TITANIC",
       "VALDOR",
+      "VEHICLE"
+    ],
+    "VALKYRIE": [
+      "ASTRA MILITARUM",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VALKYRIE",
       "VEHICLE"
     ],
     "VALKYRIE SKY TALON": [
@@ -1162,16 +1146,6 @@
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY",
-      "TYCHO"
-    ],
-    "DEATH COMPANY MARINES": [
-      "ADEPTUS ASTARTES",
-      "BLOOD ANGELS",
-      "DEATH COMPANY",
-      "DEATH COMPANY MARINES",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY"
@@ -1304,7 +1278,6 @@
     "BLUE HORRORS": [
       "BATTLELINE",
       "BLUE",
-      "BRIMSTONE",
       "CHAOS",
       "DAEMON",
       "HORRORS",
@@ -1562,6 +1535,7 @@
       "HORRORS",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "PINK",
       "TZEENTCH"
     ],
     "PLAGUE DRONES": [
@@ -1939,6 +1913,16 @@
       "SMOKE",
       "VEHICLE"
     ],
+    "CHAOS LORD": [
+      "CHAOS",
+      "CHAOS LORD",
+      "CHARACTER",
+      "GRENADES",
+      "HERETIC ASTARTES",
+      "MOUNTED",
+      "SLAANESH",
+      "STEED OF SLAANESH"
+    ],
     "CHAOS LORD ON BIKE": [
       "CHAOS",
       "CHAOS LORD ON BIKE",
@@ -2214,12 +2198,6 @@
       "PSYKER",
       "SORCERER ON BIKE"
     ],
-    "TRAITOR GUARDSMEN SQUAD": [
-      "CHAOS",
-      "DAMNED",
-      "HERETIC ASTARTES",
-      "INFANTRY"
-    ],
     "WARP TALONS": [
       "CHAOS",
       "DAEMON",
@@ -2441,12 +2419,6 @@
       "TANTALUS",
       "TRANSPORT",
       "VEHICLE"
-    ],
-    "VENOM": [
-      "DRUKHARI",
-      "FRAME",
-      "SKIMMER",
-      "TRANSPORT"
     ]
   },
   "EMPEROR’S CHILDREN": {
@@ -2541,11 +2513,13 @@
       "AQUILA KILL TEAM",
       "BATTLELINE",
       "DEATHWATCH",
+      "GRAVIS",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "ORDO XENOS",
-      "RETINUE"
+      "RETINUE",
+      "TACTICUS"
     ],
     "DAEMONHOST": [
       "AGENTS OF THE IMPERIUM",
@@ -2599,10 +2573,13 @@
     "INQUISITOR": [
       "AGENTS OF THE IMPERIUM",
       "CHARACTER",
+      "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY",
-      "INQUISITOR"
+      "INQUISITOR",
+      "KROYLE",
+      "MOUNTED",
+      "ORDO XENOS"
     ],
     "JANUS DRAIK": [
       "AGENTS OF THE IMPERIUM",
@@ -2632,12 +2609,6 @@
       "KILL TEAM",
       "KILL TEAM CASSIUS",
       "ORDO XENOS"
-    ],
-    "MINISTORUM PRIEST": [
-      "AGENTS OF THE IMPERIUM",
-      "CHARACTER",
-      "IMPERIUM",
-      "INFANTRY"
     ],
     "NEYAM SHAI MURAD": [
       "AGENTS OF THE IMPERIUM",
@@ -2905,12 +2876,6 @@
       "NECRONS",
       "NOBLE"
     ],
-    "MONOLITH": [
-      "FRAME",
-      "NECRONS",
-      "TITANIC",
-      "VEHICLE"
-    ],
     "NEKROSOR AMMENTAR": [
       "CHARACTER",
       "DESTROYER CULT",
@@ -2936,7 +2901,6 @@
       "VEHICLE"
     ],
     "SERAPTEK HEAVY CONSTRUCT": [
-      "FRAME",
       "NECRONS",
       "SERAPTEK HEAVY CONSTRUCT",
       "TITANIC",
@@ -2988,13 +2952,6 @@
       "INFANTRY",
       "ORKS"
     ],
-    "BATTLEWAGON": [
-      "FRAME",
-      "ORKS",
-      "TRANSPORT",
-      "VEHICLE",
-      "WAGON"
-    ],
     "BIG GUNZ": [
       "ARTILLERY",
       "BIG GUNZ",
@@ -3028,12 +2985,6 @@
       "FLY",
       "INFANTRY",
       "JUMP PACK",
-      "ORKS"
-    ],
-    "BOYZ": [
-      "BOYZ",
-      "GRENADES",
-      "INFANTRY",
       "ORKS"
     ],
     "BREAKA BOYZ": [
@@ -3159,12 +3110,6 @@
       "ORKS",
       "VEHICLE"
     ],
-    "NOBZ": [
-      "CHARACTER",
-      "INFANTRY",
-      "NOBZ",
-      "ORKS"
-    ],
     "NOBZ ON WARBIKES": [
       "GRENADES",
       "MOUNTED",
@@ -3193,8 +3138,10 @@
     ],
     "WARBOSS": [
       "CHARACTER",
-      "INFANTRY",
+      "GRENADES",
+      "MOUNTED",
       "ORKS",
+      "SPEED FREEKS",
       "WARBOSS"
     ],
     "WARBUGGIES": [
@@ -3238,10 +3185,9 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "EPIC HERO",
+      "GRENADES",
       "IMPERIUM",
-      "INFANTRY",
-      "TACTICUS"
+      "MOUNTED"
     ],
     "APOTHECARY": [
       "ADEPTUS ASTARTES",
@@ -3309,13 +3255,9 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY",
-      "TACTICUS",
-      "TITUS",
-      "ULTRAMARINES"
+      "MOUNTED"
     ],
     "CERBERUS": [
       "ADEPTUS ASTARTES",
@@ -3421,11 +3363,6 @@
       "IMPERIUM",
       "VEHICLE"
     ],
-    "HEAVY INTERCESSOR SQUAD": [
-      "ADEPTUS ASTARTES",
-      "INFANTRY",
-      "TACTICUS"
-    ],
     "HUNTER": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -3441,14 +3378,6 @@
       "IMPERIAL SPACE MARINE",
       "IMPERIUM",
       "INFANTRY"
-    ],
-    "INTERCESSOR SQUAD": [
-      "ADEPTUS ASTARTES",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY",
-      "INTERCESSOR SQUAD",
-      "TACTICUS"
     ],
     "JAVELIN ATTACK SPEEDER": [
       "ADEPTUS ASTARTES",
@@ -3564,12 +3493,10 @@
     "LIBRARIAN": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "FLY",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY",
-      "JUMP PACK",
       "LIBRARIAN",
+      "MOUNTED",
       "PSYKER"
     ],
     "MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS": [
@@ -3785,12 +3712,6 @@
       "TERMINATOR ASSAULT SQUAD",
       "TERMINATORS"
     ],
-    "TERMINATOR SQUAD": [
-      "ADEPTUS ASTARTES",
-      "CHARACTER",
-      "INFANTRY",
-      "TERMINATOR"
-    ],
     "TERMINUS ULTRA": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -3861,6 +3782,14 @@
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
     ],
+    "VICTRIX HONOUR GUARD": [
+      "ADEPTUS ASTARTES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TACTICUS",
+      "ULTRAMARINES",
+      "VICTRIX HONOUR GUARD"
+    ],
     "VINDICATOR LASER DESTROYER": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -3923,13 +3852,6 @@
       "INFANTRY",
       "PHOBOS",
       "SMOKE",
-      "SPACE WOLVES"
-    ],
-    "LOGAN GRIMNAR": [
-      "ADEPTUS ASTARTES",
-      "CHARACTER",
-      "EPIC HERO",
-      "IMPERIUM",
       "SPACE WOLVES"
     ],
     "LOGAN GRIMNAR ON STORMRIDER": [
@@ -4209,7 +4131,6 @@
     ],
     "ETHEREAL": [
       "CHARACTER",
-      "EPIC HERO",
       "ETHEREAL",
       "INFANTRY",
       "T'AU EMPIRE"

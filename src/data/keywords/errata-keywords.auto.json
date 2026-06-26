@@ -1,6 +1,6 @@
 {
   "_source": "MFM Faction Pack PDFs — Rules Updates (errata) sections",
-  "_generator": "scripts/scrape-mfm-11th/scrape-errata-keywords.mjs",
+  "_generator": "scripts/scrape-faction-pack-11th/scrape-errata-keywords.mjs",
   "ADEPTA SORORITAS": {
     "CASTIGATOR": {
       "add": [

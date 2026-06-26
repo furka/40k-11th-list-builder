@@ -11,7 +11,7 @@
  *      "Kravek Morne"). Flag truly dead entries for manual review.
  *
  *   2. PRUNE + EXPAND: re-evaluate each override against the union of
- *      `bsdata-keywords.auto.json` ∪ `mfm-pdf-keywords.auto.json`:
+ *      `bsdata-keywords.auto.json` ∪ `faction-pack-keywords.auto.json`:
  *        (a) Drop overrides that same-faction upstream now covers in full
  *            (redundant). Cross-faction matches do NOT count toward "fully
  *            covered" — the runtime loader doesn't cross-faction lookup,
@@ -43,12 +43,12 @@ const BSDATA_PATH = resolve(
   "keywords",
   "bsdata-keywords.auto.json"
 );
-const MFM_PDF_PATH = resolve(
+const FACTION_PACK_PATH = resolve(
   REPO_ROOT,
   "src",
   "data",
   "keywords",
-  "mfm-pdf-keywords.auto.json"
+  "faction-pack-keywords.auto.json"
 );
 const OVERRIDES_PATH = resolve(
   REPO_ROOT,
@@ -286,9 +286,9 @@ async function writeOverrides(merged, dryRun) {
 }
 
 async function runPruneAgainstUpstream(dryRun) {
-  const [bsdata, mfmPdf, overridesRaw, mfm] = await Promise.all([
+  const [bsdata, factionPack, overridesRaw, mfm] = await Promise.all([
     loadJsonOrEmpty(BSDATA_PATH),
-    loadJsonOrEmpty(MFM_PDF_PATH),
+    loadJsonOrEmpty(FACTION_PACK_PATH),
     readFile(OVERRIDES_PATH, "utf8"),
     loadMfmDatasheets(),
   ]);
@@ -302,7 +302,7 @@ async function runPruneAgainstUpstream(dryRun) {
     mfm
   );
   printAuditReport(auditReport);
-  const upstream = buildUpstreamLookup([bsdata, mfmPdf]);
+  const upstream = buildUpstreamLookup([bsdata, factionPack]);
   const byName = buildNameOnlyIndex(upstream);
 
   const pruned = {};

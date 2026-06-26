@@ -4,8 +4,8 @@ import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { FACTION_SLUGS } from "./factions.mjs";
-import { createWarningSink } from "./warnings.mjs";
+import { FACTION_SLUGS } from "../scrape-mfm-11th/factions.mjs";
+import { createWarningSink } from "../scrape-mfm-11th/warnings.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = resolve(__dirname, ".cache");

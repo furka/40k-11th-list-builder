@@ -17,12 +17,12 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import Anthropic from "@anthropic-ai/sdk";
 
-import { resolveSnapshotState } from "./snapshot-resolve.mjs";
+import { resolveSnapshotState } from "../scrape-mfm-11th/snapshot-resolve.mjs";
 import { fetchFactionPackPdf } from "./fetch.mjs";
 import { pdfToPages } from "./pdf-to-text.mjs";
 import { PAGE_TYPE, filterPagesByType } from "./page-types.mjs";
-import { enhancementNameKey } from "./name-key.mjs";
-import { createWarningSink } from "./warnings.mjs";
+import { enhancementNameKey } from "../scrape-mfm-11th/name-key.mjs";
+import { createWarningSink } from "../scrape-mfm-11th/warnings.mjs";
 import {
   classifyErrataKeywordsWithLLM,
   flushErrataKeywordCache,
@@ -46,8 +46,13 @@ const stableStringify = (v) => JSON.stringify(v, null, 2);
 const NON_KEYWORD_TOKENS = new Set(["LEADER", "SUPPORT", "HOVER"]);
 const keepKeywords = (arr) => arr.filter((k) => !NON_KEYWORD_TOKENS.has(k));
 
-export async function scrapeErrataKeywords({ refresh = false } = {}) {
-  const warnings = createWarningSink("errata-keywords");
+export async function scrapeErrataKeywords({
+  refresh = false,
+  warnings: providedWarnings,
+} = {}) {
+  // When run as part of the unified faction-pack scraper, the caller owns the
+  // warning sink and flushes once at the end; standalone, we manage our own.
+  const warnings = providedWarnings ?? createWarningSink("errata-keywords");
 
   if (!process.env.ANTHROPIC_API_KEY) {
     console.warn("Skipping errata pass: ANTHROPIC_API_KEY is not set.");
@@ -146,21 +151,21 @@ export async function scrapeErrataKeywords({ refresh = false } = {}) {
 
   const payloadOut = {
     _source: "MFM Faction Pack PDFs — Rules Updates (errata) sections",
-    _generator: "scripts/scrape-mfm-11th/scrape-errata-keywords.mjs",
+    _generator: "scripts/scrape-faction-pack-11th/scrape-errata-keywords.mjs",
     ...Object.fromEntries(Object.keys(out).sort().map((k) => [k, out[k]])),
   };
   if (!existsSync(dirname(ERRATA_OUT))) await mkdir(dirname(ERRATA_OUT), { recursive: true });
   await writeFile(ERRATA_OUT, stableStringify(payloadOut) + "\n", "utf8");
 
-  const report = await warnings.flush();
+  if (!providedWarnings) await warnings.flush();
   console.log(
     `Errata keyword pass: ${Object.keys(out).length} factions, ${totalChanges} datasheet changes. ` +
-      `Warnings: ${JSON.stringify(report.counts)}`
+      `Warnings: ${JSON.stringify(warnings.countsByCategory())}`
   );
   return payloadOut;
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const refresh = process.argv.includes("--refresh");
   scrapeErrataKeywords({ refresh }).catch((e) => {
     console.error(e);

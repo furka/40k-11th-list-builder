@@ -38,7 +38,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: scripts/scrape-mfm-11th/.cache
-          key: mfm-scrape-cache-${{ hashFiles('scripts/scrape-mfm-11th/**/*.mjs', 'scripts/scrape-mfm-11th/faction-pack-urls.json') }}
+          key: mfm-scrape-cache-${{ hashFiles('scripts/scrape-mfm-11th/**/*.mjs') }}
           restore-keys: |
             mfm-scrape-cache-
 
@@ -46,8 +46,6 @@ jobs:
         run: npm ci
 
       - name: Run scraper
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ "${{ inputs.refresh }}" = "true" ]; then
             npm run mfm:scrape:refresh
@@ -55,18 +53,15 @@ jobs:
             npm run mfm:scrape
           fi
 
-      - name: Reconcile manual overrides
-        run: npm run bsdata:prune-overrides
-
       - name: Detect changes
         id: changes
         run: |
-          if [ -z "$(git status --porcelain src/data/munitorum-field-manual-11th/ src/data/configs/enhancement-restrictions.auto.json src/data/configs/conditional-battleline.auto.json src/data/keywords/mfm-pdf-keywords.auto.json src/data/keywords/manual-overrides.json)" ]; then
+          if [ -z "$(git status --porcelain src/data/munitorum-field-manual-11th/)" ]; then
             echo "No MFM data changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "Changes detected:"
-            git status --porcelain src/data/munitorum-field-manual-11th/ src/data/configs/enhancement-restrictions.auto.json src/data/configs/conditional-battleline.auto.json src/data/keywords/mfm-pdf-keywords.auto.json src/data/keywords/manual-overrides.json
+            git status --porcelain src/data/munitorum-field-manual-11th/
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
@@ -117,7 +112,10 @@ jobs:
 
             ${{ steps.changelog.outputs.body }}
 
-            `enhancement-restrictions.auto.json`, `conditional-battleline.auto.json`, and `mfm-pdf-keywords.auto.json` may have been refreshed by the Claude-powered PDF passes — review the diff before merging. `manual-overrides.json` may also be touched by the prune reconciliation step (`npm run bsdata:prune-overrides`) that runs after the scrape.
+            This job now scrapes **points + the MFM snapshot only**. The
+            PDF-derived layers (keywords, enhancement restrictions, detachment
+            grants, errata) are refreshed by the separate **Faction Pack
+            auto-update** workflow.
 
             Tests run via the `pr-tests` workflow gate the merge.
           labels: |

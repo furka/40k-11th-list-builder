@@ -9,14 +9,14 @@
 //
 // Currently warn-only (exit 0).
 //
-// Run with: `node scripts/scrape-mfm-11th/audit-restrictions.mjs`
+// Run with: `node scripts/scrape-faction-pack-11th/audit-restrictions.mjs`
 
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { buildKeywordVocab, splitAgainstVocab } from "./keyword-vocab.mjs";
-import { resolveSnapshotStateSync } from "./snapshot-resolve.mjs";
+import { resolveSnapshotStateSync } from "../scrape-mfm-11th/snapshot-resolve.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const RESTRICTIONS_PATHS = [

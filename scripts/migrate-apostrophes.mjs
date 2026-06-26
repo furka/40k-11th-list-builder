@@ -23,7 +23,7 @@ const TARGETS = [
   "src/data/configs/enhancement-restrictions.manual.json",
   "src/data/configs/conditional-battleline.auto.json",
   "src/data/keywords/bsdata-keywords.auto.json",
-  "src/data/keywords/mfm-pdf-keywords.auto.json",
+  "src/data/keywords/faction-pack-keywords.auto.json",
   "src/data/keywords/manual-overrides.json",
 ];
 

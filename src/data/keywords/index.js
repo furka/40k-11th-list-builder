@@ -1,5 +1,5 @@
 import bsdata from "./bsdata-keywords.auto.json";
-import mfmPdf from "./mfm-pdf-keywords.auto.json";
+import factionPack from "./faction-pack-keywords.auto.json";
 import overrides from "./manual-overrides.json";
 import errata from "./errata-keywords.auto.json";
 import { normalizeString } from "../../utils/name-match";
@@ -16,14 +16,13 @@ import { normalizeString } from "../../utils/name-match";
  *      (When a BSData 11e repo eventually exists, slot it in between
  *      BSData 10e and the PDF layer here.)
  *
- *   2. `mfm-pdf-keywords.auto.json` — GW-authoritative *for what it
+ *   2. `faction-pack-keywords.auto.json` — GW-authoritative *for what it
  *      contains*, which is intentionally narrow: GW strips a datasheet from
- *      the MFM Faction Pack PDF once its codex ships, leaving only
- *      post-codex additions and errata in the PDF. So this layer covers
- *      maybe a quarter to a third of datasheets per faction — the fresh
- *      ones — and BSData (layer 1) supplies the codex-resident remainder.
- *      The PDF passes is parsed by the LLM keyword pass in
- *      `scripts/scrape-mfm-11th/`.
+ *      the Faction Pack PDF once its codex ships, leaving only post-codex
+ *      additions and errata in the PDF. So this layer covers maybe a quarter
+ *      to a third of datasheets per faction — the fresh ones — and BSData
+ *      (layer 1) supplies the codex-resident remainder. The PDFs are parsed
+ *      by the LLM keyword pass in `scripts/scrape-faction-pack-11th/`.
  *
  *   3. `manual-overrides.json` — hand-curated escape hatch for cases all
  *      upstream sources get wrong. Always wins. Kept small via the
@@ -44,9 +43,9 @@ const ERRATA_BY_FACTION = buildErrataLookup();
 function buildLookup() {
   const out = new Map();
   // Order = priority (last write wins on conflict). Lowest priority first.
-  applyLayer(out, bsdata);    // broad community baseline
-  applyLayer(out, mfmPdf);    // GW-authoritative, supersedes BSData
-  applyLayer(out, overrides); // explicit human fix, supersedes everything
+  applyLayer(out, bsdata);      // broad community baseline
+  applyLayer(out, factionPack); // GW-authoritative, supersedes BSData
+  applyLayer(out, overrides);   // explicit human fix, supersedes everything
   return out;
 }
 

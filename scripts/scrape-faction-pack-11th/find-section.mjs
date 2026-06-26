@@ -10,7 +10,7 @@
 // actually DEFINE the enhancement is still passed to the LLM, which is told
 // to recognise that case and return `notDefined: true`.
 
-import { enhancementNameKey } from "./name-key.mjs";
+import { enhancementNameKey } from "../scrape-mfm-11th/name-key.mjs";
 
 function normalize(s) {
   return s.toUpperCase().replace(/[^A-Z0-9]/g, "");

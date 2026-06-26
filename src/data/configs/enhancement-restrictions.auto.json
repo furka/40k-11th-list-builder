@@ -103,15 +103,6 @@
       ],
       "nonCharacterOnly": true
     },
-    "Castellan’s Mark": {
-      "allowedHosts": [
-        "SHIELD-CAPTAIN"
-      ],
-      "requiredKeywords": [
-        "ADEPTUS CUSTODES"
-      ],
-      "characterOnly": true
-    },
     "Encircling Hunter": {
       "allowedHosts": [
         "KNIGHT-CENTURA"
@@ -148,12 +139,6 @@
         "INFANTRY",
         "MOUNTED"
       ]
-    },
-    "Champion of the Imperium": {
-      "requiredKeywords": [
-        "ADEPTUS CUSTODES"
-      ],
-      "characterOnly": true
     },
     "Efficient Aggression": {
       "requiredKeywords": [
@@ -216,15 +201,6 @@
       ],
       "characterOnly": true
     },
-    "Logis": {
-      "allowedHosts": [
-        "SKITARII MARSHAL"
-      ],
-      "requiredKeywords": [
-        "SKITARII"
-      ],
-      "characterOnly": true
-    },
     "Cognitive Reinforcement": {
       "requiredKeywords": [
         "ADEPTUS MECHANICUS"
@@ -274,16 +250,6 @@
     "Voltagheist Reliquary": {
       "requiredKeywords": [
         "TECH-PRIEST"
-      ],
-      "characterOnly": true
-    },
-    "Veiled Hunter": {
-      "allowedHosts": [
-        "SKITARII MARSHAL"
-      ],
-      "requiredKeywords": [
-        "SKITARII",
-        "MARSHAL"
       ],
       "characterOnly": true
     }
@@ -367,12 +333,6 @@
       ],
       "characterOnly": true
     },
-    "Breath of Vaul": {
-      "requiredKeywords": [
-        "ASURYANI"
-      ],
-      "characterOnly": true
-    },
     "Assassins’ Eye": {
       "allowedHosts": [
         "RANGERS",
@@ -396,8 +356,7 @@
     },
     "Key of Ghosts": {
       "requiredKeywords": [
-        "HARLEQUINS",
-        "CHARACTER"
+        "HARLEQUINS"
       ],
       "characterOnly": true
     },
@@ -406,7 +365,7 @@
         "SHADOWSEER"
       ],
       "requiredKeywords": [
-        "HARLEQUINS"
+        "CHARACTER"
       ],
       "characterOnly": true
     },
@@ -415,14 +374,6 @@
         "TROUPE MASTER"
       ],
       "characterOnly": true
-    },
-    "Higher Duty": {
-      "allowedHosts": [
-        "SPIRITSEER"
-      ],
-      "requiredKeywords": [
-        "SPIRITSEER"
-      ]
     },
     "Prelude Performer": {
       "requiredKeywords": [
@@ -627,12 +578,6 @@
         "ADEPTUS ASTARTES"
       ]
     },
-    "Liberator": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "JUMP PACK"
-      ]
-    },
     "Angelic Executioner": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES",
@@ -679,12 +624,6 @@
     "Sanguinary Tear": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
-      ]
-    },
-    "Gleaming Pinions": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "JUMP PACK"
       ]
     },
     "Instinctive Interception": {
@@ -959,11 +898,6 @@
       "requiredKeywords": [
         "CHAOS KNIGHTS"
       ]
-    },
-    "Mirror of Fates": {
-      "requiredKeywords": [
-        "CHAOS KNIGHTS"
-      ]
     }
   },
   "CHAOS SPACE MARINES": {
@@ -977,15 +911,6 @@
       "requiredKeywords": [
         "HERETIC ASTARTES"
       ]
-    },
-    "Warped Foresight": {
-      "allowedHosts": [
-        "DARK APOSTLE"
-      ],
-      "requiredKeywords": [
-        "DAMNED"
-      ],
-      "characterOnly": true
     },
     "Helm of All-Seeing": {
       "requiredKeywords": [
@@ -1018,8 +943,7 @@
     "Crown of Worms": {
       "allowedHosts": [
         "WARPSMITH"
-      ],
-      "characterOnly": true
+      ]
     },
     "Cybinfernal Font": {
       "requiredKeywords": [
@@ -1033,10 +957,8 @@
     },
     "Wyredjinn": {
       "requiredKeywords": [
-        "HERETIC ASTARTES",
-        "CHARACTER"
-      ],
-      "characterOnly": true
+        "HERETIC ASTARTES"
+      ]
     },
     "Eye of Oblivion": {
       "allowedHosts": [
@@ -1151,12 +1073,6 @@
       ],
       "characterOnly": true
     },
-    "Eager for Vengeance": {
-      "requiredKeywords": [
-        "HERETIC ASTARTES"
-      ],
-      "characterOnly": true
-    },
     "Akshur’s Binding Runes": {
       "requiredKeywords": [
         "HERETIC ASTARTES"
@@ -1179,11 +1095,6 @@
     }
   },
   "DARK ANGELS": {
-    "Mounted Strategist": {
-      "requiredKeywords": [
-        "RAVENWING"
-      ]
-    },
     "Entreaty of Perpetual Ardour": {
       "allowedHosts": [
         "HELLBLASTER SQUAD"
@@ -1317,11 +1228,6 @@
         "DEATH GUARD",
         "INFANTRY"
       ]
-    },
-    "Beckoning Blight": {
-      "requiredKeywords": [
-        "DEATH GUARD"
-      ]
     }
   },
   "DEATHWATCH": {
@@ -1404,7 +1310,6 @@
     },
     "Webway Walker": {
       "requiredKeywords": [
-        "HARLEQUINS",
         "DRUKHARI",
         "CHARACTER"
       ],
@@ -1426,11 +1331,6 @@
     }
   },
   "EMPEROR’S CHILDREN": {
-    "Empyric Suffusion": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
     "Exalted Patron": {
       "allowedHosts": [
         "LORD EXULTANT"
@@ -1439,22 +1339,15 @@
     },
     "Soulstain Made Manifest": {
       "requiredKeywords": [
-        "EMPEROR’S CHILDREN",
-        "CHARACTER"
+        "EMPEROR’S CHILDREN"
       ],
       "characterOnly": true
     },
     "Spiritsliver": {
-      "allowedHosts": [
-        "DAEMON PRINCE OF SLAANESH",
-        "DAEMON PRINCE OF SLAANESH WITH WINGS"
-      ],
       "requiredKeywords": [
         "EMPEROR’S CHILDREN",
-        "DAEMON",
-        "DAEMON PRINCE"
-      ],
-      "characterOnly": true
+        "DAEMON"
+      ]
     },
     "Tears of the Phoenix": {
       "requiredKeywords": [
@@ -1471,8 +1364,7 @@
         "CHAOS TERMINATORS"
       ],
       "requiredKeywords": [
-        "EMPEROR’S CHILDREN",
-        "TERMINATOR"
+        "EMPEROR’S CHILDREN"
       ],
       "nonCharacterOnly": true
     },
@@ -1486,48 +1378,22 @@
         "LORD EXULTANT"
       ]
     },
-    "Faultless Opportunist": {
-      "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
-      ]
-    },
     "Beguiling Grotesquerie": {
       "allowedHosts": [
         "FLAWLESS BLADES"
       ],
       "requiredKeywords": [
-        "FLAWLESS BLADES"
+        "EMPEROR’S CHILDREN"
       ],
       "nonCharacterOnly": true
     },
     "Eager Patrons": {
       "allowedHosts": [
         "FLAWLESS BLADES"
-      ],
-      "requiredKeywords": [
-        "FLAWLESS BLADES"
       ]
     }
   },
   "GENESTEALER CULTS": {
-    "Predatory Instincts": {
-      "allowedHosts": [
-        "ABOMINANT",
-        "BIOPHAGUS",
-        "PATRIARCH"
-      ],
-      "requiredKeywords": [
-        "CHARACTER"
-      ],
-      "characterOnly": true
-    },
-    "Adaptive Reprisal": {
-      "requiredKeywords": [
-        "GENESTEALER CULTS",
-        "INFANTRY"
-      ],
-      "nonCharacterOnly": true
-    },
     "Enraptured Damnation": {
       "requiredKeywords": [
         "GENESTEALER CULTS",
@@ -1568,11 +1434,6 @@
         "SANCTUS"
       ]
     },
-    "Prowling Agitant": {
-      "requiredKeywords": [
-        "GENESTEALER CULTS"
-      ]
-    },
     "Mark of the Star Children": {
       "allowedHosts": [
         "PURESTRAIN GENESTEALERS"
@@ -1585,14 +1446,6 @@
     "Talons of the Sire": {
       "allowedHosts": [
         "PATRIARCH"
-      ],
-      "characterOnly": true
-    },
-    "Deeds that Speak to the Masses": {
-      "requiredKeywords": [
-        "MAGUS",
-        "PRIMUS",
-        "ACOLYTE ICONWARD"
       ],
       "characterOnly": true
     },
@@ -1641,11 +1494,6 @@
         "PURGATION SQUAD"
       ],
       "nonCharacterOnly": true
-    },
-    "Eye of the Augurium": {
-      "requiredKeywords": [
-        "GREY KNIGHTS"
-      ]
     },
     "Astral Overlap": {
       "allowedHosts": [
@@ -1787,9 +1635,6 @@
   "LEAGUES OF VOTANN": {
     "Optimised Attack Lines": {
       "allowedHosts": [
-        "SAGITAUR"
-      ],
-      "requiredKeywords": [
         "SAGITAUR"
       ],
       "nonCharacterOnly": true
@@ -2064,7 +1909,6 @@
         "WARBOSS"
       ],
       "requiredKeywords": [
-        "CHARACTER",
         "WARBOSS"
       ],
       "characterOnly": true
@@ -2098,14 +1942,13 @@
         "HUNTA RIG",
         "KILL RIG"
       ],
-      "requiredKeywords": [
-        "WAGON"
-      ],
       "nonCharacterOnly": true
     },
     "Targetin’ Gizmos": {
-      "requiredKeywords": [
-        "WAGON"
+      "allowedHosts": [
+        "BATTLEWAGON",
+        "HUNTA RIG",
+        "KILL RIG"
       ],
       "nonCharacterOnly": true
     },
@@ -2268,17 +2111,35 @@
         "ANCIENT"
       ]
     },
+    "Adamantine Mantle": {
+      "requiredKeywords": [
+        "ADEPTUS ASTARTES"
+      ]
+    },
+    "Forged in Battle": {
+      "requiredKeywords": [
+        "ADEPTUS ASTARTES",
+        "CHARACTER"
+      ],
+      "characterOnly": true
+    },
+    "War-tempered Artifice": {
+      "requiredKeywords": [
+        "ADEPTUS ASTARTES",
+        "INFANTRY"
+      ],
+      "nonCharacterOnly": true
+    },
+    "Immolator": {
+      "requiredKeywords": [
+        "ADEPTUS ASTARTES"
+      ]
+    },
     "Bellicose Weapon Spirits": {
       "nonCharacterOnly": true
     },
     "Raptorial Cogitator Core": {
       "nonCharacterOnly": true
-    },
-    "Fire Discipline": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
     },
     "Iron Laurel": {
       "requiredKeywords": [
@@ -2326,17 +2187,6 @@
       "requiredKeywords": [
         "ADEPTUS ASTARTES",
         "VEHICLE"
-      ]
-    },
-    "Master of Machine War": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ],
-      "characterOnly": true
-    },
-    "Target Augury Web": {
-      "requiredKeywords": [
-        "TECHMARINE"
       ]
     },
     "Celerity": {
@@ -2484,11 +2334,6 @@
       "requiredKeywords": [
         "PHOBOS"
       ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ]
     }
   },
   "SPACE WOLVES": {
@@ -2517,11 +2362,6 @@
       "requiredKeywords": [
         "ADEPTUS ASTARTES",
         "TERMINATOR"
-      ]
-    },
-    "Wolf-touched": {
-      "requiredKeywords": [
-        "SPACE WOLVES"
       ]
     },
     "Skjald": {
@@ -2582,12 +2422,6 @@
     }
   },
   "THOUSAND SONS": {
-    "Incandaeum": {
-      "allowedHosts": [
-        "EXALTED SORCERER"
-      ],
-      "limit": 1
-    },
     "Arcane Might": {
       "requiredKeywords": [
         "THOUSAND SONS"
@@ -2674,11 +2508,6 @@
       ],
       "nonCharacterOnly": true
     },
-    "Instinctive Defence": {
-      "requiredKeywords": [
-        "TYRANIDS"
-      ]
-    },
     "Synaptic Strategy": {
       "requiredKeywords": [
         "TYRANIDS"
@@ -2713,11 +2542,6 @@
         "NORN ASSIMILATOR"
       ]
     },
-    "Neuronode": {
-      "requiredKeywords": [
-        "TYRANIDS"
-      ]
-    },
     "Elevated Might": {
       "allowedHosts": [
         "TYRANID PRIME WITH LASH WHIP",
@@ -2737,7 +2561,8 @@
         "STEALTH BATTLESUITS"
       ],
       "requiredKeywords": [
-        "STEALTH"
+        "STEALTH",
+        "BATTLESUIT"
       ],
       "nonCharacterOnly": true
     },
@@ -2746,8 +2571,7 @@
         "GHOSTKEEL BATTLESUIT",
         "PATHFINDER TEAM",
         "STEALTH BATTLESUITS"
-      ],
-      "nonCharacterOnly": true
+      ]
     },
     "Admired Leader": {
       "requiredKeywords": [
@@ -2755,9 +2579,12 @@
       ]
     },
     "Student of Kauyon": {
+      "allowedHosts": [
+        "KROOT FLESH SHAPER",
+        "KROOT WAR SHAPER"
+      ],
       "requiredKeywords": [
-        "KROOT",
-        "SHAPER"
+        "KROOT"
       ]
     },
     "Plasma Accelerator Rifle": {
@@ -2775,31 +2602,6 @@
       "requiredKeywords": [
         "BATTLESUIT"
       ]
-    },
-    "Through Unity, Devastation": {
-      "requiredKeywords": [
-        "T’AU EMPIRE"
-      ]
-    },
-    "Coordinated Exploitation": {
-      "requiredKeywords": [
-        "T’AU EMPIRE",
-        "CHARACTER"
-      ],
-      "characterOnly": true
-    },
-    "Strike Swiftly": {
-      "requiredKeywords": [
-        "T’AU EMPIRE"
-      ],
-      "characterOnly": true
-    },
-    "Puretide Engram Neurochip": {
-      "requiredKeywords": [
-        "T’AU EMPIRE",
-        "BATTLESUIT"
-      ],
-      "nonCharacterOnly": true
     }
   },
   "WORLD EATERS": {

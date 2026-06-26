@@ -5,7 +5,7 @@
 //
 // Sources are the same three layers that power KEYWORDS_BY_FACTION in
 // src/data/keywords/index.js, read fresh from disk each call so the
-// scraper's pass-reorder picks up the just-written mfm-pdf-keywords.auto.json.
+// scraper's pass-reorder picks up the just-written faction-pack-keywords.auto.json.
 
 import { readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
@@ -27,7 +27,7 @@ export function buildKeywordVocab() {
   const global = new Set();
   const layers = [
     loadLayer("bsdata-keywords.auto.json"),
-    loadLayer("mfm-pdf-keywords.auto.json"),
+    loadLayer("faction-pack-keywords.auto.json"),
     loadLayer("manual-overrides.json"),
   ];
   for (const layer of layers) {

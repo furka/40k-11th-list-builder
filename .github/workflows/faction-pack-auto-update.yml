@@ -1,0 +1,125 @@
+name: Faction Pack auto-update
+
+# Classifies the GW Faction Pack PDFs (datasheet keywords, enhancement
+# restrictions, detachment BATTLELINE grants, and Rules-Updates keyword errata)
+# into the .auto.json data layers. Reads datasheet/detachment/enhancement
+# vocabulary from the committed MFM snapshot, so it runs AFTER the MFM
+# auto-update job (which owns points + the snapshot).
+
+on:
+  schedule:
+    # 13:30 UTC — ~30 min after the MFM job, so it reads the freshest snapshot.
+    - cron: "30 13 * * *"
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Bypass scraper caches (re-fetch all PDFs, re-run all LLM classifications)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: faction-pack-auto-update
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Restore scraper cache
+        uses: actions/cache@v4
+        with:
+          path: scripts/scrape-faction-pack-11th/.cache
+          key: faction-pack-cache-${{ hashFiles('scripts/scrape-faction-pack-11th/**/*.mjs', 'scripts/scrape-faction-pack-11th/faction-pack-urls.json') }}
+          restore-keys: |
+            faction-pack-cache-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Faction Pack scraper
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ inputs.refresh }}" = "true" ]; then
+            npm run factionpack:scrape:refresh
+          else
+            npm run factionpack:scrape
+          fi
+
+      - name: Reconcile manual overrides
+        run: npm run bsdata:prune-overrides
+
+      - name: Detect changes
+        id: changes
+        run: |
+          PATHS="src/data/keywords/faction-pack-keywords.auto.json src/data/keywords/errata-keywords.auto.json src/data/configs/enhancement-restrictions.auto.json src/data/configs/conditional-battleline.auto.json src/data/keywords/manual-overrides.json"
+          if [ -z "$(git status --porcelain $PATHS)" ]; then
+            echo "No Faction Pack data changes detected."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changes detected:"
+            git status --porcelain $PATHS
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update PR
+        if: steps.changes.outputs.changed == 'true'
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.AUTO_PR_TOKEN }}
+          branch: faction-pack-auto-update
+          base: main
+          commit-message: "chore(faction-pack): refresh PDF-derived data layers"
+          title: "chore(faction-pack): refresh PDF-derived data layers"
+          body: |
+            Automated Faction Pack PDF scrape refreshed the Claude-powered data layers:
+
+            - `faction-pack-keywords.auto.json` — datasheet keywords
+            - `errata-keywords.auto.json` — Rules-Updates keyword add/remove deltas
+            - `enhancement-restrictions.auto.json` — enhancement host rules
+            - `conditional-battleline.auto.json` — detachment BATTLELINE grants
+
+            `manual-overrides.json` may also be touched by the prune reconciliation
+            step (`npm run bsdata:prune-overrides`). Review the diff before merging.
+
+            - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+            Tests run via the `pr-tests` workflow gate the merge.
+          labels: |
+            faction-pack
+            automated
+          delete-branch: false
+
+      - name: Discord notify (failure)
+        if: failure()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "DISCORD_WEBHOOK_URL not set, skipping notification."
+            exit 0
+          fi
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          PAYLOAD=$(jq -n \
+            --arg content "++HERESY DETECTED IN FACTION PACK SCRAPER++
+          ++AUTOMATED SCRAPE RUN FAILED++
+
+          🔥 Investigate: <${RUN_URL}>" \
+            '{content: $content}')
+          curl -H "Content-Type: application/json" -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
