@@ -66,26 +66,11 @@ jobs:
 
       - name: Detect changes
         id: changes
-        run: |
-          if [ -z "$(git status --porcelain src/data/keywords/bsdata-keywords.auto.json src/data/configs/enhancement-restrictions.bsdata.auto.json src/data/configs/wargear-restrictions.bsdata.auto.json src/data/keywords/manual-overrides.json)" ]; then
-            echo "No BSData changes detected."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "Changes detected:"
-            git status --porcelain src/data/keywords/bsdata-keywords.auto.json src/data/configs/enhancement-restrictions.bsdata.auto.json src/data/configs/wargear-restrictions.bsdata.auto.json src/data/keywords/manual-overrides.json
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+        run: node scripts/bsdata-detect-changes.mjs
 
-      - name: Read resolved BSData SHA
-        if: steps.changes.outputs.changed == 'true'
-        id: bsdata-sha
-        run: |
-          SHA=$(node -p "require('./src/data/keywords/bsdata-keywords.auto.json')._sha")
-          SHORT=$(echo "$SHA" | cut -c1-8)
-          COMMITTED=$(node -p "require('./src/data/keywords/bsdata-keywords.auto.json')._committedAt")
-          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
-          echo "short=$SHORT" >> "$GITHUB_OUTPUT"
-          echo "committed=$COMMITTED" >> "$GITHUB_OUTPUT"
+      - name: Discard metadata-only churn
+        if: steps.changes.outputs.changed == 'true' && steps.changes.outputs.metadata_only != ''
+        run: git checkout -- ${{ steps.changes.outputs.metadata_only }}
 
       - name: Open or update PR
         if: steps.changes.outputs.changed == 'true'
@@ -95,13 +80,13 @@ jobs:
           token: ${{ secrets.AUTO_PR_TOKEN }}
           branch: bsdata-auto-update
           base: main
-          commit-message: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
-          title: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}"
+          commit-message: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.changes.outputs.short }}"
+          title: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.changes.outputs.short }}"
           body: |
             Automated BSData scrape detected changes across one or more outputs.
 
-            - **Source:** [BSData/wh40k-10e@${{ steps.bsdata-sha.outputs.short }}](https://github.com/BSData/wh40k-10e/commit/${{ steps.bsdata-sha.outputs.sha }})
-            - **Upstream committed at:** `${{ steps.bsdata-sha.outputs.committed }}`
+            - **Source:** [BSData/wh40k-10e@${{ steps.changes.outputs.short }}](https://github.com/BSData/wh40k-10e/commit/${{ steps.changes.outputs.sha }})
+            - **Upstream committed at:** `${{ steps.changes.outputs.committed }}`
             - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
             Files that may be in this diff:
