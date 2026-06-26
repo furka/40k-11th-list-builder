@@ -19,9 +19,29 @@ import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { enhancementNameKey } from "../scrape-mfm-11th/name-key.mjs";
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = resolve(__dirname, ".cache");
 const CACHE_PATH = resolve(CACHE_DIR, "llm-keyword-classifications.json");
+
+// Same-faction datasheets whose name is a strict SUPERSTRING of the target's
+// (e.g. target "CAPTAIN" → ["CAPTAIN ON BIKE", "CAPTAIN IN TERMINATOR ARMOUR"]).
+// The disambiguation is intentionally asymmetric: a short BASE datasheet (often
+// codex-resident with no block of its own) needs to be told about its longer
+// variants — whose blocks all carry the generic "Captain" keyword — so it returns
+// notFound instead of borrowing one. A long variant has a distinct heading and
+// needs no such help, so we never feed it its own base name (which previously
+// confused the LLM into dropping legit variants like "Captain on Bike"). Pure
+// function — unit-tested.
+export function deriveConfusableSiblings(targetName, siblingNames) {
+  const kt = enhancementNameKey(targetName);
+  if (!kt) return [];
+  return [...siblingNames].filter((s) => {
+    const ks = enhancementNameKey(s);
+    return ks && ks !== kt && ks.includes(kt);
+  });
+}
 
 const MODEL_ID = "claude-haiku-4-5-20251001";
 
@@ -41,7 +61,8 @@ Rules:
 - Output UPPERCASE versions of every keyword you find.
 - Do NOT include weapon-level keywords (Anti-Vehicle, Twin-Linked, Lance, Sustained Hits, etc.). Those appear inside weapon ability brackets and are not datasheet keywords.
 - The pages may also contain other datasheets, stratagems, or rules that mention the target datasheet's name in passing. Use only the KEYWORDS line of the section that DEFINES the target datasheet (its stat block heading appears in ALL CAPS, followed by M/T/SV/W/LD/OC stats).
-- A single datasheet can span multiple variants (e.g. CHAOS LORD vs CHAOS LORD WITH JUMP PACK). Match on the EXACT datasheet name given to you and extract only THAT variant's KEYWORDS line.
+- Extract the KEYWORDS line of the stat block whose HEADING (the ALL-CAPS title at the top of the stat block) is EXACTLY the target name. A datasheet's name also appears as a keyword inside its own block and inside related datasheets' blocks — match on the HEADING, not on a keyword.
+- The user message may list "Other, longer-named datasheets" — these are DIFFERENT datasheets (e.g. target "CAPTAIN" vs "CAPTAIN ON BIKE") whose blocks carry the target's name as a generic keyword. If the only stat block(s) present are headed by one of those longer names (no block headed EXACTLY the target), set notFound: true — do NOT borrow their KEYWORDS line. (This does not apply when a block IS headed exactly the target: extract it normally even though its keywords include the shared term.)
 - If the pages do not contain the target datasheet's stat block (only stratagem references, lore text, or cross-mentions), set notFound: true and leave the arrays empty.
 - Do not invent keywords. Do not synonym-expand. Emit exactly what the KEYWORDS / FACTION KEYWORDS lines say.`;
 
@@ -74,11 +95,16 @@ const KEYWORD_TOOL = {
   },
 };
 
-function makeCacheKey({ datasheetName, pageTexts }) {
+function makeCacheKey({ datasheetName, pageTexts, confusableSiblings = [] }) {
   const h = createHash("sha256");
+  h.update("v3:"); // bumped when the sibling-disambiguation prompt landed
   h.update(MODEL_ID);
   h.update("\0");
   h.update(datasheetName);
+  h.update("\0");
+  // Sibling set affects the prompt, so it must affect the key. Sort for
+  // stability (the set's order is irrelevant to the result).
+  h.update([...confusableSiblings].sort().join("|"));
   h.update("\0");
   // Page order is meaningful (reflects the PDF) so don't sort here.
   for (const p of pageTexts) {
@@ -152,9 +178,10 @@ export async function classifyKeywordsWithLLM({
   pageTexts,
   factionName,
   siblingDatasheetNames,
+  confusableSiblings = [],
 }) {
   const cache = await getCache();
-  const key = makeCacheKey({ datasheetName, pageTexts });
+  const key = makeCacheKey({ datasheetName, pageTexts, confusableSiblings });
   if (cache[key]) {
     const filtered = filterLeakage(cache[key].response, siblingDatasheetNames);
     return { result: filtered.result, cacheHit: true, leaked: filtered.leaked };
@@ -188,7 +215,13 @@ export async function classifyKeywordsWithLLM({
       {
         role: "user",
         content:
-          `Datasheet: ${datasheetName}\n\n` +
+          `Datasheet (extract the block titled EXACTLY this): ${datasheetName}\n\n` +
+          (confusableSiblings.length
+            ? `Other, longer-named datasheets (different units that carry this ` +
+              `name as a generic keyword — do NOT extract these; if no block is ` +
+              `headed EXACTLY "${datasheetName}", return notFound): ` +
+              `${confusableSiblings.join(", ")}\n\n`
+            : "") +
           `Faction Pack PDF pages that mention this name ` +
           `(${pageTexts.length} page${pageTexts.length === 1 ? "" : "s"}):\n\n` +
           pagesBody,

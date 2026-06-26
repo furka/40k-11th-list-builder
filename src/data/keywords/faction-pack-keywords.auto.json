@@ -1,6 +1,6 @@
 {
   "_source": "Warhammer 40,000 Faction Pack PDFs",
-  "_generatedAt": "2026-06-26T09:59:04.041Z",
+  "_generatedAt": "2026-06-26T11:22:23.570Z",
   "_generator": "scripts/scrape-faction-pack-11th",
   "ADEPTA SORORITAS": {
     "BATTLE SANCTUM": [
@@ -100,7 +100,7 @@
     ],
     "CONTEMPTOR-ACHILLUS DREADNOUGHT": [
       "ADEPTUS CUSTODES",
-      "CONTEMPTOR - ACHILLUS DREADNOUGHT",
+      "CONTEMPTOR-ACHILLUS DREADNOUGHT",
       "IMPERIUM",
       "VEHICLE",
       "WALKER"
@@ -120,6 +120,12 @@
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
+    ],
+    "CUSTODIAN GUARD": [
+      "ADEPTUS CUSTODES",
+      "CUSTODIAN GUARD",
+      "IMPERIUM",
+      "INFANTRY"
     ],
     "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS": [
       "ADEPTUS CUSTODES",
@@ -202,8 +208,7 @@
       "CULT MECHANICUS",
       "IMPERIUM",
       "INFANTRY",
-      "SERVITOR BATTLECLADE",
-      "TECH-PRIEST"
+      "SERVITOR BATTLECLADE"
     ],
     "TERRAX-PATTERN TERMITE": [
       "ADEPTUS MECHANICUS",
@@ -574,15 +579,6 @@
       "SMOKE",
       "SQUADRON",
       "VEHICLE"
-    ],
-    "COMMISSAR": [
-      "ASTRA MILITARUM",
-      "CHARACTER",
-      "COMMISSAR",
-      "EPIC HERO",
-      "IMPERIUM",
-      "INFANTRY",
-      "OFFICER"
     ],
     "COMMISSAR GRAVES": [
       "ASTRA MILITARUM",
@@ -1084,15 +1080,6 @@
       "VALDOR",
       "VEHICLE"
     ],
-    "VALKYRIE": [
-      "ASTRA MILITARUM",
-      "FLY",
-      "FRAME",
-      "IMPERIUM",
-      "TRANSPORT",
-      "VALKYRIE",
-      "VEHICLE"
-    ],
     "VALKYRIE SKY TALON": [
       "ASTRA MILITARUM",
       "FLY",
@@ -1140,16 +1127,6 @@
     ]
   },
   "BLOOD ANGELS": {
-    "CAPTAIN": [
-      "ADEPTUS ASTARTES",
-      "BLOOD ANGELS",
-      "CAPTAIN",
-      "CHARACTER",
-      "EPIC HERO",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
-    ],
     "DEATH COMPANY MARINES WITH BOLTGUNS": [
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
@@ -1180,17 +1157,6 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY"
-    ],
-    "SANGUINARY PRIEST": [
-      "ADEPTUS ASTARTES",
-      "BLOOD ANGELS",
-      "CHARACTER",
-      "FLY",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY",
-      "JUMP PACK",
-      "SANGUINARY PRIEST"
     ]
   },
   "CHAOS DAEMONS": {
@@ -1913,16 +1879,6 @@
       "SMOKE",
       "VEHICLE"
     ],
-    "CHAOS LORD": [
-      "CHAOS",
-      "CHAOS LORD",
-      "CHARACTER",
-      "GRENADES",
-      "HERETIC ASTARTES",
-      "MOUNTED",
-      "SLAANESH",
-      "STEED OF SLAANESH"
-    ],
     "CHAOS LORD ON BIKE": [
       "CHAOS",
       "CHAOS LORD ON BIKE",
@@ -2178,16 +2134,6 @@
       "INFANTRY",
       "PSYKER",
       "ROGUE PSYKER"
-    ],
-    "SORCERER": [
-      "CHAOS",
-      "CHARACTER",
-      "GRENADES",
-      "HERETIC ASTARTES",
-      "MOUNTED",
-      "SLAANESH",
-      "SORCERER",
-      "STEED OF SLAANESH"
     ],
     "SORCERER ON BIKE": [
       "CHAOS",
@@ -2491,15 +2437,6 @@
       "PSYKER",
       "TERMINATOR"
     ],
-    "RAZORBACK": [
-      "DEDICATED TRANSPORT",
-      "GREY KNIGHTS",
-      "IMPERIUM",
-      "RELIC RAZORBACK",
-      "SMOKE",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "SERVITORS": [
       "GREY KNIGHTS",
       "IMPERIUM",
@@ -2569,17 +2506,6 @@
       "KILL TEAM",
       "ORDO XENOS",
       "RETINUE"
-    ],
-    "INQUISITOR": [
-      "AGENTS OF THE IMPERIUM",
-      "CHARACTER",
-      "EPIC HERO",
-      "GRENADES",
-      "IMPERIUM",
-      "INQUISITOR",
-      "KROYLE",
-      "MOUNTED",
-      "ORDO XENOS"
     ],
     "JANUS DRAIK": [
       "AGENTS OF THE IMPERIUM",
@@ -2959,13 +2885,6 @@
       "ORKS",
       "VEHICLE"
     ],
-    "BIG MEK": [
-      "BIG MEK",
-      "DAKKARIG",
-      "ORKS",
-      "VEHICLE",
-      "WALKER"
-    ],
     "BIG TRAKK": [
       "BIG TRAKK",
       "ORKS",
@@ -3130,19 +3049,17 @@
       "SKORCHAS",
       "SPEED FREEKS"
     ],
+    "SQUIGGOTH": [
+      "MONSTER",
+      "ORKS",
+      "SQUIGGOTH",
+      "TRANSPORT"
+    ],
     "TANKBUSTAS": [
       "GRENADES",
       "INFANTRY",
       "ORKS",
       "TANKBUSTAS"
-    ],
-    "WARBOSS": [
-      "CHARACTER",
-      "GRENADES",
-      "MOUNTED",
-      "ORKS",
-      "SPEED FREEKS",
-      "WARBOSS"
     ],
     "WARBUGGIES": [
       "MOUNTED",
@@ -3180,22 +3097,6 @@
       "JUMP PACK",
       "RAVEN GUARD",
       "TACTICUS"
-    ],
-    "ANCIENT": [
-      "ADEPTUS ASTARTES",
-      "ANCIENT",
-      "CHARACTER",
-      "GRENADES",
-      "IMPERIUM",
-      "MOUNTED"
-    ],
-    "APOTHECARY": [
-      "ADEPTUS ASTARTES",
-      "APOTHECARY",
-      "CHARACTER",
-      "GRENADES",
-      "IMPERIUM",
-      "MOUNTED"
     ],
     "ASSAULT SQUAD": [
       "ADEPTUS ASTARTES",
@@ -3251,14 +3152,6 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "CAPTAIN": [
-      "ADEPTUS ASTARTES",
-      "CAPTAIN",
-      "CHARACTER",
-      "GRENADES",
-      "IMPERIUM",
-      "MOUNTED"
-    ],
     "CERBERUS": [
       "ADEPTUS ASTARTES",
       "CERBERUS",
@@ -3312,13 +3205,6 @@
       "IMPERIUM",
       "SMOKE",
       "VEHICLE"
-    ],
-    "DREADNOUGHT": [
-      "ADEPTUS ASTARTES",
-      "DREADNOUGHT",
-      "IMPERIUM",
-      "VEHICLE",
-      "WALKER"
     ],
     "DREADNOUGHT DROP POD": [
       "ADEPTUS ASTARTES",
@@ -3393,15 +3279,6 @@
       "IMPERIUM",
       "KRATOS",
       "SMOKE",
-      "VEHICLE"
-    ],
-    "LAND RAIDER": [
-      "ADEPTUS ASTARTES",
-      "FRAME",
-      "IMPERIUM",
-      "LAND RAIDER",
-      "SMOKE",
-      "TRANSPORT",
       "VEHICLE"
     ],
     "LAND RAIDER ACHILLES": [
@@ -3490,15 +3367,6 @@
       "LAND SPEEDER TYPHOON",
       "VEHICLE"
     ],
-    "LIBRARIAN": [
-      "ADEPTUS ASTARTES",
-      "CHARACTER",
-      "GRENADES",
-      "IMPERIUM",
-      "LIBRARIAN",
-      "MOUNTED",
-      "PSYKER"
-    ],
     "MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS": [
       "ADEPTUS ASTARTES",
       "CHAPTER MASTER",
@@ -3519,13 +3387,6 @@
       "TITANIC",
       "TRANSPORT",
       "VEHICLE"
-    ],
-    "OUTRIDER SQUAD": [
-      "ADEPTUS ASTARTES",
-      "GRENADES",
-      "IMPERIUM",
-      "MOUNTED",
-      "OUTRIDER"
     ],
     "PRIMARIS COMPANY CHAMPION": [
       "ADEPTUS ASTARTES",
@@ -3696,14 +3557,6 @@
       "IMPERIUM",
       "TARANTULA SENTRY BATTERY",
       "VEHICLE"
-    ],
-    "TECHMARINE": [
-      "ADEPTUS ASTARTES",
-      "CHARACTER",
-      "GRENADES",
-      "IMPERIUM",
-      "MOUNTED",
-      "TECHMARINE"
     ],
     "TERMINATOR ASSAULT SQUAD": [
       "ADEPTUS ASTARTES",
@@ -4128,12 +3981,6 @@
       "FRAME",
       "T'AU EMPIRE",
       "VEHICLE"
-    ],
-    "ETHEREAL": [
-      "CHARACTER",
-      "ETHEREAL",
-      "INFANTRY",
-      "T'AU EMPIRE"
     ],
     "GREAT KNARLOC": [
       "FRAME",

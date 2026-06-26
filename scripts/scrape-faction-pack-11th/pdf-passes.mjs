@@ -33,6 +33,7 @@ import {
 import {
   classifyKeywordsWithLLM,
   flushKeywordCache,
+  deriveConfusableSiblings,
 } from "./llm-classify-keywords.mjs";
 import { enhancementNameKey } from "../scrape-mfm-11th/name-key.mjs";
 
@@ -460,6 +461,14 @@ async function scrapePdfKeywordsForFaction(
     const siblingDatasheetNames = new Set(allSiblingNames);
     siblingDatasheetNames.delete(sheet.name.toUpperCase());
 
+    // Same-faction datasheets whose name overlaps this one (e.g. base "Captain"
+    // vs "Captain on Bike") share keywords and confuse the classifier into
+    // borrowing the wrong block; name them so the LLM returns notFound instead.
+    const confusableSiblings = deriveConfusableSiblings(
+      sheet.name,
+      siblingDatasheetNames
+    );
+
     let result;
     let cacheHit;
     let leaked;
@@ -470,6 +479,7 @@ async function scrapePdfKeywordsForFaction(
         pageTexts: matched.pages,
         factionName: factionPayload.faction,
         siblingDatasheetNames,
+        confusableSiblings,
       });
       result = res.result;
       cacheHit = res.cacheHit;
