@@ -6,6 +6,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Warhammer 40K 11th Edition army list builder hosted at https://furka.github.io/40k-11th-list-builder/. It's a Vue 3 application built with Vite that helps users build and manage army lists based on the official Munitorum Field Manual (MFM) points values.
 
+## Game Rules (Source of Truth)
+
+The app must follow the official Warhammer 40,000 core rules and army-building rules. These rules are kept in the `docs/` folder and are the authority that list-building enforcement (points totals, detachment/enhancement/unit limits, validation) must be audited against:
+
+- **`docs/core-rules.txt`** — the public 11th-edition Core Rules.
+- **`docs/muster-armies.md`** — the army-mustering rules (sections 25.03 Select Battle Size and 25.04 Fill Your Army Roster), transcribed verbatim from the official Warhammer 40,000 app since they are absent from the public Core Rules PDF.
+
+When changing list-building logic or validation, consult these documents and keep them in sync if GW updates the rules.
+
 ## Development Commands
 
 ```bash
