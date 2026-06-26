@@ -12,6 +12,7 @@ import {
   findEnhancementPages,
   findDetachmentRulesPages,
   findDatasheetPages,
+  pageHasStatBlock,
 } from "./find-section.mjs";
 import {
   classifyWithLLM,
@@ -559,6 +560,20 @@ async function scrapePdfKeywordsForFaction(
     if (!matched) {
       warnings.add("kw-not-in-pdf", { slug, datasheet: sheet.name });
       counts.codexResident++;
+      continue;
+    }
+
+    // Deterministic stat-block gate: when the name appears only in errata,
+    // detachment rules, stratagem triggers, or enhancement-host text (no stat
+    // block on any matched page), the LLM has nothing to extract and tends to
+    // fabricate keywords from the surrounding prose (LAND SPEEDER VENGEANCE got
+    // CHARACTER from nearby character errata, MONSTER from an [ANTI-MONSTER]
+    // weapon keyword, FRAME from a "Keywords Section Add 'FRAME'" line). Treat
+    // it as stat-block-absent and fall back to BSData, exactly as the LLM's own
+    // notFound path does — but deterministically, before any LLM/cache call.
+    if (!matched.pages.some(pageHasStatBlock)) {
+      warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
+      counts.statBlockAbsent++;
       continue;
     }
 

@@ -59,6 +59,17 @@ export function findDatasheetPages(pages, datasheetName) {
   return { pages: matches };
 }
 
+// A datasheet stat block always ends with a "FACTION KEYWORDS:" line; errata,
+// detachment-rules, stratagem, and enhancement-host pages never do. So this is a
+// reliable structural signal that a real stat block is present on the page —
+// used to skip datasheets whose stat block was stripped from the PDF when their
+// codex shipped (only post-codex errata mentions remain). Without a stat block
+// the LLM has nothing to extract and tends to fabricate keywords from the
+// surrounding prose (e.g. LAND SPEEDER VENGEANCE → CHARACTER/MONSTER).
+export function pageHasStatBlock(pageText) {
+  return /FACTION\s+KEYWORDS/i.test(pageText);
+}
+
 export function findDetachmentRulesPages(pages, detachmentName) {
   const key = enhancementNameKey(detachmentName);
   if (!key) return null;

@@ -10,10 +10,6 @@
       "IMPERIUM",
       "TOWERING"
     ],
-    "CASTIGATOR": [
-      "ADEPTA SORORITAS",
-      "FRAME"
-    ],
     "CELESTIAN INSIDIANTS": [
       "ADEPTA SORORITAS",
       "CELESTIAN INSIDIANTS",
@@ -41,11 +37,6 @@
       "DEATH CULT ASSASSINS",
       "IMPERIUM",
       "INFANTRY"
-    ],
-    "IMMOLATOR": [
-      "ADEPTA SORORITAS",
-      "FRAME",
-      "TRANSPORT"
     ],
     "INTRANZIA FRAYE": [
       "ADEPTA SORORITAS",
@@ -176,12 +167,6 @@
     ]
   },
   "ADEPTUS MECHANICUS": {
-    "CYBERNETICA DATASMITH": [
-      "ADEPTUS MECHANICUS",
-      "CHARACTER",
-      "SUPPORT",
-      "TECH-PRIEST"
-    ],
     "HASTARII EXTERMINATORS": [
       "ADEPTUS MECHANICUS",
       "EXTERMINATORS",
@@ -218,12 +203,6 @@
       "IMPERIUM",
       "INFANTRY",
       "SERVITOR BATTLECLADE"
-    ],
-    "SKORPIUS DUNERIDER": [
-      "ADEPTUS MECHANICUS",
-      "FRAME",
-      "TRANSPORT",
-      "VEHICLE"
     ],
     "TERRAX-PATTERN TERMITE": [
       "ADEPTUS MECHANICUS",
@@ -1960,13 +1939,6 @@
       "SMOKE",
       "VEHICLE"
     ],
-    "CHAOS LAND RAIDER": [
-      "CHAOS SPACE MARINES",
-      "FRAME",
-      "HERETIC ASTARTES",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "CHAOS LORD ON BIKE": [
       "CHAOS",
       "CHAOS LORD ON BIKE",
@@ -1974,26 +1946,6 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "MOUNTED"
-    ],
-    "CHAOS PREDATOR ANNIHILATOR": [
-      "CHAOS SPACE MARINES",
-      "FRAME",
-      "HERETIC ASTARTES",
-      "TANK",
-      "VEHICLE"
-    ],
-    "CHAOS PREDATOR DESTRUCTOR": [
-      "CHAOS",
-      "FRAME",
-      "HERETIC ASTARTES",
-      "TANK",
-      "VEHICLE"
-    ],
-    "CHAOS RHINO": [
-      "FRAME",
-      "HERETIC ASTARTES",
-      "TRANSPORT",
-      "VEHICLE"
     ],
     "CHAOS THUNDERHAWK": [
       "AIRCRAFT",
@@ -2005,10 +1957,6 @@
       "TITANIC",
       "TRANSPORT",
       "VEHICLE"
-    ],
-    "CHAOS VINDICATOR": [
-      "FRAME",
-      "HERETIC ASTARTES"
     ],
     "CULTIST MOB WITH FIREARMS": [
       "BATTLELINE",
@@ -2176,10 +2124,6 @@
       "NEMESIS CLAW",
       "PSYKER"
     ],
-    "NOCTILITH CROWN": [
-      "CHAOS SPACE MARINES",
-      "FRAME"
-    ],
     "RAPTORS": [
       "CHAOS",
       "FLY",
@@ -2296,15 +2240,6 @@
       "IMPERIUM",
       "INFANTRY",
       "TERMINATOR"
-    ],
-    "LAND SPEEDER VENGEANCE": [
-      "CHARACTER",
-      "DARK ANGELS",
-      "FLY",
-      "FRAME",
-      "MONSTER",
-      "RAVENWING",
-      "VEHICLE"
     ],
     "RAVENWING TALONMASTER": [
       "ADEPTUS ASTARTES",
@@ -2512,20 +2447,9 @@
       "FRAME",
       "SKIMMER",
       "TRANSPORT"
-    ],
-    "WYCHES": [
-      "CHARACTER",
-      "DRUKHARI",
-      "INFANTRY",
-      "WYCH CULT"
     ]
   },
   "EMPEROR’S CHILDREN": {
-    "CHAOS RHINO": [
-      "EMPEROR'S CHILDREN",
-      "FRAME",
-      "TRANSPORT"
-    ],
     "DEFILER": [
       "CHAOS",
       "DAEMON",
@@ -2623,12 +2547,6 @@
       "ORDO XENOS",
       "RETINUE"
     ],
-    "CORVUS BLACKSTAR": [
-      "FRAME",
-      "IMPERIAL AGENTS",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "DAEMONHOST": [
       "AGENTS OF THE IMPERIUM",
       "DAEMON",
@@ -2685,10 +2603,6 @@
       "IMPERIUM",
       "INFANTRY",
       "INQUISITOR"
-    ],
-    "INQUISITORIAL CHIMERA": [
-      "FRAME",
-      "IMPERIAL AGENTS"
     ],
     "JANUS DRAIK": [
       "AGENTS OF THE IMPERIUM",
@@ -2902,11 +2816,6 @@
       "EPIC HERO",
       "INFANTRY",
       "LEAGUES OF VOTANN"
-    ],
-    "SAGITAUR": [
-      "CAVALRY",
-      "LEAGUES OF VOTANN",
-      "TRANSPORT"
     ]
   },
   "NECRONS": {
@@ -2949,12 +2858,6 @@
       "MONSTER",
       "NECRONS",
       "TOMB STALKER"
-    ],
-    "CATACOMB COMMAND BARGE": [
-      "CHARACTER",
-      "FRAME",
-      "NECRONS",
-      "VEHICLE"
     ],
     "C’TAN SHARD OF THE DECEIVER": [
       "C'TAN SHARD OF THE DECEIVER",
@@ -3047,14 +2950,6 @@
       "TESSERACT ARK",
       "VEHICLE"
     ],
-    "THE SILENT KING": [
-      "CHARACTER",
-      "EPIC HERO",
-      "NECRONS",
-      "THE SILENT KING",
-      "TRIARCH",
-      "VEHICLE"
-    ],
     "TOMB CITADEL WALLS": [
       "FORTIFICATION",
       "FRAME",
@@ -3126,12 +3021,6 @@
       "INFANTRY",
       "ORKS"
     ],
-    "BLITZA-BOMMER": [
-      "AIRCRAFT",
-      "FRAME",
-      "ORKS",
-      "VEHICLE"
-    ],
     "BOSS ZAGSTRUK": [
       "BOSS ZAGSTRUK",
       "CHARACTER",
@@ -3151,12 +3040,6 @@
       "BREAKA BOYZ",
       "GRENADES",
       "INFANTRY",
-      "ORKS"
-    ],
-    "BURNA-BOMMER": [
-      "AIRCRAFT",
-      "FRAME",
-      "MONSTER",
       "ORKS"
     ],
     "CHINORK WARKOPTA": [
@@ -4225,12 +4108,6 @@
       "TRANSPORT",
       "TYRANIDS"
     ],
-    "HIVE TYRANT": [
-      "CHARACTER",
-      "MONSTER",
-      "SYNAPSE",
-      "TYRANIDS"
-    ],
     "HYPERADAPTED RAVENERS": [
       "BURROWERS",
       "GREAT DEVOURER",
@@ -4246,15 +4123,6 @@
       "INFANTRY",
       "MALANTHROPE",
       "SYNAPSE",
-      "TYRANIDS"
-    ],
-    "MAWLOC": [
-      "MONSTER",
-      "TYRANIDS",
-      "VANGUARD INVADER"
-    ],
-    "PSYCHOPHAGE": [
-      "SMOKE",
       "TYRANIDS"
     ],
     "RAVENERS": [
@@ -4288,11 +4156,6 @@
       "THE RED TERROR",
       "TYRANIDS",
       "VANGUARD INVADER"
-    ],
-    "TRYGON": [
-      "CHARACTER",
-      "MONSTER",
-      "TYRANIDS"
     ],
     "TYRANID PRIME WITH LASH WHIP": [
       "CHARACTER",
@@ -4468,10 +4331,6 @@
       "VEHICLE",
       "WALKER"
     ],
-    "TIDEWALL SHIELDLINE": [
-      "FRAME",
-      "T'AU EMPIRE"
-    ],
     "TIGER SHARK": [
       "AIRCRAFT",
       "FLY",
@@ -4511,13 +4370,6 @@
     ]
   },
   "WORLD EATERS": {
-    "CHAOS RHINO": [
-      "CHAOS",
-      "FRAME",
-      "TRANSPORT",
-      "VEHICLE",
-      "WORLD EATERS"
-    ],
     "DEFILER": [
       "CHAOS",
       "DAEMON",
