@@ -13,13 +13,13 @@ const appStore = useAppStore();
 const alliesModalRef = ref(null);
 
 const freeAttachLabel = computed(() =>
-  appStore.freeAttach ? "Bypass Restrictions" : "Enforce Restrictions"
+  appStore.freeAttach ? "Restrictions Bypassed" : "Restrictions Enforced"
 );
 const freeAttachTooltip = computed(() =>
   appStore.freeAttach ? bypassTitle : enforceTitle
 );
 const editCollectionLabel = computed(() =>
-  appStore.editCollection ? "Edit Collection" : "Lock Collection"
+  appStore.editCollection ? "Collection Editable" : "Collection Locked"
 );
 const editCollectionTooltip = computed(() =>
   appStore.editCollection

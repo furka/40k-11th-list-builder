@@ -20,19 +20,19 @@ const hasPreviousVersion = computed(
 );
 
 const freeAttachLabel = computed(() =>
-  appStore.freeAttach ? "Bypass Restrictions" : "Enforce Restrictions"
+  appStore.freeAttach ? "Restrictions Bypassed" : "Restrictions Enforced"
 );
 const editCollectionLabel = computed(() =>
-  appStore.editCollection ? "Edit Collection" : "Lock Collection"
+  appStore.editCollection ? "Collection Editable" : "Collection Locked"
 );
 const legendsLabel = computed(() =>
-  appStore.showLegends ? "Show Legends" : "Hide Legends"
+  appStore.showLegends ? "Legends Visible" : "Legends Hidden"
 );
 const pointsChangesLabel = computed(() =>
-  appStore.showPointsChanges ? "Show Points Changes" : "Hide Points Changes"
+  appStore.showPointsChanges ? "Points Changes Visible" : "Points Changes Hidden"
 );
 const keywordsLabel = computed(() =>
-  appStore.showKeywords ? "Show Keywords" : "Hide Keywords"
+  appStore.showKeywords ? "Keywords Visible" : "Keywords Hidden"
 );
 
 </script>
