@@ -12,8 +12,8 @@ import {
   findEnhancementPages,
   findDetachmentRulesPages,
   findDatasheetPages,
-  pageHasStatBlock,
 } from "./find-section.mjs";
+import { PAGE_TYPE, filterPagesByType } from "./page-types.mjs";
 import {
   classifyWithLLM,
   flushLlmCache,
@@ -259,8 +259,13 @@ async function scrapePdfRestrictionsForFaction(
     empty: 0,
   };
 
+  // Enhancements are defined in detachment sections (the ENHANCEMENTS heading on
+  // a detachment page), so only feed detachment-type pages to the classifier —
+  // never datasheet stat blocks or errata prose that merely name the enhancement.
+  const detachmentPages = filterPagesByType(pages, PAGE_TYPE.DETACHMENT);
+
   for (const enh of mfmEnhancements) {
-    const matched = findEnhancementPages(pages, enh.name);
+    const matched = findEnhancementPages(detachmentPages, enh.name);
     if (!matched) {
       warnings.add("mfm-missing-in-pdf", { slug, name: enh.name });
       counts.mfmMissed++;
@@ -425,8 +430,17 @@ async function scrapeDetachmentGrantsForFaction(
     failed: 0,
   };
 
+  // Grants live either in a detachment's main rules section or in a "Rules
+  // Updates" errata entry ("… DETACHMENT, Keywords Section Change to: '… gain the
+  // BATTLELINE keyword'"), so scope to both those page types.
+  const grantPages = filterPagesByType(
+    pages,
+    PAGE_TYPE.DETACHMENT,
+    PAGE_TYPE.RULES_UPDATE
+  );
+
   for (const det of factionPayload.detachments) {
-    const matched = findDetachmentRulesPages(pages, det.name);
+    const matched = findDetachmentRulesPages(grantPages, det.name);
     if (!matched) {
       warnings.add("dgrants-section-missing-in-pdf", { slug, detachment: det.name });
       counts.sectionMissed++;
@@ -555,25 +569,25 @@ async function scrapePdfKeywordsForFaction(
     factionPayload.datasheets.map((d) => d.name.toUpperCase())
   );
 
-  for (const sheet of factionPayload.datasheets) {
-    const matched = findDatasheetPages(pages, sheet.name);
-    if (!matched) {
-      warnings.add("kw-not-in-pdf", { slug, datasheet: sheet.name });
-      counts.codexResident++;
-      continue;
-    }
+  // Keywords come only from datasheet stat blocks, so restrict the reading
+  // window to datasheet-type pages. A datasheet whose name appears only on
+  // errata / detachment / stratagem pages (codex-resident — its stat block was
+  // stripped from the pack when the codex shipped) yields no datasheet page and
+  // falls back to BSData. This is the deterministic form of the old per-page
+  // stat-block gate: it stops the LLM fabricating keywords from prose (the LAND
+  // SPEEDER VENGEANCE → CHARACTER/MONSTER bug).
+  const datasheetPages = filterPagesByType(pages, PAGE_TYPE.DATASHEET);
 
-    // Deterministic stat-block gate: when the name appears only in errata,
-    // detachment rules, stratagem triggers, or enhancement-host text (no stat
-    // block on any matched page), the LLM has nothing to extract and tends to
-    // fabricate keywords from the surrounding prose (LAND SPEEDER VENGEANCE got
-    // CHARACTER from nearby character errata, MONSTER from an [ANTI-MONSTER]
-    // weapon keyword, FRAME from a "Keywords Section Add 'FRAME'" line). Treat
-    // it as stat-block-absent and fall back to BSData, exactly as the LLM's own
-    // notFound path does — but deterministically, before any LLM/cache call.
-    if (!matched.pages.some(pageHasStatBlock)) {
-      warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
-      counts.statBlockAbsent++;
+  for (const sheet of factionPayload.datasheets) {
+    const matched = findDatasheetPages(datasheetPages, sheet.name);
+    if (!matched) {
+      if (findDatasheetPages(pages, sheet.name)) {
+        warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
+        counts.statBlockAbsent++;
+      } else {
+        warnings.add("kw-not-in-pdf", { slug, datasheet: sheet.name });
+        counts.codexResident++;
+      }
       continue;
     }
 
