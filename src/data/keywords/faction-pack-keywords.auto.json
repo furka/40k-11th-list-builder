@@ -1,6 +1,6 @@
 {
   "_source": "Warhammer 40,000 Faction Pack PDFs",
-  "_generatedAt": "2026-06-26T11:22:23.570Z",
+  "_generatedAt": "2026-06-28T15:00:08.163Z",
   "_generator": "scripts/scrape-faction-pack-11th",
   "ADEPTA SORORITAS": {
     "BATTLE SANCTUM": [
@@ -120,12 +120,6 @@
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
-    ],
-    "CUSTODIAN GUARD": [
-      "ADEPTUS CUSTODES",
-      "CUSTODIAN GUARD",
-      "IMPERIUM",
-      "INFANTRY"
     ],
     "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS": [
       "ADEPTUS CUSTODES",
@@ -2526,9 +2520,7 @@
     ],
     "KILL TEAM CASSIUS": [
       "AGENTS OF THE IMPERIUM",
-      "CHARACTER",
       "DEATHWATCH",
-      "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
@@ -3152,6 +3144,14 @@
       "TRANSPORT",
       "VEHICLE"
     ],
+    "CAPTAIN": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "GRENADES",
+      "IMPERIUM",
+      "MOUNTED"
+    ],
     "CERBERUS": [
       "ADEPTUS ASTARTES",
       "CERBERUS",
@@ -3635,14 +3635,6 @@
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
     ],
-    "VICTRIX HONOUR GUARD": [
-      "ADEPTUS ASTARTES",
-      "IMPERIUM",
-      "INFANTRY",
-      "TACTICUS",
-      "ULTRAMARINES",
-      "VICTRIX HONOUR GUARD"
-    ],
     "VINDICATOR LASER DESTROYER": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -3885,9 +3877,11 @@
     ],
     "HYPERADAPTED RAVENERS": [
       "BURROWERS",
+      "CHARACTER",
       "GREAT DEVOURER",
       "HYPERADAPTED RAVENERS",
       "INFANTRY",
+      "SYNAPSE",
       "TYRANIDS",
       "VANGUARD INVADER"
     ],

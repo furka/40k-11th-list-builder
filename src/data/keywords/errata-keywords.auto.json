@@ -419,6 +419,11 @@
       "add": [
         "FRAME"
       ]
+    },
+    "HELDRAKE": {
+      "remove": [
+        "AIRCRAFT"
+      ]
     }
   },
   "GENESTEALER CULTS": {
@@ -805,11 +810,6 @@
     "NORN ASSIMILATOR": {
       "add": [
         "HARVESTER"
-      ]
-    },
-    "PARASITE OF MORTREX": {
-      "add": [
-        "SYNAPSE"
       ]
     },
     "PSYCHOPHAGE": {
