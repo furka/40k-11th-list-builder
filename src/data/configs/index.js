@@ -20,16 +20,14 @@ import wargearRestrictionsBsdata from "./wargear-restrictions.bsdata.auto.json";
  *      MFM-PDF can't see — once a codex ships, GW strips its enhancements
  *      from the Faction Pack PDF, but BSData carries them.
  *
- * Each entry may set any subset of:
- *   - characterOnly:    boolean — host must carry the CHARACTER keyword
- *                       (NOTE: now redundant with the universal default —
- *                       runtime ignores this flag)
+ * Only deviations from the universal defaults are stored — every enhancement is
+ * CHARACTER-only and excluded from EPIC HEROES unless a field below says
+ * otherwise. Each entry may set any subset of:
  *   - nonCharacterOnly: boolean — host must NOT carry the CHARACTER keyword
  *                       (used for "Upgrade"-tagged enhancements)
- *   - notOnEpicHeroes:  boolean — host must NOT carry the EPIC HERO keyword
- *                       (NOTE: now redundant — universal default blocks
- *                       EPIC HEROES unless host is in allowedHosts)
  *   - allowedHosts:     string[] — host datasheet name must be in this list
+ *                       (also suppresses the CHARACTER / EPIC HERO defaults for
+ *                       the named hosts)
  *   - requiredKeywords: string[] — every keyword must be present on the host
  *                       datasheet's keyword set (sourced via the BSData
  *                       overlay + manual overrides at `src/data/keywords/`)

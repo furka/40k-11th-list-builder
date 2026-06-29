@@ -242,9 +242,7 @@ function dropEmptyFields(restrictions) {
   const out = {};
   if (restrictions.allowedHosts?.length) out.allowedHosts = restrictions.allowedHosts;
   if (restrictions.requiredKeywords?.length) out.requiredKeywords = restrictions.requiredKeywords;
-  if (restrictions.characterOnly) out.characterOnly = true;
   if (restrictions.nonCharacterOnly) out.nonCharacterOnly = true;
-  if (restrictions.notOnEpicHeroes) out.notOnEpicHeroes = true;
   if (typeof restrictions.limit === "number") out.limit = restrictions.limit;
   return out;
 }

@@ -3,8 +3,7 @@
 //
 // Per-call contract:
 //   in:  { enhancementName, sectionText, datasheetNames }
-//   out: { allowedHosts, requiredKeywords, characterOnly, nonCharacterOnly,
-//          notOnEpicHeroes, limit, conditional }
+//   out: { allowedHosts, requiredKeywords, nonCharacterOnly, limit, conditional }
 //
 // Two layers of caching reduce cost and latency:
 //
@@ -43,9 +42,7 @@ If you cannot find such a definition section in the supplied pages — only stra
 Rules for filling each field when the definition IS present:
 - allowedHosts: array of UPPERCASE datasheet names from the provided list that the enhancement's host phrase names. Only include names that appear in the provided datasheet list verbatim (after uppercasing). [] if the host phrase is a keyword/role tag rather than a specific datasheet, or if there's no host restriction.
 - requiredKeywords: array of ATOMIC UPPERCASE keywords from the provided faction keyword vocabulary. Each entry MUST be a single keyword exactly as it appears in that vocabulary — NEVER concatenate two keywords into one string. A host phrase like "ADEPTUS CUSTODES WALKER model only" must emit ["ADEPTUS CUSTODES", "WALKER"] (two separate entries), not ["ADEPTUS CUSTODES WALKER"] (one combined string). Likewise "LEGIONES DAEMONICA KHORNE MONSTER" → ["LEGIONES DAEMONICA", "KHORNE", "MONSTER"]. If a token from the host phrase isn't in the vocabulary, omit it. Both allowedHosts and requiredKeywords can be populated together when the host phrase mixes a datasheet name with a keyword.
-- characterOnly: true only if the text explicitly restricts to CHARACTER models/units.
 - nonCharacterOnly: true only if the text marks this enhancement as an Upgrade applicable to non-CHARACTER units.
-- notOnEpicHeroes: true only if the text excludes EPIC HEROES explicitly.
 - limit: 1 or 2 if the text caps copies in the army ("Only one model in your army can have this enhancement", "Up to two…"). null otherwise.
 - conditional: true if the host phrase is a trigger ("If your WARLORD has this enhancement…") rather than a constraint on who can take it.
 - notDefined: true only when the enhancement is not actually defined in the supplied pages.
@@ -60,9 +57,7 @@ const RESTRICTION_TOOL = {
     properties: {
       allowedHosts: { type: "array", items: { type: "string" } },
       requiredKeywords: { type: "array", items: { type: "string" } },
-      characterOnly: { type: "boolean" },
       nonCharacterOnly: { type: "boolean" },
-      notOnEpicHeroes: { type: "boolean" },
       limit: { type: ["integer", "null"] },
       conditional: { type: "boolean" },
       notDefined: { type: "boolean" },
@@ -70,9 +65,7 @@ const RESTRICTION_TOOL = {
     required: [
       "allowedHosts",
       "requiredKeywords",
-      "characterOnly",
       "nonCharacterOnly",
-      "notOnEpicHeroes",
       "limit",
       "conditional",
       "notDefined",

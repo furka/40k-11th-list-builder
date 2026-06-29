@@ -462,7 +462,7 @@ export const useArmyListStore = defineStore("armyList", () => {
    * no legal host exists — same as drag-and-drop.
    *
    * Legality is delegated to legalDropSlots so the per-enhancement metadata
-   * (allowedHosts, characterOnly, requiredKeywords suppression, etc.) is
+   * (allowedHosts, nonCharacterOnly, requiredKeywords, etc.) is
    * respected identically to a drag.
    */
   function addEnhancement({ optionName, detachment, forced = false }) {

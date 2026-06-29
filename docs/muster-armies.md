@@ -164,11 +164,6 @@ the scraper, not the JSON.
 | 2nd/3rd copy of the same Upgrade does not count toward the army enhancement total | [`src/stores/armyList.js`](../src/stores/armyList.js) (`totalEnhancementsCount` and the `overCountIds` billing pass in `getUnitValidationError`) |
 | Upgrade-tagged enhancements can attach to non-character units | `nonCharacterOnly` flag, derived from the "(Upgrade)" suffix during scrape |
 
-The `characterOnly` and `notOnEpicHeroes` flags still appear in the
-scraped JSON for ~130 / ~3 enhancements respectively but the validators
-no longer consult them — they're redundant with the universal defaults.
-A follow-up can drop them from the scraper schema.
-
 ### Free-attach override
 
 An opt-in **"Attach freely"** toggle (`appStore.freeAttach`, surfaced in

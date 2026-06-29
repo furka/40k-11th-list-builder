@@ -10,9 +10,7 @@
           "ATOMIC",
           "KEYWORDS"
         ],
-        "characterOnly": true,
         "nonCharacterOnly": true,
-        "notOnEpicHeroes": true,
         "limit": 1
       }
     }

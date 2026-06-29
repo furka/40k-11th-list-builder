@@ -148,7 +148,7 @@ async function writeVersionDir({
 
 // PDF pass: for each MFM enhancement, find its section in the PDF text and
 // ask Claude Haiku to classify the restriction (allowedHosts / requiredKeywords
-// / characterOnly / nonCharacterOnly / notOnEpicHeroes / limit / conditional).
+// / nonCharacterOnly / limit / conditional).
 //
 // MFM-driven (not PDF-driven): we know what enhancements exist from MFM, so
 // we search FOR each one in the PDF text rather than discovering entries

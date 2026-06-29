@@ -2,9 +2,7 @@ import { getEnhancementRestrictions, getWargearRestrictions } from "../data/conf
 import { getKeywordsFor } from "../data/keywords";
 
 const RESTRICTION_FIELDS = [
-  "characterOnly",
   "nonCharacterOnly",
-  "notOnEpicHeroes",
   "allowedHosts",
   "requiredKeywords",
   "limit",

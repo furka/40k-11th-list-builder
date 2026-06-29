@@ -22,8 +22,8 @@ const TEST_MFM = {
           leader: null,
           tags: [],
           enhancements: [
-            { name: "Veil of Darkness", points: 25, characterOnly: true, limit: 1 },
-            { name: "Arisen Tyrant", points: 30, characterOnly: true, limit: 1 },
+            { name: "Veil of Darkness", points: 25, limit: 1 },
+            { name: "Arisen Tyrant", points: 30, limit: 1 },
             { name: "Enlivened Sentinels", points: 20, nonCharacterOnly: true },
             {
               name: "Special Upgrade",
@@ -42,9 +42,9 @@ const TEST_MFM = {
               nonCharacterOnly: true,
               allowedHosts: ["OVERLORD"],
             },
-            { name: "Stackable Boon", points: 10, characterOnly: true },
+            { name: "Stackable Boon", points: 10 },
             { name: "Unrestricted Boon", points: 10 },
-            { name: "Not For Heroes", points: 15, characterOnly: true, notOnEpicHeroes: true, limit: 1 },
+            { name: "Not For Heroes", points: 15, limit: 1 },
             {
               name: "Daemon-only Upgrade",
               points: 10,
@@ -289,7 +289,7 @@ describe("armyList.addEnhancement", () => {
   beforeEach(() => {
     // The base freshStore() doesn't wire mfm.getVersion to our synthetic MFM,
     // so `getEnhancementMeta` would return null and the legalDropSlots check
-    // wouldn't see characterOnly / allowedHosts restrictions. Mirror the
+    // wouldn't see nonCharacterOnly / allowedHosts restrictions. Mirror the
     // pattern used by the "Enhancement validation" describe block (line ~405).
     setActivePinia(createPinia());
     const mfm = useMfmStore();
@@ -330,7 +330,7 @@ describe("armyList.addEnhancement", () => {
     expect(enh.attachedTo).toBeUndefined();
   });
 
-  it("skips ineligible hosts to find a legal one (respects characterOnly)", () => {
+  it("skips ineligible hosts to find a legal one (respects the CHARACTER-only default)", () => {
     // Warriors come first in the array but Veil of Darkness is character-only,
     // so the store should walk past them to the character (CHRONOMANCER).
     store.setUnits([
@@ -765,7 +765,7 @@ describe("armyList Enhancement validation", () => {
 
   const hostUnit = (id, name, models = 1) => ({ id, name, models });
 
-  it("flags a characterOnly enhancement attached to a non-character squad", () => {
+  it("flags a character-only enhancement attached to a non-character squad", () => {
     const host = hostUnit("host", "NECRON WARRIORS", 10);
     const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host" };
     store.setUnits([host, e]);
@@ -834,7 +834,7 @@ describe("armyList Enhancement validation", () => {
     expect(store.getUnitValidationError(e)).toBe(false);
   });
 
-  it("passes a characterOnly enhancement attached to a character", () => {
+  it("passes a character-only enhancement attached to a character", () => {
     const host = hostUnit("host", "OVERLORD");
     const e = { ...enh("e", "Veil of Darkness"), attachedTo: "host" };
     store.setUnits([host, e]);
@@ -848,7 +848,7 @@ describe("armyList Enhancement validation", () => {
     expect(store.getUnitValidationError(e)).toBe(false);
   });
 
-  it("flags a notOnEpicHeroes enhancement attached to an epic hero", () => {
+  it("flags an enhancement attached to an epic hero (EPIC HERO default)", () => {
     const host = hostUnit("host", "IMOTEKH THE STORMLORD"); // character + epicHero
     const e = { ...enh("e", "Not For Heroes"), attachedTo: "host" };
     store.setUnits([host, e]);
@@ -1039,7 +1039,7 @@ describe("armyList Enhancement validation", () => {
     ).toBeFalsy();
     expect(
       store.getEnhancementMeta(enh("a", "Veil of Darkness"))
-    ).toMatchObject({ characterOnly: true, limit: 1 });
+    ).toMatchObject({ limit: 1 });
     expect(store.getEnhancementMeta(enh("a", "Nonexistent"))).toBeNull();
   });
 });

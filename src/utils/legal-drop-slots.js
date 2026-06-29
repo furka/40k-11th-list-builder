@@ -27,9 +27,8 @@
  *   - leader: host must be in dragged.datasheet.leader.attachesTo
  *   - support: host must be in dragged.datasheet.support.attachesTo
  *   - enhancement: must be attached (no root slot); never on another
- *     enhancement; per-field opt-in restrictions (characterOnly,
- *     nonCharacterOnly, notOnEpicHeroes, allowedHosts) on the metadata
- *     each narrow it independently
+ *     enhancement; CHARACTER-only / no-EPIC-HERO by default, with per-field
+ *     opt-outs (nonCharacterOnly, allowedHosts) on the metadata
  *   - regular bodyguards/vehicles/monsters: never attach to anything
  *   - max 1 leader per host
  *   - max 1 support per host
