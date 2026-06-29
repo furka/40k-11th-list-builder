@@ -82,9 +82,6 @@
       ]
     },
     "Encircling Hunter": {
-      "allowedHosts": [
-        "KNIGHT-CENTURA"
-      ],
       "requiredKeywords": [
         "ANATHEMA PSYKANA"
       ]
@@ -133,9 +130,6 @@
   },
   "ADEPTUS MECHANICUS": {
     "Explorator Dispensation": {
-      "allowedHosts": [
-        "SKITARII MARSHAL"
-      ],
       "requiredKeywords": [
         "SKITARII",
         "MARSHAL"
@@ -152,28 +146,17 @@
       ]
     },
     "Martial Signatum Amplificator": {
-      "allowedHosts": [
-        "TECH-PRIEST DOMINUS",
-        "TECH-PRIEST ENGINSEER",
-        "TECH-PRIEST MANIPULUS"
-      ],
       "requiredKeywords": [
         "TECH-PRIEST"
       ]
     },
     "Omnicogitator": {
-      "allowedHosts": [
-        "SKITARII MARSHAL"
-      ],
       "requiredKeywords": [
         "SKITARII",
         "MARSHAL"
       ]
     },
     "Omnissiah’s Fury": {
-      "allowedHosts": [
-        "SKITARII MARSHAL"
-      ],
       "requiredKeywords": [
         "SKITARII",
         "MARSHAL"
@@ -188,9 +171,6 @@
       "allowedHosts": [
         "TECH-PRIEST DOMINUS",
         "TECH-PRIEST MANIPULUS"
-      ],
-      "requiredKeywords": [
-        "TECH-PRIEST"
       ]
     },
     "Sanctified Ordnance": {
@@ -260,28 +240,17 @@
       ]
     },
     "Adrenal Infusions": {
-      "allowedHosts": [
-        "CORSAIR VOIDSCARRED",
-        "CORSAIR SKYREAVERS",
-        "CORSAIR VOIDREAVERS"
-      ],
       "requiredKeywords": [
         "ANHRATHE",
         "INFANTRY"
       ]
     },
     "Alacritous Assault": {
-      "allowedHosts": [
-        "CORSAIR VOIDSCARRED"
-      ],
       "requiredKeywords": [
         "ANHRATHE"
       ]
     },
     "Exotic Munitions": {
-      "allowedHosts": [
-        "CORSAIR VOIDSCARRED"
-      ],
       "requiredKeywords": [
         "ANHRATHE"
       ]
@@ -372,11 +341,9 @@
       ]
     },
     "Omnissian Unguents": {
-      "allowedHosts": [
-        "TECH-PRIEST ENGINSEER"
-      ],
       "requiredKeywords": [
-        "ASTRA MILITARUM"
+        "ASTRA MILITARUM",
+        "TECH-PRIEST ENGINSEER"
       ]
     },
     "Bombast-class Vox-array": {
@@ -438,11 +405,9 @@
       ]
     },
     "Engine Speaker": {
-      "allowedHosts": [
-        "TECH-PRIEST ENGINSEER"
-      ],
       "requiredKeywords": [
-        "ASTRA MILITARUM"
+        "ASTRA MILITARUM",
+        "TECH-PRIEST ENGINSEER"
       ]
     },
     "Titan Killer": {
@@ -552,18 +517,6 @@
       ]
     },
     "On the Archtraitor’s Bridge": {
-      "allowedHosts": [
-        "DEATH COMPANY MARINES",
-        "DEATH COMPANY MARINES WITH BOLT RIFLES",
-        "DEATH COMPANY MARINES WITH BOLTGUNS",
-        "DEATH COMPANY MARINES WITH JUMP PACKS",
-        "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
-        "DEATH COMPANY CAPTAIN",
-        "DEATH COMPANY CAPTAIN WITH JUMP PACK",
-        "DEATH COMPANY DREADNOUGHT",
-        "DEATH COMPANY DREADNOUGHT WITH MAGNA-GRAPPLE",
-        "LEMARTES"
-      ],
       "requiredKeywords": [
         "DEATH COMPANY"
       ]
@@ -787,9 +740,6 @@
       ]
     },
     "Soul-spoor Auspicator": {
-      "allowedHosts": [
-        "WAR DOG HUNTSMAN"
-      ],
       "requiredKeywords": [
         "HUNTSMAN"
       ]
@@ -871,7 +821,8 @@
     },
     "Warp-Fuelled Thrusters": {
       "requiredKeywords": [
-        "CHAOS LORD WITH JUMP PACK"
+        "CHAOS LORD",
+        "JUMP PACK"
       ]
     },
     "Dread Reputation": {
@@ -910,12 +861,8 @@
       ]
     },
     "Sorrowscent Vulture": {
-      "allowedHosts": [
-        "CHAOS LORD WITH JUMP PACK"
-      ],
       "requiredKeywords": [
-        "CHAOS LORD",
-        "JUMP PACK"
+        "CHAOS LORD WITH JUMP PACK"
       ]
     },
     "Terrorglut Parasite": {
@@ -1150,11 +1097,8 @@
       ]
     },
     "Gnarlskin Experimentor": {
-      "allowedHosts": [
-        "HAEMONCULUS"
-      ],
       "requiredKeywords": [
-        "CHARACTER"
+        "HAEMONCULUS"
       ]
     }
   },
@@ -1170,13 +1114,10 @@
       ]
     },
     "Spiritsliver": {
-      "allowedHosts": [
-        "DAEMON PRINCE OF SLAANESH",
-        "DAEMON PRINCE OF SLAANESH WITH WINGS"
-      ],
       "requiredKeywords": [
         "EMPEROR’S CHILDREN",
-        "DAEMON"
+        "DAEMON",
+        "SLAANESH"
       ]
     },
     "Tears of the Phoenix": {
@@ -1190,11 +1131,9 @@
       ]
     },
     "Frenzied Ferocity": {
-      "allowedHosts": [
-        "CHAOS TERMINATORS"
-      ],
       "requiredKeywords": [
-        "EMPEROR’S CHILDREN"
+        "EMPEROR’S CHILDREN",
+        "TERMINATOR"
       ]
     },
     "Euphoric Crown": {
@@ -1208,7 +1147,7 @@
       ]
     },
     "Beguiling Grotesquerie": {
-      "allowedHosts": [
+      "requiredKeywords": [
         "FLAWLESS BLADES"
       ]
     },
@@ -1329,12 +1268,12 @@
   },
   "IMPERIAL AGENTS": {
     "Decoy Targets": {
-      "allowedHosts": [
+      "requiredKeywords": [
         "CALLIDUS ASSASSIN"
       ]
     },
     "Esoteric Explosives": {
-      "allowedHosts": [
+      "requiredKeywords": [
         "CULEXUS ASSASSIN"
       ]
     },
@@ -1388,21 +1327,11 @@
       ]
     },
     "Ancestral Overbleed": {
-      "allowedHosts": [
-        "ARMIGER HELVERIN",
-        "ARMIGER MOIRAX",
-        "ARMIGER WARGLAIVE"
-      ],
       "requiredKeywords": [
         "ARMIGER"
       ]
     },
     "Gyro-optimised Actuators": {
-      "allowedHosts": [
-        "ARMIGER HELVERIN",
-        "ARMIGER MOIRAX",
-        "ARMIGER WARGLAIVE"
-      ],
       "requiredKeywords": [
         "ARMIGER"
       ]
@@ -1425,11 +1354,8 @@
       ]
     },
     "Shroudwërke Talismans": {
-      "allowedHosts": [
-        "HERNKYN YAEGIRS"
-      ],
       "requiredKeywords": [
-        "HERNKYN"
+        "HERNKYN YAEGIRS"
       ]
     },
     "Bastion Shield": {
@@ -1443,9 +1369,6 @@
       ]
     },
     "Ironskein": {
-      "allowedHosts": [
-        "KÂHL"
-      ],
       "requiredKeywords": [
         "LEAGUES OF VOTANN"
       ]
@@ -1478,15 +1401,6 @@
   },
   "NECRONS": {
     "Atomic Disintegrators": {
-      "allowedHosts": [
-        "CHRONOMANCER",
-        "GEOMANCER",
-        "ILLUMINOR SZERAS",
-        "ORIKAN THE DIVINER",
-        "PLASMANCER",
-        "PSYCHOMANCER",
-        "TECHNOMANCER"
-      ],
       "requiredKeywords": [
         "CRYPTEK"
       ]
@@ -1497,15 +1411,6 @@
       ]
     },
     "Gravitic Bolas": {
-      "allowedHosts": [
-        "CHRONOMANCER",
-        "GEOMANCER",
-        "ILLUMINOR SZERAS",
-        "ORIKAN THE DIVINER",
-        "PLASMANCER",
-        "PSYCHOMANCER",
-        "TECHNOMANCER"
-      ],
       "requiredKeywords": [
         "CRYPTEK"
       ]
@@ -1532,14 +1437,6 @@
       ]
     },
     "Murdermind": {
-      "allowedHosts": [
-        "CHRONOMANCER",
-        "GEOMANCER",
-        "ILLUMINOR SZERAS",
-        "PLASMANCER",
-        "PSYCHOMANCER",
-        "TECHNOMANCER"
-      ],
       "requiredKeywords": [
         "CRYPTEK"
       ]
@@ -1823,11 +1720,9 @@
       ]
     },
     "Malodraxian Standard": {
-      "allowedHosts": [
-        "ANCIENT"
-      ],
       "requiredKeywords": [
-        "ADEPTUS ASTARTES"
+        "ADEPTUS ASTARTES",
+        "ANCIENT"
       ]
     },
     "Adamantine Mantle": {
@@ -1847,11 +1742,6 @@
       ]
     },
     "Immolator": {
-      "requiredKeywords": [
-        "ADEPTUS ASTARTES"
-      ]
-    },
-    "Artificer Armour": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
       ]
@@ -1962,6 +1852,11 @@
         "ADEPTUS ASTARTES"
       ]
     },
+    "Scroll of Proclamation": {
+      "requiredKeywords": [
+        "ADEPTUS ASTARTES"
+      ]
+    },
     "Seals of Reconquest": {
       "requiredKeywords": [
         "ADEPTUS ASTARTES"
@@ -2047,7 +1942,8 @@
     },
     "Skjald": {
       "requiredKeywords": [
-        "WOLF GUARD BATTLE LEADER"
+        "WOLF GUARD",
+        "BATTLE LEADER"
       ]
     },
     "Chariots of the Storm": {
@@ -2056,13 +1952,8 @@
       ]
     },
     "Grimnar’s Mark": {
-      "allowedHosts": [
-        "CAPTAIN IN TERMINATOR ARMOUR"
-      ],
       "requiredKeywords": [
-        "ADEPTUS ASTARTES",
-        "TERMINATOR",
-        "CHARACTER"
+        "CAPTAIN IN TERMINATOR ARMOUR"
       ]
     },
     "Howlmaw": {
@@ -2072,7 +1963,8 @@
     },
     "Skjald’s Foretelling": {
       "requiredKeywords": [
-        "WOLF GUARD BATTLE LEADER"
+        "WOLF GUARD",
+        "BATTLE LEADER"
       ]
     },
     "Eye of the Hunter": {
@@ -2125,26 +2017,19 @@
     },
     "Occulus Infernum": {
       "allowedHosts": [
+        "SORCERER",
         "EXALTED SORCERER"
-      ],
-      "requiredKeywords": [
-        "SORCERER"
       ]
     },
     "Walking Rampart": {
       "allowedHosts": [
+        "SORCERER",
         "EXALTED SORCERER"
-      ],
-      "requiredKeywords": [
-        "SORCERER"
       ]
     },
     "Thicket of Bladed Bone": {
-      "allowedHosts": [
-        "CHAOS SPAWN"
-      ],
       "requiredKeywords": [
-        "SPAWN"
+        "CHAOS SPAWN"
       ]
     },
     "Unravelled Fates": {
@@ -2177,7 +2062,7 @@
       ]
     },
     "Trygon Prime": {
-      "allowedHosts": [
+      "requiredKeywords": [
         "TRYGON"
       ]
     },
@@ -2211,9 +2096,6 @@
   },
   "T’AU EMPIRE": {
     "Negation Emitters": {
-      "allowedHosts": [
-        "STEALTH BATTLESUITS"
-      ],
       "requiredKeywords": [
         "STEALTH",
         "BATTLESUIT"
@@ -2232,13 +2114,9 @@
       ]
     },
     "Student of Kauyon": {
-      "allowedHosts": [
-        "KROOT FLESH SHAPER",
-        "KROOT TRAIL SHAPER",
-        "KROOT WAR SHAPER"
-      ],
       "requiredKeywords": [
-        "KROOT"
+        "KROOT",
+        "SHAPER"
       ]
     },
     "Plasma Accelerator Rifle": {
@@ -2261,8 +2139,7 @@
     "Murder-forged Entity": {
       "requiredKeywords": [
         "WORLD EATERS",
-        "VEHICLE",
-        "DAEMON"
+        "VEHICLE"
       ]
     },
     "Talons of Butchery": {
@@ -2287,10 +2164,6 @@
       "limit": 1
     },
     "Gateways to Glory": {
-      "allowedHosts": [
-        "DAEMON PRINCE OF KHORNE",
-        "DAEMON PRINCE OF KHORNE WITH WINGS"
-      ],
       "requiredKeywords": [
         "WORLD EATERS",
         "DAEMON PRINCE"
