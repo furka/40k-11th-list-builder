@@ -3,6 +3,7 @@ import factionPack from "./faction-pack-keywords.auto.json";
 import overrides from "./manual-overrides.json";
 import errata from "./errata-keywords.auto.json";
 import { normalizeString } from "../../utils/name-match";
+import { normalizeApostrophes } from "../../utils/apostrophe-normalization";
 
 /**
  * Per-datasheet keyword overlay. Sourced from three layers, merged in
@@ -88,6 +89,14 @@ function ensureFactionMap(root, factionName) {
  * Look up the static keyword list for a datasheet. Returns an empty array when
  * the datasheet isn't covered by any layer — callers should treat absence as
  * "no keyword information," not "no keywords."
+ *
+ * A datasheet's own name is always one of its keywords (e.g. "Von Ryan's
+ * Leapers" carries the VON RYAN'S LEAPERS keyword). We guarantee it here rather
+ * than relying on each source layer to have captured it, so enhancement
+ * `allowedHosts` / `requiredKeywords` that reference a unit by name always
+ * resolve. The injected name is apostrophe-canonicalised + uppercased; since
+ * keyword matching normalises both sides (see name-match `normalizeString`),
+ * punctuation form doesn't affect lookups.
  */
 export function getKeywordsFor(factionName, datasheetName) {
   if (!factionName || !datasheetName) return [];
@@ -97,17 +106,28 @@ export function getKeywordsFor(factionName, datasheetName) {
   const delta = ERRATA_BY_FACTION.get(normalizeString(factionName))?.get(
     normalizeString(datasheetName)
   );
-  if (!delta) return base;
 
-  // Apply the errata delta on a COPY (never mutate the cached layer array):
-  // drop removed keywords, then append added ones not already present.
-  const removed = new Set(delta.remove.map((k) => k.toUpperCase()));
-  const result = base.filter((k) => !removed.has(k.toUpperCase()));
-  const present = new Set(result.map((k) => k.toUpperCase()));
-  for (const k of delta.add) {
-    if (!present.has(k.toUpperCase())) {
-      result.push(k);
-      present.add(k.toUpperCase());
+  // Work on a COPY (never mutate the cached layer array).
+  let result = [...base];
+  if (delta) {
+    const removed = new Set(delta.remove.map((k) => k.toUpperCase()));
+    result = result.filter((k) => !removed.has(k.toUpperCase()));
+    const present = new Set(result.map((k) => k.toUpperCase()));
+    for (const k of delta.add) {
+      if (!present.has(k.toUpperCase())) {
+        result.push(k);
+        present.add(k.toUpperCase());
+      }
+    }
+  }
+
+  // Only augment datasheets that already have keyword coverage, so a
+  // genuinely-uncovered datasheet still returns [] ("no keyword info") rather
+  // than a lone self-name — preserving the contract callers rely on.
+  if (result.length > 0) {
+    const selfName = normalizeApostrophes(datasheetName).toUpperCase();
+    if (!result.some((k) => normalizeString(k) === normalizeString(selfName))) {
+      result.push(selfName);
     }
   }
   return result;

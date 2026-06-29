@@ -84,17 +84,16 @@ describe("enhancement-restrictions — multi-keyword AND requires every keyword"
   // fail. Eyes of the Oracle requires [ADEPTA SORORITAS, CHARACTER] — a
   // non-character Sororitas unit (Battle Sisters Squad) must be rejected.
 
-  it("Eyes of the Oracle requires BOTH ADEPTA SORORITAS and CHARACTER (subset rejected)", () => {
+  it("Eyes of the Oracle requires ADEPTA SORORITAS (CHARACTER-only enforced by the enhancement default, not the keyword list)", () => {
+    // The PDF host phrase is "Adepta Sororitas model only" — no explicit
+    // CHARACTER keyword. Enhancements are CHARACTER-only by default
+    // (muster-armies §25.04), so the keyword list only carries the faction
+    // keyword; the non-character rejection is applied by the universal
+    // eligibility default (covered in armyList-store / legal-drop-slots specs).
     const meta = getEnhancementRestrictions("ADEPTA SORORITAS", "Eyes of the Oracle");
-    expect(meta?.requiredKeywords).toEqual(["ADEPTA SORORITAS", "CHARACTER"]);
+    expect(meta?.requiredKeywords).toEqual(["ADEPTA SORORITAS"]);
 
-    // BATTLE SISTERS SQUAD is ADEPTA SORORITAS but NOT a CHARACTER → reject
-    const battleSisters = new Set(["ADEPTA SORORITAS", "BATTLELINE", "INFANTRY"]);
-    expect(
-      simulateAllowedHostsDisjunction(meta, "BATTLE SISTERS SQUAD", battleSisters)
-    ).toBe(false);
-
-    // CANONESS has both keywords → pass
+    // A CANONESS (ADEPTA SORORITAS) satisfies the keyword requirement.
     const canoness = new Set(["ADEPTA SORORITAS", "CHARACTER", "INFANTRY"]);
     expect(
       simulateAllowedHostsDisjunction(meta, "CANONESS", canoness)

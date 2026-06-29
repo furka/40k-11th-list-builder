@@ -27,6 +27,7 @@ import {
   classifyErrataKeywordsWithLLM,
   flushErrataKeywordCache,
 } from "./llm-classify-errata-keywords.mjs";
+import { abortIfFatal, AbortScrapeError } from "./api-errors.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const MFM_ROOT = resolve(__dirname, "../../src/data/munitorum-field-manual-11th");
@@ -70,9 +71,29 @@ export async function scrapeErrataKeywords({
   const { factions } = resolved;
   const client = new Anthropic();
 
+  // Retain-on-failure: seed `out` from the committed errata so a transient PDF
+  // or LLM failure keeps a faction's prior errata instead of dropping it — and a
+  // TOTAL failure (e.g. credits run out) can never blank the file. A faction
+  // that classifies cleanly REPLACES its block below (so genuinely-removed
+  // errata drop); a clean-but-empty result clears it.
+  let priorData = {};
+  if (existsSync(ERRATA_OUT)) {
+    try {
+      priorData = JSON.parse(await readFile(ERRATA_OUT, "utf8"));
+    } catch (e) {
+      console.warn(`  ! could not parse existing ${ERRATA_OUT}: ${e.message}`);
+    }
+  }
   const out = {};
+  for (const [k, v] of Object.entries(priorData)) {
+    if (!k.startsWith("_")) out[k] = v;
+  }
   let totalChanges = 0;
 
+  // try/finally: persist the content-hash cache for resume even on a fatal
+  // abort; the output file is written only after the loop COMPLETES, so an
+  // abort leaves the committed errata byte-identical.
+  try {
   for (const [slug, payload] of Object.entries(factions)) {
     const factionName = payload.faction;
     const url = factionPackUrls[slug];
@@ -109,8 +130,9 @@ export async function scrapeErrataKeywords({
       });
       result = res.result;
     } catch (e) {
+      abortIfFatal(e); // credit/auth failure → unwind, leave errata untouched
       warnings.add("errata-llm-failed", { slug, message: e.message });
-      continue;
+      continue; // retain this faction's seeded prior errata
     }
 
     const factionOut = {};
@@ -138,16 +160,21 @@ export async function scrapeErrataKeywords({
       if (factionOut[ds].add.length === 0) delete factionOut[ds].add;
       if (factionOut[ds].remove.length === 0) delete factionOut[ds].remove;
     }
+    // Clean classification → replace this faction's block. An empty result is a
+    // legitimate "no errata this run", so clear any seeded prior for it.
     if (Object.keys(factionOut).length) {
       out[factionName] = Object.fromEntries(
         Object.keys(factionOut)
           .sort()
           .map((k) => [k, factionOut[k]])
       );
+    } else {
+      delete out[factionName];
     }
   }
-
-  await flushErrataKeywordCache();
+  } finally {
+    await flushErrataKeywordCache();
+  }
 
   const payloadOut = {
     _source: "MFM Faction Pack PDFs — Rules Updates (errata) sections",
@@ -168,6 +195,10 @@ export async function scrapeErrataKeywords({
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const refresh = process.argv.includes("--refresh");
   scrapeErrataKeywords({ refresh }).catch((e) => {
+    if (e instanceof AbortScrapeError) {
+      console.error(`\n${e.message}\nNo errata data was modified — re-run after fixing the key/credits.`);
+      process.exit(1);
+    }
     console.error(e);
     process.exit(1);
   });

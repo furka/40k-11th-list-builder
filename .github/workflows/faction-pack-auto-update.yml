@@ -40,13 +40,20 @@ jobs:
           node-version: 22
           cache: "npm"
 
+      # Stable, accumulating cache. The key intentionally does NOT depend on the
+      # scraper source (hashFiles): correctness of cached LLM responses is gated
+      # by the internal content-hash keys (the `v4:`/`v2:`/`v3:` versions in each
+      # classifier's makeCacheKey), so the GitHub cache layer only needs to
+      # accumulate across runs — never gate correctness. Each run restores the
+      # most recent cache via the prefix and saves a fresh entry (below), so a
+      # failed/timed-out run still persists its partial progress for the next run.
       - name: Restore scraper cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: scripts/scrape-faction-pack-11th/.cache
-          key: faction-pack-cache-${{ hashFiles('scripts/scrape-faction-pack-11th/**/*.mjs', 'scripts/scrape-faction-pack-11th/faction-pack-urls.json') }}
+          key: faction-pack-llm-cache-${{ github.run_id }}
           restore-keys: |
-            faction-pack-cache-
+            faction-pack-llm-cache-
 
       - name: Install dependencies
         run: npm ci
@@ -61,8 +68,24 @@ jobs:
             npm run factionpack:scrape
           fi
 
+      # Persist the cache even if the scraper aborted (credits/timeout) so the
+      # next run resumes instead of re-classifying from scratch.
+      - name: Save scraper cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: scripts/scrape-faction-pack-11th/.cache
+          key: faction-pack-llm-cache-${{ github.run_id }}
+
       - name: Reconcile manual overrides
         run: npm run bsdata:prune-overrides
+
+      - name: Check for destructive net deletions
+        run: |
+          if ! node scripts/scrape-faction-pack-11th/check-net-deletions.mjs; then
+            echo "::warning title=Faction Pack scrape::This run removed many more entries than it added — review the diff carefully before merging."
+            echo "⚠️ **Destructive net deletions detected** — review the diff before merging." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Detect changes
         id: changes

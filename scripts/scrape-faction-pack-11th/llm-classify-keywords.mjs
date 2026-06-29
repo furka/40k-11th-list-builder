@@ -57,7 +57,19 @@ Examples (verbatim from real PDFs):
   KEYWORDS: Monster, Character, Epic Hero, Fly, C'tan Shard of the Nightbringer FACTION KEYWORDS: Necrons
   KEYWORDS: Infantry, Character, Epic Hero, Imperium, Adeptus Astartes FACTION KEYWORDS: Ultramarines
 
+A datasheet that contains more than one kind of model splits its KEYWORDS line into
+groups: a shared group (often labelled "ALL MODELS") plus one group per distinct model,
+separated by a "|" and each prefixed by that model's name in caps. Example (verbatim):
+  KEYWORDS – ALL MODELS: Infantry, Great Devourer, Vanguard Invader, Hyperadapted Raveners | RAVENER PRIME: Character, Synapse FACTION KEYWORDS: Tyranids
+  KEYWORDS – ALL: Infantry, Kill Team, Grenades, Imperium, Ordo Xenos, Deathwatch, Kill Team Cassius | CHAPLAIN CASSIUS: Character, Epic Hero FACTION KEYWORDS: Agents of the Imperium
+
 Rules:
+- A unit's keyword set is the UNION of every model's keywords. When the KEYWORDS line is
+  split into groups (an "ALL MODELS"/"ALL" group plus per-model groups after each "|"),
+  emit the union of ALL groups — the shared keywords AND every per-model keyword
+  (Character, Synapse, Epic Hero, etc.). Do NOT drop the per-model groups; do NOT include
+  the model-name labels themselves (e.g. "RAVENER PRIME", "CHAPLAIN CASSIUS") as keywords
+  unless they also appear as an actual keyword in a group.
 - Output UPPERCASE versions of every keyword you find.
 - Do NOT include weapon-level keywords (Anti-Vehicle, Twin-Linked, Lance, Sustained Hits, etc.). Those appear inside weapon ability brackets and are not datasheet keywords.
 - The pages may also contain other datasheets, stratagems, or rules that mention the target datasheet's name in passing. Use only the KEYWORDS line of the section that DEFINES the target datasheet (its stat block heading appears in ALL CAPS, followed by M/T/SV/W/LD/OC stats).
@@ -97,7 +109,9 @@ const KEYWORD_TOOL = {
 
 function makeCacheKey({ datasheetName, pageTexts, confusableSiblings = [] }) {
   const h = createHash("sha256");
-  h.update("v3:"); // bumped when the sibling-disambiguation prompt landed
+  // v3: sibling-disambiguation prompt. v4: temperature 0 + the prompt now
+  // requires the union of all per-model keyword groups (not just ALL MODELS).
+  h.update("v4:");
   h.update(MODEL_ID);
   h.update("\0");
   h.update(datasheetName);
@@ -201,6 +215,8 @@ export async function classifyKeywordsWithLLM({
   const response = await client.messages.create({
     model: MODEL_ID,
     max_tokens: 512,
+    // Deterministic decoding — same stat block → same keyword set every run.
+    temperature: 0,
     system: [
       { type: "text", text: SYSTEM_PROMPT },
       {

@@ -71,7 +71,7 @@ const ERRATA_TOOL = {
 
 function makeCacheKey({ factionName, pageTexts }) {
   const h = createHash("sha256");
-  h.update("errata-keywords:v1:");
+  h.update("errata-keywords:v2:"); // v2: temperature dropped to 0
   h.update(MODEL_ID);
   h.update("\0");
   h.update(SYSTEM_PROMPT);
@@ -148,6 +148,8 @@ export async function classifyErrataKeywordsWithLLM({
   const response = await client.messages.create({
     model: MODEL_ID,
     max_tokens: 1024,
+    // Deterministic decoding — same Rules Updates pages → same deltas every run.
+    temperature: 0,
     system: [
       { type: "text", text: SYSTEM_PROMPT },
       {

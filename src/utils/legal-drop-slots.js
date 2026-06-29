@@ -46,6 +46,7 @@
 import { isEnhancementUnit, isWargearUnit } from "./attachment-rules";
 import { wargearMaxPerUnit, wargearCountOn } from "./wargear-limits";
 import { hasKeyword, getKeywords } from "./keywords";
+import { nameInList, hasAllKeywords } from "./name-match";
 
 const MAX_DEPTH = 3;
 
@@ -236,7 +237,7 @@ export function legalDropSlots(
         // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
         // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
         // CHARACTER). The universal defaults are suppressed for that host.
-        const hostExplicitlyAllowed = enhancementMeta?.allowedHosts?.includes(host.name);
+        const hostExplicitlyAllowed = nameInList(enhancementMeta?.allowedHosts, host.name);
         if (
           !enhancementMeta?.nonCharacterOnly &&
           !hostExplicitlyAllowed &&
@@ -251,11 +252,9 @@ export function legalDropSlots(
           // set contains every entry in `requiredKeywords`. The datasheet half
           // is checked first, keyword half second.
           if (enhancementMeta.allowedHosts?.length || enhancementMeta.requiredKeywords?.length) {
-            const nameMatch = enhancementMeta.allowedHosts?.includes(host.name);
+            const nameMatch = nameInList(enhancementMeta.allowedHosts, host.name);
             const hostKeywords = getKeywords(hostDs);
-            const keywordMatch =
-              enhancementMeta.requiredKeywords?.length > 0 &&
-              enhancementMeta.requiredKeywords.every((k) => hostKeywords.has(k));
+            const keywordMatch = hasAllKeywords(hostKeywords, enhancementMeta.requiredKeywords);
             if (!nameMatch && !keywordMatch) return false;
           }
         }

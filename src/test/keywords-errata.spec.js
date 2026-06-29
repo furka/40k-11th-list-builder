@@ -28,3 +28,25 @@ describe("getKeywordsFor — errata delta layer", () => {
     );
   });
 });
+
+describe("getKeywordsFor — datasheet self-name keyword", () => {
+  it("includes the datasheet's own (uppercased) name as a keyword", () => {
+    const kw = getKeywordsFor("NECRONS", "Necron Warriors");
+    expect(kw).toContain("NECRON WARRIORS");
+  });
+
+  it("does not duplicate the name when a layer already supplied it", () => {
+    const kw = getKeywordsFor("NECRONS", "Necron Warriors");
+    expect(kw.filter((k) => k === "NECRON WARRIORS")).toHaveLength(1);
+  });
+
+  it("canonicalises apostrophes in the injected name", () => {
+    // Stored/compared in canonical U+2019 form regardless of source punctuation.
+    const kw = getKeywordsFor("AELDARI", "Prince Yriel");
+    expect(kw).toContain("PRINCE YRIEL");
+  });
+
+  it("returns [] (no keyword info) for an entirely uncovered datasheet", () => {
+    expect(getKeywordsFor("NECRONS", "Not A Real Datasheet")).toEqual([]);
+  });
+});
