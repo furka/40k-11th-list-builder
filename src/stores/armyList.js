@@ -14,6 +14,7 @@ import {
 import { wargearMaxPerUnit } from "../utils/wargear-limits";
 import { legalDropSlots } from "../utils/legal-drop-slots";
 import { hasKeyword, getKeywords } from "../utils/keywords";
+import { nameInList, hasAllKeywords } from "../utils/name-match";
 
 function uniqueTagsOf(meta) {
   return meta?.tags?.filter((t) => typeof t === "string" && t.startsWith("UNIQUE:")) ?? [];
@@ -367,7 +368,7 @@ export const useArmyListStore = defineStore("armyList", () => {
           // "otherwise stating" — e.g. Necron "Quantum Goad" whitelists the
           // C'tan Shard of the Nightbringer (an EPIC HERO MONSTER, not a
           // CHARACTER). The universal defaults are suppressed for that host.
-          const hostExplicitlyAllowed = meta?.allowedHosts?.includes(host.name);
+          const hostExplicitlyAllowed = nameInList(meta?.allowedHosts, host.name);
           if (
             !meta?.nonCharacterOnly &&
             !hostExplicitlyAllowed &&
@@ -390,11 +391,9 @@ export const useArmyListStore = defineStore("armyList", () => {
           // required keyword is present on its keyword set. See
           // legal-drop-slots.js for the matching enforcement at drop time.
           if (meta?.allowedHosts?.length || meta?.requiredKeywords?.length) {
-            const nameMatch = meta.allowedHosts?.includes(host.name);
+            const nameMatch = nameInList(meta.allowedHosts, host.name);
             const hostKeywords = getKeywords(hostDs);
-            const keywordMatch =
-              meta.requiredKeywords?.length > 0 &&
-              meta.requiredKeywords.every((k) => hostKeywords.has(k));
+            const keywordMatch = hasAllKeywords(hostKeywords, meta.requiredKeywords);
             if (!nameMatch && !keywordMatch) {
               const parts = [];
               if (meta.allowedHosts?.length) parts.push(meta.allowedHosts.join(", "));

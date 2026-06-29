@@ -36,6 +36,7 @@ import {
   deriveConfusableSiblings,
 } from "./llm-classify-keywords.mjs";
 import { enhancementNameKey } from "../scrape-mfm-11th/name-key.mjs";
+import { abortIfFatal, AbortScrapeError } from "./api-errors.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const FACTION_PACK_URLS_PATH = resolve(__dirname, "faction-pack-urls.json");
@@ -69,7 +70,7 @@ async function scrapePdfRestrictionsForFaction(
   factionPackUrls,
   warnings,
   llmClient,
-  { refresh, factionKeywordVocab, globalKeywordVocab }
+  { refresh, factionKeywordVocab, globalKeywordVocab, priorEntries = {}, datasheetKeywords }
 ) {
   const url = factionPackUrls[slug];
   if (!url) {
@@ -116,6 +117,14 @@ async function scrapePdfRestrictionsForFaction(
     }
   }
 
+  // A detachment name is not a datasheet keyword, but it can slip into
+  // requiredKeywords when the model echoes a detachment heading near the
+  // enhancement (e.g. Aeldari "CORSAIRS AND TRAVELLING PLAYERS"). Drop any such
+  // entry after repair so eligibility never keys off a detachment name.
+  const detachmentNameKeys = new Set(
+    factionPayload.detachments.map((d) => enhancementNameKey(d.name))
+  );
+
   const out = {};
   const counts = {
     mfmMissed: 0,
@@ -124,6 +133,7 @@ async function scrapePdfRestrictionsForFaction(
     conditional: 0,
     failed: 0,
     empty: 0,
+    retained: 0,
   };
 
   // Enhancements are defined in detachment sections (the ENHANCEMENTS heading on
@@ -152,12 +162,21 @@ async function scrapePdfRestrictionsForFaction(
       restrictions = result.restrictions;
       cacheHit = result.cacheHit;
     } catch (e) {
+      abortIfFatal(e); // credit/auth failure → unwind the whole run, write nothing
       warnings.add("llm-call-failed", {
         slug,
         name: enh.name,
         message: e.message,
       });
-      counts.failed++;
+      // Transient LLM failure — keep the prior committed restriction rather
+      // than dropping the enhancement's eligibility rules.
+      if (priorEntries[enh.name]) {
+        out[enh.name] = priorEntries[enh.name];
+        warnings.add("enh-retained-prior", { slug, name: enh.name, reason: "failed" });
+        counts.retained++;
+      } else {
+        counts.failed++;
+      }
       continue;
     }
     if (cacheHit) counts.cacheHits++;
@@ -217,13 +236,48 @@ async function scrapePdfRestrictionsForFaction(
       }
     }
 
+    if (restrictions.requiredKeywords?.length) {
+      const kept = restrictions.requiredKeywords.filter((k) => {
+        if (detachmentNameKeys.has(enhancementNameKey(k))) {
+          warnings.add("requiredkeyword-detachment-dropped", { slug, name: enh.name, entry: k });
+          return false;
+        }
+        return true;
+      });
+      if (kept.length) restrictions.requiredKeywords = kept;
+      else delete restrictions.requiredKeywords;
+    }
+
+    // Canonicalize the host fields into one consistent shape. A host needs the
+    // allowedHosts default-bypass when it's an Epic Hero, or a non-character that
+    // the enhancement doesn't already cover via nonCharacterOnly (from MFM).
+    const hostNeedsBypass = (hostName) => {
+      const ks = datasheetKeywords?.get(enhancementNameKey(hostName));
+      if (!ks) return true; // unknown → keep allowedHosts (never break eligibility)
+      if (ks.has("EPIC HERO")) return true;
+      if (!ks.has("CHARACTER") && !enh.nonCharacterOnly) return true;
+      return false;
+    };
+    if (canonicalizeHostFields(restrictions, datasheetByKey, hostNeedsBypass)) {
+      warnings.add("requiredkeyword-disjunction", { slug, name: enh.name });
+    }
+
     // Drop empty arrays and falsy booleans/null so the persisted JSON stays
     // clean. The LLM returns every field every time (forced by the tool
     // schema's `required`); we only persist what's positively set.
     const cleaned = dropEmptyFields(restrictions);
     if (Object.keys(cleaned).length === 0) {
-      warnings.add("llm-empty-response", { slug, name: enh.name });
-      counts.empty++;
+      // A no-restriction enhancement legitimately cleans to {}, so an empty
+      // result is only suspicious when we previously had restrictions for it.
+      // Keep the prior value in that case instead of silently dropping it.
+      if (priorEntries[enh.name]) {
+        out[enh.name] = priorEntries[enh.name];
+        warnings.add("enh-retained-prior", { slug, name: enh.name, reason: "empty" });
+        counts.retained++;
+      } else {
+        warnings.add("llm-empty-response", { slug, name: enh.name });
+        counts.empty++;
+      }
       continue;
     }
     out[enh.name] = cleaned;
@@ -233,16 +287,117 @@ async function scrapePdfRestrictionsForFaction(
   console.log(
     `    ${mfmEnhancements.length} mfm entries, ${counts.classified} persisted` +
       ` (mfm-missing ${counts.mfmMissed}, conditional ${counts.conditional},` +
-      ` empty ${counts.empty}, failed ${counts.failed}, cache-hits ${counts.cacheHits})`
+      ` empty ${counts.empty}, failed ${counts.failed}, retained ${counts.retained},` +
+      ` cache-hits ${counts.cacheHits})`
   );
   return out;
 }
 
+// Per-datasheet keyword sets, loaded fresh from the keyword layers (the keyword
+// pass has already rewritten faction-pack-keywords this run). Used by the host
+// canonicalization to tell whether a host NEEDS the allowedHosts default-bypass.
+// Returns Map<UPPERCASE faction, Map<UPPERCASE datasheet, Set<UPPERCASE keyword>>>.
+function buildDatasheetKeywords() {
+  const KW_DIR = resolve(__dirname, "../../src/data/keywords");
+  const load = (f) => {
+    try {
+      return JSON.parse(readFileSync(resolve(KW_DIR, f), "utf8"));
+    } catch {
+      return {};
+    }
+  };
+  const layers = [
+    load("bsdata-keywords.auto.json"),
+    load("faction-pack-keywords.auto.json"),
+    load("manual-overrides.json"),
+  ];
+  const map = new Map();
+  for (const layer of layers) {
+    for (const [faction, sheets] of Object.entries(layer)) {
+      if (faction.startsWith("_") || !sheets || typeof sheets !== "object") continue;
+      let f = map.get(faction.toUpperCase());
+      if (!f) map.set(faction.toUpperCase(), (f = new Map()));
+      for (const [name, kws] of Object.entries(sheets)) {
+        if (!Array.isArray(kws)) continue;
+        const key = enhancementNameKey(name);
+        let s = f.get(key);
+        if (!s) f.set(key, (s = new Set()));
+        for (const k of kws) s.add(String(k).toUpperCase());
+      }
+    }
+  }
+  return map;
+}
+
+// Canonicalize an enhancement's host fields into one consistent representation.
+// Runtime treats allowedHosts (datasheet OR) and requiredKeywords (keyword AND)
+// as a disjunction — BUT allowedHosts also SUPPRESSES the universal CHARACTER /
+// EPIC-HERO eligibility defaults (see legal-drop-slots.js), so a host that is an
+// Epic Hero (or a non-character without nonCharacterOnly) MUST stay in
+// allowedHosts or it becomes ineligible. With that in mind:
+//   - allowedHosts: an OR of ≥2 alternative units, or any single host that needs
+//     the default-bypass (Epic Hero / non-character).
+//   - requiredKeywords: everything else — a normal character host, where the
+//     keyword form matches every variant (what "X model only" means).
+//   - no token appears in both fields.
+// `hostNeedsBypass(name)` returns whether a host datasheet needs the bypass.
+// Returns true if the C1 disjunction-as-AND repair fired (so the caller warns).
+function canonicalizeHostFields(restrictions, datasheetByKey, hostNeedsBypass) {
+  let allowedHosts = [...(restrictions.allowedHosts ?? [])];
+  let requiredKeywords = [...(restrictions.requiredKeywords ?? [])];
+  const isDatasheet = (t) => datasheetByKey.has(enhancementNameKey(t));
+  let c1Fired = false;
+
+  // C1: requiredKeywords of ≥2 tokens that are ALL datasheet names is an
+  // impossible AND (no model has two distinct datasheet-name keywords) — it's an
+  // OR of units mis-encoded as a conjunction. Move them to allowedHosts.
+  if (requiredKeywords.length >= 2 && requiredKeywords.every(isDatasheet)) {
+    for (const k of requiredKeywords) {
+      const ds = datasheetByKey.get(enhancementNameKey(k));
+      if (ds && !allowedHosts.includes(ds)) allowedHosts.push(ds);
+    }
+    requiredKeywords = [];
+    c1Fired = true;
+  }
+
+  // C2: a token in both fields is redundant. Keep allowedHosts when the host
+  // needs the default-bypass (else it'd be wrongly rejected); otherwise keep the
+  // keyword form (broader — matches variants). Drop the redundant copy.
+  if (allowedHosts.length && requiredKeywords.length) {
+    const rkByKey = new Map(requiredKeywords.map((k) => [enhancementNameKey(k), k]));
+    const keptReq = new Set(requiredKeywords);
+    allowedHosts = allowedHosts.filter((h) => {
+      const key = enhancementNameKey(h);
+      if (!rkByKey.has(key)) return true; // not a duplicate
+      if (hostNeedsBypass(h)) {
+        keptReq.delete(rkByKey.get(key)); // host stays in allowedHosts
+        return true;
+      }
+      return false; // keyword form covers it
+    });
+    requiredKeywords = requiredKeywords.filter((k) => keptReq.has(k));
+  }
+
+  // C3: a lone named unit with no keyword constraint → keyword form, UNLESS it
+  // needs the default-bypass (then it must stay in allowedHosts).
+  if (allowedHosts.length === 1 && requiredKeywords.length === 0 && !hostNeedsBypass(allowedHosts[0])) {
+    requiredKeywords = [allowedHosts[0]];
+    allowedHosts = [];
+  }
+
+  restrictions.allowedHosts = [...new Set(allowedHosts)];
+  restrictions.requiredKeywords = [...new Set(requiredKeywords)];
+  return c1Fired;
+}
+
+// nonCharacterOnly is intentionally NOT emitted here: MFM is the sole source of
+// truth for whether an enhancement is an Upgrade (derived from the "(Upgrade)"
+// suffix in scrape-mfm-11th and merged at runtime in data-reader-11th.js). The
+// classifier used to guess it, which produced false positives and churn.
 function dropEmptyFields(restrictions) {
   const out = {};
   if (restrictions.allowedHosts?.length) out.allowedHosts = restrictions.allowedHosts;
   if (restrictions.requiredKeywords?.length) out.requiredKeywords = restrictions.requiredKeywords;
-  if (restrictions.nonCharacterOnly) out.nonCharacterOnly = true;
   if (typeof restrictions.limit === "number") out.limit = restrictions.limit;
   return out;
 }
@@ -324,12 +479,16 @@ async function scrapeDetachmentGrantsForFaction(
       result = res.result;
       cacheHit = res.cacheHit;
     } catch (e) {
+      abortIfFatal(e);
       warnings.add("dgrants-llm-call-failed", {
         slug,
         detachment: det.name,
         message: e.message,
       });
       counts.failed++;
+      // Transient failure — retain the faction's prior grants at the orchestrator
+      // level (this faction's `rules` so far may be partial, but the orchestrator
+      // keeps prior on an empty/partial result); skip just this detachment.
       continue;
     }
     if (cacheHit) counts.cacheHits++;
@@ -372,7 +531,10 @@ async function scrapeDetachmentGrantsForFaction(
       ` (${counts.rulesEmitted} rule(s) emitted, section-missing ${counts.sectionMissed},` +
       ` failed ${counts.failed}, cache-hits ${counts.cacheHits})`
   );
-  return rules;
+  // Report `failed` so the orchestrator can distinguish a legitimately-empty
+  // grant set (most detachments grant nothing) from one that's empty/partial
+  // because a classification failed — only the latter should retain prior.
+  return { rules, failed: counts.failed };
 }
 
 // Per-datasheet KEYWORDS line scrape. For each MFM datasheet, find its stat
@@ -395,7 +557,7 @@ async function scrapePdfKeywordsForFaction(
   factionPackUrls,
   warnings,
   llmClient,
-  { refresh }
+  { refresh, priorEntries = {} }
 ) {
   const url = factionPackUrls[slug];
   if (!url) return null;
@@ -424,6 +586,7 @@ async function scrapePdfKeywordsForFaction(
     empty: 0,
     failed: 0,
     leaked: 0, // sibling-datasheet leakage detected; entry dropped
+    retained: 0, // transient failure on a matched stat block → kept prior value
   };
 
   // Set of every datasheet name in this faction, used by the classifier to
@@ -483,6 +646,7 @@ async function scrapePdfKeywordsForFaction(
       cacheHit = res.cacheHit;
       leaked = res.leaked;
     } catch (e) {
+      abortIfFatal(e);
       warnings.add("kw-llm-call-failed", {
         slug,
         datasheet: sheet.name,
@@ -501,16 +665,32 @@ async function scrapePdfKeywordsForFaction(
       counts.leaked++;
     }
 
+    // Retain-on-failure: the stat block WAS matched (its page is in the PDF),
+    // so a notFound/leaked here is a transient classification failure, not a
+    // genuinely codex-resident unit. Keep the prior committed keywords instead
+    // of dropping the datasheet (which is how Victrix Honour Guard vanished).
     if (result.notFound) {
-      warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
-      counts.statBlockAbsent++;
+      if (priorEntries[sheet.name]) {
+        out[sheet.name] = priorEntries[sheet.name];
+        warnings.add("kw-retained-prior", { slug, datasheet: sheet.name, reason: "notFound" });
+        counts.retained++;
+      } else {
+        warnings.add("kw-stat-block-absent", { slug, datasheet: sheet.name });
+        counts.statBlockAbsent++;
+      }
       continue;
     }
 
     const merged = [...new Set([...result.keywords, ...result.factionKeywords])].sort();
     if (merged.length === 0) {
-      warnings.add("kw-empty-response", { slug, datasheet: sheet.name });
-      counts.empty++;
+      if (priorEntries[sheet.name]) {
+        out[sheet.name] = priorEntries[sheet.name];
+        warnings.add("kw-retained-prior", { slug, datasheet: sheet.name, reason: "empty" });
+        counts.retained++;
+      } else {
+        warnings.add("kw-empty-response", { slug, datasheet: sheet.name });
+        counts.empty++;
+      }
       continue;
     }
     out[sheet.name] = merged;
@@ -525,7 +705,7 @@ async function scrapePdfKeywordsForFaction(
     `    ${counts.datasheets} datasheet(s), ${counts.classified} written from PDF` +
       ` (codex-resident ${counts.codexResident + counts.statBlockAbsent},` +
       ` empty ${counts.empty}, failed ${counts.failed},` +
-      ` leaked ${counts.leaked},` +
+      ` leaked ${counts.leaked}, retained ${counts.retained},` +
       ` cache-hits ${counts.cacheHits})`
   );
   return out;
@@ -551,18 +731,30 @@ export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isF
   const Anthropic = (await import("@anthropic-ai/sdk")).default;
   const llmClient = new Anthropic();
 
-  let existing = {};
-  if (!isFullScrape && existsSync(KEYWORDS_OUT)) {
+  // Always load the committed output, even for a full scrape: it's the source
+  // of prior values for the retain-on-failure path (a transient LLM miss on a
+  // matched stat block keeps the prior keywords instead of dropping the unit).
+  // `existing` still starts blank on a full scrape so genuinely-removed factions
+  // drop; `priorData` is read separately purely for retention.
+  let priorData = {};
+  if (existsSync(KEYWORDS_OUT)) {
     try {
-      existing = JSON.parse(await readFile(KEYWORDS_OUT, "utf8"));
+      priorData = JSON.parse(await readFile(KEYWORDS_OUT, "utf8"));
     } catch (e) {
       console.warn(`  ! could not parse existing ${KEYWORDS_OUT}: ${e.message}`);
     }
   }
+  let existing = isFullScrape ? {} : { ...priorData };
 
+  // Flush the content-hash cache even if the loop unwinds (a fatal AbortScrapeError
+  // from credit/auth exhaustion) so completed classifications persist for resume.
+  // The output file below is written only if the loop COMPLETES — an abort skips
+  // it, leaving the committed data byte-identical.
+  try {
   for (const slug of slugs) {
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
+    const priorEntries = priorData[factionPayload.faction] ?? {};
     try {
       process.stdout.write(`  ${slug} keywords …\n`);
       const factionOut = await scrapePdfKeywordsForFaction(
@@ -571,20 +763,38 @@ export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isF
         factionPackUrls,
         warnings,
         llmClient,
-        { refresh }
+        { refresh, priorEntries }
       );
-      if (factionOut === null) continue;
+      // PDF fetch/parse failed for the whole faction — a transient failure, not
+      // a removal. Keep the prior faction data rather than dropping every unit.
+      if (factionOut === null) {
+        if (Object.keys(priorEntries).length > 0) {
+          existing[factionPayload.faction] = priorEntries;
+          warnings.add("kw-retained-prior-faction", { slug });
+        }
+        continue;
+      }
       if (Object.keys(factionOut).length > 0) {
         existing[factionPayload.faction] = factionOut;
       } else {
         delete existing[factionPayload.faction];
       }
     } catch (e) {
+      if (e instanceof AbortScrapeError) throw e;
+      // A faction-level exception (e.g. a transient PDF parse OOM on a large
+      // pack) must NOT drop the whole faction — retain its prior committed
+      // keywords, same as the null-return path above.
       warnings.add("kw-pdf-parse-failed", { slug, message: e.message });
+      const priorEntries = priorData[factionPayload.faction] ?? {};
+      if (Object.keys(priorEntries).length > 0) {
+        existing[factionPayload.faction] = priorEntries;
+        warnings.add("kw-retained-prior-faction", { slug, reason: "exception" });
+      }
     }
   }
-
-  await flushKeywordCache();
+  } finally {
+    await flushKeywordCache();
+  }
 
   // Stable, sorted output: faction keys + (within each) datasheet keys, plus
   // a small header for traceability of which scrape produced this snapshot.
@@ -630,21 +840,26 @@ export async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh
   const Anthropic = (await import("@anthropic-ai/sdk")).default;
   const llmClient = new Anthropic();
 
-  let existing = {};
-  if (!isFullScrape && existsSync(CONDITIONAL_GRANTS_OUT)) {
+  // Always load the committed grants as the retain-on-failure source; `existing`
+  // still starts blank on a full scrape so removed factions drop.
+  let priorData = {};
+  if (existsSync(CONDITIONAL_GRANTS_OUT)) {
     try {
-      existing = JSON.parse(await readFile(CONDITIONAL_GRANTS_OUT, "utf8"));
+      priorData = JSON.parse(await readFile(CONDITIONAL_GRANTS_OUT, "utf8"));
     } catch (e) {
       console.warn(`  ! could not parse existing ${CONDITIONAL_GRANTS_OUT}: ${e.message}`);
     }
   }
+  let existing = isFullScrape ? {} : { ...priorData };
 
+  try {
   for (const slug of slugs) {
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
+    const priorRules = priorData[factionPayload.faction];
     try {
       process.stdout.write(`  ${slug} detachment-grants …\n`);
-      const rules = await scrapeDetachmentGrantsForFaction(
+      const res = await scrapeDetachmentGrantsForFaction(
         slug,
         factionPayload,
         factionPackUrls,
@@ -652,18 +867,39 @@ export async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh
         llmClient,
         { refresh }
       );
-      if (rules === null) continue;
-      if (rules.length > 0) {
+      // PDF fetch/parse failed for the whole faction — retain prior grants.
+      if (res === null) {
+        if (priorRules) {
+          existing[factionPayload.faction] = priorRules;
+          warnings.add("dgrants-retained-prior-faction", { slug });
+        }
+        continue;
+      }
+      const { rules, failed } = res;
+      // A detachment grant failing to classify leaves the faction's rule set
+      // empty/partial. Most detachments grant nothing (empty is the norm), so
+      // only retain prior when a FAILURE occurred — never on a legitimate empty.
+      if (failed > 0 && priorRules) {
+        existing[factionPayload.faction] = priorRules;
+        warnings.add("dgrants-retained-prior", { slug, failed });
+      } else if (rules.length > 0) {
         existing[factionPayload.faction] = rules;
       } else {
         delete existing[factionPayload.faction];
       }
     } catch (e) {
+      if (e instanceof AbortScrapeError) throw e;
       warnings.add("dgrants-pdf-parse-failed", { slug, message: e.message });
+      const priorRules = priorData[factionPayload.faction];
+      if (priorRules) {
+        existing[factionPayload.faction] = priorRules;
+        warnings.add("dgrants-retained-prior-faction", { slug, reason: "exception" });
+      }
     }
   }
-
-  await flushDetachmentGrantsCache();
+  } finally {
+    await flushDetachmentGrantsCache();
+  }
 
   const sorted = {};
   for (const k of Object.keys(existing).sort()) sorted[k] = existing[k];
@@ -707,25 +943,35 @@ export async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh,
   // Full scrape: start blank so factions removed from the slug list (or whose
   // enhancement names changed) don't leave stale entries behind. Partial
   // scrape: load existing .auto.json and update only the slugs we're touching.
-  let restrictions = {};
-  if (!isFullScrape && existsSync(RESTRICTIONS_OUT)) {
+  // Either way, `priorData` is loaded as the source of retain-on-failure values
+  // (a transient LLM failure on an enhancement keeps its prior restriction).
+  let priorData = {};
+  if (existsSync(RESTRICTIONS_OUT)) {
     try {
-      restrictions = JSON.parse(await readFile(RESTRICTIONS_OUT, "utf8"));
+      priorData = JSON.parse(await readFile(RESTRICTIONS_OUT, "utf8"));
     } catch (e) {
       console.warn(`  ! could not parse existing ${RESTRICTIONS_OUT}: ${e.message}`);
     }
   }
+  let restrictions = isFullScrape ? {} : { ...priorData };
 
   // Build the closed keyword vocabulary the LLM gets (per-faction in the
   // prompt for cache efficiency, global for the post-LLM auto-repair pass).
   // Reads fresh from disk so the just-written faction-pack-keywords.auto.json
   // from the preceding PDF keyword pass is included.
   const { perFaction, global: globalKeywordVocab } = buildKeywordVocab();
+  // Per-datasheet keyword sets, for the host-bypass test in canonicalization.
+  const datasheetKeywordsByFaction = buildDatasheetKeywords();
 
+  // try/finally: persist the cache for resume even if a fatal AbortScrapeError
+  // unwinds the loop; the output file below is written only on clean completion.
+  try {
   for (const slug of slugs) {
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
     const factionKeywordVocab = [...(perFaction.get(factionPayload.faction) ?? [])];
+    const datasheetKeywords = datasheetKeywordsByFaction.get(factionPayload.faction.toUpperCase());
+    const priorEntries = priorData[factionPayload.faction] ?? {};
     try {
       process.stdout.write(`  ${slug} PDF …\n`);
       const out = await scrapePdfRestrictionsForFaction(
@@ -734,22 +980,36 @@ export async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh,
         factionPackUrls,
         warnings,
         llmClient,
-        { refresh, factionKeywordVocab, globalKeywordVocab }
+        { refresh, factionKeywordVocab, globalKeywordVocab, priorEntries, datasheetKeywords }
       );
-      if (out === null) continue;
+      // PDF fetch/parse failed — transient, not a removal. Keep prior faction.
+      if (out === null) {
+        if (Object.keys(priorEntries).length > 0) {
+          restrictions[factionPayload.faction] = priorEntries;
+          warnings.add("enh-retained-prior-faction", { slug });
+        }
+        continue;
+      }
       if (Object.keys(out).length > 0) {
         restrictions[factionPayload.faction] = out;
       } else {
         delete restrictions[factionPayload.faction];
       }
     } catch (e) {
+      if (e instanceof AbortScrapeError) throw e;
       warnings.add("pdf-parse-failed", { slug, message: e.message });
+      const priorEntries = priorData[factionPayload.faction] ?? {};
+      if (Object.keys(priorEntries).length > 0) {
+        restrictions[factionPayload.faction] = priorEntries;
+        warnings.add("enh-retained-prior-faction", { slug, reason: "exception" });
+      }
     }
   }
-
-  // Make sure any cache writes the batched flush hasn't gotten to are
-  // persisted before we exit.
-  await flushLlmCache();
+  } finally {
+    // Make sure any cache writes the batched flush hasn't gotten to are
+    // persisted before we exit (including on a fatal abort).
+    await flushLlmCache();
+  }
 
   const sorted = {};
   for (const k of Object.keys(restrictions).sort()) sorted[k] = restrictions[k];

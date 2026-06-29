@@ -2,6 +2,7 @@ import enhancementRestrictionsAuto from "./enhancement-restrictions.auto.json";
 import enhancementRestrictionsBsdata from "./enhancement-restrictions.bsdata.auto.json";
 import enhancementRestrictionsManual from "./enhancement-restrictions.manual.json";
 import wargearRestrictionsBsdata from "./wargear-restrictions.bsdata.auto.json";
+import { normalizeString } from "../../utils/name-match";
 
 /**
  * Faction → enhancement-name → per-enhancement restriction object, sourced
@@ -47,10 +48,35 @@ export const ENHANCEMENT_RESTRICTIONS = stripUnderscoreKeys(enhancementRestricti
 const ENHANCEMENT_RESTRICTIONS_BSDATA = stripUnderscoreKeys(enhancementRestrictionsBsdata);
 const ENHANCEMENT_RESTRICTIONS_MANUAL = stripUnderscoreKeys(enhancementRestrictionsManual);
 
-function readEntry(table, factionName, enhancementName) {
-  const factionEntry = table?.[factionName];
-  if (!factionEntry || typeof factionEntry !== "object") return null;
-  const entry = factionEntry[enhancementName];
+// Index a faction→enhancement table under normalized keys so lookups don't
+// depend on byte-exact faction/enhancement names matching across the MFM
+// source and the various JSON layers (apostrophe / diacritic / Unicode-form
+// drift, e.g. "TL-4ø9", "Vingh's…"). Mirrors the normalized keyword lookup in
+// src/data/keywords/index.js. First writer wins; raw tables shouldn't collide
+// under normalizeString.
+function buildNormalizedIndex(table) {
+  const index = new Map();
+  for (const [faction, entries] of Object.entries(table ?? {})) {
+    if (!entries || typeof entries !== "object") continue;
+    const fkey = normalizeString(faction);
+    let inner = index.get(fkey);
+    if (!inner) index.set(fkey, (inner = new Map()));
+    for (const [name, entry] of Object.entries(entries)) {
+      const nkey = normalizeString(name);
+      if (!inner.has(nkey)) inner.set(nkey, entry);
+    }
+  }
+  return index;
+}
+
+const ENH_INDEX_AUTO = buildNormalizedIndex(ENHANCEMENT_RESTRICTIONS);
+const ENH_INDEX_BSDATA = buildNormalizedIndex(ENHANCEMENT_RESTRICTIONS_BSDATA);
+const ENH_INDEX_MANUAL = buildNormalizedIndex(ENHANCEMENT_RESTRICTIONS_MANUAL);
+
+function readEntry(index, factionName, enhancementName) {
+  const inner = index.get(normalizeString(factionName));
+  if (!inner) return null;
+  const entry = inner.get(normalizeString(enhancementName));
   if (!entry) return null;
   // Legacy shape (an array) was a bare allowed-hosts whitelist. Promote to
   // the object shape so callers only deal with one form.
@@ -64,9 +90,9 @@ function readEntry(table, factionName, enhancementName) {
 export function getEnhancementRestrictions(factionName, enhancementName) {
   if (!factionName || !enhancementName) return null;
   return (
-    readEntry(ENHANCEMENT_RESTRICTIONS_MANUAL, factionName, enhancementName) ??
-    readEntry(ENHANCEMENT_RESTRICTIONS, factionName, enhancementName) ??
-    readEntry(ENHANCEMENT_RESTRICTIONS_BSDATA, factionName, enhancementName) ??
+    readEntry(ENH_INDEX_MANUAL, factionName, enhancementName) ??
+    readEntry(ENH_INDEX_AUTO, factionName, enhancementName) ??
+    readEntry(ENH_INDEX_BSDATA, factionName, enhancementName) ??
     null
   );
 }

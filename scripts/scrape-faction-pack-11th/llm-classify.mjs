@@ -39,10 +39,10 @@ The pages may contain other rules (stratagems, detachment abilities, datasheets)
 
 If you cannot find such a definition section in the supplied pages — only stratagem references or flavour mentions — set notDefined: true and leave the other fields empty. Do not classify based on stratagem text or other rules that share the enhancement's name.
 
-Rules for filling each field when the definition IS present:
-- allowedHosts: array of UPPERCASE datasheet names from the provided list that the enhancement's host phrase names. Only include names that appear in the provided datasheet list verbatim (after uppercasing). [] if the host phrase is a keyword/role tag rather than a specific datasheet, or if there's no host restriction.
-- requiredKeywords: array of ATOMIC UPPERCASE keywords from the provided faction keyword vocabulary. Each entry MUST be a single keyword exactly as it appears in that vocabulary — NEVER concatenate two keywords into one string. A host phrase like "ADEPTUS CUSTODES WALKER model only" must emit ["ADEPTUS CUSTODES", "WALKER"] (two separate entries), not ["ADEPTUS CUSTODES WALKER"] (one combined string). Likewise "LEGIONES DAEMONICA KHORNE MONSTER" → ["LEGIONES DAEMONICA", "KHORNE", "MONSTER"]. If a token from the host phrase isn't in the vocabulary, omit it. Both allowedHosts and requiredKeywords can be populated together when the host phrase mixes a datasheet name with a keyword.
-- nonCharacterOnly: true only if the text marks this enhancement as an Upgrade applicable to non-CHARACTER units.
+Rules for filling each field when the definition IS present. allowedHosts and requiredKeywords describe WHO may take the enhancement; pick ONE representation per host and never put the same token in both:
+- requiredKeywords (DEFAULT): array of ATOMIC UPPERCASE keywords from the provided faction keyword vocabulary that the host model must have — a CONJUNCTION (the host must have ALL of them). Use this for any keyword/role host, including a single named model. Each entry MUST be a single keyword exactly as it appears in that vocabulary — NEVER concatenate two keywords into one string. "ADEPTUS CUSTODES WALKER model only" → ["ADEPTUS CUSTODES", "WALKER"]; "LEGIONES DAEMONICA KHORNE MONSTER model only" → ["LEGIONES DAEMONICA", "KHORNE", "MONSTER"]; "CHAPLAIN model only" → ["CHAPLAIN"] (matches every Chaplain variant). If a token isn't in the vocabulary, omit it.
+- allowedHosts: array of UPPERCASE datasheet names from the provided list, used ONLY when the host phrase lists TWO OR MORE alternative specific units ("Captain, Chaplain or Lieutenant model only" → ["CAPTAIN", "CHAPLAIN", "LIEUTENANT"]) — a DISJUNCTION that a single keyword conjunction can't express. Do NOT use allowedHosts for a single host; do NOT also repeat those names in requiredKeywords. [] otherwise.
+- Never list mutually-exclusive alternatives in requiredKeywords (no model can be a Captain AND a Chaplain — that's an OR, so use allowedHosts).
 - limit: 1 or 2 if the text caps copies in the army ("Only one model in your army can have this enhancement", "Up to two…"). null otherwise.
 - conditional: true if the host phrase is a trigger ("If your WARLORD has this enhancement…") rather than a constraint on who can take it.
 - notDefined: true only when the enhancement is not actually defined in the supplied pages.
@@ -57,7 +57,6 @@ const RESTRICTION_TOOL = {
     properties: {
       allowedHosts: { type: "array", items: { type: "string" } },
       requiredKeywords: { type: "array", items: { type: "string" } },
-      nonCharacterOnly: { type: "boolean" },
       limit: { type: ["integer", "null"] },
       conditional: { type: "boolean" },
       notDefined: { type: "boolean" },
@@ -65,7 +64,6 @@ const RESTRICTION_TOOL = {
     required: [
       "allowedHosts",
       "requiredKeywords",
-      "nonCharacterOnly",
       "limit",
       "conditional",
       "notDefined",
@@ -93,8 +91,10 @@ function makeCacheKey({ enhancementName, pageTexts, datasheetNames, factionKeywo
   const h = createHash("sha256");
   // v3 invalidates v2 caches built before requiredKeywords got a closed
   // vocabulary — the prompt and post-validator differ enough that previous
-  // responses can't be reused.
-  h.update("v3:");
+  // responses can't be reused. v4: temperature dropped to 0 and the
+  // nonCharacterOnly field removed from the schema/prompt — old entries are
+  // recomputed once, deterministically.
+  h.update("v4:");
   h.update(MODEL_ID);
   h.update("\0");
   h.update(enhancementName);
@@ -203,6 +203,10 @@ export async function classifyWithLLM({
   const response = await client.messages.create({
     model: MODEL_ID,
     max_tokens: 1024,
+    // Deterministic decoding: the same PDF text must classify to the same
+    // result on every run, so a cache miss (e.g. a scraper refactor) produces
+    // a no-op diff rather than nondeterministic churn.
+    temperature: 0,
     system: [
       { type: "text", text: SYSTEM_PROMPT },
       {

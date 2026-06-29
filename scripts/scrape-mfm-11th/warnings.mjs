@@ -37,10 +37,20 @@ export const WARNING_CATEGORIES = [
   "requiredkeyword-split", // post-LLM repair split a multi-token concatenation into atomics
   "requiredkeyword-promoted", // post-LLM repair promoted a stray datasheet name from requiredKeywords to allowedHosts
   "requiredkeyword-dropped", // post-LLM repair couldn't decompose a non-vocab entry — dropped it
+  "requiredkeyword-detachment-dropped", // a detachment name leaked into requiredKeywords; dropped
+  "requiredkeyword-disjunction", // requiredKeywords was an impossible AND of datasheet names → moved to allowedHosts
   "errata-url-missing", // errata pass: no Faction Pack URL for this slug
   "errata-pdf-failed", // errata pass: PDF fetch/parse error
   "errata-llm-failed", // errata pass: API error
   "errata-datasheet-unmatched", // errata named a datasheet not in the MFM vocab; change dropped
+  // Retain-on-failure: a transient miss kept the prior committed value instead
+  // of dropping the entry (per-entry) or the whole faction (-faction).
+  "kw-retained-prior", // keyword pass: kept prior keywords for one datasheet
+  "kw-retained-prior-faction", // keyword pass: kept a whole faction's prior keywords
+  "enh-retained-prior", // enhancement pass: kept prior restriction for one enhancement
+  "enh-retained-prior-faction", // enhancement pass: kept a whole faction's prior restrictions
+  "dgrants-retained-prior", // detachment-grants pass: kept prior grants (a detachment failed)
+  "dgrants-retained-prior-faction", // detachment-grants pass: kept a whole faction's prior grants
 ];
 
 // Lightweight in-memory accumulator. Each script creates its own sink per

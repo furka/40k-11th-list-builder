@@ -1,6 +1,8 @@
 import { describe, it, expect } from "vitest";
 
 import { getEnhancementRestrictions } from "../data/configs";
+import { normalizeString } from "../utils/name-match";
+import enhancementRestrictionsAuto from "../data/configs/enhancement-restrictions.auto.json";
 
 // The three-layer merge in src/data/configs/index.js — manual > MFM-PDF >
 // BSData — needs end-to-end coverage so a future refactor doesn't silently
@@ -44,5 +46,42 @@ describe("getEnhancementRestrictions — layer priority (manual > MFM-PDF > BSDa
     expect(
       getEnhancementRestrictions("NECRONS", "Definitely Not An Enhancement")
     ).toBe(null);
+  });
+
+  it("resolves regardless of faction/enhancement punctuation or case (normalized lookup)", () => {
+    const canonical = getEnhancementRestrictions("NECRONS", "Quantum Goad");
+    expect(canonical).not.toBeNull();
+    // Same entry via differently-cased/punctuated keys — must not desync.
+    expect(getEnhancementRestrictions("necrons", "quantum-goad")).toEqual(
+      canonical
+    );
+    expect(getEnhancementRestrictions("Necrons", "QUANTUM GOAD")).toEqual(
+      canonical
+    );
+  });
+});
+
+// Guards the normalized-lookup approach: if two enhancements within a faction
+// collapse to the same key under normalizeString, one would shadow the other.
+// This should never happen with real data; if it does, the lookup needs a
+// diacritic-preserving canonical form instead.
+describe("enhancement-restrictions.auto.json — no normalized-key collisions", () => {
+  it("has unique enhancement names per faction under normalizeString", () => {
+    const collisions = [];
+    for (const [faction, entries] of Object.entries(enhancementRestrictionsAuto)) {
+      if (faction.startsWith("_") || !entries || typeof entries !== "object") {
+        continue;
+      }
+      const seen = new Map();
+      for (const name of Object.keys(entries)) {
+        const key = normalizeString(name);
+        if (seen.has(key)) {
+          collisions.push(`${faction}: "${seen.get(key)}" vs "${name}"`);
+        } else {
+          seen.set(key, name);
+        }
+      }
+    }
+    expect(collisions).toEqual([]);
   });
 });

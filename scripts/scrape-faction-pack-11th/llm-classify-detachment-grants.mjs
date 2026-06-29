@@ -91,7 +91,7 @@ function narrowDatasheetNames(datasheetNames, pageTexts) {
 
 function makeCacheKey({ detachmentName, pageTexts, datasheetNames }) {
   const h = createHash("sha256");
-  h.update("detachment-grants:v2:");
+  h.update("detachment-grants:v3:"); // v3: temperature dropped to 0
   h.update(MODEL_ID);
   h.update("\0");
   // The system prompt drives extraction behaviour — hash it so a prompt
@@ -180,6 +180,8 @@ export async function classifyDetachmentGrantsWithLLM({
   const response = await client.messages.create({
     model: MODEL_ID,
     max_tokens: 1024,
+    // Deterministic decoding — same detachment rules pages → same grants.
+    temperature: 0,
     system: [
       { type: "text", text: SYSTEM_PROMPT },
       {

@@ -1,6 +1,6 @@
 {
   "_source": "Warhammer 40,000 Faction Pack PDFs",
-  "_generatedAt": "2026-06-26T11:22:23.570Z",
+  "_generatedAt": "2026-06-29T14:38:31.072Z",
   "_generator": "scripts/scrape-faction-pack-11th",
   "ADEPTA SORORITAS": {
     "BATTLE SANCTUM": [
@@ -208,7 +208,8 @@
       "CULT MECHANICUS",
       "IMPERIUM",
       "INFANTRY",
-      "SERVITOR BATTLECLADE"
+      "SERVITOR BATTLECLADE",
+      "TECH-PRIEST"
     ],
     "TERRAX-PATTERN TERMITE": [
       "ADEPTUS MECHANICUS",
@@ -1130,8 +1131,8 @@
     "DEATH COMPANY MARINES WITH BOLTGUNS": [
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
+      "DEATH COMPAMY MARINES WITH BOLTGUNS",
       "DEATH COMPANY",
-      "DEATH COMPANY MARINES WITH BOLTGUNS",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY"
@@ -1244,6 +1245,7 @@
     "BLUE HORRORS": [
       "BATTLELINE",
       "BLUE",
+      "BRIMSTONE",
       "CHAOS",
       "DAEMON",
       "HORRORS",
@@ -1496,6 +1498,8 @@
     ],
     "PINK HORRORS": [
       "BATTLELINE",
+      "BLUE",
+      "BRIMSTONE",
       "CHAOS",
       "DAEMON",
       "HORRORS",
@@ -2032,7 +2036,8 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
-      "MASTERS OF THE MAELSTROM"
+      "MASTERS OF THE MAELSTROM",
+      "PSYKER"
     ],
     "MUTILATORS": [
       "CHAOS",
@@ -3657,6 +3662,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "PSYKER",
       "TACTICUS",
       "ULTRAMARINES",
       "WARDENS OF ULTRAMAR"
@@ -3885,9 +3891,11 @@
     ],
     "HYPERADAPTED RAVENERS": [
       "BURROWERS",
+      "CHARACTER",
       "GREAT DEVOURER",
       "HYPERADAPTED RAVENERS",
       "INFANTRY",
+      "SYNAPSE",
       "TYRANIDS",
       "VANGUARD INVADER"
     ],
@@ -3981,6 +3989,13 @@
       "FRAME",
       "T'AU EMPIRE",
       "VEHICLE"
+    ],
+    "ETHEREAL": [
+      "CHARACTER",
+      "EPIC HERO",
+      "ETHEREAL",
+      "INFANTRY",
+      "T'AU EMPIRE"
     ],
     "GREAT KNARLOC": [
       "FRAME",
