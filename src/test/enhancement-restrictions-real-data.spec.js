@@ -152,24 +152,23 @@ describe("enhancement-restrictions — multi-host allowedHosts (OR-of-datasheets
 });
 
 describe("enhancement-restrictions — disjunction (allowedHosts OR requiredKeywords)", () => {
-  // 87 entries in MFM-PDF populate both fields. The validator's `nameMatch ||
-  // keywordMatch` means EITHER side passing is sufficient. Encircling Hunter
-  // targets `allowedHosts: [KNIGHT-CENTURA]` OR `requiredKeywords:
-  // [ANATHEMA PSYKANA]` — those are two distinct conditions, so we can
-  // independently exercise each arm.
+  // The validator's `nameMatch || keywordMatch` means EITHER side passing is
+  // sufficient. Encircling Hunter is `requiredKeywords: [ANATHEMA PSYKANA]` —
+  // any ANATHEMA PSYKANA model qualifies via the keyword arm; a model without
+  // it (and not name-listed) does not.
 
-  it("Encircling Hunter passes via the name arm (KNIGHT-CENTURA, no ANATHEMA PSYKANA keyword)", () => {
+  it("Encircling Hunter requires the ANATHEMA PSYKANA keyword (Knight-Centura qualifies via the keyword)", () => {
     const meta = getEnhancementRestrictions(
       "ADEPTUS CUSTODES",
       "Encircling Hunter"
     );
-    expect(meta?.allowedHosts).toEqual(["KNIGHT-CENTURA"]);
     expect(meta?.requiredKeywords).toEqual(["ANATHEMA PSYKANA"]);
+    expect(meta?.allowedHosts).toBeUndefined();
 
-    // Even with no ANATHEMA PSYKANA keyword, the name match alone passes.
-    const hostKeywords = new Set(["INFANTRY", "CHARACTER"]);
+    // Knight-Centura is an ANATHEMA PSYKANA model → qualifies via the keyword arm.
+    const knightCentura = new Set(["ANATHEMA PSYKANA", "CHARACTER"]);
     expect(
-      simulateAllowedHostsDisjunction(meta, "KNIGHT-CENTURA", hostKeywords)
+      simulateAllowedHostsDisjunction(meta, "KNIGHT-CENTURA", knightCentura)
     ).toBe(true);
   });
 
