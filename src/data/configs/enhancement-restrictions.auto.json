@@ -736,7 +736,8 @@
     },
     "Snarling Rivalry": {
       "requiredKeywords": [
-        "WAR DOG EXECUTIONER"
+        "WAR DOG",
+        "EXECUTIONER"
       ]
     },
     "Soul-spoor Auspicator": {
@@ -1969,7 +1970,8 @@
     },
     "Eye of the Hunter": {
       "requiredKeywords": [
-        "WOLF GUARD BATTLE LEADER"
+        "WOLF GUARD",
+        "BATTLE LEADER"
       ]
     },
     "Weaver of Sagas": {
