@@ -31,7 +31,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const CACHE_DIR = resolve(__dirname, ".cache");
 const CACHE_PATH = resolve(CACHE_DIR, "llm-classifications.json");
 
-const MODEL_ID = "claude-haiku-4-5-20251001";
+export const MODEL_ID = "claude-haiku-4-5-20251001";
 
 const SYSTEM_PROMPT = `You read one or more raw text pages from a Warhammer 40k Faction Pack PDF, locate the section that DEFINES a named enhancement, and report its restrictions in a structured form by calling the set_enhancement_restrictions tool.
 
@@ -87,14 +87,17 @@ function narrowToPages(tokens, pageTexts) {
   });
 }
 
+// v3 invalidates v2 caches built before requiredKeywords got a closed
+// vocabulary — the prompt and post-validator differ enough that previous
+// responses can't be reused. v4: temperature dropped to 0 and the
+// nonCharacterOnly field removed from the schema/prompt — old entries are
+// recomputed once, deterministically.
+// Exported so the per-faction fingerprint gate re-runs this pass on a bump.
+export const RESTRICTION_CACHE_VERSION = "v4";
+
 function makeCacheKey({ enhancementName, pageTexts, datasheetNames, factionKeywordVocab }) {
   const h = createHash("sha256");
-  // v3 invalidates v2 caches built before requiredKeywords got a closed
-  // vocabulary — the prompt and post-validator differ enough that previous
-  // responses can't be reused. v4: temperature dropped to 0 and the
-  // nonCharacterOnly field removed from the schema/prompt — old entries are
-  // recomputed once, deterministically.
-  h.update("v4:");
+  h.update(`${RESTRICTION_CACHE_VERSION}:`);
   h.update(MODEL_ID);
   h.update("\0");
   h.update(enhancementName);

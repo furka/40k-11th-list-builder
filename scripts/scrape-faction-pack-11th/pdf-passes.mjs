@@ -711,7 +711,7 @@ async function scrapePdfKeywordsForFaction(
   return out;
 }
 
-export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape }) {
+export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape, skipSlugs = new Set() }) {
   if (!existsSync(FACTION_PACK_URLS_PATH)) {
     console.warn(
       `Skipping PDF keyword pass: ${FACTION_PACK_URLS_PATH} missing.`
@@ -755,6 +755,10 @@ export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isF
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
     const priorEntries = priorData[factionPayload.faction] ?? {};
+    if (skipSlugs.has(slug)) {
+      if (Object.keys(priorEntries).length > 0) existing[factionPayload.faction] = priorEntries;
+      continue;
+    }
     try {
       process.stdout.write(`  ${slug} keywords …\n`);
       const factionOut = await scrapePdfKeywordsForFaction(
@@ -809,7 +813,6 @@ export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isF
   }
   const payload = {
     _source: "Warhammer 40,000 Faction Pack PDFs",
-    _generatedAt: new Date().toISOString(),
     _generator: "scripts/scrape-faction-pack-11th",
     ...sortedFactions,
   };
@@ -820,7 +823,7 @@ export async function scrapePdfKeywords(scraped, slugs, warnings, { refresh, isF
   );
 }
 
-export async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape }) {
+export async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape, skipSlugs = new Set() }) {
   if (!existsSync(FACTION_PACK_URLS_PATH)) {
     console.warn(
       `Skipping detachment-grants pass: ${FACTION_PACK_URLS_PATH} missing.`
@@ -857,6 +860,10 @@ export async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
     const priorRules = priorData[factionPayload.faction];
+    if (skipSlugs.has(slug)) {
+      if (priorRules) existing[factionPayload.faction] = priorRules;
+      continue;
+    }
     try {
       process.stdout.write(`  ${slug} detachment-grants …\n`);
       const res = await scrapeDetachmentGrantsForFaction(
@@ -913,7 +920,7 @@ export async function scrapeDetachmentGrants(scraped, slugs, warnings, { refresh
   );
 }
 
-export async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape }) {
+export async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape, skipSlugs = new Set() }) {
   if (!existsSync(FACTION_PACK_URLS_PATH)) {
     console.warn(
       `Skipping PDF pass: ${FACTION_PACK_URLS_PATH} missing. Run discover-faction-pack-urls.mjs first.`
@@ -969,9 +976,13 @@ export async function scrapePdfRestrictions(scraped, slugs, warnings, { refresh,
   for (const slug of slugs) {
     const factionPayload = scraped.get(slug);
     if (!factionPayload) continue;
+    const priorEntries = priorData[factionPayload.faction] ?? {};
+    if (skipSlugs.has(slug)) {
+      if (Object.keys(priorEntries).length > 0) restrictions[factionPayload.faction] = priorEntries;
+      continue;
+    }
     const factionKeywordVocab = [...(perFaction.get(factionPayload.faction) ?? [])];
     const datasheetKeywords = datasheetKeywordsByFaction.get(factionPayload.faction.toUpperCase());
-    const priorEntries = priorData[factionPayload.faction] ?? {};
     try {
       process.stdout.write(`  ${slug} PDF …\n`);
       const out = await scrapePdfRestrictionsForFaction(

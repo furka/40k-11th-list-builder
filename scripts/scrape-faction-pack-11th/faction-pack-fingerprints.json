@@ -1,0 +1,115 @@
+{
+  "_rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2",
+  "adepta-sororitas": {
+    "textHash": "24a83ac150e16ac792e8f6b798c7161a98d78ac8969bf728c6de37c8866b6480",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "adeptus-custodes": {
+    "textHash": "d57193ec69de00aee70537e4139b4644389c17e7a32404f2a3cbfe2c6f2060b2",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "adeptus-mechanicus": {
+    "textHash": "b552f7dc0fa60e77b520da62a495c37104d229f6bd889ad1e650ba92bea02e46",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "aeldari": {
+    "textHash": "362fa81f175736957cbf97c7a486eda1a760c9479757766d902c45bcf67636d6",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "astra-militarum": {
+    "textHash": "f3983a00fbe34e53182c91b7e298cb4ac7aa0de1960ae8ea72985041ae4ed18f",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "black-templars": {
+    "textHash": "4e15a8142a2a8bcc2cbdcce0e5b33f81341dedb35b246423bdeac21d9f995faf",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "blood-angels": {
+    "textHash": "6784e1e9f4f41d93482fdc71ee64a12fbff237fd8bf271794c4a5d74885eb3c6",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "chaos-daemons": {
+    "textHash": "ae21c067074e509bd9127c8485e745732edf20c639bcfc67ecb4d4e8546a94af",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "chaos-knights": {
+    "textHash": "f0abf15742e43353155387e0762d1b763440adcea3eb901ca310f17b591118b6",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "chaos-space-marines": {
+    "textHash": "ef07a43597b7eaa576152d3bd1b84a87f443ab80bb6f2de5575ac31437b54fb8",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "dark-angels": {
+    "textHash": "8fff623ab584deb8a57638b2000a816035ad1dd6b3947d27075a0e8c33f568e5",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "death-guard": {
+    "textHash": "c9e1f3a8b1305106ed212e953dfea3579906a6a7d85bb9d2b94ec87fc51924c1",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "deathwatch": {
+    "textHash": "a6b7478a595b444be4be7a729601a9b0c48a804724810d987d836e9b155e197e",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "drukhari": {
+    "textHash": "74bbfb947e74869dee3505af62b2a4a7d5a543ccef44f33655a7e7411eec5dcb",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "emperors-children": {
+    "textHash": "b401ef3f6f6c6c7220b40459677d26bf77e996df0fbcc358646765f5fb59e5d3",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "genestealer-cults": {
+    "textHash": "2b61740541546cdf9df47c90381bf58c3a298214058602dedd9638f32ecbfa9b",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "grey-knights": {
+    "textHash": "2acd4cc4b6b9edfcbb53754be650f0382e3ab7cab811d011b57908539d590e5a",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "imperial-agents": {
+    "textHash": "2579876c35099f4122b1f8376537603f864d9399f56241ff02659ad1da47e758",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "imperial-knights": {
+    "textHash": "7de7c531e2b6f5b973610fcdd104da53c9237a4fb7e7c264fd6587c48ddd0b26",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "leagues-of-votann": {
+    "textHash": "0114d915206fb94e71bf836012df8857632bec0b162605bbd7e268116560be04",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "necrons": {
+    "textHash": "2cc000b71ddb772d3e5cd1f3c62b72832debc5c36110d081c8360426d8781f73",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "orks": {
+    "textHash": "860c6431dbed2a1eb06b7a83c241c0a6db8f9d7553b6da28f5c992d2cc1bf70f",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "space-marines": {
+    "textHash": "ccbc60d515b41025e87deb70f84acffafa6796da50fc9719a69c27641f1d7992",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "space-wolves": {
+    "textHash": "edd5d14fa86cc5a45f9e8471d43da673ae10804970010ad9a6bd3f1aa048a690",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "tau-empire": {
+    "textHash": "06542b3250ee1f9a99cba71f30f91648d9a56eced99781fd198787613991e9b9",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "thousand-sons": {
+    "textHash": "43226c2319c2f7af8b87d61b1d951351f03bef320ad3bc29ff3b5c92465eebdf",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "tyranids": {
+    "textHash": "77437e008453c043eeb7fc513fcce553c1e49b062457caa51400420b223932ee",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  },
+  "world-eaters": {
+    "textHash": "9dc9d6d7555614d9b2725e1f64678655051c19440bf36744ccca0fa8f83df735",
+    "rev": "fp1|claude-haiku-4-5-20251001|v4|v4|detachment-grants:v3|errata-keywords:v2"
+  }
+}

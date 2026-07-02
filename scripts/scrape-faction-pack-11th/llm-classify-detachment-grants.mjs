@@ -89,9 +89,13 @@ function narrowDatasheetNames(datasheetNames, pageTexts) {
   });
 }
 
+// v3: temperature dropped to 0. Exported so the per-faction fingerprint gate
+// re-runs this pass on a bump.
+export const GRANTS_CACHE_VERSION = "detachment-grants:v3";
+
 function makeCacheKey({ detachmentName, pageTexts, datasheetNames }) {
   const h = createHash("sha256");
-  h.update("detachment-grants:v3:"); // v3: temperature dropped to 0
+  h.update(`${GRANTS_CACHE_VERSION}:`);
   h.update(MODEL_ID);
   h.update("\0");
   // The system prompt drives extraction behaviour — hash it so a prompt
