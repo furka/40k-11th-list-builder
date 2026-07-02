@@ -69,9 +69,13 @@ const ERRATA_TOOL = {
   },
 };
 
+// v2: temperature dropped to 0. Exported so the per-faction fingerprint gate
+// re-runs this pass on a bump.
+export const ERRATA_CACHE_VERSION = "errata-keywords:v2";
+
 function makeCacheKey({ factionName, pageTexts }) {
   const h = createHash("sha256");
-  h.update("errata-keywords:v2:"); // v2: temperature dropped to 0
+  h.update(`${ERRATA_CACHE_VERSION}:`);
   h.update(MODEL_ID);
   h.update("\0");
   h.update(SYSTEM_PROMPT);

@@ -35,6 +35,14 @@ import {
   scrapeDetachmentGrants,
 } from "./pdf-passes.mjs";
 import { scrapeErrataKeywords } from "./scrape-errata-keywords.mjs";
+import { fetchFactionPackPdf } from "./fetch.mjs";
+import {
+  classifierRevision,
+  computeFactionTextHash,
+  isUnchanged,
+  loadFingerprints,
+  saveFingerprints,
+} from "./fingerprints.mjs";
 import { AbortScrapeError } from "./api-errors.mjs";
 import { flushLlmCache } from "./llm-classify.mjs";
 import { flushKeywordCache } from "./llm-classify-keywords.mjs";
@@ -74,6 +82,41 @@ function installCacheFlushGuards() {
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const MFM_ROOT = resolve(__dirname, "../../src/data/munitorum-field-manual-11th");
+const FACTION_PACK_URLS_PATH = resolve(__dirname, "faction-pack-urls.json");
+
+// Fetch + hash every faction's PDF text up front (parse only, no LLM/tokens) and
+// diff it against the committed fingerprint manifest. Returns the set of slugs
+// safe to skip and the fresh hashes to record after a successful run. In refresh
+// mode nothing is skipped, but hashes are still computed so the manifest is
+// rewritten from the freshly-downloaded PDFs.
+async function computeFingerprintGate(slugs, warnings, { refresh }) {
+  let factionPackUrls = {};
+  if (existsSync(FACTION_PACK_URLS_PATH)) {
+    factionPackUrls = JSON.parse(await readFile(FACTION_PACK_URLS_PATH, "utf8"));
+  }
+  const manifest = await loadFingerprints();
+  const rev = classifierRevision();
+  const skipSlugs = new Set();
+  const freshHashes = new Map();
+  for (const slug of slugs) {
+    const url = factionPackUrls[slug];
+    if (!url) continue; // no URL → let the pass handle it (treated as changed)
+    let hash;
+    try {
+      const pdf = await fetchFactionPackPdf(slug, url, { refresh });
+      hash = await computeFactionTextHash(pdf);
+    } catch (e) {
+      // Can't fingerprint (fetch/parse failed) → don't skip; the pass runs and
+      // uses its own retain-prior handling. Its hash stays unrecorded so it is
+      // retried next run.
+      warnings.add("fingerprint-failed", { slug, message: e.message });
+      continue;
+    }
+    freshHashes.set(slug, hash);
+    if (!refresh && isUnchanged(manifest[slug], hash, rev)) skipSlugs.add(slug);
+  }
+  return { manifest, rev, skipSlugs, freshHashes };
+}
 
 // Every file the passes write. We snapshot these before the run and restore them
 // on a fatal abort so an incomplete run is a true no-op: either the whole scrape
@@ -141,6 +184,16 @@ async function main() {
 
   const warnings = createWarningSink("faction-pack-scrape");
 
+  const { manifest, rev, skipSlugs, freshHashes } = await computeFingerprintGate(
+    slugs,
+    warnings,
+    { refresh }
+  );
+  console.log(
+    `Fingerprint gate: ${skipSlugs.size}/${slugs.length} faction(s) unchanged → skipping classification; ` +
+      `${slugs.length - skipSlugs.size} to classify.`
+  );
+
   // All-or-nothing: if ANY pass throws (a fatal credit/auth abort, or an
   // unexpected error mid-run), roll the output files back so a partial run never
   // leaves the committed data half-updated. Either the whole scrape completes
@@ -148,15 +201,16 @@ async function main() {
   const snapshot = await snapshotOutputs();
   try {
     // A full pass over every faction in the snapshot — rebuild each output from
-    // scratch (isFullScrape) so dropped/renamed entries don't linger.
+    // scratch (isFullScrape) so dropped/renamed entries don't linger. Skipped
+    // (fingerprint-unchanged) factions retain their prior committed data.
     console.log("\nPDF keyword pass …");
-    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape: true });
+    await scrapePdfKeywords(scraped, slugs, warnings, { refresh, isFullScrape: true, skipSlugs });
     console.log("\nEnhancement restrictions pass …");
-    await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape: true });
+    await scrapePdfRestrictions(scraped, slugs, warnings, { refresh, isFullScrape: true, skipSlugs });
     console.log("\nDetachment-grants pass …");
-    await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape: true });
+    await scrapeDetachmentGrants(scraped, slugs, warnings, { refresh, isFullScrape: true, skipSlugs });
     console.log("\nRules-Updates keyword errata pass …");
-    await scrapeErrataKeywords({ refresh, warnings });
+    await scrapeErrataKeywords({ refresh, warnings, skipSlugs });
   } catch (e) {
     await restoreOutputs(snapshot);
     console.error(
@@ -166,6 +220,17 @@ async function main() {
     );
     throw e;
   }
+
+  // The scrape completed (no rollback). Record fresh fingerprints for every
+  // classified faction. A gate hash implies the PDF fetched + parsed cleanly, so
+  // the passes' per-faction fetch/parse succeeded too — the committed output
+  // reflects this text. Skipped factions keep their existing (matching) entry.
+  for (const slug of slugs) {
+    if (skipSlugs.has(slug)) continue;
+    const hash = freshHashes.get(slug);
+    if (hash) manifest[slug] = { textHash: hash, rev };
+  }
+  await saveFingerprints(manifest);
 
   await flushAndReport(warnings);
 }

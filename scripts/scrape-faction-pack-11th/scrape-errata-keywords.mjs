@@ -50,6 +50,7 @@ const keepKeywords = (arr) => arr.filter((k) => !NON_KEYWORD_TOKENS.has(k));
 export async function scrapeErrataKeywords({
   refresh = false,
   warnings: providedWarnings,
+  skipSlugs = new Set(),
 } = {}) {
   // When run as part of the unified faction-pack scraper, the caller owns the
   // warning sink and flushes once at the end; standalone, we manage our own.
@@ -96,6 +97,7 @@ export async function scrapeErrataKeywords({
   try {
   for (const [slug, payload] of Object.entries(factions)) {
     const factionName = payload.faction;
+    if (skipSlugs.has(slug)) continue; // prior errata already seeded into `out`
     const url = factionPackUrls[slug];
     if (!url) {
       warnings.add("errata-url-missing", { slug });

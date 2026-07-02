@@ -107,11 +107,14 @@ const KEYWORD_TOOL = {
   },
 };
 
+// v3: sibling-disambiguation prompt. v4: temperature 0 + the prompt now
+// requires the union of all per-model keyword groups (not just ALL MODELS).
+// Exported so the per-faction fingerprint gate re-runs this pass on a bump.
+export const KEYWORD_CACHE_VERSION = "v4";
+
 function makeCacheKey({ datasheetName, pageTexts, confusableSiblings = [] }) {
   const h = createHash("sha256");
-  // v3: sibling-disambiguation prompt. v4: temperature 0 + the prompt now
-  // requires the union of all per-model keyword groups (not just ALL MODELS).
-  h.update("v4:");
+  h.update(`${KEYWORD_CACHE_VERSION}:`);
   h.update(MODEL_ID);
   h.update("\0");
   h.update(datasheetName);
