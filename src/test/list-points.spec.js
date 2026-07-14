@@ -112,6 +112,15 @@ describe("resolveTier", () => {
   it("returns -1 for an unknown size", () => {
     expect(resolveTier(null, 1).points).toBe(-1);
   });
+
+  it("selects alliedPoints when allied, falling back to base points", () => {
+    const size = { tiers: [{ minCount: 1, points: 75, alliedPoints: 110 }] };
+    expect(resolveTier(size, 1).points).toBe(75);
+    expect(resolveTier(size, 1, true).points).toBe(110);
+    // A tier without an allied price falls back to the base cost.
+    const noAllied = { tiers: [{ minCount: 1, points: 80 }] };
+    expect(resolveTier(noAllied, 1, true).points).toBe(80);
+  });
 });
 
 describe("computeListPoints — flat units", () => {

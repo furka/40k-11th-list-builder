@@ -43,6 +43,41 @@ export function deriveConfusableSiblings(targetName, siblingNames) {
   });
 }
 
+// Detects the prefix-collision "keyword borrow" signature. When a base
+// datasheet (e.g. "CUSTODIAN GUARD") has no stat block of its own in the pack
+// but shares PDF page(s) with a longer variant ("CUSTODIAN GUARD WITH ADRASITE
+// AND PYRITHITE SPEARS"), Haiku sometimes extracts the VARIANT's KEYWORDS line
+// for the base and swaps in the base's own name. The tell is exact: the base's
+// keyword set equals the variant's set with the variant's self-name keyword
+// replaced by the base's name. When that holds the base borrowed the variant's
+// block — its keywords are wrong (they silently drop whatever the base uniquely
+// has, e.g. BATTLELINE) and the entry should be dropped so BSData wins.
+//
+// Guarded on BOTH names actually appearing as their own keyword so a real base
+// block (which carries its own name but a DIFFERENT keyword set from the
+// variant) never matches. Pure function — unit-tested.
+export function isKeywordBorrow(baseKeywords, siblingKeywords, baseName, siblingName) {
+  if (!Array.isArray(baseKeywords) || !Array.isArray(siblingKeywords)) return false;
+  const kBase = enhancementNameKey(baseName);
+  const kSib = enhancementNameKey(siblingName);
+  if (!kBase || !kSib || kBase === kSib) return false;
+
+  const baseSet = new Set(baseKeywords.map((k) => enhancementNameKey(k)));
+  const sibSet = new Set(siblingKeywords.map((k) => enhancementNameKey(k)));
+  // The base must carry its own name and the sibling its own — otherwise this
+  // isn't the swap signature and we must not risk dropping a legit entry.
+  if (!baseSet.has(kBase) || !sibSet.has(kSib)) return false;
+
+  // Rewrite the sibling's self-name keyword to the base's name, then compare
+  // the two keyword sets under normalized (punctuation/casing-insensitive) keys.
+  const rewritten = new Set(
+    [...sibSet].map((k) => (k === kSib ? kBase : k))
+  );
+  if (rewritten.size !== baseSet.size) return false;
+  for (const k of baseSet) if (!rewritten.has(k)) return false;
+  return true;
+}
+
 const MODEL_ID = "claude-haiku-4-5-20251001";
 
 const SYSTEM_PROMPT = `You read one or more raw text pages from a Warhammer 40k Faction Pack PDF, locate the section that DEFINES a named datasheet, and extract its keyword lines by calling the set_datasheet_keywords tool.
@@ -111,6 +146,15 @@ const KEYWORD_TOOL = {
 // requires the union of all per-model keyword groups (not just ALL MODELS).
 // Exported so the per-faction fingerprint gate re-runs this pass on a bump.
 export const KEYWORD_CACHE_VERSION = "v4";
+
+// Version of the DETERMINISTIC post-processing applied AFTER the LLM classifies
+// (currently the prefix-collision borrow-drop guard). Kept separate from
+// KEYWORD_CACHE_VERSION so a post-processing change re-runs the fingerprint gate
+// — and thus re-derives every faction's output from the existing response cache
+// at ZERO token cost — WITHOUT invalidating the per-response cache (which would
+// force paid re-classification). Bump when the post-pass logic changes.
+//   v1: borrow-drop guard (base datasheet borrowing a longer variant's keywords).
+export const KEYWORD_POSTPROCESS_VERSION = "v1";
 
 function makeCacheKey({ datasheetName, pageTexts, confusableSiblings = [] }) {
   const h = createHash("sha256");

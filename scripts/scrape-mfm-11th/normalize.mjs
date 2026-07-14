@@ -53,17 +53,72 @@ export function normalizeFactionData(factionSlug, factionName, raw) {
       tags: d.tags ?? [],
       enhancements: d.enhancements,
     })),
-    datasheets: raw.datasheets.map((d) => {
-      const sheet = {
-        name: d.name,
-        leader: d.leader,
-        support: d.support,
-        sizes: normalizeSizes(d.tiers),
-      };
-      if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
-      return sheet;
-    }),
+    datasheets: normalizeDatasheets(raw.datasheets),
   });
+}
+
+// Imperial Agents units are scraped twice (see extract.mjs): a base record and
+// an `allied: true` twin carrying the "Agents of the Imperium" allied cost. Emit
+// ONE datasheet per unit — the base sizes/tiers — and fold the allied twin's
+// per-tier cost in as `alliedPoints`, so the runtime can pick the right price by
+// whether the unit is fielded as an ally. Non-Imperial-Agents factions have no
+// allied twins, so this collapses to a plain 1:1 map.
+function normalizeDatasheets(rawDatasheets) {
+  const datasheets = [];
+  const byName = new Map();
+  for (const d of rawDatasheets) {
+    if (d.allied) continue;
+    const sheet = {
+      name: d.name,
+      leader: d.leader,
+      support: d.support,
+      sizes: normalizeSizes(d.tiers),
+    };
+    if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
+    datasheets.push(sheet);
+    byName.set(d.name, sheet);
+  }
+
+  for (const d of rawDatasheets) {
+    if (!d.allied) continue;
+    const base = byName.get(d.name);
+    if (base) {
+      mergeAlliedPoints(base.sizes, normalizeSizes(d.tiers));
+      continue;
+    }
+    // No base twin (shouldn't happen for the two-run Imperial Agents layout, but
+    // never drop a datasheet): emit it as a plain base sheet.
+    const sheet = {
+      name: d.name,
+      leader: d.leader,
+      support: d.support,
+      sizes: normalizeSizes(d.tiers),
+    };
+    if (d.wargearOptions?.length) sheet.wargearOptions = d.wargearOptions;
+    datasheets.push(sheet);
+    byName.set(d.name, sheet);
+  }
+
+  return datasheets;
+}
+
+// Fold allied-twin per-tier points onto the matching base tiers as
+// `alliedPoints`. Sizes and tiers line up because both runs come from the same
+// MFM layout; anything that doesn't match is simply left without an allied price
+// (the runtime falls back to the base cost).
+function mergeAlliedPoints(baseSizes, alliedSizes) {
+  const sizeKey = (s) => `${s.name ?? ""}::${s.models ?? "?"}`;
+  const tierKey = (t) => `${t.minCount}::${t.maxCount ?? "*"}`;
+  const alliedBySize = new Map(alliedSizes.map((s) => [sizeKey(s), s]));
+  for (const size of baseSizes) {
+    const allied = alliedBySize.get(sizeKey(size));
+    if (!allied) continue;
+    const alliedTiers = new Map(allied.tiers.map((t) => [tierKey(t), t]));
+    for (const tier of size.tiers) {
+      const at = alliedTiers.get(tierKey(tier));
+      if (at && at.points != null) tier.alliedPoints = at.points;
+    }
+  }
 }
 
 function normalizeSizes(tiers) {

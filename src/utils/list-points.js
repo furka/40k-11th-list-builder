@@ -28,7 +28,11 @@ export function computeListPoints(list, mfm, faction) {
   const unitsById = new Map((list.units ?? []).map((u) => [u.id, u]));
 
   const getDatasheet = (unit) => {
-    const cacheKey = `${unit.name}::${faction ?? ""}`;
+    // Allied units resolve against their pinned source codex — same-named
+    // datasheets can exist in multiple factions at different points.
+    const lookupFaction =
+      unit.allied && unit.alliedFaction ? unit.alliedFaction : faction;
+    const cacheKey = `${unit.name}::${lookupFaction ?? ""}`;
     if (cacheKey in datasheetCache) return datasheetCache[cacheKey];
 
     let sheet = null;
@@ -38,10 +42,10 @@ export function computeListPoints(list, mfm, faction) {
       // Wargear has no datasheet of its own — pricing walks to the host.
       sheet = null;
     } else {
-      if (faction) {
+      if (lookupFaction) {
         sheet =
           mfm.DATA_SHEETS.find(
-            (d) => d.name === unit.name && d.faction === faction
+            (d) => d.name === unit.name && d.faction === lookupFaction
           ) ?? null;
       }
       if (!sheet) {
@@ -80,7 +84,7 @@ export function computeListPoints(list, mfm, faction) {
 
     counters[unit.name] = (counters[unit.name] || 0) + 1;
     const copyIndex = counters[unit.name];
-    const tierResult = resolveTier(size, copyIndex);
+    const tierResult = resolveTier(size, copyIndex, unit.allied);
     perUnit[unit.id] = tierResult;
     if (tierResult.points > 0) total += tierResult.points;
   }
@@ -114,8 +118,12 @@ function findSize(sheet, unit) {
  *
  * `tierLabel` is null for single-tier units (e.g. "10 models 80 pts"). For
  * multi-tier units it's a human-readable hint like "1st", "1st-2nd", "3rd+".
+ *
+ * `allied` selects the "Agents of the Imperium" allied cost (`tier.alliedPoints`)
+ * when the unit is fielded as an ally — present only on Imperial Agents
+ * datasheets; every other unit falls back to the base `points`.
  */
-export function resolveTier(size, copyIndex) {
+export function resolveTier(size, copyIndex, allied = false) {
   if (!size) return { points: -1, tierIndex: 0, tierLabel: null };
 
   const tiers = size.tiers ?? [
@@ -135,7 +143,7 @@ export function resolveTier(size, copyIndex) {
   }
 
   return {
-    points: chosen.points,
+    points: allied ? chosen.alliedPoints ?? chosen.points : chosen.points,
     tierIndex: chosenIdx,
     tierLabel: tiers.length > 1 ? tierLabel(chosen) : null,
   };

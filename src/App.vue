@@ -44,10 +44,6 @@ function initializeApp() {
     mfmStore.autoUpgradeMFMVersion(list);
   });
 
-  codexStore.setFaction(armyListStore.faction);
-  codexStore.setAllies(armyListStore.allies);
-  codexStore.setCurrentMFM(armyListStore.currentMFM);
-
   // URL search params are only ever an incoming shared list — import it
   // once, then strip the params so a refresh can't re-trigger the import.
   // Sharing-out is handled on demand by ShareListModal, not via auto-mirror.
@@ -63,6 +59,13 @@ function initializeApp() {
     }
     window.history.replaceState({}, "", window.location.pathname);
   }
+
+  // Sync the codex from the final army-list state — from storage OR a URL
+  // import. Must run after the import above, since the codex-sync watchers
+  // aren't registered until after initializeApp() during setup.
+  codexStore.setFaction(armyListStore.faction);
+  codexStore.setAllies(armyListStore.allies);
+  codexStore.setCurrentMFM(armyListStore.currentMFM);
 }
 
 initializeApp();

@@ -74,12 +74,17 @@ export const useMfmStore = defineStore("mfm", () => {
     const isEnhancement = unit.name === "Enhancements";
     let data_sheet;
 
+    // Allied units resolve against their pinned source codex — same-named
+    // datasheets can exist in multiple factions at different points.
+    const lookupFaction =
+      unit.allied && unit.alliedFaction ? unit.alliedFaction : faction;
+
     if (isEnhancement) {
       data_sheet = mfm.DATA_SHEETS.find((d) => d.name === "Enhancements");
     } else {
-      if (faction) {
+      if (lookupFaction) {
         data_sheet = mfm.DATA_SHEETS.find(
-          (d) => d.name === unit.name && d.faction === faction
+          (d) => d.name === unit.name && d.faction === lookupFaction
         );
       }
       if (!data_sheet) {
@@ -96,8 +101,14 @@ export const useMfmStore = defineStore("mfm", () => {
     }
     if (!option) return -1;
 
-    if (!ctx) return option.basePoints ?? option.points;
-    return resolveTier(option, ctx.copyIndex).points;
+    if (!ctx) {
+      if (unit.allied) {
+        const tier = option.tiers?.[0];
+        return tier?.alliedPoints ?? tier?.points ?? option.basePoints ?? option.points;
+      }
+      return option.basePoints ?? option.points;
+    }
+    return resolveTier(option, ctx.copyIndex, unit.allied).points;
   }
 
   function getUnitPointsDifference(unit, currentMFM, previousMFM) {

@@ -238,6 +238,16 @@ function extractDatasheets(doc) {
   // around its actual content node.
   const out = [];
 
+  // Imperial Agents is the one faction whose page publishes each unit TWICE:
+  // a first run of base (standalone-army) costs under the "UNITS" heading, then
+  // a second run of "Agents of the Imperium" ALLIED costs under the "EVERY
+  // MODEL HAS THE IMPERIUM KEYWORD" heading, listing the same datasheets in the
+  // same order. A card is the ALLIED twin when its exact name was already seen;
+  // first occurrences (and any trailing single-listed unit, e.g. Legends) stay
+  // base. Marking per-name rather than by a sticky region flag keeps a trailing
+  // once-only unit from being mistaken for an allied twin with no base.
+  const seenNames = new Set();
+
   // Find every datasheet card by structure rather than by parent — they all
   // share the layout `<div class="px-1 py-0.5 bg-slate-500 ...">NAME</div>`
   // followed by one or more `YOUR ... COSTS` blocks.
@@ -336,6 +346,9 @@ function extractDatasheets(doc) {
 
     if (tiers.length === 0) continue; // not actually a datasheet card
 
+    const allied = seenNames.has(name);
+    seenNames.add(name);
+
     const record = {
       name,
       tiers,
@@ -344,6 +357,7 @@ function extractDatasheets(doc) {
       epicHero,
     };
     if (wargearOptions.length) record.wargearOptions = wargearOptions;
+    if (allied) record.allied = true;
     out.push(record);
   }
 

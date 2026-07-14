@@ -120,12 +120,6 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "CUSTODIAN GUARD": [
-      "ADEPTUS CUSTODES",
-      "CUSTODIAN GUARD",
-      "IMPERIUM",
-      "INFANTRY"
-    ],
     "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS": [
       "ADEPTUS CUSTODES",
       "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
@@ -761,15 +755,6 @@
       "HYDRA PLATFORM",
       "IMPERIUM"
     ],
-    "MACHARIUS": [
-      "ASTRA MILITARUM",
-      "FRAME",
-      "IMPERIUM",
-      "MACHARIUS",
-      "SMOKE",
-      "TITANIC",
-      "VEHICLE"
-    ],
     "MACHARIUS OMEGA": [
       "ASTRA MILITARUM",
       "FRAME",
@@ -795,15 +780,6 @@
       "MACHARIUS VULCAN",
       "SMOKE",
       "TITANIC",
-      "VEHICLE"
-    ],
-    "MALCADOR": [
-      "ASTRA MILITARUM",
-      "FRAME",
-      "IMPERIUM",
-      "MALCADOR",
-      "SMOKE",
-      "SQUADRON",
       "VEHICLE"
     ],
     "MALCADOR ANNIHILATOR": [
@@ -3135,13 +3111,6 @@
     "ATTACK BIKE SQUAD": [
       "ADEPTUS ASTARTES",
       "ATTACK BIKE SQUAD",
-      "GRENADES",
-      "IMPERIUM",
-      "MOUNTED"
-    ],
-    "BIKE SQUAD": [
-      "ADEPTUS ASTARTES",
-      "BIKE SQUAD",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"

@@ -207,6 +207,45 @@ describe("getPoints", () => {
   });
 });
 
+describe("getPoints — allied cost (Agents of the Imperium)", () => {
+  let mfm;
+  beforeEach(() => {
+    mfm = freshMfm();
+  });
+
+  const ALLIED_MFM = {
+    MFM_VERSION: "V1.0 (allied)",
+    DATA_SHEETS: [
+      {
+        name: "Draxus",
+        faction: "IMPERIAL AGENTS",
+        sizes: [
+          {
+            name: "1 model",
+            models: 1,
+            basePoints: 75,
+            tiers: [{ minCount: 1, points: 75, alliedPoints: 110 }],
+          },
+        ],
+      },
+    ],
+  };
+  const draxus = { name: "Draxus", optionName: "1 model", models: 1 };
+
+  it("returns the standalone cost when the unit is not allied", () => {
+    expect(mfm.getPoints(draxus, ALLIED_MFM)).toBe(75);
+    expect(mfm.getPoints(draxus, ALLIED_MFM, null, { copyIndex: 1 })).toBe(75);
+  });
+
+  it("returns the allied cost when the unit is fielded as an ally", () => {
+    const ally = { ...draxus, allied: true, alliedFaction: "IMPERIAL AGENTS" };
+    expect(mfm.getPoints(ally, ALLIED_MFM)).toBe(110);
+    expect(
+      mfm.getPoints(ally, ALLIED_MFM, "ADEPTUS CUSTODES", { copyIndex: 1 })
+    ).toBe(110);
+  });
+});
+
 describe("getPoints — Wargear branch", () => {
   let mfm;
   beforeEach(() => {

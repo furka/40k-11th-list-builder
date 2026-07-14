@@ -155,7 +155,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         },
@@ -165,7 +166,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200
+              "points": 200,
+              "alliedPoints": 200
             }
           ]
         }
@@ -182,7 +184,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         }
@@ -199,7 +202,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 180,
+              "alliedPoints": 180
             }
           ]
         }
@@ -216,7 +220,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 85,
+              "alliedPoints": 85
             }
           ]
         }
@@ -233,7 +238,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         },
@@ -243,7 +249,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190
+              "points": 190,
+              "alliedPoints": 200
             }
           ]
         }
@@ -260,7 +267,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 110,
+              "alliedPoints": 120
             }
           ]
         }
@@ -277,7 +285,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 90,
+              "alliedPoints": 85
             }
           ]
         }
@@ -294,7 +303,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190
+              "points": 190,
+              "alliedPoints": 210
             }
           ]
         }
@@ -317,7 +327,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 90,
+              "alliedPoints": 90
             }
           ]
         }
@@ -334,7 +345,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 75,
+              "alliedPoints": 75
             }
           ]
         }
@@ -364,7 +376,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 55,
+              "alliedPoints": 65
             }
           ]
         }
@@ -391,7 +404,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 75,
+              "alliedPoints": 95
             }
           ]
         }
@@ -418,7 +432,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 75,
+              "alliedPoints": 110
             }
           ]
         }
@@ -446,7 +461,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 65,
+              "alliedPoints": 65
             }
           ]
         }
@@ -463,7 +479,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 50,
+              "alliedPoints": 60
             }
           ]
         },
@@ -473,7 +490,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 120
             }
           ]
         }
@@ -490,7 +508,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 70,
+              "alliedPoints": 70
             }
           ]
         }
@@ -507,7 +526,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         }
@@ -534,7 +554,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 40
+              "points": 40,
+              "alliedPoints": 40
             }
           ]
         }
@@ -556,7 +577,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 60,
+              "alliedPoints": 75
             }
           ]
         }
@@ -578,7 +600,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 75,
+              "alliedPoints": 105
             }
           ]
         }
@@ -595,7 +618,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         }
@@ -612,7 +636,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 115
             }
           ]
         }
@@ -635,7 +660,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 100,
+              "alliedPoints": 115
             }
           ]
         }
@@ -652,7 +678,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 85,
+              "alliedPoints": 100
             }
           ]
         }
@@ -669,7 +696,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 85,
+              "alliedPoints": 85
             }
           ]
         }
@@ -686,7 +714,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 110,
+              "alliedPoints": 125
             }
           ]
         }
@@ -703,7 +732,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 50,
+              "alliedPoints": 70
             }
           ]
         }
@@ -730,7 +760,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 65,
+              "alliedPoints": 65
             }
           ]
         }
@@ -757,626 +788,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "AQUILA KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 200
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CALLIDUS ASSASSIN",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CORVUS BLACKSTAR",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 180
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CULEXUS ASSASSIN",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEATHWATCH KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 200
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "EVERSOR ASSASSIN",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "EXACTION SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "11 models",
-          "models": 11,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "GREY KNIGHTS TERMINATOR SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 210
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Psycannon",
-          "points": 5
-        }
-      ]
-    },
-    {
-      "name": "IMPERIAL NAVY BREACHERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "IMPERIAL RHINO",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITOR",
-      "leader": {
-        "attachesTo": [
-          "AQUILA KILL TEAM",
-          "BATTLELINE IMPERIUM INFANTRY",
-          "EXACTION SQUAD",
-          "GREY KNIGHTS TERMINATOR SQUAD",
-          "IMPERIAL NAVY BREACHERS",
-          "INQUISITORIAL AGENTS",
-          "SANCTIFIERS",
-          "SISTERS OF BATTLE SQUAD",
-          "SUBDUCTOR SQUAD",
-          "VIGILANT SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITOR COTEAZ",
-      "leader": {
-        "attachesTo": [
-          "BATTLELINE IMPERIUM INFANTRY",
-          "EXACTION SQUAD",
-          "GREY KNIGHTS TERMINATOR SQUAD",
-          "IMPERIAL NAVY BREACHERS",
-          "INQUISITORIAL AGENTS",
-          "SUBDUCTOR SQUAD",
-          "VIGILANT SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITOR DRAXUS",
-      "leader": {
-        "attachesTo": [
-          "AQUILA KILL TEAM",
-          "BATTLELINE IMPERIUM INFANTRY",
-          "EXACTION SQUAD",
-          "IMPERIAL NAVY BREACHERS",
-          "INQUISITORIAL AGENTS",
-          "SUBDUCTOR SQUAD",
-          "VIGILANT SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITOR GREYFAX",
-      "leader": {
-        "attachesTo": [
-          "BATTLELINE IMPERIUM INFANTRY",
-          "EXACTION SQUAD",
-          "IMPERIAL NAVY BREACHERS",
-          "INQUISITORIAL AGENTS",
-          "SANCTIFIERS",
-          "SISTERS OF BATTLE SQUAD",
-          "SUBDUCTOR SQUAD",
-          "VIGILANT SQUAD"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITORIAL AGENTS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        },
-        {
-          "name": "12 models",
-          "models": 12,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITORIAL CHIMERA",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INQUISITOR KROYLE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "MINISTORUM PRIEST",
-      "leader": null,
-      "support": {
-        "attachesTo": [
-          "EXACTION SQUAD",
-          "IMPERIAL NAVY BREACHERS",
-          "INQUISITORIAL AGENTS",
-          "SANCTIFIERS",
-          "SISTERS OF BATTLE SQUAD",
-          "SUBDUCTOR SQUAD",
-          "VIGILANT SQUAD"
-        ]
-      },
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 40
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "NAVIGATOR",
-      "leader": {
-        "attachesTo": [
-          "IMPERIAL NAVY BREACHERS",
-          "VOIDSMEN-AT-ARMS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ROGUE TRADER ENTOURAGE",
-      "leader": {
-        "attachesTo": [
-          "IMPERIAL NAVY BREACHERS",
-          "VOIDSMEN-AT-ARMS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "4 models",
-          "models": 4,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 105
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SANCTIFIERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "9 models",
-          "models": 9,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SISTERS OF BATTLE IMMOLATOR",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 115
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Twin multi-melta",
-          "points": 15
-        }
-      ]
-    },
-    {
-      "name": "SISTERS OF BATTLE SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 115
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SUBDUCTOR SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "11 models",
-          "models": 11,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VIGILANT SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "11 models",
-          "models": 11,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VINDICARE ASSASSIN",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 125
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VOIDSMEN-AT-ARMS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "WATCH CAPTAIN ARTEMIS",
-      "leader": {
-        "attachesTo": [
-          "AQUILA KILL TEAM",
-          "DEATHWATCH KILL TEAM",
-          "DEATHWATCH TERMINATOR SQUAD",
-          "FORTIS KILL TEAM",
-          "INDOMITOR KILL TEAM",
-          "PROTEUS KILL TEAM",
-          "SPECTRUS KILL TEAM"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "WATCH MASTER",
-      "leader": {
-        "attachesTo": [
-          "AQUILA KILL TEAM",
-          "DEATHWATCH KILL TEAM",
-          "DEATHWATCH TERMINATOR SQUAD",
-          "FORTIS KILL TEAM",
-          "INDOMITOR KILL TEAM",
-          "PROTEUS KILL TEAM",
-          "SPECTRUS KILL TEAM"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 105
+              "points": 95,
+              "alliedPoints": 105
             }
           ]
         }

@@ -18,7 +18,10 @@ import { fileURLToPath } from "node:url";
 
 import { pdfToPages } from "./pdf-to-text.mjs";
 import { MODEL_ID, RESTRICTION_CACHE_VERSION } from "./llm-classify.mjs";
-import { KEYWORD_CACHE_VERSION } from "./llm-classify-keywords.mjs";
+import {
+  KEYWORD_CACHE_VERSION,
+  KEYWORD_POSTPROCESS_VERSION,
+} from "./llm-classify-keywords.mjs";
 import { GRANTS_CACHE_VERSION } from "./llm-classify-detachment-grants.mjs";
 import { ERRATA_CACHE_VERSION } from "./llm-classify-errata-keywords.mjs";
 
@@ -38,6 +41,7 @@ export function classifierRevision() {
     FINGERPRINT_SCHEME,
     MODEL_ID,
     KEYWORD_CACHE_VERSION,
+    KEYWORD_POSTPROCESS_VERSION,
     RESTRICTION_CACHE_VERSION,
     GRANTS_CACHE_VERSION,
     ERRATA_CACHE_VERSION,

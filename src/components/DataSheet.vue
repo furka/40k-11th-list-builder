@@ -128,6 +128,8 @@ const tierGroups = computed(() => {
   const sizes = options.value;
   if (!sizes.length) return [];
 
+  // Allied Imperial Agents cards show the "Agents of the Imperium" allied cost.
+  const allied = props.dataSheet.allied;
   const tierKey = (t) => `${t.minCount}::${t.maxCount ?? "*"}`;
   const tierMap = new Map();
 
@@ -144,7 +146,8 @@ const tierGroups = computed(() => {
           rows: [],
         });
       }
-      tierMap.get(k).rows.push({ size, points: tier.points });
+      const points = allied ? tier.alliedPoints ?? tier.points : tier.points;
+      tierMap.get(k).rows.push({ size, points });
     }
   }
 

@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { deriveConfusableSiblings } from "./llm-classify-keywords.mjs";
+import {
+  deriveConfusableSiblings,
+  isKeywordBorrow,
+} from "./llm-classify-keywords.mjs";
 
 describe("deriveConfusableSiblings", () => {
   const SM = [
@@ -38,5 +41,59 @@ describe("deriveConfusableSiblings", () => {
     expect(deriveConfusableSiblings("captain", ["Captain on Bike"])).toEqual([
       "Captain on Bike",
     ]);
+  });
+});
+
+describe("isKeywordBorrow", () => {
+  // The real regression: Custodian Guard's stat block was stripped from the
+  // pack, so the classifier extracted the spear-variant's KEYWORDS line and
+  // swapped in the plain name — dropping BATTLELINE.
+  const base = ["ADEPTUS CUSTODES", "CUSTODIAN GUARD", "IMPERIUM", "INFANTRY"];
+  const variant = [
+    "ADEPTUS CUSTODES",
+    "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
+    "IMPERIUM",
+    "INFANTRY",
+  ];
+
+  it("flags a base whose set is the variant's with only the self-name swapped", () => {
+    expect(
+      isKeywordBorrow(
+        base,
+        variant,
+        "CUSTODIAN GUARD",
+        "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS"
+      )
+    ).toBe(true);
+  });
+
+  it("does NOT flag when the base carries a keyword the variant lacks (BATTLELINE)", () => {
+    const genuineBase = [...base, "BATTLELINE"];
+    expect(
+      isKeywordBorrow(
+        genuineBase,
+        variant,
+        "CUSTODIAN GUARD",
+        "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS"
+      )
+    ).toBe(false);
+  });
+
+  it("requires each name to appear as its own keyword", () => {
+    // Base doesn't carry its own name → not the swap signature.
+    expect(
+      isKeywordBorrow(
+        ["ADEPTUS CUSTODES", "IMPERIUM", "INFANTRY"],
+        variant,
+        "CUSTODIAN GUARD",
+        "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS"
+      )
+    ).toBe(false);
+  });
+
+  it("returns false when names are unrelated (not a superstring pair)", () => {
+    expect(isKeywordBorrow(base, base, "CUSTODIAN GUARD", "CUSTODIAN GUARD")).toBe(
+      false
+    );
   });
 });

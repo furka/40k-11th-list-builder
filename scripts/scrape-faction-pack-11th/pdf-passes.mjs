@@ -34,6 +34,7 @@ import {
   classifyKeywordsWithLLM,
   flushKeywordCache,
   deriveConfusableSiblings,
+  isKeywordBorrow,
 } from "./llm-classify-keywords.mjs";
 import { enhancementNameKey } from "../scrape-mfm-11th/name-key.mjs";
 import { abortIfFatal, AbortScrapeError } from "./api-errors.mjs";
@@ -291,6 +292,33 @@ async function scrapePdfRestrictionsForFaction(
       ` cache-hits ${counts.cacheHits})`
   );
   return out;
+}
+
+// Which datasheets the BSData baseline layer covers, per faction. The keyword
+// borrow-drop guard only fires when BSData has an entry to fall back to —
+// dropping a borrowed faction-pack entry with no BSData backing would lose
+// coverage entirely (e.g. TIGER SHARK, absent from BSData, whose keywords
+// legitimately match its AX-1-0 variant). Returns Map<UPPERCASE faction,
+// Set<datasheet name key>>. Memoized — BSData is static within a run.
+let bsdataCoverageCache = null;
+function bsdataCoverage() {
+  if (bsdataCoverageCache) return bsdataCoverageCache;
+  const KW_DIR = resolve(__dirname, "../../src/data/keywords");
+  let bsdata = {};
+  try {
+    bsdata = JSON.parse(readFileSync(resolve(KW_DIR, "bsdata-keywords.auto.json"), "utf8"));
+  } catch {
+    bsdata = {};
+  }
+  const map = new Map();
+  for (const [faction, sheets] of Object.entries(bsdata)) {
+    if (faction.startsWith("_") || !sheets || typeof sheets !== "object") continue;
+    const set = new Set();
+    for (const name of Object.keys(sheets)) set.add(enhancementNameKey(name));
+    map.set(faction.toUpperCase(), set);
+  }
+  bsdataCoverageCache = map;
+  return map;
 }
 
 // Per-datasheet keyword sets, loaded fresh from the keyword layers (the keyword
@@ -586,6 +614,7 @@ async function scrapePdfKeywordsForFaction(
     empty: 0,
     failed: 0,
     leaked: 0, // sibling-datasheet leakage detected; entry dropped
+    borrowDropped: 0, // prefix-collision keyword borrow detected; entry dropped
     retained: 0, // transient failure on a matched stat block → kept prior value
   };
 
@@ -697,6 +726,42 @@ async function scrapePdfKeywordsForFaction(
     counts.classified++;
   }
 
+  // Deterministic guard against prefix-collision keyword borrow: a base
+  // datasheet ("CUSTODIAN GUARD") whose own stat block was stripped from the
+  // pack shares pages with a longer variant ("CUSTODIAN GUARD WITH ADRASITE AND
+  // PYRITHITE SPEARS"), and the LLM extracts the variant's KEYWORDS line for the
+  // base, swapping in the base's name. The result is the variant's set minus its
+  // self-name plus the base's — silently dropping keywords the base uniquely has
+  // (BATTLELINE). Detect that exact swap and drop the base entry so BSData wins.
+  //
+  // Only drop when BSData covers the base: that's the whole point (defer to the
+  // baseline the borrowed entry was wrongly overriding). With no BSData backing
+  // there's nothing to fall back to and the "borrow" may be a false positive —
+  // a base and variant that legitimately share keywords (TIGER SHARK vs AX-1-0
+  // TIGER SHARK) — so keeping the entry is the safe call.
+  const bsCovered = bsdataCoverage().get(factionPayload.faction.toUpperCase()) ?? new Set();
+  for (const sheet of factionPayload.datasheets) {
+    const baseKeywords = out[sheet.name];
+    if (!baseKeywords) continue;
+    if (!bsCovered.has(enhancementNameKey(sheet.name))) continue;
+    const siblings = deriveConfusableSiblings(sheet.name, allSiblingNames);
+    for (const sib of siblings) {
+      const sibKeywords = out[sib];
+      if (!sibKeywords) continue;
+      if (isKeywordBorrow(baseKeywords, sibKeywords, sheet.name, sib)) {
+        delete out[sheet.name];
+        warnings.add("kw-prefix-borrow-dropped", {
+          slug,
+          datasheet: sheet.name,
+          borrowedFrom: sib,
+        });
+        counts.classified--;
+        counts.borrowDropped++;
+        break;
+      }
+    }
+  }
+
   // Codex-resident + stat-block-absent are EXPECTED for any faction with a
   // published codex — those units fall back to BSData via the keyword
   // loader's layer merge. The "written" count is the freshness signal: that's
@@ -705,8 +770,8 @@ async function scrapePdfKeywordsForFaction(
     `    ${counts.datasheets} datasheet(s), ${counts.classified} written from PDF` +
       ` (codex-resident ${counts.codexResident + counts.statBlockAbsent},` +
       ` empty ${counts.empty}, failed ${counts.failed},` +
-      ` leaked ${counts.leaked}, retained ${counts.retained},` +
-      ` cache-hits ${counts.cacheHits})`
+      ` leaked ${counts.leaked}, borrow-dropped ${counts.borrowDropped},` +
+      ` retained ${counts.retained}, cache-hits ${counts.cacheHits})`
   );
   return out;
 }
