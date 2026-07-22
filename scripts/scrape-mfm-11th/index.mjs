@@ -100,6 +100,29 @@ function payloadsEqualToResolved(priorResolved, scraped) {
   return true;
 }
 
+// A points-only MFM update almost never drops a large slice of a faction's
+// roster in one pass — GW retires datasheets to Legends one or two at a time,
+// not a dozen at once across many factions simultaneously. A sharp count drop
+// is a much stronger signal of extract.mjs's card-detection silently missing
+// cards (e.g. a page-layout tweak its selectors don't account for) than of a
+// real mass-removal, and a missed card renders as a false "- REMOVED" line in
+// _changes.md instead of the real points-change diff. Surface it loudly so a
+// scrape like that gets a human look before it's committed.
+const DATASHEET_DROP_WARN_RATIO = 0.15;
+
+function warnDatasheetCountDrop(slug, payload, priorResolved, warnings) {
+  const priorCount = priorResolved?.factions?.[slug]?.datasheets?.length;
+  const newCount = payload.datasheets.length;
+  if (!priorCount || newCount >= priorCount * (1 - DATASHEET_DROP_WARN_RATIO)) return;
+
+  console.warn(
+    `  ⚠ ${slug}: datasheet count dropped from ${priorCount} to ${newCount} — ` +
+      `likely a partial parse (extract.mjs missed cards), not a real mass-removal. ` +
+      `Inspect the diff before merging.`
+  );
+  warnings.add("faction-datasheet-count-drop", { slug, priorCount, newCount });
+}
+
 // Sparse write: only emit faction JSONs whose payload differs from the
 // resolved prior state. Always emit `_manifest.json` (for traceability) and
 // `_changes.md` (the human-readable diff the PR workflow embeds).
@@ -175,6 +198,10 @@ async function main() {
   const slugs = only ? FACTION_SLUGS.filter((s) => only.includes(s)) : FACTION_SLUGS;
   console.log(`Scraping ${slugs.length} faction(s)…`);
 
+  // Resolved *before* scraping so each faction's fresh count can be sanity-
+  // checked against its last known-good state as soon as it's scraped.
+  const priorResolved = await resolveSnapshotState(OUT_ROOT);
+
   const scraped = new Map();
   const siteVersions = new Set();
   let failCount = 0;
@@ -188,6 +215,7 @@ async function main() {
       console.log(
         `ok (${payload.detachments.length} det, ${payload.datasheets.length} sheets)`
       );
+      warnDatasheetCountDrop(slug, payload, priorResolved, warnings);
     } catch (e) {
       console.log(`FAILED — ${e.message}`);
       failCount++;
@@ -214,7 +242,6 @@ async function main() {
 
   const versionDirs = await listSnapshotDirs(OUT_ROOT);
   const latestDirName = versionDirs[versionDirs.length - 1];
-  const priorResolved = await resolveSnapshotState(OUT_ROOT);
 
   if (!isFullScrape) {
     console.log(

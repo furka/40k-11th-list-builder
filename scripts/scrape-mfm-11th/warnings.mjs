@@ -51,6 +51,7 @@ export const WARNING_CATEGORIES = [
   "enh-retained-prior-faction", // enhancement pass: kept a whole faction's prior restrictions
   "dgrants-retained-prior", // detachment-grants pass: kept prior grants (a detachment failed)
   "dgrants-retained-prior-faction", // detachment-grants pass: kept a whole faction's prior grants
+  "faction-datasheet-count-drop", // scraped datasheet count fell sharply vs the prior resolved snapshot — likely a partial parse (e.g. a page-layout change extract.mjs's selectors don't handle), not a real mass-removal
 ];
 
 // Lightweight in-memory accumulator. Each script creates its own sink per
