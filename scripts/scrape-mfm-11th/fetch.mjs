@@ -1,4 +1,4 @@
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -24,6 +24,17 @@ async function ensureCacheDir() {
   }
 }
 
+// CI restores this cache dir from the prior run's actions/cache entry, which
+// is keyed on the scraper source hash and therefore stays valid (and gets
+// restored) indefinitely while the scraper code is unchanged. Without a TTL,
+// a scheduled run would keep reading the very first cached HTML forever and
+// never notice new MFM data. Same-day reuse is still allowed, since that's
+// what the cache is for (politeness / re-run resilience within a run).
+async function isCacheFresh(cachePath) {
+  const { mtime } = await stat(cachePath);
+  return mtime.toISOString().slice(0, 10) === new Date().toISOString().slice(0, 10);
+}
+
 // `legends: true` adds the `isLegendsDisplayed=true` cookie, which the MFM
 // server reads to include Legends datasheets in its render. Without the
 // cookie those units are omitted entirely. Cached separately as
@@ -36,7 +47,7 @@ export async function fetchFactionHtml(
   const cacheName = legends ? `${slug}.legends.html` : `${slug}.html`;
   const cachePath = resolve(CACHE_DIR, cacheName);
 
-  if (!refresh && existsSync(cachePath)) {
+  if (!refresh && existsSync(cachePath) && (await isCacheFresh(cachePath))) {
     return readFile(cachePath, "utf8");
   }
 
