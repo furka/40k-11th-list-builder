@@ -1,11 +1,11 @@
 <script setup>
 import { computed } from "vue";
 import PACKAGE from "../../package.json";
-import RiskIcon from "../assets/risk-icon.svg";
 import GithubIcon from "../assets/github-icon.svg";
 import DiscordIcon from "../assets/discord-icon.svg";
 import { useArmyListStore } from "../stores/armyList";
 import { useMfmStore } from "../stores/mfm";
+import MfmUpdateModal from "./MfmUpdateModal.vue";
 
 const armyListStore = useArmyListStore();
 const mfmStore = useMfmStore();
@@ -44,14 +44,10 @@ const availableMFMVersions = computed(() => {
           </option>
         </select>
       </label>
-      <span
+      <MfmUpdateModal
         v-if="mfmStore.isListOutdated(armyListStore.toObject())"
-        class="version-bar__warning"
-        v-tooltip="'This list has point changes compared to the latest MFM version. Change the MFM version to the left to update.'"
-      >
-        <RiskIcon class="version-bar__warning-icon" />
-        <span>New Version Available</span>
-      </span>
+        class="version-bar__update"
+      />
     </div>
     <div class="version-bar__right">
       <span>app version {{ PACKAGE.version }}</span>
@@ -128,21 +124,6 @@ const availableMFMVersions = computed(() => {
 
     &:hover {
       border-color: var(--color-accent);
-    }
-  }
-
-  &__warning {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--color-accent);
-    font-weight: 600;
-    cursor: help;
-
-    &-icon {
-      height: 16px;
-      width: 16px;
-      flex-shrink: 0;
     }
   }
 

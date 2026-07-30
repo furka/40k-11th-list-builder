@@ -85,6 +85,21 @@ describe("app store", () => {
       expect(app.lists[0].faction).toBe("NECRONS");
       expect(army.faction).toBe("AELDARI");
     });
+
+    it("always starts the new list on the latest MFM, even when the active list is on an older version", () => {
+      const { app, army } = setup();
+      // Simulate having an outdated list open, then create a new one.
+      army.setList({
+        faction: "NECRONS",
+        mfm_version: "V0.9",
+        units: [],
+        detachments: [],
+      });
+      app.newList("AELDARI");
+      expect(army.mfm_version).toBe(TEST_MFM.MFM_VERSION);
+      // The archived (previous) list keeps its own recorded version.
+      expect(app.lists[0].mfm_version).toBe("V0.9");
+    });
   });
 
   describe("selectList", () => {

@@ -53,7 +53,7 @@ function stableStringify(value) {
   return JSON.stringify(value, null, 2);
 }
 
-async function scrapeOne(slug, { refresh }) {
+async function scrapeOne(slug, { refresh, warnings }) {
   // Fetch twice: the default page (Legends hidden) and the same page with
   // `isLegendsDisplayed=true` cookie (Legends included). Diff the datasheet
   // name sets — any sheet that only appears in the legends-on fetch is
@@ -64,6 +64,13 @@ async function scrapeOne(slug, { refresh }) {
   const legendsHtml = await fetchFactionHtml(slug, { refresh, legends: true });
   const controlRaw = extractFactionData(controlHtml);
   const legendsRaw = extractFactionData(legendsHtml);
+
+  // The legends payload is a superset of the control, so it captures any card
+  // the extractor failed to name in either fetch. An entry here means a
+  // datasheet was dropped — almost certainly because GW restyled its header.
+  for (const header of legendsRaw.unrecognizedCards) {
+    warnings.add("datasheet-unrecognized-header", { slug, header });
+  }
 
   const controlNames = new Set(controlRaw.datasheets.map((d) => d.name));
   const legendsOnly = new Set(
@@ -182,7 +189,7 @@ async function main() {
   for (const slug of slugs) {
     try {
       process.stdout.write(`  ${slug} … `);
-      const payload = await scrapeOne(slug, { refresh });
+      const payload = await scrapeOne(slug, { refresh, warnings });
       scraped.set(slug, payload);
       siteVersions.add(payload.siteVersion);
       console.log(

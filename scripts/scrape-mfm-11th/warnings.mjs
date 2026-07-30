@@ -10,6 +10,7 @@ const WARNINGS_PATH = resolve(CACHE_DIR, "_warnings.json");
 // Categories used across the scrape pipeline. Listing them here is the source
 // of truth for the audit script and any human grepping the file.
 export const WARNING_CATEGORIES = [
+  "datasheet-unrecognized-header", // a datasheet card (has a COSTS section) whose header shape the extractor didn't recognise — the unit was dropped; likely a GW site restyle
   "pdf-url-missing", // discovery couldn't find a PDF for a slug
   "pdf-url-unclassified", // a PDF anchor whose label didn't map to a slug
   "pdf-fetch-failed", // exception during fetch

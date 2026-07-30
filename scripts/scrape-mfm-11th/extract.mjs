@@ -32,12 +32,13 @@ export function extractFactionData(html) {
 
   const siteVersion = extractSiteVersion(doc);
   const detachments = extractDetachments(doc);
-  const datasheets = extractDatasheets(doc);
+  const { datasheets, unrecognizedCards } = extractDatasheets(doc);
 
   return {
     siteVersion,
     detachments,
     datasheets,
+    unrecognizedCards,
   };
 }
 
@@ -237,6 +238,7 @@ function extractDatasheets(doc) {
   // a grid of datasheet cards. Each card wraps in <div hidden id="S:N">
   // around its actual content node.
   const out = [];
+  const unrecognizedCards = [];
 
   // Imperial Agents is the one faction whose page publishes each unit TWICE:
   // a first run of base (standalone-army) costs under the "UNITS" heading, then
@@ -256,15 +258,33 @@ function extractDatasheets(doc) {
   );
 
   for (const card of cards) {
-    // Skip detachment cards: they have a child with class "self-end" (DP badge)
-    // and an ENHANCEMENTS heading. Datasheets have a "text-xl text-white" name div
-    // (not nested in a flex-row).
-    const nameDiv = card.querySelector(
-      ":scope > div.px-1.py-0\\.5.bg-slate-500.font-bold.text-xl.text-white"
+    // Datasheet name header, "plain div" shape: the name sits directly in a
+    // `text-xl text-white` div. Normally bg-slate-500; v1.1 recolors it
+    // bg-red-500 / bg-emerald-600 when the unit's points changed (e.g. Orks
+    // GRETCHIN). We key off `text-xl.text-white` (not the bg color) — detachment
+    // headers put text-xl on a child span, not the div, so they're excluded.
+    const plainNameDiv = card.querySelector(
+      ":scope > div.px-1.py-0\\.5.font-bold.text-xl.text-white"
     );
-    if (!nameDiv) continue;
+    // Datasheet name header, "flex-row badge" shape: for most points changes the
+    // name moves into a nested span.text-xl.keep-all alongside a ▲/▼/▲▼ badge in
+    // a colored flex-row header. `keep-all` is the datasheet marker — detachment
+    // headers use `break-all`.
+    const changedNameSpan = card.querySelector(
+      ":scope > div > span.text-xl.keep-all"
+    );
+    const nameSource = plainNameDiv ?? changedNameSpan;
+    if (!nameSource) {
+      // A card with cost tiers but no header shape we recognise is a datasheet
+      // whose header GW restyled again — surface it loudly rather than silently
+      // dropping the unit (the failure mode this whole change fixes).
+      if (cardHasCostSection(card)) {
+        unrecognizedCards.push(cardHeaderSummaryFor(card));
+      }
+      continue;
+    }
 
-    const name = nameDiv.textContent.trim();
+    const name = nameSource.textContent.trim();
     if (!name) continue;
 
     const tiers = [];
@@ -361,7 +381,25 @@ function extractDatasheets(doc) {
     out.push(record);
   }
 
-  return out;
+  return { datasheets: out, unrecognizedCards };
+}
+
+// A card is a real datasheet (rather than a detachment / decorative block) when
+// it carries a "YOUR … COSTS" tier heading. Used only to decide whether a card
+// we failed to name is worth warning about.
+function cardHasCostSection(card) {
+  for (const section of card.querySelectorAll(":scope > div.space-y-1")) {
+    const headingText =
+      section.querySelector(":scope > div:first-child")?.textContent.trim() ?? "";
+    if (/COSTS?$/i.test(headingText) && /YOUR/i.test(headingText)) return true;
+  }
+  return false;
+}
+
+function cardHeaderSummaryFor(card) {
+  const header = card.querySelector(":scope > div:first-child");
+  const text = header?.textContent.trim().replace(/\s+/g, " ") ?? "";
+  return text.slice(0, 120);
 }
 
 function parseTierHeading(text) {

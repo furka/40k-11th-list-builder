@@ -282,6 +282,116 @@ describe("11th edition scraper — extract + normalize", () => {
   });
 });
 
+describe("MFM v1.1 — changed-points header restyle", () => {
+  // Regression for the v1.1 restyle: a datasheet whose points changed gets a
+  // red "flex-row" header with the name in a nested <span class="text-xl
+  // keep-all"> plus a ▲/▼/▲▼ badge, instead of the plain bg-slate-500 name div.
+  // The old single-selector name lookup returned null for these and silently
+  // `continue`d — dropping the whole unit. This fixture is the real live
+  // necrons page after the v1.1 update; every name below was dropped pre-fix.
+  // CHRONOMANCER is a points DECREASE (emerald header); the rest are increases
+  // (red header). Both colors put the name in the same span.text-xl.keep-all.
+  const CHANGED_UNITS = [
+    "CANOPTEK REANIMATOR",
+    "DOOMSDAY ARK",
+    "LOKHUST DESTROYERS",
+    "LOKHUST HEAVY DESTROYERS",
+    "NEKROSOR AMMENTAR",
+    "SKORPEKH LORD",
+    "TESSERACT VAULT",
+    "THE SILENT KING",
+    "CHRONOMANCER",
+  ];
+
+  const raw = (() => {
+    const html = readFileSync(
+      resolve(FIXTURES_DIR, "necrons-v1.1.html"),
+      "utf8"
+    );
+    return extractFactionData(html);
+  })();
+
+  it("reads the v1.1 site version", () => {
+    expect(raw.siteVersion).toBe("v1.1");
+  });
+
+  it("every changed-points datasheet is still extracted", () => {
+    const names = new Set(raw.datasheets.map((d) => d.name));
+    for (const unit of CHANGED_UNITS) {
+      expect(names.has(unit), `${unit} was dropped`).toBe(true);
+    }
+  });
+
+  it("strips the ▲/▼ (±N) delta and keeps the current points value", () => {
+    const reanimator = raw.datasheets.find(
+      (d) => d.name === "CANOPTEK REANIMATOR"
+    );
+    expect(reanimator.tiers[0].options[0].points).toBe(75);
+
+    const doomsday = raw.datasheets.find((d) => d.name === "DOOMSDAY ARK");
+    const points = doomsday.tiers.flatMap((t) => t.options.map((o) => o.points));
+    expect(points).toEqual([210, 230]);
+  });
+
+  it("normalizes cleanly with no leftover arrow characters anywhere", () => {
+    const normalized = normalizeFactionData("necrons", "NECRONS", raw);
+    for (const ds of normalized.datasheets) {
+      for (const size of ds.sizes) {
+        for (const tier of size.tiers) {
+          expect(typeof tier.points).toBe("number");
+        }
+      }
+    }
+  });
+
+  it("recognizes all headers — no unrecognized cards", () => {
+    expect(raw.unrecognizedCards).toEqual([]);
+  });
+});
+
+describe("extract — v1.1 recolored plain-div header", () => {
+  // A second changed-points header shape (e.g. Orks GRETCHIN): the plain name
+  // div is simply recolored bg-red-500 / bg-emerald-600 with the name still
+  // inline (no nested span, no badge). Must extract like the bg-slate-500 form.
+  it("extracts a datasheet whose plain name div is recolored", () => {
+    const html = `
+      <div class="flex flex-col space-y-1 m-1 print:break-inside-avoid-page">
+        <div class="px-1 py-0.5 bg-red-500 font-bold text-xl text-white">GRETCHIN</div>
+        <div class="space-y-1">
+          <div>YOUR UNIT COSTS</div>
+          <ul><li><span>10 models</span><span>▲ (+5) 45 pts</span></li></ul>
+        </div>
+      </div>`;
+    const data = extractFactionData(html);
+    const ds = data.datasheets.find((d) => d.name === "GRETCHIN");
+    expect(ds).toBeDefined();
+    expect(ds.tiers[0].options[0].points).toBe(45);
+    expect(data.unrecognizedCards).toEqual([]);
+  });
+});
+
+describe("extract — unrecognized datasheet header guard", () => {
+  // A datasheet card (identified by its YOUR … COSTS section) whose header
+  // matches neither known shape must surface via unrecognizedCards rather than
+  // silently vanish — that silent drop is exactly the v1.1 failure mode.
+  it("reports a card with a cost section but an unknown header shape", () => {
+    // Header matches neither known shape: the name is in a non-keep-all span and
+    // the div carries no text-xl (a hypothetical future GW restyle).
+    const html = `
+      <div class="flex flex-col space-y-1 m-1 print:break-inside-avoid-page">
+        <div class="flex flex-row px-1 py-0.5 bg-orange-500 font-bold text-white"><span class="text-2xl mystery-class">MYSTERY UNIT</span></div>
+        <div class="space-y-1">
+          <div>YOUR UNIT COSTS</div>
+          <ul><li><span>1 model</span><span>50 pts</span></li></ul>
+        </div>
+      </div>`;
+    const data = extractFactionData(html);
+    expect(data.datasheets.find((d) => d.name === "MYSTERY UNIT")).toBeUndefined();
+    expect(data.unrecognizedCards).toHaveLength(1);
+    expect(data.unrecognizedCards[0]).toContain("MYSTERY UNIT");
+  });
+});
+
 describe("parseEnhancementName", () => {
   it("strips trailing (Upgrade) and sets nonCharacterOnly", () => {
     expect(parseEnhancementName("Enlivened Sentinels (Upgrade)")).toEqual({

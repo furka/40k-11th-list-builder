@@ -213,3 +213,148 @@ describe("DataSheet.vue", () => {
     expect(wrapper.find(".data-sheet").exists()).toBe(false);
   });
 });
+
+describe("DataSheet.vue — points-change highlight", () => {
+  const PREV_MFM = {
+    MFM_VERSION: "V1.0",
+    FACTIONS: [{ name: FACTION, detachments: [] }],
+    DATA_SHEETS: [
+      {
+        name: "NECRON WARRIORS",
+        faction: FACTION,
+        sizes: [
+          { name: "10 models", models: 10, basePoints: 80 },
+          { name: "20 models", models: 20, basePoints: 200 },
+        ],
+      },
+      {
+        name: "CHRONOMANCER",
+        faction: FACTION,
+        sizes: [{ name: "1 model", models: 1, basePoints: 80 }],
+      },
+    ],
+  };
+
+  const CUR_MFM = {
+    MFM_VERSION: "V1.1",
+    FACTIONS: [{ name: FACTION, detachments: [] }],
+    DATA_SHEETS: [
+      {
+        name: "NECRON WARRIORS",
+        faction: FACTION,
+        sizes: [
+          { name: "10 models", models: 10, basePoints: 90 },
+          { name: "20 models", models: 20, basePoints: 200 },
+        ],
+      },
+      {
+        name: "CHRONOMANCER",
+        faction: FACTION,
+        sizes: [{ name: "1 model", models: 1, basePoints: 70 }],
+      },
+      {
+        // Brand-new datasheet — absent from PREV_MFM, so no spurious delta.
+        name: "TRIARCH STALKER",
+        faction: FACTION,
+        sizes: [{ name: "1 model", models: 1, basePoints: 110 }],
+      },
+    ],
+  };
+
+  const curSheet = (name) => CUR_MFM.DATA_SHEETS.find((d) => d.name === name);
+
+  function setupDeltaStores({ showPointsChanges = true } = {}) {
+    setActivePinia(createPinia());
+    const mfm = useMfmStore();
+    mfm.MFM = {
+      CURRENT: CUR_MFM,
+      PREVIOUS: PREV_MFM,
+      [CUR_MFM.MFM_VERSION]: CUR_MFM,
+      [PREV_MFM.MFM_VERSION]: PREV_MFM,
+    };
+    mfm.getVersion = (v) =>
+      v === CUR_MFM.MFM_VERSION
+        ? CUR_MFM
+        : v === PREV_MFM.MFM_VERSION
+          ? PREV_MFM
+          : null;
+    // The real getPreviousMFM closes over the loaded manual, not the test
+    // object, so stub the version chain explicitly. Compare by version rather
+    // than identity: Pinia hands components a reactive proxy of the MFM, so
+    // `m === CUR_MFM` would fail (the real manual is deep-frozen, hence stable).
+    mfm.getPreviousMFM = (m) =>
+      m?.MFM_VERSION === CUR_MFM.MFM_VERSION ? PREV_MFM : null;
+
+    const codex = useCodexStore();
+    codex.setCurrentMFM(CUR_MFM);
+    codex.setFaction(FACTION);
+    const army = useArmyListStore();
+    army.setList({
+      faction: FACTION,
+      mfm_version: CUR_MFM.MFM_VERSION,
+      maxPoints: 2000,
+      units: [],
+      detachments: [],
+    });
+    const app = useAppStore();
+    app.showPointsChanges = showPointsChanges;
+    return { mfm, codex, army, app };
+  }
+
+  const pointsSpans = (wrapper) => wrapper.findAll(".data-sheet__points");
+
+  it("colors and badges an increased price when the toggle is on", async () => {
+    setupDeltaStores();
+    const wrapper = mount(DataSheet, {
+      props: { dataSheet: curSheet("NECRON WARRIORS") },
+    });
+    await nextTick();
+    const [tenModels, twentyModels] = pointsSpans(wrapper);
+
+    expect(tenModels.classes()).toContain("data-sheet__points--up");
+    const badge = tenModels.find(".data-sheet__points-delta");
+    expect(badge.exists()).toBe(true);
+    expect(badge.text()).toContain("▲");
+    expect(badge.text()).toContain("10");
+
+    // Unchanged size: no color, no badge.
+    expect(twentyModels.classes()).not.toContain("data-sheet__points--up");
+    expect(twentyModels.classes()).not.toContain("data-sheet__points--down");
+    expect(twentyModels.find(".data-sheet__points-delta").exists()).toBe(false);
+  });
+
+  it("colors and badges a decreased price", async () => {
+    setupDeltaStores();
+    const wrapper = mount(DataSheet, {
+      props: { dataSheet: curSheet("CHRONOMANCER") },
+    });
+    await nextTick();
+    const span = pointsSpans(wrapper)[0];
+    expect(span.classes()).toContain("data-sheet__points--down");
+    const badge = span.find(".data-sheet__points-delta");
+    expect(badge.text()).toContain("▼");
+    expect(badge.text()).toContain("10");
+  });
+
+  it("shows no badge for a datasheet absent from the previous MFM", async () => {
+    setupDeltaStores();
+    const wrapper = mount(DataSheet, {
+      props: { dataSheet: curSheet("TRIARCH STALKER") },
+    });
+    await nextTick();
+    const span = pointsSpans(wrapper)[0];
+    expect(span.classes()).not.toContain("data-sheet__points--up");
+    expect(span.find(".data-sheet__points-delta").exists()).toBe(false);
+  });
+
+  it("shows no highlight when the toggle is off", async () => {
+    setupDeltaStores({ showPointsChanges: false });
+    const wrapper = mount(DataSheet, {
+      props: { dataSheet: curSheet("NECRON WARRIORS") },
+    });
+    await nextTick();
+    const span = pointsSpans(wrapper)[0];
+    expect(span.classes()).not.toContain("data-sheet__points--up");
+    expect(span.find(".data-sheet__points-delta").exists()).toBe(false);
+  });
+});

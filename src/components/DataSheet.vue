@@ -8,6 +8,7 @@ import { useArmyListStore } from "../stores/armyList";
 import { useAppStore } from "../stores/app";
 import { useCodexStore } from "../stores/codex";
 import { useCollectionStore } from "../stores/collection";
+import { useMfmStore } from "../stores/mfm";
 import {
   findAvailableWargearHost,
   wargearMaxPerUnit,
@@ -21,10 +22,44 @@ const armyListStore = useArmyListStore();
 const appStore = useAppStore();
 const codexStore = useCodexStore();
 const collectionStore = useCollectionStore();
+const mfmStore = useMfmStore();
 
 const props = defineProps({
   dataSheet: Object,
 });
+
+// The codex renders whichever MFM the active list is pinned to, so points
+// changes are shown relative to THAT version's predecessor — not necessarily
+// the globally-latest one. Gated by the "Points Changes Visible" toggle.
+const displayedMFM = computed(
+  () => codexStore.currentMFM || mfmStore.MFM.CURRENT
+);
+const previousMFM = computed(() =>
+  mfmStore.getPreviousMFM(displayedMFM.value)
+);
+const showDeltas = computed(
+  () => appStore.showPointsChanges && !!previousMFM.value
+);
+
+// Signed points change for a size vs the previous MFM, at base-points
+// granularity. A `-1` from getPoints means the datasheet/size didn't exist in
+// the prior version (brand-new), which we treat as "no change" rather than a
+// spurious swing.
+function sizeDelta(size) {
+  if (!showDeltas.value) return 0;
+  const unit = {
+    name: props.dataSheet.name,
+    optionName: size.name,
+    models: size.models,
+    allied: props.dataSheet.allied,
+    alliedFaction: props.dataSheet.alliedFaction,
+  };
+  const faction = props.dataSheet.faction;
+  const current = mfmStore.getPoints(unit, displayedMFM.value, faction);
+  const previous = mfmStore.getPoints(unit, previousMFM.value, faction);
+  if (current === -1 || previous === -1) return 0;
+  return current - previous;
+}
 
 function addUnit(option, bypassMax = false) {
   if (!optionAvailable(option, { bypassMax })) return;
@@ -147,7 +182,7 @@ const tierGroups = computed(() => {
         });
       }
       const points = allied ? tier.alliedPoints ?? tier.points : tier.points;
-      tierMap.get(k).rows.push({ size, points });
+      tierMap.get(k).rows.push({ size, points, delta: sizeDelta(size) });
     }
   }
 
@@ -345,8 +380,18 @@ const keywordsText = computed(() => keywords.value.join(", "));
             </span>
           </span>
           <span class="data-sheet__option-spacer"></span>
-          <span class="data-sheet__points">
+          <span
+            class="data-sheet__points"
+            :class="{
+              'data-sheet__points--up': row.delta > 0,
+              'data-sheet__points--down': row.delta < 0,
+            }"
+          >
             {{ row.points }} pts
+            <span v-if="row.delta" class="data-sheet__points-delta">
+              {{ row.delta > 0 ? "▲" : "▼" }}{{ row.delta > 0 ? "+" : "−"
+              }}{{ Math.abs(row.delta) }}
+            </span>
           </span>
         </li>
       </ul>
@@ -558,6 +603,13 @@ const keywordsText = computed(() => keywords.value.join(", "));
     &--down {
       color: var(--color-positive);
     }
+  }
+
+  &__points-delta {
+    font-size: 12px;
+    letter-spacing: 0;
+    margin-left: 4px;
+    white-space: nowrap;
   }
 
   &__role-row {
