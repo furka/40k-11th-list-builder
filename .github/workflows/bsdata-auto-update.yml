@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       refresh:
-        description: "Bypass scraper caches (re-fetch all .cat files from upstream)"
+        description: "Bypass scraper caches (re-fetch all .json files from upstream)"
         type: boolean
         default: false
 
@@ -80,12 +80,12 @@ jobs:
           token: ${{ secrets.AUTO_PR_TOKEN }}
           branch: bsdata-auto-update
           base: main
-          commit-message: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.changes.outputs.short }}"
-          title: "chore(bsdata): auto-update from BSData/wh40k-10e@${{ steps.changes.outputs.short }}"
+          commit-message: "chore(bsdata): auto-update from BSData/wh40k-11e@${{ steps.changes.outputs.short }}"
+          title: "chore(bsdata): auto-update from BSData/wh40k-11e@${{ steps.changes.outputs.short }}"
           body: |
             Automated BSData scrape detected changes across one or more outputs.
 
-            - **Source:** [BSData/wh40k-10e@${{ steps.changes.outputs.short }}](https://github.com/BSData/wh40k-10e/commit/${{ steps.changes.outputs.sha }})
+            - **Source:** [BSData/wh40k-11e@${{ steps.changes.outputs.short }}](https://github.com/BSData/wh40k-11e/commit/${{ steps.changes.outputs.sha }})
             - **Upstream committed at:** `${{ steps.changes.outputs.committed }}`
             - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 

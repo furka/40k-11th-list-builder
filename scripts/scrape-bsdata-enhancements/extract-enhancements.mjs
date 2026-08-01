@@ -29,39 +29,14 @@
 // `allowedHosts` entry; a `categoryEntry` becomes a `requiredKeywords`
 // entry.
 
-import { XMLParser } from "fast-xml-parser";
-
 import { normalizeApostrophes } from "../../src/utils/apostrophe-normalization.js";
+import { parseCatalogue, asArray } from "../scrape-bsdata-keywords/parse-catalogue.mjs";
 
-const ARRAY_NODES = new Set([
-  "selectionEntry",
-  "selectionEntryGroup",
-  "sharedSelectionEntry",
-  "sharedSelectionEntryGroup",
-  "entryLink",
-  "categoryLink",
-  "categoryEntry",
-  "cost",
-  "constraint",
-  "modifier",
-  "modifierGroup",
-  "condition",
-  "conditionGroup",
-  "force",
-  "forceEntry",
-]);
+const ENTRY_CONTAINERS = ["sharedSelectionEntries", "selectionEntries"];
+const GROUP_CONTAINERS = ["sharedSelectionEntryGroups", "selectionEntryGroups"];
 
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "@_",
-  parseAttributeValue: false,
-  allowBooleanAttributes: true,
-  isArray: (name) => ARRAY_NODES.has(name),
-});
-
-export function parseCatRaw(xml) {
-  const tree = parser.parse(xml);
-  return tree.catalogue ?? tree.gameSystem ?? null;
+export function parseCatRaw(text) {
+  return parseCatalogue(text);
 }
 
 // Build a global id → { kind, name, ... } index across every catalogue we
@@ -78,51 +53,40 @@ export function buildIdIndex(rootsByFile) {
 function indexNode(node, index) {
   if (!node || typeof node !== "object") return;
 
-  for (const key of [
-    "sharedSelectionEntries",
-    "sharedSelectionEntryGroups",
-    "selectionEntries",
-    "selectionEntryGroups",
-  ]) {
-    const container = node[key];
-    if (!container) continue;
-    for (const entry of asArray(container.selectionEntry)) {
+  for (const key of ENTRY_CONTAINERS) {
+    for (const entry of asArray(node[key])) {
       addEntry(entry, "selectionEntry", index);
       indexNode(entry, index);
     }
-    for (const grp of asArray(container.selectionEntryGroup)) {
+  }
+  for (const key of GROUP_CONTAINERS) {
+    for (const grp of asArray(node[key])) {
       addEntry(grp, "selectionEntryGroup", index);
       indexNode(grp, index);
     }
   }
 
-  const cats = node.categoryEntries;
-  if (cats) {
-    for (const cat of asArray(cats.categoryEntry)) {
-      const id = cat["@_id"];
-      const name = normalizeApostrophes(cat["@_name"]);
-      if (id && name) index.set(id, { kind: "category", name });
-    }
+  for (const cat of asArray(node.categoryEntries)) {
+    const id = cat.id;
+    const name = normalizeApostrophes(cat.name);
+    if (id && name) index.set(id, { kind: "category", name });
   }
 
-  const forces = node.forceEntries;
-  if (forces) {
-    for (const f of asArray(forces.forceEntry)) {
-      const id = f["@_id"];
-      const name = normalizeApostrophes(f["@_name"]);
-      if (id && name) index.set(id, { kind: "force", name });
-      indexNode(f, index);
-    }
+  for (const f of asArray(node.forceEntries)) {
+    const id = f.id;
+    const name = normalizeApostrophes(f.name);
+    if (id && name) index.set(id, { kind: "force", name });
+    indexNode(f, index);
   }
 }
 
-function addEntry(entry, xmlKind, index) {
-  const id = entry["@_id"];
-  const name = normalizeApostrophes(entry["@_name"]);
-  const type = entry["@_type"];
+function addEntry(entry, entryKind, index) {
+  const id = entry.id;
+  const name = normalizeApostrophes(entry.name);
+  const type = entry.type;
   if (!id || !name) return;
   let kind = "other";
-  if (xmlKind === "selectionEntryGroup") kind = "group";
+  if (entryKind === "selectionEntryGroup") kind = "group";
   else if (type === "model" || type === "unit") kind = "datasheet";
   else if (type === "upgrade") kind = "upgrade";
   index.set(id, { kind, name, type });
@@ -140,21 +104,16 @@ export function* iterEnhancements(root) {
 function* walkForUpgrades(node, insideEnhancementGroup) {
   if (!node || typeof node !== "object") return;
 
-  for (const key of [
-    "sharedSelectionEntries",
-    "sharedSelectionEntryGroups",
-    "selectionEntries",
-    "selectionEntryGroups",
-  ]) {
-    const container = node[key];
-    if (!container) continue;
-    for (const grp of asArray(container.selectionEntryGroup)) {
-      const grpName = grp["@_name"] ?? "";
+  for (const key of GROUP_CONTAINERS) {
+    for (const grp of asArray(node[key])) {
+      const grpName = grp.name ?? "";
       const isEnhGroup = /enhancement/i.test(grpName);
       yield* walkForUpgrades(grp, insideEnhancementGroup || isEnhGroup);
     }
-    for (const entry of asArray(container.selectionEntry)) {
-      const type = entry["@_type"];
+  }
+  for (const key of ENTRY_CONTAINERS) {
+    for (const entry of asArray(node[key])) {
+      const type = entry.type;
       if (type === "upgrade" && insideEnhancementGroup) {
         yield entry;
       }
@@ -172,21 +131,13 @@ export function collectAncestorChildIds(entry) {
   const ids = new Set();
   function visit(node) {
     if (!node || typeof node !== "object") return;
-    if (node.conditions) {
-      for (const c of asArray(node.conditions.condition)) {
-        const id = c["@_childId"];
-        if (id && c["@_scope"] === "ancestor") ids.add(id);
-      }
+    for (const c of asArray(node.conditions)) {
+      const id = c.childId;
+      if (id && c.scope === "ancestor") ids.add(id);
     }
-    if (node.conditionGroups) {
-      for (const cg of asArray(node.conditionGroups.conditionGroup)) visit(cg);
-    }
-    if (node.modifiers) {
-      for (const m of asArray(node.modifiers.modifier)) visit(m);
-    }
-    if (node.modifierGroups) {
-      for (const mg of asArray(node.modifierGroups.modifierGroup)) visit(mg);
-    }
+    for (const cg of asArray(node.conditionGroups)) visit(cg);
+    for (const m of asArray(node.modifiers)) visit(m);
+    for (const mg of asArray(node.modifierGroups)) visit(mg);
   }
   visit(entry);
   return ids;
@@ -247,7 +198,7 @@ const VOID_CATEGORIES = new Set([
 // from bsdata-keywords.auto.json — required for the keyword→datasheets
 // enumeration. When omitted, multi-keyword cases are dropped silently.
 export function analyzeEnhancement(entry, idIndex, keywordsByDatasheet = null) {
-  const result = { name: normalizeApostrophes(entry["@_name"] ?? "") };
+  const result = { name: normalizeApostrophes(entry.name ?? "") };
 
   const datasheets = new Set();
   const keywords = new Set();
@@ -283,9 +234,4 @@ export function analyzeEnhancement(entry, idIndex, keywordsByDatasheet = null) {
   // else: 0 ancestor conditions → no restriction emitted, universal defaults apply.
 
   return result;
-}
-
-function asArray(value) {
-  if (value === undefined || value === null) return [];
-  return Array.isArray(value) ? value : [value];
 }

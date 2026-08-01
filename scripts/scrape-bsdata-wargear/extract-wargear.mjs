@@ -34,40 +34,19 @@
 // the runtime falls back to the existing 20-per-host placeholder. That
 // keeps unrecognized wargear behaviorally unchanged.
 
-import { XMLParser } from "fast-xml-parser";
-
 import { normalizeApostrophes } from "../../src/utils/apostrophe-normalization.js";
+import { parseCatalogue, asArray } from "../scrape-bsdata-keywords/parse-catalogue.mjs";
 
-const ARRAY_NODES = new Set([
-  "selectionEntry",
-  "selectionEntryGroup",
-  "sharedSelectionEntry",
-  "sharedSelectionEntryGroup",
-  "entryLink",
-  "categoryLink",
-  "constraint",
-  "modifier",
-  "modifierGroup",
-  "condition",
-  "conditionGroup",
-]);
+const ENTRY_CONTAINERS = ["sharedSelectionEntries", "selectionEntries"];
+const GROUP_CONTAINERS = ["sharedSelectionEntryGroups", "selectionEntryGroups"];
 
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "@_",
-  parseAttributeValue: false,
-  allowBooleanAttributes: true,
-  isArray: (name) => ARRAY_NODES.has(name),
-});
-
-export function parseCatRaw(xml) {
-  const tree = parser.parse(xml);
-  return tree.catalogue ?? tree.gameSystem ?? null;
+export function parseCatRaw(text) {
+  return parseCatalogue(text);
 }
 
-// Index every selectionEntry/entryLink-target across all loaded .cat files
-// by `id`. Lets us resolve an entryLink's `targetId` to the shared entry it
-// references — a paid wargear like "Macro Plasma Incinerator" lives in
+// Index every selectionEntry/entryLink-target across all loaded catalogue
+// files by `id`. Lets us resolve an entryLink's `targetId` to the shared entry
+// it references — a paid wargear like "Macro Plasma Incinerator" lives in
 // the catalogue as one shared selectionEntry that gets linked from inside
 // the Redemptor Dreadnought's weapon group.
 export function buildTargetIndex(rootsByFile) {
@@ -80,28 +59,15 @@ export function buildTargetIndex(rootsByFile) {
 
 function indexNode(node, index) {
   if (!node || typeof node !== "object") return;
-  for (const key of [
-    "sharedSelectionEntries",
-    "sharedSelectionEntryGroups",
-    "selectionEntries",
-    "selectionEntryGroups",
-  ]) {
-    const container = node[key];
-    if (!container) continue;
-    for (const entry of asArray(container.selectionEntry)) {
-      const id = entry["@_id"];
-      if (id) index.set(id, entry);
+  for (const key of [...ENTRY_CONTAINERS, ...GROUP_CONTAINERS]) {
+    for (const entry of asArray(node[key])) {
+      if (entry.id) index.set(entry.id, entry);
       indexNode(entry, index);
-    }
-    for (const grp of asArray(container.selectionEntryGroup)) {
-      const id = grp["@_id"];
-      if (id) index.set(id, grp);
-      indexNode(grp, index);
     }
   }
 }
 
-// Walk every top-level datasheet `<selectionEntry>` in a catalogue.
+// Walk every top-level datasheet selectionEntry in a catalogue.
 // Multi-model squads are encoded as `type="unit"` (e.g. Intercessor Squad);
 // single-model datasheets — dreadnoughts, vehicles, character HQs — are
 // encoded as a top-level `type="model"` entry (e.g. Redemptor Dreadnought).
@@ -109,14 +75,9 @@ function indexNode(node, index) {
 // model entries like "Intercessor Sergeant" are not standalone datasheets.
 export function* iterUnits(root) {
   if (!root || typeof root !== "object") return;
-  for (const key of [
-    "sharedSelectionEntries",
-    "selectionEntries",
-  ]) {
-    const container = root[key];
-    if (!container) continue;
-    for (const entry of asArray(container.selectionEntry)) {
-      const t = entry["@_type"];
+  for (const key of ENTRY_CONTAINERS) {
+    for (const entry of asArray(root[key])) {
+      const t = entry.type;
       if (t === "unit" || t === "model") yield entry;
     }
   }
@@ -161,33 +122,28 @@ export function extractWargearCaps(unitEntry, {
   function walk(node, runningTotal, parentGroupCap) {
     if (!node || typeof node !== "object") return;
 
-    for (const containerKey of [
-      "sharedSelectionEntries",
-      "sharedSelectionEntryGroups",
-      "selectionEntries",
-      "selectionEntryGroups",
-    ]) {
-      const container = node[containerKey];
-      if (!container) continue;
-      for (const child of asArray(container.selectionEntry)) {
+    for (const containerKey of ENTRY_CONTAINERS) {
+      for (const child of asArray(node[containerKey])) {
         visitEntry(child, /* linkTarget */ null, runningTotal, parentGroupCap);
       }
-      for (const child of asArray(container.selectionEntryGroup)) {
+    }
+    for (const containerKey of GROUP_CONTAINERS) {
+      for (const child of asArray(node[containerKey])) {
         visitGroup(child, runningTotal);
       }
     }
-    if (node.entryLinks) {
-      for (const link of asArray(node.entryLinks.entryLink)) {
-        const targetId = link["@_targetId"];
-        const target = targetId ? targetIndex.get(targetId) : null;
-        const targetType = target?.["@_type"];
-        if (targetType === "selectionEntryGroup") {
-          // Rare but legal: entryLink pointing to a shared group. Same
-          // semantics as an inline group — contributes ×1 instance.
-          visitGroup(target, runningTotal, link);
-        } else {
-          visitEntry(link, target, runningTotal, parentGroupCap);
-        }
+    for (const link of asArray(node.entryLinks)) {
+      const targetId = link.targetId;
+      const target = targetId ? targetIndex.get(targetId) : null;
+      // BSData JSON entries carry no `type` on groups, so a group target is
+      // identified structurally — it holds selectionEntry containers of its
+      // own but is not itself a costed model/upgrade.
+      if (link.type === "selectionEntryGroup") {
+        // Rare but legal: entryLink pointing to a shared group. Same
+        // semantics as an inline group — contributes ×1 instance.
+        visitGroup(target, runningTotal, link);
+      } else {
+        visitEntry(link, target, runningTotal, parentGroupCap);
       }
     }
   }
@@ -200,7 +156,7 @@ export function extractWargearCaps(unitEntry, {
     // treat the contribution as null (unbounded) — caller skips emission.
     const childTotal = multiplyMaybe(runningTotal, effectiveOwn);
 
-    const rawName = entry["@_name"] ?? linkTarget?.["@_name"] ?? null;
+    const rawName = entry.name ?? linkTarget?.name ?? null;
     const norm = normalizeName(rawName);
     if (norm && wargearNames.has(norm)) {
       const unitMax = unitMaxConstraint(entry) ??
@@ -264,28 +220,21 @@ function multiplyMaybe(running, factor) {
 }
 
 function parentMaxConstraint(node) {
-  if (!node || !node.constraints) return null;
-  let min = null;
-  for (const c of asArray(node.constraints.constraint)) {
-    if (c["@_type"] !== "max") continue;
-    if (c["@_field"] !== "selections") continue;
-    const scope = c["@_scope"];
-    if (scope !== "parent") continue;
-    const v = Number(c["@_value"]);
-    if (!Number.isFinite(v)) continue;
-    if (min === null || v < min) min = v;
-  }
-  return min;
+  return maxConstraint(node, "parent");
 }
 
 function unitMaxConstraint(node) {
-  if (!node || !node.constraints) return null;
+  return maxConstraint(node, "unit");
+}
+
+function maxConstraint(node, scope) {
+  if (!node) return null;
   let min = null;
-  for (const c of asArray(node.constraints.constraint)) {
-    if (c["@_type"] !== "max") continue;
-    if (c["@_field"] !== "selections") continue;
-    if (c["@_scope"] !== "unit") continue;
-    const v = Number(c["@_value"]);
+  for (const c of asArray(node.constraints)) {
+    if (c.type !== "max") continue;
+    if (c.field !== "selections") continue;
+    if (c.scope !== scope) continue;
+    const v = Number(c.value);
     if (!Number.isFinite(v)) continue;
     if (min === null || v < min) min = v;
   }
@@ -295,9 +244,4 @@ function unitMaxConstraint(node) {
 export function normalizeName(raw) {
   if (raw == null) return null;
   return normalizeApostrophes(String(raw).trim().toLowerCase());
-}
-
-function asArray(value) {
-  if (value === undefined || value === null) return [];
-  return Array.isArray(value) ? value : [value];
 }

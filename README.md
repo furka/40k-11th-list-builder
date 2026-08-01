@@ -16,7 +16,7 @@ Points and datasheets are read straight from the official
 rules, enhancements, and unit keywords are pulled from the official Faction
 Pack PDFs (parsed by Claude). For older content that Games
 Workshop doesn't publish online, the app falls back to the community-maintained
-[BSData](https://github.com/BSData/wh40k-10e) catalogs.
+[BSData](https://github.com/BSData/wh40k-11e) catalogs.
 
 All of this updates **automatically**: a scheduled job checks the upstream
 sources once a day and opens a pull request when something has changed. New

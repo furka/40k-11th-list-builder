@@ -1,22 +1,17 @@
 #!/usr/bin/env node
 /**
- * Scrape per-datasheet keywords from BSData/wh40k-10e and emit an overlay
+ * Scrape per-datasheet keywords from BSData/wh40k-11e and emit an overlay
  * JSON the app merges on top of its MFM-sourced datasheets at parse time.
  *
  * Run: `npm run bsdata:scrape` (or `:refresh` to bypass the on-disk cache).
  *
- * Tracks BSData's `main` branch — tagged releases stopped at v10.6.0 in
- * March 2025 but main is the actively-maintained source (NewRecruit and the
- * BSData/AppSpot ecosystem are also stuck on v10.6.0 by extension). At
- * scrape time we resolve `main` to its current commit SHA via the GitHub
- * API and use that SHA for cache + URL keying, so each run is reproducible
- * and the cache invalidates naturally on every upstream merge.
+ * Tracks BSData's `main` branch. At scrape time we resolve `main` to its
+ * current commit SHA via the GitHub API and use that SHA for cache + URL
+ * keying, so each run is reproducible and the cache invalidates naturally on
+ * every upstream merge.
  *
- * 10e keywords carry over to 11e unchanged for everything except BATTLELINE
- * (handled separately via conditional-battleline.auto.json + the user's
- * bonusBattleline overrides). Anything missing from BSData stays uncovered
- * until either BSData picks it up or a hand entry lands in
- * `src/data/keywords/manual-overrides.json`.
+ * Anything missing from BSData stays uncovered until either BSData picks it up
+ * or a hand entry lands in `src/data/keywords/manual-overrides.json`.
  */
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -31,7 +26,7 @@ const REPO_ROOT = resolve(__dirname, "..", "..");
 
 // The upstream branch we track. Resolved to a commit SHA at scrape time.
 const BSDATA_REF = "main";
-const BSDATA_REPO = "BSData/wh40k-10e";
+const BSDATA_REPO = "BSData/wh40k-11e";
 
 const OUTPUT_PATH = resolve(
   REPO_ROOT,
@@ -53,28 +48,28 @@ async function main() {
   const { sha, committedAt } = await resolveRef(BSDATA_REPO, BSDATA_REF);
   console.log(
     `BSData scrape — ref ${BSDATA_REF} @ ${sha.slice(0, 8)} (${committedAt}), ` +
-      `${factions.length} factions, ${filesNeeded.size} unique .cat files` +
+      `${factions.length} factions, ${filesNeeded.size} unique .json files` +
       `${refresh ? " (cache bypass)" : ""}`
   );
 
   const parsedByFile = {};
   const missingFiles = [];
   for (const file of filesNeeded) {
-    const xml = await fetchCatFile(sha, file, { refresh });
-    if (xml === null) {
+    const text = await fetchCatFile(sha, file, { refresh });
+    if (text === null) {
       missingFiles.push(file);
       parsedByFile[file] = [];
       process.stdout.write("x");
     } else {
-      parsedByFile[file] = parseCatFile(xml);
+      parsedByFile[file] = parseCatFile(text);
       process.stdout.write(".");
     }
   }
   process.stdout.write("\n");
   if (missingFiles.length > 0) {
     console.warn(
-      `\n${missingFiles.length} file(s) absent at ${BSDATA_TAG} (added to ` +
-        `BSData's main branch after the tag was cut — will populate on tag bump):`
+      `\n${missingFiles.length} file(s) absent at ${BSDATA_REF} @ ${sha.slice(0, 8)} ` +
+        `(in the faction mapping but not in the current BSData tree):`
     );
     for (const f of missingFiles) console.warn(`  - ${f}`);
   }

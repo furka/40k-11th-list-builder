@@ -1,9 +1,9 @@
 {
-  "_source": "https://github.com/BSData/wh40k-10e",
+  "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
-  "_committedAt": "2026-06-22T09:36:35Z",
-  "_generatedAt": "2026-06-24T16:25:15.178Z",
+  "_sha": "767f7ca1678e0e4a27777b086bcbbcf708fe0652",
+  "_committedAt": "2026-08-01T20:39:34Z",
+  "_generatedAt": "2026-08-01T21:04:10.255Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -12,6 +12,11 @@
         "CANONESS WITH JUMP PACK",
         "MILITANT COMMANDER [CRUCIBLE]",
         "PALATINE"
+      ]
+    },
+    "Hagiomnifex": {
+      "requiredKeywords": [
+        "PENITENT"
       ]
     },
     "Iron Surplice of Saint Istalela": {
@@ -67,6 +72,11 @@
     "Castellan’s Mark": {
       "requiredKeywords": [
         "SHIELD-CAPTAIN"
+      ]
+    },
+    "Encircling Hunter": {
+      "requiredKeywords": [
+        "ANATHEMA PSYKANA"
       ]
     },
     "Enhanced Voidsheen Cloak": {
@@ -134,6 +144,11 @@
     "Veiled Hunter": {
       "allowedHosts": [
         "SKITARII MARSHAL"
+      ]
+    },
+    "Vingh’s Wafers of Dynamism": {
+      "requiredKeywords": [
+        "CYBERNETICA DATASMITH"
       ]
     }
   },
@@ -223,6 +238,7 @@
         "CADIAN CASTELLAN",
         "CADIAN COMMAND SQUAD",
         "CATACHAN COMMAND SQUAD",
+        "CIAPHAS CAIN",
         "COMMISSAR",
         "COMMISSAR GRAVES",
         "COMMISSAR YARRICK",
@@ -351,6 +367,11 @@
     }
   },
   "BLACK TEMPLARS": {
+    "Adaptable Executioner": {
+      "requiredKeywords": [
+        "EXECRATOR"
+      ]
+    },
     "Adept of the Omnissiah": {
       "requiredKeywords": [
         "TECHMARINE"
@@ -384,6 +405,7 @@
     "Incendiary Animus": {
       "allowedHosts": [
         "CHAPLAIN",
+        "CHAPLAIN GRIMALDUS",
         "CHAPLAIN IN TERMINATOR ARMOUR",
         "CHAPLAIN ON BIKE",
         "CHAPLAIN WITH JUMP PACK",
@@ -399,6 +421,7 @@
     "Merciless Denunciation": {
       "allowedHosts": [
         "CHAPLAIN",
+        "CHAPLAIN GRIMALDUS",
         "CHAPLAIN IN TERMINATOR ARMOUR",
         "CHAPLAIN ON BIKE",
         "CHAPLAIN WITH JUMP PACK",
@@ -414,6 +437,11 @@
     "Shock Deployment": {
       "requiredKeywords": [
         "GRAVIS"
+      ]
+    },
+    "Shroud Field": {
+      "requiredKeywords": [
+        "PHOBOS"
       ]
     },
     "Target Augury Web": {
@@ -468,6 +496,11 @@
         "GRAVIS"
       ]
     },
+    "Shroud Field": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Target Augury Web": {
       "requiredKeywords": [
         "TECHMARINE"
@@ -475,6 +508,11 @@
     }
   },
   "CHAOS DAEMONS": {
+    "Swollen with Power": {
+      "requiredKeywords": [
+        "NON-MONSTER CHARACTER"
+      ]
+    },
     "The Everstave": {
       "requiredKeywords": [
         "LORD OF CHANGE"
@@ -510,6 +548,11 @@
     "Fleshmetal Fusion": {
       "requiredKeywords": [
         "WAR DOG"
+      ]
+    },
+    "Hate-filled Dominion": {
+      "requiredKeywords": [
+        "KNIGHT TYRANT"
       ]
     },
     "Hunter’s Helm": {
@@ -555,6 +598,11 @@
     "Preyslayer’s Mantle": {
       "requiredKeywords": [
         "WAR DOG"
+      ]
+    },
+    "Pterrorshade Rookery": {
+      "requiredKeywords": [
+        "KNIGHT TYRANT"
       ]
     },
     "Putrid Carapace": {
@@ -718,6 +766,11 @@
         "CHAOS LORD"
       ]
     },
+    "Pact of Destruction": {
+      "requiredKeywords": [
+        "WARPSMITH"
+      ]
+    },
     "Prime Test Subject": {
       "requiredKeywords": [
         "DAMNED"
@@ -822,6 +875,16 @@
         "GRAVIS"
       ]
     },
+    "Inescapable Interrogation": {
+      "requiredKeywords": [
+        "CHAPLAIN"
+      ]
+    },
+    "Limitless Zeal": {
+      "requiredKeywords": [
+        "CHAPLAIN"
+      ]
+    },
     "Lord of the Ravenwing": {
       "requiredKeywords": [
         "RAVENWING"
@@ -862,6 +925,11 @@
         "GRAVIS"
       ]
     },
+    "Shroud Field": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Singular Will": {
       "requiredKeywords": [
         "DEATHWING"
@@ -892,6 +960,12 @@
     "Final Ingredient": {
       "requiredKeywords": [
         "BIOLOGUS PUTRIFIER"
+      ]
+    },
+    "Lancet of the Worldsore": {
+      "allowedHosts": [
+        "HELBRUTE",
+        "MYPHITIC BLIGHT-HAULER"
       ]
     },
     "Needle of Nurgle": {
@@ -968,6 +1042,11 @@
         "GRAVIS"
       ]
     },
+    "Shroud Field": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Target Augury Web": {
       "requiredKeywords": [
         "TECHMARINE"
@@ -991,6 +1070,16 @@
       ]
     },
     "Eye of Spite": {
+      "requiredKeywords": [
+        "SUCCUBUS"
+      ]
+    },
+    "Gnarlskin Experimentor": {
+      "requiredKeywords": [
+        "HAEMONCULUS"
+      ]
+    },
+    "Hyperstimm Trafficker": {
       "requiredKeywords": [
         "SUCCUBUS"
       ]
@@ -1023,6 +1112,11 @@
     "Master Regenesist": {
       "requiredKeywords": [
         "HAEMONCULUS"
+      ]
+    },
+    "Morghenna’s Curse": {
+      "requiredKeywords": [
+        "SUCCUBUS"
       ]
     },
     "Periapt of Torments": {
@@ -1121,6 +1215,11 @@
       ]
     },
     "High Kâhl": {
+      "requiredKeywords": [
+        "KÂHL"
+      ]
+    },
+    "Ironskein": {
       "requiredKeywords": [
         "KÂHL"
       ]
@@ -1272,6 +1371,11 @@
         "CRYPTEK"
       ]
     },
+    "Soulless Reaper": {
+      "requiredKeywords": [
+        "DESTROYER CULT"
+      ]
+    },
     "Unflinching Will": {
       "requiredKeywords": [
         "OVERLORD"
@@ -1341,6 +1445,11 @@
         "GRAVIS"
       ]
     },
+    "Shroud Field": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Target Augury Web": {
       "requiredKeywords": [
         "TECHMARINE"
@@ -1388,6 +1497,11 @@
         "GRAVIS"
       ]
     },
+    "Shroud Field": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Skjald’s Foretelling": {
       "requiredKeywords": [
         "BATTLE LEADER"
@@ -1418,6 +1532,29 @@
         "TZAANGOR SHAMAN"
       ]
     },
+    "Occulus Infernum": {
+      "allowedHosts": [
+        "EXALTED SORCERER",
+        "EXALTED SORCERER ON DISC OF TZEENTCH",
+        "SORCERER",
+        "SORCERER IN TERMINATOR ARMOUR",
+        "SORCERER ON DISC OF TZEENTCH"
+      ]
+    },
+    "Unravelled Fates": {
+      "requiredKeywords": [
+        "TZAANGOR SHAMAN"
+      ]
+    },
+    "Walking Rampart": {
+      "allowedHosts": [
+        "EXALTED SORCERER",
+        "EXALTED SORCERER ON DISC OF TZEENTCH",
+        "SORCERER",
+        "SORCERER IN TERMINATOR ARMOUR",
+        "SORCERER ON DISC OF TZEENTCH"
+      ]
+    },
     "Warpmeld Dagger": {
       "requiredKeywords": [
         "TZAANGOR SHAMAN"
@@ -1430,7 +1567,7 @@
         "VANGUARD INVADER"
       ]
     },
-    "Psychostatic Disruption": {
+    "Psychostatic Disruption (Aura)": {
       "requiredKeywords": [
         "SYNAPSE"
       ]
@@ -1469,6 +1606,16 @@
     "Malicious Vigour": {
       "requiredKeywords": [
         "SLAUGHTERBOUND"
+      ]
+    },
+    "Murder-forged Entity": {
+      "requiredKeywords": [
+        "MAULERFIEND"
+      ]
+    },
+    "Talons of Butchery": {
+      "requiredKeywords": [
+        "MAULERFIEND"
       ]
     }
   }

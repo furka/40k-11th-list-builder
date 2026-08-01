@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Scrape per-faction enhancement restrictions from BSData/wh40k-10e and emit a
+ * Scrape per-faction enhancement restrictions from BSData/wh40k-11e and emit a
  * lowest-priority overlay JSON the app merges in on top of MFM-PDF and manual
  * layers at runtime.
  *
@@ -32,7 +32,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..", "..");
 
 const BSDATA_REF = "main";
-const BSDATA_REPO = "BSData/wh40k-10e";
+const BSDATA_REPO = "BSData/wh40k-11e";
 
 const MAPPING_PATH = resolve(
   __dirname,
@@ -60,7 +60,7 @@ async function main() {
   console.log(
     `BSData enhancement scrape — ref ${BSDATA_REF} @ ${sha.slice(0, 8)} ` +
       `(${committedAt}), ${factions.length} factions, ` +
-      `${filesNeeded.size} unique .cat files` +
+      `${filesNeeded.size} unique .json files` +
       `${refresh ? " (cache bypass)" : ""}`
   );
 
