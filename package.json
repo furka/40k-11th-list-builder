@@ -35,7 +35,7 @@
     "@vitejs/plugin-vue": "^6.0.7",
     "@vitest/coverage-v8": "^4.1.9",
     "@vue/test-utils": "^2.4.11",
-    "fast-xml-parser": "^5.9.3",
+    "fast-xml-parser": "^5.10.1",
     "jsdom": "^29.1.1",
     "pdfjs-dist": "^6.0.227",
     "playwright": "^1.61.1",
