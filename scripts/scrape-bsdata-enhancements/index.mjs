@@ -186,13 +186,13 @@ async function main() {
 // this faction" so cross-faction BSData shared library files don't spray
 // duplicates everywhere.
 //
-// Reads the snapshot dirs directly via the Node-fs overlay helper rather
+// Reads the current/ MFM snapshot off disk via the Node-fs helper rather
 // than importing the runtime aggregator — the aggregator's transitive
 // `import "../utils/..."` chain only resolves under Vite, not bare Node ESM.
 async function loadMfmEnhancementNames() {
   const mfmRoot = resolve(REPO_ROOT, "src", "data", "munitorum-field-manual-11th");
   const resolved = await resolveSnapshotState(mfmRoot);
-  if (!resolved) throw new Error("No MFM snapshot dirs found");
+  if (!resolved) throw new Error("No MFM current/ snapshot found");
   const out = new Map();
   for (const payload of Object.values(resolved.factions)) {
     const factionName = payload.faction;

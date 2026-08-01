@@ -28,16 +28,28 @@ const TARGETS = [
 ];
 
 // Expand every MFM snapshot's per-faction JSON files into the targets list.
+// Snapshots live in current/ and historical/<v-date>/.
 function expandMfmSnapshots() {
-  const dir = resolve(REPO_ROOT, "src", "data", "munitorum-field-manual-11th");
+  const rel = join("src", "data", "munitorum-field-manual-11th");
+  const root = resolve(REPO_ROOT, rel);
+  const snapshotDirs = [];
+  if (statSync(join(root, "current"), { throwIfNoEntry: false })?.isDirectory()) {
+    snapshotDirs.push(join(rel, "current"));
+  }
+  const historicalRel = join(rel, "historical");
+  const historicalRoot = resolve(REPO_ROOT, historicalRel);
+  if (statSync(historicalRoot, { throwIfNoEntry: false })?.isDirectory()) {
+    for (const entry of readdirSync(historicalRoot)) {
+      if (!statSync(join(historicalRoot, entry)).isDirectory()) continue;
+      snapshotDirs.push(join(historicalRel, entry));
+    }
+  }
+
   const out = [];
-  for (const entry of readdirSync(dir)) {
-    const full = join(dir, entry);
-    if (!statSync(full).isDirectory()) continue;
-    if (!/^v/.test(entry)) continue;
-    for (const fname of readdirSync(full)) {
+  for (const relDir of snapshotDirs) {
+    for (const fname of readdirSync(resolve(REPO_ROOT, relDir))) {
       if (!fname.endsWith(".json") || fname.startsWith("_")) continue;
-      out.push(join("src", "data", "munitorum-field-manual-11th", entry, fname));
+      out.push(join(relDir, fname));
     }
   }
   return out;

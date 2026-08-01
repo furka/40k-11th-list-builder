@@ -6,10 +6,7 @@
 // Only touches the detachment.role field — leaves enhancements, datasheets,
 // dp, tags untouched. Safe to re-run.
 //
-// Operates on the literal contents of the latest snapshot dir, NOT the
-// overlay-resolved set. Do not run after a sparse scrape unless you intend to
-// densify the latest dir: patched faction files will be committed back into
-// the sparse snapshot and the dir will no longer be sparse.
+// Operates on the live current/ snapshot (the latest version).
 
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -21,6 +18,7 @@ import { fetchFactionHtml } from "./fetch.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_ROOT = resolve(__dirname, "../../src/data/munitorum-field-manual-11th");
+const CURRENT_DIR = join(OUT_ROOT, "current");
 
 function extractDetachmentExtras(html) {
   const dom = new JSDOM(html);
@@ -70,17 +68,11 @@ function extractDetachmentExtras(html) {
 }
 
 async function main() {
-  // Find latest version dir.
-  const dirs = (await readdir(OUT_ROOT, { withFileTypes: true }))
-    .filter((e) => e.isDirectory())
-    .map((e) => e.name)
-    .sort();
-  const versionDir = dirs[dirs.length - 1];
-  if (!versionDir) {
-    console.error("No version dir found under", OUT_ROOT);
+  if (!existsSync(CURRENT_DIR)) {
+    console.error("No current/ snapshot found under", OUT_ROOT);
     process.exit(1);
   }
-  const versionPath = join(OUT_ROOT, versionDir);
+  const versionPath = CURRENT_DIR;
   console.log("Augmenting", versionPath);
 
   const files = (await readdir(versionPath)).filter(

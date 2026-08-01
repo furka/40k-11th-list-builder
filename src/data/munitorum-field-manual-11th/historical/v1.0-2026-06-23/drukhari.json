@@ -1,0 +1,976 @@
+{
+  "faction": "DRUKHARI",
+  "siteVersion": "v1.0",
+  "detachments": [
+    {
+      "name": "COVENITE COTERIE",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: COVENS"
+      ],
+      "enhancements": [
+        {
+          "name": "Master Artisan",
+          "points": 20
+        },
+        {
+          "name": "Master Nemesine",
+          "points": 5
+        },
+        {
+          "name": "Master Regenesist",
+          "points": 25
+        },
+        {
+          "name": "Master Repugnomancer",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "EXHIBITION OF SLAUGHTER",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: WYCH CULT"
+      ],
+      "enhancements": [
+        {
+          "name": "Hyperstimm Trafficker",
+          "points": 20
+        },
+        {
+          "name": "Periapt of Torments",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "KABALITE AGONYSTS",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: KABAL"
+      ],
+      "enhancements": [
+        {
+          "name": "Contempt for Rivals",
+          "points": 20
+        },
+        {
+          "name": "Towering Arrogance",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "KABALITE CARTEL",
+      "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: KABAL"
+      ],
+      "enhancements": [
+        {
+          "name": "Informant Network",
+          "points": 30
+        },
+        {
+          "name": "Leechbite Plate",
+          "points": 5
+        },
+        {
+          "name": "Towering Arrogance",
+          "points": 20
+        },
+        {
+          "name": "Webway Awl",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "REALSPACE RAIDERS",
+      "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Crucible of Malediction",
+          "points": 15
+        },
+        {
+          "name": "Dark Vitality",
+          "points": 20
+        },
+        {
+          "name": "Eye of Spite",
+          "points": 15
+        },
+        {
+          "name": "Labyrinthine Cunning",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "REAPER’S WAGER",
+      "dp": 3,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Archraider",
+          "points": 15
+        },
+        {
+          "name": "Conductor of Torment",
+          "points": 20
+        },
+        {
+          "name": "Reaper’s Cowl",
+          "points": 25
+        },
+        {
+          "name": "Webway Walker",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "SKYSPLINTER ASSAULT",
+      "dp": 2,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Nightmare Shroud",
+          "points": 20
+        },
+        {
+          "name": "Phantasmal Smoke",
+          "points": 15
+        },
+        {
+          "name": "Sadistic Fulcrum",
+          "points": 15
+        },
+        {
+          "name": "Spiteful Raider",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "SPECTACLE OF SPITE",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: WYCH CULT"
+      ],
+      "enhancements": [
+        {
+          "name": "Chronoshard",
+          "points": 15
+        },
+        {
+          "name": "MORGHENNA’S CURSE",
+          "points": 20
+        },
+        {
+          "name": "Periapt of Torments",
+          "points": 25
+        },
+        {
+          "name": "Pharmacophex",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "TOOLS OF TORMENT",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: COVENS"
+      ],
+      "enhancements": [
+        {
+          "name": "Elixir of the Corpse Courts",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Gnarlskin Experimentor",
+          "points": 20
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "ARCHON",
+      "leader": {
+        "attachesTo": [
+          "COURT OF THE ARCHON",
+          "HAND OF THE ARCHON",
+          "INCUBI",
+          "KABALITE WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CRONOS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DRAZHAR",
+      "leader": {
+        "attachesTo": [
+          "INCUBI"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HAEMONCULUS",
+      "leader": {
+        "attachesTo": [
+          "WRACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HAND OF THE ARCHON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELLIONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INCUBI",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KABALITE WARRIORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LADY MALYS",
+      "leader": {
+        "attachesTo": [
+          "HAND OF THE ARCHON",
+          "INCUBI",
+          "KABALITE WARRIORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LELITH HESPERAX",
+      "leader": {
+        "attachesTo": [
+          "WYCHES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MANDRAKES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAVAGER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Dark lance",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "RAZORWING JETFIGHTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REAVERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SCOURGES WITH HEAVY WEAPONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 120
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Haywire blaster",
+          "points": 5
+        },
+        {
+          "name": "Dark lance",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "SCOURGES WITH SHARDCARBINES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SUCCUBUS",
+      "leader": {
+        "attachesTo": [
+          "WYCHES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TALOS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Twin haywire blaster",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "VENOM",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VOIDRAVEN BOMBER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 245
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WRACKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "8 models",
+          "models": 8,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WYCHES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BEASTMASTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "7 models",
+          "models": 7,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "COURT OF THE ARCHON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GROTESQUES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RAVEN STRIKE FIGHTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "REAPER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TANTALUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "URIEN RAKARTH",
+      "leader": {
+        "attachesTo": [
+          "WRACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    }
+  ]
+}

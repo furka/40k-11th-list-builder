@@ -69,19 +69,17 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         id: mfm-version
         run: |
-          LATEST_MANIFEST=$(ls -d src/data/munitorum-field-manual-11th/v*/ | sort -V | tail -1)_manifest.json
-          MFM_VERSION=$(node -p "require('./$LATEST_MANIFEST').siteVersion")
-          SCRAPED_AT=$(node -p "require('./$LATEST_MANIFEST').scrapedAt")
-          DIR_NAME=$(dirname "$LATEST_MANIFEST" | xargs basename)
+          MANIFEST=src/data/munitorum-field-manual-11th/current/_manifest.json
+          MFM_VERSION=$(node -p "require('./$MANIFEST').siteVersion")
+          SCRAPED_AT=$(node -p "require('./$MANIFEST').scrapedAt")
           echo "version=$MFM_VERSION" >> "$GITHUB_OUTPUT"
           echo "scraped_at=$SCRAPED_AT" >> "$GITHUB_OUTPUT"
-          echo "dir_name=$DIR_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Build MFM changelog
         if: steps.changes.outputs.changed == 'true'
         id: changelog
         run: |
-          CHANGES_FILE=src/data/munitorum-field-manual-11th/${{ steps.mfm-version.outputs.dir_name }}/_changes.md
+          CHANGES_FILE=src/data/munitorum-field-manual-11th/current/_changes.md
           if [ -f "$CHANGES_FILE" ]; then
             {
               echo 'body<<MFM_BODY_EOF'
@@ -89,7 +87,7 @@ jobs:
               echo 'MFM_BODY_EOF'
             } >> "$GITHUB_OUTPUT"
           else
-            echo "body=_(no \`_changes.md\` found in snapshot dir)_" >> "$GITHUB_OUTPUT"
+            echo "body=_(no \`_changes.md\` found in current/)_" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Open or update PR
@@ -106,7 +104,6 @@ jobs:
             Automated MFM scrape detected a new dataset.
 
             - **MFM site version:** `${{ steps.mfm-version.outputs.version }}`
-            - **Version directory:** `${{ steps.mfm-version.outputs.dir_name }}`
             - **Scraped at:** `${{ steps.mfm-version.outputs.scraped_at }}`
             - **Scrape run:** [view logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 

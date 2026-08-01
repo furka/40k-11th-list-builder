@@ -196,14 +196,14 @@ async function main() {
 }
 
 // Mirror loadMfmEnhancementNames in scrape-bsdata-enhancements: read the
-// resolved MFM snapshot overlay off disk so we don't depend on the Vite-
-// only runtime aggregator. Returns
+// current/ MFM snapshot off disk so we don't depend on the Vite-only
+// runtime aggregator. Returns
 //   Map<factionName, Map<datasheetName, wargearOptions[]>>
 // keyed verbatim from the MFM JSON.
 async function loadMfmWargearOptions() {
   const mfmRoot = resolve(REPO_ROOT, "src", "data", "munitorum-field-manual-11th");
   const resolved = await resolveSnapshotState(mfmRoot);
-  if (!resolved) throw new Error("No MFM snapshot dirs found");
+  if (!resolved) throw new Error("No MFM current/ snapshot found");
   const out = new Map();
   for (const payload of Object.values(resolved.factions)) {
     const factionName = payload.faction;

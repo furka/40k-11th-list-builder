@@ -1,4 +1,4 @@
-import { writeFile, mkdir, readFile } from "node:fs/promises";
+import { writeFile, mkdir, readdir, cp, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, resolve, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -8,11 +8,13 @@ import { fetchFactionHtml } from "./fetch.mjs";
 import { extractFactionData } from "./extract.mjs";
 import { normalizeFactionData } from "./normalize.mjs";
 import { createWarningSink } from "./warnings.mjs";
-import { listSnapshotDirs, resolveSnapshotState } from "./snapshot-resolve.mjs";
+import { resolveSnapshotState } from "./snapshot-resolve.mjs";
 import { diffSnapshots } from "./diff-snapshot.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_ROOT = resolve(__dirname, "../../src/data/munitorum-field-manual-11th");
+const CURRENT_DIR = join(OUT_ROOT, "current");
+const HISTORICAL_DIR = join(OUT_ROOT, "historical");
 
 const FACTION_NAMES = {
   "adepta-sororitas": "ADEPTA SORORITAS",
@@ -107,50 +109,62 @@ function payloadsEqualToResolved(priorResolved, scraped) {
   return true;
 }
 
-// Sparse write: only emit faction JSONs whose payload differs from the
-// resolved prior state. Always emit `_manifest.json` (for traceability) and
-// `_changes.md` (the human-readable diff the PR workflow embeds).
-async function writeVersionDir({
+// Archive the existing current/ into historical/, then overwrite current/ in
+// place with the newly scraped dense state. Writing current/ in place (same
+// file paths, all factions) is what gives PRs clean per-faction point diffs;
+// the prior version is preserved verbatim as a standalone dense copy under
+// historical/<v-date>/. Copy (not move) so current/ files remain and register
+// as in-place modifications rather than delete+add churn.
+async function archiveAndWriteCurrent({
   siteVersion,
   scrapedAt,
   scraped,
   priorResolved,
-  priorDirName,
 }) {
-  const dirName = `${siteVersion.toLowerCase()}-${scrapedAt}`;
-  const dirPath = join(OUT_ROOT, dirName);
-  await ensureDir(dirPath);
+  let priorDirName = null;
+  if (priorResolved) {
+    const prev = priorResolved.manifest;
+    priorDirName = `${prev.siteVersion.toLowerCase()}-${prev.scrapedAt}`;
+    await ensureDir(HISTORICAL_DIR);
+    await cp(CURRENT_DIR, join(HISTORICAL_DIR, priorDirName), { recursive: true });
+  }
 
-  const priorFactions = priorResolved?.factions ?? {};
-  const writtenFactionSlugs = [];
+  await ensureDir(CURRENT_DIR);
+
+  const scrapedSlugs = new Set();
   for (const [slug, payload] of scraped) {
-    const newJson = stableStringify(payload);
-    const priorPayload = priorFactions[slug];
-    if (priorPayload !== undefined && stableStringify(priorPayload) === newJson) {
-      continue;
+    await writeFile(
+      join(CURRENT_DIR, `${slug}.json`),
+      stableStringify(payload),
+      "utf8"
+    );
+    scrapedSlugs.add(slug);
+  }
+  // Prune faction files that no longer exist (a datasheet-set change), so
+  // current/ stays a faithful dense snapshot of exactly what was scraped.
+  for (const fname of await readdir(CURRENT_DIR)) {
+    if (!fname.endsWith(".json") || fname.startsWith("_")) continue;
+    if (!scrapedSlugs.has(fname.replace(/\.json$/, ""))) {
+      await rm(join(CURRENT_DIR, fname));
     }
-    await writeFile(join(dirPath, `${slug}.json`), newJson, "utf8");
-    writtenFactionSlugs.push(slug);
   }
 
   const manifest = { siteVersion, scrapedAt };
   await writeFile(
-    join(dirPath, "_manifest.json"),
+    join(CURRENT_DIR, "_manifest.json"),
     stableStringify(manifest),
     "utf8"
   );
 
-  const priorMap = new Map(Object.entries(priorFactions));
-  const nextMap = new Map(priorMap);
-  for (const [slug, payload] of scraped) nextMap.set(slug, payload);
-  const changesMd = diffSnapshots(priorMap, nextMap, {
+  const priorMap = new Map(Object.entries(priorResolved?.factions ?? {}));
+  const changesMd = diffSnapshots(priorMap, new Map(scraped), {
     siteVersion: siteVersion.toUpperCase(),
     scrapedAt,
     priorDirName,
   });
-  await writeFile(join(dirPath, "_changes.md"), changesMd + "\n", "utf8");
+  await writeFile(join(CURRENT_DIR, "_changes.md"), changesMd + "\n", "utf8");
 
-  return { dirName, writtenFactionSlugs };
+  return { priorDirName, factionCount: scrapedSlugs.size };
 }
 
 // PDF pass: for each MFM enhancement, find its section in the PDF text and
@@ -214,19 +228,16 @@ async function main() {
     );
   }
 
-  // If a --only run, splice the scraped factions into the most recent version
-  // dir for comparison so we don't spuriously mint a new dir from a partial
-  // scrape. Comparison only proceeds if the scrape covered every faction.
+  // A --only run is a partial scrape, so it can't safely decide whether the
+  // full dataset changed. Skip the write path entirely for partial scrapes.
   const isFullScrape = !only;
 
-  const versionDirs = await listSnapshotDirs(OUT_ROOT);
-  const latestDirName = versionDirs[versionDirs.length - 1];
-  const priorResolved = await resolveSnapshotState(OUT_ROOT);
+  const priorResolved = await resolveSnapshotState(OUT_ROOT); // reads current/
 
   if (!isFullScrape) {
     console.log(
-      `Partial scrape (--only). Skipping version-dir write. ` +
-        `Run without --only to produce a full version directory.`
+      `Partial scrape (--only). Skipping current/ write. ` +
+        `Run without --only to update current/.`
     );
     await flushAndReport(warnings);
     if (failCount > 0) process.exitCode = 1;
@@ -238,31 +249,29 @@ async function main() {
 
   if (!priorResolved) {
     writeNew = true;
-    reason = "no existing version directory";
+    reason = "no existing current/ snapshot";
   } else if (!payloadsEqualToResolved(priorResolved, scraped)) {
     writeNew = true;
-    reason = `content differs from resolved state at "${latestDirName}"`;
+    reason = "content differs from current/";
   } else {
-    console.log(
-      `Unchanged from resolved state at "${latestDirName}". No new version directory written.`
-    );
+    console.log("Unchanged from current/. No update written.");
   }
 
   if (writeNew) {
     const scrapedAt = new Date().toISOString().slice(0, 10);
-    const { dirName, writtenFactionSlugs } = await writeVersionDir({
+    const { priorDirName, factionCount } = await archiveAndWriteCurrent({
       siteVersion,
       scrapedAt,
       scraped,
       priorResolved,
-      priorDirName: latestDirName,
     });
+    if (priorDirName) {
+      console.log(`Archived prior version to historical/${priorDirName}/.`);
+    }
     console.log(
-      `Wrote sparse snapshot "${dirName}" (${reason}): ` +
-        `${writtenFactionSlugs.length} of ${scraped.size} faction file(s) — ` +
-        `${writtenFactionSlugs.join(", ") || "(none)"}.`
+      `Wrote current/ (${reason}): ${factionCount} faction file(s), ` +
+        `siteVersion = "${siteVersion.toUpperCase()}".`
     );
-    console.log(`siteVersion = "${siteVersion.toUpperCase()}".`);
   }
 
   // Faction Pack PDF passes (keywords, enhancement restrictions, detachment

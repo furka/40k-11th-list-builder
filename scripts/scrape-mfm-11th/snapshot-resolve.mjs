@@ -1,40 +1,65 @@
-// Shared helper for walking the MFM snapshot history. Snapshots are stored
-// as `v<siteVersion>-<scrapedAt>/` directories under
-// `src/data/munitorum-field-manual-11th/`. Older snapshots are dense (every
-// faction JSON present); newer snapshots are sparse (only the faction JSONs
-// whose payload changed since the previous snapshot). To get the full faction
-// set as of any snapshot, walk all snapshots up to that point in chronological
-// order and layer each one's faction files on top of the running map.
+// Shared helper for reading the MFM snapshot history off disk. Snapshots live
+// under `src/data/munitorum-field-manual-11th/`:
 //
-// The runtime aggregator at src/data/munitorum-field-manual-11th/index.js does
-// the same overlay via Vite's `import.meta.glob`. This module is the Node-fs
+//   current/                    — the live/latest version (dense: every faction)
+//   historical/v<ver>-<date>/   — archived prior versions (dense standalone)
+//
+// Each snapshot is a complete, standalone faction set — there is no sparse
+// overlay to reconstruct. `current/` is rewritten in place each scrape so PRs
+// show clean per-faction diffs; the prior `current/` is copied into
+// `historical/` before it is overwritten (see index.mjs).
+//
+// The runtime aggregator at src/data/munitorum-field-manual-11th/index.js reads
+// the same layout via Vite's `import.meta.glob`. This module is the Node-fs
 // equivalent for scripts that read snapshots off disk.
+//
+// Snapshots are addressed by a logical name: "current", or a historical dir
+// name like "v1.0-2026-06-23". `listSnapshotDirs` returns them in chronological
+// order (historical oldest→newest, then "current" last), preserving the
+// "last entry is the latest" contract callers rely on.
 
 import { readdir, readFile } from "node:fs/promises";
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
+export const CURRENT_NAME = "current";
+const HISTORICAL_SUBDIR = "historical";
 const VERSION_DIR_RE = /^v/;
 
+function snapshotPath(mfmRoot, name) {
+  return name === CURRENT_NAME
+    ? join(mfmRoot, CURRENT_NAME)
+    : join(mfmRoot, HISTORICAL_SUBDIR, name);
+}
+
 export async function listSnapshotDirs(mfmRoot) {
-  if (!existsSync(mfmRoot)) return [];
-  const entries = await readdir(mfmRoot, { withFileTypes: true });
-  return entries
-    .filter((e) => e.isDirectory() && VERSION_DIR_RE.test(e.name))
-    .map((e) => e.name)
-    .sort(); // YYYY-MM-DD suffix → alphabetical = chronological
+  const historicalRoot = join(mfmRoot, HISTORICAL_SUBDIR);
+  const historical = existsSync(historicalRoot)
+    ? (await readdir(historicalRoot, { withFileTypes: true }))
+        .filter((e) => e.isDirectory() && VERSION_DIR_RE.test(e.name))
+        .map((e) => e.name)
+        .sort() // YYYY-MM-DD suffix → alphabetical = chronological
+    : [];
+  return existsSync(join(mfmRoot, CURRENT_NAME))
+    ? [...historical, CURRENT_NAME]
+    : historical;
 }
 
 export function listSnapshotDirsSync(mfmRoot) {
-  if (!existsSync(mfmRoot)) return [];
-  return readdirSync(mfmRoot, { withFileTypes: true })
-    .filter((e) => e.isDirectory() && VERSION_DIR_RE.test(e.name))
-    .map((e) => e.name)
-    .sort();
+  const historicalRoot = join(mfmRoot, HISTORICAL_SUBDIR);
+  const historical = existsSync(historicalRoot)
+    ? readdirSync(historicalRoot, { withFileTypes: true })
+        .filter((e) => e.isDirectory() && VERSION_DIR_RE.test(e.name))
+        .map((e) => e.name)
+        .sort()
+    : [];
+  return existsSync(join(mfmRoot, CURRENT_NAME))
+    ? [...historical, CURRENT_NAME]
+    : historical;
 }
 
-export async function readSnapshotDir(mfmRoot, dirName) {
-  const dirPath = join(mfmRoot, dirName);
+export async function readSnapshotDir(mfmRoot, name) {
+  const dirPath = snapshotPath(mfmRoot, name);
   const manifestPath = join(dirPath, "_manifest.json");
   if (!existsSync(manifestPath)) return null;
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
@@ -47,8 +72,8 @@ export async function readSnapshotDir(mfmRoot, dirName) {
   return { manifest, factions };
 }
 
-export function readSnapshotDirSync(mfmRoot, dirName) {
-  const dirPath = join(mfmRoot, dirName);
+export function readSnapshotDirSync(mfmRoot, name) {
+  const dirPath = snapshotPath(mfmRoot, name);
   const manifestPath = join(dirPath, "_manifest.json");
   if (!existsSync(manifestPath)) return null;
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
@@ -61,46 +86,14 @@ export function readSnapshotDirSync(mfmRoot, dirName) {
   return { manifest, factions };
 }
 
-// Overlay every snapshot up to and including `upTo` (defaults to the latest).
-// Returns the resolved `{ manifest, factions }` — `manifest` is the upTo
-// snapshot's manifest, `factions` is the union of every faction file seen,
-// with later snapshots winning over earlier ones.
-//
-// If no snapshots exist, returns `null`.
+// Read one snapshot's full state. `upTo` selects the snapshot by logical name
+// (defaults to "current", the latest). Each snapshot is dense/standalone, so no
+// overlay is needed. Returns `{ manifest, factions }`, or `null` if the target
+// snapshot doesn't exist.
 export async function resolveSnapshotState(mfmRoot, { upTo } = {}) {
-  const dirs = await listSnapshotDirs(mfmRoot);
-  if (dirs.length === 0) return null;
-  const stopAt = upTo ?? dirs[dirs.length - 1];
-  const stopIdx = dirs.indexOf(stopAt);
-  if (stopIdx < 0) {
-    throw new Error(`Snapshot dir "${stopAt}" not found under ${mfmRoot}`);
-  }
-  const factions = {};
-  let manifest = null;
-  for (let i = 0; i <= stopIdx; i++) {
-    const snap = await readSnapshotDir(mfmRoot, dirs[i]);
-    if (!snap) continue;
-    Object.assign(factions, snap.factions);
-    manifest = snap.manifest;
-  }
-  return { manifest, factions };
+  return readSnapshotDir(mfmRoot, upTo ?? CURRENT_NAME);
 }
 
 export function resolveSnapshotStateSync(mfmRoot, { upTo } = {}) {
-  const dirs = listSnapshotDirsSync(mfmRoot);
-  if (dirs.length === 0) return null;
-  const stopAt = upTo ?? dirs[dirs.length - 1];
-  const stopIdx = dirs.indexOf(stopAt);
-  if (stopIdx < 0) {
-    throw new Error(`Snapshot dir "${stopAt}" not found under ${mfmRoot}`);
-  }
-  const factions = {};
-  let manifest = null;
-  for (let i = 0; i <= stopIdx; i++) {
-    const snap = readSnapshotDirSync(mfmRoot, dirs[i]);
-    if (!snap) continue;
-    Object.assign(factions, snap.factions);
-    manifest = snap.manifest;
-  }
-  return { manifest, factions };
+  return readSnapshotDirSync(mfmRoot, upTo ?? CURRENT_NAME);
 }
