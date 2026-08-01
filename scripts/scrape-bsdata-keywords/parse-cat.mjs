@@ -1,39 +1,16 @@
-import { XMLParser } from "fast-xml-parser";
-
 import { normalizeApostrophes } from "../../src/utils/apostrophe-normalization.js";
+import { parseCatalogue, asArray } from "./parse-catalogue.mjs";
 
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "@_",
-  parseAttributeValue: false,
-  allowBooleanAttributes: true,
-  isArray: (name) => ARRAY_NODES.has(name),
-});
-
-// Force these BattleScribe nodes to always be arrays even when there's a
-// single child — otherwise fast-xml-parser collapses singletons into objects
-// and the walker has to branch on shape per node.
-const ARRAY_NODES = new Set([
-  "selectionEntry",
-  "selectionEntryGroup",
-  "sharedSelectionEntry",
-  "sharedSelectionEntryGroup",
-  "entryLink",
-  "categoryLink",
-  "cost",
-  "constraint",
-  "modifier",
-  "modifierGroup",
-  "condition",
-  "conditionGroup",
-  "repeat",
-]);
+// BSData JSON stores selection entries and groups in separate plural-keyed
+// arrays; both shared and inline variants get walked as datasheet candidates.
+const ENTRY_CONTAINERS = ["sharedSelectionEntries", "selectionEntries"];
+const GROUP_CONTAINERS = ["sharedSelectionEntryGroups", "selectionEntryGroups"];
 
 /**
- * Parse one BattleScribe .cat XML string into a flat list of selection-entry
- * records. Each record carries everything the walker in build-index.mjs needs
- * to resolve cross-file entryLink references and decide whether the entry
- * represents a costed datasheet.
+ * Parse one BattleScribe catalogue JSON string into a flat list of
+ * selection-entry records. Each record carries everything the walker in
+ * build-index.mjs needs to resolve cross-file entryLink references and decide
+ * whether the entry represents a costed datasheet.
  *
  * Returned shape per entry:
  *   {
@@ -44,14 +21,13 @@ const ARRAY_NODES = new Set([
  *     children:      Entry[],    // nested selectionEntry / selectionEntryGroup
  *   }
  *
- * Both `selectionEntry` and `sharedSelectionEntry` are emitted — BSData
- * promotes shared entries to the catalogue's `<sharedSelectionEntries>` block
- * so they can be linked from multiple parent groups; for our purposes they're
+ * Both `selectionEntries` and `sharedSelectionEntries` are emitted — BSData
+ * promotes shared entries to the catalogue's `sharedSelectionEntries` block so
+ * they can be linked from multiple parent groups; for our purposes they're
  * datasheets just like inline entries.
  */
-export function parseCatFile(xml) {
-  const tree = parser.parse(xml);
-  const root = tree.catalogue ?? tree.gameSystem;
+export function parseCatFile(text) {
+  const root = parseCatalogue(text);
   if (!root) return [];
 
   const entries = [];
@@ -62,33 +38,24 @@ export function parseCatFile(xml) {
 function collectFromNode(node, out) {
   if (!node || typeof node !== "object") return;
 
-  for (const key of [
-    "sharedSelectionEntries",
-    "sharedSelectionEntryGroups",
-    "selectionEntries",
-    "selectionEntryGroups",
-  ]) {
-    const container = node[key];
-    if (!container) continue;
-    for (const child of asArray(container.selectionEntry)) {
-      out.push(buildEntry(child));
-    }
-    for (const child of asArray(container.selectionEntryGroup)) {
-      out.push(buildEntry(child));
-    }
+  for (const key of ENTRY_CONTAINERS) {
+    for (const child of asArray(node[key])) out.push(buildEntry(child));
+  }
+  for (const key of GROUP_CONTAINERS) {
+    for (const child of asArray(node[key])) out.push(buildEntry(child));
   }
 }
 
 function buildEntry(node) {
-  const id = node["@_id"];
+  const id = node.id;
   // Strip the [Legends] suffix FIRST so the name-fix map lookup sees the
   // bare name. BSData carries some typo'd names under both Legends and
   // non-Legends variants — both need the fix. Apostrophe normalization runs
   // last so any byte form returned by the fix map ends up canonical.
   const name = normalizeApostrophes(
-    applyNameFix(stripLegendsSuffix(node["@_name"] ?? ""))
+    applyNameFix(stripLegendsSuffix(node.name ?? ""))
   );
-  const type = node["@_type"] ?? "";
+  const type = node.type ?? "";
 
   const categoryLinks = collectCategoryLinks(node);
   const entryLinks = collectEntryLinks(node);
@@ -103,11 +70,9 @@ function buildEntry(node) {
 }
 
 function collectCategoryLinks(node) {
-  const container = node.categoryLinks;
-  if (!container) return [];
   const out = [];
-  for (const link of asArray(container.categoryLink)) {
-    const raw = link["@_name"];
+  for (const link of asArray(node.categoryLinks)) {
+    const raw = link.name;
     if (!raw) continue;
     const normalized = normalizeKeyword(raw);
     if (IGNORED_CATEGORY_LINKS.has(normalized)) continue;
@@ -118,10 +83,9 @@ function collectCategoryLinks(node) {
 
 // BSData categoryLinks that are NOT real 11e datasheet keywords and would
 // mislead any consumer that reads them:
-//   - WARLORD: 10e marker for "this Character is eligible to be selected
-//     as the army's Warlord at list-building time." In 11e the Warlord
-//     designation is dynamic (assigned during the game) and doesn't appear
-//     on any MFM PDF KEYWORDS line.
+//   - WARLORD: BSData marks Characters eligible to be the army's Warlord with
+//     this category. In 11e the Warlord designation is dynamic (assigned
+//     during the game) and doesn't appear on any MFM PDF KEYWORDS line.
 //   - The various "* WEAPON" tags are BSData's internal weapon-profile
 //     classifications. They surface in our datasheet keyword sets because
 //     the model-keyword union in build-index.mjs walks nested entries and
@@ -140,12 +104,9 @@ const IGNORED_CATEGORY_LINKS = new Set([
 
 function collectEntryLinks(node) {
   const out = [];
-  const direct = node.entryLinks;
-  if (direct) {
-    for (const link of asArray(direct.entryLink)) {
-      const target = link["@_targetId"];
-      if (target) out.push(target);
-    }
+  for (const link of asArray(node.entryLinks)) {
+    const target = link.targetId;
+    if (target) out.push(target);
   }
   // Some catalogues nest entryLinks inside selectionEntries containers for
   // shared-entry promotion. The walker recurses through children anyway, so
@@ -154,12 +115,8 @@ function collectEntryLinks(node) {
 }
 
 function hasOwnPts(node) {
-  const costs = node.costs;
-  if (!costs) return false;
-  for (const cost of asArray(costs.cost)) {
-    if (cost["@_name"] === "pts") {
-      const value = Number(cost["@_value"] ?? 0);
-      if (!Number.isNaN(value) && value > 0) return true;
+  for (const cost of asArray(node.costs)) {
+    if (cost.name === "pts") {
       // Free units (0 pts) are still datasheets — Astartes Drop Pod etc.
       // Treat presence of a pts cost as the signal, value-agnostic.
       return true;
@@ -205,11 +162,6 @@ const BSDATA_NAME_FIXES = {
 
 function applyNameFix(rawName) {
   return BSDATA_NAME_FIXES[rawName] ?? rawName;
-}
-
-function asArray(value) {
-  if (value === undefined || value === null) return [];
-  return Array.isArray(value) ? value : [value];
 }
 
 function dedupePreserveOrder(arr) {

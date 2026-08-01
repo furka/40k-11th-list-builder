@@ -1,80 +1,79 @@
 {
-  "_comment": "Maps MFM faction name → BSData .cat files to walk for that faction. Files marked '*Library.cat' contain shared selection entries linked into thin-shim chapter/sub-faction files. SPACE MARINES rolls in chapter-specific cat files for chapters MFM doesn't break out (Imperial Fists, Iron Hands, Raven Guard, Salamanders, White Scars); the MFM-split chapters (Black Templars, Blood Angels, Dark Angels, Deathwatch, Grey Knights, Space Wolves, Ultramarines) pull from their chapter file PLUS the Space Marines library.",
-  "ADEPTA SORORITAS": ["Imperium - Adepta Sororitas.cat"],
-  "ADEPTUS CUSTODES": ["Imperium - Adeptus Custodes.cat"],
-  "ADEPTUS MECHANICUS": ["Imperium - Adeptus Mechanicus.cat"],
+  "_comment": "Maps MFM faction name → BSData/wh40k-11e .json catalogue files to walk for that faction. Files marked '*Library.json' contain shared selection entries linked into thin-shim chapter/sub-faction files. SPACE MARINES rolls in chapter-specific files for chapters MFM doesn't break out (Imperial Fists, Iron Hands, Raven Guard, Salamanders, White Scars); the MFM-split chapters (Black Templars, Blood Angels, Dark Angels, Deathwatch, Grey Knights, Space Wolves, Ultramarines) pull from their chapter file PLUS the Space Marines library.",
+  "ADEPTA SORORITAS": ["Imperium - Adepta Sororitas.json"],
+  "ADEPTUS CUSTODES": ["Imperium - Adeptus Custodes.json"],
+  "ADEPTUS MECHANICUS": ["Imperium - Adeptus Mechanicus.json"],
   "AELDARI": [
-    "Aeldari - Craftworlds.cat",
-    "Aeldari - Ynnari.cat",
-    "Aeldari - Aeldari Library.cat"
+    "Aeldari - Craftworlds.json",
+    "Aeldari - Aeldari Library.json"
   ],
   "ASTRA MILITARUM": [
-    "Imperium - Astra Militarum.cat",
-    "Imperium - Astra Militarum - Library.cat"
+    "Imperium - Astra Militarum.json",
+    "Imperium - Astra Militarum - Library.json"
   ],
   "BLACK TEMPLARS": [
-    "Imperium - Black Templars.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Black Templars.json",
+    "Imperium - Space Marines.json"
   ],
   "BLOOD ANGELS": [
-    "Imperium - Blood Angels.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Blood Angels.json",
+    "Imperium - Space Marines.json"
   ],
   "CHAOS DAEMONS": [
-    "Chaos - Chaos Daemons.cat",
-    "Chaos - Chaos Daemons Library.cat"
+    "Chaos - Chaos Daemons.json",
+    "Chaos - Chaos Daemons Library.json"
   ],
   "CHAOS KNIGHTS": [
-    "Chaos - Chaos Knights.cat",
-    "Chaos - Chaos Knights Library.cat"
+    "Chaos - Chaos Knights.json",
+    "Chaos - Chaos Knights Library.json"
   ],
-  "CHAOS SPACE MARINES": ["Chaos - Chaos Space Marines.cat"],
+  "CHAOS SPACE MARINES": ["Chaos - Chaos Space Marines.json"],
   "DARK ANGELS": [
-    "Imperium - Dark Angels.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Dark Angels.json",
+    "Imperium - Space Marines.json"
   ],
-  "DEATH GUARD": ["Chaos - Death Guard.cat"],
+  "DEATH GUARD": ["Chaos - Death Guard.json"],
   "DEATHWATCH": [
-    "Imperium - Deathwatch.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Deathwatch.json",
+    "Imperium - Space Marines.json"
   ],
   "DRUKHARI": [
-    "Aeldari - Drukhari.cat",
-    "Aeldari - Aeldari Library.cat"
+    "Aeldari - Drukhari.json",
+    "Aeldari - Aeldari Library.json"
   ],
-  "EMPEROR'S CHILDREN": ["Chaos - Emperor's Children.cat"],
-  "GENESTEALER CULTS": ["Genestealer Cults.cat"],
+  "EMPEROR'S CHILDREN": ["Chaos - Emperor's Children.json"],
+  "GENESTEALER CULTS": ["Genestealer Cults.json"],
   "GREY KNIGHTS": [
-    "Imperium - Grey Knights.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Grey Knights.json",
+    "Imperium - Space Marines.json"
   ],
-  "IMPERIAL AGENTS": ["Imperium - Agents of the Imperium.cat"],
+  "IMPERIAL AGENTS": ["Imperium - Agents of the Imperium.json"],
   "IMPERIAL KNIGHTS": [
-    "Imperium - Imperial Knights.cat",
-    "Imperium - Imperial Knights - Library.cat"
+    "Imperium - Imperial Knights.json",
+    "Imperium - Imperial Knights - Library.json"
   ],
-  "LEAGUES OF VOTANN": ["Leagues of Votann.cat"],
-  "NECRONS": ["Necrons.cat"],
-  "ORKS": ["Orks.cat"],
+  "LEAGUES OF VOTANN": ["Leagues of Votann.json"],
+  "NECRONS": ["Necrons.json"],
+  "ORKS": ["Orks.json"],
   "SPACE MARINES": [
-    "Imperium - Space Marines.cat",
-    "Imperium - Imperial Fists.cat",
-    "Imperium - Iron Hands.cat",
-    "Imperium - Raven Guard.cat",
-    "Imperium - Salamanders.cat",
-    "Imperium - Ultramarines.cat",
-    "Imperium - White Scars.cat"
+    "Imperium - Space Marines.json",
+    "Imperium - Imperial Fists.json",
+    "Imperium - Iron Hands.json",
+    "Imperium - Raven Guard.json",
+    "Imperium - Salamanders.json",
+    "Imperium - Ultramarines.json",
+    "Imperium - White Scars.json"
   ],
   "SPACE WOLVES": [
-    "Imperium - Space Wolves.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Space Wolves.json",
+    "Imperium - Space Marines.json"
   ],
-  "T'AU EMPIRE": ["T'au Empire.cat"],
-  "THOUSAND SONS": ["Chaos - Thousand Sons.cat"],
-  "TYRANIDS": ["Tyranids.cat", "Library - Tyranids.cat"],
+  "T'AU EMPIRE": ["T'au Empire.json"],
+  "THOUSAND SONS": ["Chaos - Thousand Sons.json"],
+  "TYRANIDS": ["Tyranids.json", "Library - Tyranids.json"],
   "ULTRAMARINES": [
-    "Imperium - Ultramarines.cat",
-    "Imperium - Space Marines.cat"
+    "Imperium - Ultramarines.json",
+    "Imperium - Space Marines.json"
   ],
-  "WORLD EATERS": ["Chaos - World Eaters.cat"]
+  "WORLD EATERS": ["Chaos - World Eaters.json"]
 }

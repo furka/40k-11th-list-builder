@@ -1,9 +1,9 @@
 {
-  "_source": "https://github.com/BSData/wh40k-10e",
+  "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
-  "_committedAt": "2026-06-22T09:36:35Z",
-  "_generatedAt": "2026-06-24T16:25:11.520Z",
+  "_sha": "767f7ca1678e0e4a27777b086bcbbcf708fe0652",
+  "_committedAt": "2026-08-01T20:39:34Z",
+  "_generatedAt": "2026-08-01T21:03:22.856Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -13,7 +13,8 @@
       "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Arco-Flagellant": [],
     "Arco-Flagellants": [
@@ -42,7 +43,8 @@
       "CANONESS",
       "CHARACTER",
       "GRENADES",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Canoness with Jump Pack": [
       "ADEPTA SORORITAS",
@@ -52,11 +54,13 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "JUMP PACK"
+      "JUMP PACK",
+      "SORORITAS CHARACTER"
     ],
     "Castigator": [
       "ADEPTA SORORITAS",
       "CASTIGATOR",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "VEHICLE"
@@ -67,6 +71,16 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY"
+    ],
+    "Celestian Sacresant Aveline": [
+      "ADEPTA SORORITAS",
+      "CELESTIAN SACRESANT AVELINE",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Celestian Sacresants": [
       "ADEPTA SORORITAS",
@@ -88,7 +102,8 @@
       "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Death Cult Assassins": [
       "ADEPTA SORORITAS",
@@ -101,7 +116,8 @@
       "CHARACTER",
       "DIALOGUS",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Dogmata": [
       "ADEPTA SORORITAS",
@@ -109,7 +125,8 @@
       "DOGMATA",
       "GRENADES",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Dominion Squad": [
       "ADEPTA SORORITAS",
@@ -121,6 +138,7 @@
     "Exorcist": [
       "ADEPTA SORORITAS",
       "EXORCIST",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "VEHICLE"
@@ -130,7 +148,8 @@
       "CHARACTER",
       "HOSPITALLER",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Imagifier": [
       "ADEPTA SORORITAS",
@@ -138,11 +157,13 @@
       "GRENADES",
       "IMAGIFIER",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "SORORITAS CHARACTER"
     ],
     "Immolator": [
       "ADEPTA SORORITAS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMMOLATOR",
       "IMPERIUM",
       "SMOKE",
@@ -156,7 +177,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "INSPIRING DEVOTEE"
+      "INSPIRING DEVOTEE",
+      "SORORITAS CHARACTER"
     ],
     "Intranzia Fraye": [
       "ADEPTA SORORITAS",
@@ -165,6 +187,7 @@
       "IMPERIUM",
       "INTRANZIA FRAYE",
       "PENITENT",
+      "SORORITAS CHARACTER",
       "VEHICLE",
       "WALKER"
     ],
@@ -175,7 +198,8 @@
       "FLY",
       "IMPERIUM",
       "JUNITH ERUITA",
-      "MOUNTED"
+      "MOUNTED",
+      "SORORITAS CHARACTER"
     ],
     "Militant Commander [Crucible]": [
       "ADEPTA SORORITAS",
@@ -185,7 +209,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "MILITANT COMMANDER"
+      "MILITANT COMMANDER",
+      "SORORITAS CHARACTER"
     ],
     "Ministorum Priest": [
       "ADEPTA SORORITAS",
@@ -193,7 +218,8 @@
       "IMPERIUM",
       "INFANTRY",
       "MINISTORUM PRIEST",
-      "PENITENT"
+      "PENITENT",
+      "SORORITAS CHARACTER"
     ],
     "Mortifiers": [
       "ADEPTA SORORITAS",
@@ -209,6 +235,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "MORVENN VAHL",
+      "SORORITAS CHARACTER",
       "VEHICLE",
       "WALKER"
     ],
@@ -218,8 +245,10 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "PALATINE"
+      "PALATINE",
+      "SORORITAS CHARACTER"
     ],
+    "Paragon Superior": [],
     "Paragon Warsuits": [
       "ADEPTA SORORITAS",
       "GRENADES",
@@ -244,6 +273,7 @@
       "IMPERIUM",
       "PARAGON WARSUITS",
       "RELIQUANT KNIGHT",
+      "SORORITAS CHARACTER",
       "VEHICLE",
       "WALKER"
     ],
@@ -281,7 +311,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "SAINT CELESTINE"
+      "SAINT CELESTINE",
+      "SORORITAS CHARACTER"
     ],
     "Sanctifiers": [
       "ADEPTA SORORITAS",
@@ -309,6 +340,7 @@
     "Sororitas Rhino": [
       "ADEPTA SORORITAS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SORORITAS RHINO",
@@ -322,6 +354,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "SORORITAS CHARACTER",
       "TRIUMPH OF SAINT KATHERINE"
     ],
     "Zephyrim Squad": [
@@ -342,6 +375,7 @@
       "ADEPTUS CUSTODES",
       "AGAMATUS CUSTODIANS",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "MOUNTED"
     ],
@@ -365,6 +399,7 @@
       "ADEPTUS CUSTODES",
       "ANATHEMA PSYKANA",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -397,6 +432,7 @@
       "ADEPTUS CUSTODES",
       "CALADIUS GRAV-TANK",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "VEHICLE"
     ],
@@ -420,6 +456,7 @@
       "ADEPTUS CUSTODES",
       "CORONUS GRAV-CARRIER",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -497,6 +534,7 @@
     "Pallas Grav-attack": [
       "ADEPTUS CUSTODES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "PALLAS GRAV-ATTACK",
       "VEHICLE"
@@ -537,6 +575,7 @@
       "CHARACTER",
       "DAWNEAGLE JETBIKE",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "MOUNTED",
       "SHIELD-CAPTAIN"
@@ -586,6 +625,7 @@
     ],
     "Venerable Land Raider": [
       "ADEPTUS CUSTODES",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "TRANSPORT",
@@ -639,7 +679,6 @@
     ],
     "Archaeopter Transvector": [
       "ADEPTUS MECHANICUS",
-      "AIRCRAFT",
       "ARCHAEOPTER TRANSVECTOR",
       "FLY",
       "IMPERIUM",
@@ -654,6 +693,7 @@
       "CULT MECHANICUS",
       "EPIC HERO",
       "IMPERIUM",
+      "MOBILE",
       "MONSTER",
       "TECH-PRIEST"
     ],
@@ -783,6 +823,7 @@
       "INFANTRY",
       "JUMP PACK",
       "PTERAXII",
+      "RECON AUGURY",
       "SKITARII",
       "SKYSTALKERS"
     ],
@@ -794,6 +835,7 @@
       "INFANTRY",
       "JUMP PACK",
       "PTERAXII",
+      "RECON AUGURY",
       "SKITARII",
       "STERYLIZORS"
     ],
@@ -825,6 +867,7 @@
       "ADEPTUS MECHANICUS",
       "IMPERIUM",
       "MOUNTED",
+      "RECON AUGURY",
       "SERBERYS RAIDERS",
       "SKITARII"
     ],
@@ -832,6 +875,7 @@
       "ADEPTUS MECHANICUS",
       "IMPERIUM",
       "MOUNTED",
+      "RECON AUGURY",
       "SERBERYS SULPHURHOUNDS",
       "SKITARII"
     ],
@@ -859,6 +903,7 @@
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATORS",
+      "RECON AUGURY",
       "SICARIAN",
       "SKITARII"
     ],
@@ -888,6 +933,7 @@
       "IMPERIUM",
       "INFANTRY",
       "RANGERS",
+      "RECON AUGURY",
       "SKITARII"
     ],
     "Skitarii Vanguard": [
@@ -900,6 +946,7 @@
     ],
     "Skorpius Disintegrator": [
       "ADEPTUS MECHANICUS",
+      "FRAME",
       "IMPERIUM",
       "SKITARII",
       "SKORPIUS DISINTEGRATOR",
@@ -909,6 +956,7 @@
     "Skorpius Dunerider": [
       "ADEPTUS MECHANICUS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SKITARII",
       "SKORPIUS DUNERIDER",
@@ -916,7 +964,6 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Sydonian Dragoon with taser lance": [],
     "Sydonian Dragoons with radium jezzails": [
       "ADEPTUS MECHANICUS",
       "DRAGOONS WITH RADIUM JEZZAILS",
@@ -995,6 +1042,7 @@
       "CULT MECHANICUS",
       "EPIC HERO",
       "IMPERIUM",
+      "MOBILE",
       "MONSTER",
       "TECH-PRIEST",
       "THULIA GHULD"
@@ -1016,7 +1064,8 @@
       "CHARACTER",
       "DRUKHARI",
       "INFANTRY",
-      "KABAL"
+      "KABAL",
+      "LEADER"
     ],
     "Archtormentor [Crucible]": [
       "AELDARI",
@@ -1036,6 +1085,7 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Autarch": [
@@ -1045,6 +1095,7 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "YNNARI"
     ],
     "Autarch Skyrunner": [
@@ -1054,6 +1105,8 @@
       "AUTARCH SKYRUNNER",
       "CHARACTER",
       "FLY",
+      "FRAME",
+      "LEADER",
       "MOUNTED"
     ],
     "Autarch Wayleaper": [
@@ -1065,6 +1118,7 @@
       "GRENADES",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "YNNARI"
     ],
     "Avatar of Khaine": [
@@ -1087,6 +1141,7 @@
       "GRENADES",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Beastmaster": [
@@ -1104,6 +1159,7 @@
       "BONESINGER",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Cobra": [
@@ -1111,6 +1167,7 @@
       "ASURYANI",
       "COBRA",
       "FLY",
+      "FRAME",
       "TITANIC",
       "VEHICLE"
     ],
@@ -1119,6 +1176,7 @@
       "ANHRATHE",
       "CORSAIR CLOUD DANCER BAND",
       "CORSAIRS AND TRAVELLING PLAYERS",
+      "FRAME",
       "GRENADES",
       "MOUNTED"
     ],
@@ -1129,16 +1187,6 @@
       "CORSAIRS AND TRAVELLING PLAYERS",
       "GRENADES",
       "INFANTRY"
-    ],
-    "Corsair Skyreaver Band": [
-      "AELDARI",
-      "ANHRATHE",
-      "CORSAIR SKYREAVER BAND",
-      "CORSAIRS AND TRAVELLING PLAYERS",
-      "FLY",
-      "GRENADES",
-      "INFANTRY",
-      "JUMP PACK"
     ],
     "Corsair Skyreavers": [
       "AELDARI",
@@ -1209,6 +1257,7 @@
       "AELDARI",
       "ASURYANI",
       "D-CANNON PLATFORM",
+      "FRAME",
       "INFANTRY",
       "SUPPORT WEAPON",
       "YNNARI"
@@ -1248,7 +1297,8 @@
       "DRAZHAR",
       "DRUKHARI",
       "EPIC HERO",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Eldrad Ulthran": [
       "AELDARI",
@@ -1258,6 +1308,7 @@
       "EPIC HERO",
       "FARSEER",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Falcon": [
@@ -1265,6 +1316,7 @@
       "ASURYANI",
       "FALCON",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "YNNARI"
@@ -1275,6 +1327,7 @@
       "CHARACTER",
       "FARSEER",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "YNNARI"
     ],
@@ -1285,6 +1338,7 @@
       "FARSEER",
       "FARSEER SKYRUNNER",
       "FLY",
+      "LEADER",
       "MOUNTED",
       "PSYKER",
       "YNNARI"
@@ -1303,6 +1357,7 @@
       "ASURYANI",
       "FIRE PRISM",
       "FLY",
+      "FRAME",
       "VEHICLE",
       "YNNARI"
     ],
@@ -1311,6 +1366,7 @@
       "ASURYANI",
       "FIRESTORM",
       "FLY",
+      "FRAME",
       "VEHICLE"
     ],
     "Flesh Crafter [Crucible]": [
@@ -1331,6 +1387,7 @@
       "FUEGAN",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Ghost Warrior [Crucible]": [
@@ -1366,7 +1423,16 @@
       "DRUKHARI",
       "HAEMONCULUS",
       "HAEMONCULUS COVENS",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
+    ],
+    "Hand of the Archon": [
+      "AELDARI",
+      "DRUKHARI",
+      "GRENADES",
+      "HAND OF THE ARCHON",
+      "INFANTRY",
+      "KABAL"
     ],
     "Hellions": [
       "AELDARI",
@@ -1391,6 +1457,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "HORNET",
       "VEHICLE"
     ],
@@ -1407,7 +1474,8 @@
       "CHARACTER",
       "EPIC HERO",
       "ILLIC NIGHTSPEAR",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Incubi": [
       "AELDARI",
@@ -1425,6 +1493,7 @@
       "INFANTRY",
       "IRILLYTH",
       "JUMP PACK",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Jain Zar": [
@@ -1435,6 +1504,7 @@
       "EPIC HERO",
       "INFANTRY",
       "JAIN ZAR",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Kabalite Warriors": [
@@ -1452,6 +1522,7 @@
       "EPIC HERO",
       "INFANTRY",
       "KARANDRAS",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Kharseth": [
@@ -1462,6 +1533,7 @@
       "EPIC HERO",
       "INFANTRY",
       "KHARSETH",
+      "LEADER",
       "PSYKER"
     ],
     "Lady Malys": [
@@ -1472,7 +1544,8 @@
       "EPIC HERO",
       "INFANTRY",
       "KABAL",
-      "LADY MALYS"
+      "LADY MALYS",
+      "LEADER"
     ],
     "Lead Player": [],
     "Lelith Hesperax": [
@@ -1481,6 +1554,7 @@
       "DRUKHARI",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "LELITH HESPERAX",
       "SUCCUBUS",
       "WYCH CULT"
@@ -1494,6 +1568,7 @@
       "FLY",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "LHYKHIS",
       "PHOENIX LORD"
     ],
@@ -1501,6 +1576,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "LYNX",
       "VEHICLE"
     ],
@@ -1518,6 +1594,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "MAUGAN RA",
       "PHOENIX LORD"
     ],
@@ -1525,6 +1602,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "NIGHT SPINNER",
       "VEHICLE"
     ],
@@ -1533,12 +1611,14 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "NIGHTWING",
       "VEHICLE"
     ],
     "Phantom Titan": [
       "AELDARI",
       "ASURYANI",
+      "FRAME",
       "MONSTER",
       "PHANTOM TITAN",
       "TITANIC",
@@ -1551,6 +1631,7 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "PHOENIX",
       "VEHICLE"
     ],
@@ -1561,6 +1642,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "PRINCE YRIEL"
     ],
     "Raider": [
@@ -1568,6 +1650,7 @@
       "DEDICATED TRANSPORT",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "RAIDER",
       "TRANSPORT",
       "VEHICLE"
@@ -1583,6 +1666,7 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "KABAL",
       "RAVAGER",
       "VEHICLE"
@@ -1592,6 +1676,7 @@
       "AIRCRAFT",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "RAVEN STRIKE FIGHTER",
       "VEHICLE"
     ],
@@ -1607,6 +1692,7 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "KABAL",
       "REAPER",
       "VEHICLE"
@@ -1623,6 +1709,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "MONSTER",
       "REVENANT TITAN",
       "TITANIC",
@@ -1634,10 +1721,12 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "SCORPION",
       "TITANIC",
       "VEHICLE"
     ],
+    "Scourge with Heavy Weapon": [],
     "Scourges with Heavy Weapons": [
       "AELDARI",
       "BLADES FOR HIRE",
@@ -1672,6 +1761,7 @@
     "Shadow Weaver Platform": [
       "AELDARI",
       "ASURYANI",
+      "FRAME",
       "INFANTRY",
       "SHADOW WEAVER PLATFORM",
       "SUPPORT WEAPON",
@@ -1685,6 +1775,7 @@
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "SHADOWSEER"
     ],
@@ -1771,6 +1862,7 @@
       "CORSAIRS AND TRAVELLING PLAYERS",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "SMOKE",
@@ -1801,6 +1893,7 @@
       "CHARACTER",
       "DRUKHARI",
       "INFANTRY",
+      "LEADER",
       "SUCCUBUS",
       "WYCH CULT"
     ],
@@ -1827,6 +1920,7 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -1835,6 +1929,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "THE VISARCH",
       "YNNARI"
     ],
@@ -1866,6 +1961,7 @@
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "INFANTRY",
+      "LEADER",
       "TROUPE MASTER"
     ],
     "Urien Rakarth": [
@@ -1876,6 +1972,7 @@
       "HAEMONCULUS",
       "HAEMONCULUS COVENS",
       "INFANTRY",
+      "LEADER",
       "URIEN RAKARTH"
     ],
     "Vampire Hunter": [
@@ -1883,15 +1980,16 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "TITANIC",
       "VAMPIRE HUNTER",
       "VEHICLE"
     ],
     "Vampire Raider": [
       "AELDARI",
-      "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "TITANIC",
       "TRANSPORT",
       "VAMPIRE RAIDER",
@@ -1902,6 +2000,7 @@
       "DEDICATED TRANSPORT",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "VENOM"
@@ -1909,6 +2008,7 @@
     "Vibro Cannon Platform": [
       "AELDARI",
       "ASURYANI",
+      "FRAME",
       "INFANTRY",
       "SUPPORT WEAPON",
       "VIBRO CANNON PLATFORM",
@@ -1926,6 +2026,7 @@
       "AELDARI",
       "CORSAIRS AND TRAVELLING PLAYERS",
       "FLY",
+      "FRAME",
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "VEHICLE",
@@ -1940,7 +2041,6 @@
       "VYPERS",
       "YNNARI"
     ],
-    "War Walker": [],
     "War Walkers": [
       "AELDARI",
       "ASURYANI",
@@ -1955,6 +2055,7 @@
       "CHARACTER",
       "INFANTRY",
       "PSYKER",
+      "SUPPORT",
       "WARLOCK",
       "YNNARI"
     ],
@@ -1962,6 +2063,7 @@
       "AELDARI",
       "ASURYANI",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "WARLOCK",
       "WARLOCK CONCLAVE",
@@ -1972,6 +2074,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "LEADER",
       "MOUNTED",
       "PSYKER",
       "WARLOCK",
@@ -1982,6 +2085,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "VEHICLE",
       "WARP HUNTER"
     ],
@@ -2008,6 +2112,7 @@
       "ASURYANI",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "WAVE SERPENT",
@@ -2020,6 +2125,7 @@
       "AELDARI",
       "ASURYANI",
       "FORTIFICATION",
+      "FRAME",
       "WEBWAY GATE"
     ],
     "Windriders": [
@@ -2127,6 +2233,7 @@
       "AELDARI",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "RAIDER",
       "TRANSPORT",
       "VEHICLE",
@@ -2143,6 +2250,7 @@
       "AELDARI",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "SUCCUBUS",
       "YNNARI"
     ],
@@ -2150,6 +2258,7 @@
       "AELDARI",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "VENOM",
@@ -2168,6 +2277,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "YNNARI",
       "YVRAINE"
@@ -2178,13 +2288,14 @@
       "AEGIS DEFENCE LINE",
       "ASTRA MILITARUM",
       "FORTIFICATION",
+      "FRAME",
       "IMPERIUM"
     ],
     "Aquila Lander": [
-      "AIRCRAFT",
       "AQUILA LANDER",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -2192,6 +2303,7 @@
     "Arkurian Stormhammer": [
       "ARKURIAN STORMHAMMER",
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "TITANIC",
       "VEHICLE"
@@ -2200,12 +2312,12 @@
       "ARMAGEDDON-PATTERN MEDUSA",
       "ARTILLERY",
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
       "VEHICLE"
     ],
-    "Armoured Sentinel": [],
     "Armoured Sentinels": [
       "ARMOURED SENTINELS",
       "ASTRA MILITARUM",
@@ -2226,10 +2338,10 @@
       "REGIMENT"
     ],
     "Arvus Lighter": [
-      "AIRCRAFT",
       "ARVUS LIGHTER",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -2237,6 +2349,7 @@
     "Atlas Recovery Vehicle": [
       "ASTRA MILITARUM",
       "ATLAS RECOVERY VEHICLE",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2265,12 +2378,14 @@
       "ASTRA MILITARUM",
       "AVENGER STRIKE FIGHTER",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "VEHICLE"
     ],
     "Baneblade": [
       "ASTRA MILITARUM",
       "BANEBLADE",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "TITANIC",
@@ -2279,6 +2394,7 @@
     "Banehammer": [
       "ASTRA MILITARUM",
       "BANEHAMMER",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "TITANIC",
@@ -2288,6 +2404,7 @@
     "Banesword": [
       "ASTRA MILITARUM",
       "BANESWORD",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "TITANIC",
@@ -2297,6 +2414,7 @@
       "ARTILLERY",
       "ASTRA MILITARUM",
       "BASILISK",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2317,6 +2435,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER"
     ],
     "Cadian Command Squad": [
@@ -2327,6 +2446,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER",
       "PLATOON"
     ],
@@ -2361,6 +2481,7 @@
     "Carnodon": [
       "ASTRA MILITARUM",
       "CARNODON",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2374,6 +2495,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER",
       "PLATOON"
     ],
@@ -2398,6 +2520,7 @@
     "Centaur Light Carrier": [
       "ASTRA MILITARUM",
       "CENTAUR LIGHT CARRIER",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2418,15 +2541,27 @@
       "ASTRA MILITARUM",
       "CHIMERA",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
       "TRANSPORT",
       "VEHICLE"
     ],
+    "Ciaphas Cain": [
+      "ASTRA MILITARUM",
+      "CHARACTER",
+      "CIAPHAS CAIN",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "LEADER",
+      "OFFICER"
+    ],
     "Colossus": [
       "ASTRA MILITARUM",
       "COLOSSUS",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2438,6 +2573,7 @@
       "COMMISSAR",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER"
     ],
     "Commissar Graves": [
@@ -2456,7 +2592,8 @@
       "COMMISSAR GRAVES",
       "EPIC HERO",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Commissar Yarrick": [
       "ASTRA MILITARUM",
@@ -2465,11 +2602,13 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER"
     ],
     "Crassus": [
       "ASTRA MILITARUM",
       "CRASSUS",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2479,6 +2618,7 @@
     "Cyclops Demolition Vehicle": [
       "ASTRA MILITARUM",
       "CYCLOPS DEMOLITION VEHICLE",
+      "FRAME",
       "IMPERIUM",
       "VEHICLE"
     ],
@@ -2508,6 +2648,7 @@
       "DEATH RIDER COMMISSAR",
       "GRENADES",
       "IMPERIUM",
+      "LEADER",
       "MOUNTED",
       "OFFICER"
     ],
@@ -2523,6 +2664,7 @@
       "ARTILLERY",
       "ASTRA MILITARUM",
       "DEATHSTRIKE",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2531,6 +2673,7 @@
     "Dominus Armoured Siege Bombard": [
       "ASTRA MILITARUM",
       "DOMINUS ARMOURED SIEGE BOMBARD",
+      "FRAME",
       "SMOKE",
       "TITANIC",
       "VEHICLE"
@@ -2538,6 +2681,7 @@
     "Doomhammer": [
       "ASTRA MILITARUM",
       "DOOMHAMMER",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "TITANIC",
@@ -2548,6 +2692,7 @@
       "ARTILLERY",
       "ASTRA MILITARUM",
       "EARTHSHAKER CARRIAGE BATTERY",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
@@ -2558,6 +2703,7 @@
       "ASTRA MILITARUM",
       "EARTHSHAKER PLATFORM",
       "FORTIFICATION",
+      "FRAME",
       "IMPERIUM"
     ],
     "Elysian Drop Sentinel": [
@@ -2609,6 +2755,7 @@
     ],
     "Gorgon Heavy Transport": [
       "ASTRA MILITARUM",
+      "FRAME",
       "GORGON HEAVY TRANSPORT",
       "IMPERIUM",
       "SMOKE",
@@ -2619,6 +2766,7 @@
     "Griffon Mortar Carrier": [
       "ARTILLERY",
       "ASTRA MILITARUM",
+      "FRAME",
       "GRIFFON MORTAR CARRIER",
       "IMPERIUM",
       "SMOKE",
@@ -2627,6 +2775,7 @@
     ],
     "Hades Breaching Drill": [
       "ASTRA MILITARUM",
+      "FRAME",
       "HADES BREACHING DRILL",
       "IMPERIUM",
       "VEHICLE"
@@ -2651,6 +2800,7 @@
     ],
     "Hellhammer": [
       "ASTRA MILITARUM",
+      "FRAME",
       "HELLHAMMER",
       "IMPERIUM",
       "SMOKE",
@@ -2659,6 +2809,7 @@
     ],
     "Hellhound": [
       "ASTRA MILITARUM",
+      "FRAME",
       "HELLHOUND",
       "IMPERIUM",
       "SMOKE",
@@ -2674,6 +2825,7 @@
       "HELL’S LAST",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER",
       "PLATOON"
     ],
@@ -2687,6 +2839,7 @@
     ],
     "Hydra": [
       "ASTRA MILITARUM",
+      "FRAME",
       "HYDRA",
       "IMPERIUM",
       "SMOKE",
@@ -2697,6 +2850,7 @@
       "ARTILLERY",
       "ASTRA MILITARUM",
       "FORTIFICATION",
+      "FRAME",
       "HYDRA PLATFORM",
       "IMPERIUM"
     ],
@@ -2725,6 +2879,7 @@
       "IMPERIUM",
       "INFANTRY",
       "KRIEG",
+      "LEADER",
       "OFFICER",
       "PLATOON"
     ],
@@ -2738,6 +2893,7 @@
     ],
     "Leman Russ Battle Tank": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS BATTLE TANK",
       "SMOKE",
@@ -2747,6 +2903,7 @@
     "Leman Russ Commander": [
       "ASTRA MILITARUM",
       "CHARACTER",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS COMMANDER",
       "OFFICER",
@@ -2756,6 +2913,7 @@
     ],
     "Leman Russ Demolisher": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS DEMOLISHER",
       "SMOKE",
@@ -2764,6 +2922,7 @@
     ],
     "Leman Russ Eradicator": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS ERADICATOR",
       "SMOKE",
@@ -2772,6 +2931,7 @@
     ],
     "Leman Russ Executioner": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS EXECUTIONER",
       "SMOKE",
@@ -2780,6 +2940,7 @@
     ],
     "Leman Russ Exterminator": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS EXTERMINATOR",
       "SMOKE",
@@ -2788,6 +2949,7 @@
     ],
     "Leman Russ Punisher": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS PUNISHER",
       "SMOKE",
@@ -2796,6 +2958,7 @@
     ],
     "Leman Russ Vanquisher": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "LEMAN RUSS VANQUISHER",
       "SMOKE",
@@ -2808,6 +2971,7 @@
       "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
+      "LEADER",
       "LORD MARSHAL DREIR",
       "MOUNTED",
       "OFFICER"
@@ -2817,12 +2981,14 @@
       "CHARACTER",
       "EPIC HERO",
       "IMPERIUM",
+      "LEADER",
       "LORD SOLAR LEONTUS",
       "MOUNTED",
       "OFFICER"
     ],
     "Macharius": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MACHARIUS",
       "SMOKE",
@@ -2831,6 +2997,7 @@
     ],
     "Macharius Omega": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MACHARIUS OMEGA",
       "SMOKE",
@@ -2839,6 +3006,7 @@
     ],
     "Macharius Vanquisher": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MACHARIUS VANQUISHER",
       "SMOKE",
@@ -2847,6 +3015,7 @@
     ],
     "Macharius Vulcan": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MACHARIUS VULCAN",
       "SMOKE",
@@ -2855,6 +3024,7 @@
     ],
     "Malcador": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MALCADOR",
       "SMOKE",
@@ -2863,6 +3033,7 @@
     ],
     "Malcador Annihilator": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MALCADOR ANNIHILATOR",
       "SMOKE",
@@ -2871,6 +3042,7 @@
     ],
     "Malcador Defender": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MALCADOR DEFENDER",
       "SMOKE",
@@ -2879,6 +3051,7 @@
     ],
     "Malcador Infernus": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MALCADOR",
       "SMOKE",
@@ -2888,6 +3061,7 @@
     "Manticore": [
       "ARTILLERY",
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MANTICORE",
       "SMOKE",
@@ -2898,6 +3072,7 @@
       "ARTILLERY",
       "ASTRA MILITARUM",
       "FORTIFICATION",
+      "FRAME",
       "IMPERIUM",
       "MANTICORE PLATFORM"
     ],
@@ -2905,6 +3080,7 @@
       "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "MARAUDER BOMBER",
       "TITANIC",
@@ -2914,6 +3090,7 @@
       "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "MARAUDER DESTROYER",
       "TITANIC",
@@ -2936,6 +3113,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "MILITARUM TEMPESTUS",
       "OFFICER"
     ],
@@ -2945,11 +3123,13 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "MINISTORUM PRIEST"
     ],
     "Minotaur": [
       "ARTILLERY",
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MINOTAUR",
       "SMOKE",
@@ -3002,6 +3182,7 @@
     ],
     "Praetor": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "PRAETOR",
       "SMOKE",
@@ -3013,6 +3194,7 @@
       "CHARACTER",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PRIMARIS PSYKER",
       "PSYKER"
     ],
@@ -3023,6 +3205,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PROVISIONALLY PREPARED"
     ],
     "Quartermaster Cadre Squad": [
@@ -3032,6 +3215,7 @@
       "IMPERIUM",
       "INFANTRY",
       "KRIEG",
+      "LEADER",
       "QUARTERMASTER CADRE SQUAD",
       "REGIMENT"
     ],
@@ -3067,6 +3251,7 @@
     ],
     "Rogal Dorn Battle Tank": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "ROGAL DORN BATTLE TANK",
       "SMOKE",
@@ -3076,6 +3261,7 @@
     "Rogal Dorn Commander": [
       "ASTRA MILITARUM",
       "CHARACTER",
+      "FRAME",
       "IMPERIUM",
       "OFFICER",
       "ROGAL DORN COMMANDER",
@@ -3092,6 +3278,7 @@
     ],
     "Salamander Command Vehicle": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SALAMANDER COMMAND VEHICLE",
       "SMOKE",
@@ -3100,13 +3287,13 @@
     ],
     "Salamander Scout Vehicle": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SALAMANDER SCOUT VEHICLE",
       "SMOKE",
       "SQUADRON",
       "VEHICLE"
     ],
-    "Scout Sentinel": [],
     "Scout Sentinels": [
       "ASTRA MILITARUM",
       "IMPERIUM",
@@ -3130,6 +3317,7 @@
     ],
     "Sentinel Powerlifter": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "REGIMENT",
       "SENTINEL POWERLIFTER",
@@ -3145,11 +3333,13 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER",
       "SERGEANT HARKER"
     ],
     "Shadowsword": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SHADOWSWORD",
       "SMOKE",
@@ -3169,6 +3359,7 @@
     "Storm Chimera": [
       "ASTRA MILITARUM",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -3178,6 +3369,7 @@
     ],
     "Stormblade": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "STORMBLADE",
@@ -3186,6 +3378,7 @@
     ],
     "Stormlord": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "STORMLORD",
@@ -3195,6 +3388,7 @@
     ],
     "Stormsword": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "STORMSWORD",
@@ -3203,6 +3397,7 @@
     ],
     "Stygies Destroyer Tank Hunter": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -3219,6 +3414,7 @@
     "Tarantula w/ twin lascannon": [],
     "Tauros Assault Vehicle": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MOUNTED",
       "REGIMENT",
@@ -3227,6 +3423,7 @@
     ],
     "Tauros Venator": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "MOUNTED",
       "REGIMENT",
@@ -3236,6 +3433,7 @@
     "Taurox": [
       "ASTRA MILITARUM",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SQUADRON",
       "TAUROX",
@@ -3245,6 +3443,7 @@
     "Taurox Prime": [
       "ASTRA MILITARUM",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SQUADRON",
       "TAUROX PRIME",
@@ -3256,6 +3455,7 @@
       "CHARACTER",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "TECH-PRIEST ENGINSEER"
     ],
     "Tempestus Aquilons": [
@@ -3279,6 +3479,7 @@
     ],
     "Trojan Support Vehicle": [
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -3291,18 +3492,19 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER",
       "URSULA CREED"
     ],
     "Valdor": [
       "ASTRA MILITARUM",
+      "FRAME",
       "SMOKE",
       "TITANIC",
       "VALDOR",
       "VEHICLE"
     ],
     "Valkyrie": [
-      "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
       "IMPERIUM",
@@ -3311,17 +3513,17 @@
       "VEHICLE"
     ],
     "Valkyrie Sky Talon": [
-      "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VALKYRIE SKY TALON",
       "VEHICLE"
     ],
     "Vendetta Gunship": [
-      "AIRCRAFT",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE",
@@ -3331,14 +3533,15 @@
       "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "VEHICLE",
       "VOSS-PATTERN LIGHTNING"
     ],
     "Vulture Gunship": [
-      "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "VEHICLE",
       "VULTURE GUNSHIP"
@@ -3346,6 +3549,7 @@
     "Wyvern": [
       "ARTILLERY",
       "ASTRA MILITARUM",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -3359,6 +3563,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "OFFICER",
       "’IRON HAND’ STRAKEN"
     ]
@@ -3457,6 +3662,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -3639,10 +3845,11 @@
     "Chaplain Grimaldus": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
-      "CHAPLAIN GRIMALDUS",
+      "CHAPLAIN",
       "CHARACTER",
       "EPIC HERO",
       "GRENADES",
+      "GRIMALDUS",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -3765,6 +3972,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -3805,6 +4013,14 @@
       "IMPERIUM",
       "INFANTRY"
     ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
     "Execrator": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
@@ -3838,6 +4054,7 @@
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -3846,6 +4063,7 @@
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -3854,6 +4072,7 @@
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -3862,6 +4081,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -3964,6 +4184,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -3996,6 +4217,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -4005,6 +4227,7 @@
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -4039,6 +4262,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -4227,6 +4451,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -4269,6 +4494,7 @@
     "Repulsor": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -4278,6 +4504,7 @@
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -4287,6 +4514,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -4344,6 +4572,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -4351,6 +4580,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -4358,6 +4588,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -4373,7 +4604,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -4470,7 +4700,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -4633,6 +4862,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -4670,6 +4900,7 @@
       "ADEPTUS ASTARTES",
       "BAAL PREDATOR",
       "BLOOD ANGELS",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "VEHICLE"
@@ -4895,6 +5126,7 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY",
+      "PLASMA",
       "PSYKER",
       "TACTICUS"
     ],
@@ -5079,6 +5311,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -5096,6 +5329,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -5141,6 +5382,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -5148,6 +5390,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -5155,6 +5398,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -5163,6 +5407,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -5252,6 +5497,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -5284,6 +5530,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -5292,6 +5539,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -5326,6 +5574,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -5527,6 +5776,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -5568,6 +5818,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -5576,6 +5827,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -5585,6 +5837,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -5681,6 +5934,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -5688,6 +5942,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -5695,6 +5950,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -5710,7 +5966,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -5808,7 +6063,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -5972,6 +6226,7 @@
       "KHORNE",
       "KHORNE NON-BATTLELINE",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "SHADOW LEGION"
     ],
     "Bloodthirster": [
@@ -6018,6 +6273,7 @@
       "DAEMON",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "TZEENTCH",
@@ -6029,6 +6285,7 @@
       "CONTORTED EPITOME",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "SLAANESH",
@@ -6071,6 +6328,7 @@
       "DAEMONIC CHARIOTEER",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "SHADOW LEGION"
     ],
     "Daemonic Herald [Crucible]": [
@@ -6081,6 +6339,7 @@
       "DAEMONIC HERALD",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "SHADOW LEGION",
       "SUMMONED"
     ],
@@ -6092,6 +6351,7 @@
       "EPIDEMIUS",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "NURGLE",
       "NURGLE NON-BATTLELINE"
     ],
@@ -6103,6 +6363,7 @@
       "FLY",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "SHADOW LEGION",
       "TZEENTCH",
       "TZEENTCH NON-BATTLELINE"
@@ -6125,6 +6386,7 @@
       "FLY",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "TZEENTCH",
@@ -6135,6 +6397,7 @@
       "DAEMON",
       "FECULENT GNARLMAW",
       "FORTIFICATION",
+      "FRAME",
       "LEGIONES DAEMONICA",
       "NURGLE",
       "NURGLE NON-BATTLELINE",
@@ -6180,6 +6443,7 @@
       "FLY",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "TZEENTCH",
@@ -6232,6 +6496,7 @@
       "HERALD OF SLAANESH",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "SLAANESH",
@@ -6245,6 +6510,7 @@
       "HORTICULOUS SLIMUX",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "NURGLE",
       "NURGLE NON-BATTLELINE"
     ],
@@ -6265,6 +6531,7 @@
       "INFANTRY",
       "INFERNAL ENRAPTURESS",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "SHADOW LEGION",
       "SLAANESH",
       "SLAANESH NON-BATTLELINE"
@@ -6291,7 +6558,8 @@
       "KARANAK",
       "KHORNE",
       "KHORNE NON-BATTLELINE",
-      "LEGIONES DAEMONICA"
+      "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER"
     ],
     "Keeper of Secrets": [
       "CHAOS",
@@ -6420,6 +6688,7 @@
       "DAEMON",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "NURGLE",
       "NURGLE NON-BATTLELINE",
       "POXBRINGER",
@@ -6435,6 +6704,7 @@
       "KHORNE NON-BATTLELINE",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "RENDMASTER ON BLOOD THRONE",
       "SHADOW LEGION"
     ],
@@ -6522,6 +6792,7 @@
       "CHAOS",
       "DAEMON",
       "FORTIFICATION",
+      "FRAME",
       "KHORNE",
       "KHORNE NON-BATTLELINE",
       "LEGIONES DAEMONICA",
@@ -6546,6 +6817,7 @@
       "KHORNE NON-BATTLELINE",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "SHADOW LEGION",
       "SKULLMASTER"
     ],
@@ -6558,6 +6830,7 @@
       "KHORNE",
       "KHORNE NON-BATTLELINE",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "SKULLTAKER"
     ],
     "Slaanesh Soul Grinder": [
@@ -6577,6 +6850,7 @@
       "DAEMON",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "NURGLE",
       "NURGLE NON-BATTLELINE",
       "SHADOW LEGION",
@@ -6595,6 +6869,7 @@
       "DAEMON",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "NURGLE",
       "NURGLE NON-BATTLELINE",
       "SHADOW LEGION",
@@ -6620,6 +6895,7 @@
       "FLY",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "THE BLUE SCRIBES",
       "TZEENTCH",
       "TZEENTCH NON-BATTLELINE"
@@ -6631,6 +6907,7 @@
       "EPIC HERO",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "THE CHANGELING",
       "TZEENTCH",
@@ -6644,6 +6921,7 @@
       "FLY",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "SLAANESH",
       "SLAANESH NON-BATTLELINE",
       "THE MASQUE OF SLAANESH"
@@ -6654,6 +6932,7 @@
       "DAEMON",
       "LEGIONES DAEMONICA",
       "MOUNTED",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "SLAANESH",
@@ -6666,6 +6945,7 @@
       "DAEMON",
       "INFANTRY",
       "LEGIONES DAEMONICA",
+      "NON-MONSTER CHARACTER",
       "PSYKER",
       "SHADOW LEGION",
       "SLAANESH",
@@ -6701,6 +6981,7 @@
       "ACASTUS",
       "CHAOS",
       "CHAOS KNIGHTS",
+      "FRAME",
       "KNIGHT ASTERIUS",
       "TITANIC",
       "TOWERING",
@@ -6711,6 +6992,7 @@
       "ACASTUS",
       "CHAOS",
       "CHAOS KNIGHTS",
+      "FRAME",
       "KNIGHT PORPHYRION",
       "TITANIC",
       "TOWERING",
@@ -6768,6 +7050,7 @@
       "ABHORRENT",
       "CHAOS",
       "CHARACTER",
+      "FRAME",
       "KNIGHT CHARACTER",
       "KNIGHT MAGAERA",
       "TITANIC",
@@ -6780,6 +7063,7 @@
       "CHAOS",
       "CHAOS KNIGHTS",
       "CHARACTER",
+      "FRAME",
       "KNIGHT CHARACTER",
       "KNIGHT STYRIX",
       "TITANIC",
@@ -6953,6 +7237,7 @@
     ],
     "Chaos Land Raider": [
       "CHAOS",
+      "FRAME",
       "HERETIC ASTARTES",
       "LAND RAIDER",
       "SMOKE",
@@ -7037,6 +7322,7 @@
     ],
     "Chaos Predator Annihilator": [
       "CHAOS",
+      "FRAME",
       "HERETIC ASTARTES",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -7044,6 +7330,7 @@
     ],
     "Chaos Predator Destructor": [
       "CHAOS",
+      "FRAME",
       "HERETIC ASTARTES",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -7052,6 +7339,7 @@
     "Chaos Rhino": [
       "CHAOS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "HERETIC ASTARTES",
       "RHINO",
       "SMOKE",
@@ -7073,6 +7361,7 @@
     ],
     "Chaos Vindicator": [
       "CHAOS",
+      "FRAME",
       "HERETIC ASTARTES",
       "SMOKE",
       "VEHICLE",
@@ -7173,6 +7462,7 @@
     "Exalted Champion [Crucible]": [
       "CHAOS",
       "CHARACTER",
+      "CRUCIBLE",
       "EXALTED CHAMPION",
       "GRENADES",
       "HERETIC ASTARTES",
@@ -7237,11 +7527,18 @@
       "WALKER"
     ],
     "Heldrake": [
-      "AIRCRAFT",
       "CHAOS",
       "DAEMON",
       "FLY",
       "HELDRAKE",
+      "HERETIC ASTARTES",
+      "VEHICLE"
+    ],
+    "Hell Blade": [
+      "AIRCRAFT",
+      "CHAOS",
+      "FLY",
+      "HELLBLADE",
       "HERETIC ASTARTES",
       "VEHICLE"
     ],
@@ -7250,14 +7547,6 @@
       "CHAOS",
       "FLY",
       "HELL TALON",
-      "HERETIC ASTARTES",
-      "VEHICLE"
-    ],
-    "Hellblade": [
-      "AIRCRAFT",
-      "CHAOS",
-      "FLY",
-      "HELLBLADE",
       "HERETIC ASTARTES",
       "VEHICLE"
     ],
@@ -7301,12 +7590,23 @@
     "Khorne Lord of Skulls": [
       "CHAOS",
       "DAEMON",
+      "FRAME",
       "HERETIC ASTARTES",
       "KHORNE",
       "LORD OF SKULLS",
       "TITANIC",
       "TOWERING",
       "VEHICLE"
+    ],
+    "Kravek Morne": [
+      "CHAOS",
+      "CHAOS UNDIVIDED",
+      "CHARACTER",
+      "EPIC HERO",
+      "HERETIC ASTARTES",
+      "INFANTRY",
+      "KRAVEK MORNE",
+      "TERMINATOR"
     ],
     "Legionaries": [
       "BATTLELINE",
@@ -7395,6 +7695,7 @@
     "Noctilith Crown": [
       "CHAOS",
       "FORTIFICATION",
+      "FRAME",
       "HERETIC ASTARTES",
       "NOCTILITH CROWN"
     ],
@@ -7577,6 +7878,7 @@
     "Sorcerous Champion [Crucible]": [
       "CHAOS",
       "CHARACTER",
+      "CRUCIBLE",
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
@@ -7586,6 +7888,7 @@
     "Soul Forge Tyrant [Crucible]": [
       "CHAOS",
       "CHARACTER",
+      "CRUCIBLE",
       "DAEMON",
       "HELSTALKER",
       "HERETIC ASTARTES",
@@ -7766,6 +8069,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -8094,6 +8398,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -8111,6 +8416,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -8148,6 +8461,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -8155,6 +8469,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -8162,6 +8477,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -8170,6 +8486,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -8268,6 +8585,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -8300,6 +8618,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -8308,6 +8627,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -8342,6 +8662,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -8382,6 +8703,7 @@
       "ADEPTUS ASTARTES",
       "DARK ANGELS",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER VENGEANCE",
       "RAVENWING",
@@ -8506,6 +8828,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "LION EL’JONSON",
+      "MOBILE",
       "MONSTER",
       "PRIMARCH"
     ],
@@ -8575,7 +8898,8 @@
       "IMPERIUM",
       "MOUNTED",
       "RAVENWING",
-      "RAVENWING COMMAND SQUAD"
+      "RAVENWING COMMAND SQUAD",
+      "SUPPORT"
     ],
     "Ravenwing Dark Talon": [
       "ADEPTUS ASTARTES",
@@ -8592,6 +8916,7 @@
       "DARK ANGELS",
       "DARKSHROUD",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "RAVENWING",
       "VEHICLE"
@@ -8609,6 +8934,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -8650,6 +8976,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -8658,6 +8985,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -8667,6 +8995,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -8688,6 +9017,7 @@
       "DARK ANGELS",
       "EPIC HERO",
       "FLY",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED",
@@ -8736,6 +9066,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -8743,6 +9074,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -8750,6 +9082,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -8765,7 +9098,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -8852,7 +9184,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -8953,6 +9284,7 @@
     "Chaos Land Raider": [
       "CHAOS",
       "DEATH GUARD",
+      "FRAME",
       "LAND RAIDER",
       "NURGLE",
       "SMOKE",
@@ -8972,6 +9304,7 @@
     "Chaos Predator Annihilator": [
       "CHAOS",
       "DEATH GUARD",
+      "FRAME",
       "NURGLE",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -8980,6 +9313,7 @@
     "Chaos Predator Destructor": [
       "CHAOS",
       "DEATH GUARD",
+      "FRAME",
       "NURGLE",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -8989,6 +9323,7 @@
       "CHAOS",
       "DEATH GUARD",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "NURGLE",
       "RHINO",
       "SMOKE",
@@ -9201,6 +9536,7 @@
       "CHAOS",
       "DEATH GUARD",
       "FORTIFICATION",
+      "FRAME",
       "MIASMIC MALIGNIFIER",
       "NURGLE"
     ],
@@ -9314,6 +9650,7 @@
       "CHAOS",
       "DAEMON",
       "DEATH GUARD",
+      "FRAME",
       "NURGLE",
       "PLAGUEBURST CRAWLER",
       "VEHICLE"
@@ -9472,6 +9809,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -9706,14 +10044,15 @@
     ],
     "Corvus Blackstar": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "CORVUS BLACKSTAR",
       "DEATHWATCH",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
     ],
+    "Deathwatch Terminator": [],
     "Deathwatch Terminator Squad": [
       "ADEPTUS ASTARTES",
       "DEATHWATCH",
@@ -9779,6 +10118,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -9796,6 +10136,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -9830,6 +10178,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -9837,6 +10186,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -9844,6 +10194,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -9852,6 +10203,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -9951,6 +10303,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -9995,6 +10348,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -10003,6 +10357,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -10037,6 +10392,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -10214,6 +10570,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -10255,6 +10612,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -10263,6 +10621,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -10272,6 +10631,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -10339,6 +10699,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -10346,6 +10707,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -10353,6 +10715,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -10368,7 +10731,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -10466,7 +10828,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -10572,7 +10933,8 @@
       "CHARACTER",
       "DRUKHARI",
       "INFANTRY",
-      "KABAL"
+      "KABAL",
+      "LEADER"
     ],
     "Archtormentor [Crucible]": [
       "AELDARI",
@@ -10592,6 +10954,7 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Autarch": [
@@ -10601,6 +10964,7 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "YNNARI"
     ],
     "Autarch Skyrunner": [
@@ -10610,6 +10974,8 @@
       "AUTARCH SKYRUNNER",
       "CHARACTER",
       "FLY",
+      "FRAME",
+      "LEADER",
       "MOUNTED"
     ],
     "Autarch Wayleaper": [
@@ -10621,6 +10987,7 @@
       "GRENADES",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "YNNARI"
     ],
     "Avatar of Khaine": [
@@ -10643,6 +11010,7 @@
       "GRENADES",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Beastmaster": [
@@ -10660,6 +11028,7 @@
       "BONESINGER",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Cobra": [
@@ -10667,6 +11036,7 @@
       "ASURYANI",
       "COBRA",
       "FLY",
+      "FRAME",
       "TITANIC",
       "VEHICLE"
     ],
@@ -10675,6 +11045,7 @@
       "ANHRATHE",
       "CORSAIR CLOUD DANCER BAND",
       "CORSAIRS AND TRAVELLING PLAYERS",
+      "FRAME",
       "GRENADES",
       "MOUNTED"
     ],
@@ -10685,16 +11056,6 @@
       "CORSAIRS AND TRAVELLING PLAYERS",
       "GRENADES",
       "INFANTRY"
-    ],
-    "Corsair Skyreaver Band": [
-      "AELDARI",
-      "ANHRATHE",
-      "CORSAIR SKYREAVER BAND",
-      "CORSAIRS AND TRAVELLING PLAYERS",
-      "FLY",
-      "GRENADES",
-      "INFANTRY",
-      "JUMP PACK"
     ],
     "Corsair Skyreavers": [
       "AELDARI",
@@ -10765,6 +11126,7 @@
       "AELDARI",
       "ASURYANI",
       "D-CANNON PLATFORM",
+      "FRAME",
       "INFANTRY",
       "SUPPORT WEAPON",
       "YNNARI"
@@ -10804,7 +11166,8 @@
       "DRAZHAR",
       "DRUKHARI",
       "EPIC HERO",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Eldrad Ulthran": [
       "AELDARI",
@@ -10814,6 +11177,7 @@
       "EPIC HERO",
       "FARSEER",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Falcon": [
@@ -10821,6 +11185,7 @@
       "ASURYANI",
       "FALCON",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "YNNARI"
@@ -10831,6 +11196,7 @@
       "CHARACTER",
       "FARSEER",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "YNNARI"
     ],
@@ -10841,6 +11207,7 @@
       "FARSEER",
       "FARSEER SKYRUNNER",
       "FLY",
+      "LEADER",
       "MOUNTED",
       "PSYKER",
       "YNNARI"
@@ -10859,6 +11226,7 @@
       "ASURYANI",
       "FIRE PRISM",
       "FLY",
+      "FRAME",
       "VEHICLE",
       "YNNARI"
     ],
@@ -10867,6 +11235,7 @@
       "ASURYANI",
       "FIRESTORM",
       "FLY",
+      "FRAME",
       "VEHICLE"
     ],
     "Flesh Crafter [Crucible]": [
@@ -10887,6 +11256,7 @@
       "FUEGAN",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Ghost Warrior [Crucible]": [
@@ -10922,7 +11292,16 @@
       "DRUKHARI",
       "HAEMONCULUS",
       "HAEMONCULUS COVENS",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
+    ],
+    "Hand of the Archon": [
+      "AELDARI",
+      "DRUKHARI",
+      "GRENADES",
+      "HAND OF THE ARCHON",
+      "INFANTRY",
+      "KABAL"
     ],
     "Hellions": [
       "AELDARI",
@@ -10947,6 +11326,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "HORNET",
       "VEHICLE"
     ],
@@ -10963,7 +11343,8 @@
       "CHARACTER",
       "EPIC HERO",
       "ILLIC NIGHTSPEAR",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Incubi": [
       "AELDARI",
@@ -10981,6 +11362,7 @@
       "INFANTRY",
       "IRILLYTH",
       "JUMP PACK",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Jain Zar": [
@@ -10991,6 +11373,7 @@
       "EPIC HERO",
       "INFANTRY",
       "JAIN ZAR",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Kabalite Warriors": [
@@ -11008,6 +11391,7 @@
       "EPIC HERO",
       "INFANTRY",
       "KARANDRAS",
+      "LEADER",
       "PHOENIX LORD"
     ],
     "Kharseth": [
@@ -11018,6 +11402,7 @@
       "EPIC HERO",
       "INFANTRY",
       "KHARSETH",
+      "LEADER",
       "PSYKER"
     ],
     "Lady Malys": [
@@ -11028,7 +11413,8 @@
       "EPIC HERO",
       "INFANTRY",
       "KABAL",
-      "LADY MALYS"
+      "LADY MALYS",
+      "LEADER"
     ],
     "Lead Player": [],
     "Lelith Hesperax": [
@@ -11037,6 +11423,7 @@
       "DRUKHARI",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "LELITH HESPERAX",
       "SUCCUBUS",
       "WYCH CULT"
@@ -11050,6 +11437,7 @@
       "FLY",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "LHYKHIS",
       "PHOENIX LORD"
     ],
@@ -11057,6 +11445,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "LYNX",
       "VEHICLE"
     ],
@@ -11074,6 +11463,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "MAUGAN RA",
       "PHOENIX LORD"
     ],
@@ -11081,6 +11471,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "NIGHT SPINNER",
       "VEHICLE"
     ],
@@ -11089,12 +11480,14 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "NIGHTWING",
       "VEHICLE"
     ],
     "Phantom Titan": [
       "AELDARI",
       "ASURYANI",
+      "FRAME",
       "MONSTER",
       "PHANTOM TITAN",
       "TITANIC",
@@ -11107,6 +11500,7 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "PHOENIX",
       "VEHICLE"
     ],
@@ -11117,6 +11511,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "PRINCE YRIEL"
     ],
     "Raider": [
@@ -11124,6 +11519,7 @@
       "DEDICATED TRANSPORT",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "RAIDER",
       "TRANSPORT",
       "VEHICLE"
@@ -11139,6 +11535,7 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "KABAL",
       "RAVAGER",
       "VEHICLE"
@@ -11148,6 +11545,7 @@
       "AIRCRAFT",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "RAVEN STRIKE FIGHTER",
       "VEHICLE"
     ],
@@ -11163,6 +11561,7 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "KABAL",
       "REAPER",
       "VEHICLE"
@@ -11179,6 +11578,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "MONSTER",
       "REVENANT TITAN",
       "TITANIC",
@@ -11190,10 +11590,12 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "SCORPION",
       "TITANIC",
       "VEHICLE"
     ],
+    "Scourge with Heavy Weapon": [],
     "Scourges with Heavy Weapons": [
       "AELDARI",
       "BLADES FOR HIRE",
@@ -11228,6 +11630,7 @@
     "Shadow Weaver Platform": [
       "AELDARI",
       "ASURYANI",
+      "FRAME",
       "INFANTRY",
       "SHADOW WEAVER PLATFORM",
       "SUPPORT WEAPON",
@@ -11241,6 +11644,7 @@
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "SHADOWSEER"
     ],
@@ -11327,6 +11731,7 @@
       "CORSAIRS AND TRAVELLING PLAYERS",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "SMOKE",
@@ -11357,6 +11762,7 @@
       "CHARACTER",
       "DRUKHARI",
       "INFANTRY",
+      "LEADER",
       "SUCCUBUS",
       "WYCH CULT"
     ],
@@ -11383,6 +11789,7 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -11391,6 +11798,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "THE VISARCH",
       "YNNARI"
     ],
@@ -11422,6 +11830,7 @@
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "INFANTRY",
+      "LEADER",
       "TROUPE MASTER"
     ],
     "Urien Rakarth": [
@@ -11432,6 +11841,7 @@
       "HAEMONCULUS",
       "HAEMONCULUS COVENS",
       "INFANTRY",
+      "LEADER",
       "URIEN RAKARTH"
     ],
     "Vampire Hunter": [
@@ -11439,15 +11849,16 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "TITANIC",
       "VAMPIRE HUNTER",
       "VEHICLE"
     ],
     "Vampire Raider": [
       "AELDARI",
-      "AIRCRAFT",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "TITANIC",
       "TRANSPORT",
       "VAMPIRE RAIDER",
@@ -11458,6 +11869,7 @@
       "DEDICATED TRANSPORT",
       "DRUKHARI",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "VENOM"
@@ -11465,6 +11877,7 @@
     "Vibro Cannon Platform": [
       "AELDARI",
       "ASURYANI",
+      "FRAME",
       "INFANTRY",
       "SUPPORT WEAPON",
       "VIBRO CANNON PLATFORM",
@@ -11482,6 +11895,7 @@
       "AELDARI",
       "CORSAIRS AND TRAVELLING PLAYERS",
       "FLY",
+      "FRAME",
       "HARLEQUIN ALLIES",
       "HARLEQUINS",
       "VEHICLE",
@@ -11496,7 +11910,6 @@
       "VYPERS",
       "YNNARI"
     ],
-    "War Walker": [],
     "War Walkers": [
       "AELDARI",
       "ASURYANI",
@@ -11511,6 +11924,7 @@
       "CHARACTER",
       "INFANTRY",
       "PSYKER",
+      "SUPPORT",
       "WARLOCK",
       "YNNARI"
     ],
@@ -11518,6 +11932,7 @@
       "AELDARI",
       "ASURYANI",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "WARLOCK",
       "WARLOCK CONCLAVE",
@@ -11528,6 +11943,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "LEADER",
       "MOUNTED",
       "PSYKER",
       "WARLOCK",
@@ -11538,6 +11954,7 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
+      "FRAME",
       "VEHICLE",
       "WARP HUNTER"
     ],
@@ -11564,6 +11981,7 @@
       "ASURYANI",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "WAVE SERPENT",
@@ -11576,6 +11994,7 @@
       "AELDARI",
       "ASURYANI",
       "FORTIFICATION",
+      "FRAME",
       "WEBWAY GATE"
     ],
     "Windriders": [
@@ -11683,6 +12102,7 @@
       "AELDARI",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "RAIDER",
       "TRANSPORT",
       "VEHICLE",
@@ -11699,6 +12119,7 @@
       "AELDARI",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "SUCCUBUS",
       "YNNARI"
     ],
@@ -11706,6 +12127,7 @@
       "AELDARI",
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "TRANSPORT",
       "VEHICLE",
       "VENOM",
@@ -11724,6 +12146,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "YNNARI",
       "YVRAINE"
@@ -11745,6 +12168,7 @@
     "Chaos Land Raider": [
       "CHAOS",
       "EMPEROR’S CHILDREN",
+      "FRAME",
       "LAND RAIDER",
       "SLAANESH",
       "SMOKE",
@@ -11755,6 +12179,7 @@
       "CHAOS",
       "DEDICATED TRANSPORT",
       "EMPEROR’S CHILDREN",
+      "FRAME",
       "RHINO",
       "SLAANESH",
       "SMOKE",
@@ -11861,6 +12286,7 @@
       "EPIC HERO",
       "FLY",
       "FULGRIM",
+      "MOBILE",
       "MONSTER",
       "PRIMARCH",
       "SLAANESH"
@@ -11868,7 +12294,6 @@
     "Heartseeker": [],
     "Heavy weapon": [],
     "Heldrake": [
-      "AIRCRAFT",
       "CHAOS",
       "DAEMON",
       "EMPEROR’S CHILDREN",
@@ -11993,7 +12418,8 @@
       "CHARACTER",
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Achilles Ridgerunners": [
       "ACHILLES RIDGERUNNERS",
@@ -12025,7 +12451,8 @@
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "GRENADES",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Atalan Jackals": [
       "ATALAN JACKALS",
@@ -12040,6 +12467,7 @@
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Biophagus": [
@@ -12047,14 +12475,16 @@
       "CHARACTER",
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
-      "INFANTRY"
+      "INFANTRY",
+      "SUPPORT"
     ],
     "Clamavus": [
       "CHARACTER",
       "CLAMAVUS",
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
-      "INFANTRY"
+      "INFANTRY",
+      "SUPPORT"
     ],
     "Cult Guerrilla [Crucible]": [
       "CHARACTER",
@@ -12074,6 +12504,7 @@
       "INFANTRY"
     ],
     "Goliath Rockgrinder": [
+      "FRAME",
       "GENESTEALER CULTS",
       "GOLIATH ROCKGRINDER",
       "GREAT DEVOURER",
@@ -12082,6 +12513,7 @@
     ],
     "Goliath Truck": [
       "DEDICATED TRANSPORT",
+      "FRAME",
       "GENESTEALER CULTS",
       "GOLIATH TRUCK",
       "GREAT DEVOURER",
@@ -12101,6 +12533,7 @@
       "GREAT DEVOURER",
       "GRENADES",
       "JACKAL ALPHUS",
+      "LEADER",
       "MOUNTED"
     ],
     "Kelermorph": [
@@ -12115,13 +12548,15 @@
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "INFANTRY",
-      "LOCUS"
+      "LOCUS",
+      "SUPPORT"
     ],
     "Magus": [
       "CHARACTER",
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "MAGUS",
       "PSYKER"
     ],
@@ -12138,13 +12573,15 @@
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "INFANTRY",
-      "NEXOS"
+      "NEXOS",
+      "SUPPORT"
     ],
     "Patriarch": [
       "CHARACTER",
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "PATRIARCH",
       "PSYKER"
     ],
@@ -12153,6 +12590,7 @@
       "GENESTEALER CULTS",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "PRIMUS"
     ],
     "Purestrain Genestealers": [
@@ -12178,6 +12616,7 @@
     ],
     "Tectonic Fragdrill": [
       "FORTIFICATION",
+      "FRAME",
       "GENESTEALER CULTS",
       "TECTONIC FRAGDRILL",
       "VEHICLE"
@@ -12286,6 +12725,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -12345,6 +12785,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
@@ -12355,6 +12796,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
@@ -12364,6 +12806,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Brotherhood Chaplain": [
@@ -12372,6 +12815,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
@@ -12381,6 +12825,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
@@ -12390,6 +12835,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Brotherhood Terminator Squad": [
@@ -12491,6 +12937,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Centurion Assault Squad": [
@@ -12643,6 +13090,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -12660,6 +13108,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -12684,6 +13140,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -12691,6 +13148,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -12698,6 +13156,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -12710,6 +13169,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
@@ -12720,6 +13180,7 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
@@ -12751,7 +13212,6 @@
       "VEHICLE"
     ],
     "Grey Knights Thunderhawk Gunship": [
-      "AIRCRAFT",
       "FLY",
       "GREY KNIGHTS",
       "IMPERIUM",
@@ -12763,6 +13223,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -12861,6 +13322,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -12899,11 +13361,13 @@
       "IMPERIUM",
       "INFANTRY",
       "KALDOR DRAIGO",
+      "LEADER",
       "PSYKER",
       "TERMINATOR"
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GREY KNIGHTS",
       "IMPERIUM",
       "LAND RAIDER",
@@ -12911,16 +13375,9 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Land Raider Banisher": [
-      "GREY KNIGHTS",
-      "IMPERIUM",
-      "LAND RAIDER BANISHER",
-      "SMOKE",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "GREY KNIGHTS",
       "IMPERIUM",
@@ -12956,6 +13413,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "GREY KNIGHTS",
       "IMPERIUM",
@@ -13167,6 +13625,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "GREY KNIGHTS",
       "IMPERIUM",
       "RAZORBACK",
@@ -13209,6 +13668,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -13217,6 +13677,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -13226,6 +13687,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "GREY KNIGHTS",
       "IMPERIUM",
       "RHINO",
@@ -13289,6 +13751,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -13296,6 +13759,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -13303,6 +13767,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -13319,7 +13784,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "GREY KNIGHTS",
       "IMPERIUM",
@@ -13417,7 +13881,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -13525,10 +13988,10 @@
     ],
     "Corvus Blackstar": [
       "AGENTS OF THE IMPERIUM",
-      "AIRCRAFT",
       "CORVUS BLACKSTAR",
       "DEATHWATCH",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "ORDO XENOS",
       "RETINUE",
@@ -13651,6 +14114,7 @@
     "Imperial Rhino": [
       "AGENTS OF THE IMPERIUM",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIAL RHINO",
       "IMPERIUM",
       "SMOKE",
@@ -13773,6 +14237,7 @@
     "Inquisitorial Chimera": [
       "AGENTS OF THE IMPERIUM",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "INQUISITORIAL CHIMERA",
       "SMOKE",
@@ -13876,6 +14341,7 @@
     "Sisters of Battle Immolator": [
       "AGENTS OF THE IMPERIUM",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "ORDO HERETICUS",
       "SISTERS OF BATTLE IMMOLATOR",
@@ -13980,6 +14446,7 @@
   "IMPERIAL KNIGHTS": {
     "Acastus Knight Asterius": [
       "ACASTUS",
+      "FRAME",
       "IMPERIAL KNIGHTS",
       "IMPERIUM",
       "KNIGHT ASTERIUS",
@@ -13990,6 +14457,7 @@
     ],
     "Acastus Knight Porphyrion": [
       "ACASTUS",
+      "FRAME",
       "IMPERIAL KNIGHTS",
       "IMPERIUM",
       "KNIGHT PORPHYRION",
@@ -14302,6 +14770,7 @@
       "LEAGUES OF VOTANN"
     ],
     "Hekaton Land Fortress": [
+      "FRAME",
       "HEKATON LAND FORTRESS",
       "LEAGUES OF VOTANN",
       "TRANSPORT",
@@ -14310,15 +14779,17 @@
     "Hernkyn Pioneers": [
       "FLY",
       "GRENADES",
-      "HERNKYN PIONEERS",
+      "HERNKYN",
       "LEAGUES OF VOTANN",
-      "MOUNTED"
+      "MOUNTED",
+      "PIONEERS"
     ],
     "Hernkyn Yaegirs": [
       "GRENADES",
-      "HERNKYN YAEGIRS",
+      "HERNKYN",
       "INFANTRY",
-      "LEAGUES OF VOTANN"
+      "LEAGUES OF VOTANN",
+      "YAEGIRS"
     ],
     "Hesyr": [],
     "Ironkin Steeljacks with Heavy Volkanite Disintegrators": [
@@ -14382,6 +14853,7 @@
     ],
     "Sagitaur": [
       "DEDICATED TRANSPORT",
+      "FRAME",
       "LEAGUES OF VOTANN",
       "SAGITAUR",
       "TRANSPORT",
@@ -14407,6 +14879,7 @@
     "Annihilation Barge": [
       "ANNIHILATION BARGE",
       "FLY",
+      "FRAME",
       "NECRONS",
       "VEHICLE"
     ],
@@ -14453,7 +14926,6 @@
       "SCARAB SWARMS",
       "SWARM"
     ],
-    "Canoptek Spyder": [],
     "Canoptek Spyders": [
       "CANOPTEK",
       "FLY",
@@ -14490,7 +14962,9 @@
       "CATACOMB COMMAND BARGE",
       "CHARACTER",
       "FLY",
+      "FRAME",
       "NECRONS",
+      "NOBLE",
       "VEHICLE"
     ],
     "Chronomancer": [
@@ -14503,6 +14977,7 @@
     "Convergence of Dominion": [
       "CONVERGENCE OF DOMINION",
       "FORTIFICATION",
+      "FRAME",
       "NECRONS",
       "VEHICLE"
     ],
@@ -14585,6 +15060,7 @@
     "Ghost Ark": [
       "DEDICATED TRANSPORT",
       "FLY",
+      "FRAME",
       "GHOST ARK",
       "NECRONS",
       "TRANSPORT",
@@ -14663,6 +15139,7 @@
     ],
     "Monolith": [
       "FLY",
+      "FRAME",
       "MONOLITH",
       "NECRONS",
       "TITANIC",
@@ -14692,8 +15169,8 @@
       "NOBLE"
     ],
     "Night Scythe": [
-      "AIRCRAFT",
       "FLY",
+      "FRAME",
       "NECRONS",
       "NIGHT SCYTHE",
       "TRANSPORT",
@@ -14702,12 +15179,14 @@
     "Night Shroud": [
       "AIRCRAFT",
       "FLY",
+      "FRAME",
       "NECRONS",
       "NIGHT SHROUD",
       "VEHICLE"
     ],
     "Obelisk": [
       "FLY",
+      "FRAME",
       "NECRONS",
       "OBELISK",
       "TITANIC",
@@ -14766,11 +15245,13 @@
     ],
     "Sentry Pylon": [
       "FORTIFICATION",
+      "FRAME",
       "NECRONS",
       "SENTRY PYLON",
       "VEHICLE"
     ],
     "Seraptek Heavy Construct": [
+      "FRAME",
       "NECRONS",
       "SERAPTEK HEAVY CONSTRUCT",
       "TITANIC",
@@ -14807,6 +15288,7 @@
     ],
     "Tesseract Vault": [
       "FLY",
+      "FRAME",
       "NECRONS",
       "TESSERACT VAULT",
       "TITANIC",
@@ -14826,6 +15308,14 @@
       "MOUNTED",
       "NECRONS",
       "TOMB BLADES"
+    ],
+    "Tomb Citadel Walls": [
+      "FORTIFICATION",
+      "FRAME",
+      "NECRONS",
+      "TITANIC",
+      "TOMB CITADEL",
+      "VEHICLE"
     ],
     "Transcendent C’tan": [
       "CHARACTER",
@@ -14849,6 +15339,7 @@
       "TRIARCH PRAETORIANS"
     ],
     "Triarch Stalker": [
+      "FRAME",
       "NECRONS",
       "TRIARCH STALKER",
       "VEHICLE",
@@ -14881,8 +15372,16 @@
       "SPEED FREEKS",
       "VEHICLE"
     ],
+    "Bannernob": [
+      "BANNERNOB",
+      "CHARACTER",
+      "INFANTRY",
+      "ORKS",
+      "SUPPORT"
+    ],
     "Battlewagon": [
       "BATTLEWAGON",
+      "FRAME",
       "ORKS",
       "TRANSPORT",
       "VEHICLE"
@@ -14900,6 +15399,7 @@
       "BEASTBOSS",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "WARBOSS"
     ],
@@ -14907,6 +15407,7 @@
       "BEAST SNAGGA",
       "BEASTBOSS ON SQUIGOSAUR",
       "CHARACTER",
+      "LEADER",
       "MOUNTED",
       "ORKS",
       "WARBOSS"
@@ -14926,13 +15427,22 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "MEK",
       "ORKS"
+    ],
+    "Big Mek Dakkarig": [
+      "BIG MEK",
+      "DAKKARIG",
+      "ORKS",
+      "VEHICLE",
+      "WALKER"
     ],
     "Big Mek in Mega Armour": [
       "BIG MEK IN MEGA ARMOUR",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "MEGA ARMOUR",
       "MEK",
       "ORKS"
@@ -14942,6 +15452,7 @@
       "BIG MEK ON WARBIKE",
       "CHARACTER",
       "GRENADES",
+      "LEADER",
       "MOUNTED",
       "ORKS",
       "SPEED FREEKS"
@@ -14952,6 +15463,7 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "MEK",
       "ORKS"
     ],
@@ -14960,6 +15472,7 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "MEK",
       "ORKS"
     ],
@@ -14968,6 +15481,13 @@
       "ORKS",
       "TRANSPORT",
       "VEHICLE"
+    ],
+    "Bigboss": [
+      "BIGBOSS",
+      "CHARACTER",
+      "INFANTRY",
+      "LEADER",
+      "ORKS"
     ],
     "Big’ed Bossbunka": [
       "BIG’ED BOSSBUNKA",
@@ -14997,6 +15517,7 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "SMOKE"
     ],
@@ -15007,9 +15528,18 @@
       "FLY",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "ORKS"
     ],
     "Boyz": [
+      "BATTLELINE",
+      "BOYZ",
+      "GRENADES",
+      "INFANTRY",
+      "MOB",
+      "ORKS"
+    ],
+    "Boyz (Armageddon)": [
       "BATTLELINE",
       "BOYZ",
       "GRENADES",
@@ -15021,6 +15551,7 @@
       "BREAKA BOYZ",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "ORKS"
     ],
     "Burna Boyz": [
@@ -15051,6 +15582,7 @@
       "GRENADES",
       "GROTS",
       "INFANTRY",
+      "LEADER",
       "ORKS"
     ],
     "Da Red Gobbo’s A-bomb-inable Snowman": [
@@ -15093,6 +15625,7 @@
     "Deffkilla Wartrike": [
       "CHARACTER",
       "DEFFKILLA WARTRIKE",
+      "LEADER",
       "MOUNTED",
       "ORKS",
       "SPEED FREEKS",
@@ -15128,6 +15661,7 @@
       "ORKS"
     ],
     "Gargantuan Squiggoth": [
+      "FRAME",
       "GARGANTUAN SQUIGGOTH",
       "MONSTER",
       "ORKS",
@@ -15140,6 +15674,7 @@
       "EPIC HERO",
       "GHAZGHKULL THRAKA",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "WARBOSS"
     ],
@@ -15153,6 +15688,12 @@
       "WALKER"
     ],
     "Gretchin": [
+      "GRETCHIN",
+      "GROTS",
+      "INFANTRY",
+      "ORKS"
+    ],
+    "Gretchin (Armageddon)": [
       "GRETCHIN",
       "GROTS",
       "INFANTRY",
@@ -15212,6 +15753,7 @@
       "EPIC HERO",
       "INFANTRY",
       "KAPTIN BADRUKK",
+      "LEADER",
       "ORKS"
     ],
     "Kill Krusha": [
@@ -15297,13 +15839,10 @@
     "Mek": [
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "MEK",
       "ORKS"
     ],
-    "Mek Gun w/ Bubblechukka": [],
-    "Mek Gun w/ Kustom mega-kannon": [],
-    "Mek Gun w/ Smasha gun": [],
-    "Mek Gun w/ Traktor kannon": [],
     "Mek Gunz": [
       "GROTS",
       "MEK GUNZ",
@@ -15335,16 +15874,11 @@
       "BEAST SNAGGA",
       "CHARACTER",
       "EPIC HERO",
+      "LEADER",
       "MOUNTED",
       "MOZROG SKRAGBAD",
       "ORKS",
       "WARBOSS"
-    ],
-    "Nob with Waaagh! Banner": [
-      "CHARACTER",
-      "INFANTRY",
-      "NOB WITH WAAAGH! BANNER",
-      "ORKS"
     ],
     "Nobz": [
       "GRENADES",
@@ -15363,6 +15897,7 @@
       "BEAST SNAGGA",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "PAINBOSS"
     ],
@@ -15370,10 +15905,12 @@
       "CHARACTER",
       "INFANTRY",
       "ORKS",
-      "PAINBOY"
+      "PAINBOY",
+      "SUPPORT"
     ],
     "Painboy on Warbike": [
       "CHARACTER",
+      "LEADER",
       "MOUNTED",
       "ORKS",
       "PAINBOY ON WARBIKE",
@@ -15411,6 +15948,7 @@
       "SQUIGHOG BOYZ"
     ],
     "Stompa": [
+      "FRAME",
       "ORKS",
       "STOMPA",
       "TITANIC",
@@ -15435,6 +15973,7 @@
     ],
     "Trukk": [
       "DEDICATED TRANSPORT",
+      "FRAME",
       "ORKS",
       "TRANSPORT",
       "TRUKK",
@@ -15445,6 +15984,7 @@
       "EPIC HERO",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "UFTHAK BLACKHAWK",
       "WARBOSS"
@@ -15469,12 +16009,22 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
+      "ORKS",
+      "WARBOSS"
+    ],
+    "Warboss (Armageddon)": [
+      "CHARACTER",
+      "GRENADES",
+      "INFANTRY",
+      "LEADER",
       "ORKS",
       "WARBOSS"
     ],
     "Warboss in Mega Armour": [
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "MEGA ARMOUR",
       "ORKS",
       "WARBOSS",
@@ -15483,6 +16033,7 @@
     "Warboss on Warbike": [
       "CHARACTER",
       "GRENADES",
+      "LEADER",
       "MOUNTED",
       "ORKS",
       "SPEED FREEKS",
@@ -15502,11 +16053,11 @@
       "PSYKER",
       "WARPHEAD"
     ],
-    "Wartrakks": [
+    "Wartrakk": [
       "MOUNTED",
       "ORKS",
       "SPEED FREEKS",
-      "WARTRAKKS"
+      "WARTRAKK"
     ],
     "Wazbom Blastajet": [
       "AIRCRAFT",
@@ -15530,6 +16081,7 @@
     "Weirdboy": [
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "PSYKER",
       "WEIRDBOY"
@@ -15538,6 +16090,7 @@
       "BEAST SNAGGA",
       "CHARACTER",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "PSYKER",
       "WURRBOY"
@@ -15546,6 +16099,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "ORKS",
       "ZODGROD WORTSNAGGA"
     ]
@@ -15668,6 +16222,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -15923,6 +16478,15 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Chapter Ancient": [
+      "ANCIENT",
+      "EPIC HERO",
+      "POWER WEAPON"
+    ],
+    "Chapter Champion": [
+      "CHAMPION",
+      "EPIC HERO"
+    ],
     "Chief Librarian Tigurius": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
@@ -16008,6 +16572,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -16025,6 +16590,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -16049,6 +16622,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -16056,6 +16630,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -16063,6 +16638,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -16071,6 +16647,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -16160,6 +16737,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -16226,6 +16804,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -16234,6 +16813,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -16268,6 +16848,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -16490,6 +17071,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -16531,6 +17113,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -16539,6 +17122,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -16548,6 +17132,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -16567,6 +17152,7 @@
       "CHARACTER",
       "EPIC HERO",
       "IMPERIUM",
+      "MOBILE",
       "MONSTER",
       "PRIMARCH",
       "ROBOUTE GUILLIMAN",
@@ -16632,6 +17218,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -16639,6 +17226,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -16646,6 +17234,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -16661,7 +17250,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -16759,7 +17347,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -17004,6 +17591,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -17308,6 +17896,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -17325,6 +17914,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -17356,6 +17953,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -17363,6 +17961,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -17370,6 +17969,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -17388,6 +17988,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -17498,6 +18099,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -17559,6 +18161,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -17567,6 +18170,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -17601,6 +18205,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -17852,6 +18457,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -17893,6 +18499,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -17901,6 +18508,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -17910,6 +18518,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -17976,6 +18585,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -17983,6 +18593,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -17990,6 +18601,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -18015,7 +18627,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -18112,7 +18723,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -18360,6 +18970,7 @@
       "EPIC HERO",
       "ETHEREAL",
       "INFANTRY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE"
     ],
@@ -18376,6 +18987,7 @@
       "AIRCRAFT",
       "BARRACUDA",
       "FLY",
+      "FRAME",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE"
@@ -18412,6 +19024,7 @@
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE"
     ],
@@ -18421,6 +19034,7 @@
       "COMMANDER FARSIGHT",
       "EPIC HERO",
       "FLY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE",
@@ -18441,6 +19055,7 @@
       "CHARACTER",
       "COMMANDER IN COLDSTAR BATTLESUIT",
       "FLY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE",
@@ -18451,6 +19066,7 @@
       "CHARACTER",
       "COMMANDER IN CRISIS BATTLESUIT",
       "FLY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE",
@@ -18461,6 +19077,7 @@
       "CHARACTER",
       "COMMANDER IN ENFORCER BATTLESUIT",
       "FLY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE",
@@ -18510,6 +19127,7 @@
       "DARKSTRIDER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "MARKERLIGHT",
       "NON-KROOT",
       "T’AU EMPIRE"
@@ -18518,6 +19136,7 @@
       "DEDICATED TRANSPORT",
       "DEVILFISH",
       "FLY",
+      "FRAME",
       "NON-KROOT",
       "TRANSPORT",
       "T’AU EMPIRE",
@@ -18526,6 +19145,7 @@
     "Drone Sentry Turret": [
       "DRONE SENTRY TURRET",
       "FORTIFICATION",
+      "FRAME",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE"
@@ -18534,6 +19154,7 @@
       "CHARACTER",
       "ETHEREAL",
       "INFANTRY",
+      "LEADER",
       "NON-KROOT",
       "T’AU EMPIRE"
     ],
@@ -18556,6 +19177,7 @@
       "WALKER"
     ],
     "Great Knarloc": [
+      "FRAME",
       "GREAT KNARLOC",
       "KROOT",
       "MONSTER",
@@ -18563,6 +19185,7 @@
     ],
     "Hammerhead Gunship": [
       "FLY",
+      "FRAME",
       "HAMMERHEAD GUNSHIP",
       "NON-KROOT",
       "T’AU EMPIRE",
@@ -18609,6 +19232,7 @@
       "FLESH SHAPER",
       "INFANTRY",
       "KROOT",
+      "LEADER",
       "SHAPER",
       "T’AU EMPIRE"
     ],
@@ -18629,6 +19253,7 @@
       "CHARACTER",
       "INFANTRY",
       "KROOT",
+      "LEADER",
       "SHAPER",
       "TRAIL SHAPER",
       "T’AU EMPIRE"
@@ -18637,6 +19262,7 @@
       "CHARACTER",
       "INFANTRY",
       "KROOT",
+      "LEADER",
       "SHAPER",
       "T’AU EMPIRE",
       "WAR SHAPER"
@@ -18659,6 +19285,7 @@
       "CHARACTER",
       "EPIC HERO",
       "FLY",
+      "FRAME",
       "LONGSTRIKE",
       "NON-KROOT",
       "T’AU EMPIRE",
@@ -18667,6 +19294,7 @@
     "Manta": [
       "AIRCRAFT",
       "FLY",
+      "FRAME",
       "MANTA",
       "MARKERLIGHT",
       "NON-KROOT",
@@ -18678,6 +19306,7 @@
     "Orca Dropship": [
       "AIRCRAFT",
       "FLY",
+      "FRAME",
       "NON-KROOT",
       "ORCA DROPSHIP",
       "TITANIC",
@@ -18693,14 +19322,14 @@
       "PATHFINDER TEAM",
       "T’AU EMPIRE"
     ],
-    "Piranha": [
+    "Piranhas": [
       "FLY",
+      "FRAME",
       "NON-KROOT",
       "PIRANHA",
       "T’AU EMPIRE",
       "VEHICLE"
     ],
-    "Piranhas": [],
     "Razorshark Strike Fighter": [
       "AIRCRAFT",
       "FLY",
@@ -18719,6 +19348,7 @@
     ],
     "Remote Sensor Tower": [
       "FORTIFICATION",
+      "FRAME",
       "NON-KROOT",
       "REMOTE SENSOR TOWER",
       "T’AU EMPIRE"
@@ -18754,6 +19384,7 @@
       "CHARACTER",
       "EPIC HERO",
       "FLY",
+      "LEADER",
       "MARKERLIGHT",
       "NON-KROOT",
       "SHAS’O R’ALAI",
@@ -18763,6 +19394,7 @@
     ],
     "Sky Ray Gunship": [
       "FLY",
+      "FRAME",
       "MARKERLIGHT",
       "NON-KROOT",
       "SKY RAY GUNSHIP",
@@ -18808,6 +19440,7 @@
     ],
     "TX42 Piranha": [
       "FLY",
+      "FRAME",
       "NON-KROOT",
       "TX42 PIRANHA",
       "T’AU EMPIRE",
@@ -18821,6 +19454,7 @@
       "T’AU EMPIRE"
     ],
     "Ta’unar Supremacy Armour": [
+      "FRAME",
       "NON-KROOT",
       "TA’UNAR SUPREMACY ARMOUR",
       "TITANIC",
@@ -18831,6 +19465,7 @@
     ],
     "Tetras": [
       "FLY",
+      "FRAME",
       "MARKERLIGHT",
       "NON-KROOT",
       "TETRAS",
@@ -18851,6 +19486,7 @@
     "Tidewall Droneport": [
       "FLY",
       "FORTIFICATION",
+      "FRAME",
       "NON-KROOT",
       "TIDEWALL DRONEPORT",
       "TRANSPORT",
@@ -18860,6 +19496,7 @@
     "Tidewall Gunrig": [
       "FLY",
       "FORTIFICATION",
+      "FRAME",
       "NON-KROOT",
       "TIDEWALL GUNRIG",
       "TRANSPORT",
@@ -18960,6 +19597,7 @@
     ],
     "Chaos Land Raider": [
       "CHAOS",
+      "FRAME",
       "LAND RAIDER",
       "SMOKE",
       "THOUSAND SONS",
@@ -18978,6 +19616,7 @@
     ],
     "Chaos Predator Annihilator": [
       "CHAOS",
+      "FRAME",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
       "THOUSAND SONS",
@@ -18986,6 +19625,7 @@
     ],
     "Chaos Predator Destructor": [
       "CHAOS",
+      "FRAME",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
       "THOUSAND SONS",
@@ -18995,6 +19635,7 @@
     "Chaos Rhino": [
       "CHAOS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "RHINO",
       "SMOKE",
       "THOUSAND SONS",
@@ -19020,6 +19661,7 @@
     ],
     "Chaos Vindicator": [
       "CHAOS",
+      "FRAME",
       "SMOKE",
       "THOUSAND SONS",
       "TZEENTCH",
@@ -19106,7 +19748,6 @@
       "WALKER"
     ],
     "Heldrake": [
-      "AIRCRAFT",
       "CHAOS",
       "FLY",
       "HELDRAKE",
@@ -19335,6 +19976,7 @@
   "TYRANIDS": {
     "Barbed Hierodule": [
       "BARBED HIERODULE",
+      "FRAME",
       "GREAT DEVOURER",
       "MONSTER",
       "TYRANIDS"
@@ -19345,7 +19987,6 @@
       "INFANTRY",
       "TYRANIDS"
     ],
-    "Biovore": [],
     "Biovores": [
       "BIOVORE",
       "GREAT DEVOURER",
@@ -19357,6 +19998,7 @@
       "CHARACTER",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "SYNAPSE",
       "TYRANIDS",
@@ -19380,6 +20022,7 @@
     ],
     "Dimachaeron": [
       "DIMACHAERON",
+      "FRAME",
       "GREAT DEVOURER",
       "MONSTER",
       "TYRANIDS"
@@ -19417,8 +20060,8 @@
       "VANGUARD INVADER"
     ],
     "Harridan": [
-      "AIRCRAFT",
       "FLY",
+      "FRAME",
       "GREAT DEVOURER",
       "HARRIDAN",
       "MONSTER",
@@ -19434,6 +20077,7 @@
       "TYRANIDS"
     ],
     "Hierophant": [
+      "FRAME",
       "GREAT DEVOURER",
       "HIEROPHANT",
       "MONSTER",
@@ -19461,6 +20105,7 @@
       "CHARACTER",
       "GREAT DEVOURER",
       "HIVE TYRANT",
+      "LEADER",
       "MONSTER",
       "PSYKER",
       "SYNAPSE",
@@ -19480,6 +20125,7 @@
       "GREAT DEVOURER",
       "HYPERADAPTED RAVENERS",
       "INFANTRY",
+      "LEADER",
       "SYNAPSE",
       "TYRANIDS",
       "VANGUARD INVADER"
@@ -19504,6 +20150,7 @@
       "FLY",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "SYNAPSE",
       "TYRANIDS"
     ],
@@ -19549,6 +20196,7 @@
       "CHARACTER",
       "FLY",
       "GREAT DEVOURER",
+      "LEADER",
       "MONSTER",
       "NEUROTYRANT",
       "PSYKER",
@@ -19584,6 +20232,7 @@
       "CHARACTER",
       "EPIC HERO",
       "GREAT DEVOURER",
+      "LEADER",
       "MONSTER",
       "OLD ONE EYE",
       "TYRANIDS"
@@ -19643,6 +20292,7 @@
       "TYRANIDS"
     ],
     "Scythed Hierodule": [
+      "FRAME",
       "GREAT DEVOURER",
       "MONSTER",
       "SCYTHED HIERODULE",
@@ -19690,6 +20340,7 @@
       "CHARACTER",
       "EPIC HERO",
       "GREAT DEVOURER",
+      "MOBILE",
       "MONSTER",
       "THE RED TERROR",
       "TYRANIDS",
@@ -19700,6 +20351,7 @@
       "EPIC HERO",
       "GREAT DEVOURER",
       "HIVE TYRANT",
+      "LEADER",
       "MONSTER",
       "PSYKER",
       "SYNAPSE",
@@ -19723,6 +20375,7 @@
       "CHARACTER",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "SYNAPSE",
       "TYRANID PRIME WITH LASH WHIP",
       "TYRANIDS"
@@ -19795,6 +20448,7 @@
       "FLY",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "SYNAPSE",
       "TYRANIDS",
       "VANGUARD INVADER",
@@ -19904,6 +20558,7 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Assault Terminator w/ Thunder Hammer & Storm Shield": [],
     "Astartes Servitors": [
       "ADEPTUS ASTARTES",
       "ASTARTES SERVITORS",
@@ -20148,6 +20803,15 @@
       "INFANTRY",
       "JUMP PACK"
     ],
+    "Chapter Ancient": [
+      "ANCIENT",
+      "EPIC HERO",
+      "POWER WEAPON"
+    ],
+    "Chapter Champion": [
+      "CHAMPION",
+      "EPIC HERO"
+    ],
     "Chief Librarian Tigurius": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
@@ -20222,6 +20886,7 @@
     "Drop Pod": [
       "DEDICATED TRANSPORT",
       "DROP POD",
+      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -20239,6 +20904,14 @@
       "ERADICATOR SQUAD",
       "GRAVIS",
       "GRENADES",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Heavy Bolters": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
     ],
@@ -20263,6 +20936,7 @@
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR LANCER",
       "IMPERIUM",
       "SMOKE",
@@ -20270,6 +20944,7 @@
     ],
     "Gladiator Reaper": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR REAPER",
       "IMPERIUM",
       "SMOKE",
@@ -20277,6 +20952,7 @@
     ],
     "Gladiator Valiant": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GLADIATOR VALIANT",
       "IMPERIUM",
       "SMOKE",
@@ -20285,6 +20961,7 @@
     "Hammerfall Bunker": [
       "ADEPTUS ASTARTES",
       "FORTIFICATION",
+      "FRAME",
       "HAMMERFALL BUNKER",
       "IMPERIUM"
     ],
@@ -20374,6 +21051,7 @@
     ],
     "Invader ATV": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
@@ -20406,6 +21084,7 @@
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "LAND RAIDER",
       "SMOKE",
@@ -20414,6 +21093,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -20448,6 +21128,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
@@ -20659,6 +21340,7 @@
     "Razorback": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RAZORBACK",
       "SMOKE",
@@ -20700,6 +21382,7 @@
     ],
     "Repulsor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR",
       "SMOKE",
@@ -20708,6 +21391,7 @@
     ],
     "Repulsor Executioner": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "REPULSOR EXECUTIONER",
       "SMOKE",
@@ -20717,6 +21401,7 @@
     "Rhino": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "RHINO",
       "SMOKE",
@@ -20736,6 +21421,7 @@
       "CHARACTER",
       "EPIC HERO",
       "IMPERIUM",
+      "MOBILE",
       "MONSTER",
       "PRIMARCH",
       "ROBOUTE GUILLIMAN",
@@ -20801,6 +21487,7 @@
     "Storm Speeder Hailstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
@@ -20808,6 +21495,7 @@
     "Storm Speeder Hammerstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
@@ -20815,6 +21503,7 @@
     "Storm Speeder Thunderstrike": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
@@ -20830,7 +21519,6 @@
     ],
     "Stormraven Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "STORMRAVEN GUNSHIP",
@@ -20917,7 +21605,6 @@
     ],
     "Thunderhawk Gunship": [
       "ADEPTUS ASTARTES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "THUNDERHAWK GUNSHIP",
@@ -21098,6 +21785,7 @@
     ],
     "Chaos Land Raider": [
       "CHAOS",
+      "FRAME",
       "KHORNE",
       "LAND RAIDER",
       "SMOKE",
@@ -21107,6 +21795,7 @@
     ],
     "Chaos Predator Annihilator": [
       "CHAOS",
+      "FRAME",
       "KHORNE",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -21115,6 +21804,7 @@
     ],
     "Chaos Predator Destructor": [
       "CHAOS",
+      "FRAME",
       "KHORNE",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -21124,6 +21814,7 @@
     "Chaos Rhino": [
       "CHAOS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "KHORNE",
       "RHINO",
       "SMOKE",
@@ -21241,7 +21932,6 @@
       "WORLD EATERS"
     ],
     "Heldrake": [
-      "AIRCRAFT",
       "CHAOS",
       "DAEMON",
       "FLY",
@@ -21293,6 +21983,7 @@
     "Khorne Lord of Skulls": [
       "CHAOS",
       "DAEMON",
+      "FRAME",
       "KHORNE",
       "LORD OF SKULLS",
       "TITANIC",

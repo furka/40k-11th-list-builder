@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Scrape per-faction wargear-option restrictions from BSData/wh40k-10e and
+ * Scrape per-faction wargear-option restrictions from BSData/wh40k-11e and
  * emit a `wargear-restrictions.bsdata.auto.json` overlay the parser merges
  * into MFM datasheet wargearOptions at parse time.
  *
@@ -36,7 +36,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..", "..");
 
 const BSDATA_REF = "main";
-const BSDATA_REPO = "BSData/wh40k-10e";
+const BSDATA_REPO = "BSData/wh40k-11e";
 
 const MAPPING_PATH = resolve(
   __dirname,
@@ -64,7 +64,7 @@ async function main() {
   console.log(
     `BSData wargear scrape — ref ${BSDATA_REF} @ ${sha.slice(0, 8)} ` +
       `(${committedAt}), ${factions.length} factions, ` +
-      `${filesNeeded.size} unique .cat files` +
+      `${filesNeeded.size} unique .json files` +
       `${refresh ? " (cache bypass)" : ""}`
   );
 
@@ -134,7 +134,7 @@ async function main() {
         const root = rootsByFile[file];
         if (!root) continue;
         for (const unit of iterUnits(root)) {
-          const unitName = normalizeName(unit["@_name"]);
+          const unitName = normalizeName(unit.name);
           if (unitName !== datasheetNorm) continue;
           const caps = extractWargearCaps(unit, {
             wargearNames,

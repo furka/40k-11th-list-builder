@@ -5,14 +5,15 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CACHE_ROOT = resolve(__dirname, ".cache");
-const RAW_BASE = "https://raw.githubusercontent.com/BSData/wh40k-10e";
+const RAW_BASE = "https://raw.githubusercontent.com/BSData/wh40k-11e";
 const POLITE_DELAY_MS = 1000;
 
 // Sentinel written to the cache when upstream returned 404, so a re-run
 // against the same pinned tag stays a fast cache-hit instead of replaying
-// the failed network call. Newlines on both sides so it's distinguishable
-// from any legitimate XML content.
-const MISSING_MARKER = "<!-- bsdata-missing -->\n";
+// the failed network call. Not valid JSON, so it can never be mistaken for a
+// real catalogue payload — callers must compare against MISSING_MARKER before
+// attempting to parse.
+const MISSING_MARKER = "// bsdata-missing\n";
 
 let lastFetchAt = 0;
 
@@ -24,10 +25,10 @@ async function politeDelay() {
   lastFetchAt = Date.now();
 }
 
-// Returns the .cat XML, or null if the file doesn't exist at the pinned tag
-// (typically a file added to BSData's main branch after the tag was cut).
-// Cache is keyed by tag so bumping the pinned release invalidates every
-// entry without manual cleanup.
+// Returns the catalogue JSON text, or null if the file doesn't exist at the
+// pinned ref (typically a file present in an older mapping but not in the
+// current BSData tree). Cache is keyed by ref so bumping the pinned commit
+// invalidates every entry without manual cleanup.
 export async function fetchCatFile(tag, filename, { refresh = false } = {}) {
   const cacheDir = resolve(CACHE_ROOT, tag);
   if (!existsSync(cacheDir)) {
@@ -55,7 +56,7 @@ export async function fetchCatFile(tag, filename, { refresh = false } = {}) {
   if (!res.ok) {
     throw new Error(`HTTP ${res.status} for ${url}`);
   }
-  const xml = await res.text();
-  await writeFile(cachePath, xml, "utf8");
-  return xml;
+  const json = await res.text();
+  await writeFile(cachePath, json, "utf8");
+  return json;
 }

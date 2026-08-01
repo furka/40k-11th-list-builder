@@ -12,10 +12,8 @@ import { normalizeApostrophes } from "../../utils/apostrophe-normalization";
  * source explicit and predictable).
  *
  *   1. `bsdata-keywords.auto.json` — broadest baseline. Auto-generated from
- *      BSData/wh40k-10e by `scripts/scrape-bsdata-keywords/`. Tracks main
- *      branch, refreshed via the bsdata-keywords-auto-update CI job.
- *      (When a BSData 11e repo eventually exists, slot it in between
- *      BSData 10e and the PDF layer here.)
+ *      BSData/wh40k-11e by `scripts/scrape-bsdata-keywords/`. Tracks main
+ *      branch, refreshed via the BSData auto-update CI job.
  *
  *   2. `faction-pack-keywords.auto.json` — GW-authoritative *for what it
  *      contains*, which is intentionally narrow: GW strips a datasheet from
