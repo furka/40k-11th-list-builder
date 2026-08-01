@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-10e",
   "_ref": "main",
-  "_sha": "2c51facbf5585eb677062856935bbbe86834bd60",
-  "_committedAt": "2026-06-22T09:36:35Z",
-  "_generatedAt": "2026-06-24T16:25:18.713Z",
+  "_sha": "52914f259d4e509379fc653e3b13d2e38edb102e",
+  "_committedAt": "2026-06-24T16:46:10Z",
+  "_generatedAt": "2026-08-01T15:04:14.037Z",
   "_generator": "scripts/scrape-bsdata-wargear",
   "ADEPTA SORORITAS": {
     "DOMINION SQUAD": {
@@ -31,6 +31,11 @@
     "CALADIUS GRAV-TANK": {
       "Twin arachnus heavy blaze cannon": {
         "maxPerUnit": 1
+      }
+    },
+    "VENATARI CUSTODIANS": {
+      "Venatari lance": {
+        "maxPerUnit": 6
       }
     }
   },
@@ -63,11 +68,26 @@
       "Krieg heavy flamer": {
         "maxPerUnit": 3
       }
+    },
+    "LEMAN RUSS COMMANDER": {
+      "Demolisher battle cannon": {
+        "maxPerUnit": 1
+      }
     }
   },
   "BLACK TEMPLARS": {
+    "CENTURION DEVASTATOR SQUAD": {
+      "Twin lascannon": {
+        "maxPerUnit": 5
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "REPULSOR EXECUTIONER": {
+      "Heavy laser destroyer": {
         "maxPerUnit": 1
       }
     },
@@ -78,8 +98,18 @@
     }
   },
   "BLOOD ANGELS": {
+    "CENTURION DEVASTATOR SQUAD": {
+      "Twin lascannon": {
+        "maxPerUnit": 5
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "REPULSOR EXECUTIONER": {
+      "Heavy laser destroyer": {
         "maxPerUnit": 1
       }
     },
@@ -115,8 +145,18 @@
     }
   },
   "DARK ANGELS": {
+    "CENTURION DEVASTATOR SQUAD": {
+      "Twin lascannon": {
+        "maxPerUnit": 5
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "REPULSOR EXECUTIONER": {
+      "Heavy laser destroyer": {
         "maxPerUnit": 1
       }
     },
@@ -137,6 +177,11 @@
     }
   },
   "DEATHWATCH": {
+    "CENTURION DEVASTATOR SQUAD": {
+      "Twin lascannon": {
+        "maxPerUnit": 5
+      }
+    },
     "DEATHWATCH TERMINATOR SQUAD": {
       "Thunder Hammer": {
         "maxPerUnit": 9
@@ -144,6 +189,11 @@
     },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "REPULSOR EXECUTIONER": {
+      "Heavy laser destroyer": {
         "maxPerUnit": 1
       }
     }
@@ -235,8 +285,18 @@
     }
   },
   "SPACE MARINES": {
+    "CENTURION DEVASTATOR SQUAD": {
+      "Twin lascannon": {
+        "maxPerUnit": 5
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "REPULSOR EXECUTIONER": {
+      "Heavy laser destroyer": {
         "maxPerUnit": 1
       }
     },
@@ -255,8 +315,18 @@
     }
   },
   "SPACE WOLVES": {
+    "CENTURION DEVASTATOR SQUAD": {
+      "Twin lascannon": {
+        "maxPerUnit": 5
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
+        "maxPerUnit": 1
+      }
+    },
+    "REPULSOR EXECUTIONER": {
+      "Heavy laser destroyer": {
         "maxPerUnit": 1
       }
     },
@@ -283,6 +353,11 @@
       },
       "Heavy reaper autocannon": {
         "maxPerUnit": 1
+      }
+    },
+    "FORGEFIEND": {
+      "Ectoplasma cannon": {
+        "maxPerUnit": 2
       }
     }
   },
@@ -335,6 +410,11 @@
       },
       "Heavy reaper autocannon": {
         "maxPerUnit": 1
+      }
+    },
+    "FORGEFIEND": {
+      "Ectoplasma cannon": {
+        "maxPerUnit": 2
       }
     }
   }
