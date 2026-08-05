@@ -1,6 +1,6 @@
 {
   "faction": "DARK ANGELS",
-  "siteVersion": "v1.1",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -946,13 +946,13 @@
     },
     {
       "name": "RAVENWING COMMAND SQUAD",
-      "leader": {
+      "leader": null,
+      "support": {
         "attachesTo": [
           "OUTRIDER SQUAD",
           "RAVENWING BLACK KNIGHTS"
         ]
       },
-      "support": null,
       "sizes": [
         {
           "name": "3 models",
@@ -2051,6 +2051,21 @@
             {
               "minCount": 3,
               "points": 140
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 265
             }
           ]
         }
