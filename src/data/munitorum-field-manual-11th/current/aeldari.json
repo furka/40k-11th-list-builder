@@ -1,6 +1,6 @@
 {
   "faction": "AELDARI",
-  "siteVersion": "v1.1",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "ARMOURED WARHOST",
@@ -512,6 +512,27 @@
       ]
     },
     {
+      "name": "CLANBLADE",
+      "leader": {
+        "attachesTo": [
+          "DRAGON KNIGHTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "CORSAIR SKYREAVERS",
       "leader": null,
       "support": null,
@@ -680,6 +701,33 @@
             {
               "minCount": 1,
               "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DRAGON KNIGHTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
             }
           ]
         }
@@ -951,6 +999,23 @@
       ]
     },
     {
+      "name": "LEYSTALKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "LHYKHIS",
       "leader": {
         "attachesTo": [
@@ -1208,6 +1273,27 @@
             {
               "minCount": 1,
               "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STONESINGER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "DRAGON KNIGHTS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
             }
           ]
         }

@@ -1,6 +1,6 @@
 {
   "faction": "SPACE WOLVES",
-  "siteVersion": "v1.1",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -1267,6 +1267,7 @@
           "STERNGUARD VETERAN SQUAD",
           "SWORD BRETHREN SQUAD",
           "TACTICAL SQUAD",
+          "VANGUARD VETERAN SQUAD",
           "WOLF GUARD"
         ]
       },
@@ -2153,6 +2154,21 @@
             {
               "minCount": 3,
               "points": 140
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 265
             }
           ]
         }
