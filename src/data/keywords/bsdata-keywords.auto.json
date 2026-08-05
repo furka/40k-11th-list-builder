@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "767f7ca1678e0e4a27777b086bcbbcf708fe0652",
-  "_committedAt": "2026-08-01T20:39:34Z",
-  "_generatedAt": "2026-08-01T21:03:22.856Z",
+  "_sha": "59f45122d75307e23484a0eaf33f2652ae86fca9",
+  "_committedAt": "2026-08-05T07:09:05Z",
+  "_generatedAt": "2026-08-05T16:03:00.601Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -15539,14 +15539,6 @@
       "MOB",
       "ORKS"
     ],
-    "Boyz (Armageddon)": [
-      "BATTLELINE",
-      "BOYZ",
-      "GRENADES",
-      "INFANTRY",
-      "MOB",
-      "ORKS"
-    ],
     "Breaka Boyz": [
       "BREAKA BOYZ",
       "GRENADES",
@@ -15688,12 +15680,6 @@
       "WALKER"
     ],
     "Gretchin": [
-      "GRETCHIN",
-      "GROTS",
-      "INFANTRY",
-      "ORKS"
-    ],
-    "Gretchin (Armageddon)": [
       "GRETCHIN",
       "GROTS",
       "INFANTRY",
@@ -16006,14 +15992,6 @@
       "WARBIKERS"
     ],
     "Warboss": [
-      "CHARACTER",
-      "GRENADES",
-      "INFANTRY",
-      "LEADER",
-      "ORKS",
-      "WARBOSS"
-    ],
-    "Warboss (Armageddon)": [
       "CHARACTER",
       "GRENADES",
       "INFANTRY",
