@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "767f7ca1678e0e4a27777b086bcbbcf708fe0652",
-  "_committedAt": "2026-08-01T20:39:34Z",
-  "_generatedAt": "2026-08-01T21:04:10.255Z",
+  "_sha": "d824ef8137c80783728e7ece13ed49257704dddc",
+  "_committedAt": "2026-08-07T09:00:30Z",
+  "_generatedAt": "2026-08-07T14:56:54.802Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -675,8 +675,34 @@
       ]
     },
     "Cybinfernal Font": {
-      "requiredKeywords": [
-        "DAMNED"
+      "allowedHosts": [
+        "ACCURSED CULTISTS",
+        "CHAOS LORD",
+        "CHAOS LORD IN TERMINATOR ARMOUR",
+        "CHAOS LORD ON DISC OF TZEENTCH",
+        "CHAOS LORD ON JUGGERNAUT",
+        "CHAOS LORD ON PALANQUIN OF NURGLE",
+        "CHAOS LORD ON STEED OF SLAANESH",
+        "CHAOS LORD WITH JUMP PACK",
+        "CULTIST FIREBRAND",
+        "CULTIST MOB",
+        "CULTIST MOB WITH FIREARMS",
+        "DARK APOSTLE",
+        "DARK COMMUNE",
+        "FELLGOR BEASTMEN",
+        "GELLERPOX INFECTED",
+        "LORD DISCORDANT ON HELSTALKER",
+        "MASTER OF POSSESSION",
+        "MUTOID VERMIN",
+        "NEGAVOLT CULTISTS",
+        "RENEGADE ENFORCER",
+        "RENEGADE HEAVY WEAPONS SQUAD",
+        "RENEGADE OGRYN BEAST HANDLER",
+        "RENEGADE OGRYN BRUTES",
+        "RENEGADE PLAGUE OGRYNS",
+        "ROGUE PSYKER",
+        "TRAITOR ENFORCER",
+        "TRAITOR GUARDSMEN SQUAD"
       ]
     },
     "Dread Reputation": {
