@@ -29,7 +29,16 @@ concurrency:
 
 jobs:
   review:
-    if: github.actor == 'dependabot[bot]'
+    # Guard on the PR AUTHOR, not github.actor: github.actor is whoever
+    # triggered the latest event, so a maintainer re-running/updating a
+    # Dependabot PR would otherwise skip the job. Also require a non-Dependabot
+    # actor — only human-triggered events on pull_request_target get the full
+    # secrets + writable token this workflow needs (ANTHROPIC_API_KEY and comment
+    # write); a Dependabot-triggered run has a read-only token and no Actions
+    # secrets, so we let a maintainer's interaction (reopen / push) drive it.
+    if: >-
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Dependabot metadata
