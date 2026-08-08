@@ -21,7 +21,8 @@
     "bsdata:enhancements:refresh": "node scripts/scrape-bsdata-enhancements/index.mjs --refresh",
     "bsdata:wargear": "node scripts/scrape-bsdata-wargear/index.mjs",
     "bsdata:wargear:refresh": "node scripts/scrape-bsdata-wargear/index.mjs --refresh",
-    "bsdata:prune-overrides": "node scripts/audit-and-prune-overrides.mjs"
+    "bsdata:prune-overrides": "node scripts/audit-and-prune-overrides.mjs",
+    "dep:review": "node --env-file-if-exists=.env scripts/dep-review/index.mjs"
   },
   "dependencies": {
     "pinia": "^3.0.4",

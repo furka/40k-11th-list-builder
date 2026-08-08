@@ -31,6 +31,7 @@ tmp/
 scripts/scrape-mfm-11th/.cache/
 scripts/scrape-faction-pack-11th/.cache/
 scripts/scrape-bsdata-keywords/.cache/
+scripts/dep-review/.cache/
 
 # Local secrets — loaded via `node --env-file-if-exists=.env`
 .env

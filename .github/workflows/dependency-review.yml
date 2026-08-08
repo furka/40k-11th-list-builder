@@ -1,0 +1,109 @@
+name: Dependency review (AI)
+
+# On each Dependabot PR, a Claude agent reasons about OUR actual usage of the
+# bumped package against WHAT changed between versions, then posts an advisory
+# verdict comment and a non-blocking check-run (safe / review / risky). This is
+# a better signal than Dependabot's crowd-sourced compatibility score, which
+# knows nothing about how this repo uses the package.
+#
+# Security posture: Dependabot's own `pull_request` runs get a read-only token
+# and no secrets, so we use `pull_request_target` (runs in the base-branch
+# context, where ANTHROPIC_API_KEY and a writable token are available) and hard-
+# gate on `github.actor == 'dependabot[bot]'`. We check out the PR head to read
+# its package.json, but install with `--ignore-scripts` and expose the API key
+# only to the analysis step, so a malicious version bump can't run lifecycle
+# scripts with the secret in scope.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+
+concurrency:
+  group: dep-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Dependabot metadata
+        id: meta
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      # --ignore-scripts: never run the (possibly bumped, untrusted) packages'
+      # lifecycle scripts. The reviewer only needs @anthropic-ai/sdk + reads
+      # source files.
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Run AI dependency review
+        id: review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run dep:review -- \
+            --package "${{ steps.meta.outputs.dependency-names }}" \
+            --from "${{ steps.meta.outputs.previous-version }}" \
+            --to "${{ steps.meta.outputs.new-version }}" \
+            --update-type "${{ steps.meta.outputs.update-type }}" \
+            --out dep-review.md
+
+      - name: Find existing review comment
+        id: fc
+        uses: peter-evans/find-comment@v3
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: "github-actions[bot]"
+          body-includes: "<!-- dep-review -->"
+
+      - name: Post or update verdict comment
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body-path: dep-review.md
+          edit-mode: replace
+
+      - name: Publish non-blocking check-run
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          VERDICT: ${{ steps.review.outputs.verdict }}
+        with:
+          script: |
+            const fs = require('fs');
+            const verdict = process.env.VERDICT || 'review';
+            const conclusion = { safe: 'success', review: 'neutral', risky: 'failure' }[verdict] || 'neutral';
+            let summary = 'Dependency review did not produce output.';
+            try { summary = fs.readFileSync('dep-review.md', 'utf8').slice(0, 60000); } catch {}
+            await github.rest.checks.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: 'dep-review',
+              head_sha: context.payload.pull_request.head.sha,
+              status: 'completed',
+              conclusion,
+              output: { title: `Dependency review: ${verdict}`, summary },
+            });
