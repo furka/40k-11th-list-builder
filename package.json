@@ -37,7 +37,7 @@
     "@vue/test-utils": "^2.4.11",
     "fast-xml-parser": "^5.10.1",
     "jsdom": "^29.1.1",
-    "pdfjs-dist": "^6.0.227",
+    "pdfjs-dist": "^6.2.108",
     "playwright": "^1.61.1",
     "sass": "^1.101.0",
     "vite": "^8.1.0",
