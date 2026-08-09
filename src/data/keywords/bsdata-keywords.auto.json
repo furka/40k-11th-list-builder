@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "59f45122d75307e23484a0eaf33f2652ae86fca9",
-  "_committedAt": "2026-08-05T07:09:05Z",
-  "_generatedAt": "2026-08-05T16:03:00.601Z",
+  "_sha": "45bb95a94f29fb4e826954164e3719bc62450ab0",
+  "_committedAt": "2026-08-09T10:59:56Z",
+  "_generatedAt": "2026-08-09T14:38:51.463Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -15026,6 +15026,7 @@
     "Doomsday Ark": [
       "DOOMSDAY ARK",
       "FLY",
+      "FRAME",
       "NECRONS",
       "VEHICLE"
     ],
@@ -15170,7 +15171,6 @@
     ],
     "Night Scythe": [
       "FLY",
-      "FRAME",
       "NECRONS",
       "NIGHT SCYTHE",
       "TRANSPORT",
