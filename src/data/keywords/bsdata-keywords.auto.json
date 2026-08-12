@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "45bb95a94f29fb4e826954164e3719bc62450ab0",
-  "_committedAt": "2026-08-09T10:59:56Z",
-  "_generatedAt": "2026-08-09T14:38:51.463Z",
+  "_sha": "c714a01a5c7a7275495c4d3c32688a4292d4efd8",
+  "_committedAt": "2026-08-10T19:16:59Z",
+  "_generatedAt": "2026-08-11T15:02:08.990Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -1162,6 +1162,15 @@
       "LEADER",
       "PSYKER"
     ],
+    "Clanblade": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EXODITE",
+      "LEADER",
+      "MOBILE",
+      "MOUNTED"
+    ],
     "Cobra": [
       "AELDARI",
       "ASURYANI",
@@ -1289,6 +1298,13 @@
       "GRENADES",
       "INFANTRY",
       "YNNARI"
+    ],
+    "Dragon Knights": [
+      "AELDARI",
+      "ASURYANI",
+      "EXODITE",
+      "MOBILE",
+      "MOUNTED"
     ],
     "Drazhar": [
       "AELDARI",
@@ -1558,6 +1574,14 @@
       "LELITH HESPERAX",
       "SUCCUBUS",
       "WYCH CULT"
+    ],
+    "Leystalker": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EXODITE",
+      "MOBILE",
+      "MOUNTED"
     ],
     "Lhykhis": [
       "AELDARI",
@@ -1869,6 +1893,16 @@
       "STAR WEAVER",
       "TRANSPORT",
       "VEHICLE"
+    ],
+    "Stonesinger": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EXODITE",
+      "MOBILE",
+      "MOUNTED",
+      "PSYKER",
+      "SUPPORT"
     ],
     "Storm Guardians": [
       "AELDARI",
@@ -11031,6 +11065,15 @@
       "LEADER",
       "PSYKER"
     ],
+    "Clanblade": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EXODITE",
+      "LEADER",
+      "MOBILE",
+      "MOUNTED"
+    ],
     "Cobra": [
       "AELDARI",
       "ASURYANI",
@@ -11158,6 +11201,13 @@
       "GRENADES",
       "INFANTRY",
       "YNNARI"
+    ],
+    "Dragon Knights": [
+      "AELDARI",
+      "ASURYANI",
+      "EXODITE",
+      "MOBILE",
+      "MOUNTED"
     ],
     "Drazhar": [
       "AELDARI",
@@ -11427,6 +11477,14 @@
       "LELITH HESPERAX",
       "SUCCUBUS",
       "WYCH CULT"
+    ],
+    "Leystalker": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EXODITE",
+      "MOBILE",
+      "MOUNTED"
     ],
     "Lhykhis": [
       "AELDARI",
@@ -11738,6 +11796,16 @@
       "STAR WEAVER",
       "TRANSPORT",
       "VEHICLE"
+    ],
+    "Stonesinger": [
+      "AELDARI",
+      "ASURYANI",
+      "CHARACTER",
+      "EXODITE",
+      "MOBILE",
+      "MOUNTED",
+      "PSYKER",
+      "SUPPORT"
     ],
     "Storm Guardians": [
       "AELDARI",
@@ -20134,7 +20202,7 @@
     ],
     "Maleceptor": [
       "GREAT DEVOURER",
-      "MALCEPTOR",
+      "MALECEPTOR",
       "MONSTER",
       "PSYKER",
       "SYNAPSE",
