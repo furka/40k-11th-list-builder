@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "d824ef8137c80783728e7ece13ed49257704dddc",
-  "_committedAt": "2026-08-07T09:00:30Z",
-  "_generatedAt": "2026-08-07T14:56:54.802Z",
+  "_sha": "8e1f33448d6e7c692dfab9db188ce8ac2c3e3fc9",
+  "_committedAt": "2026-08-16T12:03:50Z",
+  "_generatedAt": "2026-08-16T14:27:10.477Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -1544,8 +1544,7 @@
       "allowedHosts": [
         "INFERNAL MASTER",
         "SORCERER",
-        "SORCERER IN TERMINATOR ARMOUR",
-        "SORCERER ON DISC OF TZEENTCH"
+        "SORCERER IN TERMINATOR ARMOUR"
       ]
     },
     "Diamond of Distortion": {
@@ -1563,8 +1562,7 @@
         "EXALTED SORCERER",
         "EXALTED SORCERER ON DISC OF TZEENTCH",
         "SORCERER",
-        "SORCERER IN TERMINATOR ARMOUR",
-        "SORCERER ON DISC OF TZEENTCH"
+        "SORCERER IN TERMINATOR ARMOUR"
       ]
     },
     "Unravelled Fates": {
@@ -1577,8 +1575,7 @@
         "EXALTED SORCERER",
         "EXALTED SORCERER ON DISC OF TZEENTCH",
         "SORCERER",
-        "SORCERER IN TERMINATOR ARMOUR",
-        "SORCERER ON DISC OF TZEENTCH"
+        "SORCERER IN TERMINATOR ARMOUR"
       ]
     },
     "Warpmeld Dagger": {
