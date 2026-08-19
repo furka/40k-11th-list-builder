@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "8e1f33448d6e7c692dfab9db188ce8ac2c3e3fc9",
-  "_committedAt": "2026-08-16T12:03:50Z",
-  "_generatedAt": "2026-08-16T14:27:09.615Z",
+  "_sha": "5a4a3e6fcc3613e5131cb036a5d32f7588389071",
+  "_committedAt": "2026-08-17T23:52:10Z",
+  "_generatedAt": "2026-08-18T14:37:52.533Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -20,6 +20,7 @@
     "Arco-Flagellant": [],
     "Arco-Flagellants": [
       "ADEPTA SORORITAS",
+      "ARCO-FLAGELLANTS",
       "IMPERIUM",
       "INFANTRY",
       "PENITENT"
@@ -4448,8 +4449,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant in Phobos Armour": [
@@ -4458,9 +4459,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -4468,11 +4469,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -5811,8 +5812,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant in Phobos Armour": [
@@ -5821,9 +5822,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -5831,11 +5832,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -8924,8 +8925,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant in Phobos Armour": [
@@ -8934,9 +8935,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -8944,11 +8945,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -10671,8 +10672,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant in Phobos Armour": [
@@ -10681,9 +10682,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -10691,11 +10692,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -13758,8 +13759,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant in Phobos Armour": [
@@ -13768,9 +13769,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -13778,11 +13779,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -17243,8 +17244,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant Titus": [
@@ -17265,9 +17266,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -17275,11 +17276,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -18627,8 +18628,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant in Phobos Armour": [
@@ -18637,9 +18638,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -18647,11 +18648,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
@@ -20533,6 +20534,7 @@
       "CRUCIBLE",
       "GREAT DEVOURER",
       "INFANTRY",
+      "LEADER",
       "NODE ORGANISM",
       "SYNAPSE",
       "TYRANIDS"
@@ -20576,6 +20578,7 @@
       "CHARACTER",
       "CRUCIBLE",
       "GREAT DEVOURER",
+      "LEADER",
       "MONSTER",
       "PRIME ORGANISM",
       "TYRANIDS"
@@ -21575,8 +21578,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Lieutenant Titus": [
@@ -21597,9 +21600,9 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
-      "PHOBOS"
+      "PHOBOS",
+      "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
       "ADEPTUS ASTARTES",
@@ -21607,11 +21610,11 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "LIEUTENANT",
       "LIEUTENANT IN REIVER ARMOUR",
       "PHOBOS",
-      "SMOKE"
+      "SMOKE",
+      "SUPPORT"
     ],
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
