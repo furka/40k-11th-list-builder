@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "5a4a3e6fcc3613e5131cb036a5d32f7588389071",
-  "_committedAt": "2026-08-17T23:52:10Z",
-  "_generatedAt": "2026-08-18T14:37:52.533Z",
+  "_sha": "7f436add98b19fa45a6183d3ca3069a3896a0e05",
+  "_committedAt": "2026-08-19T12:47:09Z",
+  "_generatedAt": "2026-08-19T14:38:20.420Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -13976,7 +13976,8 @@
       "GREY KNIGHTS",
       "IMPERIUM",
       "INFANTRY",
-      "SERVITORS"
+      "SERVITORS",
+      "SUPPORT"
     ],
     "Stalker": [
       "ADEPTUS ASTARTES",
@@ -15212,6 +15213,7 @@
     "Canoptek Tomb Crawlers": [
       "BEAST",
       "CANOPTEK",
+      "CANOPTEK RETINUE",
       "NECRONS",
       "TOMB CRAWLERS"
     ],
@@ -15260,6 +15262,7 @@
     ],
     "Convergence of Dominion Starstele": [],
     "Cryptothralls": [
+      "CANOPTEK RETINUE",
       "CRYPTOTHRALLS",
       "INFANTRY",
       "NECRONS"
