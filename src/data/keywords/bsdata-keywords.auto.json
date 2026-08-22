@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "7f436add98b19fa45a6183d3ca3069a3896a0e05",
-  "_committedAt": "2026-08-19T12:47:09Z",
-  "_generatedAt": "2026-08-19T14:38:20.420Z",
+  "_sha": "638aa9ca3860eaaff37ee48a47ceb08755831b7a",
+  "_committedAt": "2026-08-22T10:02:43Z",
+  "_generatedAt": "2026-08-22T14:25:50.066Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -595,7 +595,6 @@
       "CHARACTER",
       "DAWNEAGLE JETBIKE",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "LEADER",
       "MOUNTED",
@@ -865,7 +864,6 @@
     "Secutarii Hoplite": [],
     "Secutarii Hoplite Alpha": [],
     "Secutarii Hoplite w/ data-tether": [],
-    "Secutarii Hoplite w/ omnispex": [],
     "Secutarii Hoplites": [
       "ADEPTUS MECHANICUS",
       "IMPERIUM",
@@ -876,7 +874,6 @@
     "Secutarii Peltast": [],
     "Secutarii Peltast Alpha": [],
     "Secutarii Peltast w/ data-tether": [],
-    "Secutarii Peltast w/ omnispex": [],
     "Secutarii Peltasts": [
       "ADEPTUS MECHANICUS",
       "IMPERIUM",
@@ -14547,9 +14544,9 @@
       "CHARACTER",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER",
       "MINISTORUM PRIEST",
-      "ORDO HERETICUS"
+      "ORDO HERETICUS",
+      "SUPPORT"
     ],
     "Navigator": [
       "AGENTS OF THE IMPERIUM",
