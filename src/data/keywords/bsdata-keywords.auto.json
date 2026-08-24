@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "638aa9ca3860eaaff37ee48a47ceb08755831b7a",
-  "_committedAt": "2026-08-22T10:02:43Z",
-  "_generatedAt": "2026-08-22T14:25:50.066Z",
+  "_sha": "acc22aa65cab428c669e0840a7e1724a4f2d8a86",
+  "_committedAt": "2026-08-24T11:11:20Z",
+  "_generatedAt": "2026-08-24T14:46:52.454Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -17741,6 +17741,7 @@
       "WALKER"
     ],
     "Victrix Honour Guard": [
+      "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHAMPION",
       "EPIC HERO",
@@ -19185,7 +19186,8 @@
       "INFANTRY",
       "SPACE WOLVES",
       "TACTICUS",
-      "WOLF GUARD"
+      "WOLF GUARD",
+      "WOLF GUARD HEADTAKERS"
     ],
     "Wolf Guard Pack Leader": [
       "ADEPTUS ASTARTES",
@@ -22039,6 +22041,7 @@
       "WALKER"
     ],
     "Victrix Honour Guard": [
+      "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHAMPION",
       "EPIC HERO",
