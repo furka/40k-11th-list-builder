@@ -1,6 +1,6 @@
 {
   "faction": "NECRONS",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "ANNIHILATION LEGION",
@@ -897,7 +897,7 @@
             },
             {
               "minCount": 3,
-              "points": 70
+              "points": 50
             }
           ]
         },
@@ -912,7 +912,7 @@
             },
             {
               "minCount": 3,
-              "points": 85
+              "points": 65
             }
           ]
         },
@@ -927,7 +927,7 @@
             },
             {
               "minCount": 3,
-              "points": 110
+              "points": 90
             }
           ]
         },
@@ -937,12 +937,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 175,
+              "points": 170,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 205
+              "points": 180
             }
           ]
         }
@@ -989,12 +989,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 175
+              "points": 170
             }
           ]
         }
@@ -1016,7 +1016,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 70
             }
           ]
         }
@@ -1082,7 +1082,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         },
@@ -1180,12 +1180,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 145,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 160
+              "points": 155
             }
           ]
         }
@@ -1275,7 +1275,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 55
             }
           ]
         }
@@ -1399,12 +1399,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 90,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 100
             }
           ]
         }

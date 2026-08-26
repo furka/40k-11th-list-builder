@@ -1,6 +1,6 @@
 {
   "faction": "ADEPTUS MECHANICUS",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "COHORT ACQUISITUS",
@@ -521,7 +521,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 160,
               "maxCount": 1
             },
             {
@@ -536,12 +536,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 300,
+              "points": 320,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 330
+              "points": 340
             }
           ]
         }
@@ -629,12 +629,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
+              "points": 80,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 85
+              "points": 90
             }
           ]
         },
@@ -666,12 +666,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
+              "points": 80,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 85
+              "points": 90
             }
           ]
         },
@@ -681,12 +681,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 160
+              "points": 170
             }
           ]
         }
@@ -757,12 +757,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 75
+              "points": 65
             }
           ]
         }
@@ -1094,7 +1089,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 65
             }
           ]
         }

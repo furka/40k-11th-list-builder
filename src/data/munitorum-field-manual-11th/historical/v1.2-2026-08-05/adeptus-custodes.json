@@ -1,6 +1,6 @@
 {
   "faction": "ADEPTUS CUSTODES",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "AURIC CHAMPIONS",
@@ -32,10 +32,10 @@
     },
     {
       "name": "LIONS OF THE EMPEROR",
-      "dp": 3,
+      "dp": 2,
       "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
       },
       "leader": null,
       "tags": [
@@ -223,8 +223,8 @@
       "name": "THARANATOI HAMMERBLOW",
       "dp": 1,
       "role": {
-        "name": "DISRUPTION",
-        "color": "#1A3A5C"
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
       },
       "leader": null,
       "tags": [
@@ -304,12 +304,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 140
+              "points": 110
             }
           ]
         },
@@ -319,12 +314,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 195
+              "points": 165
             }
           ]
         },
@@ -334,12 +324,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 280,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 310
+              "points": 275
             }
           ]
         },
@@ -349,12 +334,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 340,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 370
+              "points": 330
             }
           ]
         }
@@ -1012,12 +992,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 145,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 170
+              "points": 145
             }
           ]
         },
@@ -1027,12 +1002,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 215,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 240
+              "points": 215
             }
           ]
         }

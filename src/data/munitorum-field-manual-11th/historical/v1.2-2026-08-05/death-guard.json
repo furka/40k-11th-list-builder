@@ -1,6 +1,6 @@
 {
   "faction": "DEATH GUARD",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "CHAMPIONS OF CONTAGION",
@@ -10,7 +10,9 @@
         "color": "#2E6B3E"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: FLYBLOWN"
+      ],
       "enhancements": [
         {
           "name": "Cornucophagus",
@@ -38,7 +40,9 @@
         "color": "#008080"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: ENGINES"
+      ],
       "enhancements": [
         {
           "name": "Lancet of the Worldsore",
@@ -88,7 +92,9 @@
         "color": "#008080"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: FLYBLOWN"
+      ],
       "enhancements": [
         {
           "name": "Insectile Murmuration",
@@ -110,7 +116,9 @@
         "color": "#8B1B1B"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: ENGINES"
+      ],
       "enhancements": [
         {
           "name": "Bilemaw Blight",
@@ -278,7 +286,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 185
             }
           ]
         },
@@ -288,7 +296,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 360
+              "points": 370
             }
           ]
         }
@@ -486,7 +494,7 @@
             },
             {
               "minCount": 2,
-              "points": 350
+              "points": 340
             }
           ]
         }
@@ -561,7 +569,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 65
             }
           ]
         }
@@ -720,7 +728,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 375
+              "points": 390
             }
           ]
         }
@@ -737,7 +745,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         },
@@ -747,7 +755,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190
+              "points": 200
             }
           ]
         }
@@ -769,7 +777,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 60
             }
           ]
         }
@@ -786,12 +794,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 185,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 200
+              "points": 210
             }
           ]
         }

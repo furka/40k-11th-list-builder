@@ -1,6 +1,6 @@
 {
-  "faction": "DEATHWATCH",
-  "siteVersion": "v1.3",
+  "faction": "DARK ANGELS",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -115,34 +115,6 @@
       ]
     },
     {
-      "name": "BLACK SPEAR TASK FORCE",
-      "dp": 3,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Beacon Angelis",
-          "points": 25
-        },
-        {
-          "name": "Osseus Key",
-          "points": 15
-        },
-        {
-          "name": "The Tome of Ectoclades",
-          "points": 30
-        },
-        {
-          "name": "Thief of Secrets",
-          "points": 25
-        }
-      ]
-    },
-    {
       "name": "CERAMITE SENTINELS",
       "dp": 3,
       "role": {
@@ -167,6 +139,78 @@
         {
           "name": "Spy-skull Data Link",
           "points": 15
+        }
+      ]
+    },
+    {
+      "name": "COMPANY OF HUNTERS",
+      "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Master-crafted Weapon",
+          "points": 10
+        },
+        {
+          "name": "Master of Manoeuvre",
+          "points": 15
+        },
+        {
+          "name": "Mounted Strategist",
+          "points": 30
+        },
+        {
+          "name": "Recon Hunter",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "DARK AGE ARSENAL",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Entreaty of Perpetual Ardour",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Petition of Stability",
+          "points": 15,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "DARKFLIGHT PURSUIT",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Nightforged Battery",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Thundercowl Turbines",
+          "points": 15,
+          "nonCharacterOnly": true
         }
       ]
     },
@@ -277,6 +321,54 @@
       ]
     },
     {
+      "name": "INNER CIRCLE TASK FORCE",
+      "dp": 2,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Champion of the Deathwing",
+          "points": 15
+        },
+        {
+          "name": "Deathwing Assault",
+          "points": 30
+        },
+        {
+          "name": "Eye of the Unseen",
+          "points": 10
+        },
+        {
+          "name": "Singular Will",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "INTERROGATION CONCLAVE",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Inescapable Interrogation",
+          "points": 20
+        },
+        {
+          "name": "Limitless Zeal",
+          "points": 10
+        }
+      ]
+    },
+    {
       "name": "IRONSTORM SPEARHEAD",
       "dp": 2,
       "role": {
@@ -337,6 +429,34 @@
       ]
     },
     {
+      "name": "LION’S BLADE TASK FORCE",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Calibanite Armaments",
+          "points": 15
+        },
+        {
+          "name": "Fulgus Magna",
+          "points": 20
+        },
+        {
+          "name": "Lord of the Hunt",
+          "points": 15
+        },
+        {
+          "name": "Stalwart Champion",
+          "points": 15
+        }
+      ]
+    },
+    {
       "name": "ORBITAL ASSAULT FORCE",
       "dp": 2,
       "role": {
@@ -366,7 +486,7 @@
     },
     {
       "name": "STORMLANCE TASK FORCE",
-      "dp": 2,
+      "dp": 3,
       "role": {
         "name": "DISRUPTION",
         "color": "#1A3A5C"
@@ -410,6 +530,34 @@
         {
           "name": "Shroud Field",
           "points": 20
+        }
+      ]
+    },
+    {
+      "name": "UNFORGIVEN TASK FORCE",
+      "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Pennant of Remembrance",
+          "points": 10
+        },
+        {
+          "name": "Shroud of Heroes",
+          "points": 25
+        },
+        {
+          "name": "Stubborn Tenacity",
+          "points": 15
+        },
+        {
+          "name": "Weapons of the First Legion",
+          "points": 15
         }
       ]
     },
@@ -460,12 +608,51 @@
           "points": 20
         }
       ]
+    },
+    {
+      "name": "WRATH OF THE ROCK",
+      "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Ancient Weapons",
+          "points": 25
+        },
+        {
+          "name": "Deathwing Assault",
+          "points": 15
+        },
+        {
+          "name": "Lord of the Ravenwing",
+          "points": 10
+        },
+        {
+          "name": "Tempered in Battle (Aura)",
+          "points": 10
+        }
+      ]
     }
   ],
   "datasheets": [
     {
-      "name": "CORVUS BLACKSTAR",
-      "leader": null,
+      "name": "ASMODAI",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
+        ]
+      },
       "support": null,
       "sizes": [
         {
@@ -474,14 +661,67 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 70
             }
           ]
         }
       ]
     },
     {
-      "name": "DEATHWATCH TERMINATOR SQUAD",
+      "name": "AZRAEL",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BELIAL",
+      "leader": {
+        "attachesTo": [
+          "DEATHWING COMMAND SQUAD",
+          "DEATHWING KNIGHTS",
+          "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHWING KNIGHTS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -491,7 +731,29 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 240,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 260
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHWING TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
             }
           ]
         },
@@ -505,163 +767,20 @@
             }
           ]
         }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Thunder Hammer",
-          "points": 5
-        }
       ]
     },
     {
-      "name": "DEATHWATCH VETERANS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 190
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DECIMUS KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 190
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FORTIS KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 195,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 210
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INDOMITOR KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 275,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 290
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SPECTRUS KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 170,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 180
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TALONSTRIKE KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 265,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 280
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "WATCH CAPTAIN ARTEMIS",
+      "name": "EZEKIEL",
       "leader": {
         "attachesTo": [
-          "DEATHWATCH VETERANS",
-          "DECIMUS KILL TEAM",
-          "FORTIS KILL TEAM"
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
         ]
       },
       "support": null,
@@ -672,19 +791,226 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 75
             }
           ]
         }
       ]
     },
     {
-      "name": "WATCH MASTER",
+      "name": "INNER CIRCLE COMPANIONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND SPEEDER VENGEANCE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAZARUS",
       "leader": {
         "attachesTo": [
-          "DEATHWATCH VETERANS",
-          "DECIMUS KILL TEAM",
-          "FORTIS KILL TEAM"
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "TACTICAL SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LION EL’JONSON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 265
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEPHILIM JETFIGHTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAVENWING BLACK KNIGHTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAVENWING COMMAND SQUAD",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "OUTRIDER SQUAD",
+          "RAVENWING BLACK KNIGHTS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 115
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAVENWING DARKSHROUD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAVENWING DARK TALON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SAMMAEL",
+      "leader": {
+        "attachesTo": [
+          "OUTRIDER SQUAD",
+          "RAVENWING BLACK KNIGHTS"
         ]
       },
       "support": null,
@@ -778,6 +1104,7 @@
       "support": {
         "attachesTo": [
           "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING COMMAND SQUAD",
           "DEATHWING KNIGHTS",
           "DEATHWING TERMINATOR SQUAD",
           "TERMINATOR ASSAULT SQUAD",
@@ -1133,6 +1460,7 @@
       "leader": {
         "attachesTo": [
           "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING COMMAND SQUAD",
           "DEATHWING KNIGHTS",
           "DEATHWING TERMINATOR SQUAD",
           "TERMINATOR ASSAULT SQUAD",
@@ -1225,7 +1553,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 365
+              "points": 350
             }
           ]
         }
@@ -1277,6 +1605,7 @@
       "leader": {
         "attachesTo": [
           "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING COMMAND SQUAD",
           "DEATHWING KNIGHTS",
           "DEATHWING TERMINATOR SQUAD",
           "TERMINATOR ASSAULT SQUAD",
@@ -1377,6 +1706,33 @@
             {
               "minCount": 2,
               "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEVASTATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
             }
           ]
         }
@@ -1964,12 +2320,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 270
             }
           ]
         }
@@ -2059,6 +2415,7 @@
       "leader": {
         "attachesTo": [
           "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING COMMAND SQUAD",
           "DEATHWING KNIGHTS",
           "DEATHWING TERMINATOR SQUAD",
           "TERMINATOR ASSAULT SQUAD",
@@ -2073,7 +2430,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 75
             }
           ]
         }
@@ -2406,6 +2763,43 @@
       ]
     },
     {
+      "name": "SCOUT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "STERNGUARD VETERAN SQUAD",
       "leader": null,
       "support": null,
@@ -2572,6 +2966,23 @@
       ]
     },
     {
+      "name": "TACTICAL SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "TECHMARINE",
       "leader": {
         "attachesTo": [
@@ -2595,6 +3006,66 @@
             {
               "minCount": 1,
               "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR ASSAULT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Thunder Hammer",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320
             }
           ]
         }
@@ -2697,6 +3168,77 @@
           ]
         }
       ]
+    },
+    {
+      "name": "DEATHWING COMMAND SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 400
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATHWING STRIKEMASTER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "DEATHWING COMMAND SQUAD",
+          "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RAVENWING TALONMASTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

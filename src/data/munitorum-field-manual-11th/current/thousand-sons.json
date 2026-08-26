@@ -1,6 +1,6 @@
 {
   "faction": "THOUSAND SONS",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "CHANGEHOST OF DECEIT",
@@ -54,7 +54,7 @@
         },
         {
           "name": "Umbralefic Crystal",
-          "points": 20
+          "points": 30
         }
       ]
     },
@@ -446,7 +446,7 @@
             },
             {
               "minCount": 2,
-              "points": 340
+              "points": 350
             }
           ]
         }
@@ -477,7 +477,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 95
             }
           ]
         }
@@ -583,7 +583,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         }
@@ -776,12 +776,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
+              "points": 95,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 95
+              "points": 105
             }
           ]
         }
@@ -802,12 +802,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 110
             }
           ]
         }

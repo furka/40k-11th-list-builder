@@ -1,6 +1,6 @@
 {
   "faction": "BLACK TEMPLARS",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "ANVIL SIEGE FORCE",
@@ -917,7 +917,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105,
+              "points": 100,
               "maxCount": 2
             },
             {
@@ -932,7 +932,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
+              "points": 125,
               "maxCount": 2
             },
             {
@@ -947,12 +947,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 235,
+              "points": 225,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 250
+              "points": 245
             }
           ]
         },
@@ -962,12 +962,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 275
+              "points": 270
             }
           ]
         }
@@ -2180,12 +2180,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 250,
+              "points": 260,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 280
             }
           ]
         }

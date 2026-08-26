@@ -1,6 +1,6 @@
 {
   "faction": "EMPEROR’S CHILDREN",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "CARNIVAL OF EXCESS",
@@ -22,11 +22,11 @@
         },
         {
           "name": "Possessed Blade",
-          "points": 35
+          "points": 25
         },
         {
           "name": "Warp Walker",
-          "points": 35
+          "points": 30
         }
       ]
     },
@@ -405,7 +405,7 @@
             },
             {
               "minCount": 2,
-              "points": 350
+              "points": 340
             }
           ]
         }
@@ -525,12 +525,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90,
+              "points": 80,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 100
+              "points": 90
             }
           ]
         }
@@ -684,7 +684,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 90
             }
           ]
         }
@@ -711,7 +711,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190
+              "points": 180
             }
           ]
         }
@@ -728,12 +728,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 265,
+              "points": 255,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 270
             }
           ]
         }
@@ -750,7 +750,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         },

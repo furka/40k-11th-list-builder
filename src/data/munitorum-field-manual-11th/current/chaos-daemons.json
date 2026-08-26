@@ -1,6 +1,6 @@
 {
   "faction": "CHAOS DAEMONS",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "BLOOD LEGION",
@@ -56,8 +56,8 @@
       "name": "DAEMONIC INCURSION",
       "dp": 3,
       "role": {
-        "name": "DISRUPTION",
-        "color": "#1A3A5C"
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
       },
       "leader": null,
       "tags": [],
@@ -244,7 +244,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         },
@@ -254,7 +254,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 150
             }
           ]
         }
@@ -293,7 +293,7 @@
             },
             {
               "minCount": 3,
-              "points": 115
+              "points": 135
             }
           ]
         },
@@ -303,12 +303,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
+              "points": 200,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 210
+              "points": 240
             }
           ]
         }
@@ -445,7 +445,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 125
             }
           ]
         }
@@ -462,7 +467,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 100
             }
           ]
         }
@@ -593,7 +598,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
             }
           ]
         },
@@ -603,7 +613,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 205
             }
           ]
         }
@@ -827,12 +842,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 255,
+              "points": 265,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 280
             }
           ]
         }
@@ -963,7 +978,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 60,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 70
             }
           ]
         }
@@ -980,12 +1000,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 170
+              "points": 180
             }
           ]
         }
@@ -1046,7 +1066,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         },
@@ -1124,7 +1144,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 100
             }
           ]
         }
