@@ -1,6 +1,6 @@
 {
   "faction": "DEATHWATCH",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -1225,7 +1225,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 365
+              "points": 350
             }
           ]
         }
@@ -1964,12 +1964,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 270
             }
           ]
         }
@@ -2073,7 +2073,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 75
             }
           ]
         }

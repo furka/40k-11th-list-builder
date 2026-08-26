@@ -1,6 +1,6 @@
 {
   "faction": "WORLD EATERS",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "BERZERKER WARBAND",
@@ -655,7 +655,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160
+              "points": 170
             }
           ]
         },
@@ -665,7 +665,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 320
+              "points": 330
             }
           ]
         }

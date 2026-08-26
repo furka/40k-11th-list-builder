@@ -1,6 +1,6 @@
 {
   "faction": "TYRANIDS",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "AMBUSH PREDATORS",
@@ -181,7 +181,7 @@
         },
         {
           "name": "Synaptoprescience",
-          "points": 25,
+          "points": 30,
           "nonCharacterOnly": true
         }
       ]
@@ -404,12 +404,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 145
             }
           ]
         }
@@ -718,12 +718,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
+              "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 200
+              "points": 190
             }
           ]
         }
@@ -955,12 +955,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 45,
+              "points": 40,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 55
+              "points": 50
             }
           ]
         },
@@ -970,12 +970,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65,
+              "points": 70,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 75
+              "points": 80
             }
           ]
         },
@@ -985,12 +985,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 110
             }
           ]
         }
@@ -1348,12 +1348,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 170,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 190
+              "points": 180
             }
           ]
         }
@@ -1390,7 +1390,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160
+              "points": 170
             }
           ]
         }
@@ -1511,7 +1511,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200
+              "points": 190
             }
           ]
         }

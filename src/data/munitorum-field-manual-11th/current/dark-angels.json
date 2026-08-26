@@ -1,6 +1,6 @@
 {
   "faction": "DARK ANGELS",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -166,7 +166,7 @@
         },
         {
           "name": "Recon Hunter",
-          "points": 20
+          "points": 30
         }
       ]
     },
@@ -928,7 +928,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 85
             }
           ]
         },
@@ -938,7 +943,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
             }
           ]
         }
@@ -1021,7 +1031,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 105
             }
           ]
         }
@@ -2320,12 +2330,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 250,
+              "points": 260,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 280
             }
           ]
         }
@@ -2430,7 +2440,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 85
             }
           ]
         }

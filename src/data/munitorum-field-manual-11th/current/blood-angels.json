@@ -1,6 +1,6 @@
 {
   "faction": "BLOOD ANGELS",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -907,12 +907,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120,
+              "points": 115,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 135
+              "points": 130
             }
           ]
         },
@@ -966,12 +966,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
+              "points": 120,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 145
+              "points": 140
             }
           ]
         },
@@ -1037,7 +1037,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 120
             }
           ]
         }
@@ -2335,12 +2335,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 250,
+              "points": 260,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 280
             }
           ]
         }
@@ -2444,7 +2444,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 85
             }
           ]
         }

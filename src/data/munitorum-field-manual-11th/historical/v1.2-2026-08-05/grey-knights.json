@@ -1,6 +1,6 @@
 {
   "faction": "GREY KNIGHTS",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "ARGENT ASSAULT",
@@ -616,12 +616,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 270
             }
           ]
         }
@@ -671,7 +671,7 @@
             },
             {
               "minCount": 3,
-              "points": 210
+              "points": 185
             }
           ]
         },
@@ -686,7 +686,7 @@
             },
             {
               "minCount": 3,
-              "points": 255
+              "points": 230
             }
           ]
         },
@@ -701,7 +701,7 @@
             },
             {
               "minCount": 3,
-              "points": 400
+              "points": 375
             }
           ]
         },
@@ -711,12 +711,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 460,
+              "points": 450,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 500
+              "points": 465
             }
           ]
         }
@@ -739,12 +739,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105,
+              "points": 110,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 115
+              "points": 120
             }
           ]
         },
@@ -754,12 +754,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 220,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 230
             }
           ]
         }
@@ -805,6 +805,12 @@
               "points": 270
             }
           ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Psycannon",
+          "points": 5
         }
       ]
     },

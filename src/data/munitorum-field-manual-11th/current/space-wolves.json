@@ -1,6 +1,6 @@
 {
   "faction": "SPACE WOLVES",
-  "siteVersion": "v1.2",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -859,7 +859,7 @@
             },
             {
               "minCount": 3,
-              "points": 110
+              "points": 130
             }
           ]
         },
@@ -874,7 +874,7 @@
             },
             {
               "minCount": 3,
-              "points": 210
+              "points": 230
             }
           ]
         }
@@ -1032,12 +1032,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 155,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 165
+              "points": 195
             }
           ]
         },
@@ -1047,12 +1047,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 300,
+              "points": 310,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 315
+              "points": 350
             }
           ]
         }
@@ -2424,12 +2424,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 250,
+              "points": 260,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 280
             }
           ]
         }
@@ -2536,7 +2536,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 85
             }
           ]
         }

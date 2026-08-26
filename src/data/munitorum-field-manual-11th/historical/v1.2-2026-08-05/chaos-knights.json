@@ -1,6 +1,6 @@
 {
   "faction": "CHAOS KNIGHTS",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "BASTIONS OF TYRANNY",
@@ -58,7 +58,9 @@
         "color": "#008080"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: WAR DOGS"
+      ],
       "enhancements": [
         {
           "name": "Final Howl",
@@ -86,7 +88,9 @@
         "color": "#008080"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: WAR DOGS"
+      ],
       "enhancements": [
         {
           "name": "Snarling Rivalry",
@@ -291,7 +295,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 385,
+              "points": 395,
               "maxCount": 1
             },
             {
@@ -335,7 +339,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 385,
+              "points": 395,
               "maxCount": 1
             },
             {
@@ -445,12 +449,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 360,
+              "points": 380,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 390
+              "points": 400
             }
           ]
         }
@@ -462,7 +466,7 @@
         },
         {
           "name": "Despoiler battle cannon",
-          "points": 10
+          "points": 15
         }
       ]
     },
@@ -477,12 +481,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 355,
+              "points": 365,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 370
+              "points": 380
             }
           ]
         }
@@ -543,7 +547,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135
+              "points": 140
             }
           ]
         }
@@ -594,7 +598,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 145
+              "points": 155
             }
           ]
         }

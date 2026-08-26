@@ -1,6 +1,6 @@
 {
   "faction": "T’AU EMPIRE",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "ADVANCED ACQUISITION CADRE",
@@ -154,7 +154,7 @@
         },
         {
           "name": "Strike Swiftly",
-          "points": 45
+          "points": 35
         }
       ]
     },
@@ -437,12 +437,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 90,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 110
+              "points": 100
             }
           ]
         }
@@ -1111,7 +1111,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230
+              "points": 220
             }
           ]
         }
@@ -1189,12 +1189,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 395,
+              "points": 375,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 445
+              "points": 425
             }
           ]
         }

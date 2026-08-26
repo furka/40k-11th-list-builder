@@ -1,6 +1,6 @@
 {
   "faction": "AELDARI",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.2",
   "detachments": [
     {
       "name": "ARMOURED WARHOST",
@@ -26,8 +26,8 @@
       "name": "ASPECT HOST",
       "dp": 3,
       "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
       },
       "leader": null,
       "tags": [],
@@ -641,7 +641,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         },
@@ -651,7 +651,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200
+              "points": 210
             }
           ]
         }
@@ -690,7 +690,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 75
             }
           ]
         },
@@ -700,7 +700,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 150
             }
           ]
         }
@@ -738,7 +738,8 @@
       "leader": {
         "attachesTo": [
           "GUARDIAN DEFENDERS",
-          "STORM GUARDIANS"
+          "STORM GUARDIANS",
+          "WARLOCK CONCLAVE"
         ]
       },
       "support": null,
@@ -749,7 +750,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 130
             }
           ]
         }
@@ -777,7 +778,8 @@
       "leader": {
         "attachesTo": [
           "GUARDIAN DEFENDERS",
-          "STORM GUARDIANS"
+          "STORM GUARDIANS",
+          "WARLOCK CONCLAVE"
         ]
       },
       "support": null,
@@ -1243,7 +1245,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 55
             }
           ]
         }
@@ -1308,7 +1310,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 110
             }
           ]
         }
@@ -1438,7 +1440,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 40
+              "points": 45
             }
           ]
         }
@@ -1446,13 +1448,13 @@
     },
     {
       "name": "WARLOCK CONCLAVE",
-      "leader": null,
-      "support": {
+      "leader": {
         "attachesTo": [
           "GUARDIAN DEFENDERS",
           "STORM GUARDIANS"
         ]
       },
+      "support": null,
       "sizes": [
         {
           "name": "2 models",
@@ -1478,12 +1480,12 @@
     },
     {
       "name": "WARLOCK SKYRUNNERS",
-      "leader": null,
-      "support": {
+      "leader": {
         "attachesTo": [
           "WINDRIDERS"
         ]
       },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",
@@ -1491,7 +1493,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 45
+              "points": 55
             }
           ]
         },
@@ -1555,7 +1557,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         },
@@ -1912,18 +1914,19 @@
     },
     {
       "name": "THE VISARCH",
-      "leader": null,
-      "support": {
+      "leader": {
         "attachesTo": [
           "CORSAIR REAVER BAND",
           "CORSAIR VOIDREAVERS",
           "CORSAIR VOIDSCARRED",
           "GUARDIAN DEFENDERS",
           "STORM GUARDIANS",
+          "YNNARI INCUBI",
           "YNNARI KABALITE WARRIORS",
           "YNNARI WYCHES"
         ]
       },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",
@@ -1931,7 +1934,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 90
             }
           ]
         }
