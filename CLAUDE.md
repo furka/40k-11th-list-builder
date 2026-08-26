@@ -113,7 +113,8 @@ There are **two independent scrapers**:
 - **ArmyList.vue**: Left panel showing selected units; supports drag-to-reorder via the pointer-event drag stores; visually scales based on points.
 - **ArmyCodex.vue**: Right panel showing available units filtered by faction/detachment with grouping and sorting; also applies the conditional-battleline overlay.
 - **DataSheet.vue**: Individual unit card showing available sizes/options.
-- **CodexOptions.vue**: Right-panel options menu (sort order, Legends toggle, available-only toggle, points-changes toggle).
+- **CodexOptions.vue**: Right-panel options menu (sort order, Legends toggle, available-only toggle, Keywords toggle).
+- **VersionBar.vue**: Bottom bar holding the per-list MFM version dropdown, the points-changes toggle (shown only when the selected MFM has a predecessor to diff against), and the app version / links.
 - **BattlelineOverridesModal.vue**: Faction-wide datasheet picker for manually promoting units to BATTLELINE (writes to `armyListStore.bonusBattleline`).
 - **PrintableArmyList.vue**: Print-only view (hidden on screen, shown via CSS `@media print`).
 

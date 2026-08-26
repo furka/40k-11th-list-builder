@@ -9,15 +9,9 @@ import {
   SORT_EXPENSIVE_FIRST,
 } from "../data/constants";
 import { useAppStore } from "../stores/app";
-import { useMfmStore } from "../stores/mfm";
 import { bypassTitle } from "../utils/bypass-title";
 
 const appStore = useAppStore();
-const mfmStore = useMfmStore();
-
-const hasPreviousVersion = computed(
-  () => !!mfmStore.getPreviousMFM(mfmStore.MFM.CURRENT)
-);
 
 const freeAttachLabel = computed(() =>
   appStore.freeAttach ? "Restrictions Bypassed" : "Restrictions Enforced"
@@ -27,9 +21,6 @@ const editCollectionLabel = computed(() =>
 );
 const legendsLabel = computed(() =>
   appStore.showLegends ? "Legends Visible" : "Legends Hidden"
-);
-const pointsChangesLabel = computed(() =>
-  appStore.showPointsChanges ? "Points Changes Visible" : "Points Changes Hidden"
 );
 const keywordsLabel = computed(() =>
   appStore.showKeywords ? "Keywords Visible" : "Keywords Hidden"
@@ -62,13 +53,6 @@ const keywordsLabel = computed(() =>
         <ToggleSwitch
           v-model="appStore.showLegends"
           :label="legendsLabel"
-        />
-
-        <ToggleSwitch
-          v-if="hasPreviousVersion"
-          v-model="appStore.showPointsChanges"
-          :label="pointsChangesLabel"
-          tooltip="Show points changes compared to previous MFM version"
         />
 
         <ToggleSwitch

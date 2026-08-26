@@ -3,12 +3,30 @@ import { computed } from "vue";
 import PACKAGE from "../../package.json";
 import GithubIcon from "../assets/github-icon.svg";
 import DiscordIcon from "../assets/discord-icon.svg";
+import { useAppStore } from "../stores/app";
 import { useArmyListStore } from "../stores/armyList";
+import { useCodexStore } from "../stores/codex";
 import { useMfmStore } from "../stores/mfm";
 import MfmUpdateModal from "./MfmUpdateModal.vue";
+import ToggleSwitch from "./ToggleSwitch.vue";
 
+const appStore = useAppStore();
 const armyListStore = useArmyListStore();
+const codexStore = useCodexStore();
 const mfmStore = useMfmStore();
+
+// Mirrors DataSheet.vue's `displayedMFM`: the codex renders whichever MFM the
+// list is pinned to, so the toggle is only meaningful when THAT version has a
+// predecessor to diff against — not merely when the globally-latest one does.
+const displayedMFM = computed(
+  () => codexStore.currentMFM || mfmStore.MFM.CURRENT
+);
+const hasPreviousVersion = computed(
+  () => !!mfmStore.getPreviousMFM(displayedMFM.value)
+);
+const pointsChangesLabel = computed(() =>
+  appStore.showPointsChanges ? "Points Changes Visible" : "Points Changes Hidden"
+);
 
 const availableMFMVersions = computed(() => {
   const versions = Object.keys(mfmStore.MFM)
@@ -44,6 +62,16 @@ const availableMFMVersions = computed(() => {
           </option>
         </select>
       </label>
+      <!--
+        Placed before the (conditional) update badge so the toggle keeps a
+        stable position when the badge mounts and unmounts.
+      -->
+      <ToggleSwitch
+        v-if="hasPreviousVersion"
+        v-model="appStore.showPointsChanges"
+        :label="pointsChangesLabel"
+        tooltip="Show points changes compared to previous MFM version"
+      />
       <MfmUpdateModal
         v-if="mfmStore.isListOutdated(armyListStore.toObject())"
         class="version-bar__update"
@@ -105,6 +133,13 @@ const availableMFMVersions = computed(() => {
     align-items: center;
     gap: 4px;
     white-space: nowrap;
+  }
+
+  // ToggleSwitch declares its own 15px; the bar runs at 12px. The parent's
+  // nested selector out-specifies the child's scoped rule because a child
+  // component's root element inherits this component's scope attribute.
+  .toggle-switch {
+    font-size: 12px;
   }
 
   select {
