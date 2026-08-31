@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "acc22aa65cab428c669e0840a7e1724a4f2d8a86",
-  "_committedAt": "2026-08-24T11:11:20Z",
-  "_generatedAt": "2026-08-24T14:46:52.454Z",
+  "_sha": "e4d52b40a09b93dfe0827482d7f60e388b10a7c1",
+  "_committedAt": "2026-08-31T19:50:45Z",
+  "_generatedAt": "2026-08-31T19:53:34.305Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -71,6 +71,7 @@
     ],
     "Celestian Insidiants": [
       "ADEPTA SORORITAS",
+      "CELESTIAN",
       "CELESTIAN INSIDIANTS",
       "GRENADES",
       "IMPERIUM",
@@ -88,6 +89,7 @@
     ],
     "Celestian Sacresants": [
       "ADEPTA SORORITAS",
+      "CELESTIAN",
       "CELESTIAN SACRESANTS",
       "GRENADES",
       "IMPERIUM",
@@ -742,9 +744,9 @@
       "CHARACTER",
       "CYBERNETICA DATASMITH",
       "IMPERIUM",
-      "INFANTRY",
       "LEGIO CYBERNETICA",
-      "TECH-PRIEST"
+      "TECH-PRIEST",
+      "VEHICLE"
     ],
     "Fulgurite Electro-Priests": [
       "ADEPTUS MECHANICUS",
@@ -1125,7 +1127,6 @@
       "AUTARCH SKYRUNNER",
       "CHARACTER",
       "FLY",
-      "FRAME",
       "LEADER",
       "MOUNTED"
     ],
@@ -1190,14 +1191,14 @@
       "EXODITE",
       "LEADER",
       "MOBILE",
-      "MOUNTED"
+      "MOUNTED",
+      "YNNARI"
     ],
     "Cobra": [
       "AELDARI",
       "ASURYANI",
       "COBRA",
       "FLY",
-      "FRAME",
       "TITANIC",
       "VEHICLE"
     ],
@@ -1206,7 +1207,6 @@
       "ANHRATHE",
       "CORSAIR CLOUD DANCER BAND",
       "CORSAIRS AND TRAVELLING PLAYERS",
-      "FRAME",
       "GRENADES",
       "MOUNTED"
     ],
@@ -1326,7 +1326,8 @@
       "DRAGON KNIGHTS",
       "EXODITE",
       "MOBILE",
-      "MOUNTED"
+      "MOUNTED",
+      "YNNARI"
     ],
     "Drazhar": [
       "AELDARI",
@@ -1404,7 +1405,6 @@
       "ASURYANI",
       "FIRESTORM",
       "FLY",
-      "FRAME",
       "VEHICLE"
     ],
     "Flesh Crafter [Crucible]": [
@@ -1495,7 +1495,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "HORNET",
       "VEHICLE"
     ],
@@ -1604,7 +1603,8 @@
       "EXODITE",
       "LEYSTALKER",
       "MOBILE",
-      "MOUNTED"
+      "MOUNTED",
+      "YNNARI"
     ],
     "Lhykhis": [
       "AELDARI",
@@ -1623,7 +1623,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "LYNX",
       "VEHICLE"
     ],
@@ -1658,7 +1657,6 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "NIGHTWING",
       "VEHICLE"
     ],
@@ -1678,7 +1676,6 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "PHOENIX",
       "VEHICLE"
     ],
@@ -1723,7 +1720,6 @@
       "AIRCRAFT",
       "DRUKHARI",
       "FLY",
-      "FRAME",
       "RAVEN STRIKE FIGHTER",
       "VEHICLE"
     ],
@@ -1739,7 +1735,6 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
-      "FRAME",
       "KABAL",
       "REAPER",
       "VEHICLE"
@@ -1768,7 +1763,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "SCORPION",
       "TITANIC",
       "VEHICLE"
@@ -1926,7 +1920,8 @@
       "MOUNTED",
       "PSYKER",
       "STONESINGER",
-      "SUPPORT"
+      "SUPPORT",
+      "YNNARI"
     ],
     "Storm Guardians": [
       "AELDARI",
@@ -1978,7 +1973,6 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
-      "FRAME",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -1987,7 +1981,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
-      "LEADER",
+      "SUPPORT",
       "THE VISARCH",
       "YNNARI"
     ],
@@ -2038,7 +2032,6 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "TITANIC",
       "VAMPIRE HUNTER",
       "VEHICLE"
@@ -2047,7 +2040,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "TITANIC",
       "TRANSPORT",
       "VAMPIRE RAIDER",
@@ -2121,8 +2113,8 @@
       "AELDARI",
       "ASURYANI",
       "INFANTRY",
-      "LEADER",
       "PSYKER",
+      "SUPPORT",
       "WARLOCK",
       "WARLOCK CONCLAVE",
       "YNNARI"
@@ -2132,9 +2124,9 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "LEADER",
       "MOUNTED",
       "PSYKER",
+      "SUPPORT",
       "WARLOCK",
       "WARLOCK SKYRUNNERS",
       "YNNARI"
@@ -2143,7 +2135,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "VEHICLE",
       "WARP HUNTER"
     ],
@@ -2353,7 +2344,6 @@
       "AQUILA LANDER",
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -2399,7 +2389,6 @@
       "ARVUS LIGHTER",
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
@@ -3139,7 +3128,6 @@
       "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "MARAUDER BOMBER",
       "TITANIC",
@@ -3149,7 +3137,6 @@
       "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "MARAUDER DESTROYER",
       "TITANIC",
@@ -3574,7 +3561,6 @@
     "Valkyrie Sky Talon": [
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VALKYRIE SKY TALON",
@@ -3582,7 +3568,6 @@
     ],
     "Vendetta Gunship": [
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE",
@@ -3592,7 +3577,6 @@
       "AIRCRAFT",
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "VEHICLE",
       "VOSS-PATTERN LIGHTNING"
@@ -3600,7 +3584,6 @@
     "Vulture Gunship": [
       "ASTRA MILITARUM",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "VEHICLE",
       "VULTURE GUNSHIP"
@@ -11152,7 +11135,6 @@
       "AUTARCH SKYRUNNER",
       "CHARACTER",
       "FLY",
-      "FRAME",
       "LEADER",
       "MOUNTED"
     ],
@@ -11217,14 +11199,14 @@
       "EXODITE",
       "LEADER",
       "MOBILE",
-      "MOUNTED"
+      "MOUNTED",
+      "YNNARI"
     ],
     "Cobra": [
       "AELDARI",
       "ASURYANI",
       "COBRA",
       "FLY",
-      "FRAME",
       "TITANIC",
       "VEHICLE"
     ],
@@ -11233,7 +11215,6 @@
       "ANHRATHE",
       "CORSAIR CLOUD DANCER BAND",
       "CORSAIRS AND TRAVELLING PLAYERS",
-      "FRAME",
       "GRENADES",
       "MOUNTED"
     ],
@@ -11353,7 +11334,8 @@
       "DRAGON KNIGHTS",
       "EXODITE",
       "MOBILE",
-      "MOUNTED"
+      "MOUNTED",
+      "YNNARI"
     ],
     "Drazhar": [
       "AELDARI",
@@ -11431,7 +11413,6 @@
       "ASURYANI",
       "FIRESTORM",
       "FLY",
-      "FRAME",
       "VEHICLE"
     ],
     "Flesh Crafter [Crucible]": [
@@ -11522,7 +11503,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "HORNET",
       "VEHICLE"
     ],
@@ -11631,7 +11611,8 @@
       "EXODITE",
       "LEYSTALKER",
       "MOBILE",
-      "MOUNTED"
+      "MOUNTED",
+      "YNNARI"
     ],
     "Lhykhis": [
       "AELDARI",
@@ -11650,7 +11631,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "LYNX",
       "VEHICLE"
     ],
@@ -11685,7 +11665,6 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "NIGHTWING",
       "VEHICLE"
     ],
@@ -11705,7 +11684,6 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "PHOENIX",
       "VEHICLE"
     ],
@@ -11750,7 +11728,6 @@
       "AIRCRAFT",
       "DRUKHARI",
       "FLY",
-      "FRAME",
       "RAVEN STRIKE FIGHTER",
       "VEHICLE"
     ],
@@ -11766,7 +11743,6 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
-      "FRAME",
       "KABAL",
       "REAPER",
       "VEHICLE"
@@ -11795,7 +11771,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "SCORPION",
       "TITANIC",
       "VEHICLE"
@@ -11953,7 +11928,8 @@
       "MOUNTED",
       "PSYKER",
       "STONESINGER",
-      "SUPPORT"
+      "SUPPORT",
+      "YNNARI"
     ],
     "Storm Guardians": [
       "AELDARI",
@@ -12005,7 +11981,6 @@
       "AELDARI",
       "DRUKHARI",
       "FLY",
-      "FRAME",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -12014,7 +11989,7 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
-      "LEADER",
+      "SUPPORT",
       "THE VISARCH",
       "YNNARI"
     ],
@@ -12065,7 +12040,6 @@
       "AIRCRAFT",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "TITANIC",
       "VAMPIRE HUNTER",
       "VEHICLE"
@@ -12074,7 +12048,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "TITANIC",
       "TRANSPORT",
       "VAMPIRE RAIDER",
@@ -12148,8 +12121,8 @@
       "AELDARI",
       "ASURYANI",
       "INFANTRY",
-      "LEADER",
       "PSYKER",
+      "SUPPORT",
       "WARLOCK",
       "WARLOCK CONCLAVE",
       "YNNARI"
@@ -12159,9 +12132,9 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "LEADER",
       "MOUNTED",
       "PSYKER",
+      "SUPPORT",
       "WARLOCK",
       "WARLOCK SKYRUNNERS",
       "YNNARI"
@@ -12170,7 +12143,6 @@
       "AELDARI",
       "ASURYANI",
       "FLY",
-      "FRAME",
       "VEHICLE",
       "WARP HUNTER"
     ],
@@ -15059,6 +15031,7 @@
       "YAEGIRS"
     ],
     "Hesyr": [],
+    "Ironkin Assistant": [],
     "Ironkin Steeljacks with Heavy Volkanite Disintegrators": [
       "INFANTRY",
       "IRONKIN STEELJACKS",
@@ -15071,7 +15044,6 @@
       "IRONKIN STEELJACKS WITH MELEE WEAPONS",
       "LEAGUES OF VOTANN"
     ],
-    "Ironkyn Assistant": [],
     "Kapricus Carrier": [
       "CARRIER",
       "DEDICATED TRANSPORT",
@@ -15082,7 +15054,6 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Kapricus Defender": [],
     "Kapricus Defenders": [
       "DEFENDERS",
       "FLY",
@@ -15461,7 +15432,6 @@
     "Night Shroud": [
       "AIRCRAFT",
       "FLY",
-      "FRAME",
       "NECRONS",
       "NIGHT SHROUD",
       "VEHICLE"
@@ -19319,7 +19289,6 @@
       "AIRCRAFT",
       "BARRACUDA",
       "FLY",
-      "FRAME",
       "NON-KROOT",
       "T’AU EMPIRE",
       "VEHICLE"
@@ -19619,7 +19588,6 @@
       "CHARACTER",
       "EPIC HERO",
       "FLY",
-      "FRAME",
       "LONGSTRIKE",
       "NON-KROOT",
       "T’AU EMPIRE",
@@ -19640,7 +19608,6 @@
     "Orca Dropship": [
       "AIRCRAFT",
       "FLY",
-      "FRAME",
       "NON-KROOT",
       "ORCA DROPSHIP",
       "TITANIC",
@@ -19775,7 +19742,6 @@
     ],
     "TX42 Piranha": [
       "FLY",
-      "FRAME",
       "NON-KROOT",
       "TX42 PIRANHA",
       "T’AU EMPIRE",
@@ -19800,7 +19766,6 @@
     ],
     "Tetras": [
       "FLY",
-      "FRAME",
       "MARKERLIGHT",
       "NON-KROOT",
       "TETRAS",
@@ -20388,7 +20353,6 @@
     ],
     "Harridan": [
       "FLY",
-      "FRAME",
       "GREAT DEVOURER",
       "HARRIDAN",
       "MONSTER",
