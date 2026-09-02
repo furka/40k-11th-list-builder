@@ -1,10 +1,38 @@
 {
-  "faction": "THOUSAND SONS",
-  "siteVersion": "v1.4",
+  "faction": "DEATH GUARD",
+  "siteVersion": "v1.3",
   "detachments": [
     {
-      "name": "CHANGEHOST OF DECEIT",
+      "name": "CHAMPIONS OF CONTAGION",
       "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Cornucophagus",
+          "points": 35
+        },
+        {
+          "name": "Final Ingredient",
+          "points": 20
+        },
+        {
+          "name": "Needle of Nurgle",
+          "points": 25
+        },
+        {
+          "name": "Visions of Virulence",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "CONTAGION ENGINES",
+      "dp": 1,
       "role": {
         "name": "RECONNAISSANCE",
         "color": "#008080"
@@ -13,26 +41,20 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Diabolic Savant",
-          "points": 20
+          "name": "Lancet of the Worldsore",
+          "points": 15,
+          "nonCharacterOnly": true
         },
         {
-          "name": "Duplicitous Malediction",
-          "points": 15
-        },
-        {
-          "name": "Nethershriek Mind-Eater",
-          "points": 10
-        },
-        {
-          "name": "Tome of True Names",
-          "points": 20
+          "name": "Parasitic Woe‑reaper",
+          "points": 15,
+          "nonCharacterOnly": true
         }
       ]
     },
     {
-      "name": "GRAND COVEN",
-      "dp": 3,
+      "name": "DEATH LORD’S CHOSEN",
+      "dp": 2,
       "role": {
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
@@ -41,102 +63,96 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Eldritch Vortex of E’Taph",
-          "points": 35
+          "name": "Face of Death",
+          "points": 10
         },
         {
-          "name": "Incandaeum",
-          "points": 15
-        },
-        {
-          "name": "Lord of Forbidden Lore",
+          "name": "Helm of The Fly King",
           "points": 20
         },
         {
-          "name": "Umbralefic Crystal",
+          "name": "Vile Vigour",
+          "points": 15
+        },
+        {
+          "name": "Warprot Talisman",
           "points": 30
         }
       ]
     },
     {
-      "name": "HEXWARP THRALLBAND",
-      "dp": 3,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Arcane Might",
-          "points": 20
-        },
-        {
-          "name": "Empowered Manifestation",
-          "points": 20
-        },
-        {
-          "name": "Empyric Onslaught",
-          "points": 25
-        },
-        {
-          "name": "Noctilith Mantle",
-          "points": 15
-        }
-      ]
-    },
-    {
-      "name": "RITUAL OF REGENERATION",
+      "name": "FLYBLOWN HOST",
       "dp": 1,
       "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
       },
       "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Curse of Life",
-          "points": 20
+          "name": "Insectile Murmuration",
+          "points": 15,
+          "nonCharacterOnly": true
         },
         {
-          "name": "Eruption of Vitality",
-          "points": 35
+          "name": "Plagueveil",
+          "points": 15,
+          "nonCharacterOnly": true
         }
       ]
     },
     {
-      "name": "RUBRICAE PHALANX",
-      "dp": 3,
+      "name": "MORTARION’S HAMMER",
+      "dp": 2,
       "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
       },
       "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Arcane Thralls",
-          "points": 5
+          "name": "Bilemaw Blight",
+          "points": 10
         },
         {
-          "name": "Lord of the Rubricae",
+          "name": "Eye of Affliction",
+          "points": 20
+        },
+        {
+          "name": "Shriekworm Familiar",
           "points": 15
         },
         {
-          "name": "Risen Rubricae",
+          "name": "Tendrilous Emissions",
           "points": 30
+        }
+      ]
+    },
+    {
+      "name": "PARAGONS OF PUTRESCENCE",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Host of the Hybridised Pox",
+          "points": 40
         },
         {
-          "name": "Stave Abominus",
+          "name": "Rejuvenating Swarm",
           "points": 20
         }
       ]
     },
     {
-      "name": "SEKHETAR COHORT",
-      "dp": 1,
+      "name": "SHAMBLEROT VECTORIUM",
+      "dp": 2,
       "role": {
         "name": "DISRUPTION",
         "color": "#1A3A5C"
@@ -145,109 +161,86 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Occulus Infernum",
-          "points": 20
-        },
-        {
-          "name": "Walking Rampart",
-          "points": 30
-        }
-      ]
-    },
-    {
-      "name": "SERVANTS OF CHANGE",
-      "dp": 1,
-      "role": {
-        "name": "RECONNAISSANCE",
-        "color": "#008080"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: MUTANT"
-      ],
-      "enhancements": [
-        {
-          "name": "Thicket of Bladed Bone",
-          "points": 10,
-          "nonCharacterOnly": true
-        },
-        {
-          "name": "Unravelled Fates",
+          "name": "Lord of the Walking Pox",
           "points": 15
+        },
+        {
+          "name": "Sorrowsyphon",
+          "points": 10
+        },
+        {
+          "name": "Talisman of Burgeoning",
+          "points": 25
+        },
+        {
+          "name": "Witherbone Pipes",
+          "points": 25
         }
       ]
     },
     {
-      "name": "WARPFORGED CABAL",
+      "name": "TALLYBAND SUMMONERS",
       "dp": 2,
       "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
       },
       "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Biomechanical Mutation",
-          "points": 15
-        },
-        {
-          "name": "Perplexing Cloak",
+          "name": "Beckoning Blight",
           "points": 20
         },
         {
-          "name": "Warp-Cursed Runemaster",
+          "name": "Entropic Knell",
+          "points": 15
+        },
+        {
+          "name": "Fell Harvester",
           "points": 10
         },
         {
-          "name": "Warp Syphon",
-          "points": 5
+          "name": "Tome of Bounteous Blessings",
+          "points": 20
         }
       ]
     },
     {
-      "name": "WARPMELD PACT",
-      "dp": 2,
+      "name": "VIRULENT VECTORIUM",
+      "dp": 3,
       "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
       },
-      "leader": {
-        "attachesTo": [
-          "TZAANGORS"
-        ]
-      },
-      "tags": [
-        "UNIQUE: MUTANT"
-      ],
+      "leader": null,
+      "tags": [],
       "enhancements": [
         {
-          "name": "Bray Lord",
-          "points": 15
+          "name": "Arch Contaminator",
+          "points": 25
         },
         {
-          "name": "Diamond of Distortion",
-          "points": 20
-        },
-        {
-          "name": "Flowing Flesh",
+          "name": "Daemon Weapon of Nurgle",
           "points": 10
         },
         {
-          "name": "Warpmeld Dagger",
-          "points": 10
+          "name": "Furnace of Plagues",
+          "points": 25
+        },
+        {
+          "name": "Revolting Regeneration",
+          "points": 30
         }
       ]
     }
   ],
   "datasheets": [
     {
-      "name": "AHRIMAN",
+      "name": "BIOLOGUS PUTRIFIER",
       "leader": {
         "attachesTo": [
-          "RUBRIC MARINES",
-          "TZAANGOR ENLIGHTENED",
-          "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS"
+          "PLAGUE MARINES"
         ]
       },
       "support": null,
@@ -258,7 +251,44 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLIGHTLORD TERMINATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        },
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 360
             }
           ]
         }
@@ -297,12 +327,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 145
             }
           ]
         }
@@ -319,12 +349,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 145,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 155
             }
           ]
         }
@@ -341,12 +371,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80,
+              "points": 75,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 90
+              "points": 85
             }
           ]
         }
@@ -363,14 +393,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 80
             }
           ]
         }
       ]
     },
     {
-      "name": "CHAOS VINDICATOR",
+      "name": "DAEMON PRINCE OF NURGLE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -380,11 +410,6 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 185,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
               "points": 195
             }
           ]
@@ -392,7 +417,7 @@
       ]
     },
     {
-      "name": "DAEMON PRINCE OF TZEENTCH",
+      "name": "DAEMON PRINCE OF NURGLE WITH WINGS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -409,22 +434,37 @@
       ]
     },
     {
-      "name": "DAEMON PRINCE OF TZEENTCH WITH WINGS",
+      "name": "DEATHSHROUD TERMINATORS",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
-              "maxCount": 1
+              "points": 160,
+              "maxCount": 2
             },
             {
-              "minCount": 2,
-              "points": 180
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 305,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 315
             }
           ]
         }
@@ -453,61 +493,17 @@
       ],
       "wargearOptions": [
         {
-          "name": "Hades lascannon",
+          "name": "Heavy reaper autocannon",
           "points": 15
         },
         {
-          "name": "Heavy reaper autocannon",
+          "name": "Hades lascannon",
           "points": 15
         }
       ]
     },
     {
-      "name": "EXALTED SORCERER",
-      "leader": {
-        "attachesTo": [
-          "RUBRIC MARINES"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "EXALTED SORCERER ON DISC OF TZEENTCH",
-      "leader": {
-        "attachesTo": [
-          "RUBRIC MARINES",
-          "TZAANGOR ENLIGHTENED",
-          "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FORGEFIEND",
+      "name": "FOETID BLOAT-DRONE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -517,20 +513,57 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 145
+              "points": 110
             }
           ]
         }
-      ],
-      "wargearOptions": [
+      ]
+    },
+    {
+      "name": "FOETID BLOAT-DRONE WITH HEAVY BLIGHT LAUNCHER",
+      "leader": null,
+      "support": null,
+      "sizes": [
         {
-          "name": "Ectoplasma cannon",
-          "points": 5
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FOUL BLIGHTSPAWN",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
         }
       ]
     },
@@ -552,8 +585,12 @@
       ]
     },
     {
-      "name": "HELDRAKE",
-      "leader": null,
+      "name": "ICON BEARER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
       "support": null,
       "sizes": [
         {
@@ -562,17 +599,61 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 175
+              "points": 45
             }
           ]
         }
       ]
     },
     {
-      "name": "INFERNAL MASTER",
+      "name": "LORD OF CONTAGION",
       "leader": {
         "attachesTo": [
-          "RUBRIC MARINES"
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD OF POXES",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD OF VIRULENCE",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
         ]
       },
       "support": null,
@@ -590,7 +671,29 @@
       ]
     },
     {
-      "name": "MAGNUS THE RED",
+      "name": "MALIGNANT PLAGUECASTER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES",
+          "POXWALKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MIASMIC MALIGNIFIER",
       "leader": null,
       "support": null,
       "sizes": [
@@ -600,14 +703,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 455
+              "points": 105
             }
           ]
         }
       ]
     },
     {
-      "name": "MAULERFIEND",
+      "name": "MORTARION",
       "leader": null,
       "support": null,
       "sizes": [
@@ -617,19 +720,63 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 130
+              "points": 375
             }
           ]
         }
       ]
     },
     {
-      "name": "MUTALITH VORTEX BEAST",
+      "name": "MYPHITIC BLIGHT-HAULERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NOXIOUS BLIGHTBRINGER",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES",
+          "POXWALKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUEBURST CRAWLER",
       "leader": null,
       "support": null,
       "sizes": [
@@ -640,47 +787,10 @@
             {
               "minCount": 1,
               "points": 170,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 190
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "RUBRIC MARINES",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100,
-              "maxCount": 3
-            },
-            {
-              "minCount": 4,
-              "points": 110
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 190,
-              "maxCount": 3
-            },
-            {
-              "minCount": 4,
+              "minCount": 2,
               "points": 200
             }
           ]
@@ -688,7 +798,7 @@
       ]
     },
     {
-      "name": "SCARAB OCCULT TERMINATORS",
+      "name": "PLAGUE MARINES",
       "leader": null,
       "support": null,
       "sizes": [
@@ -698,12 +808,17 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
-              "maxCount": 2
-            },
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "7 models",
+          "models": 7,
+          "tiers": [
             {
-              "minCount": 3,
-              "points": 195
+              "minCount": 1,
+              "points": 125
             }
           ]
         },
@@ -713,59 +828,17 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 385,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 400
+              "points": 180
             }
           ]
         }
       ]
     },
     {
-      "name": "SEKHETAR ROBOTS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "4 models",
-          "models": 4,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 175,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 190
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SORCERER",
+      "name": "PLAGUE SURGEON",
       "leader": {
         "attachesTo": [
-          "RUBRIC MARINES"
+          "PLAGUE MARINES"
         ]
       },
       "support": null,
@@ -773,102 +846,17 @@
         {
           "name": "1 model",
           "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 105
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SORCERER IN TERMINATOR ARMOUR",
-      "leader": {
-        "attachesTo": [
-          "SCARAB OCCULT TERMINATORS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 110
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TZAANGOR ENLIGHTENED",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
           "tiers": [
             {
               "minCount": 1,
               "points": 50
             }
           ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
         }
       ]
     },
     {
-      "name": "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TZAANGORS",
+      "name": "POXWALKERS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -878,80 +866,13 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 65
             }
           ]
         },
         {
           "name": "20 models",
           "models": 20,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 145
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TZAANGOR SHAMAN",
-      "leader": {
-        "attachesTo": [
-          "TZAANGOR ENLIGHTENED",
-          "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS",
-          "TZAANGORS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BLUE HORRORS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FLAMERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
           "tiers": [
             {
               "minCount": 1,
@@ -962,8 +883,12 @@
       ]
     },
     {
-      "name": "KAIROS FATEWEAVER",
-      "leader": null,
+      "name": "TALLYMAN",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
       "support": null,
       "sizes": [
         {
@@ -972,14 +897,37 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 305
+              "points": 60
             }
           ]
         }
       ]
     },
     {
-      "name": "LORD OF CHANGE",
+      "name": "TYPHUS",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS",
+          "POXWALKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BEASTS OF NURGLE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -989,19 +937,73 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 320,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREAT UNCLEAN ONE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 265,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 340
+              "points": 280
             }
           ]
         }
       ]
     },
     {
-      "name": "PINK HORRORS",
+      "name": "NURGLINGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PLAGUEBEARERS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1018,7 +1020,7 @@
       ]
     },
     {
-      "name": "SCREAMERS",
+      "name": "PLAGUE DRONES",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1028,7 +1030,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 110
             }
           ]
         },
@@ -1038,11 +1040,152 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160
+              "points": 220
             }
           ]
         }
       ]
+    },
+    {
+      "name": "ROTIGUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH GUARD CHAOS LORD",
+      "leader": {
+        "attachesTo": [
+          "PLAGUE MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD CHAOS LORD IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD CULTISTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD POSSESSED",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 310
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH GUARD SORCERER IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "BLIGHTLORD TERMINATORS",
+          "DEATHSHROUD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
     }
   ]
 }

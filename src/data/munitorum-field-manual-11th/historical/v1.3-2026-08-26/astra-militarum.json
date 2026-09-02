@@ -1,6 +1,6 @@
 {
   "faction": "ASTRA MILITARUM",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "ABHUMAN AUXILIARIES",
@@ -2208,32 +2208,6 @@
             {
               "minCount": 1,
               "points": 40
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "CIAPHAS CAIN",
-      "leader": {
-        "attachesTo": [
-          "CADIAN SHOCK TROOPS",
-          "CATACHAN JUNGLE FIGHTERS",
-          "DEATH KORPS OF KRIEG",
-          "KASRKIN",
-          "TEMPESTUS SCIONS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
             }
           ]
         }

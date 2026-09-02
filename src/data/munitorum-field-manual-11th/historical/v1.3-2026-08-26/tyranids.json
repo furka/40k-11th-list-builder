@@ -1,37 +1,9 @@
 {
-  "faction": "CHAOS DAEMONS",
-  "siteVersion": "v1.4",
+  "faction": "TYRANIDS",
+  "siteVersion": "v1.3",
   "detachments": [
     {
-      "name": "BLOOD LEGION",
-      "dp": 2,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Brazenmaw",
-          "points": 15
-        },
-        {
-          "name": "Fury’s Cage",
-          "points": 20
-        },
-        {
-          "name": "Gateway Unto Damnation",
-          "points": 10
-        },
-        {
-          "name": "Slaughterthirst",
-          "points": 25
-        }
-      ]
-    },
-    {
-      "name": "CAVALCADE OF CHAOS",
+      "name": "AMBUSH PREDATORS",
       "dp": 1,
       "role": {
         "name": "DISRUPTION",
@@ -41,47 +13,19 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Apocalyptic Steeds",
-          "points": 10,
+          "name": "Cryptophotaic Camouflage",
+          "points": 15,
           "nonCharacterOnly": true
         },
         {
-          "name": "Soul-shattering Charge",
-          "points": 10,
+          "name": "Encircling Horrors",
+          "points": 20,
           "nonCharacterOnly": true
         }
       ]
     },
     {
-      "name": "DAEMONIC INCURSION",
-      "dp": 3,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "A’rgath, The King of Blades",
-          "points": 20
-        },
-        {
-          "name": "Soulstealer",
-          "points": 15
-        },
-        {
-          "name": "The Endless Gift",
-          "points": 30
-        },
-        {
-          "name": "The Everstave",
-          "points": 25
-        }
-      ]
-    },
-    {
-      "name": "LEGION OF EXCESS",
+      "name": "ASSIMILATION SWARM",
       "dp": 2,
       "role": {
         "name": "PRIORITY ASSETS",
@@ -91,98 +35,25 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Avatar of Perfection",
-          "points": 15
-        },
-        {
-          "name": "Dreaming Crown",
-          "points": 30
-        },
-        {
-          "name": "False Majesty",
-          "points": 30
-        },
-        {
-          "name": "Soul Glutton",
+          "name": "Biophagic Flow",
           "points": 10
-        }
-      ]
-    },
-    {
-      "name": "LORDS OF THE WARP",
-      "dp": 1,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
+        },
         {
-          "name": "Swollen with Power",
-          "points": 10,
-          "nonCharacterOnly": true
-        }
-      ]
-    },
-    {
-      "name": "PLAGUE LEGION",
-      "dp": 2,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Cankerblight",
+          "name": "Instinctive Defence",
           "points": 15
         },
         {
-          "name": "Droning Shroud",
-          "points": 35
-        },
-        {
-          "name": "Font of Spores",
-          "points": 20
-        },
-        {
-          "name": "Maggot Maws",
-          "points": 15
-        }
-      ]
-    },
-    {
-      "name": "SCINTILLATING LEGION",
-      "dp": 2,
-      "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Improbable Shield",
-          "points": 30
-        },
-        {
-          "name": "Inescapable Eye",
-          "points": 15
-        },
-        {
-          "name": "Infernal Puppeteer",
-          "points": 20
-        },
-        {
-          "name": "Neverblade",
+          "name": "Parasitic Biomorphology",
           "points": 25
+        },
+        {
+          "name": "Regenerating Monstrosity",
+          "points": 20
         }
       ]
     },
     {
-      "name": "SHADOW LEGION",
+      "name": "CRUSHER STAMPEDE",
       "dp": 2,
       "role": {
         "name": "PURGE THE FOE",
@@ -192,26 +63,160 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Fade to Darkness",
+          "name": "Enraged Reserves",
+          "points": 20
+        },
+        {
+          "name": "Monstrous Nemesis",
+          "points": 25
+        },
+        {
+          "name": "Null Nodules",
+          "points": 10
+        },
+        {
+          "name": "Ominous Presence",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "INVASION FLEET",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Adaptive Biology",
+          "points": 25
+        },
+        {
+          "name": "Alien Cunning",
           "points": 30
         },
         {
-          "name": "Leaping Shadows",
-          "points": 25
+          "name": "Perfectly Adapted",
+          "points": 15
         },
         {
-          "name": "Malice Made Manifest",
-          "points": 25
-        },
-        {
-          "name": "Mantle of Gloom",
+          "name": "Synaptic Linchpin",
           "points": 20
         }
       ]
     },
     {
-      "name": "WARPTIDE",
+      "name": "SUBTERRANEAN ASSAULT",
+      "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Synaptic Strategy",
+          "points": 15
+        },
+        {
+          "name": "Tremor Senses",
+          "points": 20
+        },
+        {
+          "name": "Trygon Prime",
+          "points": 20
+        },
+        {
+          "name": "Vanguard Intellect",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "SYNAPTIC NEXUS",
+      "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Power of the Hive Mind",
+          "points": 10
+        },
+        {
+          "name": "Psychostatic Disruption (Aura)",
+          "points": 30
+        },
+        {
+          "name": "Synaptic Control",
+          "points": 20
+        },
+        {
+          "name": "The Dirgeheart of Kharis",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "TALONS OF THE NORN QUEEN",
       "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Destabilising Predation",
+          "points": 20,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Synaptoprescience",
+          "points": 30,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "UNENDING SWARM",
+      "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Adrenalised Onslaught",
+          "points": 15
+        },
+        {
+          "name": "Naturalised camouflage",
+          "points": 30
+        },
+        {
+          "name": "Piercing Talons",
+          "points": 25
+        },
+        {
+          "name": "Relentless Hunger",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "VANGUARD ONSLAUGHT",
+      "dp": 2,
       "role": {
         "name": "RECONNAISSANCE",
         "color": "#008080"
@@ -220,439 +225,47 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Bane-forged Weapons",
-          "points": 15,
-          "nonCharacterOnly": true
+          "name": "Chameleonic",
+          "points": 15
         },
         {
-          "name": "Soul-hungry Slaughterers",
-          "points": 10,
-          "nonCharacterOnly": true
+          "name": "Hunting Grounds",
+          "points": 30
+        },
+        {
+          "name": "Neuronode",
+          "points": 20
+        },
+        {
+          "name": "Stalker",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "WARRIOR BIOFORM ONSLAUGHT",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Elevated Might",
+          "points": 30
+        },
+        {
+          "name": "Ocular Adaptation",
+          "points": 20
         }
       ]
     }
   ],
   "datasheets": [
     {
-      "name": "BEASTS OF NURGLE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        },
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BE’LAKOR",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 390
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BLOODCRUSHERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 135
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 200,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 240
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BLOODLETTERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BLOODMASTER",
-      "leader": {
-        "attachesTo": [
-          "BLOODLETTERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BLOODTHIRSTER",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 320,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 335
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BLUE HORRORS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 125
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "BURNING CHARIOT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 115
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CHANGECASTER",
-      "leader": {
-        "attachesTo": [
-          "BLUE HORRORS",
-          "PINK HORRORS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CONTORTED EPITOME",
-      "leader": {
-        "attachesTo": [
-          "DAEMONETTES"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 115,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 125
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DAEMONETTES",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DAEMON PRINCE OF CHAOS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 165
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DAEMON PRINCE OF CHAOS WITH WINGS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 190
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "EPIDEMIUS",
-      "leader": {
-        "attachesTo": [
-          "PLAGUEBEARERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "EXALTED FLAMER",
-      "leader": {
-        "attachesTo": [
-          "FLAMERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FATESKIMMER",
-      "leader": {
-        "attachesTo": [
-          "SCREAMERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FECULENT GNARLMAW",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FIENDS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 105
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 190,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 205
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FLAMERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 130
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FLESH HOUNDS",
+      "name": "BARBGAUNTS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -662,7 +275,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 55
             }
           ]
         },
@@ -672,113 +285,15 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150
+              "points": 110
             }
           ]
         }
       ]
     },
     {
-      "name": "FLUXMASTER",
-      "leader": {
-        "attachesTo": [
-          "BLUE HORRORS",
-          "PINK HORRORS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "GREAT UNCLEAN ONE",
+      "name": "BIOVORES",
       "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 265,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 280
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "HELLFLAYERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        },
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "HORTICULOUS SLIMUX",
-      "leader": {
-        "attachesTo": [
-          "BEASTS OF NURGLE",
-          "PLAGUE TOADS",
-          "POX RIDERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INFERNAL ENRAPTURESS",
-      "leader": {
-        "attachesTo": [
-          "DAEMONETTES"
-        ]
-      },
       "support": null,
       "sizes": [
         {
@@ -790,31 +305,34 @@
               "points": 60
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "KAIROS FATEWEAVER",
-      "leader": null,
-      "support": null,
-      "sizes": [
+        },
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "2 models",
+          "models": 2,
           "tiers": [
             {
               "minCount": 1,
-              "points": 305
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
             }
           ]
         }
       ]
     },
     {
-      "name": "KARANAK",
+      "name": "BROODLORD",
       "leader": {
         "attachesTo": [
-          "FLESH HOUNDS"
+          "GENESTEALERS"
         ]
       },
       "support": null,
@@ -825,186 +343,33 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 80
             }
           ]
         }
       ]
     },
     {
-      "name": "KEEPER OF SECRETS",
+      "name": "CARNIFEXES",
       "leader": null,
       "support": null,
       "sizes": [
         {
           "name": "1 model",
           "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 265,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 280
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "LORD OF CHANGE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 320,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 340
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "NURGLINGS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 45
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
           "tiers": [
             {
               "minCount": 1,
               "points": 90
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "PINK HORRORS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "PLAGUEBEARERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 115
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "PLAGUE DRONES",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
         },
         {
-          "name": "6 models",
-          "models": 6,
+          "name": "2 models",
+          "models": 2,
           "tiers": [
             {
               "minCount": 1,
-              "points": 220
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "POXBRINGER",
-      "leader": {
-        "attachesTo": [
-          "PLAGUEBEARERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "RENDMASTER ON BLOOD THRONE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
               "points": 180
             }
           ]
@@ -1012,7 +377,7 @@
       ]
     },
     {
-      "name": "ROTIGUS",
+      "name": "DEATHLEAPER",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1022,20 +387,42 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 280
+              "points": 80
             }
           ]
         }
       ]
     },
     {
-      "name": "SCREAMERS",
+      "name": "EXOCRINE",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "3 models",
-          "models": 3,
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GARGOYLES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
@@ -1044,35 +431,8 @@
           ]
         },
         {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SEEKERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
+          "name": "20 models",
+          "models": 20,
           "tiers": [
             {
               "minCount": 1,
@@ -1083,99 +443,184 @@
       ]
     },
     {
-      "name": "SHALAXI HELBANE",
+      "name": "GENESTEALERS",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "5 models",
+          "models": 5,
           "tiers": [
             {
               "minCount": 1,
-              "points": 315
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SKARBRAND",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
+              "points": 75,
+              "maxCount": 2
+            },
             {
-              "minCount": 1,
-              "points": 315
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SKULL ALTAR",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 105
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SKULL CANNON",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SKULLMASTER",
-      "leader": {
-        "attachesTo": [
-          "BLOODCRUSHERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
+              "minCount": 3,
               "points": 85
             }
           ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
         }
       ]
     },
     {
-      "name": "SKULLTAKER",
+      "name": "HARPY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HARRIDAN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 610,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 660
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HARUSPEX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HIEROPHANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 810,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 910
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HIVE CRONE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HIVE GUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HIVE TYRANT",
       "leader": {
         "attachesTo": [
-          "BLOODLETTERS"
+          "TYRANT GUARD"
         ]
       },
       "support": null,
@@ -1186,19 +631,68 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 195
             }
           ]
         }
       ]
     },
     {
-      "name": "SLOPPITY BILEPIPER",
+      "name": "HORMAGAUNTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HYPERADAPTED RAVENERS",
       "leader": {
         "attachesTo": [
-          "PLAGUEBEARERS"
+          "RAVENERS"
         ]
       },
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LICTOR",
+      "leader": null,
       "support": null,
       "sizes": [
         {
@@ -1207,14 +701,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 60
             }
           ]
         }
       ]
     },
     {
-      "name": "SOUL GRINDER",
+      "name": "MALECEPTOR",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1229,112 +723,15 @@
             },
             {
               "minCount": 3,
-              "points": 195
+              "points": 190
             }
           ]
         }
       ]
     },
     {
-      "name": "SPOILPOX SCRIVENER",
-      "leader": {
-        "attachesTo": [
-          "PLAGUEBEARERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SYLL’ESSKE",
-      "leader": {
-        "attachesTo": [
-          "DAEMONETTES"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "THE BLUE SCRIBES",
+      "name": "MAWLOC",
       "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "THE CHANGELING",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 105
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "THE MASQUE OF SLAANESH",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TORMENTBRINGER",
-      "leader": {
-        "attachesTo": [
-          "HELLFLAYERS"
-        ]
-      },
       "support": null,
       "sizes": [
         {
@@ -1350,17 +747,23 @@
       ]
     },
     {
-      "name": "TRANCEWEAVER",
-      "leader": {
-        "attachesTo": [
-          "DAEMONETTES"
-        ]
-      },
+      "name": "MUCOLID SPORES",
+      "leader": null,
       "support": null,
       "sizes": [
         {
           "name": "1 model",
           "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
           "tiers": [
             {
               "minCount": 1,
@@ -1371,72 +774,63 @@
       ]
     },
     {
-      "name": "AETAOS’RAU’KERES",
+      "name": "NEUROGAUNTS",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "11 models",
+          "models": 11,
           "tiers": [
             {
               "minCount": 1,
-              "points": 315
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "AN’GGRATH THE UNBOUND",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 415
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "FURIES",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 40
+              "points": 45
             }
           ]
         },
         {
-          "name": "10 models",
-          "models": 10,
+          "name": "22 models",
+          "models": 22,
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 90
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "GIANT CHAOS SPAWN",
+      "name": "NEUROLICTOR",
       "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEUROTYRANT",
+      "leader": {
+        "attachesTo": [
+          "NEUROGAUNTS",
+          "TYRANT GUARD",
+          "ZOANTHROPES"
+        ]
+      },
       "support": null,
       "sizes": [
         {
@@ -1449,16 +843,76 @@
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "HERALD OF SLAANESH ON STEED OF SLAANESH",
+      "name": "NORN ASSIMILATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NORN EMISSARY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OLD ONE EYE",
       "leader": {
         "attachesTo": [
-          "SEEKERS"
+          "CARNIFEXES"
         ]
       },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PARASITE OF MORTREX",
+      "leader": null,
       "support": null,
       "sizes": [
         {
@@ -1471,47 +925,10 @@
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "PLAGUE TOADS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "POX RIDERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "SCABEIATHRAX THE BLOATED",
+      "name": "PSYCHOPHAGE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1521,15 +938,174 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 275
+              "points": 110
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "SPINED CHAOS BEAST",
+      "name": "PYROVORES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAVENERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RIPPER SWARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SCREAMER-KILLER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPORE MINES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPOROCYST",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1543,11 +1119,37 @@
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "ZARAKYNEL",
+      "name": "TERMAGANTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TERVIGON",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1557,7 +1159,452 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 320
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THE RED TERROR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THE SWARMLORD",
+      "leader": {
+        "attachesTo": [
+          "TYRANT GUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TOXICRENE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRYGON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANID PRIME WITH LASH WHIP",
+      "leader": {
+        "attachesTo": [
+          "HORMAGAUNTS",
+          "TERMAGANTS",
+          "TYRANID WARRIORS WITH MELEE BIO-WEAPONS",
+          "TYRANID WARRIORS WITH RANGED BIO-WEAPONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANID WARRIORS WITH MELEE BIO-WEAPONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANID WARRIORS WITH RANGED BIO-WEAPONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANNOCYTE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANNOFEX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Acid spray",
+          "points": 10
+        },
+        {
+          "name": "Rupture cannon",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "TYRANT GUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VENOMTHROPES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VON RYAN’S LEAPERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WINGED HIVE TYRANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WINGED TYRANID PRIME",
+      "leader": {
+        "attachesTo": [
+          "GARGOYLES",
+          "TYRANID WARRIORS WITH MELEE BIO-WEAPONS",
+          "TYRANID WARRIORS WITH RANGED BIO-WEAPONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZOANTHROPES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BARBED HIERODULE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 340
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DIMACHAERON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MALANTHROPE",
+      "leader": {
+        "attachesTo": [
+          "VENOMTHROPES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SCYTHED HIERODULE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 330
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SKY-SLASHER SWARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
             }
           ]
         }

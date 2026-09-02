@@ -1,331 +1,157 @@
-## MFM changes — V1.3 (scraped 2026-08-26)
+## MFM changes — V1.4 (scraped 2026-09-02)
 
-Diff vs prior snapshot `v1.2-2026-08-05`.
+Diff vs prior snapshot `v1.3-2026-08-26`.
 
-22 faction(s) changed.
-
-### ADEPTUS CUSTODES
-
-- ALLARUS CUSTODIANS
-  - 2 models: tier structure changed
-  - 3 models: tier structure changed
-  - 5 models: **275 → 280** ↑ (+5)
-  - 6 models: **330 → 340** ↑ (+10)
-- VERTUS PRAETORS
-  - 2 models: tier structure changed
-  - 3 models: tier structure changed
-
-### ADEPTUS MECHANICUS
-
-- KASTELAN ROBOTS
-  - 2 models: **160 → 150** ↓ (-10)
-  - 4 models: **320 → 300** ↓ (-20)
-- PTERAXII SKYSTALKERS
-  - 5 models: **80 → 75** ↓ (-5)
-- PTERAXII STERYLIZORS
-  - 5 models: **80 → 75** ↓ (-5)
-  - 10 models: **160 → 150** ↓ (-10)
-- SERVITOR BATTLECLADE
-  - 9 models: tier structure changed
-- TECH-PRIEST DOMINUS
-  - 1 model: **65 → 60** ↓ (-5)
-
-### AELDARI
-
-- DARK REAPERS
-  - 5 models: **100 → 95** ↓ (-5)
-  - 10 models: **210 → 200** ↓ (-10)
-- DIRE AVENGERS
-  - 5 models: **75 → 70** ↓ (-5)
-  - 10 models: **150 → 140** ↓ (-10)
-- ELDRAD ULTHRAN
-  - 1 model: **130 → 120** ↓ (-10)
-- SPIRITSEER
-  - 1 model: **55 → 50** ↓ (-5)
-- STORM GUARDIANS
-  - 11 models: **110 → 100** ↓ (-10)
-- THE VISARCH
-  - 1 model: **90 → 80** ↓ (-10)
-- WAR WALKERS
-  - 1 model: **85 → 80** ↓ (-5)
-- WARLOCK
-  - 1 model: **45 → 40** ↓ (-5)
-- WARLOCK SKYRUNNERS
-  - 1 model: **55 → 45** ↓ (-10)
+2 faction(s) changed.
 
 ### ASTRA MILITARUM
 
-- CADIAN SHOCK TROOPS
-  - 10 models: **75 → 70** ↓ (-5)
-- CATACHAN HEAVY WEAPONS SQUAD
-  - 3 models: **65 → 70** ↑ (+5)
-- CATACHAN JUNGLE FIGHTERS
-  - 10 models: **75 → 70** ↓ (-5)
-  - 20 models: **145 → 135** ↓ (-10)
-- DEATH KORPS OF KRIEG
-  - 10 models: **75 → 70** ↓ (-5)
-  - 20 models: **145 → 135** ↓ (-10)
-- KRIEG HEAVY WEAPONS SQUAD
-  - 4 models: **60 → 70** ↑ (+10)
-- LEMAN RUSS BATTLE TANK
-  - 1 model: **185 → 160** ↓ (-25)
-- LEMAN RUSS COMMANDER
-  - 1 model: **215 → 195** ↓ (-20)
-- LEMAN RUSS DEMOLISHER
-  - 1 model: **180 → 160** ↓ (-20)
-- LEMAN RUSS ERADICATOR
-  - 1 model: **170 → 145** ↓ (-25)
-- LEMAN RUSS EXECUTIONER
-  - 1 model: **170 → 145** ↓ (-25)
-- LEMAN RUSS EXTERMINATOR
-  - 1 model: **180 → 160** ↓ (-20)
-- LEMAN RUSS PUNISHER
-  - 1 model: **150 → 130** ↓ (-20)
-- LEMAN RUSS VANQUISHER
-  - 1 model: **150 → 130** ↓ (-20)
+- **+ NEW** CIAPHAS CAIN: 1 model @ 70pts
 
-### BLACK TEMPLARS
+### ORKS
 
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- SWORD BRETHREN SQUAD
-  - 4 models: **105 → 100** ↓ (-5)
-  - 5 models: **130 → 125** ↓ (-5)
-  - 9 models: **235 → 225** ↓ (-10)
-  - 10 models: **260 → 250** ↓ (-10)
-
-### BLOOD ANGELS
-
-- DEATH COMPANY MARINES WITH JUMP PACKS
-  - 5 models: **120 → 115** ↓ (-5)
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- LIBRARIAN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- SANGUINARY GUARD
-  - 3 models: **125 → 120** ↓ (-5)
-- THE SANGUINOR
-  - 1 model: **130 → 120** ↓ (-10)
-
-### CHAOS DAEMONS
-
-- BEASTS OF NURGLE
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **140 → 150** ↑ (+10)
-- BLOODCRUSHERS
-  - 3 models: tier structure changed
-  - 6 models: **190 → 200** ↑ (+10)
-- CONTORTED EPITOME
-  - 1 model: **100 → 115** ↑ (+15)
-- DAEMONETTES
-  - 10 models: **90 → 100** ↑ (+10)
-- FIENDS
-  - 3 models: tier structure changed
-  - 6 models: **180 → 190** ↑ (+10)
-- KEEPER OF SECRETS
-  - 1 model: **255 → 265** ↑ (+10)
-- POXBRINGER
-  - 1 model: **55 → 60** ↑ (+5)
-- RENDMASTER ON BLOOD THRONE
-  - 1 model: **150 → 160** ↑ (+10)
-- SEEKERS
-  - 5 models: **80 → 85** ↑ (+5)
-- SKULL CANNON
-  - 1 model: **90 → 100** ↑ (+10)
-
-### CHAOS KNIGHTS
-
-- CHAOS CERASTUS KNIGHT ATRAPOS
-  - 1 model: **395 → 385** ↓ (-10)
-- CHAOS CERASTUS KNIGHT LANCER
-  - 1 model: **395 → 385** ↓ (-10)
-- KNIGHT DESPOILER
-  - 1 model: **380 → 360** ↓ (-20)
-- KNIGHT RAMPAGER
-  - 1 model: **365 → 355** ↓ (-10)
-- WAR DOG BRIGAND
-  - 1 model: **140 → 135** ↓ (-5)
-- WAR DOG KARNIVORE
-  - 1 model: **155 → 145** ↓ (-10)
-
-### CHAOS SPACE MARINES
-
-- DEFILER
-  - 1 model: tier structure changed
-
-### DARK ANGELS
-
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- LIBRARIAN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- RAVENWING BLACK KNIGHTS
-  - 3 models: tier structure changed
-  - 6 models: tier structure changed
-- SAMMAEL
-  - 1 model: **95 → 105** ↑ (+10)
-
-### DEATH GUARD
-
-- BLIGHTLORD TERMINATORS
-  - 5 models: **185 → 180** ↓ (-5)
-  - 10 models: **370 → 360** ↓ (-10)
-- DEFILER
-  - 1 model: tier structure changed
-- FOUL BLIGHTSPAWN
-  - 1 model: **65 → 60** ↓ (-5)
-- MORTARION
-  - 1 model: **390 → 375** ↓ (-15)
-- MYPHITIC BLIGHT-HAULERS
-  - 1 model: **100 → 95** ↓ (-5)
-  - 2 models: **200 → 190** ↓ (-10)
-- NOXIOUS BLIGHTBRINGER
-  - 1 model: **60 → 50** ↓ (-10)
-- PLAGUEBURST CRAWLER
-  - 1 model: **185 → 170** ↓ (-15)
-
-### DEATHWATCH
-
-- CENTURION DEVASTATOR SQUAD
-  - 6 models: **350 → 365** ↑ (+15)
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- LIBRARIAN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-
-### EMPEROR’S CHILDREN
-
-- DAEMONETTES
-  - 10 models: **90 → 100** ↑ (+10)
-- DEFILER
-  - 1 model: tier structure changed
-- FIENDS
-  - 6 models: **180 → 190** ↑ (+10)
-- KEEPER OF SECRETS
-  - 1 model: **255 → 265** ↑ (+10)
-- LORD EXULTANT
+- **- REMOVED** ATTACK FIGHTA
+- BANNERNOB
+  - 1 model: **50 → 35** ↓ (-15)
+- BATTLEWAGON
+  - 1 model: **145 → 150** ↑ (+5)
+- BEAST SNAGGA BOYZ
+  - 10 models: **90 → 85** ↓ (-5)
+  - 20 models: tier structure changed
+- BEASTBOSS
+  - 1 model: **80 → 85** ↑ (+5)
+- BEASTBOSS ON SQUIGOSAUR
+  - 1 model: **95 → 140** ↑ (+45)
+- **- REMOVED** BIG GUNZ
+- BIG MEK
+  - 1 model: **70 → 85** ↑ (+15)
+- BIG MEK DAKKARIG
+  - 1 model: **115 → 135** ↑ (+20)
+- BIG MEK IN MEGA ARMOUR
   - 1 model: **80 → 90** ↑ (+10)
-- SEEKERS
-  - 5 models: **80 → 85** ↑ (+5)
-
-### GREY KNIGHTS
-
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- PALADIN SQUAD
-  - 4 models: tier structure changed
-  - 5 models: tier structure changed
-  - 8 models: tier structure changed
-  - 10 models: **450 → 460** ↑ (+10)
-- PURGATION SQUAD
-  - 5 models: **110 → 105** ↓ (-5)
-  - 10 models: **220 → 210** ↓ (-10)
-
-### LEAGUES OF VOTANN
-
-- BRÔKHYR THUNDERKYN
-  - 6 models: **160 → 170** ↑ (+10)
-- CTHONIAN BESERKS
-  - 5 models: **100 → 95** ↓ (-5)
-  - 10 models: **200 → 190** ↓ (-10)
-- CTHONIAN EARTHSHAKERS
-  - 2 models: **110 → 100** ↓ (-10)
-- HEARTHKYN WARRIORS
-  - 10 models: **100 → 90** ↓ (-10)
-- IRONKIN STEELJACKS WITH HEAVY VOLKANITE DISINTEGRATORS
-  - 6 models: **160 → 170** ↑ (+10)
-- IRONKIN STEELJACKS WITH MELEE WEAPONS
-  - 3 models: **80 → 75** ↓ (-5)
-  - 6 models: **160 → 150** ↓ (-10)
-- KAPRICUS DEFENDERS
-  - 1 model: **65 → 70** ↑ (+5)
-  - 2 models: **130 → 140** ↑ (+10)
-
-### NECRONS
-
-- LOKHUST DESTROYERS
-  - 1 model: tier structure changed
-  - 2 models: tier structure changed
-  - 3 models: tier structure changed
-  - 6 models: **170 → 175** ↑ (+5)
-- LOKHUST HEAVY DESTROYERS
-  - 3 models: **160 → 165** ↑ (+5)
-- LOKHUST LORD
+- **- REMOVED** BIG MEK ON WARBIKE
+- **- REMOVED** BIG MEK WITH KUSTOM FORCE FIELD
+- BIG MEK WITH SHOKK ATTACK GUN
+  - 1 model: **70 → 95** ↑ (+25)
+- BIGBOSS
+  - 1 model: **55 → 50** ↓ (-5)
+- BLITZA-BOMMER
+  - 1 model: **105 → 115** ↑ (+10)
+- **- REMOVED** BOOMDAKKA SNAZZWAGON
+- BOSS SNIKROT
+  - 1 model: **75 → 80** ↑ (+5)
+- BOYZ
+  - 10 models: **75 → 90** ↑ (+15)
+  - 20 models: **160 → 180** ↑ (+20)
+- BREAKA BOYZ
+  - 6 models: **125 → 135** ↑ (+10)
+- BURNA-BOMMER
+  - 1 model: **115 → 125** ↑ (+10)
+- **- REMOVED** CHINORK WARKOPTA
+- **- REMOVED** DA RED GOBBO
+- DEFF DREAD
+  - 1 model: **110 → 130** ↑ (+20)
+- **- REMOVED** DEFF ROLLA BATTLE FORTRESS
+- DEFFKILLA WARTRIKE
   - 1 model: **70 → 80** ↑ (+10)
-- NECRON WARRIORS
-  - 10 models: **80 → 85** ↑ (+5)
-- OPHYDIAN DESTROYERS
-  - 6 models: **145 → 150** ↑ (+5)
-- PLASMANCER
+- DEFFKOPTAS
+  - 3 models: **75 → 80** ↑ (+5)
+  - 6 models: **140 → 160** ↑ (+20)
+- **- REMOVED** DEFFKOPTAS WITH BIG SHOOTAS
+- **- REMOVED** FIGHTA-BOMMER
+- FLASH GITZ
+  - 5 models: **75 → 105** ↑ (+30)
+  - 10 models: **150 → 210** ↑ (+60)
+- GARGANTUAN SQUIGGOTH
+  - 1 model: **440 → 500** ↑ (+60)
+- GHAZGHKULL THRAKA
+  - **- option removed:** 2 models (was 235pts)
+  - **+ option added:** 1 model @ 300pts
+- GORKANAUT
+  - 1 model: **255 → 325** ↑ (+70)
+- GRETCHIN
+  - **- option removed:** 1 Runtherd, 10 Gretchin (was 45pts)
+  - **- option removed:** 1 Runtherd, 20 Gretchin (was 85pts)
+  - **- option removed:** 2 Runtherd, 20 Gretchin (was 90pts)
+- **- REMOVED** GROT BOMM LAUNCHA
+- **+ NEW** GUNWAGON: 1 model @ 150pts
+- HUNTA RIG
+  - 1 model: **125 → 165** ↑ (+40)
+- **- REMOVED** KANNONWAGON
+- **- REMOVED** KILL KRUSHA
+- KILL RIG
+  - 1 model: **145 → 175** ↑ (+30)
+- KILL TANK
+  - 1 model: **295 → 300** ↑ (+5)
+- KILLA KANS
+  - 3 models: **120 → 130** ↑ (+10)
+  - 6 models: **240 → 260** ↑ (+20)
+- KOMMANDOS
+  - 10 models: **120 → 125** ↑ (+5)
+- **- REMOVED** KUSTOM BOOSTA-BLASTA
+- **- REMOVED** MEGA DREAD
+- MEGANOBZ
+  - 2 models: **60 → 75** ↑ (+15)
+  - 3 models: **90 → 110** ↑ (+20)
+  - 5 models: **150 → 185** ↑ (+35)
+  - 6 models: **180 → 225** ↑ (+45)
+- **- REMOVED** MEGATRAKK SCRAPJET
+- MEK
+  - 1 model: **55 → 45** ↓ (-10)
+- MEK GUNZ
+  - 1 model: **45 → 55** ↑ (+10)
+  - 2 models: **90 → 110** ↑ (+20)
+  - 3 models: **135 → 165** ↑ (+30)
+- **- REMOVED** MEKA-DREAD
+- MORKANAUT
+  - 1 model: **270 → 345** ↑ (+75)
+- MOZROG SKRAGBAD
+  - 1 model: **125 → 170** ↑ (+45)
+- **+ NEW** NAZDREG: 1 model @ 175pts
+- NOBZ
+  - 5 models: **105 → 125** ↑ (+20)
+  - 10 models: **210 → 250** ↑ (+40)
+- **- REMOVED** NOBZ ON WARBIKES
+- PAINBOSS
+  - 1 model: **70 → 60** ↓ (-10)
+- PAINBOY
+  - 1 model: **90 → 45** ↓ (-45)
+- **- REMOVED** PAINBOY ON WARBIKE
+- **+ NEW** RUKKATRUKK SQUIGBUGGIES: 1 model @ 85pts, 2 models @ 160pts
+- **- REMOVED** RUKKATRUKK SQUIGBUGGY
+- **+ NEW** RUNTHERD: 1 model @ 10pts
+- **- REMOVED** SHOKKJUMP DRAGSTA
+- **- REMOVED** SKORCHAS
+- **- REMOVED** SQUIGGOTH
+- SQUIGHOG BOYZ
+  - 4 models: tier structure changed
+  - 8 models: **270 → 280** ↑ (+10)
+- STOMPA
+  - 1 model: **600 → 700** ↑ (+100)
+- STORMBOYZ
+  - 5 models: **65 → 70** ↑ (+5)
+  - 10 models: **130 → 140** ↑ (+10)
+- TANKBUSTAS
+  - 6 models: **125 → 145** ↑ (+20)
+- TRUKK
   - 1 model: **55 → 60** ↑ (+5)
-- SKORPEKH LORD
-  - 1 model: **90 → 95** ↑ (+5)
-
-### SPACE MARINES
-
-- CENTURION DEVASTATOR SQUAD
-  - 6 models: **350 → 365** ↑ (+15)
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- LIBRARIAN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- VULKAN HE’STAN
-  - 1 model: **85 → 95** ↑ (+10)
-
-### SPACE WOLVES
-
-- LAND RAIDER REDEEMER
-  - 1 model: **250 → 260** ↑ (+10)
-- LIBRARIAN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- THUNDERWOLF CAVALRY
-  - 3 models: tier structure changed
-  - 6 models: tier structure changed
-- WOLF GUARD TERMINATORS
-  - 5 models: **150 → 155** ↑ (+5)
-  - 10 models: **300 → 310** ↑ (+10)
-
-### T’AU EMPIRE
-
-- CRISIS STARSCYTHE BATTLESUITS
-  - 3 models: **90 → 100** ↑ (+10)
-- THE TWIN LANCE
-  - 2 models: **220 → 230** ↑ (+10)
-- TIGER SHARK
-  - 1 model: **375 → 395** ↑ (+20)
-
-### THOUSAND SONS
-
-- DEFILER
-  - 1 model: tier structure changed
-- EXALTED SORCERER
-  - 1 model: **90 → 95** ↑ (+5)
-- INFERNAL MASTER
-  - 1 model: **95 → 100** ↑ (+5)
-- SORCERER
-  - 1 model: **85 → 95** ↑ (+10)
-- SORCERER IN TERMINATOR ARMOUR
-  - 1 model: **95 → 100** ↑ (+5)
-
-### TYRANIDS
-
-- EXOCRINE
-  - 1 model: **140 → 135** ↓ (-5)
-- MALECEPTOR
-  - 1 model: **190 → 180** ↓ (-10)
-- PYROVORES
-  - 1 model: **45 → 40** ↓ (-5)
-  - 2 models: **65 → 70** ↑ (+5)
-  - 3 models: **95 → 100** ↑ (+5)
-- TYRANNOFEX
-  - 1 model: **180 → 170** ↓ (-10)
-- TYRANT GUARD
-  - 6 models: **160 → 170** ↑ (+10)
-- ZOANTHROPES
-  - 6 models: **200 → 190** ↓ (-10)
-
-### WORLD EATERS
-
-- KHORNE BERZERKERS
-  - 10 models: **170 → 160** ↓ (-10)
-  - 20 models: **330 → 320** ↓ (-10)
+- **- REMOVED** UFTHAK BLACKHAWK
+- WARBIKERS
+  - 3 models: **60 → 75** ↑ (+15)
+  - 6 models: **120 → 140** ↑ (+20)
+- WARBOSS
+  - 1 model: **85 → 100** ↑ (+15)
+- WARBOSS IN MEGA ARMOUR
+  - 1 model: **80 → 125** ↑ (+45)
+- WARBUGGIES
+  - 1 model: **40 → 70** ↑ (+30)
+  - 2 models: **80 → 130** ↑ (+50)
+- **- REMOVED** WARTRAKK
+- **+ NEW** WARTRAKKS: 1 model @ 70pts, 2 models @ 130pts
+- WAZBOM BLASTAJET
+  - 1 model: **165 → 215** ↑ (+50)
+- WAZDAKKA GUTSMEK
+  - 1 model: **175 → 200** ↑ (+25)
+- **- REMOVED** WURRBOY
+- ZODGROD WORTSNAGGA
+  - 1 model: **80 → 50** ↓ (-30)
