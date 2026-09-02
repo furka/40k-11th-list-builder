@@ -1,6 +1,6 @@
 {
   "faction": "BLACK TEMPLARS",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "ANVIL SIEGE FORCE",
@@ -1102,7 +1102,6 @@
       "support": {
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
           "CRUSADER SQUAD",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
@@ -2134,15 +2133,7 @@
           "TACTICAL SQUAD"
         ]
       },
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD"
-        ]
-      },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",

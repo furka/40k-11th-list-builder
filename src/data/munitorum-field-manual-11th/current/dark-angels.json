@@ -1,6 +1,6 @@
 {
   "faction": "DARK ANGELS",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -1140,6 +1140,7 @@
       "support": {
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
           "CRUSADER SQUAD",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
@@ -2261,7 +2262,15 @@
           "TACTICAL SQUAD"
         ]
       },
-      "support": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD"
+        ]
+      },
       "sizes": [
         {
           "name": "1 model",

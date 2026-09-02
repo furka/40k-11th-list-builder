@@ -1,37 +1,141 @@
 {
-  "faction": "WORLD EATERS",
-  "siteVersion": "v1.4",
+  "faction": "THOUSAND SONS",
+  "siteVersion": "v1.3",
   "detachments": [
     {
-      "name": "BERZERKER WARBAND",
-      "dp": 3,
+      "name": "CHANGEHOST OF DECEIT",
+      "dp": 2,
       "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
       },
       "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Battle-lust",
+          "name": "Diabolic Savant",
           "points": 20
         },
         {
-          "name": "Berzerker Glaive",
+          "name": "Duplicitous Malediction",
+          "points": 15
+        },
+        {
+          "name": "Nethershriek Mind-Eater",
+          "points": 10
+        },
+        {
+          "name": "Tome of True Names",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "GRAND COVEN",
+      "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Eldritch Vortex of E’Taph",
           "points": 35
         },
         {
-          "name": "Favoured of Khorne",
+          "name": "Incandaeum",
+          "points": 15
+        },
+        {
+          "name": "Lord of Forbidden Lore",
           "points": 20
         },
         {
-          "name": "Helm of Brazen Ire",
+          "name": "Umbralefic Crystal",
           "points": 30
         }
       ]
     },
     {
-      "name": "BRAZEN ENGINES",
+      "name": "HEXWARP THRALLBAND",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Arcane Might",
+          "points": 20
+        },
+        {
+          "name": "Empowered Manifestation",
+          "points": 20
+        },
+        {
+          "name": "Empyric Onslaught",
+          "points": 25
+        },
+        {
+          "name": "Noctilith Mantle",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "RITUAL OF REGENERATION",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Curse of Life",
+          "points": 20
+        },
+        {
+          "name": "Eruption of Vitality",
+          "points": 35
+        }
+      ]
+    },
+    {
+      "name": "RUBRICAE PHALANX",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Arcane Thralls",
+          "points": 5
+        },
+        {
+          "name": "Lord of the Rubricae",
+          "points": 15
+        },
+        {
+          "name": "Risen Rubricae",
+          "points": 30
+        },
+        {
+          "name": "Stave Abominus",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "SEKHETAR COHORT",
       "dp": 1,
       "role": {
         "name": "DISRUPTION",
@@ -41,177 +145,96 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Murder-forged Entity",
-          "points": 15,
-          "nonCharacterOnly": true
+          "name": "Occulus Infernum",
+          "points": 20
         },
         {
-          "name": "Talons of Butchery",
-          "points": 20,
-          "nonCharacterOnly": true
+          "name": "Walking Rampart",
+          "points": 30
         }
       ]
     },
     {
-      "name": "BUTCHERS OF KHORNE",
+      "name": "SERVANTS OF CHANGE",
       "dp": 1,
       "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: MUTANT"
+      ],
       "enhancements": [
         {
-          "name": "Gore-stained Veterans",
-          "points": 20,
+          "name": "Thicket of Bladed Bone",
+          "points": 10,
           "nonCharacterOnly": true
         },
         {
-          "name": "Sanctified in Slaughter",
-          "points": 15,
-          "nonCharacterOnly": true
+          "name": "Unravelled Fates",
+          "points": 15
         }
       ]
     },
     {
-      "name": "CULT OF BLOOD",
+      "name": "WARPFORGED CABAL",
       "dp": 2,
       "role": {
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
       },
-      "leader": {
-        "attachesTo": [
-          "GOREMONGERS",
-          "JAKHALS"
-        ]
-      },
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Brazen Form",
-          "points": 25
-        },
-        {
-          "name": "Butcher Lord",
-          "points": 10
-        },
-        {
-          "name": "Chosen of the Blood God",
-          "points": 15
-        },
-        {
-          "name": "Strategic Slaughter",
-          "points": 20
-        }
-      ]
-    },
-    {
-      "name": "GORETRACK ONSLAUGHT",
-      "dp": 2,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
       "leader": null,
       "tags": [],
       "enhancements": [
         {
-          "name": "Aggressive Deployment",
-          "points": 20
-        },
-        {
-          "name": "Infernal Infusion",
-          "points": 25
-        },
-        {
-          "name": "Murderous Onslaught",
-          "points": 5
-        },
-        {
-          "name": "Unleash Hell",
-          "points": 10
-        }
-      ]
-    },
-    {
-      "name": "KHORNE DAEMONKIN",
-      "dp": 2,
-      "role": {
-        "name": "RECONNAISSANCE",
-        "color": "#008080"
-      },
-      "leader": {
-        "attachesTo": [
-          "BLOODCRUSHERS",
-          "FLESH HOUNDS"
-        ]
-      },
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Blade of Endless Bloodshed",
-          "points": 30
-        },
-        {
-          "name": "Blood-Forged Armour",
-          "points": 20
-        },
-        {
-          "name": "Disciple of Khorne",
+          "name": "Biomechanical Mutation",
           "points": 15
         },
         {
-          "name": "Icon of War",
-          "points": 25
+          "name": "Perplexing Cloak",
+          "points": 20
+        },
+        {
+          "name": "Warp-Cursed Runemaster",
+          "points": 10
+        },
+        {
+          "name": "Warp Syphon",
+          "points": 5
         }
       ]
     },
     {
-      "name": "POSSESSED SLAUGHTERBAND",
+      "name": "WARPMELD PACT",
       "dp": 2,
       "role": {
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
       },
-      "leader": null,
-      "tags": [],
+      "leader": {
+        "attachesTo": [
+          "TZAANGORS"
+        ]
+      },
+      "tags": [
+        "UNIQUE: MUTANT"
+      ],
       "enhancements": [
         {
-          "name": "Frenzied Focus",
-          "points": 20
-        },
-        {
-          "name": "Killing Clarity",
+          "name": "Bray Lord",
           "points": 15
         },
         {
-          "name": "Malicious Vigour",
-          "points": 30
+          "name": "Diamond of Distortion",
+          "points": 20
         },
         {
-          "name": "Violent Demise",
+          "name": "Flowing Flesh",
           "points": 10
-        }
-      ]
-    },
-    {
-      "name": "VESSELS OF WRATH",
-      "dp": 1,
-      "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Archslaughterer",
-          "points": 30
         },
         {
-          "name": "Gateways to Glory",
+          "name": "Warpmeld Dagger",
           "points": 10
         }
       ]
@@ -219,8 +242,14 @@
   ],
   "datasheets": [
     {
-      "name": "ANGRON",
-      "leader": null,
+      "name": "AHRIMAN",
+      "leader": {
+        "attachesTo": [
+          "RUBRIC MARINES",
+          "TZAANGOR ENLIGHTENED",
+          "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS"
+        ]
+      },
       "support": null,
       "sizes": [
         {
@@ -229,7 +258,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 330
+              "points": 100
             }
           ]
         }
@@ -268,12 +297,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
+              "points": 140,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 140
+              "points": 150
             }
           ]
         }
@@ -290,12 +319,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
+              "points": 140,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 140
+              "points": 150
             }
           ]
         }
@@ -312,12 +341,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
+              "points": 80,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 85
+              "points": 90
             }
           ]
         }
@@ -334,51 +363,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 65
             }
           ]
         }
       ]
     },
     {
-      "name": "CHAOS TERMINATORS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 165,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 175
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 330,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 340
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DAEMON PRINCE OF KHORNE",
+      "name": "CHAOS VINDICATOR",
       "leader": null,
       "support": null,
       "sizes": [
@@ -388,14 +380,19 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200
+              "points": 185,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 195
             }
           ]
         }
       ]
     },
     {
-      "name": "DAEMON PRINCE OF KHORNE WITH WINGS",
+      "name": "DAEMON PRINCE OF TZEENTCH",
       "leader": null,
       "support": null,
       "sizes": [
@@ -412,6 +409,28 @@
       ]
     },
     {
+      "name": "DAEMON PRINCE OF TZEENTCH WITH WINGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "DEFILER",
       "leader": null,
       "support": null,
@@ -422,12 +441,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 270,
+              "points": 300,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 310
+              "points": 350
             }
           ]
         }
@@ -444,74 +463,44 @@
       ]
     },
     {
-      "name": "EIGHTBOUND",
-      "leader": null,
+      "name": "EXALTED SORCERER",
+      "leader": {
+        "attachesTo": [
+          "RUBRIC MARINES"
+        ]
+      },
       "support": null,
       "sizes": [
         {
-          "name": "3 models",
-          "models": 3,
+          "name": "1 model",
+          "models": 1,
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 140
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 255,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 270
+              "points": 95
             }
           ]
         }
       ]
     },
     {
-      "name": "EXALTED EIGHTBOUND",
-      "leader": null,
+      "name": "EXALTED SORCERER ON DISC OF TZEENTCH",
+      "leader": {
+        "attachesTo": [
+          "RUBRIC MARINES",
+          "TZAANGOR ENLIGHTENED",
+          "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS"
+        ]
+      },
       "support": null,
       "sizes": [
         {
-          "name": "3 models",
-          "models": 3,
+          "name": "1 model",
+          "models": 1,
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 145
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 265,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 280
+              "points": 90
             }
           ]
         }
@@ -528,12 +517,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 155
+              "points": 145
             }
           ]
         }
@@ -542,23 +531,6 @@
         {
           "name": "Ectoplasma cannon",
           "points": 5
-        }
-      ]
-    },
-    {
-      "name": "GOREMONGERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "8 models",
-          "models": 8,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
         }
       ]
     },
@@ -573,7 +545,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 110
             }
           ]
         }
@@ -597,109 +569,10 @@
       ]
     },
     {
-      "name": "JAKHALS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        },
-        {
-          "name": "20 models",
-          "models": 20,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 130
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KHÂRN THE BETRAYER",
+      "name": "INFERNAL MASTER",
       "leader": {
         "attachesTo": [
-          "KHORNE BERZERKERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 115
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KHORNE BERZERKERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        },
-        {
-          "name": "20 models",
-          "models": 20,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 320
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KHORNE LORD OF SKULLS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 505,
-              "maxCount": 1
-            },
-            {
-              "minCount": 2,
-              "points": 535
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "LORD INVOCATUS",
-      "leader": {
-        "attachesTo": [
-          "EIGHTBOUND",
-          "EXALTED EIGHTBOUND",
-          "KHORNE BERZERKERS"
+          "RUBRIC MARINES"
         ]
       },
       "support": null,
@@ -717,14 +590,8 @@
       ]
     },
     {
-      "name": "LORD ON JUGGERNAUT",
-      "leader": {
-        "attachesTo": [
-          "EIGHTBOUND",
-          "EXALTED EIGHTBOUND",
-          "KHORNE BERZERKERS"
-        ]
-      },
+      "name": "MAGNUS THE RED",
+      "leader": null,
       "support": null,
       "sizes": [
         {
@@ -733,28 +600,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "MASTER OF EXECUTIONS",
-      "leader": {
-        "attachesTo": [
-          "KHORNE BERZERKERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
+              "points": 455
             }
           ]
         }
@@ -771,23 +617,155 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 120,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 130
             }
           ]
         }
       ]
     },
     {
-      "name": "SLAUGHTERBOUND",
+      "name": "MUTALITH VORTEX BEAST",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RUBRIC MARINES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SCARAB OCCULT TERMINATORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 195
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 385,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SEKHETAR ROBOTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SORCERER",
       "leader": {
         "attachesTo": [
-          "EIGHTBOUND",
-          "EXALTED EIGHTBOUND"
+          "RUBRIC MARINES"
         ]
       },
       "support": null,
@@ -798,14 +776,45 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 95,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
             }
           ]
         }
       ]
     },
     {
-      "name": "BLOODCRUSHERS",
+      "name": "SORCERER IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "SCARAB OCCULT TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TZAANGOR ENLIGHTENED",
       "leader": null,
       "support": null,
       "sizes": [
@@ -815,12 +824,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 115
+              "points": 50
             }
           ]
         },
@@ -830,19 +834,91 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 210
+              "points": 90
             }
           ]
         }
       ]
     },
     {
-      "name": "BLOODLETTERS",
+      "name": "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TZAANGORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TZAANGOR SHAMAN",
+      "leader": {
+        "attachesTo": [
+          "TZAANGOR ENLIGHTENED",
+          "TZAANGOR ENLIGHTENED WITH FATECASTER GREATBOWS",
+          "TZAANGORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLUE HORRORS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -859,7 +935,51 @@
       ]
     },
     {
-      "name": "BLOODTHIRSTER",
+      "name": "FLAMERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KAIROS FATEWEAVER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 305
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LORD OF CHANGE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -874,51 +994,51 @@
             },
             {
               "minCount": 3,
-              "points": 335
+              "points": 340
             }
           ]
         }
       ]
     },
     {
-      "name": "FLESH HOUNDS",
+      "name": "PINK HORRORS",
       "leader": null,
       "support": null,
       "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75
-            }
-          ]
-        },
         {
           "name": "10 models",
           "models": 10,
           "tiers": [
             {
               "minCount": 1,
-              "points": 150
+              "points": 115
             }
           ]
         }
       ]
     },
     {
-      "name": "SKARBRAND",
+      "name": "SCREAMERS",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
-              "points": 315
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
             }
           ]
         }

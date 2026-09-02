@@ -1,6 +1,6 @@
 {
   "faction": "SPACE WOLVES",
-  "siteVersion": "v1.3",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -2355,7 +2355,16 @@
           "WOLF GUARD"
         ]
       },
-      "support": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "VANGUARD VETERAN SQUAD"
+        ]
+      },
       "sizes": [
         {
           "name": "1 model",

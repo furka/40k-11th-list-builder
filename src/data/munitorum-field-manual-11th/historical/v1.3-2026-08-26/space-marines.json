@@ -1,6 +1,6 @@
 {
   "faction": "SPACE MARINES",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.3",
   "detachments": [
     {
       "name": "1ST COMPANY TASK FORCE",
@@ -737,7 +737,6 @@
         "attachesTo": [
           "ASSAULT INTERCESSOR SQUAD",
           "ASSAULT SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
           "CRUSADER SQUAD",
           "DEATHWATCH VETERANS",
           "DECIMUS KILL TEAM",
@@ -1871,16 +1870,7 @@
           "VANGUARD VETERAN SQUAD"
         ]
       },
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "INFERNUS SQUAD",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "VANGUARD VETERAN SQUAD"
-        ]
-      },
+      "support": null,
       "sizes": [
         {
           "name": "1 model",
