@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "8e1f33448d6e7c692dfab9db188ce8ac2c3e3fc9",
-  "_committedAt": "2026-08-16T12:03:50Z",
-  "_generatedAt": "2026-08-16T14:27:10.477Z",
+  "_sha": "003373fa638fa5650352d310320ef6213b043f3e",
+  "_committedAt": "2026-09-03T08:33:32Z",
+  "_generatedAt": "2026-09-03T17:40:59.494Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -407,10 +407,12 @@
         "CHAPLAIN",
         "CHAPLAIN GRIMALDUS",
         "CHAPLAIN IN TERMINATOR ARMOUR",
+        "CHAPLAIN KASTIEL",
         "CHAPLAIN ON BIKE",
         "CHAPLAIN WITH JUMP PACK",
         "EXECRATOR",
-        "JUDICIAR"
+        "JUDICIAR",
+        "JUDICIAR XACHARUS"
       ]
     },
     "Indomitable Fury": {
@@ -423,10 +425,12 @@
         "CHAPLAIN",
         "CHAPLAIN GRIMALDUS",
         "CHAPLAIN IN TERMINATOR ARMOUR",
+        "CHAPLAIN KASTIEL",
         "CHAPLAIN ON BIKE",
         "CHAPLAIN WITH JUMP PACK",
         "EXECRATOR",
-        "JUDICIAR"
+        "JUDICIAR",
+        "JUDICIAR XACHARUS"
       ]
     },
     "Shadow War Veteran": {
@@ -1414,11 +1418,6 @@
     }
   },
   "ORKS": {
-    "Dakkamek": {
-      "requiredKeywords": [
-        "BEASTBOSS ON SQUIGOSAUR"
-      ]
-    },
     "Headwoppa’s Killchoppa": {
       "requiredKeywords": [
         "BEASTBOSS ON SQUIGOSAUR"
