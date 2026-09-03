@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "e4d52b40a09b93dfe0827482d7f60e388b10a7c1",
-  "_committedAt": "2026-08-31T19:50:45Z",
-  "_generatedAt": "2026-08-31T19:53:34.305Z",
+  "_sha": "003373fa638fa5650352d310320ef6213b043f3e",
+  "_committedAt": "2026-09-03T08:33:32Z",
+  "_generatedAt": "2026-09-03T17:40:58.661Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -544,7 +544,6 @@
     ],
     "Orion Assault Dropship": [
       "ADEPTUS CUSTODES",
-      "AIRCRAFT",
       "FLY",
       "IMPERIUM",
       "ORION ASSAULT DROPSHIP",
@@ -3907,6 +3906,19 @@
       "LEADER",
       "TACTICUS"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -4275,6 +4287,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
@@ -5165,6 +5189,19 @@
       "LEADER",
       "TACTICUS"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -5614,6 +5651,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
@@ -8371,6 +8420,19 @@
       "LEADER",
       "TACTICUS"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -8728,6 +8790,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
@@ -10127,6 +10201,19 @@
       "LEADER",
       "TACTICUS"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -10487,6 +10574,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Kill Team Cassius": [
       "AGENTS OF THE IMPERIUM",
@@ -13187,6 +13286,19 @@
       "LEADER",
       "TACTICUS"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -13560,6 +13672,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Kaldor Draigo": [
       "CHARACTER",
@@ -16697,6 +16821,19 @@
       "INFANTRY",
       "ULTRAMARINES"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -17036,6 +17173,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Kayvaan Shrike": [
       "ADEPTUS ASTARTES",
@@ -18074,6 +18223,19 @@
       "LEADER",
       "TACTICUS"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -18435,6 +18597,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Krom Dragongaze": [
       "ADEPTUS ASTARTES",
@@ -21075,6 +21249,19 @@
       "INFANTRY",
       "ULTRAMARINES"
     ],
+    "Chaplain Kastiel": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHAPLAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KASTIEL",
+      "LEADER",
+      "TACTICUS"
+    ],
     "Chaplain Venerable Dreadnought": [
       "ADEPTUS ASTARTES",
       "CHAPLAIN VENERABLE DREADNOUGHT",
@@ -21391,6 +21578,18 @@
       "JUDICIAR",
       "LEADER",
       "TACTICUS"
+    ],
+    "Judiciar Xacharus": [
+      "ADEPTUS ASTARTES",
+      "BLOOD RAVENS",
+      "CHARACTER",
+      "EPIC HERO",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUDICIAR",
+      "LEADER",
+      "TACTICUS",
+      "XACHARUS"
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",

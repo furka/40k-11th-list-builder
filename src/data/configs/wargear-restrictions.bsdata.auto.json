@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "46d8cc50c5f50eaa97a5ee3cdc6d967e210c5d73",
-  "_committedAt": "2026-08-24T22:46:05Z",
-  "_generatedAt": "2026-08-26T14:48:50.262Z",
+  "_sha": "003373fa638fa5650352d310320ef6213b043f3e",
+  "_committedAt": "2026-09-03T08:33:32Z",
+  "_generatedAt": "2026-09-03T17:41:00.315Z",
   "_generator": "scripts/scrape-bsdata-wargear",
   "ADEPTA SORORITAS": {
     "DOMINION SQUAD": {
@@ -362,6 +362,13 @@
     "KNIGHT CRUSADER": {
       "Rapid-fire battle cannon": {
         "maxPerUnit": 1
+      }
+    }
+  },
+  "ORKS": {
+    "MEGANOBZ": {
+      "Killsaw": {
+        "maxPerUnit": 6
       }
     }
   },
