@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "003373fa638fa5650352d310320ef6213b043f3e",
-  "_committedAt": "2026-09-03T08:33:32Z",
-  "_generatedAt": "2026-09-03T17:41:00.315Z",
+  "_sha": "074eabcd62d59812b877cc7c8df816dff3993746",
+  "_committedAt": "2026-09-05T15:22:02Z",
+  "_generatedAt": "2026-09-05T16:39:57.761Z",
   "_generator": "scripts/scrape-bsdata-wargear",
   "ADEPTA SORORITAS": {
     "DOMINION SQUAD": {
@@ -366,9 +366,19 @@
     }
   },
   "ORKS": {
+    "GUNWAGON": {
+      "Zzap Gun": {
+        "maxPerUnit": 1
+      }
+    },
     "MEGANOBZ": {
       "Killsaw": {
         "maxPerUnit": 6
+      }
+    },
+    "NOBZ": {
+      "Paired Krumpas": {
+        "maxPerUnit": 1
       }
     }
   },
