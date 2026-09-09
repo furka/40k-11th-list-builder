@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "003373fa638fa5650352d310320ef6213b043f3e",
-  "_committedAt": "2026-09-03T08:33:32Z",
-  "_generatedAt": "2026-09-03T17:40:58.661Z",
+  "_sha": "6aae3fe4affc5c9ae0c8c2b7cd0c9aabb86f7496",
+  "_committedAt": "2026-09-09T14:59:43Z",
+  "_generatedAt": "2026-09-09T17:42:37.681Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -4073,6 +4073,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "TACTICUS"
     ],
     "Eradicator Squad": [
@@ -4285,7 +4286,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -5649,7 +5649,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -7345,6 +7344,7 @@
       "EPIC HERO",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "TERMINATOR"
     ],
     "Accursed Cultists": [
@@ -7394,7 +7394,8 @@
       "CHARACTER",
       "GRENADES",
       "HERETIC ASTARTES",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Chaos Lord in Terminator Armour": [
       "CHAOS",
@@ -7403,6 +7404,7 @@
       "CHARACTER",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "TERMINATOR"
     ],
     "Chaos Lord on Bike": [
@@ -7411,6 +7413,7 @@
       "CHARACTER",
       "GRENADES",
       "HERETIC ASTARTES",
+      "LEADER",
       "MOUNTED"
     ],
     "Chaos Lord on Disc of Tzeentch": [
@@ -7422,6 +7425,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "TZEENTCH"
     ],
     "Chaos Lord on Juggernaut": [
@@ -7432,6 +7436,7 @@
       "HERETIC ASTARTES",
       "JUGGERNAUT",
       "KHORNE",
+      "LEADER",
       "MOUNTED"
     ],
     "Chaos Lord on Palanquin of Nurgle": [
@@ -7441,6 +7446,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "NURGLE",
       "PALANQUIN OF NURGLE"
     ],
@@ -7450,6 +7456,7 @@
       "CHARACTER",
       "GRENADES",
       "HERETIC ASTARTES",
+      "LEADER",
       "MOUNTED",
       "SLAANESH",
       "STEED OF SLAANESH"
@@ -7462,7 +7469,8 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
-      "JUMP PACK"
+      "JUMP PACK",
+      "LEADER"
     ],
     "Chaos Predator Annihilator": [
       "CHAOS",
@@ -7532,7 +7540,8 @@
       "DAMNED",
       "GRENADES",
       "HERETIC ASTARTES",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Cultist Mob": [
       "BATTLELINE",
@@ -7573,7 +7582,8 @@
       "DARK APOSTLE",
       "GRENADES",
       "HERETIC ASTARTES",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Dark Commune": [
       "CHAOS",
@@ -7584,6 +7594,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "PSYKER"
     ],
     "Dark Disciple": [],
@@ -7620,7 +7631,8 @@
       "CHARACTER",
       "EPIC HERO",
       "FABIUS BILE",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Fellgor Beastmen": [
       "CHAOS",
@@ -7656,7 +7668,8 @@
       "HAARKEN WORLDCLAIMER",
       "HERETIC ASTARTES",
       "INFANTRY",
-      "JUMP PACK"
+      "JUMP PACK",
+      "LEADER"
     ],
     "Havocs": [
       "CHAOS",
@@ -7721,7 +7734,8 @@
       "EPIC HERO",
       "HERETIC ASTARTES",
       "HURON BLACKHEART",
-      "INFANTRY"
+      "INFANTRY",
+      "LEADER"
     ],
     "Katar Garrix": [],
     "Khorne Berzerkers": [
@@ -7752,6 +7766,7 @@
       "HERETIC ASTARTES",
       "INFANTRY",
       "KRAVEK MORNE",
+      "LEADER",
       "TERMINATOR"
     ],
     "Legionaries": [
@@ -7784,6 +7799,7 @@
       "CHARACTER",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "MASTER OF POSSESSION",
       "PSYKER"
     ],
@@ -7899,6 +7915,7 @@
       "CHARACTER",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "RED CORSAIRS REAVE-CAPTAIN"
     ],
     "Renegade Enforcer": [
@@ -7908,6 +7925,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "RENEGADE ENFORCER"
     ],
     "Renegade Heavy Weapons Squad": [
@@ -7946,6 +7964,7 @@
       "DAMNED",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "ROGUE PSYKER"
     ],
@@ -7968,6 +7987,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "SORCERER"
     ],
@@ -7976,6 +7996,7 @@
       "CHARACTER",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "SORCERER IN TERMINATOR ARMOUR",
       "TERMINATOR"
@@ -7985,6 +8006,7 @@
       "CHARACTER",
       "GRENADES",
       "HERETIC ASTARTES",
+      "LEADER",
       "MOUNTED",
       "PSYKER",
       "SORCERER ON BIKE"
@@ -7997,6 +8019,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "PSYKER",
       "SORCERER",
       "TZEENTCH"
@@ -8007,6 +8030,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "NURGLE",
       "PALANQUIN OF NURGLE",
       "PSYKER",
@@ -8017,6 +8041,7 @@
       "CHARACTER",
       "GRENADES",
       "HERETIC ASTARTES",
+      "LEADER",
       "MOUNTED",
       "PSYKER",
       "SLAANESH",
@@ -8053,6 +8078,7 @@
       "GRENADES",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "TRAITOR ENFORCER"
     ],
     "Traitor Guardsmen Squad": [
@@ -8104,6 +8130,7 @@
       "CHARACTER",
       "HERETIC ASTARTES",
       "INFANTRY",
+      "LEADER",
       "WARPSMITH"
     ]
   },
@@ -8788,7 +8815,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -10310,8 +10336,6 @@
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
-      "ORDO XENOS",
-      "RETINUE",
       "WATCH SERGEANT LOADOUT"
     ],
     "Decimus Kill Team": [
@@ -10572,7 +10596,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -13670,7 +13693,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -15726,7 +15748,8 @@
     "Triarch Stalker": [
       "FRAME",
       "NECRONS",
-      "TRIARCH STALKER",
+      "STALKER",
+      "TRIARCH",
       "VEHICLE",
       "WALKER"
     ],
@@ -15750,14 +15773,6 @@
     ]
   },
   "ORKS": {
-    "Attack Fighta": [
-      "AIRCRAFT",
-      "ATTACK FIGHTA",
-      "FLY",
-      "ORKS",
-      "SPEED FREEKS",
-      "VEHICLE"
-    ],
     "Bannernob": [
       "BANNERNOB",
       "CHARACTER",
@@ -15770,7 +15785,8 @@
       "FRAME",
       "ORKS",
       "TRANSPORT",
-      "VEHICLE"
+      "VEHICLE",
+      "WAGON"
     ],
     "Beast Snagga Boyz": [
       "BATTLELINE",
@@ -15793,77 +15809,48 @@
       "BEAST SNAGGA",
       "BEASTBOSS ON SQUIGOSAUR",
       "CHARACTER",
-      "LEADER",
-      "MOUNTED",
+      "MONSTER",
       "ORKS",
       "WARBOSS"
     ],
-    "Big Gunz": [
-      "ARTILLERY",
-      "BIG GUNZ",
-      "GROTS",
-      "ORKS",
-      "VEHICLE"
-    ],
-    "Big Gunz w/ Kannon": [],
-    "Big Gunz w/ Lobba": [],
-    "Big Gunz w/ Zzap gun": [],
     "Big Mek": [
       "BIG MEK",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "LEADER",
-      "MEK",
       "ORKS"
     ],
     "Big Mek Dakkarig": [
       "BIG MEK",
-      "DAKKARIG",
+      "BIG MEK DAKKARIG",
+      "CHARACTER",
       "ORKS",
       "VEHICLE",
       "WALKER"
     ],
     "Big Mek in Mega Armour": [
+      "BIG MEK",
       "BIG MEK IN MEGA ARMOUR",
       "CHARACTER",
+      "EXPLOSIVES",
       "INFANTRY",
       "LEADER",
       "MEGA ARMOUR",
-      "MEK",
-      "ORKS"
-    ],
-    "Big Mek on Warbike": [
-      "BIG MEK",
-      "BIG MEK ON WARBIKE",
-      "CHARACTER",
-      "GRENADES",
-      "LEADER",
-      "MOUNTED",
-      "ORKS",
-      "SPEED FREEKS"
-    ],
-    "Big Mek with Kustom Force Field": [
-      "BIG MEK",
-      "BIG MEK WITH KUSTOM FORCE FIELD",
-      "CHARACTER",
-      "GRENADES",
-      "INFANTRY",
-      "LEADER",
-      "MEK",
       "ORKS"
     ],
     "Big Mek with Shokk Attack Gun": [
+      "BIG MEK",
       "BIG MEK WITH SHOKK ATTACK GUN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "LEADER",
-      "MEK",
       "ORKS"
     ],
     "Big Trakk": [
       "BIG TRAKK",
+      "FRAME",
       "ORKS",
       "TRANSPORT",
       "VEHICLE"
@@ -15872,13 +15859,15 @@
       "BIGBOSS",
       "CHARACTER",
       "INFANTRY",
-      "LEADER",
-      "ORKS"
+      "ORKS",
+      "SUPPORT"
     ],
     "Big’ed Bossbunka": [
       "BIG’ED BOSSBUNKA",
       "FORTIFICATION",
+      "FRAME",
       "ORKS",
+      "RAPID FIRE WEAPON",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -15890,18 +15879,11 @@
       "SPEED FREEKS",
       "VEHICLE"
     ],
-    "Boomdakka Snazzwagon": [
-      "BOOMDAKKA SNAZZWAGON",
-      "GRENADES",
-      "ORKS",
-      "SPEED FREEKS",
-      "VEHICLE"
-    ],
     "Boss Snikrot": [
       "BOSS SNIKROT",
       "CHARACTER",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "LEADER",
       "ORKS",
@@ -15920,16 +15902,15 @@
     "Boyz": [
       "BATTLELINE",
       "BOYZ",
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "MOB",
       "ORKS"
     ],
     "Breaka Boyz": [
       "BREAKA BOYZ",
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
-      "LEADER",
       "ORKS"
     ],
     "Burna Boyz": [
@@ -15944,24 +15925,6 @@
       "ORKS",
       "SPEED FREEKS",
       "VEHICLE"
-    ],
-    "Chinork Warkopta": [
-      "CHINORK WARKOPTA",
-      "FLY",
-      "ORKS",
-      "SPEED FREEKS",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
-    "Da Red Gobbo": [
-      "CHARACTER",
-      "DA RED GOBBO",
-      "EPIC HERO",
-      "GRENADES",
-      "GROTS",
-      "INFANTRY",
-      "LEADER",
-      "ORKS"
     ],
     "Da Red Gobbo’s A-bomb-inable Snowman": [
       "CHARACTER",
@@ -15993,13 +15956,6 @@
       "VEHICLE",
       "WALKER"
     ],
-    "Deff Rolla Battle Fortress": [
-      "DEFF ROLLA BATTLE FORTRESS",
-      "ORKS",
-      "TITANIC",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "Deffkilla Wartrike": [
       "CHARACTER",
       "DEFFKILLA WARTRIKE",
@@ -16011,30 +15967,15 @@
     ],
     "Deffkoptas": [
       "DEFFKOPTAS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
+      "MOUNTED",
       "ORKS",
-      "SPEED FREEKS",
-      "VEHICLE"
-    ],
-    "Deffkoptas with Big Shootas": [
-      "DEFFKOPTAS WITH BIG SHOOTAS",
-      "FLY",
-      "GRENADES",
-      "ORKS",
-      "VEHICLE"
-    ],
-    "Fighta-Bommer": [
-      "AIRCRAFT",
-      "FIGHTA-BOMMER",
-      "FLY",
-      "ORKS",
-      "SPEED FREEKS",
-      "VEHICLE"
+      "SPEED FREEKS"
     ],
     "Flash Gitz": [
+      "EXPLOSIVES",
       "FLASH GITZ",
-      "GRENADES",
       "INFANTRY",
       "ORKS"
     ],
@@ -16050,9 +15991,9 @@
     "Ghazghkull Thraka": [
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "GHAZGHKULL THRAKA",
       "INFANTRY",
-      "LEADER",
       "ORKS",
       "WARBOSS"
     ],
@@ -16071,20 +16012,15 @@
       "INFANTRY",
       "ORKS"
     ],
-    "Grot Bomm Launcha": [
-      "GROT BOMM LAUNCHA",
-      "GROTS",
-      "MOUNTED",
-      "ORKS",
-      "SPEED FREEKS"
-    ],
     "Grot Mega-Tank": [
+      "FRAME",
       "GROT MEGA-TANK",
       "GROTS",
       "ORKS",
       "VEHICLE"
     ],
     "Grot Tanks": [
+      "FRAME",
       "GROT TANKS",
       "GROTS",
       "ORKS",
@@ -16099,6 +16035,14 @@
       "MOUNTED",
       "ORKS"
     ],
+    "Gunwagon": [
+      "FRAME",
+      "GUNWAGON",
+      "ORKS",
+      "TRANSPORT",
+      "VEHICLE",
+      "WAGON"
+    ],
     "Hordeboss [Crucible]": [
       "CHARACTER",
       "CRUCIBLE",
@@ -16112,13 +16056,8 @@
       "HUNTA RIG",
       "MONSTER",
       "ORKS",
-      "TRANSPORT"
-    ],
-    "Kannonwagon": [
-      "KANNONWAGON",
-      "ORKS",
       "TRANSPORT",
-      "VEHICLE"
+      "WAGON"
     ],
     "Kaptin Badrukk": [
       "CHARACTER",
@@ -16128,27 +16067,22 @@
       "LEADER",
       "ORKS"
     ],
-    "Kill Krusha": [
-      "KILL KRUSHA",
-      "ORKS",
-      "TITANIC",
-      "TRANSPORT",
-      "VEHICLE"
-    ],
     "Kill Rig": [
       "BEAST SNAGGA",
       "KILL RIG",
       "MONSTER",
       "ORKS",
       "PSYKER",
-      "TRANSPORT"
+      "TRANSPORT",
+      "WAGON"
     ],
     "Kill Tank": [
+      "FRAME",
       "KILL TANK",
       "ORKS",
-      "TITANIC",
       "TRANSPORT",
-      "VEHICLE"
+      "VEHICLE",
+      "WAGON"
     ],
     "Killa Kans": [
       "GROTS",
@@ -16158,23 +16092,18 @@
       "WALKER"
     ],
     "Kommandos": [
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "KOMMANDOS",
       "ORKS",
       "SMOKE"
     ],
-    "Kustom Boosta-blasta": [
-      "GRENADES",
-      "KUSTOM BOOSTA-BLASTA",
-      "ORKS",
-      "SPEED FREEKS",
-      "VEHICLE"
-    ],
     "Lifta Wagon": [
+      "FRAME",
       "LIFTA WAGON",
       "ORKS",
-      "VEHICLE"
+      "VEHICLE",
+      "WAGON"
     ],
     "Lootas": [
       "INFANTRY",
@@ -16185,47 +16114,33 @@
       "CHARACTER",
       "EPIC HERO",
       "INFANTRY",
+      "LEADER",
       "MAD DOK GROTSNIK",
       "ORKS",
       "PAINBOY"
     ],
-    "Mega Dread": [
-      "MEGA DREAD",
-      "ORKS",
-      "VEHICLE",
-      "WALKER"
-    ],
+    "Meganob w/ Twin Killsaw": [],
     "Meganobz": [
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "MEGA ARMOUR",
       "MEGANOBZ",
       "ORKS"
     ],
-    "Megatrakk Scrapjet": [
-      "MEGATRAKK SCRAPJET",
-      "ORKS",
-      "SPEED FREEKS",
-      "VEHICLE"
-    ],
     "Mek": [
       "CHARACTER",
+      "EXPLOSIVES",
       "INFANTRY",
-      "LEADER",
       "MEK",
-      "ORKS"
+      "ORKS",
+      "SUPPORT"
     ],
     "Mek Gunz": [
+      "FRAME",
       "GROTS",
       "MEK GUNZ",
       "ORKS",
       "VEHICLE"
-    ],
-    "Meka-Dread": [
-      "MEKA-DREAD",
-      "ORKS",
-      "VEHICLE",
-      "WALKER"
     ],
     "Mekboy Workshop": [
       "FORTIFICATION",
@@ -16246,32 +16161,33 @@
       "BEAST SNAGGA",
       "CHARACTER",
       "EPIC HERO",
-      "LEADER",
-      "MOUNTED",
+      "MONSTER",
       "MOZROG SKRAGBAD",
+      "ORKS"
+    ],
+    "Nazdreg": [
+      "CHARACTER",
+      "EPIC HERO",
+      "INFANTRY",
+      "LEADER",
+      "MEGA ARMOUR",
+      "NAZDREG",
       "ORKS",
       "WARBOSS"
     ],
     "Nobz": [
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "NOBZ",
       "ORKS"
-    ],
-    "Nobz on Warbikes": [
-      "GRENADES",
-      "MOUNTED",
-      "NOBZ ON WARBIKES",
-      "ORKS",
-      "SPEED FREEKS"
     ],
     "Painboss": [
       "BEAST SNAGGA",
       "CHARACTER",
       "INFANTRY",
-      "LEADER",
       "ORKS",
-      "PAINBOSS"
+      "PAINBOSS",
+      "SUPPORT"
     ],
     "Painboy": [
       "CHARACTER",
@@ -16280,41 +16196,24 @@
       "PAINBOY",
       "SUPPORT"
     ],
-    "Painboy on Warbike": [
-      "CHARACTER",
-      "LEADER",
-      "MOUNTED",
-      "ORKS",
-      "PAINBOY ON WARBIKE",
-      "SPEED FREEKS"
-    ],
-    "Rukkatrukk Squigbuggy": [
+    "Rukkatrukk Squigbuggies": [
+      "EXPLOSIVES",
       "ORKS",
       "RUKKATRUKK SQUIGBUGGY",
       "SPEED FREEKS",
       "VEHICLE"
     ],
-    "Shokkjump Dragsta": [
+    "Runtherd": [
+      "CHARACTER",
+      "INFANTRY",
       "ORKS",
-      "SHOKKJUMP DRAGSTA",
-      "SPEED FREEKS",
-      "VEHICLE"
-    ],
-    "Skorchas": [
-      "MOUNTED",
-      "ORKS",
-      "SKORCHAS",
-      "SPEED FREEKS"
-    ],
-    "Squiggoth": [
-      "MONSTER",
-      "ORKS",
-      "SQUIGGOTH",
-      "TRANSPORT"
+      "RUNTHERD",
+      "SUPPORT"
     ],
     "Squighog Boyz": [
       "BEAST SNAGGA",
-      "GRENADES",
+      "EXPLOSIVES",
+      "MOBILE",
       "MOUNTED",
       "ORKS",
       "SQUIGHOG BOYZ"
@@ -16330,15 +16229,15 @@
       "WALKER"
     ],
     "Stormboyz": [
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "INFANTRY",
       "JUMP PACK",
       "ORKS",
       "STORMBOYZ"
     ],
     "Tankbustas": [
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
       "ORKS",
       "TANKBUSTAS"
@@ -16347,19 +16246,10 @@
       "DEDICATED TRANSPORT",
       "FRAME",
       "ORKS",
+      "SPEED FREEKS",
       "TRANSPORT",
       "TRUKK",
       "VEHICLE"
-    ],
-    "Ufthak Blackhawk": [
-      "CHARACTER",
-      "EPIC HERO",
-      "GRENADES",
-      "INFANTRY",
-      "LEADER",
-      "ORKS",
-      "UFTHAK BLACKHAWK",
-      "WARBOSS"
     ],
     "Upstart Gretchin [Crucible]": [
       "CHARACTER",
@@ -16371,7 +16261,7 @@
       "UPSTART GRETCHIN"
     ],
     "Warbikers": [
-      "GRENADES",
+      "EXPLOSIVES",
       "MOUNTED",
       "ORKS",
       "SPEED FREEKS",
@@ -16396,7 +16286,7 @@
     ],
     "Warboss on Warbike": [
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "LEADER",
       "MOUNTED",
       "ORKS",
@@ -16404,9 +16294,10 @@
       "WARBOSS"
     ],
     "Warbuggies": [
-      "MOUNTED",
+      "EXPLOSIVES",
       "ORKS",
       "SPEED FREEKS",
+      "VEHICLE",
       "WARBUGGIES"
     ],
     "Warphead [Crucible]": [
@@ -16417,17 +16308,17 @@
       "PSYKER",
       "WARPHEAD"
     ],
-    "Wartrakk": [
+    "Wartrakks": [
       "MOUNTED",
       "ORKS",
       "SPEED FREEKS",
-      "WARTRAKK"
+      "WARTRAKKS"
     ],
     "Wazbom Blastajet": [
       "AIRCRAFT",
       "FLY",
-      "GRENADES",
       "ORKS",
+      "SMOKE",
       "SPEED FREEKS",
       "VEHICLE",
       "WAZBOM BLASTAJET"
@@ -16445,19 +16336,10 @@
     "Weirdboy": [
       "CHARACTER",
       "INFANTRY",
-      "LEADER",
       "ORKS",
       "PSYKER",
+      "SUPPORT",
       "WEIRDBOY"
-    ],
-    "Wurrboy": [
-      "BEAST SNAGGA",
-      "CHARACTER",
-      "INFANTRY",
-      "LEADER",
-      "ORKS",
-      "PSYKER",
-      "WURRBOY"
     ],
     "Zodgrod Wortsnagga": [
       "CHARACTER",
@@ -16465,6 +16347,7 @@
       "INFANTRY",
       "LEADER",
       "ORKS",
+      "RUNTHERD",
       "ZODGROD WORTSNAGGA"
     ]
   },
@@ -16477,6 +16360,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "SALAMANDERS",
       "TACTICUS"
     ],
@@ -16490,6 +16374,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
+      "LEADER",
       "RAVEN GUARD",
       "TACTICUS"
     ],
@@ -16819,6 +16704,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "ULTRAMARINES"
     ],
     "Chaplain Kastiel": [
@@ -17171,7 +17057,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -17196,6 +17081,7 @@
       "INFANTRY",
       "JUMP PACK",
       "KAYVAAN SHRIKE",
+      "LEADER",
       "PHOBOS",
       "RAVEN GUARD"
     ],
@@ -17614,6 +17500,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "SERGEANT TELION",
       "ULTRAMARINES"
     ],
@@ -17885,6 +17772,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "SALAMANDERS",
       "TACTICUS",
       "VULKAN HE’STAN"
@@ -18116,6 +18004,7 @@
       "CHARACTER",
       "EPIC HERO",
       "IMPERIUM",
+      "LEADER",
       "MOUNTED",
       "SPACE WOLVES"
     ],
@@ -18309,7 +18198,8 @@
       "CHARACTER",
       "CYBERWOLF",
       "IMPERIUM",
-      "SPACE WOLVES"
+      "SPACE WOLVES",
+      "SUPPORT"
     ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
@@ -18448,6 +18338,7 @@
       "GRENADES",
       "HARALD DEATHWOLF",
       "IMPERIUM",
+      "LEADER",
       "MOUNTED",
       "SPACE WOLVES"
     ],
@@ -18577,6 +18468,7 @@
       "GRENADES",
       "IMPERIUM",
       "IRON PRIEST",
+      "LEADER",
       "MOUNTED",
       "SPACE WOLVES"
     ],
@@ -18595,7 +18487,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -18619,6 +18510,7 @@
       "IMPERIUM",
       "INFANTRY",
       "KROM DRAGONGAZE",
+      "LEADER",
       "SPACE WOLVES"
     ],
     "Land Raider": [
@@ -18827,6 +18719,7 @@
       "CHARACTER",
       "EPIC HERO",
       "IMPERIUM",
+      "LEADER",
       "LOGAN GRIMNAR ON STORMRIDER",
       "MOUNTED",
       "SPACE WOLVES"
@@ -18846,6 +18739,7 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "LUKAS THE TRICKSTER",
       "SPACE WOLVES"
     ],
@@ -19308,6 +19202,7 @@
       "CHARACTER",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "SPACE WOLVES",
       "TERMINATOR",
       "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR"
@@ -19317,6 +19212,7 @@
       "CHARACTER",
       "GRENADES",
       "IMPERIUM",
+      "LEADER",
       "MOUNTED",
       "SPACE WOLVES",
       "WOLF GUARD BATTLE LEADER ON THUNDERWOLF"
@@ -19341,6 +19237,7 @@
       "INFANTRY",
       "PACK LEADER",
       "SPACE WOLVES",
+      "SUPPORT",
       "WOLF GUARD PACK LEADER"
     ],
     "Wolf Guard Pack Leader in Terminator Armour": [
@@ -19351,6 +19248,7 @@
       "INFANTRY",
       "PACK LEADER",
       "SPACE WOLVES",
+      "SUPPORT",
       "TERMINATOR",
       "WOLF GUARD PACK LEADER IN TERMINATOR ARMOUR"
     ],
@@ -19364,6 +19262,7 @@
       "JUMP PACK",
       "PACK LEADER",
       "SPACE WOLVES",
+      "SUPPORT",
       "WOLF GUARD PACK LEADER WITH JUMP PACK"
     ],
     "Wolf Guard Terminators": [
@@ -19381,6 +19280,7 @@
       "CHARACTER",
       "GRENADES",
       "IMPERIUM",
+      "LEADER",
       "MOUNTED",
       "SPACE WOLVES",
       "WOLF LORD ON THUNDERWOLF"
@@ -21247,6 +21147,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "ULTRAMARINES"
     ],
     "Chaplain Kastiel": [
@@ -21576,7 +21477,6 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
-      "LEADER",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -21982,6 +21882,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
+      "LEADER",
       "SERGEANT TELION",
       "ULTRAMARINES"
     ],
