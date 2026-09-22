@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "6aae3fe4affc5c9ae0c8c2b7cd0c9aabb86f7496",
-  "_committedAt": "2026-09-09T14:59:43Z",
-  "_generatedAt": "2026-09-09T17:42:37.681Z",
+  "_sha": "07656840caa938d5d9d495488be9719c7f75dbd3",
+  "_committedAt": "2026-09-19T09:42:09Z",
+  "_generatedAt": "2026-09-21T19:09:53.936Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -4206,6 +4206,7 @@
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
