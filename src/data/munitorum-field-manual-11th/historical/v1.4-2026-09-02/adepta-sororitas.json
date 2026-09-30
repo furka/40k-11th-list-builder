@@ -1,6 +1,6 @@
 {
   "faction": "ADEPTA SORORITAS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "ARMY OF FAITH",
@@ -113,8 +113,8 @@
       "name": "HALLOWED MARTYRS",
       "dp": 3,
       "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
       },
       "leader": null,
       "tags": [],
@@ -347,7 +347,7 @@
             },
             {
               "minCount": 3,
-              "points": 185
+              "points": 175
             }
           ]
         }
@@ -364,7 +364,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115
+              "points": 120
             }
           ]
         }
@@ -517,10 +517,10 @@
             {
               "minCount": 1,
               "points": 180,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
+              "minCount": 2,
               "points": 220
             }
           ]
@@ -608,7 +608,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Twin Multi-melta",
+          "name": "Twin multi-melta",
           "points": 15
         }
       ]
@@ -726,7 +726,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 215
+              "points": 200
             }
           ]
         }
@@ -770,12 +770,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
+              "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 175
+              "points": 190
             }
           ]
         }
@@ -885,7 +885,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135
+              "points": 150
             }
           ]
         }

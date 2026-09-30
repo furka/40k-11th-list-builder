@@ -1,6 +1,6 @@
 {
   "faction": "LEAGUES OF VOTANN",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "ARMOURED TRAILBLAZERS",
@@ -393,7 +393,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 95
             }
           ]
         },
@@ -403,7 +403,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 190
             }
           ]
         }
@@ -538,7 +538,7 @@
             },
             {
               "minCount": 2,
-              "points": 270
+              "points": 265
             }
           ]
         }
@@ -555,12 +555,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
+              "points": 80,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 95
+              "points": 90
             }
           ]
         },
@@ -570,12 +570,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 170
             }
           ]
         }
@@ -727,12 +727,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
+              "points": 70,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 95
+              "points": 80
             }
           ]
         },
@@ -742,12 +742,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 140,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 170
+              "points": 150
             }
           ]
         }
@@ -813,7 +813,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 90
             }
           ]
         }

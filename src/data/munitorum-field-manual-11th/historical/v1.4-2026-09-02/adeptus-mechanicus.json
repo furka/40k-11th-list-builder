@@ -1,6 +1,6 @@
 {
   "faction": "ADEPTUS MECHANICUS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "COHORT ACQUISITUS",
@@ -25,7 +25,7 @@
     },
     {
       "name": "COHORT CYBERNETICA",
-      "dp": 1,
+      "dp": 2,
       "role": {
         "name": "TAKE AND HOLD",
         "color": "#2E6B3E"
@@ -83,7 +83,7 @@
     },
     {
       "name": "ERADICATION COHORT",
-      "dp": 2,
+      "dp": 3,
       "role": {
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
@@ -167,7 +167,7 @@
     },
     {
       "name": "LORDS OF THE FORGE",
-      "dp": 2,
+      "dp": 1,
       "role": {
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
@@ -344,7 +344,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 65
             }
           ]
         },
@@ -354,7 +354,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 130
             }
           ]
         }
@@ -375,7 +375,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 20
+              "points": 25
             }
           ]
         }
@@ -392,7 +392,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 70
             }
           ]
         },
@@ -402,7 +402,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 140
             }
           ]
         }
@@ -419,12 +419,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 105,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 115
+              "points": 120
             }
           ]
         }
@@ -441,12 +441,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105,
+              "points": 115,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 130
             }
           ]
         }
@@ -505,7 +505,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Twin Cognis Lascannon",
+          "name": "Twin cognis lascannon",
           "points": 10
         }
       ]
@@ -522,10 +522,10 @@
             {
               "minCount": 1,
               "points": 150,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
+              "minCount": 2,
               "points": 180
             }
           ]
@@ -537,10 +537,10 @@
             {
               "minCount": 1,
               "points": 300,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
+              "minCount": 2,
               "points": 330
             }
           ]
@@ -558,7 +558,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 150
             }
           ]
         },
@@ -568,7 +568,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 290
+              "points": 310
             }
           ]
         }
@@ -612,7 +612,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150
+              "points": 155
             }
           ]
         }
@@ -713,7 +713,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 110
             }
           ]
         }
@@ -740,7 +740,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         }
@@ -757,12 +757,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
+              "points": 65,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 85
+              "points": 75
             }
           ]
         }
@@ -968,7 +968,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         },
@@ -978,7 +978,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 150
             }
           ]
         }
@@ -1032,7 +1032,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 45
+              "points": 50
             }
           ]
         }

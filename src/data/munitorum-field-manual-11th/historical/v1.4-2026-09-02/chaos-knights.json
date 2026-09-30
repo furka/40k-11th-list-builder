@@ -1,6 +1,6 @@
 {
   "faction": "CHAOS KNIGHTS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "BASTIONS OF TYRANNY",
@@ -401,7 +401,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 350,
+              "points": 355,
               "maxCount": 2
             },
             {
@@ -423,7 +423,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 350,
+              "points": 355,
               "maxCount": 2
             },
             {
@@ -477,7 +477,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 350,
+              "points": 355,
               "maxCount": 2
             },
             {
@@ -499,12 +499,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 325,
+              "points": 340,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 345
+              "points": 355
             }
           ]
         }
@@ -521,12 +521,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 390,
+              "points": 400,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 410
+              "points": 420
             }
           ]
         }

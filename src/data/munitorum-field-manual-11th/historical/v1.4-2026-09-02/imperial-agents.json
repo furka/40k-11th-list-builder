@@ -1,6 +1,6 @@
 {
   "faction": "IMPERIAL AGENTS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "IMPERIALIS FLEET",
@@ -155,8 +155,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
-              "alliedPoints": 110
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         },
@@ -166,8 +166,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
-              "alliedPoints": 210
+              "points": 200,
+              "alliedPoints": 200
             }
           ]
         }
@@ -238,8 +238,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115,
-              "alliedPoints": 115
+              "points": 100,
+              "alliedPoints": 100
             }
           ]
         },
@@ -249,8 +249,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 220,
-              "alliedPoints": 220
+              "points": 190,
+              "alliedPoints": 190
             }
           ]
         }
@@ -662,7 +662,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Twin Multi-melta",
+          "name": "Twin multi-melta",
           "points": 15
         }
       ]
@@ -778,8 +778,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
-              "alliedPoints": 75
+              "points": 65,
+              "alliedPoints": 65
             }
           ]
         }
@@ -806,8 +806,8 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105,
-              "alliedPoints": 105
+              "points": 95,
+              "alliedPoints": 95
             }
           ]
         }

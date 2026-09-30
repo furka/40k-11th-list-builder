@@ -1,10 +1,10 @@
 {
   "faction": "EMPEROR’S CHILDREN",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "CARNIVAL OF EXCESS",
-      "dp": 3,
+      "dp": 2,
       "role": {
         "name": "DISRUPTION",
         "color": "#1A3A5C"
@@ -217,7 +217,7 @@
     },
     {
       "name": "SLAANESH’S CHOSEN",
-      "dp": 1,
+      "dp": 2,
       "role": {
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
@@ -278,12 +278,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 220,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 230
+              "points": 240
             }
           ]
         }
@@ -339,7 +339,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 155
+              "points": 145
             }
           ]
         }
@@ -356,12 +356,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
+              "points": 170,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 180
+              "points": 185
             }
           ]
         }
@@ -383,7 +383,7 @@
             },
             {
               "minCount": 2,
-              "points": 225
+              "points": 235
             }
           ]
         }
@@ -412,11 +412,11 @@
       ],
       "wargearOptions": [
         {
-          "name": "Heavy Reaper Autocannon",
+          "name": "Heavy reaper autocannon",
           "points": 15
         },
         {
-          "name": "Hades Lascannon",
+          "name": "Hades lascannon",
           "points": 15
         }
       ]
@@ -493,7 +493,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 85
             }
           ]
         },
@@ -503,7 +503,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 175
+              "points": 160
             }
           ]
         }
@@ -525,12 +525,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 90,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 100
             }
           ]
         }
@@ -573,7 +573,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 120
             }
           ]
         }
@@ -612,12 +612,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160,
+              "points": 145,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 175
+              "points": 160
             }
           ]
         }
@@ -657,7 +657,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         },
@@ -667,7 +667,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170
+              "points": 160
             }
           ]
         }

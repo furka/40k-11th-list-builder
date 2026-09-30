@@ -1,6 +1,6 @@
 {
   "faction": "DEATH GUARD",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.5",
   "detachments": [
     {
       "name": "CHAMPIONS OF CONTAGION",
@@ -268,7 +268,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
             }
           ]
         },
@@ -278,7 +283,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 185,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 215
             }
           ]
         },
@@ -288,7 +298,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 360
+              "points": 370,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 400
             }
           ]
         }
@@ -327,12 +342,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135,
+              "points": 130,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 145
+              "points": 140
             }
           ]
         }
@@ -349,12 +364,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 145,
+              "points": 140,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 155
+              "points": 150
             }
           ]
         }
@@ -410,7 +425,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 195
+              "points": 185
             }
           ]
         }
@@ -427,7 +442,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170
+              "points": 160
             }
           ]
         }
@@ -444,12 +459,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160,
+              "points": 150,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 170
+              "points": 160
             }
           ]
         },
@@ -493,11 +508,11 @@
       ],
       "wargearOptions": [
         {
-          "name": "Heavy reaper autocannon",
+          "name": "Heavy Reaper Autocannon",
           "points": 15
         },
         {
-          "name": "Hades lascannon",
+          "name": "Hades Lascannon",
           "points": 15
         }
       ]
@@ -578,7 +593,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 105
             }
           ]
         }
@@ -621,7 +636,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 110
             }
           ]
         }
@@ -664,7 +679,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 90
             }
           ]
         }
@@ -787,10 +802,10 @@
             {
               "minCount": 1,
               "points": 170,
-              "maxCount": 1
+              "maxCount": 2
             },
             {
-              "minCount": 2,
+              "minCount": 3,
               "points": 200
             }
           ]
@@ -828,7 +843,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 175
             }
           ]
         }
@@ -920,7 +935,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 90
             }
           ]
         }

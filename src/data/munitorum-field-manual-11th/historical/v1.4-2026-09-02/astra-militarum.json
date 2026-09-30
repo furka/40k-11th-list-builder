@@ -1,6 +1,6 @@
 {
   "faction": "ASTRA MILITARUM",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "ABHUMAN AUXILIARIES",
@@ -503,11 +503,11 @@
             {
               "minCount": 1,
               "points": 115,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 145
+              "minCount": 2,
+              "points": 135
             }
           ]
         }
@@ -525,11 +525,11 @@
             {
               "minCount": 1,
               "points": 90,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 120
+              "minCount": 2,
+              "points": 105
             }
           ]
         },
@@ -540,11 +540,11 @@
             {
               "minCount": 1,
               "points": 200,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 230
+              "minCount": 2,
+              "points": 215
             }
           ]
         }
@@ -855,7 +855,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 120
             }
           ]
         }
@@ -949,11 +949,11 @@
             {
               "minCount": 1,
               "points": 125,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 145
+              "minCount": 2,
+              "points": 135
             }
           ]
         }
@@ -1054,12 +1054,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115,
+              "points": 125,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 125
+              "points": 135
             }
           ]
         }
@@ -1521,7 +1521,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 75
             }
           ]
         }
@@ -1549,7 +1549,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 130
             }
           ]
         }
@@ -1567,11 +1567,11 @@
             {
               "minCount": 1,
               "points": 150,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 180
+              "minCount": 2,
+              "points": 170
             }
           ]
         }
@@ -2078,32 +2078,11 @@
             {
               "minCount": 1,
               "points": 95,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 125
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "’IRON HAND’ STRAKEN",
-      "leader": {
-        "attachesTo": [
-          "CATACHAN JUNGLE FIGHTERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
+              "minCount": 2,
+              "points": 115
             }
           ]
         }
@@ -2229,6 +2208,32 @@
             {
               "minCount": 1,
               "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CIAPHAS CAIN",
+      "leader": {
+        "attachesTo": [
+          "CADIAN SHOCK TROOPS",
+          "CATACHAN JUNGLE FIGHTERS",
+          "DEATH KORPS OF KRIEG",
+          "KASRKIN",
+          "TEMPESTUS SCIONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
             }
           ]
         }
@@ -2529,6 +2534,27 @@
         }
       ],
       "legends": true
+    },
+    {
+      "name": "’IRON HAND’ STRAKEN",
+      "leader": {
+        "attachesTo": [
+          "CATACHAN JUNGLE FIGHTERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "MACHARIUS",
@@ -3043,24 +3069,6 @@
       "legends": true
     },
     {
-      "name": "STORM CHIMERA",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
       "name": "STORMBLADE",
       "leader": null,
       "support": null,
@@ -3072,6 +3080,24 @@
             {
               "minCount": 1,
               "points": 415
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORM CHIMERA",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
             }
           ]
         }

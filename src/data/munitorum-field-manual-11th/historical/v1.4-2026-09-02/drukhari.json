@@ -1,6 +1,6 @@
 {
   "faction": "DRUKHARI",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "COVENITE COTERIE",
@@ -138,8 +138,8 @@
       "name": "REAPER’S WAGER",
       "dp": 3,
       "role": {
-        "name": "PRIORITY ASSETS",
-        "color": "#B8860A"
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
       },
       "leader": null,
       "tags": [],
@@ -173,7 +173,7 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "NIGHTMARE SHROUD",
+          "name": "Nightmare Shroud",
           "points": 20
         },
         {
@@ -567,7 +567,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Dark Lance",
+          "name": "Dark lance",
           "points": 5
         }
       ]
@@ -653,7 +653,7 @@
           "points": 5
         },
         {
-          "name": "Dark Lance",
+          "name": "Dark lance",
           "points": 5
         }
       ]
@@ -712,12 +712,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70,
+              "points": 75,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 80
+              "points": 85
             }
           ]
         },
@@ -727,12 +727,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 150,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 160
             }
           ]
         }
@@ -794,7 +794,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 60
             }
           ]
         },
@@ -804,7 +804,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 100
             }
           ]
         },
@@ -814,7 +814,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 120
             }
           ]
         }

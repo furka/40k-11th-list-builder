@@ -1,6 +1,6 @@
 {
   "faction": "TYRANIDS",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.5",
   "detachments": [
     {
       "name": "AMBUSH PREDATORS",
@@ -201,7 +201,7 @@
           "points": 15
         },
         {
-          "name": "Naturalised camouflage",
+          "name": "Naturalised Camouflage",
           "points": 30
         },
         {
@@ -275,7 +275,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 50
             }
           ]
         },
@@ -285,7 +285,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 100
             }
           ]
         }
@@ -426,7 +426,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 75
             }
           ]
         },
@@ -436,7 +436,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 155
+              "points": 150
             }
           ]
         }
@@ -740,7 +740,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135
+              "points": 130
             }
           ]
         }
@@ -839,7 +839,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 120
             }
           ]
         }
@@ -904,7 +904,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 130
             }
           ]
         }
@@ -921,7 +921,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 65
             }
           ]
         }
@@ -1132,7 +1132,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 55
             }
           ]
         },
@@ -1159,7 +1159,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160
+              "points": 150
             }
           ]
         }
@@ -1176,7 +1176,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 120
             }
           ]
         }
@@ -1231,7 +1231,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 135
             }
           ]
         }
@@ -1364,7 +1364,7 @@
           "points": 10
         },
         {
-          "name": "Rupture cannon",
+          "name": "Rupture Cannon",
           "points": 20
         }
       ]
