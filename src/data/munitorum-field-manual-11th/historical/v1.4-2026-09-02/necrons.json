@@ -1,6 +1,6 @@
 {
   "faction": "NECRONS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "ANNIHILATION LEGION",
@@ -62,7 +62,7 @@
     },
     {
       "name": "CANOPTEK COURT",
-      "dp": 2,
+      "dp": 3,
       "role": {
         "name": "TAKE AND HOLD",
         "color": "#2E6B3E"
@@ -340,7 +340,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 95
             }
           ]
         }
@@ -357,7 +357,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 140
             }
           ]
         }
@@ -462,7 +462,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 50
             }
           ]
         }
@@ -719,7 +719,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200,
+              "points": 210,
               "maxCount": 2
             },
             {
@@ -842,7 +842,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 70
             }
           ]
         },
@@ -852,7 +852,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 140
             }
           ]
         }
@@ -937,12 +937,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
+              "points": 175,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 205
             }
           ]
         }
@@ -1109,7 +1109,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 195
+              "points": 185
             }
           ]
         }
@@ -1297,7 +1297,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 55
             }
           ]
         }
@@ -1454,7 +1454,7 @@
             },
             {
               "minCount": 2,
-              "points": 505
+              "points": 485
             }
           ]
         }
@@ -1553,7 +1553,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 65
             }
           ]
         }

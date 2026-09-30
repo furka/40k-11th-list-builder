@@ -1,6 +1,6 @@
 {
   "faction": "GENESTEALER CULTS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "BIOSANCTIC BROODSURGE",
@@ -359,7 +359,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 70
             }
           ]
         },
@@ -369,7 +369,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 130
             }
           ]
         }
@@ -562,12 +562,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
+              "points": 120,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 130
             }
           ]
         }
@@ -763,7 +763,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 60
             }
           ]
         }
@@ -808,7 +808,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 70
             }
           ]
         }
@@ -884,7 +884,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 65
             }
           ]
         }

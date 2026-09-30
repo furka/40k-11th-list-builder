@@ -1,6 +1,6 @@
 {
   "faction": "THOUSAND SONS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "CHANGEHOST OF DECEIT",
@@ -34,8 +34,8 @@
       "name": "GRAND COVEN",
       "dp": 3,
       "role": {
-        "name": "DISRUPTION",
-        "color": "#1A3A5C"
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
       },
       "leader": null,
       "tags": [],
@@ -258,7 +258,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 100
             }
           ]
         }
@@ -453,11 +453,11 @@
       ],
       "wargearOptions": [
         {
-          "name": "Hades Lascannon",
+          "name": "Hades lascannon",
           "points": 15
         },
         {
-          "name": "Heavy Reaper Autocannon",
+          "name": "Heavy reaper autocannon",
           "points": 15
         }
       ]
@@ -477,7 +477,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 95
             }
           ]
         }
@@ -500,7 +500,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 90
             }
           ]
         }
@@ -583,7 +583,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 100
             }
           ]
         }
@@ -661,12 +661,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115,
+              "points": 100,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 125
+              "points": 110
             }
           ]
         },
@@ -676,12 +676,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 190,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 220
+              "points": 200
             }
           ]
         }
@@ -698,12 +698,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200,
+              "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 240
+              "points": 195
             }
           ]
         },
@@ -713,12 +713,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 425,
+              "points": 385,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 465
+              "points": 400
             }
           ]
         }
@@ -776,12 +776,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 95,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 110
+              "points": 105
             }
           ]
         }
@@ -802,12 +802,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 110
             }
           ]
         }

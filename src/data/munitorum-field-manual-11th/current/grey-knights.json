@@ -1,6 +1,6 @@
 {
   "faction": "GREY KNIGHTS",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.5",
   "detachments": [
     {
       "name": "ARGENT ASSAULT",
@@ -252,7 +252,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         }
@@ -274,7 +274,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 75
             }
           ]
         }
@@ -296,7 +296,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 70
             }
           ]
         }
@@ -318,12 +318,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90,
+              "points": 95,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 100
+              "points": 105
             }
           ]
         }
@@ -346,7 +346,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 75
             }
           ]
         }
@@ -363,7 +363,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140
+              "points": 150
             }
           ]
         },
@@ -373,7 +373,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 175
+              "points": 185
             }
           ]
         },
@@ -383,7 +383,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 300
+              "points": 315
             }
           ]
         },
@@ -393,7 +393,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 360
+              "points": 380
             }
           ]
         }
@@ -420,7 +420,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 105
             }
           ]
         }
@@ -442,7 +442,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95
+              "points": 100
             }
           ]
         }
@@ -459,12 +459,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200,
+              "points": 210,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 215
+              "points": 225
             }
           ]
         }
@@ -496,7 +496,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 125
+              "points": 130
             }
           ]
         }
@@ -535,12 +535,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 135
+              "points": 145
             }
           ]
         },
@@ -550,12 +550,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 250,
+              "points": 270,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 260
+              "points": 280
             }
           ]
         }
@@ -638,12 +638,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 195,
+              "points": 205,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 210
+              "points": 220
             }
           ]
         }
@@ -666,12 +666,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 185,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 210
+              "points": 225
             }
           ]
         },
@@ -681,12 +681,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 215,
+              "points": 230,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 255
+              "points": 270
             }
           ]
         },
@@ -696,12 +696,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 360,
+              "points": 385,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 400
+              "points": 425
             }
           ]
         },
@@ -711,12 +711,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 460,
+              "points": 490,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 500
+              "points": 530
             }
           ]
         }
@@ -739,12 +739,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105,
+              "points": 115,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 115
+              "points": 125
             }
           ]
         },
@@ -754,12 +754,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 230,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 240
             }
           ]
         }
@@ -782,12 +782,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
+              "points": 145,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 140
+              "points": 155
             }
           ]
         },
@@ -797,12 +797,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 290,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 300
             }
           ]
         }
@@ -889,6 +889,12 @@
             }
           ]
         }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Hurricane Bolter",
+          "points": 10
+        }
       ]
     },
     {
@@ -919,7 +925,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115
+              "points": 125
             }
           ]
         },
@@ -929,7 +935,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230
+              "points": 250
             }
           ]
         }

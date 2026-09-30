@@ -1,10 +1,10 @@
 {
   "faction": "WORLD EATERS",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.5",
   "detachments": [
     {
       "name": "BERZERKER WARBAND",
-      "dp": 3,
+      "dp": 2,
       "role": {
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
@@ -83,8 +83,8 @@
       },
       "leader": {
         "attachesTo": [
-          "GOREMONGERS",
-          "JAKHALS"
+          "JAKHALS",
+          "GOREMONGERS"
         ]
       },
       "tags": [],
@@ -246,12 +246,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 220,
+              "points": 200,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 240
+              "points": 220
             }
           ]
         }
@@ -351,12 +351,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
+              "points": 175,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 175
+              "points": 185
             }
           ]
         },
@@ -366,12 +366,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 330,
+              "points": 350,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 340
+              "points": 360
             }
           ]
         }
@@ -434,11 +434,11 @@
       ],
       "wargearOptions": [
         {
-          "name": "Hades lascannon",
+          "name": "Hades Lascannon",
           "points": 15
         },
         {
-          "name": "Heavy reaper autocannon",
+          "name": "Heavy Reaper Autocannon",
           "points": 15
         }
       ]
@@ -469,12 +469,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 255,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 270
+              "points": 265
             }
           ]
         }
@@ -506,12 +506,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 265,
+              "points": 260,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 275
             }
           ]
         }
@@ -556,7 +556,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 70
             }
           ]
         }
@@ -617,7 +617,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130
+              "points": 120
             }
           ]
         }
@@ -655,7 +655,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160
+              "points": 170
             }
           ]
         },
@@ -665,7 +665,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 320
+              "points": 330
             }
           ]
         }
@@ -798,7 +798,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 90
             }
           ]
         }

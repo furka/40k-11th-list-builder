@@ -1,0 +1,157 @@
+## MFM changes — V1.4 (scraped 2026-09-02)
+
+Diff vs prior snapshot `v1.3-2026-08-26`.
+
+2 faction(s) changed.
+
+### ASTRA MILITARUM
+
+- **+ NEW** CIAPHAS CAIN: 1 model @ 70pts
+
+### ORKS
+
+- **- REMOVED** ATTACK FIGHTA
+- BANNERNOB
+  - 1 model: **50 → 35** ↓ (-15)
+- BATTLEWAGON
+  - 1 model: **145 → 150** ↑ (+5)
+- BEAST SNAGGA BOYZ
+  - 10 models: **90 → 85** ↓ (-5)
+  - 20 models: tier structure changed
+- BEASTBOSS
+  - 1 model: **80 → 85** ↑ (+5)
+- BEASTBOSS ON SQUIGOSAUR
+  - 1 model: **95 → 140** ↑ (+45)
+- **- REMOVED** BIG GUNZ
+- BIG MEK
+  - 1 model: **70 → 85** ↑ (+15)
+- BIG MEK DAKKARIG
+  - 1 model: **115 → 135** ↑ (+20)
+- BIG MEK IN MEGA ARMOUR
+  - 1 model: **80 → 90** ↑ (+10)
+- **- REMOVED** BIG MEK ON WARBIKE
+- **- REMOVED** BIG MEK WITH KUSTOM FORCE FIELD
+- BIG MEK WITH SHOKK ATTACK GUN
+  - 1 model: **70 → 95** ↑ (+25)
+- BIGBOSS
+  - 1 model: **55 → 50** ↓ (-5)
+- BLITZA-BOMMER
+  - 1 model: **105 → 115** ↑ (+10)
+- **- REMOVED** BOOMDAKKA SNAZZWAGON
+- BOSS SNIKROT
+  - 1 model: **75 → 80** ↑ (+5)
+- BOYZ
+  - 10 models: **75 → 90** ↑ (+15)
+  - 20 models: **160 → 180** ↑ (+20)
+- BREAKA BOYZ
+  - 6 models: **125 → 135** ↑ (+10)
+- BURNA-BOMMER
+  - 1 model: **115 → 125** ↑ (+10)
+- **- REMOVED** CHINORK WARKOPTA
+- **- REMOVED** DA RED GOBBO
+- DEFF DREAD
+  - 1 model: **110 → 130** ↑ (+20)
+- **- REMOVED** DEFF ROLLA BATTLE FORTRESS
+- DEFFKILLA WARTRIKE
+  - 1 model: **70 → 80** ↑ (+10)
+- DEFFKOPTAS
+  - 3 models: **75 → 80** ↑ (+5)
+  - 6 models: **140 → 160** ↑ (+20)
+- **- REMOVED** DEFFKOPTAS WITH BIG SHOOTAS
+- **- REMOVED** FIGHTA-BOMMER
+- FLASH GITZ
+  - 5 models: **75 → 105** ↑ (+30)
+  - 10 models: **150 → 210** ↑ (+60)
+- GARGANTUAN SQUIGGOTH
+  - 1 model: **440 → 500** ↑ (+60)
+- GHAZGHKULL THRAKA
+  - **- option removed:** 2 models (was 235pts)
+  - **+ option added:** 1 model @ 300pts
+- GORKANAUT
+  - 1 model: **255 → 325** ↑ (+70)
+- GRETCHIN
+  - **- option removed:** 1 Runtherd, 10 Gretchin (was 45pts)
+  - **- option removed:** 1 Runtherd, 20 Gretchin (was 85pts)
+  - **- option removed:** 2 Runtherd, 20 Gretchin (was 90pts)
+- **- REMOVED** GROT BOMM LAUNCHA
+- **+ NEW** GUNWAGON: 1 model @ 150pts
+- HUNTA RIG
+  - 1 model: **125 → 165** ↑ (+40)
+- **- REMOVED** KANNONWAGON
+- **- REMOVED** KILL KRUSHA
+- KILL RIG
+  - 1 model: **145 → 175** ↑ (+30)
+- KILL TANK
+  - 1 model: **295 → 300** ↑ (+5)
+- KILLA KANS
+  - 3 models: **120 → 130** ↑ (+10)
+  - 6 models: **240 → 260** ↑ (+20)
+- KOMMANDOS
+  - 10 models: **120 → 125** ↑ (+5)
+- **- REMOVED** KUSTOM BOOSTA-BLASTA
+- **- REMOVED** MEGA DREAD
+- MEGANOBZ
+  - 2 models: **60 → 75** ↑ (+15)
+  - 3 models: **90 → 110** ↑ (+20)
+  - 5 models: **150 → 185** ↑ (+35)
+  - 6 models: **180 → 225** ↑ (+45)
+- **- REMOVED** MEGATRAKK SCRAPJET
+- MEK
+  - 1 model: **55 → 45** ↓ (-10)
+- MEK GUNZ
+  - 1 model: **45 → 55** ↑ (+10)
+  - 2 models: **90 → 110** ↑ (+20)
+  - 3 models: **135 → 165** ↑ (+30)
+- **- REMOVED** MEKA-DREAD
+- MORKANAUT
+  - 1 model: **270 → 345** ↑ (+75)
+- MOZROG SKRAGBAD
+  - 1 model: **125 → 170** ↑ (+45)
+- **+ NEW** NAZDREG: 1 model @ 175pts
+- NOBZ
+  - 5 models: **105 → 125** ↑ (+20)
+  - 10 models: **210 → 250** ↑ (+40)
+- **- REMOVED** NOBZ ON WARBIKES
+- PAINBOSS
+  - 1 model: **70 → 60** ↓ (-10)
+- PAINBOY
+  - 1 model: **90 → 45** ↓ (-45)
+- **- REMOVED** PAINBOY ON WARBIKE
+- **+ NEW** RUKKATRUKK SQUIGBUGGIES: 1 model @ 85pts, 2 models @ 160pts
+- **- REMOVED** RUKKATRUKK SQUIGBUGGY
+- **+ NEW** RUNTHERD: 1 model @ 10pts
+- **- REMOVED** SHOKKJUMP DRAGSTA
+- **- REMOVED** SKORCHAS
+- **- REMOVED** SQUIGGOTH
+- SQUIGHOG BOYZ
+  - 4 models: tier structure changed
+  - 8 models: **270 → 280** ↑ (+10)
+- STOMPA
+  - 1 model: **600 → 700** ↑ (+100)
+- STORMBOYZ
+  - 5 models: **65 → 70** ↑ (+5)
+  - 10 models: **130 → 140** ↑ (+10)
+- TANKBUSTAS
+  - 6 models: **125 → 145** ↑ (+20)
+- TRUKK
+  - 1 model: **55 → 60** ↑ (+5)
+- **- REMOVED** UFTHAK BLACKHAWK
+- WARBIKERS
+  - 3 models: **60 → 75** ↑ (+15)
+  - 6 models: **120 → 140** ↑ (+20)
+- WARBOSS
+  - 1 model: **85 → 100** ↑ (+15)
+- WARBOSS IN MEGA ARMOUR
+  - 1 model: **80 → 125** ↑ (+45)
+- WARBUGGIES
+  - 1 model: **40 → 70** ↑ (+30)
+  - 2 models: **80 → 130** ↑ (+50)
+- **- REMOVED** WARTRAKK
+- **+ NEW** WARTRAKKS: 1 model @ 70pts, 2 models @ 130pts
+- WAZBOM BLASTAJET
+  - 1 model: **165 → 215** ↑ (+50)
+- WAZDAKKA GUTSMEK
+  - 1 model: **175 → 200** ↑ (+25)
+- **- REMOVED** WURRBOY
+- ZODGROD WORTSNAGGA
+  - 1 model: **80 → 50** ↓ (-30)
