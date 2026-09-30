@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "6aae3fe4affc5c9ae0c8c2b7cd0c9aabb86f7496",
-  "_committedAt": "2026-09-09T14:59:43Z",
-  "_generatedAt": "2026-09-09T17:42:38.677Z",
+  "_sha": "bca655a81cc7a97b0ac193413f610d2aadf68b8f",
+  "_committedAt": "2026-09-30T16:35:01Z",
+  "_generatedAt": "2026-09-30T18:57:10.948Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -241,6 +241,7 @@
         "CIAPHAS CAIN",
         "COMMISSAR",
         "COMMISSAR GRAVES",
+        "COMMISSAR GRAVES ON FOOT",
         "COMMISSAR YARRICK",
         "DEATH RIDER COMMISSAR",
         "FRONT-LINE COMMANDER [CRUCIBLE]",

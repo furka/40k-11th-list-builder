@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "07656840caa938d5d9d495488be9719c7f75dbd3",
-  "_committedAt": "2026-09-19T09:42:09Z",
-  "_generatedAt": "2026-09-21T19:09:53.936Z",
+  "_sha": "bca655a81cc7a97b0ac193413f610d2aadf68b8f",
+  "_committedAt": "2026-09-30T16:35:01Z",
+  "_generatedAt": "2026-09-30T18:57:10.079Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -29,6 +29,7 @@
       "ADEPTA SORORITAS",
       "BATTLE SANCTUM",
       "FORTIFICATION",
+      "FRAME",
       "IMPERIUM",
       "TOWERING"
     ],
@@ -303,6 +304,7 @@
     "Repressor": [
       "ADEPTA SORORITAS",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "REPRESSOR",
       "SMOKE",
@@ -1052,6 +1054,7 @@
     ],
     "Terrax-Pattern Termite": [
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "TERRAX-PATTERN TERMITE",
       "TRANSPORT",
@@ -2578,6 +2581,7 @@
       "ASTRA MILITARUM",
       "CENTAUR RSV",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "SMOKE",
       "SQUADRON",
@@ -2628,6 +2632,7 @@
       "CHARACTER",
       "COMMISSAR GRAVES",
       "EPIC HERO",
+      "FRAME",
       "IMPERIUM",
       "OFFICER",
       "SQUADRON",
@@ -2640,7 +2645,8 @@
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
-      "LEADER"
+      "LEADER",
+      "OFFICER"
     ],
     "Commissar Yarrick": [
       "ASTRA MILITARUM",
@@ -2878,6 +2884,7 @@
     ],
     "Hippogriff AFV": [
       "ASTRA MILITARUM",
+      "FRAME",
       "HIPPOGRIFF AFV",
       "IMPERIUM",
       "SMOKE",
@@ -3362,7 +3369,6 @@
     ],
     "Sentinel Powerlifter": [
       "ASTRA MILITARUM",
-      "FRAME",
       "IMPERIUM",
       "REGIMENT",
       "SENTINEL POWERLIFTER",
@@ -13547,6 +13553,7 @@
     ],
     "Grey Knights Relic Razorback": [
       "DEDICATED TRANSPORT",
+      "FRAME",
       "GREY KNIGHTS",
       "IMPERIUM",
       "RELIC RAZORBACK",
@@ -15440,6 +15447,7 @@
     ],
     "Gauss Pylon": [
       "FORTIFICATION",
+      "FRAME",
       "GAUSS PYLON",
       "NECRONS",
       "TITANIC",
