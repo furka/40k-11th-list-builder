@@ -1,6 +1,6 @@
 {
   "faction": "T’AU EMPIRE",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "ADVANCED ACQUISITION CADRE",
@@ -134,8 +134,8 @@
       "name": "MONT’KA",
       "dp": 3,
       "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
       },
       "leader": null,
       "tags": [],
@@ -223,7 +223,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 90
             }
           ]
         }
@@ -282,7 +282,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "High-yield Missile Pods",
+          "name": "High-yield missile pods",
           "points": 5
         }
       ]
@@ -881,7 +881,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Ion Rifle",
+          "name": "Ion rifle",
           "points": 5
         }
       ]
@@ -978,7 +978,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Ion Accelerator",
+          "name": "Ion accelerator",
           "points": 25
         }
       ]
@@ -1111,7 +1111,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 240
+              "points": 230
             }
           ]
         }
@@ -1450,24 +1450,6 @@
       "legends": true
     },
     {
-      "name": "R’VARNA BATTLESUIT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 200
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
       "name": "REMORA STEALTH DRONES",
       "leader": null,
       "support": null,
@@ -1497,6 +1479,24 @@
             {
               "minCount": 1,
               "points": 50
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "R’VARNA BATTLESUIT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
             }
           ]
         }

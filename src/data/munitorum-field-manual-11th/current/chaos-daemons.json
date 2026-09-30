@@ -1,6 +1,6 @@
 {
   "faction": "CHAOS DAEMONS",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.5",
   "detachments": [
     {
       "name": "BLOOD LEGION",
@@ -303,12 +303,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200,
+              "points": 210,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 240
+              "points": 250
             }
           ]
         }
@@ -603,7 +603,7 @@
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 115
             }
           ]
         },
@@ -618,7 +618,7 @@
             },
             {
               "minCount": 3,
-              "points": 205
+              "points": 215
             }
           ]
         }
@@ -662,7 +662,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         },
@@ -1110,7 +1110,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 315
+              "points": 330
             }
           ]
         }

@@ -1,6 +1,6 @@
 {
   "faction": "IMPERIAL KNIGHTS",
-  "siteVersion": "v1.4",
+  "siteVersion": "v1.5",
   "detachments": [
     {
       "name": "DOMINUS FOEBREAKERS",
@@ -360,12 +360,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 405,
+              "points": 420,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 425
+              "points": 440
             }
           ]
         }
@@ -476,12 +476,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 400,
+              "points": 385,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 420
+              "points": 405
             }
           ]
         }
@@ -608,12 +608,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 400,
+              "points": 390,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 415
+              "points": 405
             }
           ]
         }
@@ -630,12 +630,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 375,
+              "points": 365,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 390
+              "points": 380
             }
           ]
         }

@@ -1,79 +1,221 @@
 {
-  "faction": "T’AU EMPIRE",
-  "siteVersion": "v1.5",
+  "faction": "TYRANIDS",
+  "siteVersion": "v1.4",
   "detachments": [
     {
-      "name": "ADVANCED ACQUISITION CADRE",
-      "dp": 1,
-      "role": {
-        "name": "RECONNAISSANCE",
-        "color": "#008080"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Negation Emitters",
-          "points": 15,
-          "nonCharacterOnly": true
-        },
-        {
-          "name": "Unmasking Suite",
-          "points": 15,
-          "nonCharacterOnly": true
-        }
-      ]
-    },
-    {
-      "name": "AUXILIARY CADRE",
+      "name": "AMBUSH PREDATORS",
       "dp": 1,
       "role": {
         "name": "DISRUPTION",
         "color": "#1A3A5C"
       },
       "leader": null,
-      "tags": [
-        "UNIQUE: AUXILIARY"
-      ],
+      "tags": [],
       "enhancements": [
         {
-          "name": "Admired Leader",
-          "points": 20
+          "name": "Cryptophotaic Camouflage",
+          "points": 15,
+          "nonCharacterOnly": true
         },
         {
-          "name": "Student of Kauyon",
-          "points": 20
+          "name": "Encircling Horrors",
+          "points": 20,
+          "nonCharacterOnly": true
         }
       ]
     },
     {
-      "name": "EXPERIMENTAL PROTOTYPE CADRE",
-      "dp": 1,
+      "name": "ASSIMILATION SWARM",
+      "dp": 2,
       "role": {
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
       },
       "leader": null,
-      "tags": [
-        "UNIQUE: BATTLESUIT"
-      ],
+      "tags": [],
       "enhancements": [
         {
-          "name": "Plasma Accelerator Rifle",
-          "points": 20
+          "name": "Biophagic Flow",
+          "points": 10
         },
         {
-          "name": "Supernova Launcher",
+          "name": "Instinctive Defence",
           "points": 15
         },
         {
-          "name": "Thermoneutronic Projector",
+          "name": "Parasitic Biomorphology",
+          "points": 25
+        },
+        {
+          "name": "Regenerating Monstrosity",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "CRUSHER STAMPEDE",
+      "dp": 2,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Enraged Reserves",
+          "points": 20
+        },
+        {
+          "name": "Monstrous Nemesis",
+          "points": 25
+        },
+        {
+          "name": "Null Nodules",
+          "points": 10
+        },
+        {
+          "name": "Ominous Presence",
           "points": 15
         }
       ]
     },
     {
-      "name": "KAUYON",
+      "name": "INVASION FLEET",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Adaptive Biology",
+          "points": 25
+        },
+        {
+          "name": "Alien Cunning",
+          "points": 30
+        },
+        {
+          "name": "Perfectly Adapted",
+          "points": 15
+        },
+        {
+          "name": "Synaptic Linchpin",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "SUBTERRANEAN ASSAULT",
+      "dp": 3,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Synaptic Strategy",
+          "points": 15
+        },
+        {
+          "name": "Tremor Senses",
+          "points": 20
+        },
+        {
+          "name": "Trygon Prime",
+          "points": 20
+        },
+        {
+          "name": "Vanguard Intellect",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "SYNAPTIC NEXUS",
+      "dp": 2,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Power of the Hive Mind",
+          "points": 10
+        },
+        {
+          "name": "Psychostatic Disruption (Aura)",
+          "points": 30
+        },
+        {
+          "name": "Synaptic Control",
+          "points": 20
+        },
+        {
+          "name": "The Dirgeheart of Kharis",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "TALONS OF THE NORN QUEEN",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Destabilising Predation",
+          "points": 20,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Synaptoprescience",
+          "points": 30,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "UNENDING SWARM",
+      "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Adrenalised Onslaught",
+          "points": 15
+        },
+        {
+          "name": "Naturalised camouflage",
+          "points": 30
+        },
+        {
+          "name": "Piercing Talons",
+          "points": 25
+        },
+        {
+          "name": "Relentless Hunger",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "VANGUARD ONSLAUGHT",
       "dp": 2,
       "role": {
         "name": "RECONNAISSANCE",
@@ -83,56 +225,26 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Exemplar of the Kauyon",
-          "points": 20
-        },
-        {
-          "name": "Precision of the Patient Hunter",
+          "name": "Chameleonic",
           "points": 15
         },
         {
-          "name": "Solid-image Projection Unit",
-          "points": 20
-        },
-        {
-          "name": "Through Unity, Devastation",
+          "name": "Hunting Grounds",
           "points": 30
-        }
-      ]
-    },
-    {
-      "name": "KROOT HUNTING PACK",
-      "dp": 2,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: AUXILIARY"
-      ],
-      "enhancements": [
-        {
-          "name": "Borthrod Gland",
-          "points": 15
         },
         {
-          "name": "Kroothawk Flock",
-          "points": 10
-        },
-        {
-          "name": "Nomadic Hunter",
+          "name": "Neuronode",
           "points": 20
         },
         {
-          "name": "Root-carved Weapons",
+          "name": "Stalker",
           "points": 10
         }
       ]
     },
     {
-      "name": "MONT’KA",
-      "dp": 3,
+      "name": "WARRIOR BIOFORM ONSLAUGHT",
+      "dp": 1,
       "role": {
         "name": "TAKE AND HOLD",
         "color": "#2E6B3E"
@@ -141,49 +253,11 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Coordinated Exploitation",
+          "name": "Elevated Might",
           "points": 30
         },
         {
-          "name": "Exemplar of the Mont’ka",
-          "points": 10
-        },
-        {
-          "name": "Strategic Conqueror",
-          "points": 15
-        },
-        {
-          "name": "Strike Swiftly",
-          "points": 45
-        }
-      ]
-    },
-    {
-      "name": "RETALIATION CADRE",
-      "dp": 3,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: BATTLESUIT"
-      ],
-      "enhancements": [
-        {
-          "name": "Internal Grenade Racks",
-          "points": 20
-        },
-        {
-          "name": "Prototype Weapon System",
-          "points": 15
-        },
-        {
-          "name": "Puretide Engram Neurochip",
-          "points": 15
-        },
-        {
-          "name": "Starflare Ignition System",
+          "name": "Ocular Adaptation",
           "points": 20
         }
       ]
@@ -191,7 +265,34 @@
   ],
   "datasheets": [
     {
-      "name": "AX-1-0 TIGER SHARK",
+      "name": "BARBGAUNTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BIOVORES",
       "leader": null,
       "support": null,
       "sizes": [
@@ -201,19 +302,121 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 315,
-              "maxCount": 1
-            },
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
             {
-              "minCount": 2,
-              "points": 375
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
             }
           ]
         }
       ]
     },
     {
-      "name": "BREACHER TEAM",
+      "name": "BROODLORD",
+      "leader": {
+        "attachesTo": [
+          "GENESTEALERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CARNIFEXES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATHLEAPER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EXOCRINE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GARGOYLES",
       "leader": null,
       "support": null,
       "sizes": [
@@ -226,17 +429,27 @@
               "points": 80
             }
           ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
         }
       ]
     },
     {
-      "name": "BROADSIDE BATTLESUITS",
+      "name": "GENESTEALERS",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "5 models",
+          "models": 5,
           "tiers": [
             {
               "minCount": 1,
@@ -245,144 +458,29 @@
             },
             {
               "minCount": 3,
-              "points": 95
+              "points": 85
             }
           ]
         },
         {
-          "name": "2 models",
-          "models": 2,
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
-              "points": 150,
+              "points": 140,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 170
-            }
-          ]
-        },
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 255,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 275
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "High-yield Missile Pods",
-          "points": 5
-        }
-      ]
-    },
-    {
-      "name": "CADRE FIREBLADE",
-      "leader": {
-        "attachesTo": [
-          "BREACHER TEAM",
-          "STRIKE TEAM"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 50
+              "points": 150
             }
           ]
         }
       ]
     },
     {
-      "name": "COMMANDER FARSIGHT",
-      "leader": {
-        "attachesTo": [
-          "CRISIS BATTLESUITS",
-          "CRISIS FIREKNIFE BATTLESUITS",
-          "CRISIS STARSCYTHE BATTLESUITS",
-          "CRISIS SUNFORGE BATTLESUITS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "COMMANDER IN COLDSTAR BATTLESUIT",
-      "leader": {
-        "attachesTo": [
-          "CRISIS BATTLESUITS",
-          "CRISIS FIREKNIFE BATTLESUITS",
-          "CRISIS STARSCYTHE BATTLESUITS",
-          "CRISIS SUNFORGE BATTLESUITS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 95
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "COMMANDER IN ENFORCER BATTLESUIT",
-      "leader": {
-        "attachesTo": [
-          "CRISIS BATTLESUITS",
-          "CRISIS FIREKNIFE BATTLESUITS",
-          "CRISIS STARSCYTHE BATTLESUITS",
-          "CRISIS SUNFORGE BATTLESUITS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "COMMANDER SHADOWSUN",
+      "name": "HARPY",
       "leader": null,
       "support": null,
       "sizes": [
@@ -392,76 +490,42 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 185
             }
           ]
         }
       ]
     },
     {
-      "name": "CRISIS FIREKNIFE BATTLESUITS",
+      "name": "HARRIDAN",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "3 models",
-          "models": 3,
+          "name": "1 model",
+          "models": 1,
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
-              "maxCount": 2
+              "points": 610,
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 110
+              "minCount": 2,
+              "points": 660
             }
           ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Missile pod",
-          "points": 5
         }
       ]
     },
     {
-      "name": "CRISIS STARSCYTHE BATTLESUITS",
+      "name": "HARUSPEX",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 110
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "T’au flamer",
-          "points": 5
-        }
-      ]
-    },
-    {
-      "name": "CRISIS SUNFORGE BATTLESUITS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
+          "name": "1 model",
+          "models": 1,
           "tiers": [
             {
               "minCount": 1,
@@ -477,28 +541,7 @@
       ]
     },
     {
-      "name": "DARKSTRIDER",
-      "leader": {
-        "attachesTo": [
-          "PATHFINDER TEAM"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DEVILFISH",
+      "name": "HIEROPHANT",
       "leader": null,
       "support": null,
       "sizes": [
@@ -508,41 +551,19 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75,
-              "maxCount": 3
+              "points": 810,
+              "maxCount": 1
             },
             {
-              "minCount": 4,
-              "points": 85
+              "minCount": 2,
+              "points": 910
             }
           ]
         }
       ]
     },
     {
-      "name": "ETHEREAL",
-      "leader": {
-        "attachesTo": [
-          "BREACHER TEAM",
-          "STRIKE TEAM"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 50
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FIRESIGHT TEAM",
+      "name": "HIVE CRONE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -552,179 +573,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 170
             }
           ]
         }
       ]
     },
     {
-      "name": "GHOSTKEEL BATTLESUIT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 165
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Cyclic Ion Raker",
-          "points": 15
-        }
-      ]
-    },
-    {
-      "name": "HAMMERHEAD GUNSHIP",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 160
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOT CARNIVORES",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        },
-        {
-          "name": "20 models",
-          "models": 20,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 130
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOT FARSTALKERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "12 models",
-          "models": 12,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 75,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOT FLESH SHAPER",
-      "leader": {
-        "attachesTo": [
-          "KROOT CARNIVORES",
-          "KROOT FARSTALKERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 45
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOT HOUNDS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 45
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOT LONE-SPEAR",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOTOX RAMPAGERS",
+      "name": "HIVE GUARD",
       "leader": null,
       "support": null,
       "sizes": [
@@ -734,12 +590,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
+              "points": 80,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 95
+              "points": 90
             }
           ]
         },
@@ -749,60 +605,22 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 170
             }
           ]
         }
       ]
     },
     {
-      "name": "KROOTOX RIDERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 45
-            }
-          ]
-        },
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        },
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KROOT TRAIL SHAPER",
+      "name": "HIVE TYRANT",
       "leader": {
         "attachesTo": [
-          "KROOT CARNIVORES",
-          "KROOT FARSTALKERS"
+          "TYRANT GUARD"
         ]
       },
       "support": null,
@@ -813,53 +631,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 195
             }
           ]
         }
       ]
     },
     {
-      "name": "KROOT WAR SHAPER",
-      "leader": {
-        "attachesTo": [
-          "KROOT CARNIVORES",
-          "KROOT FARSTALKERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "MANTA",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 2100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "PATHFINDER TEAM",
+      "name": "HORMAGAUNTS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -869,61 +648,34 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 100
+              "points": 70
             }
           ]
-        }
-      ],
-      "wargearOptions": [
+        },
         {
-          "name": "Ion Rifle",
-          "points": 5
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
         }
       ]
     },
     {
-      "name": "PIRANHAS",
-      "leader": null,
+      "name": "HYPERADAPTED RAVENERS",
+      "leader": {
+        "attachesTo": [
+          "RAVENERS"
+        ]
+      },
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 75
-            }
-          ]
-        },
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 120
-            }
-          ]
-        },
-        {
-          "name": "3 models",
-          "models": 3,
+          "name": "5 models",
+          "models": 5,
           "tiers": [
             {
               "minCount": 1,
@@ -939,7 +691,7 @@
       ]
     },
     {
-      "name": "RAZORSHARK STRIKE FIGHTER",
+      "name": "LICTOR",
       "leader": null,
       "support": null,
       "sizes": [
@@ -949,14 +701,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160
+              "points": 60
             }
           ]
         }
       ]
     },
     {
-      "name": "RIPTIDE BATTLESUIT",
+      "name": "MALECEPTOR",
       "leader": null,
       "support": null,
       "sizes": [
@@ -966,26 +718,184 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
+              "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 190
             }
           ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Ion Accelerator",
-          "points": 25
         }
       ]
     },
     {
-      "name": "SKY RAY GUNSHIP",
+      "name": "MAWLOC",
       "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MUCOLID SPORES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEUROGAUNTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "11 models",
+          "models": 11,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        },
+        {
+          "name": "22 models",
+          "models": 22,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEUROLICTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NEUROTYRANT",
+      "leader": {
+        "attachesTo": [
+          "NEUROGAUNTS",
+          "TYRANT GUARD",
+          "ZOANTHROPES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NORN ASSIMILATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NORN EMISSARY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OLD ONE EYE",
+      "leader": {
+        "attachesTo": [
+          "CARNIFEXES"
+        ]
+      },
       "support": null,
       "sizes": [
         {
@@ -1001,13 +911,77 @@
       ]
     },
     {
-      "name": "STEALTH BATTLESUITS",
+      "name": "PARASITE OF MORTREX",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "5 models",
-          "models": 5,
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PSYCHOPHAGE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PYROVORES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
@@ -1023,185 +997,7 @@
       ]
     },
     {
-      "name": "STORMSURGE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 375,
-              "maxCount": 1
-            },
-            {
-              "minCount": 2,
-              "points": 400
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "STRIKE TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 70
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SUN SHARK BOMBER",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TA’UNAR SUPREMACY ARMOUR",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 790,
-              "maxCount": 1
-            },
-            {
-              "minCount": 2,
-              "points": 890
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "THE TWIN LANCE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 240
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TIDEWALL DRONEPORT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TIDEWALL GUNRIG",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TIDEWALL SHIELDLINE",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 85
-            }
-          ]
-        },
-        {
-          "name": "+ 1 Tidewall Defence Platform",
-          "models": null,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 20
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TIGER SHARK",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 395,
-              "maxCount": 1
-            },
-            {
-              "minCount": 2,
-              "points": 445
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VESPID STINGWINGS",
+      "name": "RAVENERS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1211,37 +1007,45 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
+              "points": 125,
+              "maxCount": 2
+            },
             {
-              "minCount": 1,
-              "points": 115
+              "minCount": 3,
+              "points": 135
             }
           ]
         }
       ]
     },
     {
-      "name": "AUN’SHI",
-      "leader": {
-        "attachesTo": [
-          "BREACHER TEAM",
-          "KROOT CARNIVORES",
-          "KROOT FARSTALKERS",
-          "STRIKE TEAM"
-        ]
-      },
+      "name": "RIPPER SWARMS",
+      "leader": null,
       "support": null,
       "sizes": [
         {
           "name": "1 model",
           "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
@@ -1249,29 +1053,10 @@
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "AUN’VA",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "BARRACUDA",
+      "name": "SCREAMER-KILLER",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1281,40 +1066,19 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 220
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "COMMANDER IN CRISIS BATTLESUIT",
-      "leader": {
-        "attachesTo": [
-          "CRISIS BATTLESUITS",
-          "CRISIS FIREKNIFE BATTLESUITS",
-          "CRISIS STARSCYTHE BATTLESUITS",
-          "CRISIS SUNFORGE BATTLESUITS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
+              "points": 125,
+              "maxCount": 2
+            },
             {
-              "minCount": 1,
-              "points": 80
+              "minCount": 3,
+              "points": 135
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "CRISIS BATTLESUITS",
+      "name": "SPORE MINES",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1324,7 +1088,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200
+              "points": 55
             }
           ]
         },
@@ -1334,15 +1098,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 400
+              "points": 110
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "DRONE SENTRY TURRET",
+      "name": "SPOROCYST",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1352,57 +1115,30 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 145
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "GREAT KNARLOC",
+      "name": "TERMAGANTS",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 60
             }
           ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "HEAVY GUN DRONES",
-      "leader": null,
-      "support": null,
-      "sizes": [
+        },
         {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 45
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "KNARLOC RIDERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
+          "name": "20 models",
+          "models": 20,
           "tiers": [
             {
               "minCount": 1,
@@ -1410,11 +1146,82 @@
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "LONGSTRIKE",
+      "name": "TERVIGON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THE RED TERROR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THE SWARMLORD",
+      "leader": {
+        "attachesTo": [
+          "TYRANT GUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TOXICRENE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRYGON",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1428,11 +1235,88 @@
             }
           ]
         }
-      ],
-      "legends": true
+      ]
     },
     {
-      "name": "ORCA DROPSHIP",
+      "name": "TYRANID PRIME WITH LASH WHIP",
+      "leader": {
+        "attachesTo": [
+          "HORMAGAUNTS",
+          "TERMAGANTS",
+          "TYRANID WARRIORS WITH MELEE BIO-WEAPONS",
+          "TYRANID WARRIORS WITH RANGED BIO-WEAPONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANID WARRIORS WITH MELEE BIO-WEAPONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANID WARRIORS WITH RANGED BIO-WEAPONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANNOCYTE",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1442,7 +1326,209 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 275
+              "points": 80,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TYRANNOFEX",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Acid spray",
+          "points": 10
+        },
+        {
+          "name": "Rupture cannon",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "TYRANT GUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VENOMTHROPES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VON RYAN’S LEAPERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WINGED HIVE TYRANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WINGED TYRANID PRIME",
+      "leader": {
+        "attachesTo": [
+          "GARGOYLES",
+          "TYRANID WARRIORS WITH MELEE BIO-WEAPONS",
+          "TYRANID WARRIORS WITH RANGED BIO-WEAPONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ZOANTHROPES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BARBED HIERODULE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 340
             }
           ]
         }
@@ -1450,7 +1536,7 @@
       "legends": true
     },
     {
-      "name": "R’VARNA BATTLESUIT",
+      "name": "DIMACHAERON",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1468,46 +1554,10 @@
       "legends": true
     },
     {
-      "name": "REMORA STEALTH DRONES",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "REMOTE SENSOR TOWER",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 50
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "SHAS’O R’ALAI",
+      "name": "MALANTHROPE",
       "leader": {
         "attachesTo": [
-          "XV9 HAZARD BATTLESUITS"
+          "VENOMTHROPES"
         ]
       },
       "support": null,
@@ -1518,7 +1568,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 75
             }
           ]
         }
@@ -1526,91 +1576,35 @@
       "legends": true
     },
     {
-      "name": "TETRAS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 80
-            }
-          ]
-        },
-        {
-          "name": "4 models",
-          "models": 4,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 160
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "TX42 PIRANHA",
+      "name": "SCYTHED HIERODULE",
       "leader": null,
       "support": null,
       "sizes": [
         {
           "name": "1 model",
           "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 330
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SKY-SLASHER SWARMS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
               "points": 60
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "XV9 HAZARD BATTLESUITS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
-            }
-          ]
-        },
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
-      "name": "Y’VAHRA BATTLESUIT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 210
             }
           ]
         }

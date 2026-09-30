@@ -1,6 +1,6 @@
 {
   "faction": "AELDARI",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "ARMOURED WARHOST",
@@ -347,7 +347,7 @@
     },
     {
       "name": "WARHOST",
-      "dp": 2,
+      "dp": 3,
       "role": {
         "name": "RECONNAISSANCE",
         "color": "#008080"
@@ -445,7 +445,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 75
             }
           ]
         }
@@ -669,11 +669,11 @@
             {
               "minCount": 1,
               "points": 110,
-              "maxCount": 2
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 130
+              "minCount": 2,
+              "points": 125
             }
           ]
         }
@@ -717,12 +717,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 95
+              "points": 90
             }
           ]
         },
@@ -732,12 +727,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 190
+              "points": 180
             }
           ]
         }
@@ -798,7 +788,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 65
             }
           ]
         }
@@ -837,12 +827,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
+              "points": 120,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 130
             }
           ]
         },
@@ -1000,7 +990,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         }
@@ -1017,7 +1007,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         }
@@ -1076,12 +1066,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
-              "maxCount": 2
+              "points": 170,
+              "maxCount": 1
             },
             {
-              "minCount": 3,
-              "points": 195
+              "minCount": 2,
+              "points": 190
             }
           ]
         }
@@ -1236,7 +1226,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165
+              "points": 175
             }
           ]
         }
@@ -1301,7 +1291,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 60
             }
           ]
         }
@@ -1480,7 +1470,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110
+              "points": 120
             }
           ]
         }
@@ -1742,7 +1732,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 65
+              "points": 70
             }
           ]
         }
@@ -1780,7 +1770,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 95
             }
           ]
         },
@@ -1790,7 +1780,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180
+              "points": 190
             }
           ]
         }
@@ -1807,7 +1797,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 115
             }
           ]
         }
@@ -1958,7 +1948,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230
+              "points": 245
             }
           ]
         }
@@ -2171,7 +2161,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 100
             }
           ]
         }

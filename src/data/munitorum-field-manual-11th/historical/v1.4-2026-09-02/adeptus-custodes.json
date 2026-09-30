@@ -1,6 +1,6 @@
 {
   "faction": "ADEPTUS CUSTODES",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.4",
   "detachments": [
     {
       "name": "AURIC CHAMPIONS",
@@ -304,12 +304,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120,
+              "points": 110,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 160
+              "points": 140
             }
           ]
         },
@@ -319,12 +319,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 165,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 195
             }
           ]
         },
@@ -334,12 +334,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 300,
+              "points": 280,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 340
+              "points": 310
             }
           ]
         },
@@ -349,12 +349,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 360,
+              "points": 340,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 400
+              "points": 370
             }
           ]
         }
@@ -565,12 +565,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 170,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 190
+              "points": 180
             }
           ]
         },
@@ -580,12 +580,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 225,
+              "points": 215,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 235
+              "points": 225
             }
           ]
         }
@@ -624,12 +624,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 200,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 230
+              "points": 220
             }
           ]
         },
@@ -639,12 +639,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 1
             },
             {
               "minCount": 2,
-              "points": 280
+              "points": 270
             }
           ]
         }
@@ -723,7 +723,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 45
             }
           ]
         },
@@ -733,7 +733,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 50
             }
           ]
         },
@@ -743,7 +743,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 75
             }
           ]
         },
@@ -753,7 +753,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 85
             }
           ]
         }
@@ -838,7 +838,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 150
+              "points": 140
             }
           ]
         }
@@ -908,7 +908,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120
+              "points": 110
             }
           ]
         }
@@ -1012,12 +1012,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 155,
+              "points": 145,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 170
             }
           ]
         },
@@ -1027,12 +1027,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230,
+              "points": 215,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 255
+              "points": 240
             }
           ]
         }
