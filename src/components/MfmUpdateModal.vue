@@ -91,7 +91,8 @@ function applyUpdate() {
                   'mfm-update__delta--down': c.difference < 0,
                 }"
               >
-                {{ c.difference > 0 ? "▲+" : "▼−" }}{{ Math.abs(c.difference) }}
+                {{ c.difference > 0 ? "+" : "−" }}{{ Math.abs(c.difference)
+                }}{{ c.difference > 0 ? "▲" : "▼" }}
               </span>
             </span>
           </li>

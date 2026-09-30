@@ -389,8 +389,8 @@ const keywordsText = computed(() => keywords.value.join(", "));
           >
             {{ row.points }} pts
             <span v-if="row.delta" class="data-sheet__points-delta">
-              {{ row.delta > 0 ? "▲" : "▼" }}{{ row.delta > 0 ? "+" : "−"
-              }}{{ Math.abs(row.delta) }}
+              {{ row.delta > 0 ? "+" : "−" }}{{ Math.abs(row.delta)
+              }}{{ row.delta > 0 ? "▲" : "▼" }}
             </span>
           </span>
         </li>

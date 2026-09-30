@@ -314,8 +314,7 @@ describe("DataSheet.vue — points-change highlight", () => {
     expect(tenModels.classes()).toContain("data-sheet__points--up");
     const badge = tenModels.find(".data-sheet__points-delta");
     expect(badge.exists()).toBe(true);
-    expect(badge.text()).toContain("▲");
-    expect(badge.text()).toContain("10");
+    expect(badge.text().replace(/\s+/g, "")).toBe("+10▲");
 
     // Unchanged size: no color, no badge.
     expect(twentyModels.classes()).not.toContain("data-sheet__points--up");
@@ -332,8 +331,7 @@ describe("DataSheet.vue — points-change highlight", () => {
     const span = pointsSpans(wrapper)[0];
     expect(span.classes()).toContain("data-sheet__points--down");
     const badge = span.find(".data-sheet__points-delta");
-    expect(badge.text()).toContain("▼");
-    expect(badge.text()).toContain("10");
+    expect(badge.text().replace(/\s+/g, "")).toBe("−10▼");
   });
 
   it("shows no badge for a datasheet absent from the previous MFM", async () => {
