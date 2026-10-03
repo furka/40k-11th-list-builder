@@ -10,7 +10,9 @@
         "color": "#2E6B3E"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: COVENS"
+      ],
       "enhancements": [
         {
           "name": "Master Artisan",
@@ -38,7 +40,9 @@
         "color": "#008080"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: WYCH CULT"
+      ],
       "enhancements": [
         {
           "name": "Hyperstimm Trafficker",
@@ -58,7 +62,9 @@
         "color": "#1A3A5C"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: KABAL"
+      ],
       "enhancements": [
         {
           "name": "Contempt for Rivals",
@@ -78,7 +84,9 @@
         "color": "#1A3A5C"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: KABAL"
+      ],
       "enhancements": [
         {
           "name": "Informant Network",
@@ -190,7 +198,9 @@
         "color": "#8B1B1B"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: WYCH CULT"
+      ],
       "enhancements": [
         {
           "name": "Chronoshard",
@@ -218,7 +228,9 @@
         "color": "#2E6B3E"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: COVENS"
+      ],
       "enhancements": [
         {
           "name": "Elixir of the Corpse Courts",

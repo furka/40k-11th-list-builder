@@ -83,8 +83,8 @@
       },
       "leader": {
         "attachesTo": [
-          "JAKHALS",
-          "GOREMONGERS"
+          "GOREMONGERS",
+          "JAKHALS"
         ]
       },
       "tags": [],
