@@ -1,1808 +1,598 @@
-## MFM changes — V1.5 (scraped 2026-09-30)
+## MFM changes — V1.5 (scraped 2026-10-03)
 
-Diff vs prior snapshot `v1.4-2026-09-02`.
+Diff vs prior snapshot `v1.5-2026-09-30`.
 
-28 faction(s) changed.
-
-### ADEPTA SORORITAS
-
-- CASTIGATOR
-  - 1 model: tier structure changed
-- CELESTIAN INSIDIANTS
-  - 10 models: **120 → 115** ↓ (-5)
-- EXORCIST
-  - 1 model: tier structure changed
-- MORVENN VAHL
-  - 1 model: **200 → 215** ↑ (+15)
-- PARAGON WARSUITS
-  - 3 models: **180 → 165** ↓ (-15)
-- SAINT CELESTINE
-  - 3 models: **150 → 135** ↓ (-15)
-
-### ADEPTUS CUSTODES
-
-- ALLARUS CUSTODIANS
-  - 2 models: **110 → 120** ↑ (+10)
-  - 3 models: **165 → 180** ↑ (+15)
-  - 5 models: **280 → 300** ↑ (+20)
-  - 6 models: **340 → 360** ↑ (+20)
-- CUSTODIAN GUARD
-  - 4 models: **170 → 180** ↑ (+10)
-  - 5 models: **215 → 225** ↑ (+10)
-- CUSTODIAN WARDENS
-  - 4 models: **200 → 210** ↑ (+10)
-  - 5 models: **250 → 260** ↑ (+10)
-- PROSECUTORS
-  - 4 models: **45 → 50** ↑ (+5)
-  - 5 models: **50 → 55** ↑ (+5)
-  - 9 models: **75 → 80** ↑ (+5)
-  - 10 models: **85 → 90** ↑ (+5)
-- SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE
-  - 1 model: **140 → 150** ↑ (+10)
-- VALERIAN
-  - 1 model: **110 → 120** ↑ (+10)
-- VERTUS PRAETORS
-  - 2 models: **145 → 155** ↑ (+10)
-  - 3 models: **215 → 230** ↑ (+15)
-
-### ADEPTUS MECHANICUS
-
-- CORPUSCARII ELECTRO-PRIESTS
-  - 5 models: **65 → 60** ↓ (-5)
-  - 10 models: **130 → 120** ↓ (-10)
-- CYBERNETICA DATASMITH
-  - 1 model: **25 → 20** ↓ (-5)
-- FULGURITE ELECTRO-PRIESTS
-  - 5 models: **70 → 65** ↓ (-5)
-  - 10 models: **140 → 130** ↓ (-10)
-- HASTARII EXTERMINATORS
-  - 5 models: **105 → 100** ↓ (-5)
-- HASTARII FUSILIERS
-  - 5 models: **115 → 105** ↓ (-10)
-- KASTELAN ROBOTS
-  - 2 models: tier structure changed
-  - 4 models: tier structure changed
-- KATAPHRON BREACHERS
-  - 3 models: **150 → 140** ↓ (-10)
-  - 6 models: **310 → 290** ↓ (-20)
-- ONAGER DUNECRAWLER
-  - 1 model: **155 → 150** ↓ (-5)
-- SERBERYS RAIDERS
-  - 6 models: **110 → 105** ↓ (-5)
-- SERBERYS SULPHURHOUNDS
-  - 6 models: **100 → 95** ↓ (-5)
-- SERVITOR BATTLECLADE
-  - 9 models: **65 → 75** ↑ (+10)
-- SYDONIAN DRAGOONS WITH RADIUM JEZZAILS
-  - 2 models: **100 → 95** ↓ (-5)
-  - 3 models: **150 → 140** ↓ (-10)
-- SYDONIAN SKATROS
-  - 1 model: **50 → 45** ↓ (-5)
-
-### AELDARI
-
-- AUTARCH
-  - 1 model: **75 → 70** ↓ (-5)
-- D-CANNON PLATFORM
-  - 1 model: tier structure changed
-- DEATH JESTER
-  - 1 model: **70 → 65** ↓ (-5)
-- DRAGON KNIGHTS
-  - 3 models: **90 → 85** ↓ (-5)
-  - 6 models: tier structure changed
-- FARSEER
-  - 1 model: **65 → 60** ↓ (-5)
-- FIRE DRAGONS
-  - 5 models: **120 → 110** ↓ (-10)
-- KHARSETH
-  - 1 model: **85 → 80** ↓ (-5)
-- LEYSTALKER
-  - 1 model: **80 → 75** ↓ (-5)
-- NIGHT SPINNER
-  - 1 model: **170 → 165** ↓ (-5)
-- SHROUD RUNNERS
-  - 6 models: **175 → 165** ↓ (-10)
-- SKYWEAVERS
-  - 2 models: **95 → 90** ↓ (-5)
-  - 4 models: **190 → 180** ↓ (-10)
-- SOLITAIRE
-  - 1 model: **115 → 105** ↓ (-10)
-- STONESINGER
-  - 1 model: **60 → 55** ↓ (-5)
-- THE YNCARNE
-  - 1 model: **245 → 230** ↓ (-15)
-- WARLOCK CONCLAVE
-  - 4 models: **120 → 110** ↓ (-10)
-- YVRAINE
-  - 1 model: **100 → 90** ↓ (-10)
-
-### ASTRA MILITARUM
-
-- BASILISK
-  - 1 model: tier structure changed
-- BULLGRYN SQUAD
-  - 3 models: tier structure changed
-  - 6 models: tier structure changed
-- **- REMOVED** CIAPHAS CAIN
-- COMMISSAR YARRICK
-  - 1 model: **120 → 110** ↓ (-10)
-- DEATHSTRIKE
-  - 1 model: tier structure changed
-- HELLHOUND
-  - 1 model: **125 → 115** ↓ (-10)
-- LORD MARSHAL DREIR
-  - 1 model: **75 → 70** ↓ (-5)
-- LORD SOLAR LEONTUS
-  - 1 model: **130 → 120** ↓ (-10)
-- MANTICORE
-  - 1 model: tier structure changed
-- WYVERN
-  - 1 model: tier structure changed
+6 faction(s) changed.
 
 ### BLACK TEMPLARS
 
-- AGGRESSOR SQUAD
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **165 → 180** ↑ (+15)
 - ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- ANCIENT IN TERMINATOR ARMOUR
-  - 1 model: **65 → 75** ↑ (+10)
-- APOTHECARY
-  - 1 model: **40 → 45** ↑ (+5)
-- APOTHECARY BIOLOGIS
-  - 1 model: **70 → 60** ↓ (-10)
-- ASSAULT INTERCESSOR SQUAD
-  - 5 models: **75 → 90** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- ASSAULT INTERCESSORS WITH JUMP PACKS
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **160 → 190** ↑ (+30)
-- ASTRAEUS
-  - 1 model: **525 → 550** ↑ (+25)
-- BLADEGUARD ANCIENT
-  - 1 model: **40 → 60** ↑ (+20)
-- BLADEGUARD VETERAN SQUAD
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- BRUTALIS DREADNOUGHT
-  - 1 model: **150 → 160** ↑ (+10)
-- CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN GRAVIS ARMOUR
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- CAPTAIN IN TERMINATOR ARMOUR
-  - 1 model: **85 → 100** ↑ (+15)
-- **+ NEW** CAPTAIN ON BIKE: 1 model @ 110pts
-- CAPTAIN WITH JUMP PACK
-  - 1 model: **75 → 90** ↑ (+15)
-- CASTELLAN
-  - 1 model: **70 → 75** ↑ (+5)
-- **+ NEW** CERBERUS: 1 model @ 270pts
-- CHAPLAIN
-  - 1 model: **60 → 70** ↑ (+10)
-- CHAPLAIN GRIMALDUS
-  - 4 models: **100 → 120** ↑ (+20)
-- CHAPLAIN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- CHAPLAIN ON BIKE
-  - 1 model: **70 → 80** ↑ (+10)
-- CHAPLAIN WITH JUMP PACK
-  - 1 model: **75 → 80** ↑ (+5)
-- COMPANY HEROES
-  - 4 models: **105 → 135** ↑ (+30)
-- CRUSADE ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- CRUSADER SQUAD
-  - 1 Sword Brother, 4 Neophytes, 5 Initiates: **150 → 160** ↑ (+10)
-  - 1 Sword Brother, 8 Neophytes, 11 Initiates: **290 → 305** ↑ (+15)
-- DESOLATION SQUAD
-  - 5 models: **180 → 135** ↓ (-45)
-- **- REMOVED** DEVASTATOR SQUAD
-- ELIMINATOR SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-- EMPEROR’S CHAMPION
-  - 1 model: **90 → 100** ↑ (+10)
-- **- REMOVED** ERADICATOR SQUAD
-- ERADICATOR SQUAD WITH HEAVY BOLTERS
-  - 3 models: **80 → 95** ↑ (+15)
-  - **+ option added:** 6 models @ 200pts
-- **+ NEW** ERADICATOR SQUAD WITH MELTA RIFLES: 3 models @ 90pts, 6 models @ 190pts
-- EXECRATOR
-  - 1 model: **50 → 65** ↑ (+15)
-- **+ NEW** FALCHION: 1 model @ 420pts
-- FIRESTRIKE SERVO-TURRETS
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **150 → 160** ↑ (+10)
-- GLADIATOR LANCER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR REAPER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR VALIANT
-  - 1 model: **150 → 145** ↓ (-5)
-- HEAVY INTERCESSOR SQUAD
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 220** ↑ (+20)
-- HELLBLASTER SQUAD
-  - 5 models: tier structure changed
-  - 10 models: tier structure changed
-- HIGH MARSHAL HELBRECHT
-  - 1 model: **110 → 125** ↑ (+15)
-- IMPULSOR
-  - 1 model: **75 → 70** ↓ (-5)
-- INCURSOR SQUAD
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **150 → 160** ↑ (+10)
-- INFERNUS SQUAD
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **180 → 200** ↑ (+20)
-- INFILTRATOR SQUAD
-  - 5 models: **110 → 80** ↓ (-30)
-  - 10 models: **180 → 150** ↓ (-30)
-- INTERCESSOR SQUAD
-  - 5 models: **80 → 95** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- **- REMOVED** INVADER ATV
-- **+ NEW** INVADER ATVS: 1 model @ 65pts, 2 models @ 130pts
-- INVICTOR TACTICAL WARSUIT
-  - 1 model: **125 → 140** ↑ (+15)
-- JUDICIAR
-  - 1 model: **55 → 50** ↓ (-5)
-- **+ NEW** KRATOS: 1 model @ 240pts
-- LAND RAIDER
-  - 1 model: **220 → 245** ↑ (+25)
-- LAND RAIDER CRUSADER
-  - 1 model: **220 → 245** ↑ (+25)
-- **+ NEW** LAND RAIDER EXCELSIOR: 1 model @ 250pts
-- LAND RAIDER REDEEMER
-  - 1 model: **260 → 245** ↓ (-15)
-- LAND SPEEDER
-  - 1 model: **105 → 110** ↑ (+5)
-- LIEUTENANT
-  - 1 model: **45 → 50** ↑ (+5)
-- LIEUTENANT IN PHOBOS ARMOUR
   - 1 model: **45 → 40** ↓ (-5)
-- **- REMOVED** LIEUTENANT IN REIVER ARMOUR
-- LIEUTENANT WITH COMBI-WEAPON
-  - 1 model: **95 → 80** ↓ (-15)
-- MARSHAL
+- ASSAULT INTERCESSOR SQUAD
+  - 5 models: **90 → 85** ↓ (-5)
+  - 10 models: **175 → 170** ↓ (-5)
+- ASSAULT INTERCESSORS WITH JUMP PACKS
+  - 5 models: **100 → 95** ↓ (-5)
+- BALLISTUS DREADNOUGHT
   - 1 model: tier structure changed
-- **+ NEW** MASTODON: 1 model @ 540pts
+- BLADEGUARD ANCIENT
+  - 1 model: **60 → 70** ↑ (+10)
+- BLADEGUARD VETERAN SQUAD
+  - 3 models: **85 → 90** ↑ (+5)
+  - 6 models: **170 → 180** ↑ (+10)
+- BRUTALIS DREADNOUGHT
+  - 1 model: tier structure changed
+- CAPTAIN IN TERMINATOR ARMOUR
+  - 1 model: **100 → 90** ↓ (-10)
+- CHAPLAIN
+  - 1 model: **70 → 60** ↓ (-10)
+- CHAPLAIN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 75** ↓ (-10)
+- CHAPLAIN ON BIKE
+  - 1 model: **80 → 75** ↓ (-5)
+- CHAPLAIN WITH JUMP PACK
+  - 1 model: **80 → 75** ↓ (-5)
+- COMPANY HEROES
+  - 4 models: **135 → 125** ↓ (-10)
+- DESOLATION SQUAD
+  - 5 models: **135 → 140** ↑ (+5)
+- ERADICATOR SQUAD WITH HEAVY BOLTERS
+  - 3 models: **95 → 100** ↑ (+5)
+  - 6 models: **200 → 215** ↑ (+15)
+- ERADICATOR SQUAD WITH MELTA RIFLES
+  - 3 models: **90 → 100** ↑ (+10)
+  - 6 models: **190 → 200** ↑ (+10)
+- HEAVY INTERCESSOR SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- HELLBLASTER SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- INCEPTOR SQUAD
+  - 3 models: **125 → 130** ↑ (+5)
+  - 6 models: **250 → 260** ↑ (+10)
+- INCURSOR SQUAD
+  - 5 models: **95 → 90** ↓ (-5)
+  - 10 models: **160 → 170** ↑ (+10)
+- INFERNUS SQUAD
+  - 5 models: **100 → 95** ↓ (-5)
+  - 10 models: **200 → 190** ↓ (-10)
+- INFILTRATOR SQUAD
+  - 5 models: **80 → 85** ↑ (+5)
+- INTERCESSOR SQUAD
+  - 5 models: **95 → 85** ↓ (-10)
+  - 10 models: **175 → 170** ↓ (-5)
+- INVICTOR TACTICAL WARSUIT
+  - 1 model: **140 → 135** ↓ (-5)
+- LAND RAIDER
+  - 1 model: tier structure changed
+- LAND RAIDER CRUSADER
+  - 1 model: **245 → 230** ↓ (-15)
+- LAND RAIDER REDEEMER
+  - 1 model: tier structure changed
+- LAND SPEEDER
+  - 1 model: **110 → 105** ↓ (-5)
+- LIEUTENANT WITH COMBI-WEAPON
+  - 1 model: **80 → 85** ↑ (+5)
 - OUTRIDER SQUAD
-  - 3 models: **70 → 85** ↑ (+15)
-  - 6 models: **140 → 160** ↑ (+20)
-  - **- option removed:** + 1 Invader ATV (was 60pts)
-- **+ NEW** RAPIER CARRIER: 1 model @ 90pts
-- RAZORBACK
-  - 1 model: **85 → 95** ↑ (+10)
+  - 3 models: **85 → 80** ↓ (-5)
 - REDEMPTOR DREADNOUGHT
-  - 1 model: **195 → 180** ↓ (-15)
-- REIVER SQUAD
-  - 5 models: **75 → 85** ↑ (+10)
-  - 10 models: **150 → 165** ↑ (+15)
-- **+ NEW** RELIC RAZORBACK: 1 model @ 105pts
-- REPULSOR
-  - 1 model: **170 → 190** ↑ (+20)
-- REPULSOR EXECUTIONER
-  - 1 model: **255 → 265** ↑ (+10)
-- RHINO
-  - 1 model: **65 → 70** ↑ (+5)
-- **+ NEW** RHINO PRIMARIS: 1 model @ 95pts
-- **+ NEW** SCOUT BIKE SQUAD: 3 models @ 75pts, 6 models @ 150pts
-- SCOUT SQUAD
+  - 1 model: **180 → 170** ↓ (-10)
+- STERNGUARD VETERAN SQUAD
   - 5 models: tier structure changed
   - 10 models: tier structure changed
-- **+ NEW** SICARAN: 1 model @ 180pts
-- STERNGUARD VETERAN SQUAD
-  - 5 models: **85 → 105** ↑ (+20)
-  - 10 models: **160 → 210** ↑ (+50)
-- STORM SPEEDER HAILSTRIKE
-  - 1 model: **105 → 110** ↑ (+5)
 - STORM SPEEDER THUNDERSTRIKE
-  - 1 model: **135 → 155** ↑ (+20)
-- **- REMOVED** SUPPRESSOR SQUAD
-- SWORD BRETHREN SQUAD
-  - 4 models: **100 → 115** ↑ (+15)
-  - 5 models: **125 → 140** ↑ (+15)
-  - 9 models: **225 → 250** ↑ (+25)
-  - 10 models: **250 → 275** ↑ (+25)
-- **- REMOVED** TACTICAL SQUAD
-- **+ NEW** TARANTULA AIR DEFENCE BATTERY: 1 model @ 70pts
-- **+ NEW** TARANTULA SENTRY BATTERY: 1 model @ 30pts, 2 models @ 60pts, 3 models @ 90pts
+  - 1 model: **155 → 140** ↓ (-15)
 - TECHMARINE
-  - 1 model: **55 → 65** ↑ (+10)
+  - 1 model: **65 → 55** ↓ (-10)
 - TERMINATOR ASSAULT SQUAD
-  - 5 models: **155 → 175** ↑ (+20)
-  - 10 models: **310 → 350** ↑ (+40)
+  - 5 models: **175 → 170** ↓ (-5)
+  - 10 models: **350 → 340** ↓ (-10)
 - TERMINATOR SQUAD
-  - 5 models: **160 → 195** ↑ (+35)
-  - 10 models: **320 → 390** ↑ (+70)
-- **+ NEW** TERRAX-PATTERN TERMITE: 1 model @ 200pts
-- THUNDERHAWK GUNSHIP
-  - 1 model: **840 → 850** ↑ (+10)
-- **+ NEW** TYPHON: 1 model @ 320pts
-- **+ NEW** VANGUARD VETERAN SQUAD: 5 models @ 120pts, 10 models @ 240pts
+  - 5 models: **195 → 190** ↓ (-5)
+  - 10 models: **390 → 380** ↓ (-10)
 - VANGUARD VETERAN SQUAD WITH JUMP PACKS
-  - 5 models: **105 → 120** ↑ (+15)
-  - 10 models: **210 → 240** ↑ (+30)
-- **+ NEW** VENERABLE DREADNOUGHT: 1 model @ 165pts
+  - 5 models: **120 → 110** ↓ (-10)
+  - 10 models: **240 → 220** ↓ (-20)
 
 ### BLOOD ANGELS
 
-- AGGRESSOR SQUAD
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **165 → 180** ↑ (+15)
 - ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- ANCIENT IN TERMINATOR ARMOUR
-  - 1 model: **65 → 75** ↑ (+10)
-- APOTHECARY
-  - 1 model: **40 → 45** ↑ (+5)
-- APOTHECARY BIOLOGIS
-  - 1 model: **70 → 60** ↓ (-10)
-- ASSAULT INTERCESSOR SQUAD
-  - 5 models: **80 → 90** ↑ (+10)
-  - 10 models: **150 → 175** ↑ (+25)
-- ASSAULT INTERCESSORS WITH JUMP PACKS
-  - 5 models: **95 → 100** ↑ (+5)
-  - 10 models: **180 → 190** ↑ (+10)
-- ASTORATH
-  - 1 model: **85 → 90** ↑ (+5)
-- ASTRAEUS
-  - 1 model: **525 → 550** ↑ (+25)
-- BAAL PREDATOR
-  - 1 model: **125 → 135** ↑ (+10)
-- BLADEGUARD ANCIENT
-  - 1 model: **40 → 60** ↑ (+20)
-- BLOOD ANGELS CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- BRUTALIS DREADNOUGHT
-  - 1 model: **150 → 160** ↑ (+10)
-- CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN GRAVIS ARMOUR
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- CAPTAIN IN TERMINATOR ARMOUR
-  - 1 model: **85 → 100** ↑ (+15)
-- **+ NEW** CAPTAIN ON BIKE: 1 model @ 110pts
-- CAPTAIN WITH JUMP PACK
-  - 1 model: **80 → 90** ↑ (+10)
-- **+ NEW** CERBERUS: 1 model @ 270pts
-- CHAPLAIN
-  - 1 model: **60 → 70** ↑ (+10)
-- CHAPLAIN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- CHAPLAIN ON BIKE
-  - 1 model: **70 → 80** ↑ (+10)
-- CHIEF LIBRARIAN MEPHISTON
-  - 1 model: **110 → 175** ↑ (+65)
-- COMMANDER DANTE
-  - 1 model: **125 → 140** ↑ (+15)
-- COMPANY HEROES
-  - 4 models: **105 → 135** ↑ (+30)
-- DEATH COMPANY CAPTAIN
-  - 1 model: **70 → 80** ↑ (+10)
-- DEATH COMPANY CAPTAIN WITH JUMP PACK
-  - 1 model: **75 → 85** ↑ (+10)
-- DEATH COMPANY DREADNOUGHT
-  - 1 model: **150 → 165** ↑ (+15)
-- DEATH COMPANY MARINES
-  - 5 models: **85 → 90** ↑ (+5)
-  - 10 models: **160 → 170** ↑ (+10)
-- **- REMOVED** DEATH COMPANY MARINES WITH BOLT RIFLES
-- DEATH COMPANY MARINES WITH JUMP PACKS
-  - 5 models: **115 → 130** ↑ (+15)
-  - 10 models: **230 → 260** ↑ (+30)
-- DESOLATION SQUAD
-  - 5 models: **180 → 135** ↓ (-45)
-- **- REMOVED** DEVASTATOR SQUAD
-- ELIMINATOR SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-- **- REMOVED** ERADICATOR SQUAD
-- ERADICATOR SQUAD WITH HEAVY BOLTERS
-  - 3 models: **80 → 95** ↑ (+15)
-  - **+ option added:** 6 models @ 200pts
-- **+ NEW** ERADICATOR SQUAD WITH MELTA RIFLES: 3 models @ 90pts, 6 models @ 190pts
-- **+ NEW** FALCHION: 1 model @ 420pts
-- FIRESTRIKE SERVO-TURRETS
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **150 → 160** ↑ (+10)
-- GLADIATOR LANCER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR REAPER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR VALIANT
-  - 1 model: **150 → 165** ↑ (+15)
-- HEAVY INTERCESSOR SQUAD
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 220** ↑ (+20)
-- HELLBLASTER SQUAD
-  - 5 models: tier structure changed
-  - 10 models: tier structure changed
-- INCURSOR SQUAD
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **150 → 160** ↑ (+10)
-- INFERNUS SQUAD
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **180 → 200** ↑ (+20)
-- INFILTRATOR SQUAD
-  - 5 models: **110 → 80** ↓ (-30)
-  - 10 models: **180 → 150** ↓ (-30)
-- INTERCESSOR SQUAD
-  - 5 models: **80 → 95** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- **- REMOVED** INVADER ATV
-- **+ NEW** INVADER ATVS: 1 model @ 65pts, 2 models @ 130pts
-- INVICTOR TACTICAL WARSUIT
-  - 1 model: **125 → 140** ↑ (+15)
-- JUDICIAR
-  - 1 model: **55 → 50** ↓ (-5)
-- **+ NEW** KRATOS: 1 model @ 240pts
-- LAND RAIDER
-  - 1 model: **220 → 245** ↑ (+25)
-- LAND RAIDER CRUSADER
-  - 1 model: **220 → 245** ↑ (+25)
-- **+ NEW** LAND RAIDER EXCELSIOR: 1 model @ 250pts
-- LAND RAIDER REDEEMER
-  - 1 model: **260 → 245** ↓ (-15)
-- LAND SPEEDER
-  - 1 model: **105 → 110** ↑ (+5)
-- LEMARTES
-  - 1 model: **100 → 110** ↑ (+10)
-- LIBRARIAN
-  - 1 model: **70 → 75** ↑ (+5)
-- LIBRARIAN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- LIEUTENANT
-  - 1 model: **45 → 50** ↑ (+5)
-- LIEUTENANT IN PHOBOS ARMOUR
   - 1 model: **45 → 40** ↓ (-5)
-- **- REMOVED** LIEUTENANT IN REIVER ARMOUR
+- ASSAULT INTERCESSOR SQUAD
+  - 5 models: **90 → 85** ↓ (-5)
+  - 10 models: **175 → 170** ↓ (-5)
+- ASSAULT INTERCESSORS WITH JUMP PACKS
+  - 5 models: **100 → 95** ↓ (-5)
+- BALLISTUS DREADNOUGHT
+  - 1 model: tier structure changed
+- BLADEGUARD ANCIENT
+  - 1 model: **60 → 70** ↑ (+10)
+- BLADEGUARD VETERAN SQUAD
+  - 3 models: **85 → 90** ↑ (+5)
+  - 6 models: **170 → 180** ↑ (+10)
+- BRUTALIS DREADNOUGHT
+  - 1 model: tier structure changed
+- CAPTAIN IN TERMINATOR ARMOUR
+  - 1 model: **100 → 90** ↓ (-10)
+- CHAPLAIN
+  - 1 model: **70 → 60** ↓ (-10)
+- CHAPLAIN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 75** ↓ (-10)
+- CHAPLAIN ON BIKE
+  - 1 model: **80 → 75** ↓ (-5)
+- CHAPLAIN WITH JUMP PACK
+  - 1 model: **80 → 75** ↓ (-5)
+- COMPANY HEROES
+  - 4 models: **135 → 125** ↓ (-10)
+- DESOLATION SQUAD
+  - 5 models: **135 → 140** ↑ (+5)
+- ERADICATOR SQUAD WITH HEAVY BOLTERS
+  - 3 models: **95 → 100** ↑ (+5)
+  - 6 models: **200 → 215** ↑ (+15)
+- ERADICATOR SQUAD WITH MELTA RIFLES
+  - 3 models: **90 → 100** ↑ (+10)
+  - 6 models: **190 → 200** ↑ (+10)
+- GLADIATOR LANCER
+  - 1 model: **165 → 160** ↓ (-5)
+- GLADIATOR REAPER
+  - 1 model: tier structure changed
+- GLADIATOR VALIANT
+  - 1 model: tier structure changed
+- HEAVY INTERCESSOR SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- HELLBLASTER SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- INCEPTOR SQUAD
+  - 3 models: **125 → 130** ↑ (+5)
+  - 6 models: **250 → 260** ↑ (+10)
+- INCURSOR SQUAD
+  - 5 models: **95 → 90** ↓ (-5)
+  - 10 models: **160 → 170** ↑ (+10)
+- INFERNUS SQUAD
+  - 5 models: **100 → 95** ↓ (-5)
+  - 10 models: **200 → 190** ↓ (-10)
+- INFILTRATOR SQUAD
+  - 5 models: **80 → 85** ↑ (+5)
+- INTERCESSOR SQUAD
+  - 5 models: **95 → 85** ↓ (-10)
+  - 10 models: **175 → 170** ↓ (-5)
+- INVICTOR TACTICAL WARSUIT
+  - 1 model: **140 → 135** ↓ (-5)
+- LAND RAIDER
+  - 1 model: tier structure changed
+- LAND RAIDER CRUSADER
+  - 1 model: **245 → 230** ↓ (-15)
+- LAND RAIDER REDEEMER
+  - 1 model: tier structure changed
+- LAND SPEEDER
+  - 1 model: **110 → 105** ↓ (-5)
+- LIBRARIAN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 80** ↓ (-5)
 - LIEUTENANT WITH COMBI-WEAPON
-  - 1 model: **95 → 80** ↓ (-15)
-- **+ NEW** MASTODON: 1 model @ 540pts
+  - 1 model: **80 → 85** ↑ (+5)
 - OUTRIDER SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-  - 6 models: **140 → 160** ↑ (+20)
-  - **- option removed:** + 1 Invader ATV (was 60pts)
-- **+ NEW** RAPIER CARRIER: 1 model @ 90pts
-- RAZORBACK
-  - 1 model: **85 → 95** ↑ (+10)
+  - 3 models: **85 → 80** ↓ (-5)
 - REDEMPTOR DREADNOUGHT
-  - 1 model: **195 → 180** ↓ (-15)
-- REIVER SQUAD
-  - 5 models: **75 → 85** ↑ (+10)
-  - 10 models: **150 → 165** ↑ (+15)
-- **+ NEW** RELIC RAZORBACK: 1 model @ 105pts
-- REPULSOR
-  - 1 model: **170 → 190** ↑ (+20)
+  - 1 model: **180 → 170** ↓ (-10)
 - REPULSOR EXECUTIONER
-  - 1 model: **230 → 275** ↑ (+45)
-- RHINO
-  - 1 model: **65 → 70** ↑ (+5)
-- **+ NEW** RHINO PRIMARIS: 1 model @ 95pts
-- SANGUINARY GUARD
-  - 3 models: **120 → 135** ↑ (+15)
-  - 6 models: **260 → 275** ↑ (+15)
-- SANGUINARY PRIEST
-  - 1 model: **75 → 60** ↓ (-15)
-- **+ NEW** SCOUT BIKE SQUAD: 3 models @ 75pts, 6 models @ 150pts
-- SCOUT SQUAD
+  - 1 model: **275 → 260** ↓ (-15)
+- STERNGUARD VETERAN SQUAD
   - 5 models: tier structure changed
   - 10 models: tier structure changed
-- **+ NEW** SICARAN: 1 model @ 180pts
-- STERNGUARD VETERAN SQUAD
-  - 5 models: **100 → 105** ↑ (+5)
-  - 10 models: **200 → 210** ↑ (+10)
-- STORM SPEEDER HAILSTRIKE
-  - 1 model: **105 → 110** ↑ (+5)
 - STORM SPEEDER THUNDERSTRIKE
-  - 1 model: **135 → 155** ↑ (+20)
-- **- REMOVED** SUPPRESSOR SQUAD
-- **- REMOVED** TACTICAL SQUAD
-- **+ NEW** TARANTULA AIR DEFENCE BATTERY: 1 model @ 70pts
-- **+ NEW** TARANTULA SENTRY BATTERY: 1 model @ 30pts, 2 models @ 60pts, 3 models @ 90pts
+  - 1 model: **155 → 140** ↓ (-15)
 - TECHMARINE
-  - 1 model: **55 → 65** ↑ (+10)
+  - 1 model: **65 → 55** ↓ (-10)
 - TERMINATOR ASSAULT SQUAD
-  - 5 models: **155 → 175** ↑ (+20)
-  - 10 models: **310 → 350** ↑ (+40)
+  - 5 models: **175 → 170** ↓ (-5)
+  - 10 models: **350 → 340** ↓ (-10)
 - TERMINATOR SQUAD
-  - 5 models: **160 → 195** ↑ (+35)
-  - 10 models: **320 → 390** ↑ (+70)
-- **+ NEW** TERRAX-PATTERN TERMITE: 1 model @ 200pts
-- THUNDERHAWK GUNSHIP
-  - 1 model: **840 → 850** ↑ (+10)
-- **+ NEW** TYPHON: 1 model @ 320pts
-- **+ NEW** VANGUARD VETERAN SQUAD: 5 models @ 120pts, 10 models @ 240pts
+  - 5 models: **195 → 190** ↓ (-5)
+  - 10 models: **390 → 380** ↓ (-10)
 - VANGUARD VETERAN SQUAD WITH JUMP PACKS
-  - 5 models: **110 → 120** ↑ (+10)
-  - 10 models: **220 → 240** ↑ (+20)
-- **+ NEW** VENERABLE DREADNOUGHT: 1 model @ 165pts
-
-### CHAOS DAEMONS
-
-- BLOODCRUSHERS
-  - 6 models: **200 → 210** ↑ (+10)
-- FIENDS
-  - 3 models: tier structure changed
-  - 6 models: tier structure changed
-- FLESH HOUNDS
-  - 5 models: **75 → 80** ↑ (+5)
-- SKARBRAND
-  - 1 model: **315 → 330** ↑ (+15)
-
-### CHAOS KNIGHTS
-
-- KNIGHT ABOMINANT
-  - 1 model: **355 → 350** ↓ (-5)
-- KNIGHT DESECRATOR
-  - 1 model: **355 → 350** ↓ (-5)
-- KNIGHT RAMPAGER
-  - 1 model: **355 → 350** ↓ (-5)
-- KNIGHT RUINATOR
-  - 1 model: **340 → 325** ↓ (-15)
-- KNIGHT TYRANT
-  - 1 model: **400 → 390** ↓ (-10)
-
-### CHAOS SPACE MARINES
-
-- ABADDON THE DESPOILER
-  - 1 model: **295 → 300** ↑ (+5)
-- ACCURSED CULTISTS
-  - 16 models: **195 → 185** ↓ (-10)
-- CHAOS BIKERS
-  - 3 models: **70 → 80** ↑ (+10)
-  - 6 models: **130 → 150** ↑ (+20)
-- CHAOS LORD
-  - 1 model: **90 → 95** ↑ (+5)
-- CHAOS LORD IN TERMINATOR ARMOUR
-  - 1 model: **85 → 90** ↑ (+5)
-- CHAOS LORD WITH JUMP PACK
-  - 1 model: **80 → 85** ↑ (+5)
-- CHAOS PREDATOR ANNIHILATOR
-  - 1 model: **145 → 140** ↓ (-5)
-- CHAOS PREDATOR DESTRUCTOR
-  - 1 model: **150 → 145** ↓ (-5)
-- CHAOS TERMINATOR SQUAD
-  - 5 models: **175 → 185** ↑ (+10)
-  - 10 models: **350 → 370** ↑ (+20)
-- CHAOS VINDICATOR
-  - 1 model: **185 → 180** ↓ (-5)
-- CHOSEN
-  - 5 models: **135 → 140** ↑ (+5)
-  - 10 models: **270 → 280** ↑ (+10)
-- CYPHER
-  - 1 model: **90 → 95** ↑ (+5)
-- DARK APOSTLE
-  - 3 models: **65 → 70** ↑ (+5)
-- FABIUS BILE
-  - 2 models: **100 → 110** ↑ (+10)
-- FORGEFIEND
-  - 1 model: **160 → 155** ↓ (-5)
-- HAARKEN WORLDCLAIMER
-  - 1 model: **90 → 95** ↑ (+5)
-- HAVOCS
-  - 5 models: **125 → 135** ↑ (+10)
-- HELBRUTE
-  - 1 model: **130 → 125** ↓ (-5)
-- HERETIC ASTARTES DAEMON PRINCE
-  - 1 model: **165 → 155** ↓ (-10)
-- HERETIC ASTARTES DAEMON PRINCE WITH WINGS
-  - 1 model: **180 → 170** ↓ (-10)
-- HURON BLACKHEART
-  - 1 model: **130 → 135** ↑ (+5)
-- KRAVEK MORNE
-  - 1 model: **120 → 130** ↑ (+10)
-- LEGIONARIES
-  - 5 models: **90 → 95** ↑ (+5)
-  - 10 models: **170 → 180** ↑ (+10)
-- LORD DISCORDANT ON HELSTALKER
-  - 1 model: **160 → 155** ↓ (-5)
-- MASTER OF EXECUTIONS
-  - 1 model: **70 → 75** ↑ (+5)
-- MASTER OF POSSESSION
-  - 1 model: **60 → 65** ↑ (+5)
-- MASTERS OF THE MAELSTROM
-  - 5 models: **145 → 150** ↑ (+5)
-- MAULERFIEND
-  - 1 model: **130 → 125** ↓ (-5)
-- MUTILATORS
-  - 3 models: tier structure changed
-- NEMESIS CLAW
-  - 5 models: **100 → 105** ↑ (+5)
-  - 10 models: **180 → 190** ↑ (+10)
-- POSSESSED
-  - 5 models: **120 → 130** ↑ (+10)
-  - 10 models: **250 → 260** ↑ (+10)
-- RAPTORS
-  - 5 models: **110 → 115** ↑ (+5)
-  - 10 models: **210 → 225** ↑ (+15)
-- RED CORSAIRS RAIDERS
-  - 5 models: **110 → 120** ↑ (+10)
-  - 10 models: **210 → 220** ↑ (+10)
-- RED CORSAIRS REAVE-CAPTAIN
-  - 1 model: **60 → 65** ↑ (+5)
-- SORCERER
-  - 1 model: **60 → 65** ↑ (+5)
-- SORCERER IN TERMINATOR ARMOUR
-  - 1 model: **80 → 85** ↑ (+5)
-- TRAITOR GUARDSMEN SQUAD
-  - 10 models: **70 → 65** ↓ (-5)
-- WARP TALONS
-  - 5 models: **125 → 130** ↑ (+5)
-  - 10 models: **280 → 290** ↑ (+10)
-- WARPSMITH
-  - 1 model: **60 → 65** ↑ (+5)
+  - 5 models: **120 → 110** ↓ (-10)
+  - 10 models: **240 → 220** ↓ (-20)
 
 ### DARK ANGELS
 
-- AGGRESSOR SQUAD
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **165 → 180** ↑ (+15)
 - ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- ANCIENT IN TERMINATOR ARMOUR
-  - 1 model: **65 → 75** ↑ (+10)
-- APOTHECARY
-  - 1 model: **40 → 45** ↑ (+5)
-- APOTHECARY BIOLOGIS
-  - 1 model: **70 → 60** ↓ (-10)
-- ASMODAI
-  - 1 model: **70 → 80** ↑ (+10)
-- ASSAULT INTERCESSOR SQUAD
-  - 5 models: **75 → 90** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- ASSAULT INTERCESSORS WITH JUMP PACKS
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **160 → 190** ↑ (+30)
-- ASTRAEUS
-  - 1 model: **525 → 550** ↑ (+25)
-- AZRAEL
-  - 1 model: **140 → 150** ↑ (+10)
-- BELIAL
-  - 1 model: **75 → 100** ↑ (+25)
-- BLADEGUARD ANCIENT
-  - 1 model: **40 → 60** ↑ (+20)
-- BLADEGUARD VETERAN SQUAD
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- BRUTALIS DREADNOUGHT
-  - 1 model: **150 → 160** ↑ (+10)
-- CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN GRAVIS ARMOUR
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- CAPTAIN IN TERMINATOR ARMOUR
-  - 1 model: **85 → 100** ↑ (+15)
-- **+ NEW** CAPTAIN ON BIKE: 1 model @ 110pts
-- CAPTAIN WITH JUMP PACK
-  - 1 model: **75 → 90** ↑ (+15)
-- **+ NEW** CERBERUS: 1 model @ 270pts
-- CHAPLAIN
-  - 1 model: **60 → 70** ↑ (+10)
-- CHAPLAIN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- CHAPLAIN ON BIKE
-  - 1 model: **70 → 80** ↑ (+10)
-- CHAPLAIN WITH JUMP PACK
-  - 1 model: **75 → 80** ↑ (+5)
-- COMPANY HEROES
-  - 4 models: **105 → 135** ↑ (+30)
-- DEATHWING KNIGHTS
-  - 5 models: **240 → 255** ↑ (+15)
-- DEATHWING TERMINATOR SQUAD
-  - 5 models: **165 → 190** ↑ (+25)
-  - 10 models: **330 → 380** ↑ (+50)
-- DESOLATION SQUAD
-  - 5 models: **180 → 135** ↓ (-45)
-- **- REMOVED** DEVASTATOR SQUAD
-- ELIMINATOR SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-- **- REMOVED** ERADICATOR SQUAD
-- ERADICATOR SQUAD WITH HEAVY BOLTERS
-  - 3 models: **80 → 95** ↑ (+15)
-  - **+ option added:** 6 models @ 200pts
-- **+ NEW** ERADICATOR SQUAD WITH MELTA RIFLES: 3 models @ 90pts, 6 models @ 190pts
-- EZEKIEL
-  - 1 model: **75 → 110** ↑ (+35)
-- **+ NEW** FALCHION: 1 model @ 420pts
-- FIRESTRIKE SERVO-TURRETS
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **150 → 160** ↑ (+10)
-- GLADIATOR LANCER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR REAPER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR VALIANT
-  - 1 model: **150 → 165** ↑ (+15)
-- HEAVY INTERCESSOR SQUAD
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 220** ↑ (+20)
-- HELLBLASTER SQUAD
-  - 5 models: tier structure changed
-  - 10 models: tier structure changed
-- INCURSOR SQUAD
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **150 → 160** ↑ (+10)
-- INFERNUS SQUAD
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **180 → 200** ↑ (+20)
-- INFILTRATOR SQUAD
-  - 5 models: **110 → 80** ↓ (-30)
-  - 10 models: **180 → 150** ↓ (-30)
-- INNER CIRCLE COMPANIONS
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **160 → 180** ↑ (+20)
-- INTERCESSOR SQUAD
-  - 5 models: **80 → 95** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- **- REMOVED** INVADER ATV
-- **+ NEW** INVADER ATVS: 1 model @ 65pts, 2 models @ 130pts
-- INVICTOR TACTICAL WARSUIT
-  - 1 model: **125 → 140** ↑ (+15)
-- JUDICIAR
-  - 1 model: **55 → 50** ↓ (-5)
-- **+ NEW** KRATOS: 1 model @ 240pts
-- LAND RAIDER
-  - 1 model: **220 → 245** ↑ (+25)
-- LAND RAIDER CRUSADER
-  - 1 model: **220 → 245** ↑ (+25)
-- **+ NEW** LAND RAIDER EXCELSIOR: 1 model @ 250pts
-- LAND RAIDER REDEEMER
-  - 1 model: **260 → 245** ↓ (-15)
-- LAND SPEEDER
-  - 1 model: **105 → 110** ↑ (+5)
-- LAND SPEEDER VENGEANCE
-  - 1 model: **130 → 150** ↑ (+20)
-- LAZARUS
-  - 1 model: **70 → 80** ↑ (+10)
-- LIBRARIAN
-  - 1 model: **70 → 75** ↑ (+5)
-- LIBRARIAN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- LIEUTENANT
-  - 1 model: **45 → 50** ↑ (+5)
-- LIEUTENANT IN PHOBOS ARMOUR
   - 1 model: **45 → 40** ↓ (-5)
-- **- REMOVED** LIEUTENANT IN REIVER ARMOUR
+- ASSAULT INTERCESSOR SQUAD
+  - 5 models: **90 → 85** ↓ (-5)
+  - 10 models: **175 → 170** ↓ (-5)
+- ASSAULT INTERCESSORS WITH JUMP PACKS
+  - 5 models: **100 → 95** ↓ (-5)
+- BALLISTUS DREADNOUGHT
+  - 1 model: tier structure changed
+- BLADEGUARD ANCIENT
+  - 1 model: **60 → 70** ↑ (+10)
+- BLADEGUARD VETERAN SQUAD
+  - 3 models: **85 → 90** ↑ (+5)
+  - 6 models: **170 → 180** ↑ (+10)
+- BRUTALIS DREADNOUGHT
+  - 1 model: tier structure changed
+- CAPTAIN IN TERMINATOR ARMOUR
+  - 1 model: **100 → 90** ↓ (-10)
+- CHAPLAIN
+  - 1 model: **70 → 60** ↓ (-10)
+- CHAPLAIN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 75** ↓ (-10)
+- CHAPLAIN ON BIKE
+  - 1 model: **80 → 75** ↓ (-5)
+- CHAPLAIN WITH JUMP PACK
+  - 1 model: **80 → 75** ↓ (-5)
+- COMPANY HEROES
+  - 4 models: **135 → 125** ↓ (-10)
+- DESOLATION SQUAD
+  - 5 models: **135 → 140** ↑ (+5)
+- ERADICATOR SQUAD WITH HEAVY BOLTERS
+  - 3 models: **95 → 100** ↑ (+5)
+  - 6 models: **200 → 215** ↑ (+15)
+- ERADICATOR SQUAD WITH MELTA RIFLES
+  - 3 models: **90 → 100** ↑ (+10)
+  - 6 models: **190 → 200** ↑ (+10)
+- GLADIATOR LANCER
+  - 1 model: **165 → 160** ↓ (-5)
+- GLADIATOR REAPER
+  - 1 model: tier structure changed
+- GLADIATOR VALIANT
+  - 1 model: tier structure changed
+- HEAVY INTERCESSOR SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- HELLBLASTER SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- INCEPTOR SQUAD
+  - 3 models: **125 → 130** ↑ (+5)
+  - 6 models: **250 → 260** ↑ (+10)
+- INCURSOR SQUAD
+  - 5 models: **95 → 90** ↓ (-5)
+  - 10 models: **160 → 170** ↑ (+10)
+- INFERNUS SQUAD
+  - 5 models: **100 → 95** ↓ (-5)
+  - 10 models: **200 → 190** ↓ (-10)
+- INFILTRATOR SQUAD
+  - 5 models: **80 → 85** ↑ (+5)
+- INTERCESSOR SQUAD
+  - 5 models: **95 → 85** ↓ (-10)
+  - 10 models: **175 → 170** ↓ (-5)
+- INVICTOR TACTICAL WARSUIT
+  - 1 model: **140 → 135** ↓ (-5)
+- LAND RAIDER
+  - 1 model: tier structure changed
+- LAND RAIDER CRUSADER
+  - 1 model: **245 → 230** ↓ (-15)
+- LAND RAIDER REDEEMER
+  - 1 model: tier structure changed
+- LAND SPEEDER
+  - 1 model: **110 → 105** ↓ (-5)
+- LIBRARIAN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 80** ↓ (-5)
 - LIEUTENANT WITH COMBI-WEAPON
-  - 1 model: **95 → 80** ↓ (-15)
-- LION EL’JONSON
-  - 1 model: **265 → 415** ↑ (+150)
-- **+ NEW** MASTODON: 1 model @ 540pts
-- NEPHILIM JETFIGHTER
-  - 1 model: **180 → 200** ↑ (+20)
+  - 1 model: **80 → 85** ↑ (+5)
 - OUTRIDER SQUAD
-  - 3 models: **70 → 85** ↑ (+15)
-  - 6 models: **140 → 160** ↑ (+20)
-  - **- option removed:** + 1 Invader ATV (was 60pts)
-- **+ NEW** RAPIER CARRIER: 1 model @ 90pts
-- RAVENWING BLACK KNIGHTS
-  - 3 models: **75 → 85** ↑ (+10)
-  - 6 models: **150 → 170** ↑ (+20)
-- RAVENWING COMMAND SQUAD
-  - 3 models: **105 → 115** ↑ (+10)
-- RAVENWING DARK TALON
-  - 1 model: **200 → 190** ↓ (-10)
-- RAVENWING DARKSHROUD
-  - 1 model: **70 → 80** ↑ (+10)
-- RAZORBACK
-  - 1 model: **85 → 95** ↑ (+10)
+  - 3 models: **85 → 80** ↓ (-5)
 - REDEMPTOR DREADNOUGHT
-  - 1 model: **195 → 180** ↓ (-15)
-- REIVER SQUAD
-  - 5 models: **75 → 85** ↑ (+10)
-  - 10 models: **150 → 165** ↑ (+15)
-- **+ NEW** RELIC RAZORBACK: 1 model @ 105pts
-- REPULSOR
-  - 1 model: **170 → 190** ↑ (+20)
+  - 1 model: **180 → 170** ↓ (-10)
 - REPULSOR EXECUTIONER
-  - 1 model: **230 → 275** ↑ (+45)
-- RHINO
-  - 1 model: **65 → 70** ↑ (+5)
-- **+ NEW** RHINO PRIMARIS: 1 model @ 95pts
-- SAMMAEL
-  - 1 model: **105 → 120** ↑ (+15)
-- **+ NEW** SCOUT BIKE SQUAD: 3 models @ 75pts, 6 models @ 150pts
-- SCOUT SQUAD
+  - 1 model: **275 → 260** ↓ (-15)
+- STERNGUARD VETERAN SQUAD
   - 5 models: tier structure changed
   - 10 models: tier structure changed
-- **+ NEW** SICARAN: 1 model @ 180pts
-- STERNGUARD VETERAN SQUAD
-  - 5 models: **100 → 105** ↑ (+5)
-  - 10 models: **200 → 210** ↑ (+10)
-- STORM SPEEDER HAILSTRIKE
-  - 1 model: **105 → 110** ↑ (+5)
 - STORM SPEEDER THUNDERSTRIKE
-  - 1 model: **135 → 155** ↑ (+20)
-- **- REMOVED** SUPPRESSOR SQUAD
-- **- REMOVED** TACTICAL SQUAD
-- **+ NEW** TARANTULA AIR DEFENCE BATTERY: 1 model @ 70pts
-- **+ NEW** TARANTULA SENTRY BATTERY: 1 model @ 30pts, 2 models @ 60pts, 3 models @ 90pts
+  - 1 model: **155 → 140** ↓ (-15)
 - TECHMARINE
-  - 1 model: **55 → 65** ↑ (+10)
+  - 1 model: **65 → 55** ↓ (-10)
 - TERMINATOR ASSAULT SQUAD
-  - 5 models: **155 → 175** ↑ (+20)
-  - 10 models: **310 → 350** ↑ (+40)
+  - 5 models: **175 → 170** ↓ (-5)
+  - 10 models: **350 → 340** ↓ (-10)
 - TERMINATOR SQUAD
-  - 5 models: **160 → 195** ↑ (+35)
-  - 10 models: **320 → 390** ↑ (+70)
-- **+ NEW** TERRAX-PATTERN TERMITE: 1 model @ 200pts
-- THUNDERHAWK GUNSHIP
-  - 1 model: **840 → 850** ↑ (+10)
-- **+ NEW** TYPHON: 1 model @ 320pts
-- **+ NEW** VANGUARD VETERAN SQUAD: 5 models @ 120pts, 10 models @ 240pts
+  - 5 models: **195 → 190** ↓ (-5)
+  - 10 models: **390 → 380** ↓ (-10)
 - VANGUARD VETERAN SQUAD WITH JUMP PACKS
-  - 5 models: **105 → 120** ↑ (+15)
-  - 10 models: **210 → 240** ↑ (+30)
-- **+ NEW** VENERABLE DREADNOUGHT: 1 model @ 165pts
-
-### DEATH GUARD
-
-- BLIGHTLORD TERMINATORS
-  - 3 models: tier structure changed
-  - 5 models: **180 → 185** ↑ (+5)
-  - 10 models: **360 → 370** ↑ (+10)
-- CHAOS PREDATOR ANNIHILATOR
-  - 1 model: **135 → 130** ↓ (-5)
-- CHAOS PREDATOR DESTRUCTOR
-  - 1 model: **145 → 140** ↓ (-5)
-- DAEMON PRINCE OF NURGLE
-  - 1 model: **195 → 185** ↓ (-10)
-- DAEMON PRINCE OF NURGLE WITH WINGS
-  - 1 model: **170 → 160** ↓ (-10)
-- DEATHSHROUD TERMINATORS
-  - 3 models: **160 → 150** ↓ (-10)
-- HELBRUTE
-  - 1 model: **110 → 105** ↓ (-5)
-- LORD OF CONTAGION
-  - 1 model: **120 → 110** ↓ (-10)
-- LORD OF VIRULENCE
-  - 1 model: **100 → 90** ↓ (-10)
-- PLAGUE MARINES
-  - 10 models: **180 → 175** ↓ (-5)
-- PLAGUEBURST CRAWLER
-  - 1 model: tier structure changed
-- TYPHUS
-  - 1 model: **100 → 90** ↓ (-10)
+  - 5 models: **120 → 110** ↓ (-10)
+  - 10 models: **240 → 220** ↓ (-20)
 
 ### DEATHWATCH
 
-- AGGRESSOR SQUAD
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **165 → 180** ↑ (+15)
 - ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- ANCIENT IN TERMINATOR ARMOUR
-  - 1 model: **65 → 75** ↑ (+10)
-- APOTHECARY
-  - 1 model: **40 → 45** ↑ (+5)
-- APOTHECARY BIOLOGIS
-  - 1 model: **70 → 60** ↓ (-10)
+  - 1 model: **45 → 40** ↓ (-5)
 - ASSAULT INTERCESSOR SQUAD
-  - 5 models: **75 → 90** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
+  - 5 models: **90 → 85** ↓ (-5)
+  - 10 models: **175 → 170** ↓ (-5)
 - ASSAULT INTERCESSORS WITH JUMP PACKS
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **160 → 190** ↑ (+30)
-- ASTRAEUS
-  - 1 model: **525 → 550** ↑ (+25)
+  - 5 models: **100 → 95** ↓ (-5)
+- BALLISTUS DREADNOUGHT
+  - 1 model: tier structure changed
 - BLADEGUARD ANCIENT
-  - 1 model: **40 → 60** ↑ (+20)
-- BLADEGUARD VETERAN SQUAD
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- BRUTALIS DREADNOUGHT
-  - 1 model: **150 → 160** ↑ (+10)
-- CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN GRAVIS ARMOUR
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- CAPTAIN IN TERMINATOR ARMOUR
-  - 1 model: **85 → 100** ↑ (+15)
-- **+ NEW** CAPTAIN ON BIKE: 1 model @ 110pts
-- CAPTAIN WITH JUMP PACK
-  - 1 model: **75 → 90** ↑ (+15)
-- CENTURION DEVASTATOR SQUAD
-  - 6 models: **365 → 350** ↓ (-15)
-- **+ NEW** CERBERUS: 1 model @ 270pts
-- CHAPLAIN
   - 1 model: **60 → 70** ↑ (+10)
+- BLADEGUARD VETERAN SQUAD
+  - 3 models: **85 → 90** ↑ (+5)
+  - 6 models: **170 → 180** ↑ (+10)
+- BRUTALIS DREADNOUGHT
+  - 1 model: tier structure changed
+- CAPTAIN IN TERMINATOR ARMOUR
+  - 1 model: **100 → 90** ↓ (-10)
+- CHAPLAIN
+  - 1 model: **70 → 60** ↓ (-10)
 - CHAPLAIN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
+  - 1 model: **85 → 75** ↓ (-10)
 - CHAPLAIN ON BIKE
-  - 1 model: **70 → 80** ↑ (+10)
+  - 1 model: **80 → 75** ↓ (-5)
 - CHAPLAIN WITH JUMP PACK
-  - 1 model: **75 → 80** ↑ (+5)
+  - 1 model: **80 → 75** ↓ (-5)
 - COMPANY HEROES
-  - 4 models: **105 → 135** ↑ (+30)
-- DEATHWATCH TERMINATOR SQUAD
-  - 5 models: **180 → 190** ↑ (+10)
-  - 10 models: **330 → 380** ↑ (+50)
-- DEATHWATCH VETERANS
-  - 5 models: **100 → 115** ↑ (+15)
-  - 10 models: **190 → 220** ↑ (+30)
-- DECIMUS KILL TEAM
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **190 → 210** ↑ (+20)
+  - 4 models: **135 → 125** ↓ (-10)
 - DESOLATION SQUAD
-  - 5 models: **180 → 135** ↓ (-45)
-- ELIMINATOR SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-- **- REMOVED** ERADICATOR SQUAD
+  - 5 models: **135 → 140** ↑ (+5)
 - ERADICATOR SQUAD WITH HEAVY BOLTERS
-  - 3 models: **80 → 95** ↑ (+15)
-  - **+ option added:** 6 models @ 200pts
-- **+ NEW** ERADICATOR SQUAD WITH MELTA RIFLES: 3 models @ 90pts, 6 models @ 190pts
-- **+ NEW** FALCHION: 1 model @ 420pts
-- FIRESTRIKE SERVO-TURRETS
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **150 → 160** ↑ (+10)
-- FORTIS KILL TEAM
-  - 10 models: **195 → 210** ↑ (+15)
+  - 3 models: **95 → 100** ↑ (+5)
+  - 6 models: **200 → 215** ↑ (+15)
+- ERADICATOR SQUAD WITH MELTA RIFLES
+  - 3 models: **90 → 100** ↑ (+10)
+  - 6 models: **190 → 200** ↑ (+10)
 - GLADIATOR LANCER
-  - 1 model: **160 → 165** ↑ (+5)
+  - 1 model: **165 → 160** ↓ (-5)
 - GLADIATOR REAPER
-  - 1 model: **160 → 165** ↑ (+5)
+  - 1 model: tier structure changed
 - GLADIATOR VALIANT
-  - 1 model: **150 → 165** ↑ (+15)
+  - 1 model: tier structure changed
 - HEAVY INTERCESSOR SQUAD
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 220** ↑ (+20)
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
 - HELLBLASTER SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- INCEPTOR SQUAD
+  - 3 models: **125 → 130** ↑ (+5)
+  - 6 models: **250 → 260** ↑ (+10)
+- INCURSOR SQUAD
+  - 5 models: **95 → 90** ↓ (-5)
+  - 10 models: **160 → 170** ↑ (+10)
+- INFERNUS SQUAD
+  - 5 models: **100 → 95** ↓ (-5)
+  - 10 models: **200 → 190** ↓ (-10)
+- INFILTRATOR SQUAD
+  - 5 models: **80 → 85** ↑ (+5)
+- INTERCESSOR SQUAD
+  - 5 models: **95 → 85** ↓ (-10)
+  - 10 models: **175 → 170** ↓ (-5)
+- INVICTOR TACTICAL WARSUIT
+  - 1 model: **140 → 135** ↓ (-5)
+- LAND RAIDER
+  - 1 model: tier structure changed
+- LAND RAIDER CRUSADER
+  - 1 model: **245 → 230** ↓ (-15)
+- LAND RAIDER REDEEMER
+  - 1 model: tier structure changed
+- LAND SPEEDER
+  - 1 model: **110 → 105** ↓ (-5)
+- LIBRARIAN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 80** ↓ (-5)
+- LIEUTENANT WITH COMBI-WEAPON
+  - 1 model: **80 → 85** ↑ (+5)
+- OUTRIDER SQUAD
+  - 3 models: **85 → 80** ↓ (-5)
+- REDEMPTOR DREADNOUGHT
+  - 1 model: **180 → 170** ↓ (-10)
+- REPULSOR EXECUTIONER
+  - 1 model: **275 → 260** ↓ (-15)
+- STERNGUARD VETERAN SQUAD
   - 5 models: tier structure changed
   - 10 models: tier structure changed
-- INCURSOR SQUAD
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **150 → 160** ↑ (+10)
-- INDOMITOR KILL TEAM
-  - 10 models: **275 → 280** ↑ (+5)
-- INFERNUS SQUAD
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **180 → 200** ↑ (+20)
-- INFILTRATOR SQUAD
-  - 5 models: **110 → 80** ↓ (-30)
-  - 10 models: **180 → 150** ↓ (-30)
-- INTERCESSOR SQUAD
-  - 5 models: **80 → 95** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- **- REMOVED** INVADER ATV
-- **+ NEW** INVADER ATVS: 1 model @ 65pts, 2 models @ 130pts
-- INVICTOR TACTICAL WARSUIT
-  - 1 model: **125 → 140** ↑ (+15)
-- JUDICIAR
-  - 1 model: **55 → 50** ↓ (-5)
-- **+ NEW** KRATOS: 1 model @ 240pts
-- LAND RAIDER
-  - 1 model: **220 → 245** ↑ (+25)
-- LAND RAIDER CRUSADER
-  - 1 model: **220 → 245** ↑ (+25)
-- **+ NEW** LAND RAIDER EXCELSIOR: 1 model @ 250pts
-- LAND RAIDER REDEEMER
-  - 1 model: **260 → 245** ↓ (-15)
-- LAND SPEEDER
-  - 1 model: **105 → 110** ↑ (+5)
-- LIBRARIAN
-  - 1 model: **70 → 75** ↑ (+5)
-- LIBRARIAN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- LIEUTENANT
-  - 1 model: **45 → 50** ↑ (+5)
-- LIEUTENANT IN PHOBOS ARMOUR
-  - 1 model: **45 → 40** ↓ (-5)
-- **- REMOVED** LIEUTENANT IN REIVER ARMOUR
-- LIEUTENANT WITH COMBI-WEAPON
-  - 1 model: **95 → 80** ↓ (-15)
-- **+ NEW** MASTODON: 1 model @ 540pts
-- OUTRIDER SQUAD
-  - 3 models: **70 → 85** ↑ (+15)
-  - 6 models: **140 → 160** ↑ (+20)
-  - **- option removed:** + 1 Invader ATV (was 60pts)
-- **+ NEW** RAPIER CARRIER: 1 model @ 90pts
-- RAZORBACK
-  - 1 model: **85 → 95** ↑ (+10)
-- REDEMPTOR DREADNOUGHT
-  - 1 model: **195 → 180** ↓ (-15)
-- REIVER SQUAD
-  - 5 models: **75 → 85** ↑ (+10)
-  - 10 models: **150 → 165** ↑ (+15)
-- **+ NEW** RELIC RAZORBACK: 1 model @ 105pts
-- REPULSOR
-  - 1 model: **170 → 190** ↑ (+20)
-- REPULSOR EXECUTIONER
-  - 1 model: **230 → 275** ↑ (+45)
-- RHINO
-  - 1 model: **65 → 70** ↑ (+5)
-- **+ NEW** RHINO PRIMARIS: 1 model @ 95pts
-- **+ NEW** SCOUT BIKE SQUAD: 3 models @ 75pts, 6 models @ 150pts
-- **+ NEW** SICARAN: 1 model @ 180pts
-- SPECTRUS KILL TEAM
-  - 10 models: **170 → 185** ↑ (+15)
-- STERNGUARD VETERAN SQUAD
-  - 5 models: **100 → 105** ↑ (+5)
-  - 10 models: **200 → 210** ↑ (+10)
-- STORM SPEEDER HAILSTRIKE
-  - 1 model: **105 → 110** ↑ (+5)
 - STORM SPEEDER THUNDERSTRIKE
-  - 1 model: **135 → 155** ↑ (+20)
-- **- REMOVED** SUPPRESSOR SQUAD
-- TALONSTRIKE KILL TEAM
-  - 10 models: **265 → 280** ↑ (+15)
-- **+ NEW** TARANTULA AIR DEFENCE BATTERY: 1 model @ 70pts
-- **+ NEW** TARANTULA SENTRY BATTERY: 1 model @ 30pts, 2 models @ 60pts, 3 models @ 90pts
+  - 1 model: **155 → 140** ↓ (-15)
 - TECHMARINE
-  - 1 model: **55 → 65** ↑ (+10)
-- **+ NEW** TERRAX-PATTERN TERMITE: 1 model @ 200pts
-- THUNDERHAWK GUNSHIP
-  - 1 model: **840 → 850** ↑ (+10)
-- **+ NEW** TYPHON: 1 model @ 320pts
-- **+ NEW** VANGUARD VETERAN SQUAD: 5 models @ 120pts, 10 models @ 240pts
+  - 1 model: **65 → 55** ↓ (-10)
 - VANGUARD VETERAN SQUAD WITH JUMP PACKS
-  - 5 models: **105 → 120** ↑ (+15)
-  - 10 models: **210 → 240** ↑ (+30)
-- **+ NEW** VENERABLE DREADNOUGHT: 1 model @ 165pts
-- WATCH CAPTAIN ARTEMIS
-  - 1 model: **65 → 75** ↑ (+10)
-- WATCH MASTER
-  - 1 model: **95 → 105** ↑ (+10)
-
-### DRUKHARI
-
-- TALOS
-  - 1 model: **75 → 70** ↓ (-5)
-  - 2 models: **150 → 140** ↓ (-10)
-- WRACKS
-  - 5 models: **60 → 55** ↓ (-5)
-  - 8 models: **100 → 90** ↓ (-10)
-  - 10 models: **120 → 110** ↓ (-10)
-
-### EMPEROR’S CHILDREN
-
-- CHAOS LAND RAIDER
-  - 1 model: **220 → 210** ↓ (-10)
-- CHAOS TERMINATORS
-  - 5 models: **145 → 155** ↑ (+10)
-- DAEMON PRINCE OF SLAANESH
-  - 1 model: **170 → 165** ↓ (-5)
-- DAEMON PRINCE OF SLAANESH WITH WINGS
-  - 1 model: tier structure changed
-- INFRACTORS
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **160 → 175** ↑ (+15)
-- LORD EXULTANT
-  - 1 model: **90 → 95** ↑ (+5)
-- LUCIUS THE ETERNAL
-  - 1 model: **120 → 130** ↑ (+10)
-- NOISE MARINES
-  - 6 models: **145 → 160** ↑ (+15)
-- TORMENTORS
-  - 5 models: **80 → 85** ↑ (+5)
-  - 10 models: **160 → 170** ↑ (+10)
-
-### GENESTEALER CULTS
-
-- ACOLYTE HYBRIDS WITH AUTOPISTOLS
-  - 5 models: **70 → 65** ↓ (-5)
-  - 10 models: **130 → 120** ↓ (-10)
-- GOLIATH ROCKGRINDER
-  - 1 model: **120 → 110** ↓ (-10)
-- NEXOS
-  - 1 model: **60 → 50** ↓ (-10)
-- PRIMUS
-  - 1 model: **70 → 60** ↓ (-10)
-- SANCTUS
-  - 1 model: **65 → 60** ↓ (-5)
-
-### GREY KNIGHTS
-
-- BROTHER-CAPTAIN
-  - 1 model: **95 → 100** ↑ (+5)
-- BROTHERHOOD CHAMPION
-  - 1 model: **70 → 75** ↑ (+5)
-- BROTHERHOOD CHAPLAIN
-  - 1 model: **65 → 70** ↑ (+5)
-- BROTHERHOOD LIBRARIAN
-  - 1 model: **90 → 95** ↑ (+5)
-- BROTHERHOOD TECHMARINE
-  - 1 model: **70 → 75** ↑ (+5)
-- BROTHERHOOD TERMINATOR SQUAD
-  - 4 models: **140 → 150** ↑ (+10)
-  - 5 models: **175 → 185** ↑ (+10)
-  - 8 models: **300 → 315** ↑ (+15)
-  - 10 models: **360 → 380** ↑ (+20)
-- CASTELLAN CROWE
-  - 1 model: **100 → 105** ↑ (+5)
-- GRAND MASTER
-  - 1 model: **95 → 100** ↑ (+5)
-- GRAND MASTER IN NEMESIS DREADKNIGHT
-  - 1 model: **200 → 210** ↑ (+10)
-- GRAND MASTER VOLDUS
-  - 1 model: **125 → 130** ↑ (+5)
-- INTERCEPTOR SQUAD
-  - 5 models: **125 → 135** ↑ (+10)
-  - 10 models: **250 → 270** ↑ (+20)
-- NEMESIS DREADKNIGHT
-  - 1 model: **195 → 205** ↑ (+10)
-- PALADIN SQUAD
-  - 4 models: **170 → 185** ↑ (+15)
-  - 5 models: **215 → 230** ↑ (+15)
-  - 8 models: **360 → 385** ↑ (+25)
-  - 10 models: **460 → 490** ↑ (+30)
-- PURGATION SQUAD
-  - 5 models: **105 → 115** ↑ (+10)
-  - 10 models: **210 → 230** ↑ (+20)
-- PURIFIER SQUAD
-  - 5 models: **130 → 145** ↑ (+15)
-  - 10 models: **260 → 290** ↑ (+30)
-- STRIKE SQUAD
-  - 5 models: **115 → 125** ↑ (+10)
-  - 10 models: **230 → 250** ↑ (+20)
-
-### IMPERIAL AGENTS
-
-- AQUILA KILL TEAM
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 210** ↑ (+10)
-- DEATHWATCH KILL TEAM
-  - 5 models: **100 → 115** ↑ (+15)
-  - 10 models: **190 → 220** ↑ (+30)
-- WATCH CAPTAIN ARTEMIS
-  - 1 model: **65 → 75** ↑ (+10)
-- WATCH MASTER
-  - 1 model: **95 → 105** ↑ (+10)
-
-### IMPERIAL KNIGHTS
-
-- CERASTUS KNIGHT ATRAPOS
-  - 1 model: **405 → 420** ↑ (+15)
-- KNIGHT DEFENDER
-  - 1 model: **400 → 385** ↓ (-15)
-- KNIGHT VALIANT
-  - 1 model: **400 → 390** ↓ (-10)
-- KNIGHT WARDEN
-  - 1 model: **375 → 365** ↓ (-10)
-
-### LEAGUES OF VOTANN
-
-- CTHONIAN BESERKS
-  - 5 models: **95 → 90** ↓ (-5)
-  - 10 models: **190 → 180** ↓ (-10)
-- HEKATON LAND FORTRESS
-  - 1 model: tier structure changed
-- HERNKYN PIONEERS
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- KAPRICUS DEFENDERS
-  - 1 model: **70 → 75** ↑ (+5)
-  - 2 models: **140 → 150** ↑ (+10)
-- ÛTHAR THE DESTINED
-  - 1 model: **90 → 100** ↑ (+10)
-
-### NECRONS
-
-- ANNIHILATION BARGE
-  - 1 model: **95 → 100** ↑ (+5)
-- CANOPTEK DOOMSTALKER
-  - 1 model: **140 → 130** ↓ (-10)
-- CANOPTEK TOMB CRAWLERS
-  - 2 models: **50 → 60** ↑ (+10)
-- DOOMSDAY ARK
-  - 1 model: **210 → 200** ↓ (-10)
-- IMMORTALS
-  - 5 models: **70 → 65** ↓ (-5)
-  - 10 models: **140 → 130** ↓ (-10)
-- LOKHUST DESTROYERS
-  - 6 models: **175 → 190** ↑ (+15)
-- NEKROSOR AMMENTAR
-  - 1 model: **185 → 195** ↑ (+10)
-- PSYCHOMANCER
-  - 1 model: **55 → 65** ↑ (+10)
-- TESSERACT VAULT
-  - 1 model: tier structure changed
-- TRAZYN THE INFINITE
-  - 1 model: **65 → 60** ↓ (-5)
-
-### ORKS
-
-- BANNERNOB
-  - 1 model: **35 → 30** ↓ (-5)
-- BATTLEWAGON
-  - 1 model: **150 → 160** ↑ (+10)
-- BEAST SNAGGA BOYZ
-  - 10 models: **85 → 80** ↓ (-5)
-  - 20 models: **170 → 160** ↓ (-10)
-- BIG MEK
-  - 1 model: **85 → 100** ↑ (+15)
-- BIG MEK DAKKARIG
-  - 1 model: **135 → 160** ↑ (+25)
-- BIG MEK WITH SHOKK ATTACK GUN
-  - 1 model: **95 → 110** ↑ (+15)
-- BOYZ
-  - 10 models: **90 → 85** ↓ (-5)
-  - 20 models: **180 → 170** ↓ (-10)
-- BREAKA BOYZ
-  - 6 models: **135 → 120** ↓ (-15)
-- DEFFKOPTAS
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- FLASH GITZ
-  - 5 models: **105 → 110** ↑ (+5)
-  - 10 models: **210 → 220** ↑ (+10)
-- GARGANTUAN SQUIGGOTH
-  - 1 model: tier structure changed
-- GHAZGHKULL THRAKA
-  - 1 model: **300 → 290** ↓ (-10)
-- GRETCHIN
-  - **- option removed:** 20 Gretchin (was 80pts)
-  - **+ option added:** 11 Gretchin @ 80pts
-- HUNTA RIG
-  - 1 model: tier structure changed
-- KILL RIG
-  - 1 model: tier structure changed
-- KILLA KANS
-  - 3 models: tier structure changed
-  - 6 models: **260 → 275** ↑ (+15)
-- MEGANOBZ
-  - 2 models: **75 → 70** ↓ (-5)
-  - 3 models: **110 → 105** ↓ (-5)
-  - 5 models: **185 → 175** ↓ (-10)
-  - 6 models: **225 → 210** ↓ (-15)
-- MEK
-  - 1 model: **45 → 55** ↑ (+10)
-- NAZDREG
-  - 1 model: **175 → 165** ↓ (-10)
-- NOBZ
-  - 5 models: **125 → 115** ↓ (-10)
-  - 10 models: **250 → 230** ↓ (-20)
-- SQUIGHOG BOYZ
-  - 4 models: **140 → 130** ↓ (-10)
-  - 8 models: **280 → 260** ↓ (-20)
-- TANKBUSTAS
-  - 6 models: **145 → 160** ↑ (+15)
-- WARBOSS IN MEGA ARMOUR
-  - 1 model: **125 → 115** ↓ (-10)
-- WEIRDBOY
-  - 1 model: **65 → 60** ↓ (-5)
+  - 5 models: **120 → 110** ↓ (-10)
+  - 10 models: **240 → 220** ↓ (-20)
 
 ### SPACE MARINES
 
-- ADRAX AGATONE
-  - 1 model: **80 → 90** ↑ (+10)
-- AETHON SHAAN
-  - 1 model: **100 → 105** ↑ (+5)
-- AGGRESSOR SQUAD
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **165 → 180** ↑ (+15)
 - ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- ANCIENT IN TERMINATOR ARMOUR
-  - 1 model: **65 → 75** ↑ (+10)
-- **- REMOVED** ANCIENT ON BIKE
-- APOTHECARY
-  - 1 model: **40 → 45** ↑ (+5)
-- APOTHECARY BIOLOGIS
-  - 1 model: **70 → 60** ↓ (-10)
-- **- REMOVED** APOTHECARY ON BIKE
-- ASSAULT INTERCESSOR SQUAD
-  - 5 models: **75 → 90** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- ASSAULT INTERCESSORS WITH JUMP PACKS
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **160 → 190** ↑ (+30)
-- **- REMOVED** ASSAULT SQUAD
-- **- REMOVED** ASSAULT SQUAD WITH JUMP PACKS
-- **- REMOVED** ASTARTES SERVITORS
-- ASTRAEUS
-  - 1 model: **525 → 550** ↑ (+25)
-- **- REMOVED** ATTACK BIKE SQUAD
-- **- REMOVED** BIKE SQUAD
-- BLADEGUARD ANCIENT
-  - 1 model: **40 → 60** ↑ (+20)
-- BLADEGUARD VETERAN SQUAD
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- BRUTALIS DREADNOUGHT
-  - 1 model: **150 → 160** ↑ (+10)
-- CAANOK VAR
-  - 1 model: **90 → 100** ↑ (+10)
-- **- REMOVED** CAESTUS ASSAULT RAM
-- CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN GRAVIS ARMOUR
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- CAPTAIN IN TERMINATOR ARMOUR
-  - 1 model: **85 → 100** ↑ (+15)
-- CAPTAIN ON BIKE
-  - 1 model: **95 → 110** ↑ (+15)
-- CAPTAIN TITUS
-  - 1 model: **100 → 115** ↑ (+15)
-- CAPTAIN WITH JUMP PACK
-  - 1 model: **75 → 90** ↑ (+15)
-- **- REMOVED** CARAB CULLN THE RISEN
-- CATO SICARIUS
-  - 1 model: **105 → 115** ↑ (+10)
-- CENTURION DEVASTATOR SQUAD
-  - 6 models: **365 → 350** ↓ (-15)
-- CHAPLAIN
-  - 1 model: **60 → 70** ↑ (+10)
-- **- REMOVED** CHAPLAIN CASSIUS
-- CHAPLAIN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- CHAPLAIN ON BIKE
-  - 1 model: **70 → 80** ↑ (+10)
-- **- REMOVED** CHAPLAIN VENERABLE DREADNOUGHT
-- CHAPLAIN WITH JUMP PACK
-  - 1 model: **75 → 80** ↑ (+5)
-- CHIEF LIBRARIAN TIGURIUS
-  - 1 model: **85 → 115** ↑ (+30)
-- **- REMOVED** COMMAND SQUAD
-- **- REMOVED** COMPANY CHAMPION ON BIKE
-- COMPANY HEROES
-  - 4 models: **105 → 135** ↑ (+30)
-- **- REMOVED** COMPANY VETERANS ON BIKES
-- DARNATH LYSANDER
-  - 1 model: **100 → 160** ↑ (+60)
-- **- REMOVED** DEATHSTORM DROP POD
-- **- REMOVED** DEIMOS PREDATOR
-- **- REMOVED** DEREDEO DREADNOUGHT
-- DESOLATION SQUAD
-  - 5 models: **180 → 135** ↓ (-45)
-- **- REMOVED** DEVASTATOR SQUAD
-- **- REMOVED** DREADNOUGHT DROP POD
-- ELIMINATOR SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-- **- REMOVED** ERADICATOR SQUAD
-- ERADICATOR SQUAD WITH HEAVY BOLTERS
-  - 3 models: **80 → 95** ↑ (+15)
-  - **+ option added:** 6 models @ 200pts
-- **+ NEW** ERADICATOR SQUAD WITH MELTA RIFLES: 3 models @ 90pts, 6 models @ 190pts
-- **- REMOVED** FELLBLADE
-- **- REMOVED** FERREN AERIOS
-- **- REMOVED** FIRE RAPTOR GUNSHIP
-- FIRESTRIKE SERVO-TURRETS
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **150 → 160** ↑ (+10)
-- GLADIATOR LANCER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR REAPER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR VALIANT
-  - 1 model: **150 → 165** ↑ (+15)
-- HEAVY INTERCESSOR SQUAD
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 220** ↑ (+20)
-- HELLBLASTER SQUAD
-  - 5 models: tier structure changed
-  - 10 models: tier structure changed
-- **- REMOVED** HUNTER
-- **- REMOVED** IMPERIAL SPACE MARINE
-- INCURSOR SQUAD
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **150 → 160** ↑ (+10)
-- INFERNUS SQUAD
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **180 → 200** ↑ (+20)
-- INFILTRATOR SQUAD
-  - 5 models: **110 → 80** ↓ (-30)
-  - 10 models: **180 → 150** ↓ (-30)
-- INTERCESSOR SQUAD
-  - 5 models: **80 → 95** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- **- REMOVED** INVADER ATV
-- **+ NEW** INVADER ATVS: 1 model @ 65pts, 2 models @ 130pts
-- INVICTOR TACTICAL WARSUIT
-  - 1 model: **125 → 140** ↑ (+15)
-- **- REMOVED** IRONCLAD DREADNOUGHT
-- **- REMOVED** JAVELIN ATTACK SPEEDER
-- JUDICIAR
-  - 1 model: **55 → 50** ↓ (-5)
-- **+ NEW** KAIUS KONORIUS: 1 model @ 100pts
-- KAYVAAN SHRIKE
-  - 1 model: **100 → 95** ↓ (-5)
-- KOR’SARRO KHAN
-  - 1 model: **55 → 80** ↑ (+25)
-- LAND RAIDER
-  - 1 model: **220 → 245** ↑ (+25)
-- **- REMOVED** LAND RAIDER ACHILLES
-- LAND RAIDER CRUSADER
-  - 1 model: **220 → 245** ↑ (+25)
-- **- REMOVED** LAND RAIDER HELIOS
-- **- REMOVED** LAND RAIDER PROMETHEUS
-- **- REMOVED** LAND RAIDER PROTEUS
-- LAND RAIDER REDEEMER
-  - 1 model: **260 → 245** ↓ (-15)
-- LAND SPEEDER
-  - 1 model: **105 → 110** ↑ (+5)
-- **- REMOVED** LAND SPEEDER STORM
-- **- REMOVED** LAND SPEEDER TEMPEST
-- **- REMOVED** LAND SPEEDER TORNADO
-- **- REMOVED** LAND SPEEDER TYPHOON
-- **- REMOVED** LEVIATHAN DREADNOUGHT
-- LIBRARIAN
-  - 1 model: **70 → 75** ↑ (+5)
-- LIBRARIAN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- **- REMOVED** LIBRARIAN ON BIKE
-- **- REMOVED** LIBRARIAN WITH JUMP PACK
-- LIEUTENANT
-  - 1 model: **45 → 50** ↑ (+5)
-- LIEUTENANT IN PHOBOS ARMOUR
   - 1 model: **45 → 40** ↓ (-5)
-- **- REMOVED** LIEUTENANT IN REIVER ARMOUR
+- ASSAULT INTERCESSOR SQUAD
+  - 5 models: **90 → 85** ↓ (-5)
+  - 10 models: **175 → 170** ↓ (-5)
+- ASSAULT INTERCESSORS WITH JUMP PACKS
+  - 5 models: **100 → 95** ↓ (-5)
+- BALLISTUS DREADNOUGHT
+  - 1 model: tier structure changed
+- BLADEGUARD ANCIENT
+  - 1 model: **60 → 70** ↑ (+10)
+- BLADEGUARD VETERAN SQUAD
+  - 3 models: **85 → 90** ↑ (+5)
+  - 6 models: **170 → 180** ↑ (+10)
+- BRUTALIS DREADNOUGHT
+  - 1 model: tier structure changed
+- CAPTAIN IN TERMINATOR ARMOUR
+  - 1 model: **100 → 90** ↓ (-10)
+- CHAPLAIN
+  - 1 model: **70 → 60** ↓ (-10)
+- CHAPLAIN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 75** ↓ (-10)
+- CHAPLAIN ON BIKE
+  - 1 model: **80 → 75** ↓ (-5)
+- CHAPLAIN WITH JUMP PACK
+  - 1 model: **80 → 75** ↓ (-5)
+- COMPANY HEROES
+  - 4 models: **135 → 125** ↓ (-10)
+- DESOLATION SQUAD
+  - 5 models: **135 → 140** ↑ (+5)
+- ERADICATOR SQUAD WITH HEAVY BOLTERS
+  - 3 models: **95 → 100** ↑ (+5)
+  - 6 models: **200 → 215** ↑ (+15)
+- ERADICATOR SQUAD WITH MELTA RIFLES
+  - 3 models: **90 → 100** ↑ (+10)
+  - 6 models: **190 → 200** ↑ (+10)
+- GLADIATOR LANCER
+  - 1 model: **165 → 160** ↓ (-5)
+- GLADIATOR REAPER
+  - 1 model: tier structure changed
+- GLADIATOR VALIANT
+  - 1 model: tier structure changed
+- HEAVY INTERCESSOR SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- HELLBLASTER SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- INCEPTOR SQUAD
+  - 3 models: **125 → 130** ↑ (+5)
+  - 6 models: **250 → 260** ↑ (+10)
+- INCURSOR SQUAD
+  - 5 models: **95 → 90** ↓ (-5)
+  - 10 models: **160 → 170** ↑ (+10)
+- INFERNUS SQUAD
+  - 5 models: **100 → 95** ↓ (-5)
+  - 10 models: **200 → 190** ↓ (-10)
+- INFILTRATOR SQUAD
+  - 5 models: **80 → 85** ↑ (+5)
+- INTERCESSOR SQUAD
+  - 5 models: **95 → 85** ↓ (-10)
+  - 10 models: **175 → 170** ↓ (-5)
+- INVICTOR TACTICAL WARSUIT
+  - 1 model: **140 → 135** ↓ (-5)
+- LAND RAIDER
+  - 1 model: tier structure changed
+- LAND RAIDER CRUSADER
+  - 1 model: **245 → 230** ↓ (-15)
+- LAND RAIDER REDEEMER
+  - 1 model: tier structure changed
+- LAND SPEEDER
+  - 1 model: **110 → 105** ↓ (-5)
+- LIBRARIAN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 80** ↓ (-5)
 - LIEUTENANT WITH COMBI-WEAPON
-  - 1 model: **95 → 80** ↓ (-15)
-- **+ NEW** MARNEUS CALGAR: 1 model @ 180pts
-- **- REMOVED** MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS
-- **- REMOVED** MORTIS DREADNOUGHT
+  - 1 model: **80 → 85** ↑ (+5)
 - OUTRIDER SQUAD
-  - 3 models: **70 → 85** ↑ (+15)
-  - 6 models: **140 → 160** ↑ (+20)
-  - **- option removed:** + 1 Invader ATV (was 60pts)
-- **- REMOVED** PEDRO KANTOR
-- **- REMOVED** PRIMARIS COMPANY CHAMPION
-- RAZORBACK
-  - 1 model: **85 → 95** ↑ (+10)
+  - 3 models: **85 → 80** ↓ (-5)
 - REDEMPTOR DREADNOUGHT
-  - 1 model: **195 → 180** ↓ (-15)
-- REIVER SQUAD
-  - 5 models: **75 → 85** ↑ (+10)
-  - 10 models: **150 → 165** ↑ (+15)
-- **- REMOVED** RELIC CONTEMPTOR DREADNOUGHT
-- **- REMOVED** RELIC TERMINATOR SQUAD
-- REPULSOR
-  - 1 model: **170 → 190** ↑ (+20)
+  - 1 model: **180 → 170** ↓ (-10)
 - REPULSOR EXECUTIONER
-  - 1 model: **255 → 275** ↑ (+20)
-- RHINO
-  - 1 model: **65 → 70** ↑ (+5)
-- ROBOUTE GUILLIMAN
-  - 1 model: **355 → 415** ↑ (+60)
-- **- REMOVED** SCOUT SNIPER SQUAD
-- SCOUT SQUAD
+  - 1 model: **275 → 260** ↓ (-15)
+- STERNGUARD VETERAN SQUAD
   - 5 models: tier structure changed
   - 10 models: tier structure changed
-- **- REMOVED** SERGEANT CHRONUS
-- **- REMOVED** SERGEANT TELION
-- **+ NEW** SICARAN: 1 model @ 180pts
-- **- REMOVED** SICARAN ARCUS
-- **- REMOVED** SICARAN BATTLE TANK
-- **- REMOVED** SICARAN OMEGA
-- **- REMOVED** SICARAN PUNISHER
-- **- REMOVED** SICARAN VENATOR
-- **- REMOVED** SOKAR-PATTERN STORMBIRD
-- **- REMOVED** SPARTAN
-- **- REMOVED** STALKER
-- STERNGUARD VETERAN SQUAD
-  - 5 models: **100 → 105** ↑ (+5)
-  - 10 models: **200 → 210** ↑ (+10)
-- **- REMOVED** STORM EAGLE GUNSHIP
-- STORM SPEEDER HAILSTRIKE
-  - 1 model: **105 → 110** ↑ (+5)
 - STORM SPEEDER THUNDERSTRIKE
-  - 1 model: **135 → 155** ↑ (+20)
-- SUBODEN KHAN
-  - 1 model: **90 → 105** ↑ (+15)
-- **- REMOVED** SUPPRESSOR SQUAD
-- **- REMOVED** TACTICAL SQUAD
+  - 1 model: **155 → 140** ↓ (-15)
 - TECHMARINE
-  - 1 model: **55 → 65** ↑ (+10)
-- **- REMOVED** TECHMARINE ON BIKE
+  - 1 model: **65 → 55** ↓ (-10)
 - TERMINATOR ASSAULT SQUAD
-  - 5 models: **155 → 175** ↑ (+20)
-  - 10 models: **310 → 350** ↑ (+40)
+  - 5 models: **175 → 170** ↓ (-5)
+  - 10 models: **350 → 340** ↓ (-10)
 - TERMINATOR SQUAD
-  - 5 models: **160 → 195** ↑ (+35)
-  - 10 models: **320 → 390** ↑ (+70)
-- **- REMOVED** TERMINUS ULTRA
-- **- REMOVED** THUNDERFIRE CANNON
-- THUNDERHAWK GUNSHIP
-  - 1 model: **840 → 850** ↑ (+10)
-- **- REMOVED** THUNDERHAWK TRANSPORTER
-- TOR GARADON
-  - 1 model: **80 → 90** ↑ (+10)
-- **- REMOVED** TYRANNIC WAR VETERANS
-- **- REMOVED** URIEL VENTRIS
+  - 5 models: **195 → 190** ↓ (-5)
+  - 10 models: **390 → 380** ↓ (-10)
 - VANGUARD VETERAN SQUAD WITH JUMP PACKS
-  - 5 models: **105 → 120** ↑ (+15)
-  - 10 models: **210 → 240** ↑ (+30)
-- VICTRIX HONOUR GUARD
-  - 3 models: **110 → 120** ↑ (+10)
-  - 6 models: **230 → 250** ↑ (+20)
-- **- REMOVED** VINDICATOR LASER DESTROYER
-- VULKAN HE’STAN
-  - 1 model: **95 → 105** ↑ (+10)
-- WARDENS OF ULTRAMAR
-  - 6 models: **120 → 115** ↓ (-5)
-- **- REMOVED** WHIRLWIND SCORPIUS
-- **- REMOVED** XIPHON INTERCEPTOR
+  - 5 models: **120 → 110** ↓ (-10)
+  - 10 models: **240 → 220** ↓ (-20)
 
 ### SPACE WOLVES
 
-- AGGRESSOR SQUAD
-  - 3 models: **80 → 90** ↑ (+10)
-  - 6 models: **165 → 180** ↑ (+15)
 - ANCIENT
-  - 1 model: **40 → 45** ↑ (+5)
-- ANCIENT IN TERMINATOR ARMOUR
-  - 1 model: **65 → 75** ↑ (+10)
-- ARJAC ROCKFIST
-  - 1 model: **95 → 105** ↑ (+10)
-- ASSAULT INTERCESSOR SQUAD
-  - 5 models: **75 → 90** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- ASSAULT INTERCESSORS WITH JUMP PACKS
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **160 → 190** ↑ (+30)
-- ASTRAEUS
-  - 1 model: **525 → 550** ↑ (+25)
-- BLADEGUARD ANCIENT
-  - 1 model: **40 → 60** ↑ (+20)
-- BLADEGUARD VETERAN SQUAD
-  - 3 models: **80 → 85** ↑ (+5)
-  - 6 models: **160 → 170** ↑ (+10)
-- BLOOD CLAWS
-  - 10 models: **135 → 150** ↑ (+15)
-  - 20 models: **270 → 290** ↑ (+20)
-- BRUTALIS DREADNOUGHT
-  - 1 model: **150 → 160** ↑ (+10)
-- CAPTAIN
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN GRAVIS ARMOUR
-  - 1 model: **80 → 90** ↑ (+10)
-- CAPTAIN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- CAPTAIN IN TERMINATOR ARMOUR
-  - 1 model: **85 → 100** ↑ (+15)
-- **+ NEW** CAPTAIN ON BIKE: 1 model @ 110pts
-- CAPTAIN WITH JUMP PACK
-  - 1 model: **75 → 90** ↑ (+15)
-- **+ NEW** CERBERUS: 1 model @ 270pts
-- CHAPLAIN
-  - 1 model: **60 → 70** ↑ (+10)
-- CHAPLAIN IN TERMINATOR ARMOUR
-  - 1 model: **75 → 85** ↑ (+10)
-- CHAPLAIN ON BIKE
-  - 1 model: **70 → 80** ↑ (+10)
-- CHAPLAIN WITH JUMP PACK
-  - 1 model: **75 → 80** ↑ (+5)
-- COMPANY HEROES
-  - 4 models: **105 → 135** ↑ (+30)
-- DESOLATION SQUAD
-  - 5 models: **180 → 135** ↓ (-45)
-- ELIMINATOR SQUAD
-  - 3 models: **75 → 85** ↑ (+10)
-- **- REMOVED** ERADICATOR SQUAD
-- ERADICATOR SQUAD WITH HEAVY BOLTERS
-  - 3 models: **80 → 95** ↑ (+15)
-  - **+ option added:** 6 models @ 200pts
-- **+ NEW** ERADICATOR SQUAD WITH MELTA RIFLES: 3 models @ 90pts, 6 models @ 190pts
-- **+ NEW** FALCHION: 1 model @ 420pts
-- FIRESTRIKE SERVO-TURRETS
-  - 1 model: **75 → 80** ↑ (+5)
-  - 2 models: **150 → 160** ↑ (+10)
-- GLADIATOR LANCER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR REAPER
-  - 1 model: **160 → 165** ↑ (+5)
-- GLADIATOR VALIANT
-  - 1 model: **150 → 165** ↑ (+15)
-- GREY HUNTERS
-  - 10 models: **165 → 180** ↑ (+15)
-- HEAVY INTERCESSOR SQUAD
-  - 5 models: **100 → 110** ↑ (+10)
-  - 10 models: **200 → 220** ↑ (+20)
-- HELLBLASTER SQUAD
-  - 5 models: tier structure changed
-  - 10 models: tier structure changed
-- INCURSOR SQUAD
-  - 5 models: **85 → 95** ↑ (+10)
-  - 10 models: **150 → 160** ↑ (+10)
-- INFERNUS SQUAD
-  - 5 models: **85 → 100** ↑ (+15)
-  - 10 models: **180 → 200** ↑ (+20)
-- INFILTRATOR SQUAD
-  - 5 models: **110 → 80** ↓ (-30)
-  - 10 models: **180 → 150** ↓ (-30)
-- INTERCESSOR SQUAD
-  - 5 models: **80 → 95** ↑ (+15)
-  - 10 models: **150 → 175** ↑ (+25)
-- **- REMOVED** INVADER ATV
-- **+ NEW** INVADER ATVS: 1 model @ 65pts, 2 models @ 130pts
-- INVICTOR TACTICAL WARSUIT
-  - 1 model: **125 → 140** ↑ (+15)
-- IRON PRIEST
-  - 1 model: **50 → 60** ↑ (+10)
-- JUDICIAR
-  - 1 model: **55 → 50** ↓ (-5)
-- **+ NEW** KRATOS: 1 model @ 240pts
-- LAND RAIDER
-  - 1 model: **220 → 245** ↑ (+25)
-- LAND RAIDER CRUSADER
-  - 1 model: **220 → 245** ↑ (+25)
-- **+ NEW** LAND RAIDER EXCELSIOR: 1 model @ 250pts
-- LAND RAIDER REDEEMER
-  - 1 model: **260 → 245** ↓ (-15)
-- LAND SPEEDER
-  - 1 model: **105 → 110** ↑ (+5)
-- LIBRARIAN
-  - 1 model: **70 → 75** ↑ (+5)
-- LIBRARIAN IN PHOBOS ARMOUR
-  - 1 model: **70 → 75** ↑ (+5)
-- LIEUTENANT
-  - 1 model: **45 → 50** ↑ (+5)
-- LIEUTENANT IN PHOBOS ARMOUR
   - 1 model: **45 → 40** ↓ (-5)
-- **- REMOVED** LIEUTENANT IN REIVER ARMOUR
+- ASSAULT INTERCESSOR SQUAD
+  - 5 models: **90 → 85** ↓ (-5)
+  - 10 models: **175 → 170** ↓ (-5)
+- ASSAULT INTERCESSORS WITH JUMP PACKS
+  - 5 models: **100 → 95** ↓ (-5)
+- BALLISTUS DREADNOUGHT
+  - 1 model: tier structure changed
+- BLADEGUARD ANCIENT
+  - 1 model: **60 → 70** ↑ (+10)
+- BLADEGUARD VETERAN SQUAD
+  - 3 models: **85 → 90** ↑ (+5)
+  - 6 models: **170 → 180** ↑ (+10)
+- BRUTALIS DREADNOUGHT
+  - 1 model: tier structure changed
+- CAPTAIN IN TERMINATOR ARMOUR
+  - 1 model: **100 → 90** ↓ (-10)
+- CHAPLAIN
+  - 1 model: **70 → 60** ↓ (-10)
+- CHAPLAIN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 75** ↓ (-10)
+- CHAPLAIN ON BIKE
+  - 1 model: **80 → 75** ↓ (-5)
+- CHAPLAIN WITH JUMP PACK
+  - 1 model: **80 → 75** ↓ (-5)
+- COMPANY HEROES
+  - 4 models: **135 → 125** ↓ (-10)
+- DESOLATION SQUAD
+  - 5 models: **135 → 140** ↑ (+5)
+- ERADICATOR SQUAD WITH HEAVY BOLTERS
+  - 3 models: **95 → 100** ↑ (+5)
+  - 6 models: **200 → 215** ↑ (+15)
+- ERADICATOR SQUAD WITH MELTA RIFLES
+  - 3 models: **90 → 100** ↑ (+10)
+  - 6 models: **190 → 200** ↑ (+10)
+- GLADIATOR LANCER
+  - 1 model: **165 → 160** ↓ (-5)
+- GLADIATOR REAPER
+  - 1 model: tier structure changed
+- GLADIATOR VALIANT
+  - 1 model: tier structure changed
+- HEAVY INTERCESSOR SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- HELLBLASTER SQUAD
+  - 5 models: **110 → 115** ↑ (+5)
+  - 10 models: **220 → 230** ↑ (+10)
+- INCEPTOR SQUAD
+  - 3 models: **125 → 130** ↑ (+5)
+  - 6 models: **250 → 260** ↑ (+10)
+- INCURSOR SQUAD
+  - 5 models: **95 → 90** ↓ (-5)
+  - 10 models: **160 → 170** ↑ (+10)
+- INFERNUS SQUAD
+  - 5 models: **100 → 95** ↓ (-5)
+  - 10 models: **200 → 190** ↓ (-10)
+- INFILTRATOR SQUAD
+  - 5 models: **80 → 85** ↑ (+5)
+- INTERCESSOR SQUAD
+  - 5 models: **95 → 85** ↓ (-10)
+  - 10 models: **175 → 170** ↓ (-5)
+- INVICTOR TACTICAL WARSUIT
+  - 1 model: **140 → 135** ↓ (-5)
+- LAND RAIDER
+  - 1 model: tier structure changed
+- LAND RAIDER CRUSADER
+  - 1 model: **245 → 230** ↓ (-15)
+- LAND RAIDER REDEEMER
+  - 1 model: tier structure changed
+- LAND SPEEDER
+  - 1 model: **110 → 105** ↓ (-5)
+- LIBRARIAN IN TERMINATOR ARMOUR
+  - 1 model: **85 → 80** ↓ (-5)
 - LIEUTENANT WITH COMBI-WEAPON
-  - 1 model: **95 → 80** ↓ (-15)
-- LOGAN GRIMNAR
-  - 1 model: **100 → 150** ↑ (+50)
-- **+ NEW** MASTODON: 1 model @ 540pts
-- NJAL STORMCALLER
-  - 1 model: **75 → 100** ↑ (+25)
+  - 1 model: **80 → 85** ↑ (+5)
 - OUTRIDER SQUAD
-  - 3 models: **70 → 85** ↑ (+15)
-  - 6 models: **140 → 160** ↑ (+20)
-  - **- option removed:** + 1 Invader ATV (was 60pts)
-- RAGNAR BLACKMANE
-  - 1 model: **90 → 100** ↑ (+10)
-- **+ NEW** RAPIER CARRIER: 1 model @ 90pts
-- RAZORBACK
-  - 1 model: **85 → 95** ↑ (+10)
+  - 3 models: **85 → 80** ↓ (-5)
 - REDEMPTOR DREADNOUGHT
-  - 1 model: **195 → 180** ↓ (-15)
-- REIVER SQUAD
-  - 5 models: **75 → 85** ↑ (+10)
-  - 10 models: **150 → 165** ↑ (+15)
-- **+ NEW** RELIC RAZORBACK: 1 model @ 105pts
-- REPULSOR
-  - 1 model: **170 → 190** ↑ (+20)
+  - 1 model: **180 → 170** ↓ (-10)
 - REPULSOR EXECUTIONER
-  - 1 model: **230 → 275** ↑ (+45)
-- RHINO
-  - 1 model: **65 → 70** ↑ (+5)
-- **+ NEW** RHINO PRIMARIS: 1 model @ 95pts
-- **+ NEW** SCOUT BIKE SQUAD: 3 models @ 75pts, 6 models @ 150pts
-- SCOUT SQUAD
+  - 1 model: **275 → 260** ↓ (-15)
+- STERNGUARD VETERAN SQUAD
   - 5 models: tier structure changed
   - 10 models: tier structure changed
-- **+ NEW** SICARAN: 1 model @ 180pts
-- STERNGUARD VETERAN SQUAD
-  - 5 models: **100 → 105** ↑ (+5)
-  - 10 models: **200 → 210** ↑ (+10)
-- STORM SPEEDER HAILSTRIKE
-  - 1 model: **105 → 110** ↑ (+5)
 - STORM SPEEDER THUNDERSTRIKE
-  - 1 model: **135 → 155** ↑ (+20)
-- **- REMOVED** SUPPRESSOR SQUAD
-- **+ NEW** TARANTULA AIR DEFENCE BATTERY: 1 model @ 70pts
-- **+ NEW** TARANTULA SENTRY BATTERY: 1 model @ 30pts, 2 models @ 60pts, 3 models @ 90pts
+  - 1 model: **155 → 140** ↓ (-15)
 - TECHMARINE
-  - 1 model: **55 → 65** ↑ (+10)
+  - 1 model: **65 → 55** ↓ (-10)
 - TERMINATOR ASSAULT SQUAD
-  - 5 models: **155 → 175** ↑ (+20)
-  - 10 models: **310 → 350** ↑ (+40)
+  - 5 models: **175 → 170** ↓ (-5)
+  - 10 models: **350 → 340** ↓ (-10)
 - TERMINATOR SQUAD
-  - 5 models: **160 → 195** ↑ (+35)
-  - 10 models: **320 → 390** ↑ (+70)
-- **+ NEW** TERRAX-PATTERN TERMITE: 1 model @ 200pts
-- THUNDERHAWK GUNSHIP
-  - 1 model: **840 → 850** ↑ (+10)
-- THUNDERWOLF CAVALRY
-  - 3 models: **100 → 115** ↑ (+15)
-  - 6 models: **200 → 230** ↑ (+30)
-- **+ NEW** TYPHON: 1 model @ 320pts
-- ULRIK THE SLAYER
-  - 1 model: **70 → 90** ↑ (+20)
-- **+ NEW** VANGUARD VETERAN SQUAD: 5 models @ 120pts, 10 models @ 240pts
+  - 5 models: **195 → 190** ↓ (-5)
+  - 10 models: **390 → 380** ↓ (-10)
 - VANGUARD VETERAN SQUAD WITH JUMP PACKS
-  - 5 models: **105 → 120** ↑ (+15)
-  - 10 models: **210 → 240** ↑ (+30)
-- VENERABLE DREADNOUGHT
-  - 1 model: **125 → 130** ↑ (+5)
-- WOLF GUARD BATTLE LEADER
-  - 1 model: **65 → 80** ↑ (+15)
+  - 5 models: **120 → 110** ↓ (-10)
+  - 10 models: **240 → 220** ↓ (-20)
 - WOLF GUARD HEADTAKERS
-  - 3 Wolf Guard Headtakers: **85 → 115** ↑ (+30)
-  - 3 Wolf Guard Headtakers, 3 Hunting Wolves: **115 → 170** ↑ (+55)
-- WOLF GUARD TERMINATORS
-  - 5 models: **155 → 180** ↑ (+25)
-  - 10 models: **310 → 365** ↑ (+55)
-- WOLF PRIEST
-  - 1 model: **70 → 75** ↑ (+5)
-- WOLF SCOUTS
-  - 6 models: **90 → 95** ↑ (+5)
-  - 12 models: **180 → 190** ↑ (+10)
-- WULFEN
-  - 5 models: **85 → 90** ↑ (+5)
-  - 10 models: **170 → 180** ↑ (+10)
-- WULFEN DREADNOUGHT
-  - 1 model: **135 → 140** ↑ (+5)
-- WULFEN WITH STORM SHIELDS
-  - 5 models: **100 → 125** ↑ (+25)
-  - 10 models: **200 → 250** ↑ (+50)
-
-### T’AU EMPIRE
-
-- BREACHER TEAM
-  - 10 models: **90 → 80** ↓ (-10)
-- THE TWIN LANCE
-  - 2 models: **230 → 240** ↑ (+10)
-
-### THOUSAND SONS
-
-- AHRIMAN
-  - 1 model: **100 → 105** ↑ (+5)
-- EXALTED SORCERER
-  - 1 model: **95 → 100** ↑ (+5)
-- EXALTED SORCERER ON DISC OF TZEENTCH
-  - 1 model: **90 → 95** ↑ (+5)
-- INFERNAL MASTER
-  - 1 model: **100 → 105** ↑ (+5)
-- RUBRIC MARINES
-  - 5 models: **100 → 115** ↑ (+15)
-  - 10 models: **190 → 210** ↑ (+20)
-- SCARAB OCCULT TERMINATORS
-  - 5 models: **180 → 200** ↑ (+20)
-  - 10 models: **385 → 425** ↑ (+40)
-- SORCERER
-  - 1 model: **95 → 100** ↑ (+5)
-- SORCERER IN TERMINATOR ARMOUR
-  - 1 model: **100 → 110** ↑ (+10)
-
-### TYRANIDS
-
-- BARBGAUNTS
-  - 5 models: **55 → 50** ↓ (-5)
-  - 10 models: **110 → 100** ↓ (-10)
-- GARGOYLES
-  - 10 models: **80 → 75** ↓ (-5)
-  - 20 models: **155 → 150** ↓ (-5)
-- MAWLOC
-  - 1 model: **135 → 130** ↓ (-5)
-- NEUROTYRANT
-  - 1 model: **130 → 120** ↓ (-10)
-- OLD ONE EYE
-  - 1 model: **140 → 130** ↓ (-10)
-- PARASITE OF MORTREX
-  - 1 model: **70 → 65** ↓ (-5)
-- TERMAGANTS
-  - 10 models: **60 → 55** ↓ (-5)
-- TERVIGON
-  - 1 model: **160 → 150** ↓ (-10)
-- THE RED TERROR
-  - 1 model: **130 → 120** ↓ (-10)
-- TRYGON
-  - 1 model: **140 → 135** ↓ (-5)
-
-### WORLD EATERS
-
-- CHAOS LAND RAIDER
-  - 1 model: **220 → 200** ↓ (-20)
-- CHAOS TERMINATORS
-  - 5 models: **165 → 175** ↑ (+10)
-  - 10 models: **330 → 350** ↑ (+20)
-- EIGHTBOUND
-  - 6 models: **255 → 250** ↓ (-5)
-- EXALTED EIGHTBOUND
-  - 6 models: **265 → 260** ↓ (-5)
-- GOREMONGERS
-  - 8 models: **75 → 70** ↓ (-5)
-- JAKHALS
-  - 20 models: **130 → 120** ↓ (-10)
-- KHORNE BERZERKERS
-  - 10 models: **160 → 170** ↑ (+10)
-  - 20 models: **320 → 330** ↑ (+10)
-- SLAUGHTERBOUND
-  - 1 model: **100 → 90** ↓ (-10)
+  - 3 Wolf Guard Headtakers: **115 → 85** ↓ (-30)
+  - 3 Wolf Guard Headtakers, 3 Hunting Wolves: **170 → 115** ↓ (-55)
