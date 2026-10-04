@@ -676,7 +676,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 40
+              "points": 45
             }
           ]
         }
@@ -778,7 +778,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 90
             }
           ]
         },
@@ -788,7 +788,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170
+              "points": 175
             }
           ]
         }
@@ -805,12 +805,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 110
             }
           ]
         },
@@ -869,7 +869,7 @@
             },
             {
               "minCount": 3,
-              "points": 170
+              "points": 160
             }
           ]
         }
@@ -890,7 +890,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 60
             }
           ]
         }
@@ -907,12 +907,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90,
+              "points": 85,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 110
+              "points": 95
             }
           ]
         },
@@ -922,12 +922,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 170,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 200
+              "points": 180
             }
           ]
         }
@@ -949,7 +949,7 @@
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 170
             }
           ]
         }
@@ -1063,7 +1063,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 100
             }
           ]
         }
@@ -1143,7 +1143,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 70
             }
           ]
         }
@@ -1169,7 +1169,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 85
             }
           ]
         }
@@ -1191,7 +1191,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         }
@@ -1215,7 +1215,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         }
@@ -1232,12 +1232,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 145
+              "points": 150
             }
           ]
         }
@@ -1254,12 +1254,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 145
             }
           ]
         }
@@ -1321,12 +1321,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 95,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 130
+              "points": 110
             }
           ]
         },
@@ -1336,12 +1336,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 215,
+              "points": 200,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 245
+              "points": 215
             }
           ]
         }
@@ -1358,12 +1358,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 90,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 105
             }
           ]
         },
@@ -1373,12 +1373,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200,
+              "points": 190,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 205
             }
           ]
         }
@@ -1422,12 +1422,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160,
+              "points": 165,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 175
             }
           ]
         }
@@ -1449,7 +1449,7 @@
             },
             {
               "minCount": 3,
-              "points": 185
+              "points": 175
             }
           ]
         }
@@ -1471,7 +1471,7 @@
             },
             {
               "minCount": 3,
-              "points": 185
+              "points": 175
             }
           ]
         }
@@ -1488,7 +1488,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115
+              "points": 110
             }
           ]
         },
@@ -1498,7 +1498,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230
+              "points": 220
             }
           ]
         }
@@ -1515,12 +1515,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115,
+              "points": 110,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 130
+              "points": 125
             }
           ]
         },
@@ -1530,12 +1530,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230,
+              "points": 220,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 245
+              "points": 235
             }
           ]
         }
@@ -1580,12 +1580,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
+              "points": 125,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 140
             }
           ]
         },
@@ -1595,12 +1595,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 265
             }
           ]
         }
@@ -1608,43 +1608,6 @@
     },
     {
       "name": "INCURSOR SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 170,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 180
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INFERNUS SQUAD",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1669,12 +1632,49 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 200
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INFERNUS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 210
             }
           ]
         }
@@ -1691,7 +1691,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         },
@@ -1718,7 +1718,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 95
             }
           ]
         },
@@ -1728,7 +1728,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170
+              "points": 175
             }
           ]
         }
@@ -1788,12 +1788,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 150
+              "points": 140
             }
           ]
         }
@@ -1843,10 +1838,10 @@
             {
               "minCount": 1,
               "points": 245,
-              "maxCount": 1
+              "maxCount": 2
             },
             {
-              "minCount": 2,
+              "minCount": 3,
               "points": 265
             }
           ]
@@ -1864,12 +1859,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230,
-              "maxCount": 1
+              "points": 245,
+              "maxCount": 2
             },
             {
-              "minCount": 2,
-              "points": 250
+              "minCount": 3,
+              "points": 265
             }
           ]
         }
@@ -1887,10 +1882,10 @@
             {
               "minCount": 1,
               "points": 245,
-              "maxCount": 1
+              "maxCount": 2
             },
             {
-              "minCount": 2,
+              "minCount": 3,
               "points": 265
             }
           ]
@@ -1908,7 +1903,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 110
             }
           ]
         }
@@ -1992,7 +1987,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         }
@@ -2070,7 +2065,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         }
@@ -2087,7 +2082,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         },
@@ -2114,12 +2109,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 190
+              "points": 195
             }
           ]
         }
@@ -2191,12 +2186,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 275,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 295
             }
           ]
         }
@@ -2246,7 +2241,7 @@
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 115
             }
           ]
         },
@@ -2261,7 +2256,7 @@
             },
             {
               "minCount": 3,
-              "points": 225
+              "points": 220
             }
           ]
         }
@@ -2322,12 +2317,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 155,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 165
             }
           ]
         }
@@ -2354,7 +2349,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 65
             }
           ]
         }
@@ -2393,7 +2388,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
+              "points": 120,
               "maxCount": 2
             },
             {
@@ -2408,12 +2403,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 220,
+              "points": 240,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 240
+              "points": 250
             }
           ]
         }
