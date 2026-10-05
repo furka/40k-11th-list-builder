@@ -142,7 +142,9 @@
         "color": "#1A3A5C"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: ACROBATIC"
+      ],
       "enhancements": [
         {
           "name": "A Foot in the Future",
@@ -162,7 +164,9 @@
         "color": "#1A3A5C"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: ACROBATIC"
+      ],
       "enhancements": [
         {
           "name": "Cegorach’s Coil",
@@ -268,7 +272,9 @@
         "color": "#8B1B1B"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: ACROBATIC"
+      ],
       "enhancements": [
         {
           "name": "Fanged Leer",
@@ -324,7 +330,9 @@
         "color": "#2E6B3E"
       },
       "leader": null,
-      "tags": [],
+      "tags": [
+        "UNIQUE: ACROBATIC"
+      ],
       "enhancements": [
         {
           "name": "Prelude Performer",
