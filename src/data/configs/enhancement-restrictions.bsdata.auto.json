@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "bca655a81cc7a97b0ac193413f610d2aadf68b8f",
-  "_committedAt": "2026-09-30T16:35:01Z",
-  "_generatedAt": "2026-09-30T18:57:10.948Z",
+  "_sha": "da7248777da54218034f09b6271ad89ff6b68a77",
+  "_committedAt": "2026-10-04T05:54:46Z",
+  "_generatedAt": "2026-10-04T18:03:06.943Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -368,39 +368,9 @@
     }
   },
   "BLACK TEMPLARS": {
-    "Adaptable Executioner": {
-      "requiredKeywords": [
-        "EXECRATOR"
-      ]
-    },
-    "Adept of the Omnissiah": {
-      "requiredKeywords": [
-        "TECHMARINE"
-      ]
-    },
-    "Benediction of Fury": {
-      "requiredKeywords": [
-        "CHAPLAIN"
-      ]
-    },
-    "Champion of Humanity": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Execute and Redeploy": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Honour Indefatigable": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Imperialis of the Eternal Crusade": {
-      "requiredKeywords": [
-        "ANCIENT"
       ]
     },
     "Incendiary Animus": {
@@ -415,100 +385,12 @@
         "JUDICIAR",
         "JUDICIAR XACHARUS"
       ]
-    },
-    "Indomitable Fury": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Merciless Denunciation": {
-      "allowedHosts": [
-        "CHAPLAIN",
-        "CHAPLAIN GRIMALDUS",
-        "CHAPLAIN IN TERMINATOR ARMOUR",
-        "CHAPLAIN KASTIEL",
-        "CHAPLAIN ON BIKE",
-        "CHAPLAIN WITH JUMP PACK",
-        "EXECRATOR",
-        "JUDICIAR",
-        "JUDICIAR XACHARUS"
-      ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Shock Deployment": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shroud Field": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Target Augury Web": {
-      "requiredKeywords": [
-        "TECHMARINE"
-      ]
-    },
-    "Warden of Honour": {
-      "requiredKeywords": [
-        "CRUSADE ANCIENT"
-      ]
     }
   },
   "BLOOD ANGELS": {
-    "Adept of the Omnissiah": {
-      "requiredKeywords": [
-        "TECHMARINE"
-      ]
-    },
-    "Carmine Reliquary": {
-      "requiredKeywords": [
-        "CHAPLAIN"
-      ]
-    },
-    "Champion of Humanity": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Execute and Redeploy": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Honour Indefatigable": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Indomitable Fury": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Shock Deployment": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shroud Field": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Target Augury Web": {
-      "requiredKeywords": [
-        "TECHMARINE"
       ]
     }
   },
@@ -866,16 +748,6 @@
     }
   },
   "DARK ANGELS": {
-    "Adept of the Omnissiah": {
-      "requiredKeywords": [
-        "TECHMARINE"
-      ]
-    },
-    "Champion of Humanity": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Champion of the Deathwing": {
       "requiredKeywords": [
         "DEATHWING"
@@ -891,84 +763,14 @@
         "PHOBOS"
       ]
     },
-    "Eye of the Unseen": {
-      "requiredKeywords": [
-        "DEATHWING"
-      ]
-    },
-    "Honour Indefatigable": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Indomitable Fury": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Inescapable Interrogation": {
-      "requiredKeywords": [
-        "CHAPLAIN"
-      ]
-    },
-    "Limitless Zeal": {
-      "requiredKeywords": [
-        "CHAPLAIN"
-      ]
-    },
     "Lord of the Ravenwing": {
       "requiredKeywords": [
         "RAVENWING"
       ]
     },
-    "Master of Manoeuvre": {
-      "requiredKeywords": [
-        "RAVENWING"
-      ]
-    },
-    "Master-crafted Weapon": {
-      "requiredKeywords": [
-        "RAVENWING"
-      ]
-    },
-    "Mounted Strategist": {
-      "requiredKeywords": [
-        "RAVENWING"
-      ]
-    },
-    "Pennant of Remembrance": {
-      "requiredKeywords": [
-        "ANCIENT"
-      ]
-    },
-    "Recon Hunter": {
-      "requiredKeywords": [
-        "RAVENWING"
-      ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Shock Deployment": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shroud Field": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
     "Singular Will": {
       "requiredKeywords": [
         "DEATHWING"
-      ]
-    },
-    "Target Augury Web": {
-      "requiredKeywords": [
-        "TECHMARINE"
       ]
     }
   },
@@ -1031,56 +833,9 @@
     }
   },
   "DEATHWATCH": {
-    "Adept of the Omnissiah": {
-      "requiredKeywords": [
-        "TECHMARINE"
-      ]
-    },
-    "Champion of Humanity": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Execute and Redeploy": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Honour Indefatigable": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Indomitable Fury": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Osseus Key": {
-      "allowedHosts": [
-        "TECHMARINE",
-        "TECHMARINE ON BIKE",
-        "WATCH MASTER"
-      ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Shock Deployment": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shroud Field": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Target Augury Web": {
-      "requiredKeywords": [
-        "TECHMARINE"
       ]
     },
     "The Tome of Ectoclades": {
@@ -1424,11 +1179,6 @@
         "TECHMARINE"
       ]
     },
-    "Champion of Humanity": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Coronal Susurrant": {
       "requiredKeywords": [
         "PHOBOS"
@@ -1444,31 +1194,6 @@
         "GRAVIS"
       ]
     },
-    "Indomitable Fury": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Malodraxian Standard": {
-      "requiredKeywords": [
-        "ANCIENT"
-      ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Shock Deployment": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shroud Field": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
     "Target Augury Web": {
       "requiredKeywords": [
         "TECHMARINE"
@@ -1476,24 +1201,9 @@
     }
   },
   "SPACE WOLVES": {
-    "Adept of the Omnissiah": {
-      "requiredKeywords": [
-        "TECHMARINE"
-      ]
-    },
-    "Champion of Humanity": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Execute and Redeploy": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Honour Indefatigable": {
-      "requiredKeywords": [
-        "GRAVIS"
       ]
     },
     "Howlmaw": {
@@ -1501,34 +1211,9 @@
         "WOLF PRIEST"
       ]
     },
-    "Indomitable Fury": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shadow War Veteran": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
-    "Shock Deployment": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Shroud Field": {
-      "requiredKeywords": [
-        "PHOBOS"
-      ]
-    },
     "Skjald’s Foretelling": {
       "requiredKeywords": [
         "BATTLE LEADER"
-      ]
-    },
-    "Target Augury Web": {
-      "requiredKeywords": [
-        "TECHMARINE"
       ]
     }
   },

@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "6aae3fe4affc5c9ae0c8c2b7cd0c9aabb86f7496",
-  "_committedAt": "2026-09-09T14:59:43Z",
-  "_generatedAt": "2026-09-09T17:42:39.506Z",
+  "_sha": "da7248777da54218034f09b6271ad89ff6b68a77",
+  "_committedAt": "2026-10-04T05:54:46Z",
+  "_generatedAt": "2026-10-04T18:03:07.652Z",
   "_generator": "scripts/scrape-bsdata-wargear",
   "ADEPTA SORORITAS": {
     "DOMINION SQUAD": {
@@ -12,7 +12,7 @@
       }
     },
     "IMMOLATOR": {
-      "Twin multi-melta": {
+      "Twin Multi-melta": {
         "maxPerUnit": 1
       }
     },
@@ -41,7 +41,7 @@
   },
   "ADEPTUS MECHANICUS": {
     "IRONSTRIDER BALLISTARII": {
-      "Twin cognis lascannon": {
+      "Twin Cognis Lascannon": {
         "maxPerUnit": 3
       }
     },
@@ -162,9 +162,32 @@
     }
   },
   "BLACK TEMPLARS": {
-    "CENTURION DEVASTATOR SQUAD": {
-      "Twin lascannon": {
-        "maxPerUnit": 5
+    "DESOLATION SQUAD": {
+      "Vengor Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "GLADIATOR LANCER": {
+      "Multi-melta": {
+        "maxPerUnit": 1
+      }
+    },
+    "GLADIATOR REAPER": {
+      "Multi-melta": {
+        "maxPerUnit": 1
+      }
+    },
+    "GLADIATOR VALIANT": {
+      "Multi-melta": {
+        "maxPerUnit": 2
+      }
+    },
+    "IMPULSOR": {
+      "Multi-melta": {
+        "maxPerUnit": 1
+      },
+      "Orbital Comms Array": {
+        "maxPerUnit": 1
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -172,21 +195,36 @@
         "maxPerUnit": 1
       }
     },
+    "REPULSOR": {
+      "Multi-melta": {
+        "maxPerUnit": 1
+      }
+    },
     "REPULSOR EXECUTIONER": {
-      "Heavy laser destroyer": {
+      "Multi-melta": {
         "maxPerUnit": 1
       }
     },
     "TERMINATOR ASSAULT SQUAD": {
-      "Thunder Hammer": {
+      "Storm Shield": {
         "maxPerUnit": 9
+      }
+    },
+    "TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 1
       }
     }
   },
   "BLOOD ANGELS": {
-    "CENTURION DEVASTATOR SQUAD": {
-      "Twin lascannon": {
-        "maxPerUnit": 5
+    "DESOLATION SQUAD": {
+      "Vengor Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "IMPULSOR": {
+      "Orbital Comms Array": {
+        "maxPerUnit": 1
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -195,13 +233,18 @@
       }
     },
     "REPULSOR EXECUTIONER": {
-      "Heavy laser destroyer": {
+      "Heavy Laser Destroyer": {
         "maxPerUnit": 1
       }
     },
     "TERMINATOR ASSAULT SQUAD": {
-      "Thunder Hammer": {
+      "Storm Shield": {
         "maxPerUnit": 9
+      }
+    },
+    "TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 1
       }
     }
   },
@@ -217,10 +260,10 @@
   },
   "CHAOS SPACE MARINES": {
     "DEFILER": {
-      "Hades lascannon": {
+      "Hades Lascannon": {
         "maxPerUnit": 1
       },
-      "Heavy reaper autocannon": {
+      "Heavy Reaper Autocannon": {
         "maxPerUnit": 1
       }
     },
@@ -231,9 +274,19 @@
     }
   },
   "DARK ANGELS": {
-    "CENTURION DEVASTATOR SQUAD": {
-      "Twin lascannon": {
-        "maxPerUnit": 5
+    "DEATHWING TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "DESOLATION SQUAD": {
+      "Vengor Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "IMPULSOR": {
+      "Orbital Comms Array": {
+        "maxPerUnit": 1
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -242,35 +295,48 @@
       }
     },
     "REPULSOR EXECUTIONER": {
-      "Heavy laser destroyer": {
+      "Heavy Laser Destroyer": {
         "maxPerUnit": 1
       }
     },
     "TERMINATOR ASSAULT SQUAD": {
-      "Thunder Hammer": {
+      "Storm Shield": {
         "maxPerUnit": 9
+      }
+    },
+    "TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 1
       }
     }
   },
   "DEATH GUARD": {
     "DEFILER": {
-      "Hades lascannon": {
+      "Hades Lascannon": {
         "maxPerUnit": 1
       },
-      "Heavy reaper autocannon": {
+      "Heavy Reaper Autocannon": {
         "maxPerUnit": 1
       }
     }
   },
   "DEATHWATCH": {
-    "CENTURION DEVASTATOR SQUAD": {
-      "Twin lascannon": {
-        "maxPerUnit": 5
+    "DEATHWATCH TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 3
+      },
+      "Storm Shield": {
+        "maxPerUnit": 9
       }
     },
-    "DEATHWATCH TERMINATOR SQUAD": {
-      "Thunder Hammer": {
-        "maxPerUnit": 9
+    "DESOLATION SQUAD": {
+      "Vengor Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "IMPULSOR": {
+      "Orbital Comms Array": {
+        "maxPerUnit": 1
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -279,19 +345,19 @@
       }
     },
     "REPULSOR EXECUTIONER": {
-      "Heavy laser destroyer": {
+      "Heavy Laser Destroyer": {
         "maxPerUnit": 1
       }
     }
   },
   "DRUKHARI": {
     "RAVAGER": {
-      "Dark lance": {
+      "Dark Lance": {
         "maxPerUnit": 3
       }
     },
     "SCOURGES WITH HEAVY WEAPONS": {
-      "Dark lance": {
+      "Dark Lance": {
         "maxPerUnit": 4
       },
       "Haywire blaster": {
@@ -301,10 +367,10 @@
   },
   "EMPEROR’S CHILDREN": {
     "DEFILER": {
-      "Hades lascannon": {
+      "Hades Lascannon": {
         "maxPerUnit": 1
       },
-      "Heavy reaper autocannon": {
+      "Heavy Reaper Autocannon": {
         "maxPerUnit": 1
       }
     }
@@ -344,6 +410,11 @@
       "Psycannon": {
         "maxPerUnit": 4
       }
+    },
+    "STORMRAVEN GUNSHIP": {
+      "Hurricane Bolter": {
+        "maxPerUnit": 2
+      }
     }
   },
   "IMPERIAL AGENTS": {
@@ -353,7 +424,7 @@
       }
     },
     "SISTERS OF BATTLE IMMOLATOR": {
-      "Twin multi-melta": {
+      "Twin Multi-melta": {
         "maxPerUnit": 1
       }
     }
@@ -383,9 +454,14 @@
     }
   },
   "SPACE MARINES": {
-    "CENTURION DEVASTATOR SQUAD": {
-      "Twin lascannon": {
-        "maxPerUnit": 5
+    "DESOLATION SQUAD": {
+      "Vengor Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "IMPULSOR": {
+      "Orbital Comms Array": {
+        "maxPerUnit": 1
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -394,28 +470,35 @@
       }
     },
     "REPULSOR EXECUTIONER": {
-      "Heavy laser destroyer": {
+      "Heavy Laser Destroyer": {
         "maxPerUnit": 1
       }
     },
     "TERMINATOR ASSAULT SQUAD": {
-      "Thunder Hammer": {
+      "Storm Shield": {
         "maxPerUnit": 9
+      }
+    },
+    "TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 1
       }
     },
     "VICTRIX HONOUR GUARD": {
       "Banner of Macragge": {
         "maxPerUnit": 1
-      },
-      "Blades of honour": {
-        "maxPerUnit": 1
       }
     }
   },
   "SPACE WOLVES": {
-    "CENTURION DEVASTATOR SQUAD": {
-      "Twin lascannon": {
-        "maxPerUnit": 5
+    "DESOLATION SQUAD": {
+      "Vengor Launcher": {
+        "maxPerUnit": 1
+      }
+    },
+    "IMPULSOR": {
+      "Orbital Comms Array": {
+        "maxPerUnit": 1
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -424,32 +507,27 @@
       }
     },
     "REPULSOR EXECUTIONER": {
-      "Heavy laser destroyer": {
+      "Heavy Laser Destroyer": {
         "maxPerUnit": 1
       }
     },
     "TERMINATOR ASSAULT SQUAD": {
-      "Thunder Hammer": {
+      "Storm Shield": {
         "maxPerUnit": 9
       }
     },
-    "THUNDERWOLF CAVALRY": {
-      "Storm Shield": {
-        "maxPerUnit": 6
-      }
-    },
-    "WOLF GUARD TERMINATORS": {
-      "Storm Shield": {
-        "maxPerUnit": 9
+    "TERMINATOR SQUAD": {
+      "Cyclone Missile Launcher": {
+        "maxPerUnit": 1
       }
     }
   },
   "THOUSAND SONS": {
     "DEFILER": {
-      "Hades lascannon": {
+      "Hades Lascannon": {
         "maxPerUnit": 1
       },
-      "Heavy reaper autocannon": {
+      "Heavy Reaper Autocannon": {
         "maxPerUnit": 1
       }
     },
@@ -464,14 +542,14 @@
       "Acid spray": {
         "maxPerUnit": 1
       },
-      "Rupture cannon": {
+      "Rupture Cannon": {
         "maxPerUnit": 1
       }
     }
   },
   "T’AU EMPIRE": {
     "BROADSIDE BATTLESUITS": {
-      "High-yield missile pods": {
+      "High-yield Missile Pods": {
         "maxPerUnit": 2
       }
     },
@@ -491,22 +569,22 @@
       }
     },
     "PATHFINDER TEAM": {
-      "Ion rifle": {
+      "Ion Rifle": {
         "maxPerUnit": 3
       }
     },
     "RIPTIDE BATTLESUIT": {
-      "Ion accelerator": {
+      "Ion Accelerator": {
         "maxPerUnit": 1
       }
     }
   },
   "WORLD EATERS": {
     "DEFILER": {
-      "Hades lascannon": {
+      "Hades Lascannon": {
         "maxPerUnit": 1
       },
-      "Heavy reaper autocannon": {
+      "Heavy Reaper Autocannon": {
         "maxPerUnit": 1
       }
     },
