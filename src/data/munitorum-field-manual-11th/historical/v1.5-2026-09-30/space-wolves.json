@@ -1,5 +1,5 @@
 {
-  "faction": "DEATHWATCH",
+  "faction": "SPACE WOLVES",
   "siteVersion": "v1.5",
   "detachments": [
     {
@@ -26,11 +26,33 @@
       ]
     },
     {
-      "name": "BLACK SPEAR TASK FORCE",
-      "dp": 3,
+      "name": "CHAMPIONS OF FENRIS",
+      "dp": 1,
       "role": {
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: TERMINATOR"
+      ],
+      "enhancements": [
+        {
+          "name": "A Giant Amongst Giants",
+          "points": 15
+        },
+        {
+          "name": "Preyslayer",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "DEATHWATCH SUPPORT",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
       },
       "leader": null,
       "tags": [],
@@ -38,18 +60,6 @@
         {
           "name": "Beacon Angelis",
           "points": 25
-        },
-        {
-          "name": "Osseus Key (Aura)",
-          "points": 20
-        },
-        {
-          "name": "The Thief of Secrets",
-          "points": 10
-        },
-        {
-          "name": "The Tome of Ectoclades",
-          "points": 15
         }
       ]
     },
@@ -259,6 +269,59 @@
       ]
     },
     {
+      "name": "SAGA OF THE BEASTSLAYER",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": {
+        "attachesTo": [
+          "WULFEN",
+          "WULFEN WITH STORM SHIELDS"
+        ]
+      },
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Hunter’s Guile",
+          "points": 20
+        },
+        {
+          "name": "Wolf-Touched",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "SAGA OF THE GREAT WOLF",
+      "dp": 2,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Chariots of the Storm",
+          "points": 25
+        },
+        {
+          "name": "Grimnar’s Mark",
+          "points": 15
+        },
+        {
+          "name": "Howlmaw",
+          "points": 15
+        },
+        {
+          "name": "Skjald’s Foretelling",
+          "points": 20
+        }
+      ]
+    },
+    {
       "name": "STORMLANCE TASK FORCE",
       "dp": 1,
       "role": {
@@ -371,13 +434,117 @@
   ],
   "datasheets": [
     {
-      "name": "CORVUS BLACKSTAR",
+      "name": "ARJAC ROCKFIST",
+      "leader": {
+        "attachesTo": [
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BJORN THE FELL-HANDED",
       "leader": null,
       "support": null,
       "sizes": [
         {
           "name": "1 model",
           "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLOOD CLAWS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "20 models",
+          "models": 20,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FENRISIAN WOLVES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 50
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREY HUNTERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
@@ -388,54 +555,298 @@
       ]
     },
     {
-      "name": "DEATHWATCH TERMINATOR SQUAD",
-      "leader": null,
+      "name": "IRON PRIEST",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "INTERCESSOR SQUAD",
+          "WOLF GUARD HEADTAKERS"
+        ]
+      },
       "support": null,
       "sizes": [
         {
-          "name": "5 models",
-          "models": 5,
+          "name": "1 model",
+          "models": 1,
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 230
+              "points": 60
             }
           ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 380,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 420
-            }
-          ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Storm Shield",
-          "points": 5
-        },
-        {
-          "name": "Cyclone Missile Launcher",
-          "points": 10
         }
       ]
     },
     {
-      "name": "DEATHWATCH VETERANS",
+      "name": "LOGAN GRIMNAR",
+      "leader": {
+        "attachesTo": [
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MURDERFANG",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NJAL STORMCALLER",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "INTERCESSOR SQUAD",
+          "WOLF GUARD HEADTAKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "RAGNAR BLACKMANE",
+      "leader": {
+        "attachesTo": [
+          "BLOOD CLAWS",
+          "WOLF GUARD HEADTAKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THUNDERWOLF CAVALRY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 260
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ULRIK THE SLAYER",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "INTERCESSOR SQUAD",
+          "WOLF GUARD HEADTAKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VENERABLE DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WOLF GUARD BATTLE LEADER",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "INTERCESSOR SQUAD",
+          "WOLF GUARD HEADTAKERS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WOLF GUARD HEADTAKERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 Wolf Guard Headtakers",
+          "models": null,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 125
+            }
+          ]
+        },
+        {
+          "name": "6 Wolf Guard Headtakers",
+          "models": null,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        },
+        {
+          "name": "3 Wolf Guard Headtakers, 3 Hunting Wolves",
+          "models": null,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        },
+        {
+          "name": "6 Wolf Guard Headtakers, 6 Hunting Wolves",
+          "models": null,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WOLF GUARD TERMINATORS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -445,36 +856,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
+              "points": 180,
+              "maxCount": 2
+            },
             {
-              "minCount": 1,
+              "minCount": 3,
               "points": 220
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "DECIMUS KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 110
-            }
-          ]
         },
         {
           "name": "10 models",
@@ -482,107 +871,27 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "FORTIS KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 210,
+              "points": 365,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 225
+              "points": 405
             }
           ]
         }
       ]
     },
     {
-      "name": "INDOMITOR KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 280,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 300
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "SPECTRUS KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 185,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 195
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TALONSTRIKE KILL TEAM",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 280,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 300
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "WATCH CAPTAIN ARTEMIS",
+      "name": "WOLF PRIEST",
       "leader": {
         "attachesTo": [
-          "DEATHWATCH VETERANS",
-          "DECIMUS KILL TEAM",
-          "FORTIS KILL TEAM"
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "BLOOD CLAWS",
+          "GREY HUNTERS",
+          "INTERCESSOR SQUAD",
+          "WOLF GUARD HEADTAKERS"
         ]
       },
       "support": null,
@@ -600,14 +909,82 @@
       ]
     },
     {
-      "name": "WATCH MASTER",
-      "leader": {
-        "attachesTo": [
-          "DEATHWATCH VETERANS",
-          "DECIMUS KILL TEAM",
-          "FORTIS KILL TEAM"
-        ]
-      },
+      "name": "WOLF SCOUTS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "12 models",
+          "models": 12,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WULFEN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 195
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WULFEN DREADNOUGHT",
+      "leader": null,
       "support": null,
       "sizes": [
         {
@@ -616,7 +993,49 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WULFEN WITH STORM SHIELDS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 155
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
             }
           ]
         }
@@ -676,7 +1095,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 40
+              "points": 45
             }
           ]
         }
@@ -709,65 +1128,6 @@
       ]
     },
     {
-      "name": "APOTHECARY",
-      "leader": null,
-      "support": {
-        "attachesTo": [
-          "ASSAULT INTERCESSOR SQUAD",
-          "BLADEGUARD VETERAN SQUAD",
-          "COMPANY HEROES",
-          "CRUSADER SQUAD",
-          "DEATHWATCH VETERANS",
-          "DECIMUS KILL TEAM",
-          "DESOLATION SQUAD",
-          "FORTIS KILL TEAM",
-          "HELLBLASTER SQUAD",
-          "INFERNUS SQUAD",
-          "INNER CIRCLE COMPANIONS",
-          "INTERCESSOR SQUAD",
-          "STERNGUARD VETERAN SQUAD",
-          "SWORD BRETHREN SQUAD"
-        ]
-      },
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 45
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "APOTHECARY BIOLOGIS",
-      "leader": null,
-      "support": {
-        "attachesTo": [
-          "AGGRESSOR SQUAD",
-          "ERADICATOR SQUAD WITH HEAVY BOLTERS",
-          "ERADICATOR SQUAD WITH MELTA RIFLES",
-          "HEAVY INTERCESSOR SQUAD",
-          "INDOMITOR KILL TEAM"
-        ]
-      },
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 60
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "ASSAULT INTERCESSOR SQUAD",
       "leader": null,
       "support": null,
@@ -778,7 +1138,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 90
             }
           ]
         },
@@ -788,7 +1148,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170
+              "points": 175
             }
           ]
         }
@@ -805,12 +1165,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 95,
+              "points": 100,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 105
+              "points": 110
             }
           ]
         },
@@ -869,7 +1229,7 @@
             },
             {
               "minCount": 3,
-              "points": 170
+              "points": 160
             }
           ]
         }
@@ -890,7 +1250,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 70
+              "points": 60
             }
           ]
         }
@@ -907,12 +1267,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90,
+              "points": 85,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 110
+              "points": 95
             }
           ]
         },
@@ -922,12 +1282,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 170,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 200
+              "points": 180
             }
           ]
         }
@@ -949,7 +1309,7 @@
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 170
             }
           ]
         }
@@ -1063,7 +1423,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 90
+              "points": 100
             }
           ]
         }
@@ -1143,7 +1503,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 60
+              "points": 70
             }
           ]
         }
@@ -1169,7 +1529,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 85
             }
           ]
         }
@@ -1191,7 +1551,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         }
@@ -1215,7 +1575,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 75
+              "points": 80
             }
           ]
         }
@@ -1232,12 +1592,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 125,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 145
+              "points": 150
             }
           ]
         }
@@ -1254,12 +1614,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 135,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 145
             }
           ]
         }
@@ -1321,12 +1681,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 95,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 130
+              "points": 110
             }
           ]
         },
@@ -1336,12 +1696,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 215,
+              "points": 200,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 245
+              "points": 215
             }
           ]
         }
@@ -1358,12 +1718,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100,
+              "points": 90,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 105
             }
           ]
         },
@@ -1373,12 +1733,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 200,
+              "points": 190,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 205
             }
           ]
         }
@@ -1422,12 +1782,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 160,
+              "points": 165,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 175
             }
           ]
         }
@@ -1449,7 +1809,7 @@
             },
             {
               "minCount": 3,
-              "points": 185
+              "points": 175
             }
           ]
         }
@@ -1471,7 +1831,7 @@
             },
             {
               "minCount": 3,
-              "points": 185
+              "points": 175
             }
           ]
         }
@@ -1488,7 +1848,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115
+              "points": 110
             }
           ]
         },
@@ -1498,7 +1858,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230
+              "points": 220
             }
           ]
         }
@@ -1515,12 +1875,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 115,
+              "points": 110,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 130
+              "points": 125
             }
           ]
         },
@@ -1530,12 +1890,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230,
+              "points": 220,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 245
+              "points": 235
             }
           ]
         }
@@ -1580,12 +1940,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 130,
+              "points": 125,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 140
             }
           ]
         },
@@ -1595,12 +1955,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 250,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 265
             }
           ]
         }
@@ -1608,43 +1968,6 @@
     },
     {
       "name": "INCURSOR SQUAD",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 100
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 170,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 180
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "INFERNUS SQUAD",
       "leader": null,
       "support": null,
       "sizes": [
@@ -1669,12 +1992,49 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 190,
+              "points": 160,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 200
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INFERNUS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 210
             }
           ]
         }
@@ -1691,7 +2051,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         },
@@ -1718,7 +2078,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 95
             }
           ]
         },
@@ -1728,7 +2088,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170
+              "points": 175
             }
           ]
         }
@@ -1788,12 +2148,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 135,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 150
+              "points": 140
             }
           ]
         }
@@ -1843,10 +2198,10 @@
             {
               "minCount": 1,
               "points": 245,
-              "maxCount": 1
+              "maxCount": 2
             },
             {
-              "minCount": 2,
+              "minCount": 3,
               "points": 265
             }
           ]
@@ -1864,12 +2219,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 230,
-              "maxCount": 1
+              "points": 245,
+              "maxCount": 2
             },
             {
-              "minCount": 2,
-              "points": 250
+              "minCount": 3,
+              "points": 265
             }
           ]
         }
@@ -1887,10 +2242,10 @@
             {
               "minCount": 1,
               "points": 245,
-              "maxCount": 1
+              "maxCount": 2
             },
             {
-              "minCount": 2,
+              "minCount": 3,
               "points": 265
             }
           ]
@@ -1908,7 +2263,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 105
+              "points": 110
             }
           ]
         }
@@ -1992,7 +2347,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         }
@@ -2070,7 +2425,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 85
+              "points": 80
             }
           ]
         }
@@ -2087,7 +2442,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 80
+              "points": 85
             }
           ]
         },
@@ -2114,12 +2469,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
+              "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 190
+              "points": 195
             }
           ]
         }
@@ -2191,12 +2546,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 260,
+              "points": 275,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 280
+              "points": 295
             }
           ]
         }
@@ -2231,6 +2586,33 @@
       ]
     },
     {
+      "name": "SCOUT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "STERNGUARD VETERAN SQUAD",
       "leader": null,
       "support": null,
@@ -2246,7 +2628,7 @@
             },
             {
               "minCount": 3,
-              "points": 120
+              "points": 115
             }
           ]
         },
@@ -2261,7 +2643,7 @@
             },
             {
               "minCount": 3,
-              "points": 225
+              "points": 220
             }
           ]
         }
@@ -2322,12 +2704,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 140,
+              "points": 155,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 150
+              "points": 165
             }
           ]
         }
@@ -2354,9 +2736,95 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 65
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR ASSAULT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 215
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 350,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 390
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Storm Shield",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 195,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 235
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 390,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 430
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Cyclone Missile Launcher",
+          "points": 10
         }
       ]
     },
@@ -2393,7 +2861,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
+              "points": 120,
               "maxCount": 2
             },
             {
@@ -2408,16 +2876,34 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 220,
+              "points": 240,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 240
+              "points": 250
             }
           ]
         }
       ]
+    },
+    {
+      "name": "CANIS WOLFBORN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
     },
     {
       "name": "CENTURION ASSAULT SQUAD",
@@ -2494,6 +2980,24 @@
       "legends": true
     },
     {
+      "name": "CYBERWOLF",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 20
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
       "name": "DREADNOUGHT",
       "leader": null,
       "support": null,
@@ -2548,6 +3052,52 @@
       "legends": true
     },
     {
+      "name": "HARALD DEATHWOLF",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HOUNDS OF MORKAI",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
       "name": "KRATOS",
       "leader": null,
       "support": null,
@@ -2566,6 +3116,28 @@
       "legends": true
     },
     {
+      "name": "KROM DRAGONGAZE",
+      "leader": {
+        "attachesTo": [
+          "WOLF GUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
       "name": "LAND RAIDER EXCELSIOR",
       "leader": null,
       "support": null,
@@ -2577,6 +3149,70 @@
             {
               "minCount": 1,
               "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LOGAN GRIMNAR ON STORMRIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LONG FANGS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LUKAS THE TRICKSTER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
             }
           ]
         }
@@ -2766,6 +3402,62 @@
       "legends": true
     },
     {
+      "name": "SKYCLAWS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
+            }
+          ]
+        },
+        {
+          "name": "15 models",
+          "models": 15,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMFANG GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 300
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
       "name": "STORMHAWK INTERCEPTOR",
       "leader": null,
       "support": null,
@@ -2818,6 +3510,24 @@
             {
               "minCount": 1,
               "points": 165
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMWOLF",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
             }
           ]
         }
@@ -2945,24 +3655,6 @@
       "legends": true
     },
     {
-      "name": "VENERABLE DREADNOUGHT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 165
-            }
-          ]
-        }
-      ],
-      "legends": true
-    },
-    {
       "name": "VINDICATOR",
       "leader": null,
       "support": null,
@@ -3002,6 +3694,154 @@
             {
               "minCount": 2,
               "points": 195
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD BATTLE LEADER IN TERMINATOR ARMOUR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD BATTLE LEADER ON THUNDERWOLF",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD PACK LEADER",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "LONG FANGS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD PACK LEADER IN TERMINATOR ARMOUR",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "LONG FANGS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF GUARD PACK LEADER WITH JUMP PACK",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "SKYCLAWS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 35
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WOLF LORD ON THUNDERWOLF",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
             }
           ]
         }
