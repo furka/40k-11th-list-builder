@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "da7248777da54218034f09b6271ad89ff6b68a77",
-  "_committedAt": "2026-10-04T05:54:46Z",
-  "_generatedAt": "2026-10-04T18:03:06.180Z",
+  "_sha": "ed8c3b09bc5eae7c30eb659f739b09c0f36381b4",
+  "_committedAt": "2026-10-05T20:40:19Z",
+  "_generatedAt": "2026-10-05T21:25:18.006Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -2603,6 +2603,7 @@
       "ASTRA MILITARUM",
       "CHARACTER",
       "CIAPHAS CAIN",
+      "COMMISSAR",
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
