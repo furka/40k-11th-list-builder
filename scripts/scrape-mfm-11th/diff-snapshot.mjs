@@ -1,15 +1,18 @@
 // Produce a human-readable markdown diff between two resolved MFM snapshot
-// states. Walks each faction's datasheets and sizes; reports points changes,
-// additions, and removals at datasheet+size granularity.
+// states. Per faction it reports datasheet points/size changes, leader/support
+// attach-target changes, and detachment changes (DP, role, tags, leader grants,
+// enhancements). All of these come from the MFM scrape and drive list
+// validation, so a silent change to any of them is worth a PR reviewer's eye —
+// GW has re-published the MFM under an unchanged version label before.
 //
 // Known limitations (intentional, not worth fuzzy-matching today):
-//   - A renamed datasheet appears as one removal + one addition.
+//   - A renamed datasheet/detachment/enhancement appears as removal + addition.
 //   - A renamed size option appears the same way.
 //   - Tier structure changes are flagged but not enumerated.
+//   - wargearOptions and role colors are not diffed.
 //
-// Skips detachments, enhancements, wargearOptions, and the role/leader/support
-// metadata — those changes are tracked separately (auto.json files) and would
-// drown out the points signal that PR reviewers actually care about.
+// List-valued fields (tags, attachesTo) are compared as sets: the site
+// sometimes reorders them, which carries no rules meaning.
 
 export function diffSnapshots(priorFactions, nextFactions, { siteVersion, scrapedAt, priorDirName } = {}) {
   const header = renderHeader({ siteVersion, scrapedAt, priorDirName, priorEmpty: priorFactions.size === 0 });
@@ -27,7 +30,7 @@ export function diffSnapshots(priorFactions, nextFactions, { siteVersion, scrape
   }
 
   if (sections.length === 0) {
-    return `${header}\n\nNo datasheet- or points-level changes.`;
+    return `${header}\n\nNo datasheet, points, or detachment changes.`;
   }
 
   return `${header}\n\n${sections.length} faction(s) changed.\n\n${sections.join("\n\n")}`;
@@ -63,13 +66,93 @@ function diffFaction(prior, next) {
     const n = nextBy.get(name);
     if (!p) { lines.push(`- **+ NEW** ${name}: ${summarizeSizes(n.sizes)}`); continue; }
     if (!n) { lines.push(`- **- REMOVED** ${name}`); continue; }
-    const sizeLines = diffSizes(p.sizes ?? [], n.sizes ?? []);
-    if (sizeLines.length) {
-      lines.push(`- ${name}\n${sizeLines.map((l) => `  ${l}`).join("\n")}`);
+    const sheetLines = [
+      ...diffSizes(p.sizes ?? [], n.sizes ?? []),
+      ...diffAttachesTo("leader", p.leader, n.leader),
+      ...diffAttachesTo("support", p.support, n.support),
+    ];
+    if (Boolean(p.legends) !== Boolean(n.legends)) {
+      sheetLines.push(`- ${n.legends ? "now Legends" : "no longer Legends"}`);
+    }
+    if (sheetLines.length) {
+      lines.push(`- ${name}\n${indent(sheetLines)}`);
     }
   }
+
+  const detachmentLines = diffDetachments(prior.detachments ?? [], next.detachments ?? []);
+  if (detachmentLines.length) {
+    lines.push(`- Detachments\n${indent(detachmentLines)}`);
+  }
+
   if (lines.length === 0) return null;
   return `### ${prior.faction}\n\n${lines.join("\n")}`;
+}
+
+function diffDetachments(priorDets, nextDets) {
+  const priorBy = new Map(priorDets.map((d) => [d.name, d]));
+  const nextBy = new Map(nextDets.map((d) => [d.name, d]));
+  const allNames = [...new Set([...priorBy.keys(), ...nextBy.keys()])].sort();
+  const out = [];
+  for (const name of allNames) {
+    const p = priorBy.get(name);
+    const n = nextBy.get(name);
+    if (!p) { out.push(`- **+ NEW detachment** ${name}`); continue; }
+    if (!n) { out.push(`- **- REMOVED detachment** ${name}`); continue; }
+    const changes = [];
+    if (p.dp !== n.dp) changes.push(`- DP: **${p.dp} → ${n.dp}**`);
+    if (p.role?.name !== n.role?.name) {
+      changes.push(`- role: ${p.role?.name ?? "(none)"} → ${n.role?.name ?? "(none)"}`);
+    }
+    const tags = setDelta(p.tags, n.tags);
+    if (tags) changes.push(`- tags: ${tags}`);
+    changes.push(...diffAttachesTo("leader", p.leader, n.leader));
+    changes.push(...diffEnhancements(p.enhancements ?? [], n.enhancements ?? []));
+    if (changes.length) out.push(`- **${name}**\n${indent(changes)}`);
+  }
+  return out;
+}
+
+function diffEnhancements(priorEnh, nextEnh) {
+  const priorBy = new Map(priorEnh.map((e) => [e.name, e]));
+  const nextBy = new Map(nextEnh.map((e) => [e.name, e]));
+  const allNames = [...new Set([...priorBy.keys(), ...nextBy.keys()])].sort();
+  const out = [];
+  for (const name of allNames) {
+    const p = priorBy.get(name);
+    const n = nextBy.get(name);
+    if (!p) { out.push(`- **+ enhancement added:** ${name} @ ${n.points}pts`); continue; }
+    if (!n) { out.push(`- **- enhancement removed:** ${name} (was ${p.points}pts)`); continue; }
+    if (p.points !== n.points) out.push(`- enhancement ${name}: ${pointsChange(p.points, n.points)}`);
+    if (Boolean(p.nonCharacterOnly) !== Boolean(n.nonCharacterOnly)) {
+      out.push(`- enhancement ${name}: ${n.nonCharacterOnly ? "now" : "no longer"} non-CHARACTER only`);
+    }
+  }
+  return out;
+}
+
+function diffAttachesTo(label, prior, next) {
+  const delta = setDelta(prior?.attachesTo, next?.attachesTo);
+  return delta ? [`- ${label}: ${delta}`] : [];
+}
+
+function setDelta(prior = [], next = []) {
+  const p = new Set(prior);
+  const n = new Set(next);
+  const added = [...n].filter((x) => !p.has(x)).sort();
+  const removed = [...p].filter((x) => !n.has(x)).sort();
+  const parts = [...added.map((x) => `+ ${x}`), ...removed.map((x) => `- ${x}`)];
+  return parts.length ? parts.join(", ") : null;
+}
+
+function pointsChange(oldP, newP) {
+  const delta = newP - oldP;
+  const arrow = delta > 0 ? "↑" : "↓";
+  const sign = delta > 0 ? "+" : "";
+  return `**${oldP} → ${newP}** ${arrow} (${sign}${delta})`;
+}
+
+function indent(lines) {
+  return lines.map((l) => l.replace(/^/gm, "  ")).join("\n");
 }
 
 function diffSizes(priorSizes, nextSizes) {
@@ -86,10 +169,7 @@ function diffSizes(priorSizes, nextSizes) {
     const oldP = basePoints(p);
     const newP = basePoints(n);
     if (oldP !== newP) {
-      const delta = newP - oldP;
-      const arrow = delta > 0 ? "↑" : "↓";
-      const sign = delta > 0 ? "+" : "";
-      out.push(`- ${describe(p)}: **${oldP} → ${newP}** ${arrow} (${sign}${delta})`);
+      out.push(`- ${describe(p)}: ${pointsChange(oldP, newP)}`);
     } else if (JSON.stringify(p.tiers ?? []) !== JSON.stringify(n.tiers ?? [])) {
       out.push(`- ${describe(p)}: tier structure changed`);
     }

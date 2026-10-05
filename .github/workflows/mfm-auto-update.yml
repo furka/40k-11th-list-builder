@@ -55,15 +55,36 @@ jobs:
 
       - name: Detect changes
         id: changes
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain src/data/munitorum-field-manual-11th/)" ]; then
+          MFM_DIR=src/data/munitorum-field-manual-11th
+          if [ -z "$(git status --porcelain "$MFM_DIR/")" ]; then
             echo "No MFM data changes detected."
             echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "Changes detected:"
-            git status --porcelain src/data/munitorum-field-manual-11th/
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+
+          # The scraper diffs against main, so while an MFM PR is still open
+          # every daily run re-detects the same change and would force-push it
+          # again with only a new scrapedAt date. Skip when the data matches the
+          # open PR's branch, ignoring the date-stamped manifest and changelog.
+          # Staged (not working-tree) compare so the new historical/ dir counts.
+          OPEN_PR=$(gh pr list --head mfm-auto-update --state open --json number --jq '.[0].number // empty')
+          if [ -n "$OPEN_PR" ] && git rev-parse --verify --quiet origin/mfm-auto-update >/dev/null; then
+            git add -A "$MFM_DIR/"
+            if git diff --cached --quiet origin/mfm-auto-update -- "$MFM_DIR/" \
+                ":(exclude)$MFM_DIR/current/_manifest.json" \
+                ":(exclude)$MFM_DIR/current/_changes.md"; then
+              echo "MFM data identical to open PR #$OPEN_PR; skipping update."
+              echo "changed=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+
+          echo "Changes detected:"
+          git status --porcelain "$MFM_DIR/"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Read new MFM version
         if: steps.changes.outputs.changed == 'true'
