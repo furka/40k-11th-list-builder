@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "ed8c3b09bc5eae7c30eb659f739b09c0f36381b4",
-  "_committedAt": "2026-10-05T20:40:19Z",
-  "_generatedAt": "2026-10-05T21:25:18.006Z",
+  "_sha": "1f70af0c18796133cc78898531e99f7277765f7e",
+  "_committedAt": "2026-10-07T08:52:29Z",
+  "_generatedAt": "2026-10-07T19:49:04.438Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -168,7 +168,8 @@
       "IMAGIFIER",
       "IMPERIUM",
       "INFANTRY",
-      "SORORITAS CHARACTER"
+      "SORORITAS CHARACTER",
+      "SUPPORT"
     ],
     "Immolator": [
       "ADEPTA SORORITAS",
