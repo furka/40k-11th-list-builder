@@ -1,6 +1,6 @@
 {
   "faction": "DARK ANGELS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
       "name": "ASSAULT BRETHREN",
@@ -491,6 +491,7 @@
           "DEATHWING COMMAND SQUAD",
           "DEATHWING KNIGHTS",
           "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
           "TERMINATOR SQUAD"
         ]
       },
