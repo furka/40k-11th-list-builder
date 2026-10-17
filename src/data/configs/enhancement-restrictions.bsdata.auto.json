@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "da7248777da54218034f09b6271ad89ff6b68a77",
-  "_committedAt": "2026-10-04T05:54:46Z",
-  "_generatedAt": "2026-10-04T18:03:06.943Z",
+  "_sha": "173d0ef81a8eb7e857c8a035ba8624739c28666f",
+  "_committedAt": "2026-10-17T05:42:40Z",
+  "_generatedAt": "2026-10-17T16:55:52.964Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -51,71 +51,6 @@
     "Verse of Holy Piety": {
       "requiredKeywords": [
         "PENITENT"
-      ]
-    }
-  },
-  "ADEPTUS CUSTODES": {
-    "Admonimortis": {
-      "requiredKeywords": [
-        "SHIELD-CAPTAIN"
-      ]
-    },
-    "Auric Mantle": {
-      "allowedHosts": [
-        "BLADE CHAMPION",
-        "SHIELD-CAPTAIN",
-        "SHIELD-CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
-        "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE",
-        "VALERIAN"
-      ]
-    },
-    "Castellan’s Mark": {
-      "requiredKeywords": [
-        "SHIELD-CAPTAIN"
-      ]
-    },
-    "Encircling Hunter": {
-      "requiredKeywords": [
-        "ANATHEMA PSYKANA"
-      ]
-    },
-    "Enhanced Voidsheen Cloak": {
-      "requiredKeywords": [
-        "ANATHEMA PSYKANA"
-      ]
-    },
-    "Fierce Conqueror": {
-      "requiredKeywords": [
-        "SHIELD-CAPTAIN"
-      ]
-    },
-    "From the Hall of Armouries": {
-      "requiredKeywords": [
-        "SHIELD-CAPTAIN"
-      ]
-    },
-    "Huntress’ Eye": {
-      "requiredKeywords": [
-        "ANATHEMA PSYKANA"
-      ]
-    },
-    "Oblivion Knight": {
-      "requiredKeywords": [
-        "ANATHEMA PSYKANA"
-      ]
-    },
-    "Panoptispex": {
-      "allowedHosts": [
-        "BLADE CHAMPION",
-        "SHIELD-CAPTAIN",
-        "SHIELD-CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
-        "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE",
-        "VALERIAN"
-      ]
-    },
-    "Raptor Blade": {
-      "requiredKeywords": [
-        "ANATHEMA PSYKANA"
       ]
     }
   },
@@ -385,12 +320,82 @@
         "JUDICIAR",
         "JUDICIAR XACHARUS"
       ]
+    },
+    "Indefatigable Fortitude": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Martial Paragon": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Narthecis Gauntlet": {
+      "requiredKeywords": [
+        "APOTHECARY BIOLOGIS"
+      ]
+    },
+    "Relentless Advance": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Seal of Shrouding": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Spearpoint War Leader": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Tempered in Battle (Aura)": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
     }
   },
   "BLOOD ANGELS": {
     "Execute and Redeploy": {
       "requiredKeywords": [
         "PHOBOS"
+      ]
+    },
+    "Indefatigable Fortitude": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Martial Paragon": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Narthecis Gauntlet": {
+      "requiredKeywords": [
+        "APOTHECARY BIOLOGIS"
+      ]
+    },
+    "Relentless Advance": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Seal of Shrouding": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Spearpoint War Leader": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Tempered in Battle (Aura)": {
+      "requiredKeywords": [
+        "TACTICUS"
       ]
     }
   },
@@ -754,8 +759,18 @@
       ]
     },
     "Deathwing Assault": {
-      "requiredKeywords": [
-        "DEATHWING"
+      "allowedHosts": [
+        "ASMODAI",
+        "AZRAEL",
+        "BELIAL",
+        "BLADEGUARD ANCIENT",
+        "DEATHWING COMMAND SQUAD",
+        "DEATHWING KNIGHTS",
+        "DEATHWING STRIKEMASTER",
+        "DEATHWING TERMINATOR SQUAD",
+        "EZEKIEL",
+        "INNER CIRCLE COMPANIONS",
+        "LAZARUS"
       ]
     },
     "Execute and Redeploy": {
@@ -763,14 +778,49 @@
         "PHOBOS"
       ]
     },
+    "Indefatigable Fortitude": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
     "Lord of the Ravenwing": {
       "requiredKeywords": [
         "RAVENWING"
       ]
     },
+    "Martial Paragon": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Narthecis Gauntlet": {
+      "requiredKeywords": [
+        "APOTHECARY BIOLOGIS"
+      ]
+    },
+    "Relentless Advance": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Seal of Shrouding": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Singular Will": {
       "requiredKeywords": [
         "DEATHWING"
+      ]
+    },
+    "Spearpoint War Leader": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Tempered in Battle (Aura)": {
+      "requiredKeywords": [
+        "TACTICUS"
       ]
     }
   },
@@ -836,6 +886,41 @@
     "Execute and Redeploy": {
       "requiredKeywords": [
         "PHOBOS"
+      ]
+    },
+    "Indefatigable Fortitude": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Martial Paragon": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Narthecis Gauntlet": {
+      "requiredKeywords": [
+        "APOTHECARY BIOLOGIS"
+      ]
+    },
+    "Relentless Advance": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Seal of Shrouding": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Spearpoint War Leader": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Tempered in Battle (Aura)": {
+      "requiredKeywords": [
+        "TACTICUS"
       ]
     },
     "The Tome of Ectoclades": {
@@ -1194,9 +1279,44 @@
         "GRAVIS"
       ]
     },
+    "Indefatigable Fortitude": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Martial Paragon": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Narthecis Gauntlet": {
+      "requiredKeywords": [
+        "APOTHECARY BIOLOGIS"
+      ]
+    },
+    "Relentless Advance": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Seal of Shrouding": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
+    "Spearpoint War Leader": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
     "Target Augury Web": {
       "requiredKeywords": [
         "TECHMARINE"
+      ]
+    },
+    "Tempered in Battle (Aura)": {
+      "requiredKeywords": [
+        "TACTICUS"
       ]
     }
   },
@@ -1211,9 +1331,44 @@
         "WOLF PRIEST"
       ]
     },
+    "Indefatigable Fortitude": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Martial Paragon": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Narthecis Gauntlet": {
+      "requiredKeywords": [
+        "APOTHECARY BIOLOGIS"
+      ]
+    },
+    "Relentless Advance": {
+      "requiredKeywords": [
+        "GRAVIS"
+      ]
+    },
+    "Seal of Shrouding": {
+      "requiredKeywords": [
+        "PHOBOS"
+      ]
+    },
     "Skjald’s Foretelling": {
       "requiredKeywords": [
         "BATTLE LEADER"
+      ]
+    },
+    "Spearpoint War Leader": {
+      "requiredKeywords": [
+        "TACTICUS"
+      ]
+    },
+    "Tempered in Battle (Aura)": {
+      "requiredKeywords": [
+        "TACTICUS"
       ]
     }
   },

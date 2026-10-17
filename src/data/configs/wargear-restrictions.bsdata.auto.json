@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "ed8c3b09bc5eae7c30eb659f739b09c0f36381b4",
-  "_committedAt": "2026-10-05T20:40:19Z",
-  "_generatedAt": "2026-10-05T21:25:19.619Z",
+  "_sha": "173d0ef81a8eb7e857c8a035ba8624739c28666f",
+  "_committedAt": "2026-10-17T05:42:40Z",
+  "_generatedAt": "2026-10-17T16:55:53.676Z",
   "_generator": "scripts/scrape-bsdata-wargear",
   "ADEPTA SORORITAS": {
     "DOMINION SQUAD": {
@@ -24,18 +24,6 @@
     "RETRIBUTOR SQUAD": {
       "Multi-melta": {
         "maxPerUnit": 4
-      }
-    }
-  },
-  "ADEPTUS CUSTODES": {
-    "CALADIUS GRAV-TANK": {
-      "Twin arachnus heavy blaze cannon": {
-        "maxPerUnit": 1
-      }
-    },
-    "VENATARI CUSTODIANS": {
-      "Venatari lance": {
-        "maxPerUnit": 6
       }
     }
   },
@@ -190,6 +178,11 @@
         "maxPerUnit": 1
       }
     },
+    "INVADER ATVS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
         "maxPerUnit": 1
@@ -225,6 +218,11 @@
     "IMPULSOR": {
       "Orbital Comms Array": {
         "maxPerUnit": 1
+      }
+    },
+    "INVADER ATVS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -276,7 +274,7 @@
   "DARK ANGELS": {
     "DEATHWING TERMINATOR SQUAD": {
       "Cyclone Missile Launcher": {
-        "maxPerUnit": 1
+        "maxPerUnit": 2
       }
     },
     "DESOLATION SQUAD": {
@@ -287,6 +285,11 @@
     "IMPULSOR": {
       "Orbital Comms Array": {
         "maxPerUnit": 1
+      }
+    },
+    "INVADER ATVS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -337,6 +340,11 @@
     "IMPULSOR": {
       "Orbital Comms Array": {
         "maxPerUnit": 1
+      }
+    },
+    "INVADER ATVS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
       }
     },
     "REDEMPTOR DREADNOUGHT": {
@@ -464,6 +472,11 @@
         "maxPerUnit": 1
       }
     },
+    "INVADER ATVS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
+      }
+    },
     "REDEMPTOR DREADNOUGHT": {
       "Macro plasma incinerator": {
         "maxPerUnit": 1
@@ -499,6 +512,11 @@
     "IMPULSOR": {
       "Orbital Comms Array": {
         "maxPerUnit": 1
+      }
+    },
+    "INVADER ATVS": {
+      "Multi-melta": {
+        "maxPerUnit": 2
       }
     },
     "REDEMPTOR DREADNOUGHT": {
