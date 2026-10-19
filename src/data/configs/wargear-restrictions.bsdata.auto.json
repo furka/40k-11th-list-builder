@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "db61485a7193b11f9eabe12912ddba971c7062f5",
-  "_committedAt": "2026-10-18T14:42:55Z",
-  "_generatedAt": "2026-10-18T17:10:09.348Z",
+  "_sha": "b8667d44504e025827a584cfc6bf2f2eba3cb9f8",
+  "_committedAt": "2026-10-19T01:14:51Z",
+  "_generatedAt": "2026-10-19T19:43:34.035Z",
   "_generator": "scripts/scrape-bsdata-wargear",
   "ADEPTA SORORITAS": {
     "DOMINION SQUAD": {
@@ -41,7 +41,7 @@
   },
   "AELDARI": {
     "WRAITHKNIGHT": {
-      "Heavy wraithcannon": {
+      "Heavy Wraithcannon": {
         "maxPerUnit": 1
       }
     }
