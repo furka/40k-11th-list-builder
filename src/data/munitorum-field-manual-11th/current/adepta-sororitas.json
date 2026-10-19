@@ -1,6 +1,6 @@
 {
   "faction": "ADEPTA SORORITAS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
       "name": "ARMY OF FAITH",
@@ -516,12 +516,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 175,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 215
             }
           ]
         }

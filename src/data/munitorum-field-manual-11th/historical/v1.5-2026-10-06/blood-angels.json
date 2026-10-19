@@ -1,0 +1,3482 @@
+{
+  "faction": "BLOOD ANGELS",
+  "siteVersion": "v1.5",
+  "detachments": [
+    {
+      "name": "ANGELIC INHERITORS",
+      "dp": 3,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Blazing Icon",
+          "points": 20
+        },
+        {
+          "name": "Ordained Sacrifice",
+          "points": 25
+        },
+        {
+          "name": "Prescient Flash",
+          "points": 25
+        },
+        {
+          "name": "Unto Death",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "ASSAULT BRETHREN",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: DOCTRINES"
+      ],
+      "enhancements": [
+        {
+          "name": "Furious Assault",
+          "points": 10,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Imperium’s Sword",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "DEATHWATCH SUPPORT",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Beacon Angelis",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "DEVASTATOR BRETHREN",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: DOCTRINES"
+      ],
+      "enhancements": [
+        {
+          "name": "Honour of Vigilance",
+          "points": 20
+        },
+        {
+          "name": "Master-forged Firearms",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "ENCARMINE SPEARTIP",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Angelic Executioner",
+          "points": 20
+        },
+        {
+          "name": "Shadow of Abomination",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "GAUNTLET TASK FORCE",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Damocles-class Uplink",
+          "points": 15
+        },
+        {
+          "name": "Linebreaker Onslaught",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "GLADIUS TASK FORCE",
+      "dp": 3,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Adept of the Codex",
+          "points": 20
+        },
+        {
+          "name": "Artificer Armour",
+          "points": 15
+        },
+        {
+          "name": "Laurels of Triumph",
+          "points": 20
+        },
+        {
+          "name": "Standard of the Emperor Ascendant",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "GRAVIS LINEBREAKER FORCE",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: GRAVIS"
+      ],
+      "enhancements": [
+        {
+          "name": "Indefatigable Fortitude",
+          "points": 20
+        },
+        {
+          "name": "Relentless Advance",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "GRAVIS SIEGE FORCE",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: GRAVIS"
+      ],
+      "enhancements": [
+        {
+          "name": "Immovable Conquerors",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Narthecis Gauntlet",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "name": "IRONCLAD CHAMPIONS",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Artificer Sarcophagus",
+          "points": 40,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Venerable Champion (Aura)",
+          "points": 30,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "IRONSTORM SPEARHEAD",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: IRONSTORM"
+      ],
+      "enhancements": [
+        {
+          "name": "Gunnery Honours",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Redoubtable Machine Spirit",
+          "points": 25,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "PHOBOS SHADOW FORCE",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: PHOBOS"
+      ],
+      "enhancements": [
+        {
+          "name": "Execute and Redeploy",
+          "points": 25
+        },
+        {
+          "name": "Venator Omni-auspex",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "PHOBOS SHOCK FORCE",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: PHOBOS"
+      ],
+      "enhancements": [
+        {
+          "name": "Seal of Shrouding",
+          "points": 15
+        },
+        {
+          "name": "Venator Omni-auspex",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "STORMLANCE TASK FORCE",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Auspex Triangulation Shrines",
+          "points": 10,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Supercharged Engines",
+          "points": 10,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "TACTICAL BRETHREN",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: DOCTRINES"
+      ],
+      "enhancements": [
+        {
+          "name": "Laurels of Vigilance",
+          "points": 10
+        },
+        {
+          "name": "Tactical Insight",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "TACTICUS ATTACK FORCE",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: TACTICUS"
+      ],
+      "enhancements": [
+        {
+          "name": "Martial Paragon",
+          "points": 10
+        },
+        {
+          "name": "Spearpoint War Leader",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "TACTICUS FIRESTORM FORCE",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: TACTICUS"
+      ],
+      "enhancements": [
+        {
+          "name": "Cyber-familiar",
+          "points": 15
+        },
+        {
+          "name": "Tempered in Battle (Aura)",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR STORM FORCE",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: TERMINATOR"
+      ],
+      "enhancements": [
+        {
+          "name": "Champion of the First Company",
+          "points": 20
+        },
+        {
+          "name": "Corporeum Reliquary",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "WRATH OF THE DOOMED",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Instinctive Interception",
+          "points": 10
+        },
+        {
+          "name": "On the Archtraitor’s Bridge",
+          "points": 20
+        }
+      ]
+    }
+  ],
+  "datasheets": [
+    {
+      "name": "ASTORATH",
+      "leader": {
+        "attachesTo": [
+          "DEATH COMPANY MARINES WITH JUMP PACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BAAL PREDATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLOOD ANGELS CAPTAIN",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "COMPANY HEROES",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHIEF LIBRARIAN MEPHISTON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMMANDER DANTE",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSORS WITH JUMP PACKS",
+          "SANGUINARY GUARD",
+          "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH COMPANY CAPTAIN",
+      "leader": {
+        "attachesTo": [
+          "DEATH COMPANY MARINES"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH COMPANY CAPTAIN WITH JUMP PACK",
+      "leader": {
+        "attachesTo": [
+          "DEATH COMPANY MARINES WITH JUMP PACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH COMPANY DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH COMPANY MARINES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DEATH COMPANY MARINES WITH JUMP PACKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 160
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 260,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LEMARTES",
+      "leader": {
+        "attachesTo": [
+          "DEATH COMPANY MARINES WITH JUMP PACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SANGUINARY GUARD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 275,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 290
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SANGUINARY PRIEST",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "COMPANY HEROES",
+          "DESOLATION SQUAD",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "THE SANGUINOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "AGGRESSOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ANCIENT",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "CRUSADER SQUAD",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
+          "FORTIS KILL TEAM",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "SWORD BRETHREN SQUAD",
+          "VANGUARD VETERAN SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ANCIENT IN TERMINATOR ARMOUR",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING KNIGHTS",
+          "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "APOTHECARY",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "COMPANY HEROES",
+          "CRUSADER SQUAD",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
+          "FORTIS KILL TEAM",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "SWORD BRETHREN SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 45
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "APOTHECARY BIOLOGIS",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "AGGRESSOR SQUAD",
+          "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+          "ERADICATOR SQUAD WITH MELTA RIFLES",
+          "HEAVY INTERCESSOR SQUAD",
+          "INDOMITOR KILL TEAM"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ASSAULT INTERCESSOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ASTRAEUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 550,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 650
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BALLISTUS DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLADEGUARD ANCIENT",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "BLADEGUARD VETERAN SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BLADEGUARD VETERAN SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BRUTALIS DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CAPTAIN",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "COMPANY HEROES",
+          "CRUSADER SQUAD",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
+          "FORTIS KILL TEAM",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "SWORD BRETHREN SQUAD",
+          "VANGUARD VETERAN SQUAD",
+          "VICTRIX HONOUR GUARD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CAPTAIN IN GRAVIS ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "AGGRESSOR SQUAD",
+          "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+          "ERADICATOR SQUAD WITH MELTA RIFLES",
+          "HEAVY INTERCESSOR SQUAD",
+          "INDOMITOR KILL TEAM"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CAPTAIN IN PHOBOS ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "ELIMINATOR SQUAD",
+          "INCURSOR SQUAD",
+          "INFILTRATOR SQUAD",
+          "REIVER SQUAD",
+          "SCOUT SQUAD",
+          "SPECTRUS KILL TEAM",
+          "WOLF SCOUTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CAPTAIN IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING KNIGHTS",
+          "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CAPTAIN ON BIKE",
+      "leader": {
+        "attachesTo": [
+          "OUTRIDER SQUAD",
+          "RAVENWING BLACK KNIGHTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CAPTAIN WITH JUMP PACK",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSORS WITH JUMP PACKS",
+          "SANGUINARY GUARD",
+          "TALONSTRIKE KILL TEAM",
+          "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAPLAIN",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "CRUSADER SQUAD",
+          "DEATH COMPANY MARINES",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "FORTIS KILL TEAM",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "SWORD BRETHREN SQUAD",
+          "VANGUARD VETERAN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAPLAIN IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING KNIGHTS",
+          "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAPLAIN ON BIKE",
+      "leader": {
+        "attachesTo": [
+          "OUTRIDER SQUAD",
+          "RAVENWING BLACK KNIGHTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHAPLAIN WITH JUMP PACK",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSORS WITH JUMP PACKS",
+          "DEATH COMPANY MARINES WITH JUMP PACKS",
+          "TALONSTRIKE KILL TEAM",
+          "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMPANY HEROES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DESOLATION SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Vengor Launcher",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "DROP POD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ELIMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 215,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 245
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 220
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FIRESTRIKE SERVO-TURRETS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GLADIATOR LANCER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GLADIATOR REAPER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GLADIATOR VALIANT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 185
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HEAVY INTERCESSOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HELLBLASTER SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 115,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 245
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IMPULSOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 80
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Orbital Comms Array",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "INCEPTOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 260,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INCURSOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 180
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INFERNUS SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 105
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INFILTRATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INTERCESSOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "INVADER ATVS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 130,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 140
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Multi-melta",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "INVICTOR TACTICAL WARSUIT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JUDICIAR",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "CRUSADER SQUAD",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "FORTIS KILL TEAM",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "SWORD BRETHREN SQUAD",
+          "VANGUARD VETERAN SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND RAIDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 245,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 265
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND RAIDER CRUSADER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 230,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 250
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND RAIDER REDEEMER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 245,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 265
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LAND SPEEDER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LIBRARIAN",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
+          "FORTIS KILL TEAM",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "VANGUARD VETERAN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LIBRARIAN IN PHOBOS ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "ELIMINATOR SQUAD",
+          "INCURSOR SQUAD",
+          "INFILTRATOR SQUAD",
+          "REIVER SQUAD",
+          "SCOUT SQUAD",
+          "SPECTRUS KILL TEAM",
+          "WOLF SCOUTS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LIBRARIAN IN TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "DEATHWATCH TERMINATOR SQUAD",
+          "DEATHWING KNIGHTS",
+          "DEATHWING TERMINATOR SQUAD",
+          "TERMINATOR ASSAULT SQUAD",
+          "TERMINATOR SQUAD",
+          "WOLF GUARD TERMINATORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LIEUTENANT",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "BLADEGUARD VETERAN SQUAD",
+          "COMPANY HEROES",
+          "CRUSADER SQUAD",
+          "DEATHWATCH VETERANS",
+          "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
+          "FORTIS KILL TEAM",
+          "HELLBLASTER SQUAD",
+          "INFERNUS SQUAD",
+          "INNER CIRCLE COMPANIONS",
+          "INTERCESSOR SQUAD",
+          "STERNGUARD VETERAN SQUAD",
+          "SWORD BRETHREN SQUAD",
+          "VANGUARD VETERAN SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LIEUTENANT IN PHOBOS ARMOUR",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "ELIMINATOR SQUAD",
+          "INCURSOR SQUAD",
+          "INFILTRATOR SQUAD",
+          "REIVER SQUAD",
+          "SPECTRUS KILL TEAM",
+          "WOLF SCOUTS"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LIEUTENANT WITH COMBI-WEAPON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OUTRIDER SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 80
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REDEMPTOR DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 190
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Macro plasma incinerator",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "REIVER SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 85
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REPULSOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REPULSOR EXECUTIONER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 260,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Heavy Laser Destroyer",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SCOUT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 65
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STERNGUARD VETERAN SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 210,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 225
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORM SPEEDER HAILSTRIKE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORM SPEEDER HAMMERSTRIKE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STORM SPEEDER THUNDERSTRIKE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TECHMARINE",
+      "leader": {
+        "attachesTo": [
+          "ASSAULT INTERCESSOR SQUAD",
+          "CRUSADER SQUAD",
+          "DECIMUS KILL TEAM",
+          "DESOLATION SQUAD",
+          "FORTIS KILL TEAM",
+          "INTERCESSOR SQUAD",
+          "SWORD BRETHREN SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR ASSAULT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 210
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 340,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 380
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Storm Shield",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "name": "TERMINATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 190,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 230
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 380,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 420
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Cyclone Missile Launcher",
+          "points": 10
+        }
+      ]
+    },
+    {
+      "name": "THUNDERHAWK GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 850,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 950
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VANGUARD VETERAN SQUAD WITH JUMP PACKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 110,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 130
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BROTHER CORBULO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CAPTAIN TYCHO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CENTURION ASSAULT SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 300
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CENTURION DEVASTATOR SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 350
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CERBERUS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 270
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH COMPANY DREADNOUGHT WITH MAGNA-GRAPPLE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH COMPANY MARINES WITH BOLTGUNS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 125
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DEATH COMPANY MARINES WITH BOLTGUNS AND JUMP PACKS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FALCHION",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 420
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "FURIOSO DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "GABRIEL SETH",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "HAMMERFALL BUNKER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "KRATOS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LAND RAIDER EXCELSIOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "LIBRARIAN DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 170
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "MASTODON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 540
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PREDATOR ANNIHILATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 135,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 145
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "PREDATOR DESTRUCTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 140,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RAPIER CARRIER",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RAZORBACK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RELIC RAZORBACK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 105
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "RHINO PRIMARIS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 95
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SANGUINARY PRIEST WITH JUMP PACK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SCOUT BIKE SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 75
+            }
+          ]
+        },
+        {
+          "name": "6 models",
+          "models": 6,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 150
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SICARAN",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMHAWK INTERCEPTOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 155
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMRAVEN GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 300
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "STORMTALON GUNSHIP",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TARANTULA AIR DEFENCE BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TARANTULA SENTRY BATTERY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 30
+            }
+          ]
+        },
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TERRAX-PATTERN TERMITE",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TYCHO THE LOST",
+      "leader": {
+        "attachesTo": [
+          "DEATH COMPANY MARINES WITH BOLTGUNS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "TYPHON",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 320
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VANGUARD VETERAN SQUAD",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 120
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VENERABLE DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 165
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VINDICATOR",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "WHIRLWIND",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 175,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 195
+            }
+          ]
+        }
+      ],
+      "legends": true
+    }
+  ]
+}

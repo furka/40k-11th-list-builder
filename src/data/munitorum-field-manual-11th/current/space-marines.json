@@ -1,6 +1,6 @@
 {
   "faction": "SPACE MARINES",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
       "name": "ASSAULT BRETHREN",
@@ -2744,7 +2744,6 @@
           "INFERNUS SQUAD",
           "INTERCESSOR SQUAD",
           "STERNGUARD VETERAN SQUAD",
-          "STERNGUARD VETERAN SQUAD TERMINATOR SQUAD",
           "TERMINATOR ASSAULT SQUAD",
           "TERMINATOR SQUAD",
           "VANGUARD VETERAN SQUAD",
