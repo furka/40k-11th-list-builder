@@ -1,10 +1,144 @@
 {
   "faction": "ADEPTUS CUSTODES",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
+      "name": "AQUILAN SHIELD",
+      "dp": 1,
+      "role": {
+        "name": "TAKE AND HOLD",
+        "color": "#2E6B3E"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: SHIELD HOST"
+      ],
+      "enhancements": [
+        {
+          "name": "Not a Shell Wasted",
+          "points": 10
+        },
+        {
+          "name": "Pareldor’s Caducatrix",
+          "points": 30
+        }
+      ]
+    },
+    {
       "name": "AURIC CHAMPIONS",
-      "dp": 2,
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Inspirational Exemplar",
+          "points": 10
+        },
+        {
+          "name": "Shroud of the Hidden Blade",
+          "points": 20
+        },
+        {
+          "name": "Superior Creation",
+          "points": 30
+        }
+      ]
+    },
+    {
+      "name": "DREAD HOST",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: SHIELD HOST"
+      ],
+      "enhancements": [
+        {
+          "name": "Auric Exemplar",
+          "points": 15
+        },
+        {
+          "name": "Flawless Bladework",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "EMISSARIES IMPERATUS",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: SHIELD HOST"
+      ],
+      "enhancements": [
+        {
+          "name": "Auriferous Orb",
+          "points": 20
+        },
+        {
+          "name": "Edge of the Blade",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "EMPEROR’S CHOSEN",
+      "dp": 1,
+      "role": {
+        "name": "PRIORITY ASSETS",
+        "color": "#B8860A"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: SHIELD HOST"
+      ],
+      "enhancements": [
+        {
+          "name": "From the Hall of Armouries",
+          "points": 15
+        },
+        {
+          "name": "Radiant Mantle",
+          "points": 40
+        }
+      ]
+    },
+    {
+      "name": "GRAV‑ASSAULT FORCE",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Anti-gravitic Mobility",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Combat Deployment",
+          "points": 20,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "GUARDIANS OF THE THRONE",
+      "dp": 3,
       "role": {
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
@@ -13,50 +147,61 @@
       "tags": [],
       "enhancements": [
         {
-          "name": "Blade Imperator",
+          "name": "Bane of Abominations",
+          "points": 20
+        },
+        {
+          "name": "Castellan’s Mark",
           "points": 25
         },
         {
-          "name": "Inspirational Exemplar",
-          "points": 10
-        },
-        {
-          "name": "Martial Philosopher",
+          "name": "Eagle’s Eye",
           "points": 30
         },
         {
-          "name": "Veiled Blade",
-          "points": 25
+          "name": "Emperor’s Light",
+          "points": 15
         }
       ]
     },
     {
-      "name": "LIONS OF THE EMPEROR",
-      "dp": 3,
+      "name": "HONOURED COMPANIONS",
+      "dp": 1,
       "role": {
         "name": "TAKE AND HOLD",
         "color": "#2E6B3E"
       },
       "leader": null,
-      "tags": [
-        "UNIQUE: LIONS"
-      ],
+      "tags": [],
       "enhancements": [
         {
-          "name": "Admonimortis",
-          "points": 30
+          "name": "Arae-Shrike",
+          "points": 20
         },
         {
-          "name": "Fierce Conqueror",
-          "points": 15
+          "name": "Celeritous Sentries",
+          "points": 15,
+          "nonCharacterOnly": true
+        }
+      ]
+    },
+    {
+      "name": "LIONS OF THE EMPEROR",
+      "dp": 1,
+      "role": {
+        "name": "DISRUPTION",
+        "color": "#1A3A5C"
+      },
+      "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Leonine Ferocity",
+          "points": 20
         },
         {
-          "name": "Praesidius",
-          "points": 25
-        },
-        {
-          "name": "Superior Creation",
-          "points": 25
+          "name": "Lightning Descent",
+          "points": 20
         }
       ]
     },
@@ -68,231 +213,87 @@
         "color": "#2E6B3E"
       },
       "leader": null,
-      "tags": [
-        "UNIQUE: ARMOURY"
-      ],
+      "tags": [],
       "enhancements": [
         {
-          "name": "Auramite Sarcophagus",
-          "points": 15,
+          "name": "Augury Uplink (one per army)",
+          "points": 30,
           "nonCharacterOnly": true
         },
         {
-          "name": "Interred Expertise",
-          "points": 25,
+          "name": "Memento Moritoi (one per army)",
+          "points": 30,
           "nonCharacterOnly": true
         }
       ]
     },
     {
       "name": "NULL MAIDEN VIGIL",
-      "dp": 2,
-      "role": {
-        "name": "RECONNAISSANCE",
-        "color": "#008080"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Enhanced Voidsheen Cloak",
-          "points": 10
-        },
-        {
-          "name": "Huntress’ Eye",
-          "points": 15
-        },
-        {
-          "name": "Oblivion Knight",
-          "points": 25
-        },
-        {
-          "name": "Raptor Blade",
-          "points": 5
-        }
-      ]
-    },
-    {
-      "name": "SHIELD HOST",
-      "dp": 2,
-      "role": {
-        "name": "PURGE THE FOE",
-        "color": "#8B1B1B"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Auric Mantle",
-          "points": 15
-        },
-        {
-          "name": "Castellan’s Mark",
-          "points": 20
-        },
-        {
-          "name": "From the Hall of Armouries",
-          "points": 20
-        },
-        {
-          "name": "Panoptispex",
-          "points": 5
-        }
-      ]
-    },
-    {
-      "name": "SILENT HUNTERS",
-      "dp": 1,
-      "role": {
-        "name": "RECONNAISSANCE",
-        "color": "#008080"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Encircling Hunter",
-          "points": 15
-        },
-        {
-          "name": "Psyk-out Grenades",
-          "points": 10,
-          "nonCharacterOnly": true
-        }
-      ]
-    },
-    {
-      "name": "SOLAR SPEARHEAD",
-      "dp": 2,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [
-        "UNIQUE: ARMOURY"
-      ],
-      "enhancements": [
-        {
-          "name": "Adamantine Talisman",
-          "points": 25
-        },
-        {
-          "name": "Augury Uplink",
-          "points": 35
-        },
-        {
-          "name": "Honoured Fallen",
-          "points": 15
-        },
-        {
-          "name": "Veteran of the Kataphraktoi",
-          "points": 10
-        }
-      ]
-    },
-    {
-      "name": "TALONS OF THE EMPEROR",
-      "dp": 3,
-      "role": {
-        "name": "TAKE AND HOLD",
-        "color": "#2E6B3E"
-      },
-      "leader": null,
-      "tags": [],
-      "enhancements": [
-        {
-          "name": "Aegis Projector",
-          "points": 20
-        },
-        {
-          "name": "Champion of the Imperium",
-          "points": 25
-        },
-        {
-          "name": "Gift of Terran Artifice",
-          "points": 15
-        },
-        {
-          "name": "Radiant Mantle",
-          "points": 30
-        }
-      ]
-    },
-    {
-      "name": "THARANATOI HAMMERBLOW",
       "dp": 1,
       "role": {
         "name": "DISRUPTION",
         "color": "#1A3A5C"
       },
       "leader": null,
+      "tags": [],
+      "enhancements": [
+        {
+          "name": "Huntress’ Eye",
+          "points": 10
+        },
+        {
+          "name": "Oblivion Knight",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "name": "SHADOWKEEPERS",
+      "dp": 1,
+      "role": {
+        "name": "PURGE THE FOE",
+        "color": "#8B1B1B"
+      },
+      "leader": null,
       "tags": [
-        "UNIQUE: LIONS"
+        "UNIQUE: SHIELD HOST"
       ],
       "enhancements": [
         {
-          "name": "Efficient Aggression",
-          "points": 25
+          "name": "Genalchemic Warding",
+          "points": 30
         },
         {
-          "name": "Mnemo-locked Shrine Cipher",
+          "name": "Unstoppable Destroyer",
           "points": 25
+        }
+      ]
+    },
+    {
+      "name": "SOLAR WATCH",
+      "dp": 1,
+      "role": {
+        "name": "RECONNAISSANCE",
+        "color": "#008080"
+      },
+      "leader": null,
+      "tags": [
+        "UNIQUE: SHIELD HOST"
+      ],
+      "enhancements": [
+        {
+          "name": "Auric Eagle",
+          "points": 15,
+          "nonCharacterOnly": true
+        },
+        {
+          "name": "Sally Forth",
+          "points": 30
         }
       ]
     }
   ],
   "datasheets": [
-    {
-      "name": "AGAMATUS CUSTODIANS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 225
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 450
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ALEYA",
-      "leader": {
-        "attachesTo": [
-          "PROSECUTORS",
-          "VIGILATORS",
-          "WITCHSEEKERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
-            }
-          ]
-        }
-      ]
-    },
     {
       "name": "ALLARUS CUSTODIANS",
       "leader": null,
@@ -304,86 +305,34 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 120,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 160
-            }
-          ]
-        },
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
               "points": 180,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 220
+              "points": 210
             }
           ]
         },
         {
-          "name": "5 models",
-          "models": 5,
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
-              "points": 300,
+              "points": 270,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 340
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 360,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 400
+              "points": 300
             }
           ]
         }
       ]
     },
     {
-      "name": "ANATHEMA PSYKANA RHINO",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 65,
-              "maxCount": 3
-            },
-            {
-              "minCount": 4,
-              "points": 75
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "AQUILON CUSTODIANS",
+      "name": "AQUILON TERMINATORS WITH SOLARITE POWER GAUNTLETS",
       "leader": null,
       "support": null,
       "sizes": [
@@ -393,17 +342,34 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 195
+              "points": 285,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 315
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "name": "AQUILON TERMINATORS WITH SOLARITE POWER TALONS",
+      "leader": null,
+      "support": null,
+      "sizes": [
         {
-          "name": "6 models",
-          "models": 6,
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
-              "points": 390
+              "points": 275,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 305
             }
           ]
         }
@@ -435,10 +401,9 @@
       "name": "BLADE CHAMPION",
       "leader": {
         "attachesTo": [
-          "CUSTODIAN GUARD",
-          "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
+          "CUSTODIAN GUARD SODALITY",
           "CUSTODIAN WARDENS",
-          "SAGITTARUM CUSTODIANS"
+          "SENTINEL GUARD SODALITY"
         ]
       },
       "support": null,
@@ -449,12 +414,34 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 110,
-              "maxCount": 1
+              "points": 175,
+              "maxCount": 2
             },
             {
-              "minCount": 2,
-              "points": 125
+              "minCount": 3,
+              "points": 195
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CALADIUS ANNIHILATOR GRAV‑TANK",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 250,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
             }
           ]
         }
@@ -471,20 +458,14 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 230,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 225
+              "points": 260
             }
           ]
-        }
-      ],
-      "wargearOptions": [
-        {
-          "name": "Twin arachnus heavy blaze cannon",
-          "points": 15
         }
       ]
     },
@@ -499,12 +480,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 155,
+              "points": 230,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 170
+              "points": 260
             }
           ]
         }
@@ -521,12 +502,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 165,
+              "points": 220,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 180
+              "points": 250
             }
           ]
         }
@@ -543,71 +524,34 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 225,
               "maxCount": 2
             },
             {
               "minCount": 3,
-              "points": 200
+              "points": 245
             }
           ]
         }
       ]
     },
     {
-      "name": "CUSTODIAN GUARD",
+      "name": "CUSTODIAN GUARD SODALITY",
       "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "4 models",
-          "models": 4,
+          "name": "3 models",
+          "models": 3,
           "tiers": [
             {
               "minCount": 1,
-              "points": 180,
+              "points": 240,
               "maxCount": 3
             },
             {
               "minCount": 4,
-              "points": 190
-            }
-          ]
-        },
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 225,
-              "maxCount": 3
-            },
-            {
-              "minCount": 4,
-              "points": 235
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 250,
-              "maxCount": 3
-            },
-            {
-              "minCount": 4,
-              "points": 260
+              "points": 270
             }
           ]
         }
@@ -619,12 +563,12 @@
       "support": null,
       "sizes": [
         {
-          "name": "4 models",
-          "models": 4,
+          "name": "2 models",
+          "models": 2,
           "tiers": [
             {
               "minCount": 1,
-              "points": 210,
+              "points": 200,
               "maxCount": 1
             },
             {
@@ -634,8 +578,30 @@
           ]
         },
         {
-          "name": "5 models",
-          "models": 5,
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 295,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 325
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GYRFALCON JETBIKE SODALITY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
           "tiers": [
             {
               "minCount": 1,
@@ -645,29 +611,6 @@
             {
               "minCount": 2,
               "points": 280
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "KNIGHT-CENTURA",
-      "leader": {
-        "attachesTo": [
-          "PROSECUTORS",
-          "VIGILATORS",
-          "WITCHSEEKERS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
             }
           ]
         }
@@ -706,14 +649,305 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 100
+              "points": 135
             }
           ]
         }
       ]
     },
     {
-      "name": "PROSECUTORS",
+      "name": "SENTINEL GUARD SODALITY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 240,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 270
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SHIELD-CAPTAIN",
+      "leader": {
+        "attachesTo": [
+          "CUSTODIAN GUARD SODALITY",
+          "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+          "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+          "CUSTODIAN WARDENS",
+          "SAGITTARUM CUSTODIANS SODALITY",
+          "SENTINEL GUARD SODALITY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 180,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "wargearOptions": [
+        {
+          "name": "Praesidium Shield",
+          "points": 25
+        }
+      ]
+    },
+    {
+      "name": "SHIELD-CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
+      "leader": {
+        "attachesTo": [
+          "ALLARUS CUSTODIANS",
+          "AQUILON TERMINATORS WITH SOLARITE POWER GAUNTLETS",
+          "AQUILON TERMINATORS WITH SOLARITE POWER TALONS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 205
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE",
+      "leader": {
+        "attachesTo": [
+          "GYRFALCON JETBIKE SODALITY",
+          "VERTUS PRAETORS"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 205,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 225
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TELEMON HEAVY DREADNOUGHT",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 280,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 310
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRAJANN VALORIS",
+      "leader": {
+        "attachesTo": [
+          "ALLARUS CUSTODIANS",
+          "AQUILON TERMINATORS WITH SOLARITE POWER GAUNTLETS",
+          "AQUILON TERMINATORS WITH SOLARITE POWER TALONS",
+          "CUSTODIAN GUARD SODALITY",
+          "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+          "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+          "CUSTODIAN WARDENS",
+          "SAGITTARUM CUSTODIANS SODALITY",
+          "SENTINEL GUARD SODALITY"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 265
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VENATARI WITH KINETIC DESTROYERS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 255,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 280
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VENATARI WITH VERUTUM LANCES",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 270,
+              "maxCount": 2
+            },
+            {
+              "minCount": 3,
+              "points": 300
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "VERTUS PRAETORS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "2 models",
+          "models": 2,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 220,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 240
+            }
+          ]
+        },
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 330,
+              "maxCount": 1
+            },
+            {
+              "minCount": 2,
+              "points": 350
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ANATHEMA PSYKANA RHINO",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 70,
+              "maxCount": 3
+            },
+            {
+              "minCount": 4,
+              "points": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "KNIGHT-CENTURA",
+      "leader": null,
+      "support": {
+        "attachesTo": [
+          "PROSECUTOR SQUAD",
+          "VIGILATOR SQUAD",
+          "WITCHSEEKER SQUAD"
+        ]
+      },
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PROSECUTOR SQUAD",
       "leader": null,
       "support": null,
       "sizes": [
@@ -723,7 +957,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 50
+              "points": 45
             }
           ]
         },
@@ -733,7 +967,7 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 55
+              "points": 50
             }
           ]
         },
@@ -760,37 +994,90 @@
       ]
     },
     {
-      "name": "SAGITTARUM CUSTODIANS",
+      "name": "VIGILATOR SQUAD",
       "leader": null,
       "support": null,
       "sizes": [
+        {
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 50
+            }
+          ]
+        },
         {
           "name": "5 models",
           "models": 5,
           "tiers": [
             {
               "minCount": 1,
-              "points": 225
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "9 models",
+          "models": 9,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 90
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
             }
           ]
         }
       ]
     },
     {
-      "name": "SHIELD-CAPTAIN",
-      "leader": {
-        "attachesTo": [
-          "CUSTODIAN GUARD",
-          "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
-          "CUSTODIAN WARDENS",
-          "SAGITTARUM CUSTODIANS"
-        ]
-      },
+      "name": "WITCHSEEKER SQUAD",
+      "leader": null,
       "support": null,
       "sizes": [
         {
-          "name": "1 model",
-          "models": 1,
+          "name": "4 models",
+          "models": 4,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        },
+        {
+          "name": "5 models",
+          "models": 5,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 60
+            }
+          ]
+        },
+        {
+          "name": "9 models",
+          "models": 9,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 100
+            }
+          ]
+        },
+        {
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
@@ -801,11 +1088,93 @@
       ]
     },
     {
-      "name": "SHIELD-CAPTAIN IN ALLARUS TERMINATOR ARMOUR",
+      "name": "ALEYA",
       "leader": {
         "attachesTo": [
-          "ALLARUS CUSTODIANS",
-          "AQUILON CUSTODIANS"
+          "PROSECUTOR SQUAD",
+          "VIGILATOR SQUAD",
+          "WITCHSEEKER SQUAD"
+        ]
+      },
+      "support": null,
+      "sizes": [
+        {
+          "name": "1 model",
+          "models": 1,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 55
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 200
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 215
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "SAGITTARUM CUSTODIANS SODALITY",
+      "leader": null,
+      "support": null,
+      "sizes": [
+        {
+          "name": "3 models",
+          "models": 3,
+          "tiers": [
+            {
+              "minCount": 1,
+              "points": 185
+            }
+          ]
+        }
+      ],
+      "legends": true
+    },
+    {
+      "name": "VALERIAN",
+      "leader": {
+        "attachesTo": [
+          "CUSTODIAN GUARD SODALITY",
+          "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+          "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+          "CUSTODIAN WARDENS",
+          "SAGITTARUM CUSTODIANS SODALITY",
+          "SENTINEL GUARD SODALITY"
         ]
       },
       "support": null,
@@ -820,142 +1189,8 @@
             }
           ]
         }
-      ]
-    },
-    {
-      "name": "SHIELD-CAPTAIN ON DAWNEAGLE JETBIKE",
-      "leader": {
-        "attachesTo": [
-          "AGAMATUS CUSTODIANS",
-          "VERTUS PRAETORS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TELEMON HEAVY DREADNOUGHT",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 225,
-              "maxCount": 1
-            },
-            {
-              "minCount": 2,
-              "points": 245
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "TRAJANN VALORIS",
-      "leader": {
-        "attachesTo": [
-          "CUSTODIAN GUARD",
-          "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
-          "CUSTODIAN WARDENS",
-          "SAGITTARUM CUSTODIANS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 135
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VALERIAN",
-      "leader": {
-        "attachesTo": [
-          "CUSTODIAN GUARD",
-          "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS",
-          "CUSTODIAN WARDENS",
-          "SAGITTARUM CUSTODIANS"
-        ]
-      },
-      "support": null,
-      "sizes": [
-        {
-          "name": "1 model",
-          "models": 1,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 120
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VENATARI CUSTODIANS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 150,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 160
-            }
-          ]
-        },
-        {
-          "name": "6 models",
-          "models": 6,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 300,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 310
-            }
-          ]
-        }
       ],
-      "wargearOptions": [
-        {
-          "name": "Venatari lance",
-          "points": 5
-        }
-      ]
+      "legends": true
     },
     {
       "name": "VENERABLE CONTEMPTOR DREADNOUGHT",
@@ -968,16 +1203,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 170,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 185
+              "points": 220
             }
           ]
         }
-      ]
+      ],
+      "legends": true
     },
     {
       "name": "VENERABLE LAND RAIDER",
@@ -990,147 +1221,12 @@
           "tiers": [
             {
               "minCount": 1,
-              "points": 220,
-              "maxCount": 1
-            },
-            {
-              "minCount": 2,
-              "points": 240
+              "points": 230
             }
           ]
         }
-      ]
-    },
-    {
-      "name": "VERTUS PRAETORS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "2 models",
-          "models": 2,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 155,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 180
-            }
-          ]
-        },
-        {
-          "name": "3 models",
-          "models": 3,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 230,
-              "maxCount": 2
-            },
-            {
-              "minCount": 3,
-              "points": 255
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "VIGILATORS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "4 models",
-          "models": 4,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 50
-            }
-          ]
-        },
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
-            }
-          ]
-        },
-        {
-          "name": "9 models",
-          "models": 9,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "WITCHSEEKERS",
-      "leader": null,
-      "support": null,
-      "sizes": [
-        {
-          "name": "4 models",
-          "models": 4,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 50
-            }
-          ]
-        },
-        {
-          "name": "5 models",
-          "models": 5,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 55
-            }
-          ]
-        },
-        {
-          "name": "9 models",
-          "models": 9,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 90
-            }
-          ]
-        },
-        {
-          "name": "10 models",
-          "models": 10,
-          "tiers": [
-            {
-              "minCount": 1,
-              "points": 100
-            }
-          ]
-        }
-      ]
+      ],
+      "legends": true
     }
   ]
 }

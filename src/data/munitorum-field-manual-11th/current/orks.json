@@ -1,6 +1,6 @@
 {
   "faction": "ORKS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
       "name": "BLITZ BRIGADE",
@@ -940,8 +940,8 @@
       "support": null,
       "sizes": [
         {
-          "name": "10 Gretchin",
-          "models": null,
+          "name": "10 models",
+          "models": 10,
           "tiers": [
             {
               "minCount": 1,
@@ -950,8 +950,8 @@
           ]
         },
         {
-          "name": "20 Gretchin",
-          "models": null,
+          "name": "20 models",
+          "models": 20,
           "tiers": [
             {
               "minCount": 1,

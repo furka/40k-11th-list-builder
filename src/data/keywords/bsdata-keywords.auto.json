@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "1f70af0c18796133cc78898531e99f7277765f7e",
-  "_committedAt": "2026-10-07T08:52:29Z",
-  "_generatedAt": "2026-10-07T19:49:04.438Z",
+  "_sha": "db61485a7193b11f9eabe12912ddba971c7062f5",
+  "_committedAt": "2026-10-18T14:42:55Z",
+  "_generatedAt": "2026-10-18T17:10:07.776Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -86,7 +86,8 @@
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
-      "SORORITAS CHARACTER"
+      "SORORITAS CHARACTER",
+      "TORRENT WEAPON"
     ],
     "Celestian Sacresants": [
       "ADEPTA SORORITAS",
@@ -388,22 +389,11 @@
     ]
   },
   "ADEPTUS CUSTODES": {
-    "Agamatus Custodian (Adrathic devastator)": [],
-    "Agamatus Custodian (Lastrum bolt cannon)": [],
-    "Agamatus Custodian (Twin las-pulsar)": [],
-    "Agamatus Custodians": [
-      "ADEPTUS CUSTODES",
-      "AGAMATUS CUSTODIANS",
-      "FLY",
-      "FRAME",
-      "IMPERIUM",
-      "MOUNTED"
-    ],
     "Aleya": [
-      "ADEPTUS CUSTODES",
       "ALEYA",
       "ANATHEMA PSYKANA",
       "CHARACTER",
+      "EMISSARIES",
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
@@ -412,24 +402,33 @@
     "Allarus Custodians": [
       "ADEPTUS CUSTODES",
       "ALLARUS CUSTODIANS",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
       "TERMINATOR"
     ],
     "Anathema Psykana Rhino": [
-      "ADEPTUS CUSTODES",
       "ANATHEMA PSYKANA",
+      "ANATHEMA PSYKANA RHINO",
       "DEDICATED TRANSPORT",
       "FRAME",
       "IMPERIUM",
-      "RHINO",
       "SMOKE",
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Aquilon Custodians": [
+    "Aquilon Terminators with Solarite Power Gauntlets": [
       "ADEPTUS CUSTODES",
-      "AQUILON CUSTODIANS",
+      "AQUILON TERMINATORS WITH SOLARITE POWER GAUNTLETS",
+      "EMISSARIES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TERMINATOR"
+    ],
+    "Aquilon Terminators with Solarite Power Talons": [
+      "ADEPTUS CUSTODES",
+      "AQUILON TERMINATORS WITH SOLARITE POWER TALONS",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
       "TERMINATOR"
@@ -438,6 +437,7 @@
       "ADEPTUS CUSTODES",
       "AIRCRAFT",
       "ARES GUNSHIP",
+      "EMISSARIES",
       "FLY",
       "IMPERIUM",
       "VEHICLE"
@@ -446,30 +446,45 @@
       "ADEPTUS CUSTODES",
       "BLADE CHAMPION",
       "CHARACTER",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
     ],
+    "Caladius Annihilator Grav-tank": [
+      "ADEPTUS CUSTODES",
+      "CALADIUS ANNIHILATOR GRAV-TANK",
+      "EMISSARIES",
+      "FLY",
+      "FRAME",
+      "GRAV-ASSAULT",
+      "IMPERIUM",
+      "VEHICLE"
+    ],
     "Caladius Grav-tank": [
       "ADEPTUS CUSTODES",
       "CALADIUS GRAV-TANK",
+      "EMISSARIES",
       "FLY",
       "FRAME",
+      "GRAV-ASSAULT",
       "IMPERIUM",
       "VEHICLE"
     ],
     "Contemptor-Achillus Dreadnought": [
-      "AC WALKER",
       "ADEPTUS CUSTODES",
       "CONTEMPTOR-ACHILLUS DREADNOUGHT",
+      "DREADNOUGHT",
+      "EMISSARIES",
       "IMPERIUM",
       "VEHICLE",
       "WALKER"
     ],
     "Contemptor-Galatus Dreadnought": [
-      "AC WALKER",
       "ADEPTUS CUSTODES",
       "CONTEMPTOR-GALATUS DREADNOUGHT",
+      "DREADNOUGHT",
+      "EMISSARIES",
       "IMPERIUM",
       "VEHICLE",
       "WALKER"
@@ -477,58 +492,80 @@
     "Coronus Grav-carrier": [
       "ADEPTUS CUSTODES",
       "CORONUS GRAV-CARRIER",
+      "EMISSARIES",
       "FLY",
       "FRAME",
+      "GRAV-ASSAULT",
       "IMPERIUM",
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Custodian Guard": [
+    "Custodian Guard": [],
+    "Custodian Guard Sodality": [
       "ADEPTUS CUSTODES",
       "BATTLELINE",
-      "CUSTODIAN GUARD",
+      "CUSTODIAN GUARD SODALITY",
+      "EMISSARIES",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "TRUSTED SENTINEL"
     ],
-    "Custodian Guard (Adrasite spear)": [],
-    "Custodian Guard (Guardian Spear)": [],
-    "Custodian Guard (Pyrithite spear)": [],
-    "Custodian Guard (Sentinel Blade & Praesidium Shield)": [],
-    "Custodian Guard (Vexilla, Praesidium Shield & Misericordia)": [],
-    "Custodian Guard with Adrasite and Pyrithite spears": [
+    "Custodian Guard Sodality with Adrasite Spears": [
       "ADEPTUS CUSTODES",
-      "CUSTODIAN GUARD",
+      "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+      "EMISSARIES",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "TRUSTED SENTINEL"
     ],
-    "Custodian Warden (Castellan axe)": [],
-    "Custodian Warden (Guardian Spear)": [],
+    "Custodian Guard Sodality with Pyrithite Spears": [
+      "ADEPTUS CUSTODES",
+      "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+      "EMISSARIES",
+      "IMPERIUM",
+      "INFANTRY",
+      "TRUSTED SENTINEL"
+    ],
+    "Custodian Warden": [],
     "Custodian Wardens": [
       "ADEPTUS CUSTODES",
       "CUSTODIAN WARDENS",
+      "EMISSARIES",
       "IMPERIUM",
-      "INFANTRY"
+      "INFANTRY",
+      "TRUSTED SENTINEL"
     ],
     "Guardian of the Throne [Crucible]": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
       "CRUCIBLE",
+      "EMISSARIES",
       "GUARDIAN OF THE THRONE",
       "IMPERIUM",
       "INFANTRY"
+    ],
+    "Gyrfalcon Jetbike": [],
+    "Gyrfalcon Jetbike Sodality": [
+      "ADEPTUS CUSTODES",
+      "EMISSARIES",
+      "FLY",
+      "FRAME",
+      "GYRFALCON JETBIKE SODALITY",
+      "IMPERIUM",
+      "MOUNTED"
     ],
     "Kataphraktoi Exemplar [Crucible]": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
       "CRUCIBLE",
       "DAWNEAGLE JETBIKE",
+      "EMISSARIES",
       "FLY",
       "IMPERIUM",
       "KATAPHRAKTOI EXEMPLAR",
       "MOUNTED"
     ],
     "Knight-Centura": [
-      "ADEPTUS CUSTODES",
       "ANATHEMA PSYKANA",
       "CHARACTER",
       "IMPERIUM",
@@ -541,12 +578,14 @@
       "ANATHEMA PSYKANA",
       "CHARACTER",
       "CRUCIBLE",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
       "NULL MAIDEN"
     ],
     "Orion Assault Dropship": [
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
       "FLY",
       "IMPERIUM",
       "ORION ASSAULT DROPSHIP",
@@ -555,31 +594,43 @@
     ],
     "Pallas Grav-attack": [
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
       "FLY",
       "FRAME",
+      "GRAV-ASSAULT",
       "IMPERIUM",
       "PALLAS GRAV-ATTACK",
       "VEHICLE"
     ],
-    "Prosecutor": [],
-    "Prosecutor Sister Superior": [],
-    "Prosecutors": [
-      "ADEPTUS CUSTODES",
+    "Prosecutor Squad": [
       "ANATHEMA PSYKANA",
       "IMPERIUM",
       "INFANTRY",
-      "PROSECUTORS"
+      "PROSECUTOR SQUAD"
     ],
     "Sagittarum Custodian": [],
-    "Sagittarum Custodians": [
+    "Sagittarum Custodians Sodality": [
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
-      "SAGITTARUM CUSTODIANS"
+      "SAGITTARUM CUSTODIAN SODALITY",
+      "TRUSTED SENTINEL"
+    ],
+    "Sentinel Guard": [],
+    "Sentinel Guard Sodality": [
+      "ADEPTUS CUSTODES",
+      "BATTLELINE",
+      "EMISSARIES",
+      "IMPERIUM",
+      "INFANTRY",
+      "SENTINEL GUARD SODALITY",
+      "TRUSTED SENTINEL"
     ],
     "Shield-Captain": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -588,6 +639,7 @@
     "Shield-Captain in Allarus Terminator Armour": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
+      "EMISSARIES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -597,7 +649,7 @@
     "Shield-Captain on Dawneagle Jetbike": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
-      "DAWNEAGLE JETBIKE",
+      "EMISSARIES",
       "FLY",
       "IMPERIUM",
       "LEADER",
@@ -605,8 +657,9 @@
       "SHIELD-CAPTAIN"
     ],
     "Telemon Heavy Dreadnought": [
-      "AC WALKER",
       "ADEPTUS CUSTODES",
+      "DREADNOUGHT",
+      "EMISSARIES",
       "IMPERIUM",
       "TELEMON HEAVY DREADNOUGHT",
       "VEHICLE",
@@ -615,6 +668,7 @@
     "Trajann Valoris": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
+      "EMISSARIES",
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
@@ -624,6 +678,7 @@
     "Valerian": [
       "ADEPTUS CUSTODES",
       "CHARACTER",
+      "EMISSARIES",
       "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
@@ -631,19 +686,30 @@
       "SHIELD-CAPTAIN",
       "VALERIAN"
     ],
-    "Venatari Custodian (Kinetic Destroyer & Tarsus Buckler)": [],
-    "Venatari Custodian (Venatari lance)": [],
-    "Venatari Custodians": [
+    "Venatari": [],
+    "Venatari with Kinetic Destroyers": [
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
+      "EXPLOSIVES",
       "FLY",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VENATARI CUSTODIANS"
+      "VENATARI WITH KINETIC DESTROYERS"
+    ],
+    "Venatari with Verutum Lances": [
+      "ADEPTUS CUSTODES",
+      "EMISSARIES",
+      "EXPLOSIVES",
+      "FLY",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "VENATARI WITH KINETIC DESTROYERS"
     ],
     "Venerable Contemptor Dreadnought": [
-      "AC WALKER",
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
       "IMPERIUM",
       "VEHICLE",
       "VENERABLE CONTEMPTOR DREADNOUGHT",
@@ -651,6 +717,7 @@
     ],
     "Venerable Land Raider": [
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
       "FRAME",
       "IMPERIUM",
       "SMOKE",
@@ -658,30 +725,27 @@
       "VEHICLE",
       "VENERABLE LAND RAIDER"
     ],
-    "Vertus Praetor (Hurricane Bolter)": [],
-    "Vertus Praetor (Salvo Launcher)": [],
+    "Vertus Praetor": [],
     "Vertus Praetors": [
       "ADEPTUS CUSTODES",
+      "EMISSARIES",
       "FLY",
       "IMPERIUM",
       "MOUNTED",
       "VERTUS PRAETORS"
     ],
     "Vigilator": [],
-    "Vigilator Sister Superior": [],
-    "Vigilators": [
-      "ADEPTUS CUSTODES",
+    "Vigilator Squad": [
       "ANATHEMA PSYKANA",
       "IMPERIUM",
       "INFANTRY",
-      "VIGILATORS"
+      "VIGILATOR SQUAD"
     ],
-    "Witchseekers": [
-      "ADEPTUS CUSTODES",
+    "Witchseeker Squad": [
       "ANATHEMA PSYKANA",
       "IMPERIUM",
       "INFANTRY",
-      "WITCHSEEKERS"
+      "WITCHSEEKER SQUAD"
     ]
   },
   "ADEPTUS MECHANICUS": {
@@ -3629,7 +3693,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -3656,7 +3720,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -3665,7 +3728,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -3683,7 +3746,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -3691,8 +3754,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -3755,15 +3818,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -3789,7 +3853,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -3799,8 +3863,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -3809,7 +3873,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -3828,6 +3892,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -3836,8 +3901,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -3852,6 +3917,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -3860,7 +3926,7 @@
       "BLACK TEMPLARS",
       "CASTELLAN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -3948,7 +4014,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -3961,7 +4027,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Command Squad": [
       "ADEPTUS ASTARTES",
@@ -3981,8 +4048,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -4000,7 +4069,7 @@
       "BLACK TEMPLARS",
       "CHARACTER",
       "CRUSADE ANCIENT",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -4011,7 +4080,7 @@
       "BATTLELINE",
       "BLACK TEMPLARS",
       "CRUSADER SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -4026,7 +4095,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -4057,17 +4126,18 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Emperor’s Champion": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
       "CHARACTER",
       "EMPEROR’S CHAMPION",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -4084,18 +4154,18 @@
       "LEADER",
       "TACTICUS"
     ],
-    "Eradicator Squad": [
+    "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
+      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY"
     ],
-    "Eradicator Squad with Heavy Bolters": [
+    "Eradicator Squad with Melta Rifles": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -4168,15 +4238,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -4231,7 +4301,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -4240,7 +4310,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -4248,7 +4318,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -4258,19 +4328,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -4295,6 +4364,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -4320,9 +4390,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
-      "BLACK TEMPLARS",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -4356,8 +4425,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -4368,8 +4437,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -4396,7 +4467,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -4407,7 +4478,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -4459,7 +4530,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -4469,11 +4540,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -4491,7 +4563,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -4503,7 +4575,7 @@
       "BLACK TEMPLARS",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -4520,9 +4592,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -4569,7 +4640,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -4648,7 +4719,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -4663,8 +4734,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "BLACK TEMPLARS",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -4675,6 +4745,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -4683,6 +4754,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -4691,6 +4763,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -4755,7 +4828,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -4779,12 +4852,12 @@
     ],
     "Terminator Squad": [
       "ADEPTUS ASTARTES",
-      "BLACK TEMPLARS",
       "IMPERIUM",
       "INFANTRY",
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -4828,12 +4901,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -4882,7 +4955,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -4909,7 +4982,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -4918,7 +4990,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -4936,7 +5008,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -4944,8 +5016,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -5031,15 +5103,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -5087,7 +5160,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -5108,8 +5181,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -5118,7 +5191,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -5137,6 +5210,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -5145,8 +5219,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -5161,6 +5235,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -5232,7 +5307,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -5245,7 +5320,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Chief Librarian Mephiston": [
       "ADEPTUS ASTARTES",
@@ -5253,9 +5329,8 @@
       "CHARACTER",
       "CHIEF LIBRARIAN MEPHISTON",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "INFANTRY",
-      "PLASMA",
       "PSYKER",
       "TACTICUS"
     ],
@@ -5273,8 +5348,8 @@
       "CHARACTER",
       "COMMANDER DANTE",
       "EPIC HERO",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -5292,8 +5367,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -5311,7 +5388,7 @@
       "CAPTAIN",
       "CHARACTER",
       "DEATH COMPANY",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -5323,8 +5400,8 @@
       "CAPTAIN",
       "CHARACTER",
       "DEATH COMPANY",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -5403,8 +5480,8 @@
       "BLOOD ANGELS",
       "DEATH COMPANY",
       "DEATH COMPANY MARINES WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -5420,7 +5497,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -5451,23 +5528,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -5546,15 +5624,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -5578,6 +5656,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -5594,7 +5673,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -5603,7 +5682,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -5611,7 +5690,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -5621,19 +5700,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -5658,6 +5736,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -5683,8 +5762,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -5718,8 +5797,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -5730,8 +5809,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -5761,8 +5842,8 @@
       "CHAPLAIN",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -5772,7 +5853,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -5794,7 +5875,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -5846,7 +5927,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -5856,11 +5937,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -5878,7 +5960,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -5895,9 +5977,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -5944,7 +6025,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -6006,21 +6087,23 @@
     "Sanguinary Guard": [
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "SANGUINARY GUARD"
+      "SANGUINARY GUARD",
+      "TACTICUS"
     ],
     "Sanguinary Priest": [
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SANGUINARY PRIEST",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Sanguinary Priest on Bike": [
@@ -6061,7 +6144,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -6076,7 +6159,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -6087,6 +6170,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -6095,6 +6179,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -6103,6 +6188,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -6158,7 +6244,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -6187,6 +6273,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -6252,12 +6339,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -8174,7 +8261,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -8201,7 +8288,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -8210,7 +8296,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -8232,7 +8318,7 @@
       "DARK ANGELS",
       "DEATHWING",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -8242,7 +8328,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -8250,8 +8336,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -8302,7 +8388,7 @@
       "DARK ANGELS",
       "DEATHWING",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -8341,15 +8427,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -8375,7 +8462,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -8385,8 +8472,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -8395,7 +8482,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -8414,6 +8501,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -8422,8 +8510,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -8438,6 +8526,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -8509,7 +8598,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -8522,7 +8611,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Command Squad": [
       "ADEPTUS ASTARTES",
@@ -8542,8 +8632,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -8603,7 +8695,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -8634,23 +8726,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -8661,13 +8754,14 @@
       "DARK ANGELS",
       "DEATHWING",
       "EPIC HERO",
+      "EXPLOSIVES",
       "EZEKIEL",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
       "LIBRARIAN",
-      "PSYKER"
+      "PSYKER",
+      "TACTICUS"
     ],
     "Ferren Aerios": [
       "ADEPTUS ASTARTES",
@@ -8722,15 +8816,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -8754,6 +8848,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -8770,7 +8865,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -8779,7 +8874,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -8787,7 +8882,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -8806,19 +8901,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -8843,6 +8937,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -8868,8 +8963,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -8903,8 +8998,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -8915,8 +9010,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -8948,6 +9045,7 @@
       "IMPERIUM",
       "LAND SPEEDER VENGEANCE",
       "RAVENWING",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Lazarus": [
@@ -8967,7 +9065,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -8978,7 +9076,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -9030,7 +9128,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -9040,11 +9138,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -9062,7 +9161,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -9100,9 +9199,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -9142,7 +9240,7 @@
       "ADEPTUS ASTARTES",
       "CHARACTER",
       "DARK ANGELS",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "MOUNTED",
       "RAVENWING",
@@ -9199,7 +9297,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -9264,9 +9362,9 @@
       "CHARACTER",
       "DARK ANGELS",
       "EPIC HERO",
+      "EXPLOSIVES",
       "FLY",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED",
@@ -9291,7 +9389,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -9306,7 +9404,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -9317,6 +9415,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -9325,6 +9424,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -9333,6 +9433,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -9388,7 +9489,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -9417,6 +9518,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -9460,12 +9562,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -9995,7 +10097,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -10022,7 +10124,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -10031,7 +10132,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -10049,7 +10150,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -10057,8 +10158,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -10121,15 +10222,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -10155,7 +10257,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -10165,8 +10267,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -10175,7 +10277,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -10194,6 +10296,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -10202,8 +10305,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -10218,6 +10321,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -10289,7 +10393,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -10302,7 +10406,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Command Squad": [
       "ADEPTUS ASTARTES",
@@ -10322,8 +10427,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -10345,7 +10452,6 @@
       "TRANSPORT",
       "VEHICLE"
     ],
-    "Deathwatch Terminator": [],
     "Deathwatch Terminator Squad": [
       "ADEPTUS ASTARTES",
       "DEATHWATCH",
@@ -10360,7 +10466,7 @@
       "BATTLELINE",
       "DEATHWATCH",
       "DEATHWATCH VETERANS",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
@@ -10371,7 +10477,7 @@
       "BATTLELINE",
       "DEATHWATCH",
       "DECIMUS KILL TEAM",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
@@ -10387,7 +10493,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -10418,23 +10524,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -10461,8 +10568,8 @@
     "Fortis Kill Team": [
       "ADEPTUS ASTARTES",
       "DEATHWATCH",
+      "EXPLOSIVES",
       "FORTIS KILL TEAM",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
@@ -10502,15 +10609,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -10534,6 +10641,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -10550,7 +10658,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -10569,7 +10677,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -10577,7 +10685,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -10587,19 +10695,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -10624,6 +10731,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -10661,8 +10769,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -10696,8 +10804,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -10708,8 +10816,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -10736,7 +10846,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -10747,7 +10857,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -10799,7 +10909,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -10809,11 +10919,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -10831,7 +10942,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -10848,9 +10959,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -10897,7 +11007,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -10974,7 +11084,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -10983,7 +11093,7 @@
     "Spectrus Kill Team": [
       "ADEPTUS ASTARTES",
       "DEATHWATCH",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
@@ -11000,7 +11110,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -11011,6 +11121,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -11019,6 +11130,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -11027,6 +11139,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -11093,7 +11206,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -11122,6 +11235,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -11165,12 +11279,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -11205,7 +11319,7 @@
       "CHARACTER",
       "DEATHWATCH",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "WATCH CAPTAIN ARTEMIS"
@@ -11215,7 +11329,7 @@
       "CAPTAIN",
       "CHARACTER",
       "DEATHWATCH",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "WATCH MASTER"
@@ -12988,7 +13102,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -13015,7 +13129,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -13024,7 +13137,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -13042,7 +13155,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -13050,8 +13163,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -13114,15 +13227,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -13217,7 +13331,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -13227,8 +13341,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -13237,7 +13351,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -13256,6 +13370,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -13264,8 +13379,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -13280,6 +13395,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -13371,7 +13487,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -13384,7 +13500,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Command Squad": [
       "ADEPTUS ASTARTES",
@@ -13404,8 +13521,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -13427,7 +13546,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -13468,23 +13587,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -13601,15 +13721,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -13633,6 +13753,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -13649,7 +13770,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -13658,7 +13779,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -13666,7 +13787,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -13685,19 +13806,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -13722,6 +13842,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -13760,6 +13881,7 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
       "GRENADES",
       "GREY KNIGHTS",
@@ -13796,6 +13918,7 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
       "GRENADES",
       "GREY KNIGHTS",
@@ -13809,8 +13932,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -13837,7 +13962,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -13848,7 +13973,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -13900,7 +14025,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -13910,11 +14035,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -13932,7 +14058,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -13957,9 +14083,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -14032,7 +14157,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -14110,7 +14235,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -14132,7 +14257,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -14143,6 +14268,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -14151,6 +14277,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -14159,6 +14286,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -14226,7 +14354,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -14255,6 +14383,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -14298,12 +14427,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -16388,6 +16517,7 @@
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16400,12 +16530,14 @@
       "CHAPTER MASTER",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "FLY",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
       "LEADER",
       "RAVEN GUARD",
+      "SMOKE",
       "TACTICUS"
     ],
     "Aggressor Squad": [
@@ -16419,7 +16551,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -16446,7 +16578,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -16455,7 +16586,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -16473,7 +16604,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -16481,8 +16612,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -16545,15 +16676,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -16591,7 +16723,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16612,7 +16744,7 @@
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16624,8 +16756,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -16634,7 +16766,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16653,6 +16785,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -16661,8 +16794,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -16677,6 +16810,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -16686,6 +16820,7 @@
       "CATO",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16771,7 +16906,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -16784,7 +16919,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Chapter Ancient": [
       "ANCIENT",
@@ -16800,6 +16936,7 @@
       "CHARACTER",
       "CHIEF LIBRARIAN TIGURIUS",
       "EPIC HERO",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16824,8 +16961,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -16859,7 +16998,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -16890,23 +17029,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -16964,15 +17104,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -16996,6 +17136,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -17012,7 +17153,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -17021,7 +17162,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -17029,7 +17170,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -17039,19 +17180,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -17087,6 +17227,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -17101,11 +17242,22 @@
       "TACTICUS",
       "XACHARUS"
     ],
-    "Kayvaan Shrike": [
+    "Kaius Konorius": [
       "ADEPTUS ASTARTES",
-      "CHAPTER MASTER",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
+      "INFANTRY",
+      "SUPPORT",
+      "TACTICUS",
+      "ULTRAMARINES"
+    ],
+    "Kayvaan Shrike": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "EPIC HERO",
+      "EXPLOSIVES",
       "FLY",
       "IMPERIUM",
       "INFANTRY",
@@ -17113,13 +17265,15 @@
       "KAYVAAN SHRIKE",
       "LEADER",
       "PHOBOS",
-      "RAVEN GUARD"
+      "RAVEN GUARD",
+      "SMOKE"
     ],
     "Kor’sarro Khan": [
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "KOR’SARRO KHAN",
@@ -17138,8 +17292,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -17173,8 +17327,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -17185,8 +17339,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -17213,7 +17369,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -17224,7 +17380,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -17276,7 +17432,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -17298,11 +17454,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -17320,7 +17477,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -17333,16 +17490,6 @@
       "CHARACTER",
       "EPIC HERO",
       "GRAVIS",
-      "IMPERIUM",
-      "INFANTRY",
-      "MARNEUS CALGAR",
-      "ULTRAMARINES"
-    ],
-    "Marneus Calgar in Armour of Antilochus": [
-      "ADEPTUS ASTARTES",
-      "CHAPTER MASTER",
-      "CHARACTER",
-      "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -17360,9 +17507,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -17421,7 +17567,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -17509,7 +17655,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -17543,7 +17689,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -17554,6 +17700,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -17562,6 +17709,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -17570,6 +17718,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -17637,7 +17786,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -17666,6 +17815,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -17749,12 +17899,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -17810,7 +17960,7 @@
     "Wardens of Ultramar": [
       "ADEPTUS ASTARTES",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PSYKER",
@@ -17839,7 +17989,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -17866,7 +18016,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -17875,7 +18024,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -17904,7 +18053,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -17912,8 +18061,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -17980,6 +18129,7 @@
       "IMPERIUM",
       "SMOKE",
       "SPACE WOLVES",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -17988,15 +18138,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -18005,7 +18156,7 @@
       "ADEPTUS ASTARTES",
       "BATTLELINE",
       "BLOOD CLAWS",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SPACE WOLVES",
@@ -18042,7 +18193,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -18052,8 +18203,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -18062,7 +18213,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -18081,6 +18232,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -18089,8 +18241,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -18105,6 +18257,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -18176,7 +18329,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -18189,7 +18342,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Command Squad": [
       "ADEPTUS ASTARTES",
@@ -18209,8 +18363,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -18241,7 +18397,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -18272,23 +18428,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -18346,7 +18503,7 @@
     "Grey Hunters": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "GREY HUNTERS",
       "IMPERIUM",
       "INFANTRY",
@@ -18375,15 +18532,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -18417,6 +18574,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -18433,7 +18591,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -18442,7 +18600,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -18450,7 +18608,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -18460,19 +18618,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -18517,6 +18674,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -18554,8 +18712,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -18589,8 +18747,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -18601,8 +18759,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -18629,7 +18789,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -18640,7 +18800,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -18692,7 +18852,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -18702,11 +18862,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -18724,7 +18885,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -18789,6 +18950,7 @@
       "IMPERIUM",
       "MURDERFANG",
       "SPACE WOLVES",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER",
       "WULFEN"
@@ -18807,9 +18969,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -18841,7 +19002,7 @@
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -18869,7 +19030,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -18946,7 +19107,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -18971,7 +19132,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -18982,6 +19143,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -18990,6 +19152,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -18998,6 +19161,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -19073,7 +19237,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -19102,6 +19266,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -19148,7 +19313,7 @@
       "ADEPTUS ASTARTES",
       "CHARACTER",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -19165,12 +19330,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -19327,6 +19492,7 @@
     ],
     "Wolf Scouts": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "INFANTRY",
@@ -20874,7 +21040,7 @@
       "ADEPTUS ASTARTES",
       "ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -20901,7 +21067,6 @@
       "ADEPTUS ASTARTES",
       "APOTHECARY",
       "CHARACTER",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "SUPPORT",
@@ -20910,7 +21075,7 @@
     "Apothecary Biologis": [
       "ADEPTUS ASTARTES",
       "APOTHECARY",
-      "BIOLOGIS",
+      "APOTHECARY BIOLOGIS",
       "CHARACTER",
       "GRAVIS",
       "IMPERIUM",
@@ -20928,7 +21093,7 @@
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSOR SQUAD",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -20936,8 +21101,8 @@
     "Assault Intercessors with Jump Packs": [
       "ADEPTUS ASTARTES",
       "ASSAULT INTERCESSORS WITH JUMP PACKS",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -21000,15 +21165,16 @@
       "ANCIENT",
       "BLADEGUARD ANCIENT",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Bladeguard Veteran Squad": [
       "ADEPTUS ASTARTES",
       "BLADEGUARD VETERAN SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -21034,7 +21200,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21055,7 +21221,7 @@
       "CAPTAIN",
       "CHARACTER",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21067,8 +21233,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER"
@@ -21077,7 +21243,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21096,6 +21262,7 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "GRENADES",
       "IMPERIUM",
       "MOUNTED"
@@ -21104,8 +21271,8 @@
       "ADEPTUS ASTARTES",
       "CAPTAIN",
       "CHARACTER",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
@@ -21120,6 +21287,7 @@
       "EPIC HERO",
       "IMPERIUM",
       "SMOKE",
+      "TORRENT WEAPON",
       "VEHICLE",
       "WALKER"
     ],
@@ -21129,6 +21297,7 @@
       "CATO",
       "CHARACTER",
       "EPIC HERO",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21214,7 +21383,7 @@
       "ADEPTUS ASTARTES",
       "CHAPLAIN",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "LEADER",
       "MOUNTED"
@@ -21227,7 +21396,8 @@
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "LEADER"
+      "LEADER",
+      "TACTICUS"
     ],
     "Chapter Ancient": [
       "ANCIENT",
@@ -21243,6 +21413,7 @@
       "CHARACTER",
       "CHIEF LIBRARIAN TIGURIUS",
       "EPIC HERO",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21267,8 +21438,10 @@
     "Company Heroes": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
+      "CHAMPION",
+      "CHARACTER",
       "COMPANY HEROES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -21290,7 +21463,7 @@
     "Desolation Squad": [
       "ADEPTUS ASTARTES",
       "DESOLATION SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "TACTICUS"
@@ -21321,23 +21494,24 @@
     "Eliminator Squad": [
       "ADEPTUS ASTARTES",
       "ELIMINATOR SQUAD",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
-      "PHOBOS"
-    ],
-    "Eradicator Squad": [
-      "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
-      "GRAVIS",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY"
+      "PHOBOS",
+      "SMOKE"
     ],
     "Eradicator Squad with Heavy Bolters": [
       "ADEPTUS ASTARTES",
-      "ERADICATOR SQUAD",
       "ERADICATOR SQUAD WITH HEAVY BOLTERS",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY"
+    ],
+    "Eradicator Squad with Melta Rifles": [
+      "ADEPTUS ASTARTES",
+      "ERADICATOR SQUAD WITH MELTA RIFLES",
+      "EXPLOSIVES",
       "GRAVIS",
       "IMPERIUM",
       "INFANTRY"
@@ -21395,15 +21569,15 @@
     "Heavy Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
+      "EXPLOSIVES",
       "GRAVIS",
-      "GRENADES",
       "HEAVY INTERCESSOR SQUAD",
       "IMPERIUM",
       "INFANTRY"
     ],
     "Hellblaster Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "HELLBLASTER SQUAD",
       "IMPERIUM",
       "INFANTRY",
@@ -21427,6 +21601,7 @@
     "Impulsor": [
       "ADEPTUS ASTARTES",
       "DEDICATED TRANSPORT",
+      "FRAME",
       "IMPERIUM",
       "IMPULSOR",
       "TRANSPORT",
@@ -21443,7 +21618,7 @@
     ],
     "Incursor Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INCURSOR SQUAD",
       "INFANTRY",
@@ -21452,7 +21627,7 @@
     ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFERNUS SQUAD",
@@ -21460,7 +21635,7 @@
     ],
     "Infiltrator Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INFILTRATOR SQUAD",
@@ -21470,19 +21645,18 @@
     "Intercessor Squad": [
       "ADEPTUS ASTARTES",
       "BATTLELINE",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
-    "Invader ATV": [
+    "Invader ATVs": [
       "ADEPTUS ASTARTES",
-      "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "INVADER ATV",
-      "MOUNTED"
+      "MOUNTED",
+      "VEHICLE"
     ],
     "Invictor Tactical Warsuit": [
       "ADEPTUS ASTARTES",
@@ -21507,6 +21681,7 @@
       "IMPERIUM",
       "INFANTRY",
       "JUDICIAR",
+      "SUPPORT",
       "TACTICUS"
     ],
     "Judiciar Xacharus": [
@@ -21521,6 +21696,16 @@
       "TACTICUS",
       "XACHARUS"
     ],
+    "Kaius Konorius": [
+      "ADEPTUS ASTARTES",
+      "CHARACTER",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "INFANTRY",
+      "SUPPORT",
+      "TACTICUS",
+      "ULTRAMARINES"
+    ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -21532,8 +21717,8 @@
     ],
     "Land Raider Crusader": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER CRUSADER",
@@ -21567,8 +21752,8 @@
     ],
     "Land Raider Redeemer": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FRAME",
-      "GRENADES",
       "IMPERIUM",
       "LAND RAIDER",
       "LAND RAIDER REDEEMER",
@@ -21579,8 +21764,10 @@
     "Land Speeder": [
       "ADEPTUS ASTARTES",
       "FLY",
+      "FRAME",
       "IMPERIUM",
       "LAND SPEEDER",
+      "SPEEDER",
       "VEHICLE"
     ],
     "Land Speeder Tempest": [
@@ -21607,7 +21794,7 @@
     "Librarian": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21618,7 +21805,7 @@
     "Librarian in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21670,7 +21857,7 @@
     "Lieutenant": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -21692,11 +21879,12 @@
     "Lieutenant in Phobos Armour": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
       "PHOBOS",
+      "SMOKE",
       "SUPPORT"
     ],
     "Lieutenant in Reiver Armour": [
@@ -21714,7 +21902,7 @@
     "Lieutenant with Combi-weapon": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LIEUTENANT",
@@ -21727,16 +21915,6 @@
       "CHARACTER",
       "EPIC HERO",
       "GRAVIS",
-      "IMPERIUM",
-      "INFANTRY",
-      "MARNEUS CALGAR",
-      "ULTRAMARINES"
-    ],
-    "Marneus Calgar in Armour of Antilochus": [
-      "ADEPTUS ASTARTES",
-      "CHAPTER MASTER",
-      "CHARACTER",
-      "EPIC HERO",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -21754,9 +21932,8 @@
     ],
     "Outrider Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
-      "INVADER ATV",
       "MOUNTED",
       "OUTRIDER SQUAD"
     ],
@@ -21803,7 +21980,7 @@
     ],
     "Reiver Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PHOBOS",
@@ -21891,7 +22068,7 @@
     ],
     "Scout Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "SCOUT SQUAD",
@@ -21925,7 +22102,7 @@
     ],
     "Sternguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "STERNGUARD VETERAN SQUAD",
@@ -21936,6 +22113,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAILSTRIKE",
       "VEHICLE"
     ],
@@ -21944,6 +22122,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER HAMMERSTRIKE",
       "VEHICLE"
     ],
@@ -21952,6 +22131,7 @@
       "FLY",
       "FRAME",
       "IMPERIUM",
+      "SPEEDER",
       "STORM SPEEDER THUNDERSTRIKE",
       "VEHICLE"
     ],
@@ -22007,7 +22187,7 @@
     "Techmarine": [
       "ADEPTUS ASTARTES",
       "CHARACTER",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -22036,6 +22216,7 @@
       "TERMINATOR",
       "TERMINATOR SQUAD"
     ],
+    "Terminator w/ Heavy Weapon": [],
     "Terminus Ultra": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -22107,12 +22288,12 @@
     ],
     "Vanguard Veteran Squad with Jump Packs": [
       "ADEPTUS ASTARTES",
+      "EXPLOSIVES",
       "FLY",
-      "GRENADES",
       "IMPERIUM",
       "INFANTRY",
       "JUMP PACK",
-      "VANGUARD VETERAN SQUAD",
+      "TACTICUS",
       "VANGUARD VETERAN SQUAD WITH JUMP PACKS"
     ],
     "Venerable Battle-Brother [Crucible]": [
@@ -22155,7 +22336,7 @@
     "Wardens of Ultramar": [
       "ADEPTUS ASTARTES",
       "EPIC HERO",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "PSYKER",

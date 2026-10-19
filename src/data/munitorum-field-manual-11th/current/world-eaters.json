@@ -1,6 +1,6 @@
 {
   "faction": "WORLD EATERS",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
       "name": "BERZERKER WARBAND",
@@ -83,8 +83,8 @@
       },
       "leader": {
         "attachesTo": [
-          "GOREMONGERS",
-          "JAKHALS"
+          "JAKHALS",
+          "GOREMONGERS"
         ]
       },
       "tags": [],

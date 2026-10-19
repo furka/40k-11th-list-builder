@@ -1,6 +1,6 @@
 {
   "faction": "AELDARI",
-  "siteVersion": "v1.5",
+  "siteVersion": "v1.6",
   "detachments": [
     {
       "name": "ARMOURED WARHOST",
@@ -1679,7 +1679,7 @@
       ],
       "wargearOptions": [
         {
-          "name": "Heavy wraithcannon",
+          "name": "Heavy Wraithcannon",
           "points": 10
         }
       ]

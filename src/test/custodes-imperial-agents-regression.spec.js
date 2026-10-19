@@ -67,28 +67,32 @@ describe("Imperial Agents allied cost (Agents of the Imperium)", () => {
   });
 });
 
-describe("Custodian Guard BATTLELINE", () => {
-  it("resolves BATTLELINE for plain Custodian Guard (faction-pack borrow dropped)", () => {
-    expect(getKeywordsFor("ADEPTUS CUSTODES", "CUSTODIAN GUARD")).toContain(
-      "BATTLELINE"
-    );
-    expect(isBattleLine(findSheet("ADEPTUS CUSTODES", "CUSTODIAN GUARD"))).toBe(
-      true
-    );
+// The 11th-edition Custodes codex renamed Custodian Guard to Custodian Guard
+// Sodality and split the spear variant into separate Adrasite / Pyrithite
+// datasheets.
+describe("Custodian Guard Sodality BATTLELINE", () => {
+  it("resolves BATTLELINE for plain Custodian Guard Sodality", () => {
+    expect(
+      getKeywordsFor("ADEPTUS CUSTODES", "CUSTODIAN GUARD SODALITY")
+    ).toContain("BATTLELINE");
+    expect(
+      isBattleLine(findSheet("ADEPTUS CUSTODES", "CUSTODIAN GUARD SODALITY"))
+    ).toBe(true);
   });
 
-  it("does not make the spear variant BATTLELINE", () => {
-    const spear = findSheet(
-      "ADEPTUS CUSTODES",
-      "CUSTODIAN GUARD WITH ADRASITE AND PYRITHITE SPEARS"
-    );
+  it.each([
+    "CUSTODIAN GUARD SODALITY WITH ADRASITE SPEARS",
+    "CUSTODIAN GUARD SODALITY WITH PYRITHITE SPEARS",
+  ])("does not make %s BATTLELINE", (name) => {
+    const spear = findSheet("ADEPTUS CUSTODES", name);
+    expect(spear).toBeDefined();
     expect(isBattleLine(spear)).toBe(false);
   });
 });
 
 describe("the reported shared list, end to end", () => {
   // Custodes primary + Imperial Agents ally, mirroring the Discord report:
-  // an allied INQUISITOR DRAXUS and a CUSTODIAN GUARD.
+  // an allied INQUISITOR DRAXUS and a CUSTODIAN GUARD SODALITY.
   const params = new URLSearchParams();
   params.set("f", "ADEPTUS CUSTODES");
   params.set("m", "2000");
@@ -98,8 +102,8 @@ describe("the reported shared list, end to end", () => {
   params.append("um", "1");
   params.append("ua", "1");
   params.append("uaf", "IMPERIAL AGENTS");
-  params.append("un", "CUSTODIAN GUARD");
-  params.append("um", "5");
+  params.append("un", "CUSTODIAN GUARD SODALITY");
+  params.append("um", "3");
   params.append("ua", "");
   params.append("uaf", "");
 
