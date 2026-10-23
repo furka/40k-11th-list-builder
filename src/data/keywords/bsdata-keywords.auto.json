@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "db61485a7193b11f9eabe12912ddba971c7062f5",
-  "_committedAt": "2026-10-18T14:42:55Z",
-  "_generatedAt": "2026-10-18T17:10:07.776Z",
+  "_sha": "0f1e1320c236dda21584d9c87a0315da37bc6510",
+  "_committedAt": "2026-10-23T12:47:46Z",
+  "_generatedAt": "2026-10-23T18:11:39.772Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -549,7 +549,6 @@
       "ADEPTUS CUSTODES",
       "EMISSARIES",
       "FLY",
-      "FRAME",
       "GYRFALCON JETBIKE SODALITY",
       "IMPERIUM",
       "MOUNTED"
@@ -4063,6 +4062,16 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
     "Crusade Ancient": [
       "ADEPTUS ASTARTES",
       "ANCIENT",
@@ -4083,6 +4092,38 @@
       "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "TACTICUS"
+    ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
       "TACTICUS"
     ],
     "Deimos Predator": [
@@ -4201,6 +4242,16 @@
       "IMPERIUM",
       "VEHICLE"
     ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
       "BLACK TEMPLARS",
@@ -4308,6 +4359,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -4333,6 +4394,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -4725,6 +4789,17 @@
       "SCOUT SQUAD",
       "SMOKE"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -4818,6 +4893,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -4934,6 +5020,29 @@
       "SMOKE",
       "VEHICLE",
       "VINDICATOR"
+    ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
     ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",
@@ -5382,6 +5491,16 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
     "Death Company Captain": [
       "ADEPTUS ASTARTES",
       "BLOOD ANGELS",
@@ -5487,6 +5606,38 @@
       "JUMP PACK",
       "TACTICUS"
     ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
       "DEIMOS PREDATOR",
@@ -5568,6 +5719,16 @@
       "FIRESTRIKE SERVO-TURRETS",
       "IMPERIUM",
       "VEHICLE"
+    ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Furioso Dreadnought": [
       "ADEPTUS ASTARTES",
@@ -5680,6 +5841,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -5705,6 +5876,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -6150,6 +6324,17 @@
       "SCOUT SQUAD",
       "SMOKE"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -6234,6 +6419,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -6372,6 +6568,29 @@
       "SMOKE",
       "VEHICLE",
       "VINDICATOR"
+    ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
     ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",
@@ -8647,6 +8866,36 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
     "Deathwing Command Squad": [
       "ADEPTUS ASTARTES",
       "DARK ANGELS",
@@ -8684,6 +8933,18 @@
       "IMPERIUM",
       "INFANTRY",
       "TERMINATOR"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
@@ -8782,6 +9043,16 @@
       "IMPERIUM",
       "VEHICLE"
     ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
       "FRAME",
@@ -8872,6 +9143,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -8906,6 +9187,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -9395,6 +9679,17 @@
       "SCOUT SQUAD",
       "SMOKE"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -9479,6 +9774,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -9595,6 +9901,29 @@
       "SMOKE",
       "VEHICLE",
       "VINDICATOR"
+    ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
     ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",
@@ -10478,6 +10807,7 @@
       "DEATHWATCH",
       "DECIMUS KILL TEAM",
       "EXPLOSIVES",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
@@ -10701,6 +11031,9 @@
       "INTERCESSOR SQUAD",
       "TACTICUS"
     ],
+    "Invader ATV": [
+      "MOUNTED"
+    ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -10745,18 +11078,6 @@
       "LEADER",
       "TACTICUS",
       "XACHARUS"
-    ],
-    "Kill Team Cassius": [
-      "AGENTS OF THE IMPERIUM",
-      "CHARACTER",
-      "DEATHWATCH",
-      "EPIC HERO",
-      "GRENADES",
-      "IMPERIUM",
-      "INFANTRY",
-      "KILL TEAM",
-      "KILL TEAM CASSIUS",
-      "ORDO XENOS"
     ],
     "Land Raider": [
       "ADEPTUS ASTARTES",
@@ -11322,6 +11643,7 @@
       "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "KILL TEAM",
       "WATCH CAPTAIN ARTEMIS"
     ],
     "Watch Master": [
@@ -11332,6 +11654,7 @@
       "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
+      "KILL TEAM",
       "WATCH MASTER"
     ],
     "Whirlwind": [
@@ -13536,6 +13859,48 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
       "DEIMOS PREDATOR",
@@ -13627,6 +13992,16 @@
       "FIRESTRIKE SERVO-TURRETS",
       "IMPERIUM",
       "VEHICLE"
+    ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
@@ -13777,6 +14152,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -13811,6 +14196,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -14248,6 +14636,17 @@
       "SERVITORS",
       "SUPPORT"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -14344,6 +14743,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -14476,6 +14886,29 @@
       "VEHICLE",
       "VINDICATOR"
     ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
+    ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -14489,10 +14922,11 @@
       "AGENTS OF THE IMPERIUM",
       "AQUILA KILL TEAM",
       "BATTLELINE",
-      "DEATHWATCH",
-      "GRENADES",
+      "EXPLOSIVES",
+      "GRAVIS",
       "IMPERIUM",
       "INFANTRY",
+      "KILL TEAM",
       "ORDO XENOS",
       "RETINUE",
       "TACTICUS"
@@ -14509,12 +14943,11 @@
     "Corvus Blackstar": [
       "AGENTS OF THE IMPERIUM",
       "CORVUS BLACKSTAR",
-      "DEATHWATCH",
       "FLY",
-      "FRAME",
       "IMPERIUM",
       "ORDO XENOS",
       "RETINUE",
+      "SMOKE",
       "TRANSPORT",
       "VEHICLE"
     ],
@@ -14559,8 +14992,7 @@
     "Deathwatch Kill Team": [
       "AGENTS OF THE IMPERIUM",
       "BATTLELINE",
-      "DEATHWATCH",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "KILL TEAM",
@@ -14958,8 +15390,8 @@
     ],
     "Watch Captain Artemis": [
       "AGENTS OF THE IMPERIUM",
+      "CAPTAIN",
       "CHARACTER",
-      "DEATHWATCH",
       "EPIC HERO",
       "GRENADES",
       "IMPERIUM",
@@ -14970,10 +15402,8 @@
     ],
     "Watch Master": [
       "AGENTS OF THE IMPERIUM",
-      "CAPTAIN",
       "CHARACTER",
-      "DEATHWATCH",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "LEADER",
@@ -16976,6 +17406,16 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
     "Darnath Lysander": [
       "ADEPTUS ASTARTES",
       "CAPTAIN",
@@ -16987,6 +17427,38 @@
       "INFANTRY",
       "LEADER",
       "TERMINATOR"
+    ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
@@ -17069,6 +17541,16 @@
       "FIRESTRIKE SERVO-TURRETS",
       "IMPERIUM",
       "VEHICLE"
+    ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
@@ -17160,6 +17642,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -17185,6 +17677,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -17680,6 +18175,17 @@
       "SERGEANT TELION",
       "ULTRAMARINES"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -17776,6 +18282,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -17968,6 +18485,29 @@
       "TACTICUS",
       "ULTRAMARINES",
       "WARDENS OF ULTRAMAR"
+    ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
     ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",
@@ -18378,6 +18918,16 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
     "Cyberwolf": [
       "ADEPTUS ASTARTES",
       "BEAST",
@@ -18386,6 +18936,38 @@
       "IMPERIUM",
       "SPACE WOLVES",
       "SUPPORT"
+    ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
@@ -18475,6 +19057,16 @@
       "FIRESTRIKE SERVO-TURRETS",
       "IMPERIUM",
       "VEHICLE"
+    ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
@@ -18598,6 +19190,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -18623,6 +19225,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -19123,6 +19728,17 @@
       "SKYCLAWS",
       "SPACE WOLVES"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -19227,6 +19843,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -19365,6 +19992,29 @@
       "SMOKE",
       "VEHICLE",
       "VINDICATOR"
+    ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
     ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",
@@ -21453,6 +22103,48 @@
       "IMPERIUM",
       "MOUNTED"
     ],
+    "Corvus Blackstar": [
+      "ADEPTUS ASTARTES",
+      "CORVUS BLACKSTAR",
+      "DEATHWATCH",
+      "FLY",
+      "FRAME",
+      "IMPERIUM",
+      "TRANSPORT",
+      "VEHICLE"
+    ],
+    "Deathwatch Terminator Squad": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "DEATHWATCH TERMINATOR SQUAD",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TERMINATOR"
+    ],
+    "Deathwatch Veterans": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DEATHWATCH VETERANS",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH SERGEANT LOADOUT"
+    ],
+    "Decimus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "BATTLELINE",
+      "DEATHWATCH",
+      "DECIMUS KILL TEAM",
+      "EXPLOSIVES",
+      "GRAVIS",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
+    ],
     "Deimos Predator": [
       "ADEPTUS ASTARTES",
       "DEIMOS PREDATOR",
@@ -21534,6 +22226,16 @@
       "FIRESTRIKE SERVO-TURRETS",
       "IMPERIUM",
       "VEHICLE"
+    ],
+    "Fortis Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "FORTIS KILL TEAM",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "TACTICUS"
     ],
     "Gladiator Lancer": [
       "ADEPTUS ASTARTES",
@@ -21625,6 +22327,16 @@
       "PHOBOS",
       "SMOKE"
     ],
+    "Indomitor Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "GRAVIS",
+      "GRENADES",
+      "IMPERIUM",
+      "INDOMITOR KILL TEAM",
+      "INFANTRY",
+      "KILL TEAM"
+    ],
     "Infernus Squad": [
       "ADEPTUS ASTARTES",
       "EXPLOSIVES",
@@ -21650,6 +22362,9 @@
       "INFANTRY",
       "INTERCESSOR SQUAD",
       "TACTICUS"
+    ],
+    "Invader ATV": [
+      "MOUNTED"
     ],
     "Invader ATVs": [
       "ADEPTUS ASTARTES",
@@ -22093,6 +22808,17 @@
       "SERGEANT TELION",
       "ULTRAMARINES"
     ],
+    "Spectrus Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "PHOBOS",
+      "SMOKE",
+      "SPECTRUS KILL TEAM"
+    ],
     "Stalker": [
       "ADEPTUS ASTARTES",
       "IMPERIUM",
@@ -22177,6 +22903,17 @@
       "IMPERIUM",
       "INFANTRY",
       "TACTICAL SQUAD"
+    ],
+    "Talonstrike Kill Team": [
+      "ADEPTUS ASTARTES",
+      "DEATHWATCH",
+      "FLY",
+      "GRENADES",
+      "IMPERIUM",
+      "INFANTRY",
+      "JUMP PACK",
+      "KILL TEAM",
+      "TALONSTRIKE KILL TEAM"
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
@@ -22344,6 +23081,29 @@
       "TACTICUS",
       "ULTRAMARINES",
       "WARDENS OF ULTRAMAR"
+    ],
+    "Watch Captain Artemis": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EPIC HERO",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH CAPTAIN ARTEMIS"
+    ],
+    "Watch Master": [
+      "ADEPTUS ASTARTES",
+      "CAPTAIN",
+      "CHARACTER",
+      "DEATHWATCH",
+      "EXPLOSIVES",
+      "IMPERIUM",
+      "INFANTRY",
+      "KILL TEAM",
+      "WATCH MASTER"
     ],
     "Whirlwind": [
       "ADEPTUS ASTARTES",

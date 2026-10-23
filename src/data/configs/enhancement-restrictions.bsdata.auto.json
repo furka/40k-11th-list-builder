@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "b8667d44504e025827a584cfc6bf2f2eba3cb9f8",
-  "_committedAt": "2026-10-19T01:14:51Z",
-  "_generatedAt": "2026-10-19T19:43:33.289Z",
+  "_sha": "0f1e1320c236dda21584d9c87a0315da37bc6510",
+  "_committedAt": "2026-10-23T12:47:46Z",
+  "_generatedAt": "2026-10-23T18:11:40.784Z",
   "_generator": "scripts/scrape-bsdata-enhancements",
   "ADEPTA SORORITAS": {
     "Catechism of Divine Penitence": {
@@ -333,39 +333,14 @@
         "JUDICIAR XACHARUS"
       ]
     },
-    "Indefatigable Fortitude": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Martial Paragon": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Narthecis Gauntlet": {
       "requiredKeywords": [
         "APOTHECARY BIOLOGIS"
       ]
     },
-    "Relentless Advance": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
     "Seal of Shrouding": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Spearpoint War Leader": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
-    "Tempered in Battle (Aura)": {
-      "requiredKeywords": [
-        "TACTICUS"
       ]
     }
   },
@@ -375,39 +350,14 @@
         "PHOBOS"
       ]
     },
-    "Indefatigable Fortitude": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Martial Paragon": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Narthecis Gauntlet": {
       "requiredKeywords": [
         "APOTHECARY BIOLOGIS"
       ]
     },
-    "Relentless Advance": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
     "Seal of Shrouding": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Spearpoint War Leader": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
-    "Tempered in Battle (Aura)": {
-      "requiredKeywords": [
-        "TACTICUS"
       ]
     }
   },
@@ -579,34 +529,8 @@
       ]
     },
     "Cybinfernal Font": {
-      "allowedHosts": [
-        "ACCURSED CULTISTS",
-        "CHAOS LORD",
-        "CHAOS LORD IN TERMINATOR ARMOUR",
-        "CHAOS LORD ON DISC OF TZEENTCH",
-        "CHAOS LORD ON JUGGERNAUT",
-        "CHAOS LORD ON PALANQUIN OF NURGLE",
-        "CHAOS LORD ON STEED OF SLAANESH",
-        "CHAOS LORD WITH JUMP PACK",
-        "CULTIST FIREBRAND",
-        "CULTIST MOB",
-        "CULTIST MOB WITH FIREARMS",
-        "DARK APOSTLE",
-        "DARK COMMUNE",
-        "FELLGOR BEASTMEN",
-        "GELLERPOX INFECTED",
-        "LORD DISCORDANT ON HELSTALKER",
-        "MASTER OF POSSESSION",
-        "MUTOID VERMIN",
-        "NEGAVOLT CULTISTS",
-        "RENEGADE ENFORCER",
-        "RENEGADE HEAVY WEAPONS SQUAD",
-        "RENEGADE OGRYN BEAST HANDLER",
-        "RENEGADE OGRYN BRUTES",
-        "RENEGADE PLAGUE OGRYNS",
-        "ROGUE PSYKER",
-        "TRAITOR ENFORCER",
-        "TRAITOR GUARDSMEN SQUAD"
+      "requiredKeywords": [
+        "DAMNED"
       ]
     },
     "Dread Reputation": {
@@ -790,29 +714,14 @@
         "PHOBOS"
       ]
     },
-    "Indefatigable Fortitude": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
     "Lord of the Ravenwing": {
       "requiredKeywords": [
         "RAVENWING"
       ]
     },
-    "Martial Paragon": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Narthecis Gauntlet": {
       "requiredKeywords": [
         "APOTHECARY BIOLOGIS"
-      ]
-    },
-    "Relentless Advance": {
-      "requiredKeywords": [
-        "GRAVIS"
       ]
     },
     "Seal of Shrouding": {
@@ -823,16 +732,6 @@
     "Singular Will": {
       "requiredKeywords": [
         "DEATHWING"
-      ]
-    },
-    "Spearpoint War Leader": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
-    "Tempered in Battle (Aura)": {
-      "requiredKeywords": [
-        "TACTICUS"
       ]
     }
   },
@@ -900,39 +799,14 @@
         "PHOBOS"
       ]
     },
-    "Indefatigable Fortitude": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Martial Paragon": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Narthecis Gauntlet": {
       "requiredKeywords": [
         "APOTHECARY BIOLOGIS"
       ]
     },
-    "Relentless Advance": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
     "Seal of Shrouding": {
       "requiredKeywords": [
         "PHOBOS"
-      ]
-    },
-    "Spearpoint War Leader": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
-    "Tempered in Battle (Aura)": {
-      "requiredKeywords": [
-        "TACTICUS"
       ]
     },
     "The Tome of Ectoclades": {
@@ -1286,29 +1160,9 @@
         "PHOBOS"
       ]
     },
-    "Honour Indefatigable": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Indefatigable Fortitude": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Martial Paragon": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Narthecis Gauntlet": {
       "requiredKeywords": [
         "APOTHECARY BIOLOGIS"
-      ]
-    },
-    "Relentless Advance": {
-      "requiredKeywords": [
-        "GRAVIS"
       ]
     },
     "Seal of Shrouding": {
@@ -1316,19 +1170,9 @@
         "PHOBOS"
       ]
     },
-    "Spearpoint War Leader": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Target Augury Web": {
       "requiredKeywords": [
         "TECHMARINE"
-      ]
-    },
-    "Tempered in Battle (Aura)": {
-      "requiredKeywords": [
-        "TACTICUS"
       ]
     }
   },
@@ -1343,24 +1187,9 @@
         "WOLF PRIEST"
       ]
     },
-    "Indefatigable Fortitude": {
-      "requiredKeywords": [
-        "GRAVIS"
-      ]
-    },
-    "Martial Paragon": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
     "Narthecis Gauntlet": {
       "requiredKeywords": [
         "APOTHECARY BIOLOGIS"
-      ]
-    },
-    "Relentless Advance": {
-      "requiredKeywords": [
-        "GRAVIS"
       ]
     },
     "Seal of Shrouding": {
@@ -1371,16 +1200,6 @@
     "Skjald’s Foretelling": {
       "requiredKeywords": [
         "BATTLE LEADER"
-      ]
-    },
-    "Spearpoint War Leader": {
-      "requiredKeywords": [
-        "TACTICUS"
-      ]
-    },
-    "Tempered in Battle (Aura)": {
-      "requiredKeywords": [
-        "TACTICUS"
       ]
     }
   },
