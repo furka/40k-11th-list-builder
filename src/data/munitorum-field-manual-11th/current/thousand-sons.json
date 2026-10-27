@@ -212,11 +212,7 @@
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
       },
-      "leader": {
-        "attachesTo": [
-          "TZAANGORS"
-        ]
-      },
+      "leader": null,
       "tags": [
         "UNIQUE: MUTANT"
       ],
@@ -224,6 +220,10 @@
         {
           "name": "Bray Lord",
           "points": 15
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Diamond of Distortion",

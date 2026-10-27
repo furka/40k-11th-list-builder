@@ -245,11 +245,7 @@
         "name": "RECONNAISSANCE",
         "color": "#008080"
       },
-      "leader": {
-        "attachesTo": [
-          "WARP TALONS"
-        ]
-      },
+      "leader": null,
       "tags": [
         "UNIQUE: NIGHTMARE"
       ],
@@ -257,6 +253,10 @@
         {
           "name": "Pact of Cursed Pinions",
           "points": 20
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Shadowcowl Talisman",
@@ -271,11 +271,7 @@
         "name": "DISRUPTION",
         "color": "#1A3A5C"
       },
-      "leader": {
-        "attachesTo": [
-          "WARP TALONS"
-        ]
-      },
+      "leader": null,
       "tags": [
         "UNIQUE: NIGHTMARE"
       ],
@@ -287,6 +283,10 @@
         {
           "name": "Sorrowscent Vulture",
           "points": 35
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Terrorglut Parasite",
