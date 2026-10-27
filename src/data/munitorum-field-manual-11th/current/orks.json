@@ -260,16 +260,16 @@
         "name": "TAKE AND HOLD",
         "color": "#2E6B3E"
       },
-      "leader": {
-        "attachesTo": [
-          "KOMMANDOS"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
           "name": "Kill Kommanda",
           "points": 20
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Throat-slittas",
@@ -313,16 +313,16 @@
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
       },
-      "leader": {
-        "attachesTo": [
-          "FLASH GITZ"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
           "name": "Kaptin’s Hat",
           "points": 25
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Supa-snazz Dakka",

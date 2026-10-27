@@ -275,12 +275,7 @@
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
       },
-      "leader": {
-        "attachesTo": [
-          "WULFEN",
-          "WULFEN WITH STORM SHIELDS"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -290,6 +285,10 @@
         {
           "name": "Wolf-Touched",
           "points": 15
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         }
       ]
     },

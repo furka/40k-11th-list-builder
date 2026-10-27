@@ -65,16 +65,16 @@
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
       },
-      "leader": {
-        "attachesTo": [
-          "FLAWLESS BLADES"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
           "name": "Exalted Patron",
           "points": 15
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Soulstain Made Manifest",

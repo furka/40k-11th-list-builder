@@ -144,16 +144,16 @@
         "name": "PURGE THE FOE",
         "color": "#8B1B1B"
       },
-      "leader": {
-        "attachesTo": [
-          "REPENTIA SQUAD"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
           "name": "Catechism of Divine Penitence",
           "points": 15
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Psalm of Righteous Judgement",

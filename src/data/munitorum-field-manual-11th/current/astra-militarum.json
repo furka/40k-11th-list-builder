@@ -9,12 +9,7 @@
         "name": "TAKE AND HOLD",
         "color": "#2E6B3E"
       },
-      "leader": {
-        "attachesTo": [
-          "OGRYN SQUAD",
-          "BULLGRYN SQUAD"
-        ]
-      },
+      "leader": null,
       "tags": [
         "UNIQUE: ABHUMAN"
       ],
@@ -23,6 +18,10 @@
           "name": "Exemplar of Duty",
           "points": 10,
           "nonCharacterOnly": true
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Sharp Eyes",
@@ -138,12 +137,7 @@
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
       },
-      "leader": {
-        "attachesTo": [
-          "OGRYN SQUAD",
-          "BULLGRYN SQUAD"
-        ]
-      },
+      "leader": null,
       "tags": [
         "UNIQUE: ABHUMAN"
       ],
@@ -151,6 +145,10 @@
         {
           "name": "Abhuman Detail",
           "points": 20
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Aquilan Eye",

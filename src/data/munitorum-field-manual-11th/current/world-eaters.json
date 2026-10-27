@@ -81,12 +81,7 @@
         "name": "PRIORITY ASSETS",
         "color": "#B8860A"
       },
-      "leader": {
-        "attachesTo": [
-          "JAKHALS",
-          "GOREMONGERS"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -96,6 +91,10 @@
         {
           "name": "Butcher Lord",
           "points": 10
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Chosen of the Blood God",
@@ -142,12 +141,7 @@
         "name": "RECONNAISSANCE",
         "color": "#008080"
       },
-      "leader": {
-        "attachesTo": [
-          "BLOODCRUSHERS",
-          "FLESH HOUNDS"
-        ]
-      },
+      "leader": null,
       "tags": [],
       "enhancements": [
         {
@@ -161,6 +155,10 @@
         {
           "name": "Disciple of Khorne",
           "points": 15
+        },
+        {
+          "name": "LEADER:",
+          "points": 0
         },
         {
           "name": "Icon of War",
