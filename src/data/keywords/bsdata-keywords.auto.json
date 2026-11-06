@@ -1,9 +1,9 @@
 {
   "_source": "https://github.com/BSData/wh40k-11e",
   "_ref": "main",
-  "_sha": "c07b267d3a031651c39a0f46d163f01c34dc8422",
-  "_committedAt": "2026-10-27T06:58:15Z",
-  "_generatedAt": "2026-10-27T19:17:52.515Z",
+  "_sha": "11ad64c81c058e5deeccd1cb23e64a972029c7b0",
+  "_committedAt": "2026-11-06T18:46:37Z",
+  "_generatedAt": "2026-11-06T20:18:15.257Z",
   "_generator": "scripts/scrape-bsdata-keywords",
   "ADEPTA SORORITAS": {
     "Aestred Thurga and Agathae Dolan": [
@@ -570,7 +570,7 @@
       "IMPERIUM",
       "INFANTRY",
       "KNIGHT-CENTURA",
-      "LEADER"
+      "SUPPORT"
     ],
     "Null Maiden [Crucible]": [
       "ADEPTUS CUSTODES",
@@ -4663,6 +4663,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -4670,6 +4671,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -4907,6 +4909,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -4980,7 +4983,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -6158,6 +6161,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -6165,6 +6169,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -6433,6 +6438,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -6529,7 +6535,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -7900,7 +7906,6 @@
     "Cultist w/ autogun and close combat weapon": [],
     "Cultist w/ autopistol and brutal assault weapon": [],
     "Cultist w/ cultist grenade launcher": [],
-    "Cultist w/ flamer": [],
     "Cultist w/ heavy stubber": [],
     "Cypher": [
       "CHAOS",
@@ -9491,6 +9496,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -9498,6 +9504,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -9789,6 +9796,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -9862,7 +9870,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -11288,6 +11296,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -11295,6 +11304,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -11521,6 +11531,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -11594,7 +11605,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -14488,6 +14499,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -14495,6 +14507,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -14758,6 +14771,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -14831,7 +14845,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -18022,6 +18036,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -18029,6 +18044,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -18297,6 +18313,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -18410,7 +18427,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -19582,6 +19599,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -19589,6 +19607,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -19858,6 +19877,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -19951,7 +19971,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
@@ -22655,6 +22675,7 @@
     ],
     "Predator Annihilator": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR ANNIHILATOR",
       "SMOKE",
@@ -22662,6 +22683,7 @@
     ],
     "Predator Destructor": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "PREDATOR DESTRUCTOR",
       "SMOKE",
@@ -22918,6 +22940,7 @@
     ],
     "Tarantula Air Defense Battery": [
       "ADEPTUS ASTARTES",
+      "FRAME",
       "IMPERIUM",
       "TARANTULA AIR DEFENCE BATTERY",
       "VEHICLE"
@@ -23019,7 +23042,7 @@
     ],
     "Vanguard Veteran Squad": [
       "ADEPTUS ASTARTES",
-      "GRENADES",
+      "EXPLOSIVES",
       "IMPERIUM",
       "INFANTRY",
       "VANGUARD VETERAN SQUAD"
